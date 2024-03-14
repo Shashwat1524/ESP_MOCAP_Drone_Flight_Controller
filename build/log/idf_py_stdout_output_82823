@@ -1,0 +1,880 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+Manifest files have changed, solving dependencies.
+.....Updating lock file at /home/shashwat/drone_flight_control/dependencies.lock
+Processing 3 dependencies:
+[1/3] espressif/eigen (3.4.0~2)
+[2/3] espressif/mpu6050 (1.2.0)
+[3/3] idf (5.3.0)
+-- Project sdkconfig file /home/shashwat/drone_flight_control/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- App "drone_flight_control" version: 1
+-- Adding linker script /home/shashwat/drone_flight_control/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Using Micro XRCE-DDS middleware
+mkdir -p /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/libmicroros; cd /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/libmicroros; \
+for file in $(find /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/install/lib/ -name '*.a'); do \
+	folder=$(echo $file | sed -E "s/(.+)\/(.+).a/\2/"); \
+	mkdir -p $folder; cd $folder; /home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-ar x $file; \
+	for f in *; do \
+		mv $f ../$folder-$f; \
+	done; \
+	cd ..; rm -rf $folder; \
+done ; \
+/home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-ar rc -s libmicroros.a *.obj; cp libmicroros.a /home/shashwat/drone_flight_control/components/micro_ros_espidf_component; \
+cd ..; rm -rf libmicroros; \
+cp -R /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/install/include /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include;
+-- Components: I2Cdev MPU6050 MadgwickAHRS app_trace app_update bootloader bootloader_support bt cmock components console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_tsens esp_driver_uart esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__eigen espressif__mpu6050 esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls micro_ros_espidf_component mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/shashwat/drone_flight_control/components/I2Cdev /home/shashwat/drone_flight_control/components/MPU6050 /home/shashwat/drone_flight_control/components/MadgwickAHRS /home/shashwat/esp/esp-idf/components/app_trace /home/shashwat/esp/esp-idf/components/app_update /home/shashwat/esp/esp-idf/components/bootloader /home/shashwat/esp/esp-idf/components/bootloader_support /home/shashwat/esp/esp-idf/components/bt /home/shashwat/esp/esp-idf/components/cmock /home/shashwat/drone_flight_control/components /home/shashwat/esp/esp-idf/components/console /home/shashwat/esp/esp-idf/components/cxx /home/shashwat/esp/esp-idf/components/driver /home/shashwat/esp/esp-idf/components/efuse /home/shashwat/esp/esp-idf/components/esp-tls /home/shashwat/esp/esp-idf/components/esp_adc /home/shashwat/esp/esp-idf/components/esp_app_format /home/shashwat/esp/esp-idf/components/esp_bootloader_format /home/shashwat/esp/esp-idf/components/esp_coex /home/shashwat/esp/esp-idf/components/esp_common /home/shashwat/esp/esp-idf/components/esp_driver_ana_cmpr /home/shashwat/esp/esp-idf/components/esp_driver_dac /home/shashwat/esp/esp-idf/components/esp_driver_gpio /home/shashwat/esp/esp-idf/components/esp_driver_gptimer /home/shashwat/esp/esp-idf/components/esp_driver_i2c /home/shashwat/esp/esp-idf/components/esp_driver_i2s /home/shashwat/esp/esp-idf/components/esp_driver_ledc /home/shashwat/esp/esp-idf/components/esp_driver_mcpwm /home/shashwat/esp/esp-idf/components/esp_driver_parlio /home/shashwat/esp/esp-idf/components/esp_driver_pcnt /home/shashwat/esp/esp-idf/components/esp_driver_rmt /home/shashwat/esp/esp-idf/components/esp_driver_sdio /home/shashwat/esp/esp-idf/components/esp_driver_sdm /home/shashwat/esp/esp-idf/components/esp_driver_sdmmc /home/shashwat/esp/esp-idf/components/esp_driver_sdspi /home/shashwat/esp/esp-idf/components/esp_driver_spi /home/shashwat/esp/esp-idf/components/esp_driver_tsens /home/shashwat/esp/esp-idf/components/esp_driver_uart /home/shashwat/esp/esp-idf/components/esp_eth /home/shashwat/esp/esp-idf/components/esp_event /home/shashwat/esp/esp-idf/components/esp_gdbstub /home/shashwat/esp/esp-idf/components/esp_hid /home/shashwat/esp/esp-idf/components/esp_http_client /home/shashwat/esp/esp-idf/components/esp_http_server /home/shashwat/esp/esp-idf/components/esp_https_ota /home/shashwat/esp/esp-idf/components/esp_https_server /home/shashwat/esp/esp-idf/components/esp_hw_support /home/shashwat/esp/esp-idf/components/esp_lcd /home/shashwat/esp/esp-idf/components/esp_local_ctrl /home/shashwat/esp/esp-idf/components/esp_mm /home/shashwat/esp/esp-idf/components/esp_netif /home/shashwat/esp/esp-idf/components/esp_netif_stack /home/shashwat/esp/esp-idf/components/esp_partition /home/shashwat/esp/esp-idf/components/esp_phy /home/shashwat/esp/esp-idf/components/esp_pm /home/shashwat/esp/esp-idf/components/esp_psram /home/shashwat/esp/esp-idf/components/esp_ringbuf /home/shashwat/esp/esp-idf/components/esp_rom /home/shashwat/esp/esp-idf/components/esp_system /home/shashwat/esp/esp-idf/components/esp_timer /home/shashwat/esp/esp-idf/components/esp_wifi /home/shashwat/esp/esp-idf/components/espcoredump /home/shashwat/drone_flight_control/managed_components/espressif__eigen /home/shashwat/drone_flight_control/managed_components/espressif__mpu6050 /home/shashwat/esp/esp-idf/components/esptool_py /home/shashwat/esp/esp-idf/components/fatfs /home/shashwat/esp/esp-idf/components/freertos /home/shashwat/esp/esp-idf/components/hal /home/shashwat/esp/esp-idf/components/heap /home/shashwat/esp/esp-idf/components/http_parser /home/shashwat/esp/esp-idf/components/idf_test /home/shashwat/esp/esp-idf/components/ieee802154 /home/shashwat/esp/esp-idf/components/json /home/shashwat/esp/esp-idf/components/log /home/shashwat/esp/esp-idf/components/lwip /home/shashwat/drone_flight_control/main /home/shashwat/esp/esp-idf/components/mbedtls /home/shashwat/drone_flight_control/components/micro_ros_espidf_component /home/shashwat/esp/esp-idf/components/mqtt /home/shashwat/esp/esp-idf/components/newlib /home/shashwat/esp/esp-idf/components/nvs_flash /home/shashwat/esp/esp-idf/components/nvs_sec_provider /home/shashwat/esp/esp-idf/components/openthread /home/shashwat/esp/esp-idf/components/partition_table /home/shashwat/esp/esp-idf/components/perfmon /home/shashwat/esp/esp-idf/components/protobuf-c /home/shashwat/esp/esp-idf/components/protocomm /home/shashwat/esp/esp-idf/components/pthread /home/shashwat/esp/esp-idf/components/sdmmc /home/shashwat/esp/esp-idf/components/soc /home/shashwat/esp/esp-idf/components/spi_flash /home/shashwat/esp/esp-idf/components/spiffs /home/shashwat/esp/esp-idf/components/tcp_transport /home/shashwat/esp/esp-idf/components/ulp /home/shashwat/esp/esp-idf/components/unity /home/shashwat/esp/esp-idf/components/usb /home/shashwat/esp/esp-idf/components/vfs /home/shashwat/esp/esp-idf/components/wear_levelling /home/shashwat/esp/esp-idf/components/wifi_provisioning /home/shashwat/esp/esp-idf/components/wpa_supplicant /home/shashwat/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashwat/drone_flight_control/build
+[0/2] Re-checking globbed directories...
+[1/26] Performing build step for 'bootloader'
+[1/1] cd /home/shashwat/drone_flight_control/build/bootloader/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashwat/drone_flight_control/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/24] Creating directories for 'eigen_proj'
+[3/24] No download step for 'eigen_proj'
+[4/24] No update step for 'eigen_proj'
+[5/24] No patch step for 'eigen_proj'
+[5/24] Performing configure step for 'eigen_proj'
+-- The C compiler identification is GNU 13.2.0
+-- The CXX compiler identification is GNU 13.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test EIGEN_COMPILER_SUPPORT_CPP11
+-- Performing Test EIGEN_COMPILER_SUPPORT_CPP11 - Success
+-- Performing Test COMPILER_SUPPORT_std=cpp03
+-- Performing Test COMPILER_SUPPORT_std=cpp03 - Success
+-- Performing Test standard_math_library_linked_to_automatically
+-- Performing Test standard_math_library_linked_to_automatically - Success
+-- Standard libraries to link to explicitly: none
+-- Performing Test COMPILER_SUPPORT_WERROR
+-- Performing Test COMPILER_SUPPORT_WERROR - Success
+-- Performing Test COMPILER_SUPPORT_pedantic
+-- Performing Test COMPILER_SUPPORT_pedantic - Success
+-- Performing Test COMPILER_SUPPORT_Wall
+-- Performing Test COMPILER_SUPPORT_Wall - Success
+-- Performing Test COMPILER_SUPPORT_Wextra
+-- Performing Test COMPILER_SUPPORT_Wextra - Success
+-- Performing Test COMPILER_SUPPORT_Wundef
+-- Performing Test COMPILER_SUPPORT_Wundef - Success
+-- Performing Test COMPILER_SUPPORT_Wcastalign
+-- Performing Test COMPILER_SUPPORT_Wcastalign - Success
+-- Performing Test COMPILER_SUPPORT_Wcharsubscripts
+-- Performing Test COMPILER_SUPPORT_Wcharsubscripts - Success
+-- Performing Test COMPILER_SUPPORT_Wnonvirtualdtor
+-- Performing Test COMPILER_SUPPORT_Wnonvirtualdtor - Success
+-- Performing Test COMPILER_SUPPORT_Wunusedlocaltypedefs
+-- Performing Test COMPILER_SUPPORT_Wunusedlocaltypedefs - Success
+-- Performing Test COMPILER_SUPPORT_Wpointerarith
+-- Performing Test COMPILER_SUPPORT_Wpointerarith - Success
+-- Performing Test COMPILER_SUPPORT_Wwritestrings
+-- Performing Test COMPILER_SUPPORT_Wwritestrings - Success
+-- Performing Test COMPILER_SUPPORT_Wformatsecurity
+-- Performing Test COMPILER_SUPPORT_Wformatsecurity - Success
+-- Performing Test COMPILER_SUPPORT_Wshorten64to32
+-- Performing Test COMPILER_SUPPORT_Wshorten64to32 - Failed
+-- Performing Test COMPILER_SUPPORT_Wlogicalop
+-- Performing Test COMPILER_SUPPORT_Wlogicalop - Success
+-- Performing Test COMPILER_SUPPORT_Wenumconversion
+-- Performing Test COMPILER_SUPPORT_Wenumconversion - Success
+-- Performing Test COMPILER_SUPPORT_Wcpp11extensions
+-- Performing Test COMPILER_SUPPORT_Wcpp11extensions - Success
+-- Performing Test COMPILER_SUPPORT_Wdoublepromotion
+-- Performing Test COMPILER_SUPPORT_Wdoublepromotion - Success
+-- Performing Test COMPILER_SUPPORT_Wshadow
+-- Performing Test COMPILER_SUPPORT_Wshadow - Success
+-- Performing Test COMPILER_SUPPORT_Wnopsabi
+-- Performing Test COMPILER_SUPPORT_Wnopsabi - Success
+-- Performing Test COMPILER_SUPPORT_Wnovariadicmacros
+-- Performing Test COMPILER_SUPPORT_Wnovariadicmacros - Success
+-- Performing Test COMPILER_SUPPORT_Wnolonglong
+-- Performing Test COMPILER_SUPPORT_Wnolonglong - Success
+-- Performing Test COMPILER_SUPPORT_fnochecknew
+-- Performing Test COMPILER_SUPPORT_fnochecknew - Success
+-- Performing Test COMPILER_SUPPORT_fnocommon
+-- Performing Test COMPILER_SUPPORT_fnocommon - Success
+-- Performing Test COMPILER_SUPPORT_fstrictaliasing
+-- Performing Test COMPILER_SUPPORT_fstrictaliasing - Success
+-- Performing Test COMPILER_SUPPORT_wd981
+-- Performing Test COMPILER_SUPPORT_wd981 - Failed
+-- Performing Test COMPILER_SUPPORT_wd2304
+-- Performing Test COMPILER_SUPPORT_wd2304 - Failed
+-- Performing Test COMPILER_SUPPORT_STRICTANSI
+-- Performing Test COMPILER_SUPPORT_STRICTANSI - Failed
+-- Performing Test COMPILER_SUPPORT_Qunusedarguments
+-- Performing Test COMPILER_SUPPORT_Qunusedarguments - Failed
+-- Performing Test COMPILER_SUPPORT_ansi
+-- Performing Test COMPILER_SUPPORT_ansi - Success
+-- Performing Test COMPILER_SUPPORT_OPENMP
+-- Performing Test COMPILER_SUPPORT_OPENMP - Failed
+-- Found unsuitable Qt version "5.15.3" from /usr/bin/qmake
+-- Looking for a Fortran compiler
+-- Looking for a Fortran compiler - /usr/bin/f95
+-- The Fortran compiler identification is GNU 11.4.0
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: /usr/bin/f95 - skipped
+-- Could NOT find CHOLMOD (missing: CHOLMOD_INCLUDES CHOLMOD_LIBRARIES) 
+-- Could NOT find UMFPACK (missing: UMFPACK_INCLUDES UMFPACK_LIBRARIES) 
+-- Could NOT find KLU (missing: KLU_INCLUDES KLU_LIBRARIES) 
+-- Could NOT find SuperLU (missing: SUPERLU_INCLUDES SUPERLU_LIBRARIES SUPERLU_VERSION_OK) (Required is at least version "4.0")
+-- Checking for one of the modules 'hwloc'
+-- Performing Test HAVE_HWLOC_PARENT_MEMBER
+-- Performing Test HAVE_HWLOC_PARENT_MEMBER - Failed
+-- Performing Test HAVE_HWLOC_CACHE_ATTR
+-- Performing Test HAVE_HWLOC_CACHE_ATTR - Failed
+-- Performing Test HAVE_HWLOC_OBJ_PU
+-- Performing Test HAVE_HWLOC_OBJ_PU - Failed
+-- Looking for hwloc_bitmap_free in hwloc
+-- Looking for hwloc_bitmap_free in hwloc - not found
+-- A version of Pastix has been found but pastix_nompi.h does not exist in the include directory. Because Eigen tests require a version without MPI, we disable the Pastix backend.
+-- Could NOT find SPQR (missing: SPQR_INCLUDES SPQR_LIBRARIES) 
+-- Found unsuitable Qt version "5.15.3" from /usr/bin/qmake
+-- Performing Test COMPILER_SUPPORT_FASTMATH
+-- Performing Test COMPILER_SUPPORT_FASTMATH - Success
+-- Could NOT find Boost (missing: Boost_INCLUDE_DIR) (Required is at least version "1.53.0")
+-- Found Threads: TRUE  
+-- Could NOT find GoogleHash (missing: GOOGLEHASH_INCLUDES GOOGLEHASH_COMPILE) 
+-- Could NOT find Adolc (missing: ADOLC_INCLUDES ADOLC_LIBRARIES) 
+-- Could NOT find MPFR (missing: MPFR_INCLUDES MPFR_LIBRARIES MPFR_VERSION_OK) (Required is at least version "1.0.0")
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+-- Could NOT find FFTW (missing: FFTW_INCLUDES FFTW_LIBRARIES) 
+-- Could NOT find CUDA (missing: CUDA_TOOLKIT_ROOT_DIR CUDA_NVCC_EXECUTABLE CUDA_INCLUDE_DIRS CUDA_CUDART_LIBRARY) (Required is at least version "7.0")
+-- Found unsuitable Qt version "5.15.3" from /usr/bin/qmake
+-- Qt4 not found, so disabling the mandelbrot and opengl demos
+-- Could NOT find CHOLMOD (missing: CHOLMOD_INCLUDES CHOLMOD_LIBRARIES) 
+-- Could NOT find UMFPACK (missing: UMFPACK_INCLUDES UMFPACK_LIBRARIES) 
+-- Could NOT find KLU (missing: KLU_INCLUDES KLU_LIBRARIES) 
+-- Could NOT find SuperLU (missing: SUPERLU_INCLUDES SUPERLU_LIBRARIES SUPERLU_VERSION_OK) (Required is at least version "4.0")
+-- A version of Pastix has been found but pastix_nompi.h does not exist in the include directory. Because Eigen tests require a version without MPI, we disable the Pastix backend.
+-- ************************************************************
+-- ***    Eigen's unit tests configuration summary          ***
+-- ************************************************************
+-- 
+-- Build type:        Debug
+-- Build site:        ubuntushash
+-- Build string:      generic-g++-13.2.0-32bit
+-- Enabled backends:  
+-- Disabled backends: CHOLMOD,  UMFPACK,  KLU,  SuperLU,  PaStiX,  METIS,  SPQR,  Qt4 support,  Boost.Multiprecision,  GoogleHash,  Adolc,  MPFR C++,  fftw,  OpenGL, 
+-- Default order:     Column-major
+-- Maximal matrix/vector size: 320
+-- SSE2:              Using architecture defaults
+-- SSE3:              Using architecture defaults
+-- SSSE3:             Using architecture defaults
+-- SSE4.1:            Using architecture defaults
+-- SSE4.2:            Using architecture defaults
+-- AVX:               Using architecture defaults
+-- AVX2:              Using architecture defaults
+-- FMA:               Using architecture defaults
+-- AVX512:            Using architecture defaults
+-- AVX512DQ:          Using architecture defaults
+-- Altivec:           Using architecture defaults
+-- VSX:               Using architecture defaults
+-- MIPS MSA:          Using architecture defaults
+-- ARM NEON:          Using architecture defaults
+-- ARMv8 NEON:        Using architecture defaults
+-- S390X ZVECTOR:     Using architecture defaults
+-- C++11:             OFF
+-- SYCL:              OFF
+-- CUDA:              OFF
+-- HIP:               OFF
+-- 
+CXX:               /home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-g++
+ CXX_VERSION:       xtensa-esp-elf-g++ (crosstool-NG esp-13.2.0_20230928) 13.2.0
+ CXX_FLAGS:         -mlongcalls -Wno-frame-address  -std=c++03 -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -ansi
+ Sparse lib flags:   
+
+-- ************************************************************
+-- 
+-- Configured Eigen 3.4.0
+-- 
+-- Available targets (use: cmake --build . --target TARGET):
+-- ---------+--------------------------------------------------------------
+-- Target   |   Description
+-- ---------+--------------------------------------------------------------
+-- install  | Install Eigen. Headers will be installed to:
+--          |     <CMAKE_INSTALL_PREFIX>/<INCLUDE_INSTALL_DIR>
+--          |   Using the following values:
+--          |     CMAKE_INSTALL_PREFIX: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install
+--          |     INCLUDE_INSTALL_DIR:  include/eigen3
+--          |   Change the install location of Eigen headers using:
+--          |     cmake . -DCMAKE_INSTALL_PREFIX=yourprefix
+--          |   Or:
+--          |     cmake . -DINCLUDE_INSTALL_DIR=yourdir
+-- doc      | Generate the API documentation, requires Doxygen & LaTeX
+-- check    | Build and run the unit-tests. Read this page:
+--          |   http://eigen.tuxfamily.org/index.php?title=Tests
+-- blas     | Build BLAS library (not the same thing as Eigen)
+-- uninstall| Remove files installed by the install target
+-- ---------+--------------------------------------------------------------
+-- 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build
+[6/24] Performing build step for 'eigen_proj'
+ninja: no work to do.
+[8/24] Performing install step for 'eigen_proj'
+[0/1] Install the project...
+-- Install configuration: "Debug"
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/signature_of_eigen3_matrix_library
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/share/pkgconfig/eigen3.pc
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/PardisoSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/StdVector
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/QR
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/OrderingMethods
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Core
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SparseCore
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/KLUSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SPQRSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SuperLUSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/IterativeLinearSolvers
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/UmfPackSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/CholmodSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Eigenvalues
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SparseLU
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Dense
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/PardisoSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/PardisoSupport/PardisoSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR/HouseholderQR_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/QR/HouseholderQR.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/OrderingMethods
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/OrderingMethods/Ordering.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/OrderingMethods/Amd.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/NoAlias.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/DiagonalMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Replicate.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Stride.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ConditionEstimator.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/StableNorm.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CoreIterators.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/SolverBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/DiagonalProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/DenseBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/Memory.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/Constants.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/MKL_support.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/Macros.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/StaticAssert.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/NonMPL2.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/BlasUtil.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/IntegralConstant.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/XprHelper.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/Meta.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Product.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ArithmeticSequence.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Map.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/NumTraits.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Dot.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ReturnByValue.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/GlobalFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ArrayBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/SolveTriangular.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/MapBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/PermutationMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Swap.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/GeneralProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/IndexedView.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/BandMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/GenericPacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Transpose.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/DenseStorage.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Diagonal.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Redux.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors/StlFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ProductEvaluators.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ForceAlignedAccess.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/NestByValue.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/StlIterators.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Matrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/AssignEvaluator.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CoreEvaluators.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Reverse.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CommaInitializer.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/VectorBlock.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/VectorwiseOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/CUDA
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/CUDA/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/Settings.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/Half.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SYCL
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SYCL/InteropHeaders.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SYCL/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SYCL/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SYCL/SyclMemoryModel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SYCL/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/GPU
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/GPU/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/GPU/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/GPU/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SVE
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SVE/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SVE/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SVE/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/MSA
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/MSA/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/MSA/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/MSA/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX512
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX512/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX512/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX512/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AVX512/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/NEON
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/ZVector
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/ZVector/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/ZVector/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/ZVector/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SSE
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SSE/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SSE/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SSE/TypeCasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/SSE/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/HIP
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/HIP/hcc
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/HIP/hcc/math_constants.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixProductCommon.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec/MatrixProductMMA.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec/PacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/arch/AltiVec/Complex.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/EigenBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Select.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Transpositions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Inverse.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Block.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/IO.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/PlainObjectBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Solve.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Visitor.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Reshaped.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Array.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Assign.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Assign_MKL.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/MatrixBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CwiseUnaryView.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/ArrayWrapper.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/SelfAdjointView.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Ref.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Fuzzy.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/Parallelizer.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/Random.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/BooleanRedux.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Core/TriangularMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseMap.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseAssign.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseRedux.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseRef.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/AmbiVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseView.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseBlock.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseDot.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseUtil.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/KLUSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/KLUSupport/KLUSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SPQRSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SPQRSupport/SuiteSparseQRSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/BlockMethods.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/ReshapedMethods.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SuperLUSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SuperLUSupport/SuperLUSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/UmfPackSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/UmfPackSupport/UmfPackSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/CholmodSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/CholmodSupport/CholmodSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/RealSchur_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/lapack.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/lapacke.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/Image.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/lapacke_mangling.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/RealSvd2x2.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/Kernel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/misc/blas.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SVD
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SVD/BDCSVD.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SVD/JacobiSVD_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SVD/JacobiSVD.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SVD/SVDBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Jacobi
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Jacobi/Jacobi.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/StlSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/StlSupport/StdVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/StlSupport/StdDeque.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/StlSupport/StdList.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/StlSupport/details.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Cholesky
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Cholesky/LLT.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Cholesky/LLT_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Cholesky/LDLT.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/PaStiXSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/PaStiXSupport/PaStiXSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCholesky
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/MetisSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/MetisSupport/MetisSupport.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/FullPivLU.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/Determinant.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/PartialPivLU.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/InverseImpl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/PartialPivLU_LAPACKE.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/arch
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/LU/arch/InverseSize4.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Householder
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Householder/Householder.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Householder/HouseholderSequence.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Householder/BlockHouseholder.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseQR
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/SparseQR/SparseQR.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Translation.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Rotation2D.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/OrthoMethods.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/EulerAngles.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/RotationBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Scaling.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Homogeneous.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Transform.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/arch
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Hyperplane.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Umeyama.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/AngleAxis.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/Quaternion.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/src/Geometry/AlignedBox.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SVD
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Jacobi
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Cholesky
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/PaStiXSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SparseCholesky
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Eigen
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/MetisSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/LU
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Sparse
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/StdDeque
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Householder
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/StdList
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/SparseQR
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/QtAlignedMalloc
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/Eigen/Geometry
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/share/eigen3/cmake/Eigen3Targets.cmake
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/share/eigen3/cmake/UseEigen3.cmake
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/share/eigen3/cmake/Eigen3Config.cmake
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/share/eigen3/cmake/Eigen3ConfigVersion.cmake
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/AdolcForward
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/AlignedVector3
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/ArpackSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/AutoDiff
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/BVH
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/EulerAngles
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/FFT
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/IterativeSolvers
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/KroneckerProduct
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/LevenbergMarquardt
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/MatrixFunctions
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/MoreVectorization
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/MPRealSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/NonLinearOptimization
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/NumericalDiff
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/OpenGLSupport
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/Polynomials
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/Skyline
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/SparseExtra
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/SpecialFunctions
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/Splines
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/AutoDiff
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/AutoDiff/AutoDiffVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/AutoDiff/AutoDiffJacobian.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/AutoDiff/AutoDiffScalar.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MoreVectorization
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MoreVectorization/MathFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/EulerAngles
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/EulerAngles/EulerAngles.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/EulerAngles/EulerSystem.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline/SkylineProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline/SkylineStorage.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline/SkylineUtil.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline/SkylineMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline/SkylineInplaceLU.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Skyline/SkylineMatrixBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/BVH
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/BVH/BVAlgorithms.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/BVH/KdBVH.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Eigenvalues
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Eigenvalues/ArpackSelfAdjointEigenSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/LevenbergMarquardt
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMpar.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMqrsolv.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMonestep.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LevenbergMarquardt.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/LevenbergMarquardt/LMcovar.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/KroneckerProduct
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/KroneckerProduct/KroneckerTensorProduct.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NumericalDiff
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NumericalDiff/NumericalDiff.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/IncompleteLU.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/DGMRES.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/Scaling.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/MINRES.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/GMRES.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/IterationController.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/IterativeSolvers/IDRS.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixFunction.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixExponential.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixSquareRoot.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions/StemFunction.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixLogarithm.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/MatrixFunctions/MatrixPower.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/BesselFunctionsArrayAPI.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsBFloat16.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsArrayAPI.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsHalf.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/BesselFunctionsHalf.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/BesselFunctionsBFloat16.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/AVX
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/AVX/BesselFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/AVX/SpecialFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/GPU
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/GPU/SpecialFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/AVX512
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/AVX512/BesselFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/AVX512/SpecialFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/NEON
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/NEON/BesselFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/arch/NEON/SpecialFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/BesselFunctionsImpl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/BesselFunctionsPacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsImpl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/BesselFunctionsFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/HipVectorCompatibility.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SpecialFunctions/SpecialFunctionsPacketMath.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/FFT
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/FFT/ei_kissfft_impl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/FFT/ei_fftw_impl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra/MarketIO.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra/BlockSparseMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra/RandomSetter.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra/BlockOfDynamicSparseMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra/DynamicSparseMatrix.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/SparseExtra/MatrixMarketIterator.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Splines
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Splines/Spline.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Splines/SplineFitting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Splines/SplineFwd.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/lmpar.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/rwupdt.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/qrsolv.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/fdjac1.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/LevenbergMarquardt.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/dogleg.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/r1updt.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/chkder.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/r1mpyq.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/HybridNonLinearSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/NonLinearOptimization/covar.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Polynomials
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Polynomials/Companion.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Polynomials/PolynomialUtils.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/src/Polynomials/PolynomialSolver.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/Tensor
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/TensorSymmetry
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/ThreadPool
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/util
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/util/EmulateArray.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/util/CXX11Meta.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/util/CXX11Workarounds.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/util/MaxSizeVector.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorCustomOp.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorBase.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorEvalTo.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDevice.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorBlock.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorInflation.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceDefault.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/Tensor.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorAssign.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorMacros.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorConcatenation.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContractionThreadPool.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContraction.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorTraits.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorGlobalFunctions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorChipping.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorConvolution.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorScanSycl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorReverse.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorReductionGpu.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContractionCuda.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorPadding.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorPatch.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceCuda.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorMorphing.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorStriding.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorConvolutionSycl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorIO.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorForcedEval.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorFFT.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorMeta.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorEvaluator.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorExecutor.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorUInt128.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorCostModel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDimensionList.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDimensions.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorTrace.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorMap.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorConversion.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorImagePatch.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContractionSycl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorIntDiv.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorScan.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorReduction.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorFixedSize.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceThreadPool.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContractionGpu.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorGenerator.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceSycl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorForwardDeclarations.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorBroadcasting.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorLayoutSwap.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorRef.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorExpr.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorGpuHipCudaDefines.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorVolumePatch.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorInitializer.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorArgMax.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorIndexList.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorReductionSycl.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorFunctors.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorReductionCuda.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContractionBlocking.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorDeviceGpu.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorRandom.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorGpuHipCudaUndefines.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorStorage.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorShuffling.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/Tensor/TensorContractionMapper.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/Barrier.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/ThreadEnvironment.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/RunQueue.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/ThreadYield.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/EventCount.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/ThreadPoolInterface.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/NonBlockingThreadPool.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/ThreadLocal.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/ThreadPool/ThreadCancel.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/TensorSymmetry
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/TensorSymmetry/Symmetry.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/TensorSymmetry/util
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/TensorSymmetry/util/TemplateGroupTheory.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/TensorSymmetry/StaticSymmetry.h
+-- Installing: /home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include/eigen3/unsupported/Eigen/CXX11/src/TensorSymmetry/DynamicSymmetry.h
+[9/24] Completed 'eigen_proj'
+[10/24] Building C object esp-idf/espressif__eigen/CMakeFiles/__idf_espressif__eigen.dir/dummy.c.obj
+[11/24] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/dshot/dshot_esc_encoder.c.obj
+[12/24] Linking C static library esp-idf/espressif__eigen/libespressif__eigen.a
+[13/24] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/sensor/common.c.obj
+[14/24] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pwm.c.obj
+/home/shashwat/drone_flight_control/main/pwm.c:23:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   23 | static const char *TAG = "PWM";
+      |                    ^~~
+[15/24] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esc_controller.c.obj
+[16/24] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj 
+/home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v5.3-dev-1288-g5524b692ee-dirty\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/home/shashwat/drone_flight_control/build/config -I/home/shashwat/drone_flight_control/main -I/home/shashwat/drone_flight_control/main/sensor -I/home/shashwat/drone_flight_control/main/dshot -I/home/shashwat/esp/esp-idf/components/newlib/platform_include -I/home/shashwat/esp/esp-idf/components/freertos/config/include -I/home/shashwat/esp/esp-idf/components/freertos/config/include/freertos -I/home/shashwat/esp/esp-idf/components/freertos/config/xtensa/include -I/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/shashwat/esp/esp-idf/components/freertos/esp_additions/include -I/home/shashwat/esp/esp-idf/components/esp_hw_support/include -I/home/shashwat/esp/esp-idf/components/esp_hw_support/include/soc -I/home/shashwat/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/home/shashwat/esp/esp-idf/components/esp_hw_support/port/esp32/. -I/home/shashwat/esp/esp-idf/components/heap/include -I/home/shashwat/esp/esp-idf/components/log/include -I/home/shashwat/esp/esp-idf/components/soc/include -I/home/shashwat/esp/esp-idf/components/soc/esp32 -I/home/shashwat/esp/esp-idf/components/soc/esp32/include -I/home/shashwat/esp/esp-idf/components/hal/platform_port/include -I/home/shashwat/esp/esp-idf/components/hal/esp32/include -I/home/shashwat/esp/esp-idf/components/hal/include -I/home/shashwat/esp/esp-idf/components/esp_rom/include -I/home/shashwat/esp/esp-idf/components/esp_rom/include/esp32 -I/home/shashwat/esp/esp-idf/components/esp_rom/esp32 -I/home/shashwat/esp/esp-idf/components/esp_common/include -I/home/shashwat/esp/esp-idf/components/esp_system/include -I/home/shashwat/esp/esp-idf/components/esp_system/port/soc -I/home/shashwat/esp/esp-idf/components/esp_system/port/include/private -I/home/shashwat/esp/esp-idf/components/xtensa/esp32/include -I/home/shashwat/esp/esp-idf/components/xtensa/include -I/home/shashwat/esp/esp-idf/components/xtensa/deprecated_include -I/home/shashwat/esp/esp-idf/components/lwip/include -I/home/shashwat/esp/esp-idf/components/lwip/include/apps -I/home/shashwat/esp/esp-idf/components/lwip/include/apps/sntp -I/home/shashwat/esp/esp-idf/components/lwip/lwip/src/include -I/home/shashwat/esp/esp-idf/components/lwip/port/include -I/home/shashwat/esp/esp-idf/components/lwip/port/freertos/include -I/home/shashwat/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/shashwat/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/shashwat/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/shashwat/drone_flight_control/build/esp-idf/espressif__eigen/eigen-build/install/include -I/home/shashwat/drone_flight_control/managed_components/espressif__mpu6050/include -I/home/shashwat/esp/esp-idf/components/driver/deprecated -I/home/shashwat/esp/esp-idf/components/driver/i2c/include -I/home/shashwat/esp/esp-idf/components/driver/touch_sensor/include -I/home/shashwat/esp/esp-idf/components/driver/twai/include -I/home/shashwat/esp/esp-idf/components/driver/usb_serial_jtag/include -I/home/shashwat/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_pm/include -I/home/shashwat/esp/esp-idf/components/esp_ringbuf/include -I/home/shashwat/esp/esp-idf/components/esp_driver_gpio/include -I/home/shashwat/esp/esp-idf/components/esp_driver_pcnt/include -I/home/shashwat/esp/esp-idf/components/esp_driver_gptimer/include -I/home/shashwat/esp/esp-idf/components/esp_driver_spi/include -I/home/shashwat/esp/esp-idf/components/esp_driver_mcpwm/include -I/home/shashwat/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/home/shashwat/esp/esp-idf/components/esp_driver_i2s/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdmmc/include -I/home/shashwat/esp/esp-idf/components/sdmmc/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdspi/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdio/include -I/home/shashwat/esp/esp-idf/components/esp_driver_dac/include -I/home/shashwat/esp/esp-idf/components/esp_driver_rmt/include -I/home/shashwat/esp/esp-idf/components/esp_driver_tsens/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdm/include -I/home/shashwat/esp/esp-idf/components/esp_driver_i2c/include -I/home/shashwat/esp/esp-idf/components/esp_driver_uart/include -I/home/shashwat/esp/esp-idf/components/vfs/include -I/home/shashwat/esp/esp-idf/components/esp_driver_ledc/include -I/home/shashwat/esp/esp-idf/components/esp_driver_parlio/include -I/home/shashwat/esp/esp-idf/components/mbedtls/port/include -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/include -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/library -I/home/shashwat/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -I/home/shashwat/esp/esp-idf/components/efuse/include -I/home/shashwat/esp/esp-idf/components/efuse/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_bootloader_format/include -I/home/shashwat/esp/esp-idf/components/esp_app_format/include -I/home/shashwat/esp/esp-idf/components/bootloader_support/include -I/home/shashwat/esp/esp-idf/components/bootloader_support/bootloader_flash/include -I/home/shashwat/esp/esp-idf/components/esp_partition/include -I/home/shashwat/esp/esp-idf/components/app_update/include -I/home/shashwat/esp/esp-idf/components/esp_mm/include -I/home/shashwat/esp/esp-idf/components/spi_flash/include -I/home/shashwat/esp/esp-idf/components/pthread/include -I/home/shashwat/esp/esp-idf/components/esp_timer/include -I/home/shashwat/esp/esp-idf/components/app_trace/include -I/home/shashwat/esp/esp-idf/components/esp_event/include -I/home/shashwat/esp/esp-idf/components/nvs_flash/include -I/home/shashwat/esp/esp-idf/components/esp_phy/include -I/home/shashwat/esp/esp-idf/components/esp_phy/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_netif/include -I/home/shashwat/esp/esp-idf/components/wpa_supplicant/include -I/home/shashwat/esp/esp-idf/components/wpa_supplicant/port/include -I/home/shashwat/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/home/shashwat/esp/esp-idf/components/esp_coex/include -I/home/shashwat/esp/esp-idf/components/esp_wifi/include -I/home/shashwat/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/shashwat/esp/esp-idf/components/unity/include -I/home/shashwat/esp/esp-idf/components/unity/unity/src -I/home/shashwat/esp/esp-idf/components/cmock/CMock/src -I/home/shashwat/esp/esp-idf/components/console -I/home/shashwat/esp/esp-idf/components/http_parser -I/home/shashwat/esp/esp-idf/components/esp-tls -I/home/shashwat/esp/esp-idf/components/esp-tls/esp-tls-crypto -I/home/shashwat/esp/esp-idf/components/esp_adc/include -I/home/shashwat/esp/esp-idf/components/esp_adc/interface -I/home/shashwat/esp/esp-idf/components/esp_adc/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_adc/deprecated/include -I/home/shashwat/esp/esp-idf/components/esp_eth/include -I/home/shashwat/esp/esp-idf/components/esp_gdbstub/include -I/home/shashwat/esp/esp-idf/components/esp_hid/include -I/home/shashwat/esp/esp-idf/components/tcp_transport/include -I/home/shashwat/esp/esp-idf/components/esp_http_client/include -I/home/shashwat/esp/esp-idf/components/esp_http_server/include -I/home/shashwat/esp/esp-idf/components/esp_https_ota/include -I/home/shashwat/esp/esp-idf/components/esp_https_server/include -I/home/shashwat/esp/esp-idf/components/esp_psram/include -I/home/shashwat/esp/esp-idf/components/esp_lcd/include -I/home/shashwat/esp/esp-idf/components/esp_lcd/interface -I/home/shashwat/esp/esp-idf/components/protobuf-c/protobuf-c -I/home/shashwat/esp/esp-idf/components/protocomm/include/common -I/home/shashwat/esp/esp-idf/components/protocomm/include/security -I/home/shashwat/esp/esp-idf/components/protocomm/include/transports -I/home/shashwat/esp/esp-idf/components/protocomm/include/crypto/srp6a -I/home/shashwat/esp/esp-idf/components/esp_local_ctrl/include -I/home/shashwat/esp/esp-idf/components/espcoredump/include -I/home/shashwat/esp/esp-idf/components/espcoredump/include/port/xtensa -I/home/shashwat/esp/esp-idf/components/wear_levelling/include -I/home/shashwat/esp/esp-idf/components/fatfs/diskio -I/home/shashwat/esp/esp-idf/components/fatfs/src -I/home/shashwat/esp/esp-idf/components/fatfs/vfs -I/home/shashwat/esp/esp-idf/components/idf_test/include -I/home/shashwat/esp/esp-idf/components/idf_test/include/esp32 -I/home/shashwat/esp/esp-idf/components/ieee802154/include -I/home/shashwat/esp/esp-idf/components/json/cJSON -I/home/shashwat/esp/esp-idf/components/mqtt/esp-mqtt/include -I/home/shashwat/esp/esp-idf/components/nvs_sec_provider/include -I/home/shashwat/esp/esp-idf/components/perfmon/include -I/home/shashwat/esp/esp-idf/components/spiffs/include -I/home/shashwat/esp/esp-idf/components/wifi_provisioning/include -I/home/shashwat/drone_flight_control/components/I2Cdev -I/home/shashwat/drone_flight_control/components/MPU6050 -I/home/shashwat/drone_flight_control/components/MadgwickAHRS -I/home/shashwat/drone_flight_control/components/micro_ros_espidf_component/network_interfaces -I/home/shashwat/drone_flight_control/components/include -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/action_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/actionlib_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/builtin_interfaces -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/composition_interfaces -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/diagnostic_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/example_interfaces -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/geometry_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/include -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/lifecycle_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/micro_ros_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/micro_ros_utilities -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/nav_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/phasespace_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rcl -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rcl_action -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rcl_interfaces -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rcl_lifecycle -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rcl_logging_interface -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rclc -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rclc_lifecycle -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rclc_parameter -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rcutils -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rmw -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rmw_microros -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rmw_microxrcedds_c -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosgraph_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosidl_dynamic_typesupport -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosidl_runtime_c -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosidl_typesupport_c -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosidl_typesupport_interface -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosidl_typesupport_introspection_c -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/rosidl_typesupport_microxrcedds_c -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/sensor_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/service_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/shape_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/statistics_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/std_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/std_srvs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/stereo_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/test_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/tracetools -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/trajectory_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/type_description_interfaces -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/ucdr -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/unique_identifier_msgs -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/uxr -isystem /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include/visualization_msgs -mlongcalls -Wno-frame-address  -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=/home/shashwat/drone_flight_control=. -fmacro-prefix-map=/home/shashwat/esp/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj -MF esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj -c /home/shashwat/drone_flight_control/main/mocap.c
+/home/shashwat/drone_flight_control/main/mocap.c:12:10: fatal error: Eigen/Geometry: No such file or directory
+   12 | #include <Eigen/Geometry>
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+[17/24] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/drone_flight_control.c.obj
+[18/24] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/sensor/mpu_filter.cpp.obj
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp: In function 'void mpu6050(void*)':
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp:174:31: warning: unused variable '_roll' [-Wunused-variable]
+  174 |                         float _roll = roll-initial_roll;
+      |                               ^~~~~
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp:175:31: warning: unused variable '_pitch' [-Wunused-variable]
+  175 |                         float _pitch = pitch-initial_pitch;
+      |                               ^~~~~~
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp:176:31: warning: unused variable '_yaw' [-Wunused-variable]
+  176 |                         float _yaw = yaw-initial_yaw;
+      |                               ^~~~
+ninja: build stopped: subcommand failed.

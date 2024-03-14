@@ -1,0 +1,26 @@
+[0;33m--- esp-idf-monitor 1.3.4 on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+Exception in thread Thread-2 (_run_outer):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/stoppable_thread.py", line 47, in _run_outer
+    self.run()
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/serial_reader.py", line 49, in run
+    self.open_serial(reset=not self.gdb_exit and self.reset)
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/serial_reader.py", line 92, in open_serial
+    self.reset_strategy.hard()
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/reset.py", line 115, in hard
+    self._setRTS(HIGH)  # EN=HIGH, chip out of reset
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/reset.py", line 81, in _setRTS
+    self.serial_instance.setDTR(self.serial_instance.dtr)  # usbser.sys workaround
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/serial/serialutil.py", line 603, in setDTR
+    self.dtr = value
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/serial/serialutil.py", line 473, in dtr
+    self._update_dtr_state()
+  File "/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/lib/python3.10/site-packages/serial/serialposix.py", line 715, in _update_dtr_state
+    fcntl.ioctl(self.fd, TIOCMBIC, TIOCM_DTR_str)
+BrokenPipeError: [Errno 32] Broken pipe
+[0m

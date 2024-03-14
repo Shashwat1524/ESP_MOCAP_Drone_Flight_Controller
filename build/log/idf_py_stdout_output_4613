@@ -1,0 +1,1849 @@
+ cpu_start: App cpu up[0m
+D (224) clk: RTC_SLOW_CLK calibration value: 3104166[0m
+D (235) cpu_start: calling init function: 0x400d1�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ca18h ( 51736) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001ca40 vaddr=3ffb0000 size=0236ch (  9068) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001edb4 vaddr=40080000 size=01264h (  4708) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19f74h (106356) map[0m
+[0;32mI (173) esp_image: segment 4: paddr=00039f9c vaddr=40081264 size=0da60h ( 55904) load[0m
+[0;32mI (203) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (214) cpu_start: Multicore app[0m
+D (214) cpu_start: Pro cpu up[0m
+D (215) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (224) clk: RTC_SLOW_CLK calibration value: 3103552[0m
+D (235) cpu_start: calling init function: 0x400d1548 on core: 0[0m
+[0;32mI (236) cpu_start: Pro cpu start user code[0m
+[0;32mI (236) cpu_start: cpu freq: 160000000 Hz[0m
+D (241) cpu_start: calling init function: 0x400d158c on core: 0[0m
+[0;32mI (247) cpu_start: Application information:[0m
+[0;32mI (252) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (258) cpu_start: App version:      1[0m
+[0;32mI (263) cpu_start: Compile time:     Jan 27 2024 11:38:47[0m
+[0;32mI (269) cpu_start: ELF file SHA256:  de237dadb...[0m
+[0;32mI (274) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (281) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (286) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (291) cpu_start: Chip rev:         v3.0[0m
+D (296) cpu_start: calling init function: 0x400d16d4 on core: 0[0m
+D (302) memory_layout: Checking 9 reserved memory ranges:[0m
+D (307) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (313) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (320) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb2d20[0m
+D (326) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (333) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (339) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (346) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (352) memory_layout: Reserved memory range 0x40080000 - 0x4008ecc4[0m
+D (358) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (365) memory_layout: Building list of available memory regions:[0m
+D (371) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (378) memory_layout: Available memory region 0x3ffb2d20 - 0x3ffb8000[0m
+D (384) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (391) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (397) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (404) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (411) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (417) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (424) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (430) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (437) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (444) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (450) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (457) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (463) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (470) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (476) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (483) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (490) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (496) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (503) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (509) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (516) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (523) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (529) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (536) memory_layout: Available memory region 0x4008ecc4 - 0x40090000[0m
+D (542) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (549) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (556) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (562) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (569) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (575) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (582) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (589) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (595) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (603) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (608) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (614) heap_init: New heap initialised at 0x3ffb2d20[0m
+[0;32mI (619) heap_init: At 3FFB2D20 len 0002D2E0 (180 KiB): DRAM[0m
+[0;32mI (625) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (638) heap_init: New heap initialised at 0x4008ecc4[0m
+[0;32mI (643) heap_init: At 4008ECC4 len 0001133C (68 KiB): IRAM[0m
+D (649) cpu_start: calling init function: 0x400d16e0 on core: 0[0m
+D (655) cpu_start: calling init function: 0x400d3d64 on core: 0[0m
+D (661) cpu_start: calling init function: 0x400e85cc on core: 0[0m
+D (667) cpu_start: calling init function: 0x400d16ec on core: 0[0m
+D (673) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (678) cpu_start: calling init function: 0x400d16f8 on core: 0[0m
+D (684) cpu_start: calling init function: 0x400d5494 on core: 0[0m
+D (690) cpu_start: calling init function: 0x400d6680 on core: 0[0m
+D (696) cpu_start: calling init function: 0x400d3dd0 on core: 0[0m
+D (702) cpu_start: calling init function: 0x400d1704 on core: 0[0m
+D (708) cpu_start: calling init function: 0x400d1710 on core: 0[0m
+D (714) spi_flash: trying chip: issi[0m
+D (718) spi_flash: trying chip: gd[0m
+D (721) spi_flash: trying chip: mxic[0m
+D (725) spi_flash: trying chip: winbond[0m
+D (729) spi_flash: trying chip: generic[0m
+[0;32mI (733) spi_flash: detected chip: generic[0m
+[0;32mI (737) spi_flash: flash io: dio[0m
+[0;33mW (741) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (754) cpu_start: calling init function: 0x400e85d4 on core: 0[0m
+D (760) cpu_start: calling init function: 0x400dd2f8[0m
+[0;33mW (766) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (776) cpu_start: calling init function: 0x400d74a0[0m
+D (781) cpu_start: calling init function: 0x4008613c[0m
+D (786) cpu_start: calling init function: 0x400d27a4[0m
+D (791) cpu_start: calling init function: 0x400d1ca8[0m
+D (796) cpu_start: calling init function: 0x400d13b0[0m
+D (801) cpu_start: calling init function: 0x400d42c4 on core: 0[0m
+D (807) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (812) cpu_start: calling init function: 0x400d1738 on core: 0[0m
+D (819) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (824) app_start: Starting scheduler on CPU0[0m
+[0;32D (828) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (828) app_start: Starting scheduler on CPU1[0m
+mI (828) main_task: Started on CPU0[0m
+D (848) heap_init: New heap initialised at 0x3ffe0440[0m
+D (848) heap_init: New heap initialised at 0x3ffe4350[0m
+D (848) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (848) main_task: Calling app_main()[0m
+D (858) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (868) IMU: devid=0x34[0m
+[0;32mI (868) IMU: getRate()=0[0m
+[0;32mI (868) IMU: getExternalFrameSync()=0[0m
+[0;32mI (868) IMU: getDLPFMode()=6[0m
+[0;32mI (878) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (878) rmt: new group(0) at 0x3ffbc848, occupy=ffffff00[0m
+[0;D (888) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+32mI (888) IMU: getFullScaleAccelRange()=0[0m
+D (898) rmt: group clock resolution:80000000[0m
+[0;32mI (898) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (898) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (888) main_task: Returned from app_main()[0m
+D (918) rmt: new tx channel(0,0) at 0x3ffbc4c8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (938) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (938) rmt: group clock resolution:80000000[0m
+[0;32mI (948) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (958) rmt: new tx channel(0,1) at 0x3ffb40d4, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (968) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (978) rmt: group clock resolution:80000000[0m
+[0;32mI (978) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (988) rmt: new tx channel(0,2) at 0x3ffb42c8, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1008) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (1008) rmt: group clock resolution:80000000[0m
+[0;32mI (1008) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1018) rmt: new tx channel(0,3) at 0x3ffb45e0, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1038) ESC_controller: Install Dshot ESC encoder[0m
+D (1038) rmt: new bytes encoder @0x3ffb4928[0m
+D (1048) rmt: new copy encoder @0x3ffb494c[0m
+D (1048) rmt: new bytes encoder @0x3ffb49ac[0m
+D (1058) rmt: new copy encoder @0x3ffb49d0[0m
+D (1058) rmt: new bytes encoder @0x3ffb4a04[0m
+D (1068) rmt: new copy encoder @0x3ffb4ab8[0m
+D (1068) rmt: new bytes encoder @0x3ffb4a48[0m
+D (1068) rmt: new copy encoder @0x3ffb4a6c[0m
+[0;32mI (1078) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1078) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (11088) ESC_controller: ESC Values: 771.70, 0.00, 790.00, 0.00[0m
+[0;32mI (11088) ESC_controller: ESC Values: 773.78, 0.00, 790.68, 0.00[0m
+[0;32mI (11088) ESC_controller: ESC Values: 776.42, 0.00, 792.99, 0.00[0m
+[0;32mI (11088) ESC_controller: ESC Values: 775.98, 0.00, 793.09, 0.00[0m
+[0;32mI (11098) ESC_controller: ESC Values: 772.95, 0.00, 791.39, 0.00[0m
+[0;32mI (11108) ESC_controller: ESC Values: 776.05, 0.00, 793.85, 0.00[0m
+[0;32mI (11108) ESC_controller: ESC Values: 772.80, 0.00, 790.20, 0.00[0m
+[0;32mI (11118) ESC_controller: ESC Values: 776.79, 0.00, 793.65, 0.00[0m
+[0;32mI (11128) ESC_controller: ESC Values: 774.96, 0.00, 792.83, 0.00[0m
+[0;32mI (11138) ESC_controller: ESC Values: 774.66, 0.00, 792.48, 0.00[0m
+[0;32mI (11138) ESC_controller: ESC Values: 775.71, 0.00, 792.25, 0.00[0m
+[0;32mI (11148) ESC_controller: ESC Values: 778.23, 0.00, 795.72, 0.00[0m
+[0;32mI (11228) ESC_controller: ESC Values: 0.00, 919.79, 0.00, 756.23[0m
+[0;32mI (11348) ESC_controller: ESC Values: 0.00, 905.44, 0.00, 744.35[0m
+[0;32mI (11468) ESC_controller: ESC Values: 0.00, 878.66, 0.00, 738.68[0m
+[0;32mI (11588) ESC_controller: ESC Values: 0.00, 935.48, 0.00, 858.68[0m
+[0;32mI (11708) ESC_controller: ESC Values: 0.00, 1313.59, 0.00, 1214.67[0m
+[0;32mI (11828) ESC_controller: ESC Values: 0.00, 1601.59, 0.00, 1398.41[0m
+[0;32mI (11948) ESC_controller: ESC Values: 0.00, 1626.39, 0.00, 1367.87[0m
+[0;32mI (12068) ESC_controller: ESC Values: 0.00, 1476.88, 0.00, 1297.01[0m
+[0;32mI (12188) ESC_controller: ESC Values: 0.00, 1346.87, 0.00, 1241.93[0m
+[0;32mI (12308) ESC_controller: ESC Values: 0.00, 1405.43, 0.00, 1297.69[0m
+[0;32mI (12428) ESC_controller: ESC Values: 0.00, 1505.78, 0.00, 1352.40[0m
+[0;32mI (12548) ESC_controller: ESC Values: 0.00, 1498.56, 0.00, 1334.67[0m
+[0;32mI (12668) ESC_controller: ESC Values: 0.00, 1446.59, 0.00, 1312.96[0m
+[0;32mI (12788) ESC_controller: ESC Values: 0.00, 1426.14, 0.00, 1303.30[0m
+[0;32mI (12908) ESC_controller: ESC Values: 0.00, 1422.35, 0.00, 1294.99[0m
+[0;32mI (13028) ESC_controller: ESC Values: 0.00, 1405.44, 0.00, 1281.01[0m
+[0;32mI (13148) ESC_controller: ESC Values: 0.00, 1385.75, 0.00, 1266.81[0m
+[0;32mI (13268) ESC_controller: ESC Values: 0.00, 1367.87, 0.00, 1253.58[0m
+[0;32mI (13388) ESC_controller: ESC Values: 0.00, 1348.76, 0.00, 1238.88[0m
+[0;32mI (13508) ESC_controller: ESC Values: 0.00, 1328.99, 0.00, 1223.64[0m
+[0;32mI (13628) ESC_controller: ESC Values: 0.00, 1310.37, 0.00, 1209.55[0m
+[0;32mI (13748) ESC_controller: ESC Values: 0.00, 1291.14, 0.00, 1195.10[0m
+[0;32mI (13868) ESC_controller: ESC Values: 0.00, 1271.70, 0.00, 1180.29[0m
+[0;32mI (13988) ESC_controller: ESC Values: 0.00, 1252.51, 0.00, 1165.49[0m
+[0;32mI (14108) ESC_controller: ESC Values: 0.00, 1232.22, 0.00, 1150.26[0m
+[0;32mI (14228) ESC_controller: ESC Values: 0.00, 1212.87, 0.00, 1135.80[0m
+[0;32mI (14348) ESC_controller: ESC Values: 0.00, 1191.83, 0.00, 1120.41[0m
+[0;32mI (14468) ESC_controller: ESC Values: 0.00, 1171.25, 0.00, 1104.70[0m
+[0;32mI (14588) ESC_controller: ESC Values: 0.00, 1153.98, 0.00, 1091.97[0m
+[0;32mI (14708) ESC_controller: ESC Values: 0.00, 1131.74, 0.00, 1075.93[0m
+[0;32mI (14828) ESC_controller: ESC Values: 0.00, 1115.55, 0.00, 1065.43[0m
+[0;32mI (14948) ESC_controller: ESC Values: 0.00, 1098.00, 0.00, 1055.63[0m
+[0;32mI (15068) ESC_controller: ESC Values: 0.00, 1078.58, 0.00, 1043.75[0m
+[0;32mI (15188) ESC_controller: ESC Values: 0.00, 1070.62, 0.00, 1043.58[0m
+[0;32mI (15308) ESC_controller: ESC Values: 0.00, 1050.65, 0.00, 1025.75[0m
+[0;32mI (15428) ESC_controller: ESC Values: 0.00, 1026.80, 0.00, 1007.90[0m
+[0;32mI (15548) ESC_controller: ESC Values: 0.00, 1006.25, 0.00, 991.20[0m
+[0;32mI (15668) ESC_controller: ESC Values: 0.00, 984.74, 0.00, 973.60[0m
+[0;32mI (15788) ESC_controller: ESC Values: 0.00, 961.27, 0.00, 956.40[0m
+[0;32mI (15908) ESC_controller: ESC Values: 0.00, 941.51, 0.00, 940.15[0m
+[0;32mI (16028) ESC_controller: ESC Values: 0.00, 918.91, 0.00, 922.74[0m
+[0;32mI (16148) ESC_controller: ESC Values: 0.00, 895.84, 0.00, 905.24[0m
+[0;32mI (16268) ESC_controller: ESC Values: 0.00, 872.18, 0.00, 886.94[0m
+[0;32mI (16388) ESC_controller: ESC Values: 0.00, 850.47, 0.00, 870.04[0m
+[0;32mI (16508) ESC_controller: ESC Values: 0.00, 826.94, 0.00, 852.02[0m
+[0;32mI (16628) ESC_controller: ESC Values: 0.00, 805.48, 0.00, 835.16[0m
+[0;32mI (16748) ESC_controller: ESC Values: 0.00, 781.04, 0.00, 817.14[0m
+[0;32mI (16868) ESC_controller: ESC Values: 0.00, 756.00, 0.00, 797.59[0m
+[0;32mI (16988) ESC_controller: ESC Values: 0.00, 731.52, 0.00, 778.37[0m
+[0;32mI (17108) ESC_controller: ESC Values: 0.00, 707.44, 0.00, 759.24[0m
+[0;32mI (17228) ESC_controller: ESC Values: 0.00, 689.06, 0.00, 744.36[0m
+[0;32mI (17348) ESC_controller: ESC Values: 0.00, 684.73, 0.00, 740.91[0m
+[0;32mI (17468) ESC_controller: ESC Values: 0.00, 685.20, 0.00, 740.92[0m
+[0;32mI (17588) ESC_controller: ESC Values: 0.00, 686.45, 0.00, 742.53[0m
+[0;32mI (17708) ESC_controller: ESC Values: 0.00, 685.50, 0.00, 741.80[0m
+[0;32mI (17828) ESC_controller: ESC Values: 0.00, 683.12, 0.00, 740.51[0m
+[0;32mI (17948) ESC_controller: ESC Values: 0.00, 687.29, 0.00, 744.58[0m
+[0;32mI (18068) ESC_controller: ESC Values: 0.00, 685.96, 0.00, 744.36[0m
+[0;32mI (18188) ESC_controller: ESC Values: 0.00, 685.73, 0.00, 743.53[0m
+[0;32mI (18308) ESC_controller: ESC Values: 0.00, 686.97, 0.00, 744.08[0m
+[0;32mI (18428) ESC_controller: ESC Values: 0.00, 686.86, 0.00, 743.48[0m
+[0;32mI (18548) ESC_controller: ESC Values: 0.00, 688.63, 0.00, 745.39[0m
+[0;32mI (18668) ESC_controller: ESC Values: 0.00, 687.85, 0.00, 745.74[0m
+[0;32mI (18788) ESC_controller: ESC Values: 0.00, 684.52, 0.00, 742.96[0m
+[0;32mI (18908) ESC_controller: ESC Values: 0.00, 685.72, 0.00, 742.51[0m
+[0;32mI (19028) ESC_controller: ESC Values: 0.00, 687.16, 0.00, 744.28[0m
+[0;32mI (19148) ESC_controller: ESC Values: 0.00, 686.95, 0.00, 745.52[0m
+[0;32mI (19268) ESC_controller: ESC Values: 0.00, 686.50, 0.00, 744.36[0m
+[0;32mI (19388) ESC_controller: ESC Values: 0.00, 686.64, 0.00, 743.80[0m
+[0;32mI (19508) ESC_controller: ESC Values: 0.00, 689.13, 0.00, 745.59[0m
+[0;32mI (19628) ESC_controller: ESC Values: 0.00, 689.46, 0.00, 746.06[0m
+[0;32mI (19748) ESC_controller: ESC Values: 0.00, 688.88, 0.00, 747.24[0m
+[0;32mI (19868) ESC_controller: ESC Values: 0.00, 686.79, 0.00, 745.00[0m
+[0;32mI (19988) ESC_controller: ESC Values: 0.00, 687.67, 0.00, 744.97[0m
+[0;32mI (20108) ESC_controller: ESC Values: 0.00, 686.76, 0.00, 744.56[0m
+[0;32mI (20228) ESC_controller: ESC Values: 0.00, 698.59, 0.00, 746.30[0m
+[0;32mI (20348) ESC_controller: ESC Values: 0.00, 693.19, 0.00, 742.44[0m
+[0;32mI (20468) ESC_controller: ESC Values: 0.00, 710.85, 0.00, 732.50[0m
+[0;32mI (20588) ESC_controller: ESC Values: 0.00, 710.12, 0.00, 660.35[0m
+[0;32mI (20708) ESC_controller: ESC Values: 94.33, 619.80, 0.00, 505.67[0m
+[0;32mI (20828) ESC_controller: ESC Values: 249.93, 491.96, 108.04, 350.07[0m
+[0;32mI (20948) ESC_controller: ESC Values: 427.44, 329.06, 270.94, 172.56[0m
+[0;32mI (21068) ESC_controller: ESC Values: 622.26, 109.12, 490.88, 0.00[0m
+[0;32mI (21188) ESC_controller: ESC Values: 766.37, 0.00, 706.78, 0.00[0m
+[0;32mI (21308) ESC_controller: ESC Values: 772.65, 0.00, 753.90, 0.00[0m
+[0;32mI (21428) ESC_controller: ESC Values: 767.74, 0.00, 748.31, 0.00[0m
+[0;32mI (21548) ESC_controller: ESC Values: 763.41, 0.00, 768.65, 0.00[0m
+[0;32mI (21668) ESC_controller: ESC Values: 751.46, 0.00, 767.46, 0.00[0m
+[0;32mI (21788) ESC_controller: ESC Values: 747.91, 0.00, 769.55, 0.00[0m
+[0;32mI (21908) ESC_controller: ESC Values: 749.48, 0.00, 770.13, 0.00[0m
+[0;32mI (22028) ESC_controller: ESC Values: 755.43, 0.00, 766.75, 0.00[0m
+[0;32mI (22148) ESC_controller: ESC Values: 760.44, 0.00, 766.32, 0.00[0m
+[0;32mI (22268) ESC_controller: ESC Values: 763.57, 0.00, 764.04, 0.00[0m
+[0;32mI (22388) ESC_controller: ESC Values: 760.64, 0.00, 757.32, 0.00[0m
+[0;32mI (22508) ESC_controller: ESC Values: 755.33, 0.00, 766.42, 0.00[0m
+[0;32mI (22628) ESC_controller: ESC Values: 757.23, 0.00, 774.89, 0.00[0m
+[0;32mI (22748) ESC_controller: ESC Values: 754.29, 0.00, 775.49, 0.00[0m
+[0;32mI (22868) ESC_controller: ESC Values: 754.95, 0.00, 772.68, 0.00[0m
+[0;32mI (22988) ESC_controller: ESC Values: 759.16, 0.00, 775.45, 0.00[0m
+[0;32mI (23108) ESC_controller: ESC Values: 753.44, 0.00, 777.47, 0.00[0m
+[0;32mI (23228) ESC_controller: ESC Values: 753.82, 0.00, 774.53, 0.00[0m
+[0;32mI (23348) ESC_controller: ESC Values: 755.40, 0.00, 775.50, 0.00[0m
+[0;32mI (23468) ESC_controller: ESC Values: 756.45, 0.00, 772.34, 0.00[0m
+[0;32mI (23588) ESC_controller: ESC Values: 759.53, 0.00, 776.62, 0.00[0m
+[0;32mI (23708) ESC_controller: ESC Values: 761.42, 0.00, 778.84, 0.00[0m
+[0;32mI (23828) ESC_controller: ESC Values: 757.50, 0.00, 776.46, 0.00[0m
+[0;32mI (23948) ESC_controller: ESC Values: 755.89, 0.00, 776.52, 0.00[0m
+[0;32mI (24068) ESC_controller: ESC Values: 758.10, 0.00, 779.07, 0.00[0m
+[0;32mI (24188) ESC_controller: ESC Values: 760.55, 0.00, 781.55, 0.00[0m
+[0;32mI (24308) ESC_controller: ESC Values: 762.62, 0.00, 781.48, 0.00[0m
+[0;32mI (24428) ESC_controller: ESC Values: 761.02, 0.00, 780.26, 0.00[0m
+[0;32mI (24548) ESC_controller: ESC Values: 757.22, 0.00, 775.66, 0.00[0m
+[0;32mI (24668) ESC_controller: ESC Values: 749.93, 0.00, 768.87, 0.00[0m
+[0;32mI (24788) ESC_controller: ESC Values: 746.48, 0.00, 770.65, 0.00[0m
+[0;32mI (24908) ESC_controller: ESC Values: 737.56, 0.00, 764.49, 0.00[0m
+[0;32mI (25028) ESC_controller: ESC Values: 719.22, 0.00, 748.05, 0.00[0m
+[0;32mI (25148) ESC_controller: ESC Values: 679.91, 0.00, 703.71, 0.00[0m
+[0;32mI (25268) ESC_controller: ESC Values: 648.53, 0.00, 669.15, 0.00[0m
+[0;32mI (25388) ESC_controller: ESC Values: 642.80, 0.00, 666.49, 0.00[0m
+[0;32mI (25508) ESC_controller: ESC Values: 569.94, 2.05, 597.95, 30.06[0m
+[0;32mI (25628) ESC_controller: ESC Values: 450.17, 118.67, 481.33, 149.83[0m
+[0;32mI (25748) ESC_controller: ESC Values: 361.60, 214.34, 385.66, 238.40[0m
+[0;32mI (25868) ESC_controller: ESC Values: 270.77, 315.34, 284.66, 329.23[0m
+[0;32mI (25988) ESC_controller: ESC Values: 175.41, 417.73, 182.27, 424.59[0m
+[0;32mI (26108) ESC_controller: ESC Values: 58.50, 565.85, 34.15, 541.50[0m
+[0;32mI (26228) ESC_controller: ESC Values: 21.25, 615.71, 0.00, 578.75[0m
+[0;32mI (26348) ESC_controller: ESC Values: 25.17, 599.36, 0.64, 574.83[0m
+[0;32mI (26468) ESC_controller: ESC Values: 0.00, 628.38, 0.00, 632.85[0m
+[0;32mI (26588) ESC_controller: ESC Values: 0.00, 640.98, 0.00, 666.54[0m
+[0;32mI (26708) ESC_controller: ESC Values: 0.00, 661.35, 0.00, 673.61[0m
+[0;32mI (26828) ESC_controller: ESC Values: 0.00, 655.74, 0.00, 656.10[0m
+[0;32mI (26948) ESC_controller: ESC Values: 0.00, 651.57, 0.00, 657.68[0m
+[0;32mI (27068) ESC_controller: ESC Values: 0.00, 665.89, 0.00, 682.51[0m
+[0;32mI (27188) ESC_controller: ESC Values: 0.00, 666.44, 0.00, 688.25[0m
+[0;32mI (27308) ESC_controller: ESC Values: 0.00, 689.74, 0.00, 705.25[0m
+[0;32mI (27428) ESC_controller: ESC Values: 0.00, 692.09, 0.00, 704.63[0m
+[0;32mI (27548) ESC_controller: ESC Values: 0.00, 693.31, 0.00, 715.09[0m
+[0;32mI (27668) ESC_controller: ESC Values: 0.00, 686.51, 0.00, 709.76[0m
+[0;32mI (27788) ESC_controller: ESC Values: 0.00, 688.60, 0.00, 708.70[0m
+[0;32mI (27908) ESC_controller: ESC Values: 0.00, 687.79, 0.00, 704.16[0m
+[0;32mI (28028) ESC_controller: ESC Values: 0.00, 650.93, 0.00, 667.20[0m
+[0;32mI (28148) ESC_controller: ESC Values: 39.72, 536.20, 63.80, 560.28[0m
+[0;32mI (28268) ESC_controller: ESC Values: 84.59, 481.09, 118.91, 515.41[0m
+[0;32mI (28388) ESC_controller: ESC Values: 68.11, 467.88, 132.12, 531.89[0m
+[0;32mI (28508) ESC_controller: ESC Values: 93.38, 401.15, 198.85, 506.62[0m
+[0;32mI (28628) ESC_controller: ESC Values: 159.50, 290.32, 309.68, 440.50[0m
+[0;32mI (28748) ESC_controller: ESC Values: 194.91, 233.32, 366.68, 405.09[0m
+[0;32mI (28868) ESC_controller: ESC Values: 215.24, 218.48, 381.52, 384.76[0m
+[0;32mI (28988) ESC_controller: ESC Values: 268.68, 164.65, 435.35, 331.32[0m
+[0;32mI (29108) ESC_controller: ESC Values: 366.82, 72.31, 527.69, 233.18[0m
+[0;32mI (29228) ESC_controller: ESC Values: 430.28, 16.82, 583.18, 169.72[0m
+[0;32mI (29348) ESC_controller: ESC Values: 452.03, 2.06, 597.94, 147.97[0m
+[0;32mI (29468) ESC_controller: ESC Values: 519.25, 0.00, 651.60, 80.75[0m
+[0;32mI (29588) ESC_controller: ESC Values: 655.26, 0.00, 739.98, 0.00[0m
+[0;32mI (29708) ESC_controller: ESC Values: 701.03, 0.00, 772.25, 0.00[0m
+[0;32mI (29828) ESC_controller: ESC Values: 703.95, 0.00, 771.08, 0.00[0m
+[0;32mI (29948) ESC_controller: ESC Values: 714.41, 0.00, 776.72, 0.00[0m
+[0;32mI (30068) ESC_controller: ESC Values: 719.73, 0.00, 779.80, 0.00[0m
+[0;32mI (30188) ESC_controller: ESC Values: 720.58, 0.00, 773.71, 0.00[0m
+[0;32mI (30308) ESC_controller: ESC Values: 626.80, 0.00, 737.51, 0.00[0m
+[0;32mI (30428) ESC_controller: ESC Values: 397.99, 25.29, 574.71, 202.01[0m
+[0;32mI (30548) ESC_controller: ESC Values: 130.13, 285.12, 314.88, 469.87[0m
+[0;32mI (30668) ESC_controller: ESC Values: 52.24, 372.74, 227.26, 547.76[0m
+[0;32mI (30788) ESC_controller: ESC Values: 127.02, 288.53, 311.47, 472.98[0m
+[0;32mI (30908) ESC_controller: ESC Values: 167.10, 250.93, 349.07, 432.90[0m
+[0;32mI (31028) ESC_controller: ESC Values: 129.11, 289.39, 310.61, 470.89[0m
+[0;32mI (31148) ESC_controller: ESC Values: 106.56, 312.85, 287.15, 493.44[0m
+[0;32mI (31268) ESC_controller: ESC Values: 110.21, 311.28, 288.72, 489.79[0m
+[0;32mI (31388) ESC_controller: ESC Values: 117.00, 303.98, 296.02, 483.00[0m
+[0;32mI (31508) ESC_controller: ESC Values: 155.46, 263.75, 336.25, 444.54[0m
+[0;32mI (31628) ESC_controller: ESC Values: 220.68, 195.74, 404.26, 379.32[0m
+[0;32mI (31748) ESC_controller: ESC Values: 291.22, 127.66, 472.34, 308.78[0m
+[0;32mI (31868) ESC_controller: ESC Values: 273.48, 144.16, 455.84, 326.52[0m
+[0;32mI (31988) ESC_controller: ESC Values: 288.14, 132.87, 467.13, 311.86[0m
+[0;32mI (32108) ESC_controller: ESC Values: 253.39, 166.71, 433.29, 346.61[0m
+[0;32mI (32228) ESC_controller: ESC Values: 188.67, 231.66, 368.34, 411.33[0m
+[0;32mI (32348) ESC_controller: ESC Values: 156.52, 263.55, 336.45, 443.48[0m
+[0;32mI (32468) ESC_controller: ESC Values: 137.81, 285.19, 314.81, 462.19[0m
+[0;32mI (32588) ESC_controller: ESC Values: 165.05, 255.20, 344.80, 434.95[0m
+[0;32mI (32708) ESC_controller: ESC Values: 192.98, 225.10, 374.90, 407.02[0m
+[0;32mI (32828) ESC_controller: ESC Values: 199.02, 218.65, 381.35, 400.98[0m
+[0;32mI (32948) ESC_controller: ESC Values: 227.20, 190.55, 409.45, 372.80[0m
+[0;32mI (33068) ESC_controller: ESC Values: 238.59, 180.11, 419.89, 361.41[0m
+[0;32mI (33188) ESC_controller: ESC Values: 281.42, 138.56, 461.44, 318.58[0m
+[0;32mI (33308) ESC_controller: ESC Values: 319.08, 101.56, 498.44, 280.92[0m
+[0;32mI (33428) ESC_controller: ESC Values: 353.16, 73.68, 526.32, 246.84[0m
+[0;32mI (33548) ESC_controller: ESC Values: 333.41, 94.80, 505.20, 266.59[0m
+[0;32mI (33668) ESC_controller: ESC Values: 303.06, 117.76, 482.24, 296.94[0m
+[0;32mI (33788) ESC_controller: ESC Values: 309.02, 110.33, 489.67, 290.98[0m
+[0;32mI (33908) ESC_controller: ESC Values: 318.19, 103.52, 496.48, 281.81[0m
+[0;32mI (34028) ESC_controller: ESC Values: 352.28, 75.81, 524.19, 247.72[0m
+[0;32mI (34148) ESC_controller: ESC Values: 361.68, 62.84, 537.16, 238.32[0m
+[0;32mI (34268) ESC_controller: ESC Values: 352.97, 72.41, 527.59, 247.03[0m
+[0;32mI (34388) ESC_controller: ESC Values: 321.63, 102.16, 497.84, 278.37[0m
+[0;32mI (34508) ESC_controller: ESC Values: 278.81, 136.20, 463.80, 321.19[0m
+[0;32mI (34628) ESC_controller: ESC Values: 278.18, 139.19, 460.81, 321.82[0m
+[0;32mI (34748) ESC_controller: ESC Values: 268.74, 149.47, 450.53, 331.26[0m
+[0;32mI (34868) ESC_controller: ESC Values: 194.67, 222.41, 377.59, 405.33[0m
+[0;32mI (34988) ESC_controller: ESC Values: 136.36, 278.74, 321.26, 463.64[0m
+[0;32mI (35108) ESC_controller: ESC Values: 155.54, 260.22, 339.78, 444.46[0m
+[0;32mI (35228) ESC_controller: ESC Values: 194.53, 222.15, 377.85, 405.47[0m
+[0;32mI (35348) ESC_controller: ESC Values: 228.88, 185.65, 414.35, 371.12[0m
+[0;32mI (35468) ESC_controller: ESC Values: 263.55, 154.39, 445.61, 336.45[0m
+[0;32mI (35588) ESC_controller: ESC Values: 268.89, 151.07, 448.93, 331.11[0m
+[0;32mI (35708) ESC_controller: ESC Values: 249.99, 166.04, 433.96, 350.01[0m
+[0;32mI (35828) ESC_controller: ESC Values: 245.57, 170.80, 429.20, 354.43[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ca18h ( 51736) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001ca40 vaddr=3ffb0000 size=0236ch (  9068) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001edb4 vaddr=40080000 size=01264h (  4708) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19f74h (106356) map[0m
+[0;32mI (173) esp_image: segment 4: paddr=00039f9c vaddr=40081264 size=0da60h ( 55904) load[0m
+[0;32mI (203) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (214) cpu_start: Multicore app[0m
+D (214) cpu_start: Pro cpu up[0m
+D (215) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (224) clk: RTC_SLOW_CLK calibration value: 3103194[0m
+D (235) cpu_start: calling init function: 0x400d1548 on core: 0[0m
+[0;32mI (236) cpu_start: Pro cpu start user code[0m
+[0;32mI (236) cpu_start: cpu freq: 160000000 Hz[0m
+D (241) cpu_start: calling init function: 0x400d158c on core: 0[0m
+[0;32mI (247) cpu_start: Application information:[0m
+[0;32mI (252) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (258) cpu_start: App version:      1[0m
+[0;32mI (263) cpu_start: Compile time:     Jan 27 2024 11:38:47[0m
+[0;32mI (269) cpu_start: ELF file SHA256:  de237dadb...[0m
+[0;32mI (274) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (281) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (286) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (291) cpu_start: Chip rev:         v3.0[0m
+D (295) cpu_start: calling init function: 0x400d16d4 on core: 0[0m
+D (302) memory_layout: Checking 9 reserved memory ranges:[0m
+D (307) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (313) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (320) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb2d20[0m
+D (326) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (333) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (339) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (345) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (352) memory_layout: Reserved memory range 0x40080000 - 0x4008ecc4[0m
+D (358) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (365) memory_layout: Building list of available memory regions:[0m
+D (371) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (378) memory_layout: Available memory region 0x3ffb2d20 - 0x3ffb8000[0m
+D (384) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (391) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (397) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (404) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (411) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (417) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (424) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (430) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (437) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (444) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (450) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (457) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (463) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (470) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (476) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (483) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (490) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (496) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (503) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (509) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (516) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (523) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (529) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (536) memory_layout: Available memory region 0x4008ecc4 - 0x40090000[0m
+D (542) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (549) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (556) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (562) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (569) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (575) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (582) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (589) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (595) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (603) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (608) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (614) heap_init: New heap initialised at 0x3ffb2d20[0m
+[0;32mI (619) heap_init: At 3FFB2D20 len 0002D2E0 (180 KiB): DRAM[0m
+[0;32mI (625) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (638) heap_init: New heap initialised at 0x4008ecc4[0m
+[0;32mI (643) heap_init: At 4008ECC4 len 0001133C (68 KiB): IRAM[0m
+D (649) cpu_start: calling init function: 0x400d16e0 on core: 0[0m
+D (655) cpu_start: calling init function: 0x400d3d64 on core: 0[0m
+D (661) cpu_start: calling init function: 0x400e85cc on core: 0[0m
+D (667) cpu_start: calling init function: 0x400d16ec on core: 0[0m
+D (673) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (678) cpu_start: calling init function: 0x400d16f8 on core: 0[0m
+D (684) cpu_start: calling init function: 0x400d5494 on core: 0[0m
+D (690) cpu_start: calling init function: 0x400d6680 on core: 0[0m
+D (696) cpu_start: calling init function: 0x400d3dd0 on core: 0[0m
+D (702) cpu_start: calling init function: 0x400d1704 on core: 0[0m
+D (708) cpu_start: calling init function: 0x400d1710 on core: 0[0m
+D (714) spi_flash: trying chip: issi[0m
+D (718) spi_flash: trying chip: gd[0m
+D (721) spi_flash: trying chip: mxic[0m
+D (725) spi_flash: trying chip: winbond[0m
+D (729) spi_flash: trying chip: generic[0m
+[0;32mI (733) spi_flash: detected chip: generic[0m
+[0;32mI (737) spi_flash: flash io: dio[0m
+[0;33mW (741) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (754) cpu_start: calling init function: 0x400e85d4 on core: 0[0m
+D (760) cpu_start: calling init function: 0x400dd2f8[0m
+[0;33mW (766) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (776) cpu_start: calling init function: 0x400d74a0[0m
+D (781) cpu_start: calling init function: 0x4008613c[0m
+D (786) cpu_start: calling init function: 0x400d27a4[0m
+D (791) cpu_start: calling init function: 0x400d1ca8[0m
+D (796) cpu_start: calling init function: 0x400d13b0[0m
+D (801) cpu_start: calling init function: 0x400d42c4 on core: 0[0m
+D (807) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (812) cpu_start: calling init function: 0x400d1738 on core: 0[0m
+D (819) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (824) app_start: Starting scheduler on CPU0[0m
+[0;32D (828) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (828) app_start: Starting scheduler on CPU1[0m
+mI (828) main_task: Started on CPU0[0m
+D (848) heap_init: New heap initialised at 0x3ffe0440[0m
+D (848) heap_init: New heap initialised at 0x3ffe4350[0m
+D (848) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (848) main_task: Calling app_main()[0m
+D (858) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (868) IMU: devid=0x34[0m
+[0;32mI (868) IMU: getRate()=0[0m
+[0;32mI (868) IMU: getExternalFrameSync()=0[0m
+[0;32mI (868) IMU: getDLPFMode()=6[0m
+[0;32mI (878) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (878) rmt: new group(0) at 0x3ffbc848, occupy=ffffff00[0m
+[0;D (888) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+32mI (888) IMU: getFullScaleAccelRange()=0[0m
+D (898) rmt: group clock resolution:80000000[0m
+[0;32mI (898) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (898) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (888) main_task: Returned from app_main()[0m
+D (918) rmt: new tx channel(0,0) at 0x3ffbc4c8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (938) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (938) rmt: group clock resolution:80000000[0m
+[0;32mI (948) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (958) rmt: new tx channel(0,1) at 0x3ffb40d4, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (968) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (978) rmt: group clock resolution:80000000[0m
+[0;32mI (978) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (988) rmt: new tx channel(0,2) at 0x3ffb42c8, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1008) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (1008) rmt: group clock resolution:80000000[0m
+[0;32mI (1008) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1018) rmt: new tx channel(0,3) at 0x3ffb45e0, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1038) ESC_controller: Install Dshot ESC encoder[0m
+D (1038) rmt: new bytes encoder @0x3ffb4928[0m
+D (1048) rmt: new copy encoder @0x3ffb494c[0m
+D (1048) rmt: new bytes encoder @0x3ffb49ac[0m
+D (1058) rmt: new copy encoder @0x3ffb49d0[0m
+D (1058) rmt: new bytes encoder @0x3ffb4a04[0m
+D (1068) rmt: new copy encoder @0x3ffb4ab8[0m
+D (1068) rmt: new bytes encoder @0x3ffb4a48[0m
+D (1068) rmt: new copy encoder @0x3ffb4a6c[0m
+[0;32mI (1078) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1078) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (11088) ESC_controller: ESC Values: 312.65, 114.46, 485.54, 287.35[0m
+[0;32mI (11088) ESC_controller: ESC Values: 308.70, 119.63, 480.37, 291.30[0m
+[0;32mI (11088) ESC_controller: ESC Values: 283.94, 145.12, 454.88, 316.06[0m
+[0;32mI (11098) ESC_controller: ESC Values: 281.52, 143.68, 456.32, 318.48[0m
+[0;32mI (11098) ESC_controller: ESC Values: 314.58, 114.37, 485.63, 285.42[0m
+[0;32mI (11108) ESC_controller: ESC Values: 340.88, 88.73, 511.27, 259.12[0m
+[0;32mI (11118) ESC_controller: ESC Values: 313.63, 114.76, 485.24, 286.37[0m
+[0;32mI (11118) ESC_controller: ESC Values: 292.80, 133.28, 466.72, 307.20[0m
+[0;32mI (11128) ESC_controller: ESC Values: 311.07, 117.73, 482.27, 288.93[0m
+[0;32mI (11138) ESC_controller: ESC Values: 326.15, 104.57, 495.43, 273.85[0m
+[0;32mI (11148) ESC_controller: ESC Values: 360.30, 73.79, 526.21, 239.70[0m
+[0;32mI (11148) ESC_controller: ESC Values: 388.76, 49.85, 550.15, 211.24[0m
+[0;32mI (11228) ESC_controller: ESC Values: 1301.49, 0.00, 1081.94, 0.00[0m
+[0;32mI (11348) ESC_controller: ESC Values: 1316.80, 0.00, 1092.71, 0.00[0m
+[0;32mI (11468) ESC_controller: ESC Values: 1337.38, 0.00, 1072.12, 0.00[0m
+[0;32mI (11588) ESC_controller: ESC Values: 1319.21, 0.00, 1054.58, 0.00[0m
+[0;32mI (11708) ESC_controller: ESC Values: 1294.27, 0.00, 1044.52, 0.00[0m
+[0;32mI (11828) ESC_controller: ESC Values: 1270.08, 0.00, 1027.22, 0.00[0m
+[0;32mI (11948) ESC_controller: ESC Values: 1249.22, 0.00, 1014.30, 0.00[0m
+[0;32mI (12068) ESC_controller: ESC Values: 1229.73, 0.00, 1002.02, 0.00[0m
+[0;32mI (12188) ESC_controller: ESC Values: 1214.84, 0.00, 992.44, 0.00[0m
+[0;32mI (12308) ESC_controller: ESC Values: 1198.61, 0.00, 979.39, 0.00[0m
+[0;32mI (12428) ESC_controller: ESC Values: 1184.09, 0.00, 972.73, 0.00[0m
+[0;32mI (12548) ESC_controller: ESC Values: 1168.11, 0.00, 966.85, 0.00[0m
+[0;32mI (12668) ESC_controller: ESC Values: 1152.82, 0.00, 960.04, 0.00[0m
+[0;32mI (12788) ESC_controller: ESC Values: 1137.08, 0.00, 951.33, 0.00[0m
+[0;32mI (12908) ESC_controller: ESC Values: 1114.04, 0.00, 933.51, 0.00[0m
+[0;32mI (13028) ESC_controller: ESC Values: 1095.57, 0.00, 916.15, 0.00[0m
+[0;32mI (13148) ESC_controller: ESC Values: 1076.83, 0.00, 904.54, 0.00[0m
+[0;32mI (13268) ESC_controller: ESC Values: 1064.72, 0.00, 902.09, 0.00[0m
+[0;32mI (13388) ESC_controller: ESC Values: 1046.08, 0.00, 893.80, 0.00[0m
+[0;32mI (13508) ESC_controller: ESC Values: 1032.29, 0.00, 888.77, 0.00[0m
+[0;32mI (13628) ESC_controller: ESC Values: 1016.54, 0.00, 882.86, 0.00[0m
+[0;32mI (13748) ESC_controller: ESC Values: 1000.87, 0.00, 876.54, 0.00[0m
+[0;32mI (13868) ESC_controller: ESC Values: 984.69, 0.00, 870.42, 0.00[0m
+[0;32mI (13988) ESC_controller: ESC Values: 968.30, 0.00, 859.73, 0.00[0m
+[0;32mI (14108) ESC_controller: ESC Values: 951.65, 0.00, 847.71, 0.00[0m
+[0;32mI (14228) ESC_controller: ESC Values: 936.06, 0.00, 839.36, 0.00[0m
+[0;32mI (14348) ESC_controller: ESC Values: 920.03, 0.00, 832.93, 0.00[0m
+[0;32mI (14468) ESC_controller: ESC Values: 904.33, 0.00, 825.90, 0.00[0m
+[0;32mI (14588) ESC_controller: ESC Values: 888.17, 0.00, 818.19, 0.00[0m
+[0;32mI (14708) ESC_controller: ESC Values: 873.42, 0.00, 812.05, 0.00[0m
+[0;32mI (14828) ESC_controller: ESC Values: 858.76, 0.00, 806.96, 0.00[0m
+[0;32mI (14948) ESC_controller: ESC Values: 844.15, 0.00, 799.97, 0.00[0m
+[0;32mI (15068) ESC_controller: ESC Values: 831.96, 0.00, 800.09, 0.00[0m
+[0;32mI (15188) ESC_controller: ESC Values: 814.60, 0.00, 788.28, 0.00[0m
+[0;32mI (15308) ESC_controller: ESC Values: 803.55, 0.00, 782.21, 0.00[0m
+[0;32mI (15428) ESC_controller: ESC Values: 792.61, 0.00, 774.79, 0.00[0m
+[0;32mI (15548) ESC_controller: ESC Values: 794.95, 0.00, 777.75, 0.00[0m
+[0;32mI (15668) ESC_controller: ESC Values: 794.64, 0.00, 779.37, 0.00[0m
+[0;32mI (15788) ESC_controller: ESC Values: 795.58, 0.00, 780.97, 0.00[0m
+[0;32mI (15908) ESC_controller: ESC Values: 793.87, 0.00, 782.12, 0.00[0m
+[0;32mI (16028) ESC_controller: ESC Values: 794.23, 0.00, 779.00, 0.00[0m
+[0;32mI (16148) ESC_controller: ESC Values: 793.67, 0.00, 778.80, 0.00[0m
+[0;32mI (16268) ESC_controller: ESC Values: 796.47, 0.00, 782.91, 0.00[0m
+[0;32mI (16388) ESC_controller: ESC Values: 796.10, 0.00, 784.08, 0.00[0m
+[0;32mI (16508) ESC_controller: ESC Values: 797.61, 0.00, 783.80, 0.00[0m
+[0;32mI (16628) ESC_controller: ESC Values: 795.28, 0.00, 780.14, 0.00[0m
+[0;32mI (16748) ESC_controller: ESC Values: 794.97, 0.00, 782.01, 0.00[0m
+[0;32mI (16868) ESC_controller: ESC Values: 794.67, 0.00, 781.50, 0.00[0m
+[0;32mI (16988) ESC_controller: ESC Values: 796.89, 0.00, 783.72, 0.00[0m
+[0;32mI (17108) ESC_controller: ESC Values: 800.84, 0.00, 791.38, 0.00[0m
+[0;32mI (17228) ESC_controller: ESC Values: 800.20, 0.00, 789.44, 0.00[0m
+[0;32mI (17348) ESC_controller: ESC Values: 797.22, 0.00, 786.33, 0.00[0m
+[0;32mI (17468) ESC_controller: ESC Values: 795.77, 0.00, 786.42, 0.00[0m
+[0;32mI (17588) ESC_controller: ESC Values: 797.93, 0.00, 786.38, 0.00[0m
+[0;32mI (17708) ESC_controller: ESC Values: 797.14, 0.00, 783.45, 0.00[0m
+[0;32mI (17828) ESC_controller: ESC Values: 801.36, 0.00, 790.55, 0.00[0m
+[0;32mI (17948) ESC_controller: ESC Values: 801.11, 0.00, 788.71, 0.00[0m
+[0;32mI (18068) ESC_controller: ESC Values: 802.74, 0.00, 799.87, 0.00[0m
+[0;32mI (18188) ESC_controller: ESC Values: 778.85, 0.00, 804.52, 0.00[0m
+[0;32mI (18308) ESC_controller: ESC Values: 769.67, 0.00, 794.06, 0.00[0m
+[0;32mI (18428) ESC_controller: ESC Values: 782.44, 0.00, 799.47, 0.00[0m
+[0;32mI (18548) ESC_controller: ESC Values: 785.31, 0.00, 795.43, 0.00[0m
+[0;32mI (18668) ESC_controller: ESC Values: 754.65, 0.00, 767.56, 0.00[0m
+[0;32mI (18788) ESC_controller: ESC Values: 704.36, 0.00, 733.93, 0.00[0m
+[0;32mI (18908) ESC_controller: ESC Values: 676.97, 0.00, 708.02, 0.00[0m
+[0;32mI (19028) ESC_controller: ESC Values: 674.69, 0.00, 709.62, 0.00[0m
+[0;32mI (19148) ESC_controller: ESC Values: 680.25, 0.00, 715.11, 0.00[0m
+[0;32mI (19268) ESC_controller: ESC Values: 651.74, 0.00, 687.40, 0.00[0m
+[0;32mI (19388) ESC_controller: ESC Values: 638.79, 0.00, 678.94, 0.00[0m
+[0;32mI (19508) ESC_controller: ESC Values: 598.43, 0.00, 638.80, 1.57[0m
+[0;32mI (19628) ESC_controller: ESC Values: 570.13, 0.00, 602.37, 29.87[0m
+[0;32mI (19748) ESC_controller: ESC Values: 572.92, 0.00, 601.58, 27.08[0m
+[0;32mI (19868) ESC_controller: ESC Values: 536.15, 37.65, 562.35, 63.85[0m
+[0;32mI (19988) ESC_controller: ESC Values: 481.14, 83.30, 516.70, 118.86[0m
+[0;32mI (20108) ESC_controller: ESC Values: 441.90, 108.86, 491.14, 158.10[0m
+[0;32mI (20228) ESC_controller: ESC Values: 419.92, 108.39, 491.61, 180.08[0m
+[0;32mI (20348) ESC_controller: ESC Values: 420.16, 86.47, 513.53, 179.84[0m
+[0;32mI (20468) ESC_controller: ESC Values: 430.53, 66.13, 533.87, 169.47[0m
+[0;32mI (20588) ESC_controller: ESC Values: 435.70, 68.10, 531.90, 164.30[0m
+[0;32mI (20708) ESC_controller: ESC Values: 435.00, 86.61, 513.39, 165.00[0m
+[0;32mI (20828) ESC_controller: ESC Values: 439.42, 90.75, 509.25, 160.58[0m
+[0;32mI (20948) ESC_controller: ESC Values: 445.60, 100.97, 499.03, 154.40[0m
+[0;32mI (21068) ESC_controller: ESC Values: 432.76, 127.12, 472.88, 167.24[0m
+[0;32mI (21188) ESC_controller: ESC Values: 429.89, 130.83, 469.17, 170.11[0m
+[0;32mI (21308) ESC_controller: ESC Values: 433.80, 140.21, 459.79, 166.20[0m
+[0;32mI (21428) ESC_controller: ESC Values: 432.37, 143.56, 456.44, 167.63[0m
+[0;32mI (21548) ESC_controller: ESC Values: 426.77, 148.28, 451.72, 173.23[0m
+[0;32mI (21668) ESC_controller: ESC Values: 433.39, 141.42, 458.58, 166.61[0m
+[0;32mI (21788) ESC_controller: ESC Values: 435.34, 140.97, 459.03, 164.66[0m
+[0;32mI (21908) ESC_controller: ESC Values: 449.66, 128.18, 471.82, 150.34[0m
+[0;32mI (22028) ESC_controller: ESC Values: 445.29, 132.09, 467.91, 154.71[0m
+[0;32mI (22148) ESC_controller: ESC Values: 472.81, 110.49, 489.51, 127.19[0m
+[0;32mI (22268) ESC_controller: ESC Values: 483.71, 104.45, 495.55, 116.29[0m
+[0;32mI (22388) ESC_controller: ESC Values: 474.97, 93.55, 506.45, 125.03[0m
+[0;32mI (22508) ESC_controller: ESC Values: 473.86, 73.43, 526.57, 126.14[0m
+[0;32mI (22628) ESC_controller: ESC Values: 477.79, 68.16, 531.84, 122.21[0m
+[0;32mI (22748) ESC_controller: ESC Values: 479.67, 69.98, 530.02, 120.33[0m
+[0;32mI (22868) ESC_controller: ESC Values: 470.06, 96.44, 503.56, 129.94[0m
+[0;32mI (22988) ESC_controller: ESC Values: 462.83, 101.99, 498.01, 137.17[0m
+[0;32mI (23108) ESC_controller: ESC Values: 464.46, 96.84, 503.16, 135.54[0m
+[0;32mI (23228) ESC_controller: ESC Values: 457.08, 111.72, 488.28, 142.92[0m
+[0;32mI (23348) ESC_controller: ESC Values: 439.47, 133.27, 466.73, 160.53[0m
+[0;32mI (23468) ESC_controller: ESC Values: 442.49, 125.18, 474.82, 157.51[0m
+[0;32mI (23588) ESC_controller: ESC Values: 437.27, 134.16, 465.84, 162.73[0m
+[0;32mI (23708) ESC_controller: ESC Values: 433.94, 135.98, 464.02, 166.06[0m
+[0;32mI (23828) ESC_controller: ESC Values: 444.29, 126.14, 473.86, 155.71[0m
+[0;32mI (23948) ESC_controller: ESC Values: 430.70, 141.06, 458.94, 169.30[0m
+[0;32mI (24068) ESC_controller: ESC Values: 431.02, 141.03, 458.97, 168.98[0m
+[0;32mI (24188) ESC_controller: ESC Values: 431.84, 141.17, 458.83, 168.16[0m
+[0;32mI (24308) ESC_controller: ESC Values: 443.49, 126.07, 473.93, 156.51[0m
+[0;32mI (24428) ESC_controller: ESC Values: 431.56, 140.42, 459.58, 168.44[0m
+[0;32mI (24548) ESC_controller: ESC Values: 428.69, 140.49, 459.51, 171.31[0m
+[0;32mI (24668) ESC_controller: ESC Values: 436.60, 133.82, 466.18, 163.40[0m
+[0;32mI (24788) ESC_controller: ESC Values: 437.86, 131.65, 468.35, 162.14[0m
+[0;32mI (24908) ESC_controller: ESC Values: 512.83, 40.92, 559.08, 87.17[0m
+[0;32mI (25028) ESC_controller: ESC Values: 586.64, 0.00, 668.04, 13.36[0m
+[0;32mI (25148) ESC_controller: ESC Values: 614.43, 0.00, 694.77, 0.00[0m
+[0;32mI (25268) ESC_controller: ESC Values: 586.28, 0.00, 685.13, 13.72[0m
+[0;32mI (25388) ESC_controller: ESC Values: 531.08, 0.00, 651.93, 68.92[0m
+[0;32mI (25508) ESC_controller: ESC Values: 465.43, 0.00, 600.44, 134.57[0m
+[0;32mI (25628) ESC_controller: ESC Values: 385.19, 65.78, 534.22, 214.81[0m
+[0;32mI (25748) ESC_controller: ESC Values: 326.25, 112.78, 487.22, 273.75[0m
+[0;32mI (25868) ESC_controller: ESC Values: 310.84, 123.87, 476.13, 289.16[0m
+[0;32mI (25988) ESC_controller: ESC Values: 320.06, 116.43, 483.57, 279.94[0m
+[0;32mI (26108) ESC_controller: ESC Values: 334.33, 104.75, 495.25, 265.67[0m
+[0;32mI (26228) ESC_controller: ESC Values: 336.96, 103.84, 496.16, 263.04[0m
+[0;32mI (26348) ESC_controller: ESC Values: 324.24, 113.83, 486.17, 275.76[0m
+[0;32mI (26468) ESC_controller: ESC Values: 309.96, 125.57, 474.43, 290.04[0m
+[0;32mI (26588) ESC_controller: ESC Values: 300.41, 134.91, 465.09, 299.59[0m
+[0;32mI (26708) ESC_controller: ESC Values: 304.73, 132.62, 467.38, 295.27[0m
+[0;32mI (26828) ESC_controller: ESC Values: 312.33, 125.70, 474.30, 287.67[0m
+[0;32mI (26948) ESC_controller: ESC Values: 328.99, 109.50, 490.50, 271.01[0m
+[0;32mI (27068) ESC_controller: ESC Values: 336.21, 104.25, 495.75, 263.79[0m
+[0;32mI (27188) ESC_controller: ESC Values: 332.42, 105.59, 494.41, 267.58[0m
+[0;32mI (27308) ESC_controller: ESC Values: 335.90, 99.89, 500.11, 264.10[0m
+[0;32mI (27428) ESC_controller: ESC Values: 328.37, 108.39, 491.61, 271.63[0m
+[0;32mI (27548) ESC_controller: ESC Values: 347.27, 91.12, 508.88, 252.73[0m
+[0;32mI (27668) ESC_controller: ESC Values: 356.64, 84.88, 515.12, 243.36[0m
+[0;32mI (27788) ESC_controller: ESC Values: 353.88, 86.60, 513.40, 246.12[0m
+[0;32mI (27908) ESC_controller: ESC Values: 351.25, 86.94, 513.06, 248.75[0m
+[0;32mI (28028) ESC_controller: ESC Values: 357.16, 84.22, 515.78, 242.84[0m
+[0;32mI (28148) ESC_controller: ESC Values: 349.47, 90.22, 509.78, 250.53[0m
+[0;32mI (28268) ESC_controller: ESC Values: 361.42, 87.88, 512.12, 238.58[0m
+[0;32mI (28388) ESC_controller: ESC Values: 362.74, 98.66, 501.34, 237.26[0m
+[0;32mI (28508) ESC_controller: ESC Values: 389.29, 78.23, 521.77, 210.71[0m
+[0;32mI (28628) ESC_controller: ESC Values: 406.85, 59.63, 540.37, 193.15[0m
+[0;32mI (28748) ESC_controller: ESC Values: 437.10, 59.93, 540.07, 162.90[0m
+[0;32mI (28868) ESC_controller: ESC Values: 454.26, 89.96, 510.04, 145.74[0m
+[0;32mI (28988) ESC_controller: ESC Values: 522.91, 67.82, 532.18, 77.09[0m
+[0;32mI (29108) ESC_controller: ESC Values: 577.31, 67.62, 532.38, 22.69[0m
+[0;32mI (29228) ESC_controller: ESC Values: 601.74, 69.64, 530.36, 0.00[0m
+[0;32mI (29348) ESC_controller: ESC Values: 591.61, 69.52, 530.48, 8.39[0m
+[0;32mI (29468) ESC_controller: ESC Values: 590.74, 51.30, 548.70, 9.26[0m
+[0;32mI (29588) ESC_controller: ESC Values: 578.90, 40.70, 559.30, 21.10[0m
+[0;32mI (29708) ESC_controller: ESC Values: 626.57, 0.00, 637.19, 0.00[0m
+[0;32mI (29828) ESC_controller: ESC Values: 681.47, 0.00, 717.93, 0.00[0m
+[0;32mI (29948) ESC_controller: ESC Values: 671.69, 0.00, 695.94, 0.00[0m
+[0;32mI (30068) ESC_controller: ESC Values: 687.99, 0.00, 696.94, 0.00[0m
+[0;32mI (30188) ESC_controller: ESC Values: 709.49, 0.00, 708.57, 0.00[0m
+[0;32mI (30308) ESC_controller: ESC Values: 709.44, 0.00, 708.27, 0.00[0m
+[0;32mI (30428) ESC_controller: ESC Values: 701.84, 0.00, 697.08, 0.00[0m
+[0;32mI (30548) ESC_controller: ESC Values: 714.93, 0.00, 712.31, 0.00[0m
+[0;32mI (30668) ESC_controller: ESC Values: 770.74, 0.00, 772.64, 0.00[0m
+[0;32mI (30788) ESC_controller: ESC Values: 791.06, 0.00, 788.74, 0.00[0m
+[0;32mI (30908) ESC_controller: ESC Values: 793.21, 0.00, 802.19, 0.00[0m
+[0;32mI (31028) ESC_controller: ESC Values: 791.59, 0.00, 810.45, 0.00[0m
+[0;32mI (31148) ESC_controller: ESC Values: 796.93, 0.00, 812.71, 0.00[0m
+[0;32mI (31268) ESC_controller: ESC Values: 798.00, 0.00, 806.99, 0.00[0m
+[0;32mI (31388) ESC_controller: ESC Values: 817.61, 0.00, 832.29, 0.00[0m
+[0;32mI (31508) ESC_controller: ESC Values: 804.05, 0.00, 824.27, 0.00[0m
+[0;32mI (31628) ESC_controller: ESC Values: 775.90, 0.00, 772.79, 0.00[0m
+[0;32mI (31748) ESC_controller: ESC Values: 720.34, 0.00, 696.01, 0.00[0m
+[0;32mI (31868) ESC_controller: ESC Values: 649.29, 0.00, 613.04, 0.00[0m
+[0;32mI (31988) ESC_controller: ESC Values: 641.00, 29.84, 570.16, 0.00[0m
+[0;32mI (32108) ESC_controller: ESC Values: 674.38, 0.00, 615.60, 0.00[0m
+[0;32mI (32228) ESC_controller: ESC Values: 771.35, 0.00, 775.40, 0.00[0m
+[0;32mI (32348) ESC_controller: ESC Values: 783.30, 0.00, 806.32, 0.00[0m
+[0;32mI (32468) ESC_controller: ESC Values: 786.63, 0.00, 783.21, 0.00[0m
+[0;32mI (32588) ESC_controller: ESC Values: 795.43, 0.00, 803.55, 0.00[0m
+[0;32mI (32708) ESC_controller: ESC Values: 798.13, 0.00, 814.00, 0.00[0m
+[0;32mI (32828) ESC_controller: ESC Values: 783.98, 0.00, 794.93, 0.00[0m
+[0;32mI (32948) ESC_controller: ESC Values: 787.55, 0.00, 806.73, 0.00[0m
+[0;32mI (33068) ESC_controller: ESC Values: 794.05, 0.00, 813.65, 0.00[0m
+[0;32mI (33188) ESC_controller: ESC Values: 794.08, 0.00, 814.22, 0.00[0m
+[0;32mI (33308) ESC_controller: ESC Values: 789.16, 0.00, 809.30, 0.00[0m
+[0;32mI (33428) ESC_controller: ESC Values: 784.53, 0.00, 803.99, 0.00[0m
+[0;32mI (33548) ESC_controller: ESC Values: 785.08, 0.00, 803.74, 0.00[0m
+[0;32mI (33668) ESC_controller: ESC Values: 793.16, 0.00, 812.95, 0.00[0m
+[0;32mI (33788) ESC_controller: ESC Values: 782.19, 0.00, 802.67, 0.00[0m
+[0;32mI (33908) ESC_controller: ESC Values: 790.21, 0.00, 809.60, 0.00[0m
+[0;32mI (34028) ESC_controller: ESC Values: 780.61, 0.00, 806.76, 0.00[0m
+[0;32mI (34148) ESC_controller: ESC Values: 794.57, 0.00, 813.18, 0.00[0m
+[0;32mI (34268) ESC_controller: ESC Values: 781.92, 0.00, 808.85, 0.00[0m
+[0;32mI (34388) ESC_controller: ESC Values: 788.41, 0.00, 816.61, 0.00[0m
+[0;32mI (34508) ESC_controller: ESC Values: 792.49, 0.00, 821.17, 0.00[0m
+[0;32mI (34628) ESC_controller: ESC Values: 782.84, 0.00, 811.76, 0.00[0m
+[0;32mI (34748) ESC_controller: ESC Values: 779.25, 0.00, 807.48, 0.00[0m
+[0;32mI (34868) ESC_controller: ESC Values: 792.56, 0.00, 796.37, 0.00[0m
+[0;32mI (34988) ESC_controller: ESC Values: 811.23, 0.00, 805.11, 0.00[0m
+[0;32mI (35108) ESC_controller: ESC Values: 798.91, 0.00, 799.80, 0.00[0m
+[0;32mI (35228) ESC_controller: ESC Values: 806.09, 0.00, 808.63, 0.00[0m
+[0;32mI (35348) ESC_controller: ESC Values: 797.07, 0.00, 812.72, 0.00[0m
+[0;32mI (35468) ESC_controller: ESC Values: 800.92, 0.00, 803.41, 0.00[0m
+[0;32mI (35588) ESC_controller: ESC Values: 789.29, 0.00, 789.38, 0.00[0m
+[0;32mI (35708) ESC_controller: ESC Values: 735.46, 0.00, 745.66, 0.00[0m
+[0;32mI (35828) ESC_controller: ESC Values: 713.21, 0.00, 736.61, 0.00[0m
+[0;32mI (35948) ESC_controller: ESC Values: 724.98, 0.00, 754.09, 0.00[0m
+[0;32mI (36068) ESC_controller: ESC Values: 744.18, 0.00, 755.39, 0.00[0m
+[0;32mI (36188) ESC_controller: ESC Values: 745.19, 0.00, 738.07, 0.00[0m
+[0;32mI (36308) ESC_controller: ESC Values: 713.39, 0.00, 723.39, 0.00[0m
+[0;32mI (36428) ESC_controller: ESC Values: 689.02, 0.00, 728.31, 0.00[0m
+[0;32mI (36548) ESC_controller: ESC Values: 685.41, 0.00, 738.86, 0.00[0m
+[0;32mI (36668) ESC_controller: ESC Values: 691.53, 0.00, 742.73, 0.00[0m
+[0;32mI (36788) ESC_controller: ESC Values: 687.15, 0.00, 735.02, 0.00[0m
+[0;32mI (36908) ESC_controller: ESC Values: 691.92, 0.00, 741.15, 0.00[0m
+[0;32mI (37028) ESC_controller: ESC Values: 691.11, 0.00, 741.16, 0.00[0m
+[0;32mI (37148) ESC_controller: ESC Values: 692.73, 0.00, 744.47, 0.00[0m
+[0;32mI (37268) ESC_controller: ESC Values: 688.62, 0.00, 741.28, 0.00[0m
+[0;32mI (37388) ESC_controller: ESC Values: 685.46, 0.00, 740.20, 0.00[0m
+[0;32mI (37508) ESC_controller: ESC Values: 691.73, 0.00, 738.91, 0.00[0m
+[0;32mI (37628) ESC_controller: ESC Values: 728.79, 0.00, 741.97, 0.00[0m
+[0;32mI (37748) ESC_controller: ESC Values: 727.08, 0.00, 733.04, 0.00[0m
+[0;32mI (37868) ESC_controller: ESC Values: 727.78, 0.00, 742.25, 0.00[0m
+[0;32mI (37988) ESC_controller: ESC Values: 729.53, 0.00, 741.28, 0.00[0m
+[0;32mI (38108) ESC_controller: ESC Values: 723.58, 0.00, 735.96, 0.00[0m
+[0;32mI (38228) ESC_controller: ESC Values: 729.70, 0.00, 742.00, 0.00[0m
+[0;32mI (38348) ESC_controller: ESC Values: 724.39, 0.00, 735.69, 0.00[0m
+[0;32mI (38468) ESC_controller: ESC Values: 729.89, 0.00, 743.12, 0.00[0m
+[0;32mI (38588) ESC_controller: ESC Values: 732.79, 0.00, 742.53, 0.00[0m
+[0;32mI (38708) ESC_controller: ESC Values: 725.87, 0.00, 735.48, 0.00[0m
+[0;32mI (38828) ESC_controller: ESC Values: 731.54, 0.00, 744.02, 0.00[0m
+[0;32mI (38948) ESC_controller: ESC Values: 727.55, 0.00, 747.06, 0.00[0m
+[0;32mI (39068) ESC_controller: ESC Values: 728.00, 0.00, 739.31, 0.00[0m
+[0;32mI (39188) ESC_controller: ESC Values: 742.42, 0.00, 758.53, 0.00[0m
+[0;32mI (39308) ESC_controller: ESC Values: 734.09, 0.00, 748.58, 0.00[0m
+[0;32mI (39428) ESC_controller: ESC Values: 728.09, 0.00, 734.58, 0.00[0m
+[0;32mI (39548) ESC_controller: ESC Values: 727.77, 0.00, 740.89, 0.00[0m
+[0;32mI (39668) ESC_controller: ESC Values: 732.77, 0.00, 744.08, 0.00[0m
+[0;32mI (39788) ESC_controller: ESC Values: 727.46, 0.00, 738.45, 0.00[0m
+[0;32mI (39908) ESC_controller: ESC Values: 750.20, 0.00, 750.75, 0.00[0m
+[0;32mI (40028) ESC_controller: ESC Values: 730.68, 0.00, 732.95, 0.00[0m
+[0;32mI (40148) ESC_controller: ESC Values: 737.74, 0.00, 732.00, 0.00[0m
+[0;32mI (40268) ESC_controller: ESC Values: 729.17, 0.00, 727.26, 0.00[0m
+[0;32mI (40388) ESC_controller: ESC Values: 732.10, 0.00, 735.32, 0.00[0m
+[0;32mI (40508) ESC_controller: ESC Values: 722.72, 0.00, 728.02, 0.00[0m
+[0;32mI (40628) ESC_controller: ESC Values: 732.37, 0.00, 727.33, 0.00[0m
+[0;32mI (40748) ESC_controller: ESC Values: 732.85, 0.00, 724.85, 0.00[0m
+[0;32mI (40868) ESC_controller: ESC Values: 728.45, 0.00, 742.54, 0.00[0m
+[0;32mI (40988) ESC_controller: ESC Values: 731.12, 0.00, 755.56, 0.00[0m
+[0;32mI (41108) ESC_controller: ESC Values: 721.98, 0.00, 740.93, 0.00[0m
+[0;32mI (41228) ESC_controller: ESC Values: 725.55, 0.00, 748.69, 0.00[0m
+[0;32mI (41348) ESC_controller: ESC Values: 699.77, 0.00, 733.29, 0.00[0m
+[0;32mI (41468) ESC_controller: ESC Values: 705.30, 0.00, 749.01, 0.00[0m
+[0;32mI (41588) ESC_controller: ESC Values: 707.16, 0.00, 748.91, 0.00[0m
+[0;32mI (41708) ESC_controller: ESC Values: 731.96, 0.00, 742.10, 0.00[0m
+[0;32mI (41828) ESC_controller: ESC Values: 730.92, 0.00, 739.07, 0.00[0m
+[0;32mI (41948) ESC_controller: ESC Values: 729.84, 0.00, 746.32, 0.00[0m
+[0;32mI (42068) ESC_controller: ESC Values: 741.96, 0.00, 735.37, 0.00[0m
+[0;32mI (42188) ESC_controller: ESC Values: 721.18, 0.00, 716.61, 0.00[0m
+[0;32mI (42308) ESC_controller: ESC Values: 742.91, 0.00, 746.17, 0.00[0m
+[0;32mI (42428) ESC_controller: ESC Values: 735.37, 0.00, 736.53, 0.00[0m
+[0;32mI (42548) ESC_controller: ESC Values: 735.99, 0.00, 729.13, 0.00[0m
+[0;32mI (42668) ESC_controller: ESC Values: 740.24, 0.00, 717.78, 0.00[0m
+[0;32mI (42788) ESC_controller: ESC Values: 726.04, 0.00, 707.38, 0.00[0m
+[0;32mI (42908) ESC_controller: ESC Values: 718.13, 0.00, 694.75, 0.00[0m
+[0;32mI (43028) ESC_controller: ESC Values: 693.04, 0.00, 671.37, 0.00[0m
+[0;32mI (43148) ESC_controller: ESC Values: 668.82, 0.00, 640.97, 0.00[0m
+[0;32mI (43268) ESC_controller: ESC Values: 651.77, 0.00, 629.39, 0.00[0m
+[0;32mI (43388) ESC_controller: ESC Values: 628.70, 0.00, 617.69, 0.00[0m
+[0;32mI (43508) ESC_controller: ESC Values: 612.91, 0.00, 607.20, 0.00[0m
+[0;32mI (43628) ESC_controller: ESC Values: 625.95, 0.00, 605.86, 0.00[0m
+[0;32mI (43748) ESC_controller: ESC Values: 655.13, 0.00, 636.27, 0.00[0m
+[0;32mI (43868) ESC_controller: ESC Values: 723.69, 0.00, 703.44, 0.00[0m
+[0;32mI (43988) ESC_controller: ESC Values: 760.35, 0.00, 744.33, 0.00[0m
+[0;32mI (44108) ESC_controller: ESC Values: 745.87, 0.00, 734.65, 0.00[0m
+[0;32mI (44228) ESC_controller: ESC Values: 750.22, 0.00, 741.15, 0.00[0m
+[0;32mI (44348) ESC_controller: ESC Values: 743.27, 0.00, 753.64, 0.00[0m
+[0;32mI (44468) ESC_controller: ESC Values: 746.88, 0.00, 748.84, 0.00[0m
+[0;32mI (44588) ESC_controller: ESC Values: 738.70, 0.00, 740.61, 0.00[0m
+[0;32mI (44708) ESC_controller: ESC Values: 745.30, 0.00, 752.52, 0.00[0m
+[0;32mI (44828) ESC_controller: ESC Values: 738.42, 0.00, 739.52, 0.00[0m
+[0;32mI (44948) ESC_controller: ESC Values: 743.00, 0.00, 751.51, 0.00[0m
+[0;32mI (45068) ESC_controller: ESC Values: 735.34, 0.00, 746.89, 0.00[0m
+[0;32mI (45188) ESC_controller: ESC Values: 740.24, 0.00, 748.43, 0.00[0m
+[0;32mI (45308) ESC_controller: ESC Values: 737.38, 0.00, 744.51, 0.00[0m
+[0;32mI (45428) ESC_controller: ESC Values: 740.30, 0.00, 749.23, 0.00[0m
+[0;32mI (45548) ESC_controller: ESC Values: 745.51, 0.00, 754.32, 0.00[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ca18h ( 51736) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001ca40 vaddr=3ffb0000 size=0236ch (  9068) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001edb4 vaddr=40080000 size=01264h (  4708) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19f74h (106356) map[0m
+[0;32mI (173) esp_image: segment 4: paddr=00039f9c vaddr=40081264 size=0da60h ( 55904) load[0m
+[0;32mI (203) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (214) cpu_start: Multicore app[0m
+D (214) cpu_start: Pro cpu up[0m
+D (215) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (224) clk: RTC_SLOW_CLK calibration value: 3102195[0m
+D (235) cpu_start: calling init function: 0x400d1548 on core: 0[0m
+[0;32mI (236) cpu_start: Pro cpu start user code[0m
+[0;32mI (236) cpu_start: cpu freq: 160000000 Hz[0m
+D (241) cpu_start: calling init function: 0x400d158c on core: 0[0m
+[0;32mI (247) cpu_start: Application information:[0m
+[0;32mI (252) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (258) cpu_start: App version:      1[0m
+[0;32mI (263) cpu_start: Compile time:     Jan 27 2024 11:38:47[0m
+[0;32mI (269) cpu_start: ELF file SHA256:  de237dadb...[0m
+[0;32mI (274) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (281) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (286) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (291) cpu_start: Chip rev:         v3.0[0m
+D (295) cpu_start: calling init function: 0x400d16d4 on core: 0[0m
+D (302) memory_layout: Checking 9 reserved memory ranges:[0m
+D (307) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (313) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (320) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb2d20[0m
+D (326) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (333) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (339) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (345) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (352) memory_layout: Reserved memory range 0x40080000 - 0x4008ecc4[0m
+D (358) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (365) memory_layout: Building list of available memory regions:[0m
+D (371) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (378) memory_layout: Available memory region 0x3ffb2d20 - 0x3ffb8000[0m
+D (384) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (391) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (397) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (404) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (411) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (417) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (424) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (430) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (437) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (443) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (450) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (457) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (463) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (470) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (476) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (483) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (490) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (496) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (503) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (509) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (516) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (523) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (529) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (536) memory_layout: Available memory region 0x4008ecc4 - 0x40090000[0m
+D (542) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (549) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (556) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (562) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (569) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (575) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (582) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (589) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (595) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (603) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (608) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (614) heap_init: New heap initialised at 0x3ffb2d20[0m
+[0;32mI (619) heap_init: At 3FFB2D20 len 0002D2E0 (180 KiB): DRAM[0m
+[0;32mI (625) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (638) heap_init: New heap initialised at 0x4008ecc4[0m
+[0;32mI (643) heap_init: At 4008ECC4 len 0001133C (68 KiB): IRAM[0m
+D (649) cpu_start: calling init function: 0x400d16e0 on core: 0[0m
+D (655) cpu_start: calling init function: 0x400d3d64 on core: 0[0m
+D (661) cpu_start: calling init function: 0x400e85cc on core: 0[0m
+D (667) cpu_start: calling init function: 0x400d16ec on core: 0[0m
+D (673) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (678) cpu_start: calling init function: 0x400d16f8 on core: 0[0m
+D (684) cpu_start: calling init function: 0x400d5494 on core: 0[0m
+D (690) cpu_start: calling init function: 0x400d6680 on core: 0[0m
+D (696) cpu_start: calling init function: 0x400d3dd0 on core: 0[0m
+D (702) cpu_start: calling init function: 0x400d1704 on core: 0[0m
+D (708) cpu_start: calling init function: 0x400d1710 on core: 0[0m
+D (714) spi_flash: trying chip: issi[0m
+D (718) spi_flash: trying chip: gd[0m
+D (721) spi_flash: trying chip: mxic[0m
+D (725) spi_flash: trying chip: winbond[0m
+D (729) spi_flash: trying chip: generic[0m
+[0;32mI (733) spi_flash: detected chip: generic[0m
+[0;32mI (737) spi_flash: flash io: dio[0m
+[0;33mW (741) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (754) cpu_start: calling init function: 0x400e85d4 on core: 0[0m
+D (760) cpu_start: calling init function: 0x400dd2f8[0m
+[0;33mW (765) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (776) cpu_start: calling init function: 0x400d74a0[0m
+D (781) cpu_start: calling init function: 0x4008613c[0m
+D (786) cpu_start: calling init function: 0x400d27a4[0m
+D (791) cpu_start: calling init function: 0x400d1ca8[0m
+D (796) cpu_start: calling init function: 0x400d13b0[0m
+D (801) cpu_start: calling init function: 0x400d42c4 on core: 0[0m
+D (807) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (812) cpu_start: calling init function: 0x400d1738 on core: 0[0m
+D (819) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (823) app_start: Starting scheduler on CPU0[0m
+[0;32D (828) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (828) app_start: Starting scheduler on CPU1[0m
+mI (828) main_task: Started on CPU0[0m
+D (848) heap_init: New heap initialised at 0x3ffe0440[0m
+D (848) heap_init: New heap initialised at 0x3ffe4350[0m
+D (848) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (848) main_task: Calling app_main()[0m
+D (858) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (868) IMU: devid=0x34[0m
+[0;32mI (868) IMU: getRate()=0[0m
+[0;32mI (868) IMU: getExternalFrameSync()=0[0m
+[0;32mI (868) IMU: getDLPFMode()=6[0m
+[0;32mI (878) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (878) rmt: new group(0) at 0x3ffbc848, occupy=ffffff00[0m
+[0;D (888) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+32mI (888) IMU: getFullScaleAccelRange()=0[0m
+D (898) rmt: group clock resolution:80000000[0m
+[0;32mI (898) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (898) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (888) main_task: Returned from app_main()[0m
+D (918) rmt: new tx channel(0,0) at 0x3ffbc4c8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (938) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (938) rmt: group clock resolution:80000000[0m
+[0;32mI (948) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (958) rmt: new tx channel(0,1) at 0x3ffb40d4, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (968) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (978) rmt: group clock resolution:80000000[0m
+[0;32mI (978) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (988) rmt: new tx channel(0,2) at 0x3ffb42c8, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1008) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (1008) rmt: group clock resolution:80000000[0m
+[0;32mI (1008) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1018) rmt: new tx channel(0,3) at 0x3ffb45e0, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1038) ESC_controller: Install Dshot ESC encoder[0m
+D (1038) rmt: new bytes encoder @0x3ffb4928[0m
+D (1048) rmt: new copy encoder @0x3ffb494c[0m
+D (1048) rmt: new bytes encoder @0x3ffb49ac[0m
+D (1058) rmt: new copy encoder @0x3ffb49d0[0m
+D (1058) rmt: new bytes encoder @0x3ffb4a04[0m
+D (1068) rmt: new copy encoder @0x3ffb4ab8[0m
+D (1068) rmt: new bytes encoder @0x3ffb4a48[0m
+D (1068) rmt: new copy encoder @0x3ffb4a6c[0m
+[0;32mI (1078) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1078) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (11088) ESC_controller: ESC Values: 679.05, 0.00, 700.31, 0.00[0m
+[0;32mI (11088) ESC_controller: ESC Values: 683.39, 0.00, 703.28, 0.00[0m
+[0;32mI (11088) ESC_controller: ESC Values: 686.84, 0.00, 705.31, 0.00[0m
+[0;32mI (11088) ESC_controller: ESC Values: 683.77, 0.00, 703.68, 0.00[0m
+[0;32mI (11098) ESC_controller: ESC Values: 680.38, 0.00, 702.03, 0.00[0m
+[0;32mI (11108) ESC_controller: ESC Values: 677.09, 0.00, 698.37, 0.00[0m
+[0;32mI (11108) ESC_controller: ESC Values: 679.01, 0.00, 700.34, 0.00[0m
+[0;32mI (11118) ESC_controller: ESC Values: 683.50, 0.00, 703.67, 0.00[0m
+[0;32mI (11128) ESC_controller: ESC Values: 687.80, 0.00, 707.66, 0.00[0m
+[0;32mI (11138) ESC_controller: ESC Values: 686.68, 0.00, 706.75, 0.00[0m
+[0;32mI (11138) ESC_controller: ESC Values: 680.22, 0.00, 700.88, 0.00[0m
+[0;32mI (11148) ESC_controller: ESC Values: 679.86, 0.00, 701.44, 0.00[0m
+[0;32mI (11228) ESC_controller: ESC Values: 794.76, 173.88, 426.12, 0.00[0m
+[0;32mI (11348) ESC_controller: ESC Values: 911.30, 52.39, 547.61, 0.00[0m
+[0;32mI (11468) ESC_controller: ESC Values: 894.39, 116.12, 483.88, 0.00[0m
+[0;32mI (11588) ESC_controller: ESC Values: 835.86, 201.58, 398.42, 0.00[0m
+[0;32mI (11708) ESC_controller: ESC Values: 884.95, 131.33, 468.67, 0.00[0m
+[0;32mI (11828) ESC_controller: ESC Values: 898.13, 101.45, 498.55, 0.00[0m
+[0;32mI (11948) ESC_controller: ESC Values: 894.46, 99.07, 500.93, 0.00[0m
+[0;32mI (12068) ESC_controller: ESC Values: 893.54, 92.49, 507.51, 0.00[0m
+[0;32mI (12188) ESC_controller: ESC Values: 894.10, 84.48, 515.52, 0.00[0m
+[0;32mI (12308) ESC_controller: ESC Values: 892.80, 79.92, 520.08, 0.00[0m
+[0;32mI (12428) ESC_controller: ESC Values: 889.40, 74.47, 525.53, 0.00[0m
+[0;32mI (12548) ESC_controller: ESC Values: 887.10, 68.50, 531.50, 0.00[0m
+[0;32mI (12668) ESC_controller: ESC Values: 885.42, 63.85, 536.15, 0.00[0m
+[0;32mI (12788) ESC_controller: ESC Values: 884.71, 57.74, 542.26, 0.00[0m
+[0;32mI (12908) ESC_controller: ESC Values: 882.84, 50.87, 549.13, 0.00[0m
+[0;32mI (13028) ESC_controller: ESC Values: 881.06, 44.21, 555.79, 0.00[0m
+[0;32mI (13148) ESC_controller: ESC Values: 878.68, 37.64, 562.36, 0.00[0m
+[0;32mI (13268) ESC_controller: ESC Values: 876.71, 30.65, 569.35, 0.00[0m
+[0;32mI (13388) ESC_controller: ESC Values: 874.72, 24.15, 575.85, 0.00[0m
+[0;32mI (13508) ESC_controller: ESC Values: 873.01, 18.11, 581.89, 0.00[0m
+[0;32mI (13628) ESC_controller: ESC Values: 870.42, 11.51, 588.49, 0.00[0m
+[0;32mI (13748) ESC_controller: ESC Values: 867.39, 4.81, 595.19, 0.00[0m
+[0;32mI (13868) ESC_controller: ESC Values: 864.72, 0.00, 601.76, 0.00[0m
+[0;32mI (13988) ESC_controller: ESC Values: 863.71, 0.00, 608.25, 0.00[0m
+[0;32mI (14108) ESC_controller: ESC Values: 863.05, 0.00, 618.31, 0.00[0m
+[0;32mI (14228) ESC_controller: ESC Values: 862.00, 0.00, 626.55, 0.00[0m
+[0;32mI (14348) ESC_controller: ESC Values: 861.08, 0.00, 635.44, 0.00[0m
+[0;32mI (14468) ESC_controller: ESC Values: 859.21, 0.00, 646.02, 0.00[0m
+[0;32mI (14588) ESC_controller: ESC Values: 857.49, 0.00, 653.97, 0.00[0m
+[0;32mI (14708) ESC_controller: ESC Values: 855.35, 0.00, 664.62, 0.00[0m
+[0;32mI (14828) ESC_controller: ESC Values: 853.13, 0.00, 670.87, 0.00[0m
+[0;32mI (14948) ESC_controller: ESC Values: 849.44, 0.00, 678.93, 0.00[0m
+[0;32mI (15068) ESC_controller: ESC Values: 845.98, 0.00, 685.87, 0.00[0m
+[0;32mI (15188) ESC_controller: ESC Values: 842.68, 0.00, 692.67, 0.00[0m
+[0;32mI (15308) ESC_controller: ESC Values: 838.62, 0.00, 699.61, 0.00[0m
+[0;32mI (15428) ESC_controller: ESC Values: 835.02, 0.00, 707.10, 0.00[0m
+[0;32mI (15548) ESC_controller: ESC Values: 831.35, 0.00, 714.65, 0.00[0m
+[0;32mI (15668) ESC_controller: ESC Values: 827.51, 0.00, 722.28, 0.00[0m
+[0;32mI (15788) ESC_controller: ESC Values: 823.39, 0.00, 730.03, 0.00[0m
+[0;32mI (15908) ESC_controller: ESC Values: 819.36, 0.00, 738.25, 0.00[0m
+[0;32mI (16028) ESC_controller: ESC Values: 815.12, 0.00, 746.44, 0.00[0m
+[0;32mI (16148) ESC_controller: ESC Values: 811.08, 0.00, 755.07, 0.00[0m
+[0;32mI (16268) ESC_controller: ESC Values: 806.56, 0.00, 762.62, 0.00[0m
+[0;32mI (16388) ESC_controller: ESC Values: 800.28, 0.00, 767.00, 0.00[0m
+[0;32mI (16508) ESC_controller: ESC Values: 796.78, 0.00, 771.98, 0.00[0m
+[0;32mI (16628) ESC_controller: ESC Values: 796.66, 0.00, 777.96, 0.00[0m
+[0;32mI (16748) ESC_controller: ESC Values: 797.67, 0.00, 785.48, 0.00[0m
+[0;32mI (16868) ESC_controller: ESC Values: 794.01, 0.00, 787.94, 0.00[0m
+[0;32mI (16988) ESC_controller: ESC Values: 790.19, 0.00, 785.33, 0.00[0m
+[0;32mI (17108) ESC_controller: ESC Values: 792.54, 0.00, 785.38, 0.00[0m
+[0;32mI (17228) ESC_controller: ESC Values: 793.65, 0.00, 787.99, 0.00[0m
+[0;32mI (17348) ESC_controller: ESC Values: 793.98, 0.00, 787.34, 0.00[0m
+[0;32mI (17468) ESC_controller: ESC Values: 791.37, 0.00, 784.34, 0.00[0m
+[0;32mI (17588) ESC_controller: ESC Values: 791.81, 0.00, 787.83, 0.00[0m
+[0;32mI (17708) ESC_controller: ESC Values: 793.20, 0.00, 790.82, 0.00[0m
+[0;32mI (17828) ESC_controller: ESC Values: 791.06, 0.00, 789.48, 0.00[0m
+[0;32mI (17948) ESC_controller: ESC Values: 793.23, 0.00, 792.76, 0.00[0m
+[0;32mI (18068) ESC_controller: ESC Values: 796.89, 0.00, 796.93, 0.00[0m
+[0;32mI (18188) ESC_controller: ESC Values: 796.04, 0.00, 797.48, 0.00[0m
+[0;32mI (18308) ESC_controller: ESC Values: 795.43, 0.00, 793.38, 0.00[0m
+[0;32mI (18428) ESC_controller: ESC Values: 795.61, 0.00, 789.94, 0.00[0m
+[0;32mI (18548) ESC_controller: ESC Values: 797.14, 0.00, 788.45, 0.00[0m
+[0;32mI (18668) ESC_controller: ESC Values: 796.73, 0.00, 787.26, 0.00[0m
+[0;32mI (18788) ESC_controller: ESC Values: 795.67, 0.00, 789.55, 0.00[0m
+[0;32mI (18908) ESC_controller: ESC Values: 798.94, 0.00, 795.38, 0.00[0m
+[0;32mI (19028) ESC_controller: ESC Values: 799.85, 0.00, 796.03, 0.00[0m
+[0;32mI (19148) ESC_controller: ESC Values: 801.22, 0.00, 795.24, 0.00[0m
+[0;32mI (19268) ESC_controller: ESC Values: 798.07, 0.00, 792.89, 0.00[0m
+[0;32mI (19388) ESC_controller: ESC Values: 799.57, 0.00, 790.34, 0.00[0m
+[0;32mI (19508) ESC_controller: ESC Values: 801.11, 0.00, 790.48, 0.00[0m
+[0;32mI (19628) ESC_controller: ESC Values: 797.66, 0.00, 789.43, 0.00[0m
+[0;32mI (19748) ESC_controller: ESC Values: 799.94, 0.00, 794.38, 0.00[0m
+[0;32mI (19868) ESC_controller: ESC Values: 797.18, 0.00, 790.69, 0.00[0m
+[0;32mI (19988) ESC_controller: ESC Values: 795.48, 0.00, 788.52, 0.00[0m
+[0;32mI (20108) ESC_controller: ESC Values: 793.34, 0.00, 789.38, 0.00[0m
+[0;32mI (20228) ESC_controller: ESC Values: 797.29, 0.00, 792.51, 0.00[0m
+[0;32mI (20348) ESC_controller: ESC Values: 798.89, 0.00, 794.38, 0.00[0m
+[0;32mI (20468) ESC_controller: ESC Values: 798.51, 0.00, 796.92, 0.00[0m
+[0;32mI (20588) ESC_controller: ESC Values: 799.01, 0.00, 795.75, 0.00[0m
+[0;32mI (20708) ESC_controller: ESC Values: 798.35, 0.00, 793.76, 0.00[0m
+[0;32mI (20828) ESC_controller: ESC Values: 796.09, 0.00, 795.09, 0.00[0m
+[0;32mI (20948) ESC_controller: ESC Values: 798.84, 0.00, 796.50, 0.00[0m
+[0;32mI (21068) ESC_controller: ESC Values: 798.44, 0.00, 796.66, 0.00[0m
+[0;32mI (21188) ESC_controller: ESC Values: 795.51, 0.00, 797.79, 0.00[0m
+[0;32mI (21308) ESC_controller: ESC Values: 797.47, 0.00, 798.18, 0.00[0m
+[0;32mI (21428) ESC_controller: ESC Values: 799.77, 0.00, 796.60, 0.00[0m
+[0;32mI (21548) ESC_controller: ESC Values: 803.52, 0.00, 800.96, 0.00[0m
+[0;32mI (21668) ESC_controller: ESC Values: 800.58, 0.00, 796.89, 0.00[0m
+[0;32mI (21788) ESC_controller: ESC Values: 793.17, 0.00, 789.22, 0.00[0m
+[0;32mI (21908) ESC_controller: ESC Values: 800.22, 0.00, 797.00, 0.00[0m
+[0;32mI (22028) ESC_controller: ESC Values: 803.12, 0.00, 798.94, 0.00[0m
+[0;32mI (22148) ESC_controller: ESC Values: 809.88, 0.00, 806.08, 0.00[0m
+[0;32mI (22268) ESC_controller: ESC Values: 805.08, 0.00, 801.35, 0.00[0m
+[0;32mI (22388) ESC_controller: ESC Values: 797.74, 0.00, 791.29, 0.00[0m
+[0;32mI (22508) ESC_controller: ESC Values: 797.74, 0.00, 780.26, 0.00[0m
+[0;32mI (22628) ESC_controller: ESC Values: 789.91, 0.00, 768.81, 0.00[0m
+[0;32mI (22748) ESC_controller: ESC Values: 785.79, 0.00, 750.11, 0.00[0m
+[0;32mI (22868) ESC_controller: ESC Values: 741.06, 0.00, 718.88, 0.00[0m
+[0;32mI (22988) ESC_controller: ESC Values: 696.13, 0.00, 685.31, 0.00[0m
+[0;32mI (23108) ESC_controller: ESC Values: 714.57, 0.00, 706.38, 0.00[0m
+[0;32mI (23228) ESC_controller: ESC Values: 702.34, 0.00, 696.09, 0.00[0m
+[0;32mI (23348) ESC_controller: ESC Values: 696.97, 0.00, 682.70, 0.00[0m
+[0;32mI (23468) ESC_controller: ESC Values: 684.18, 0.00, 652.03, 0.00[0m
+[0;32mI (23588) ESC_controller: ESC Values: 653.67, 0.00, 601.95, 0.00[0m
+[0;32mI (23708) ESC_controller: ESC Values: 652.17, 14.26, 585.74, 0.00[0m
+[0;32mI (23828) ESC_controller: ESC Values: 646.87, 13.76, 586.24, 0.00[0m
+[0;32mI (23948) ESC_controller: ESC Values: 645.51, 3.46, 596.54, 0.00[0m
+[0;32mI (24068) ESC_controller: ESC Values: 625.16, 12.26, 587.74, 0.00[0m
+[0;32mI (24188) ESC_controller: ESC Values: 555.01, 61.99, 538.01, 44.99[0m
+[0;32mI (24308) ESC_controller: ESC Values: 532.67, 75.83, 524.17, 67.33[0m
+[0;32mI (24428) ESC_controller: ESC Values: 484.26, 102.87, 497.13, 115.74[0m
+[0;32mI (24548) ESC_controller: ESC Values: 472.83, 115.89, 484.11, 127.17[0m
+[0;32mI (24668) ESC_controller: ESC Values: 468.01, 108.92, 491.08, 131.99[0m
+[0;32mI (24788) ESC_controller: ESC Values: 424.27, 149.59, 450.41, 175.73[0m
+[0;32mI (24908) ESC_controller: ESC Values: 432.46, 147.48, 452.52, 167.54[0m
+[0;32mI (25028) ESC_controller: ESC Values: 424.62, 151.30, 448.70, 175.38[0m
+[0;32mI (25148) ESC_controller: ESC Values: 436.60, 159.34, 440.66, 163.40[0m
+[0;32mI (25268) ESC_controller: ESC Values: 433.62, 173.73, 426.27, 166.38[0m
+[0;32mI (25388) ESC_controller: ESC Values: 435.67, 165.85, 434.15, 164.33[0m
+[0;32mI (25508) ESC_controller: ESC Values: 426.86, 177.76, 422.24, 173.14[0m
+[0;32mI (25628) ESC_controller: ESC Values: 421.90, 177.52, 422.48, 178.10[0m
+[0;32mI (25748) ESC_controller: ESC Values: 414.97, 183.68, 416.32, 185.03[0m
+[0;32mI (25868) ESC_controller: ESC Values: 409.74, 191.89, 408.11, 190.26[0m
+[0;32mI (25988) ESC_controller: ESC Values: 383.02, 214.80, 385.20, 216.98[0m
+[0;32mI (26108) ESC_controller: ESC Values: 375.46, 220.93, 379.07, 224.54[0m
+[0;32mI (26228) ESC_controller: ESC Values: 373.65, 221.38, 378.62, 226.35[0m
+[0;32mI (26348) ESC_controller: ESC Values: 381.08, 215.00, 385.00, 218.92[0m
+[0;32mI (26468) ESC_controller: ESC Values: 366.97, 231.06, 368.94, 233.03[0m
+[0;32mI (26588) ESC_controller: ESC Values: 303.96, 301.94, 298.06, 296.04[0m
+[0;32mI (26708) ESC_controller: ESC Values: 303.70, 308.55, 291.45, 296.30[0m
+[0;32mI (26828) ESC_controller: ESC Values: 304.54, 301.39, 298.61, 295.46[0m
+[0;32mI (26948) ESC_controller: ESC Values: 280.91, 316.55, 283.45, 319.09[0m
+[0;32mI (27068) ESC_controller: ESC Values: 295.21, 306.84, 293.16, 304.79[0m
+[0;32mI (27188) ESC_controller: ESC Values: 290.66, 312.31, 287.69, 309.34[0m
+[0;32mI (27308) ESC_controller: ESC Values: 296.72, 306.11, 293.89, 303.28[0m
+[0;32mI (27428) ESC_controller: ESC Values: 288.40, 315.55, 284.45, 311.60[0m
+[0;32mI (27548) ESC_controller: ESC Values: 289.28, 311.33, 288.67, 310.72[0m
+[0;32mI (27668) ESC_controller: ESC Values: 292.63, 312.81, 287.19, 307.37[0m
+[0;32mI (27788) ESC_controller: ESC Values: 300.53, 299.45, 300.55, 299.47[0m
+[0;32mI (27908) ESC_controller: ESC Values: 286.84, 315.83, 284.17, 313.16[0m
+[0;32mI (28028) ESC_controller: ESC Values: 294.56, 306.21, 293.79, 305.44[0m
+[0;32mI (28148) ESC_controller: ESC Values: 290.83, 309.94, 290.06, 309.17[0m
+[0;32mI (28268) ESC_controller: ESC Values: 289.58, 311.07, 288.93, 310.42[0m
+[0;32mI (28388) ESC_controller: ESC Values: 298.64, 301.43, 298.57, 301.36[0m
+[0;32mI (28508) ESC_controller: ESC Values: 283.16, 320.22, 279.78, 316.84[0m
+[0;32mI (28628) ESC_controller: ESC Values: 293.72, 308.63, 291.37, 306.28[0m
+[0;32mI (28748) ESC_controller: ESC Values: 333.59, 265.74, 334.26, 266.41[0m
+[0;32mI (28868) ESC_controller: ESC Values: 451.99, 134.99, 465.01, 148.01[0m
+[0;32mI (28988) ESC_controller: ESC Values: 702.74, 0.00, 739.16, 0.00[0m
+[0;32mI (29108) ESC_controller: ESC Values: 666.32, 0.00, 677.30, 0.00[0m
+[0;32mI (29228) ESC_controller: ESC Values: 683.00, 0.00, 670.58, 0.00[0m
+[0;32mI (29348) ESC_controller: ESC Values: 706.67, 0.00, 696.35, 0.00[0m
+[0;32mI (29468) ESC_controller: ESC Values: 709.02, 0.00, 713.32, 0.00[0m
+[0;32mI (29588) ESC_controller: ESC Values: 707.90, 0.00, 721.13, 0.00[0m
+[0;32mI (29708) ESC_controller: ESC Values: 704.70, 0.00, 718.67, 0.00[0m
+[0;32mI (29828) ESC_controller: ESC Values: 707.59, 0.00, 721.69, 0.00[0m
+[0;32mI (29948) ESC_controller: ESC Values: 714.50, 0.00, 728.95, 0.00[0m
+[0;32mI (30068) ESC_controller: ESC Values: 720.12, 0.00, 734.02, 0.00[0m
+[0;32mI (30188) ESC_controller: ESC Values: 717.59, 0.00, 729.89, 0.00[0m
+[0;32mI (30308) ESC_controller: ESC Values: 712.52, 0.00, 724.46, 0.00[0m
+[0;32mI (30428) ESC_controller: ESC Values: 707.98, 0.00, 721.24, 0.00[0m
+[0;32mI (30548) ESC_controller: ESC Values: 710.01, 0.00, 725.05, 0.00[0m
+[0;32mI (30668) ESC_controller: ESC Values: 715.17, 0.00, 729.59, 0.00[0m
+[0;32mI (30788) ESC_controller: ESC Values: 720.90, 0.00, 734.19, 0.00[0m
+[0;32mI (30908) ESC_controller: ESC Values: 719.79, 0.00, 731.48, 0.00[0m
+[0;32mI (31028) ESC_controller: ESC Values: 714.52, 0.00, 726.47, 0.00[0m
+[0;32mI (31148) ESC_controller: ESC Values: 710.04, 0.00, 723.65, 0.00[0m
+[0;32mI (31268) ESC_controller: ESC Values: 710.78, 0.00, 724.88, 0.00[0m
+[0;32mI (31388) ESC_controller: ESC Values: 714.28, 0.00, 733.43, 0.00[0m
+[0;32mI (31508) ESC_controller: ESC Values: 698.27, 0.00, 717.99, 0.00[0m
+[0;32mI (31628) ESC_controller: ESC Values: 699.28, 0.00, 727.79, 0.00[0m
+[0;32mI (31748) ESC_controller: ESC Values: 704.29, 0.00, 735.91, 0.00[0m
+[0;32mI (31868) ESC_controller: ESC Values: 714.32, 0.00, 740.13, 0.00[0m
+[0;32mI (31988) ESC_controller: ESC Values: 705.56, 0.00, 726.46, 0.00[0m
+[0;32mI (32108) ESC_controller: ESC Values: 680.57, 0.00, 698.27, 0.00[0m
+[0;32mI (32228) ESC_controller: ESC Values: 531.77, 34.38, 565.62, 68.23[0m
+[0;32mI (32348) ESC_controller: ESC Values: 491.67, 71.38, 528.62, 108.33[0m
+[0;32mI (32468) ESC_controller: ESC Values: 456.02, 135.98, 464.02, 143.98[0m
+[0;32mI (32588) ESC_controller: ESC Values: 418.82, 206.23, 393.77, 181.18[0m
+[0;32mI (32708) ESC_controller: ESC Values: 418.53, 217.51, 382.49, 181.47[0m
+[0;32mI (32828) ESC_controller: ESC Values: 408.32, 226.45, 373.55, 191.68[0m
+[0;32mI (32948) ESC_controller: ESC Values: 344.16, 271.12, 328.88, 255.84[0m
+[0;32mI (33068) ESC_controller: ESC Values: 267.71, 326.08, 273.92, 332.29[0m
+[0;32mI (33188) ESC_controller: ESC Values: 262.54, 329.34, 270.66, 337.46[0m
+[0;32mI (33308) ESC_controller: ESC Values: 267.70, 326.95, 273.05, 332.30[0m
+[0;32mI (33428) ESC_controller: ESC Values: 270.04, 324.07, 275.93, 329.96[0m
+[0;32mI (33548) ESC_controller: ESC Values: 274.16, 335.74, 264.26, 325.84[0m
+[0;32mI (33668) ESC_controller: ESC Values: 256.72, 366.49, 233.51, 343.28[0m
+[0;32mI (33788) ESC_controller: ESC Values: 288.35, 335.23, 264.77, 311.65[0m
+[0;32mI (33908) ESC_controller: ESC Values: 362.69, 245.80, 354.20, 237.31[0m
+[0;32mI (34028) ESC_controller: ESC Values: 416.04, 194.94, 405.06, 183.96[0m
+[0;32mI (34148) ESC_controller: ESC Values: 401.34, 214.98, 385.02, 198.66[0m
+[0;32mI (34268) ESC_controller: ESC Values: 404.13, 201.09, 398.91, 195.87[0m
+[0;32mI (34388) ESC_controller: ESC Values: 400.95, 179.32, 420.68, 199.05[0m
+[0;32mI (34508) ESC_controller: ESC Values: 413.30, 169.23, 430.77, 186.70[0m
+[0;32mI (34628) ESC_controller: ESC Values: 405.69, 187.87, 412.13, 194.31[0m
+[0;32mI (34748) ESC_controller: ESC Values: 394.44, 208.67, 391.33, 205.56[0m
+[0;32mI (34868) ESC_controller: ESC Values: 387.78, 244.26, 355.74, 212.22[0m
+[0;32mI (34988) ESC_controller: ESC Values: 394.08, 252.20, 347.80, 205.92[0m
+[0;32mI (35108) ESC_controller: ESC Values: 416.70, 210.20, 389.80, 183.30[0m
+[0;32mI (35228) ESC_controller: ESC Values: 463.73, 142.52, 457.48, 136.27[0m
+[0;32mI (35348) ESC_controller: ESC Values: 445.15, 117.94, 482.06, 154.85[0m
+[0;32mI (35468) ESC_controller: ESC Values: 387.98, 139.15, 460.85, 212.02[0m
+[0;32mI (35588) ESC_controller: ESC Values: 268.02, 243.14, 356.86, 331.98[0m
+[0;32mI (35708) ESC_controller: ESC Values: 183.11, 316.49, 283.51, 416.89[0m
+[0;32mI (35828) ESC_controller: ESC Values: 155.08, 360.01, 239.99, 444.92[0m
+[0;32mI (35948) ESC_controller: ESC Values: 122.62, 405.98, 194.02, 477.38[0m
+[0;32mI (36068) ESC_controller: ESC Values: 173.62, 389.75, 210.25, 426.38[0m
+[0;32mI (36188) ESC_controller: ESC Values: 213.64, 396.58, 203.42, 386.36[0m
+[0;32mI (36308) ESC_controller: ESC Values: 300.26, 342.26, 257.74, 299.74[0m
+[0;32mI (36428) ESC_controller: ESC Values: 462.22, 194.53, 405.47, 137.78[0m
+[0;32mI (36548) ESC_controller: ESC Values: 586.69, 69.61, 530.39, 13.31[0m
+[0;32mI (36668) ESC_controller: ESC Values: 589.30, 37.10, 562.90, 10.70[0m
+[0;32mI (36788) ESC_controller: ESC Values: 539.76, 43.92, 556.08, 60.24[0m
+[0;32mI (36908) ESC_controller: ESC Values: 461.29, 106.27, 493.73, 138.71[0m
+[0;32mI (37028) ESC_controller: ESC Values: 375.03, 184.70, 415.30, 224.97[0m
+[0;32mI (37148) ESC_controller: ESC Values: 323.68, 218.51, 381.49, 276.32[0m
+[0;32mI (37268) ESC_controller: ESC Values: 365.21, 159.10, 440.90, 234.79[0m
+[0;32mI (37388) ESC_controller: ESC Values: 385.83, 118.04, 481.96, 214.17[0m
+[0;32mI (37508) ESC_controller: ESC Values: 392.84, 96.29, 503.71, 207.16[0m
+[0;32mI (37628) ESC_controller: ESC Values: 407.34, 63.79, 536.21, 192.66[0m
+[0;32mI (37748) ESC_controller: ESC Values: 416.91, 65.94, 534.06, 183.09[0m
+[0;32mI (37868) ESC_controller: ESC Values: 430.50, 62.35, 537.65, 169.50[0m
+[0;32mI (37988) ESC_controller: ESC Values: 440.06, 61.87, 538.13, 159.94[0m
+[0;32mI (38108) ESC_controller: ESC Values: 434.01, 110.47, 489.53, 165.99[0m
+[0;32mI (38228) ESC_controller: ESC Values: 461.39, 137.34, 462.66, 138.61[0m
+[0;32mI (38348) ESC_controller: ESC Values: 471.44, 171.22, 428.78, 128.56[0m
+[0;32mI (38468) ESC_controller: ESC Values: 470.79, 200.24, 399.76, 129.21[0m
+[0;32mI (38588) ESC_controller: ESC Values: 454.59, 222.37, 377.63, 145.41[0m
+[0;32mI (38708) ESC_controller: ESC Values: 465.21, 221.70, 378.30, 134.79[0m
+[0;32mI (38828) ESC_controller: ESC Values: 471.66, 228.65, 371.35, 128.34[0m
+[0;32mI (38948) ESC_controller: ESC Values: 464.27, 244.42, 355.58, 135.73[0m
+[0;32mI (39068) ESC_controller: ESC Values: 443.70, 256.77, 343.23, 156.30[0m
+[0;32mI (39188) ESC_controller: ESC Values: 430.48, 267.34, 332.66, 169.52[0m
+[0;32mI (39308) ESC_controller: ESC Values: 440.29, 256.74, 343.26, 159.71[0m
+[0;32mI (39428) ESC_controller: ESC Values: 458.63, 241.89, 358.11, 141.37[0m
+[0;32mI (39548) ESC_controller: ESC Values: 492.72, 215.66, 384.34, 107.28[0m
+[0;32mI (39668) ESC_controller: ESC Values: 483.70, 207.23, 392.77, 116.30[0m
+[0;32mI (39788) ESC_controller: ESC Values: 545.40, 137.32, 462.68, 54.60[0m
+[0;32mI (39908) ESC_controller: ESC Values: 633.06, 59.28, 540.72, 0.00[0m
+[0;32mI (40028) ESC_controller: ESC Values: 634.74, 37.09, 562.91, 0.00[0m
+[0;32mI (40148) ESC_controller: ESC Values: 648.00, 6.69, 593.31, 0.00[0m
+[0;32mI (40268) ESC_controller: ESC Values: 702.39, 0.00, 654.79, 0.00[0m
+[0;32mI (40388) ESC_controller: ESC Values: 728.31, 0.00, 706.03, 0.00[0m
+[0;32mI (40508) ESC_controller: ESC Values: 727.25, 0.00, 733.78, 0.00[0m
+[0;32mI (40628) ESC_controller: ESC Values: 719.15, 0.00, 727.76, 0.00[0m
+[0;32mI (40748) ESC_controller: ESC Values: 730.52, 0.00, 739.88, 0.00[0m
+[0;32mI (40868) ESC_controller: ESC Values: 728.72, 0.00, 741.92, 0.00[0m
+[0;32mI (40988) ESC_controller: ESC Values: 717.12, 0.00, 739.61, 0.00[0m
+[0;32mI (41108) ESC_controller: ESC Values: 715.20, 0.00, 744.12, 0.00[0m
+[0;32mI (41228) ESC_controller: ESC Values: 717.21, 0.00, 739.59, 0.00[0m
+[0;32mI (41348) ESC_controller: ESC Values: 721.74, 0.00, 738.69, 0.00[0m
+[0;32mI (41468) ESC_controller: ESC Values: 716.19, 0.00, 735.82, 0.00[0m
+[0;32mI (41588) ESC_controller: ESC Values: 718.42, 0.00, 739.29, 0.00[0m
+[0;32mI (41708) ESC_controller: ESC Values: 725.07, 0.00, 744.76, 0.00[0m
+[0;32mI (41828) ESC_controller: ESC Values: 727.11, 0.00, 744.98, 0.00[0m
+[0;32mI (41948) ESC_controller: ESC Values: 720.18, 0.00, 739.91, 0.00[0m
+[0;32mI (42068) ESC_controller: ESC Values: 716.16, 0.00, 735.81, 0.00[0m
+[0;32mI (42188) ESC_controller: ESC Values: 713.78, 0.00, 733.08, 0.00[0m
+[0;32mI (42308) ESC_controller: ESC Values: 724.76, 0.00, 743.45, 0.00[0m
+[0;32mI (42428) ESC_controller: ESC Values: 717.56, 0.00, 737.76, 0.00[0m
+[0;32mI (42548) ESC_controller: ESC Values: 728.81, 0.00, 750.09, 0.00[0m
+[0;32mI (42668) ESC_controller: ESC Values: 731.91, 0.00, 752.33, 0.00[0m
+[0;32mI (42788) ESC_controller: ESC Values: 725.40, 0.00, 742.16, 0.00[0m
+[0;32mI (42908) ESC_controller: ESC Values: 722.34, 0.00, 739.25, 0.00[0m
+[0;32mI (43028) ESC_controller: ESC Values: 720.82, 0.00, 738.39, 0.00[0m
+[0;32mI (43148) ESC_controller: ESC Values: 722.68, 0.00, 741.79, 0.00[0m
+[0;32mI (43268) ESC_controller: ESC Values: 731.04, 0.00, 749.85, 0.00[0m
+[0;32mI (43388) ESC_controller: ESC Values: 728.99, 0.00, 746.22, 0.00[0m
+[0;32mI (43508) ESC_controller: ESC Values: 726.90, 0.00, 744.89, 0.00[0m
+[0;32mI (43628) ESC_controller: ESC Values: 739.19, 0.00, 756.60, 0.00[0m
+[0;32mI (43748) ESC_controller: ESC Values: 728.10, 0.00, 744.53, 0.00[0m
+[0;32mI (43868) ESC_controller: ESC Values: 730.12, 0.00, 749.89, 0.00[0m
+[0;32mI (43988) ESC_controller: ESC Values: 729.20, 0.00, 749.29, 0.00[0m
+[0;32mI (44108) ESC_controller: ESC Values: 737.39, 0.00, 756.51, 0.00[0m
+[0;32mI (44228) ESC_controller: ESC Values: 729.33, 0.00, 747.45, 0.00[0m
+[0;32mI (44348) ESC_controller: ESC Values: 725.88, 0.00, 743.04, 0.00[0m
+[0;32mI (44468) ESC_controller: ESC Values: 723.74, 0.00, 742.24, 0.00[0m
+[0;32mI (44588) ESC_controller: ESC Values: 728.46, 0.00, 747.59, 0.00[0m
+[0;32mI (44708) ESC_controller: ESC Values: 733.67, 0.00, 753.07, 0.00[0m
+[0;32mI (44828) ESC_controller: ESC Values: 734.32, 0.00, 751.95, 0.00[0m
+[0;32mI (44948) ESC_controller: ESC Values: 730.69, 0.00, 747.91, 0.00[0m
+[0;32mI (45068) ESC_controller: ESC Values: 726.11, 0.00, 743.68, 0.00[0m
+[0;32mI (45188) ESC_controller: ESC Values: 723.66, 0.00, 742.61, 0.00[0m
+[0;32mI (45308) ESC_controller: ESC Values: 729.02, 0.00, 748.24, 0.00[0m
+[0;32mI (45428) ESC_controller: ESC Values: 732.04, 0.00, 750.53, 0.00[0m
+[0;32mI (45548) ESC_controller: ESC Values: 736.28, 0.00, 754.05, 0.00[0m
+[0;32mI (45668) ESC_controller: ESC Values: 732.75, 0.00, 750.65, 0.00[0m
+[0;32mI (45788) ESC_controller: ESC Values: 728.52, 0.00, 747.56, 0.00[0m
+[0;32mI (45908) ESC_controller: ESC Values: 726.47, 0.00, 744.83, 0.00[0m
+[0;32mI (46028) ESC_controller: ESC Values: 731.02, 0.00, 749.54, 0.00[0m
+[0;32mI (46148) ESC_controller: ESC Values: 733.61, 0.00, 752.13, 0.00[0m
+[0;32mI (46268) ESC_controller: ESC Values: 733.90, 0.00, 751.34, 0.00[0m
+[0;32mI (46388) ESC_controller: ESC Values: 733.38, 0.00, 751.47, 0.00[0m
+[0;32mI (46508) ESC_controller: ESC Values: 729.18, 0.00, 748.66, 0.00[0m
+[0;32mI (46628) ESC_controller: ESC Values: 729.42, 0.00, 748.27, 0.00[0m
+[0;32mI (46748) ESC_controller: ESC Values: 731.66, 0.00, 751.42, 0.00[0m
+[0;32mI (46868) ESC_controller: ESC Values: 734.07, 0.00, 752.20, 0.00[0m
+[0;32mI (46988) ESC_controller: ESC Values: 735.92, 0.00, 754.12, 0.00[0m
+[0;32mI (47108) ESC_controller: ESC Values: 734.71, 0.00, 752.41, 0.00[0m
+[0;32mI (47228) ESC_controller: ESC Values: 731.78, 0.00, 750.70, 0.00[0m
+[0;32mI (47348) ESC_controller: ESC Values: 733.35, 0.00, 751.74, 0.00[0m
+[0;32mI (47468) ESC_controller: ESC Values: 733.55, 0.00, 752.15, 0.00[0m
+[0;32mI (47588) ESC_controller: ESC Values: 735.81, 0.00, 753.45, 0.00[0m
+[0;32mI (47708) ESC_controller: ESC Values: 736.00, 0.00, 754.89, 0.00[0m
+[0;32mI (47828) ESC_controller: ESC Values: 735.50, 0.00, 754.10, 0.00[0m
+[0;32mI (47948) ESC_controller: ESC Values: 735.19, 0.00, 753.84, 0.00[0m
+[0;32mI (48068) ESC_controller: ESC Values: 732.65, 0.00, 751.72, 0.00[0m
+[0;32mI (48188) ESC_controller: ESC Values: 733.43, 0.00, 752.30, 0.00[0m
+[0;32mI (48308) ESC_controller: ESC Values: 737.61, 0.00, 756.33, 0.00[0m
+[0;32mI (48428) ESC_controller: ESC Values: 737.35, 0.00, 755.51, 0.00[0m
+[0;32mI (48548) ESC_controller: ESC Values: 734.98, 0.00, 753.26, 0.00[0m
+[0;32mI (48668) ESC_controller: ESC Values: 734.59, 0.00, 753.39, 0.00[0m
+[0;32mI (48788) ESC_controller: ESC Values: 734.27, 0.00, 752.73, 0.00[0m
+[0;32mI (48908) ESC_controller: ESC Values: 735.48, 0.00, 754.92, 0.00[0m
+[0;32mI (49028) ESC_controller: ESC Values: 737.45, 0.00, 756.61, 0.00[0m
+[0;32mI (49148) ESC_controller: ESC Values: 739.13, 0.00, 757.80, 0.00[0m
+[0;32mI (49268) ESC_controller: ESC Values: 737.82, 0.00, 756.16, 0.00[0m
+[0;32mI (49388) ESC_controller: ESC Values: 734.75, 0.00, 753.31, 0.00[0m
+[0;32mI (49508) ESC_controller: ESC Values: 735.17, 0.00, 754.88, 0.00[0m
+[0;32mI (49628) ESC_controller: ESC Values: 738.12, 0.00, 757.13, 0.00[0m
+[0;32mI (49748) ESC_controller: ESC Values: 740.09, 0.00, 759.23, 0.00[0m
+[0;32mI (49868) ESC_controller: ESC Values: 738.68, 0.00, 758.32, 0.00[0m
+[0;32mI (49988) ESC_controller: ESC Values: 736.82, 0.00, 755.42, 0.00[0m
+[0;32mI (50108) ESC_controller: ESC Values: 736.59, 0.00, 755.42, 0.00[0m
+[0;32mI (50228) ESC_controller: ESC Values: 736.86, 0.00, 755.34, 0.00[0m
+[0;32mI (50348) ESC_controller: ESC Values: 738.15, 0.00, 756.66, 0.00[0m
+[0;32mI (50468) ESC_controller: ESC Values: 739.37, 0.00, 758.06, 0.00[0m
+[0;32mI (50588) ESC_controller: ESC Values: 740.29, 0.00, 759.36, 0.00[0m
+[0;32mI (50708) ESC_controller: ESC Values: 740.07, 0.00, 759.11, 0.00[0m
+[0;32mI (50828) ESC_controller: ESC Values: 740.65, 0.00, 760.52, 0.00[0m
+[0;32mI (50948) ESC_controller: ESC Values: 738.07, 0.00, 757.82, 0.00[0m
+[0;32mI (51068) ESC_controller: ESC Values: 742.48, 0.00, 761.20, 0.00[0m
+[0;32mI (51188) ESC_controller: ESC Values: 736.28, 0.00, 755.65, 0.00[0m
+[0;32mI (51308) ESC_controller: ESC Values: 729.21, 0.00, 747.70, 0.00[0m
+[0;32mI (51428) ESC_controller: ESC Values: 734.79, 0.00, 759.20, 0.00[0m
+[0;32mI (51548) ESC_controller: ESC Values: 799.39, 0.00, 813.94, 0.00[0m
+[0;32mI (51668) ESC_controller: ESC Values: 827.53, 0.00, 831.57, 0.00[0m
+[0;32mI (51788) ESC_controller: ESC Values: 818.95, 0.00, 841.90, 0.00[0m
+[0;32mI (51908) ESC_controller: ESC Values: 833.49, 0.00, 844.80, 0.00[0m
+[0;32mI (52028) ESC_controller: ESC Values: 829.09, 0.00, 848.66, 0.00[0m
+[0;32mI (52148) ESC_controller: ESC Values: 820.76, 0.00, 837.29, 0.00[0m
+[0;32mI (52268) ESC_controller: ESC Values: 833.44, 0.00, 850.21, 0.00[0m
+[0;32mI (52388) ESC_controller: ESC Values: 821.57, 0.00, 838.73, 0.00[0m
+[0;32mI (52508) ESC_controller: ESC Values: 811.90, 0.00, 832.99, 0.00[0m
+[0;32mI (52628) ESC_controller: ESC Values: 827.27, 0.00, 848.53, 0.00[0m
+[0;32mI (52748) ESC_controller: ESC Values: 819.47, 0.00, 837.61, 0.00[0m
+[0;32mI (52868) ESC_controller: ESC Values: 813.25, 0.00, 830.84, 0.00[0m
+[0;32mI (52988) ESC_controller: ESC Values: 810.86, 0.00, 830.10, 0.00[0m
+[0;32mI (53108) ESC_controller: ESC Values: 816.75, 0.00, 836.61, 0.00[0m
+[0;32mI (53228) ESC_controller: ESC Values: 822.25, 0.00, 842.17, 0.00[0m
+[0;32mI (53348) ESC_controller: ESC Values: 822.28, 0.00, 840.15, 0.00[0m
+[0;32mI (53468) ESC_controller: ESC Values: 817.11, 0.00, 834.61, 0.00[0m
+[0;32mI (53588) ESC_controller: ESC Values: 811.37, 0.00, 829.93, 0.00[0m
+[0;32mI (53708) ESC_controller: ESC Values: 812.35, 0.00, 832.46, 0.00[0m
+[0;32mI (53828) ESC_controller: ESC Values: 818.77, 0.00, 838.59, 0.00[0m
+[0;32mI (53948) ESC_controller: ESC Values: 824.46, 0.00, 843.24, 0.00[0m
+[0;32mI (54068) ESC_controller: ESC Values: 823.76, 0.00, 841.20, 0.00[0m
+[0;32mI (54188) ESC_controller: ESC Values: 817.98, 0.00, 836.24, 0.00[0m
+[0;32mI (54308) ESC_controller: ESC Values: 814.13, 0.00, 833.66, 0.00[0m
+[0;32mI (54428) ESC_controller: ESC Values: 814.20, 0.00, 834.07, 0.00[0m
+[0;32mI (54548) ESC_controller: ESC Values: 818.51, 0.00, 837.39, 0.00[0m
+[0;32mI (54668) ESC_controller: ESC Values: 823.34, 0.00, 841.78, 0.00[0m
+[0;32mI (54788) ESC_controller: ESC Values: 823.48, 0.00, 841.89, 0.00[0m
+[0;32mI (54908) ESC_controller: ESC Values: 819.02, 0.00, 838.20, 0.00[0m
+[0;32mI (55028) ESC_controller: ESC Values: 814.72, 0.00, 834.87, 0.00[0m
+[0;32mI (55148) ESC_controller: ESC Values: 815.43, 0.00, 834.93, 0.00[0m
+[0;32mI (55268) ESC_controller: ESC Values: 819.51, 0.00, 838.19, 0.00[0m
+[0;32mI (55388) ESC_controller: ESC Values: 823.74, 0.00, 841.36, 0.00[0m
+[0;32mI (55508) ESC_controller: ESC Values: 827.07, 0.00, 845.01, 0.00[0m
+[0;32mI (55628) ESC_controller: ESC Values: 822.79, 0.00, 842.44, 0.00[0m
+[0;32mI (55748) ESC_controller: ESC Values: 819.09, 0.00, 838.85, 0.00[0m
+[0;32mI (55868) ESC_controller: ESC Values: 816.43, 0.00, 836.16, 0.00[0m
+[0;32mI (55988) ESC_controller: ESC Values: 820.68, 0.00, 839.45, 0.00[0m
+[0;32mI (56108) ESC_controller: ESC Values: 824.17, 0.00, 843.31, 0.00[0m
+[0;32mI (56228) ESC_controller: ESC Values: 828.34, 0.00, 848.30, 0.00[0m
+[0;32mI (56348) ESC_controller: ESC Values: 825.69, 0.00, 845.07, 0.00[0m
+[0;32mI (56468) ESC_controller: ESC Values: 820.84, 0.00, 839.91, 0.00[0m
+[0;32mI (56588) ESC_controller: ESC Values: 819.21, 0.00, 838.30, 0.00[0m
+[0;32mI (56708) ESC_controller: ESC Values: 822.68, 0.00, 841.95, 0.00[0m
+[0;32mI (56828) ESC_controller: ESC Values: 826.23, 0.00, 845.53, 0.00[0m
+[0;32mI (56948) ESC_controller: ESC Values: 825.36, 0.00, 844.60, 0.00[0m
+[0;32mI (57068) ESC_controller: ESC Values: 825.41, 0.00, 843.93, 0.00[0m
+[0;32mI (57188) ESC_controller: ESC Values: 815.62, 0.00, 834.13, 0.00[0m
+[0;32mI (57308) ESC_controller: ESC Values: 828.11, 0.00, 846.09, 0.00[0m
+[0;32mI (57428) ESC_controller: ESC Values: 827.71, 0.00, 849.37, 0.00[0m
+[0;32mI (57548) ESC_controller: ESC Values: 828.60, 0.00, 847.39, 0.00[0m
+[0;32mI (57668) ESC_controller: ESC Values: 831.32, 0.00, 847.42, 0.00[0m
+[0;32mI (57788) ESC_controller: ESC Values: 816.82, 0.00, 835.47, 0.00[0m
+[0;32mI (57908) ESC_controller: ESC Values: 829.59, 0.00, 848.58, 0.00[0m
+[0;32mI (58028) ESC_controller: ESC Values: 813.90, 0.00, 838.09, 0.00[0m
+[0;32mI (58148) ESC_controller: ESC Values: 818.00, 0.00, 840.91, 0.00[0m
+[0;32mI (58268) ESC_controller: ESC Values: 826.64, 0.00, 848.45, 0.00[0m
+[0;32mI (58388) ESC_controller: ESC Values: 830.56, 0.00, 851.79, 0.00[0m
+[0;32mI (58508) ESC_controller: ESC Values: 826.61, 0.00, 849.05, 0.00[0m
+[0;32mI (58628) ESC_controller: ESC Values: 819.21, 0.00, 842.17, 0.00[0m
+[0;32mI (58748) ESC_controller: ESC Values: 825.13, 0.00, 842.32, 0.00[0m
+[0;32mI (58868) ESC_controller: ESC Values: 821.39, 0.00, 844.09, 0.00[0m
+[0;32mI (58988) ESC_controller: ESC Values: 822.42, 0.00, 844.25, 0.00[0m
+[0;32mI (59108) ESC_controller: ESC Values: 825.87, 0.00, 845.71, 0.00[0m
+[0;32mI (59228) ESC_controller: ESC Values: 826.28, 0.00, 846.28, 0.00[0m
+[0;32mI (59348) ESC_controller: ESC Values: 825.36, 0.00, 845.82, 0.00[0m
+[0;32mI (59468) ESC_controller: ESC Values: 830.70, 0.00, 847.43, 0.00[0m
+[0;32mI (59588) ESC_controller: ESC Values: 815.66, 0.00, 853.53, 0.00[0m
+[0;32mI (59708) ESC_controller: ESC Values: 776.13, 0.00, 840.81, 0.00[0m
+[0;32mI (59828) ESC_controller: ESC Values: 781.81, 0.00, 844.17, 0.00[0m
+[0;32mI (59948) ESC_controller: ESC Values: 782.08, 0.00, 844.91, 0.00[0m
+[0;32mI (60068) ESC_controller: ESC Values: 793.97, 0.00, 848.86, 0.00[0m
+[0;32mI (60188) ESC_controller: ESC Values: 802.55, 0.00, 852.40, 0.00[0m
+[0;32mI (60308) ESC_controller: ESC Values: 793.64, 0.00, 843.91, 0.00[0m
+[0;32mI (60428) ESC_controller: ESC Values: 814.16, 0.00, 849.58, 0.00[0m
+[0;32mI (60548) ESC_controller: ESC Values: 823.67, 0.00, 854.46, 0.00[0m
+[0;32mI (60668) ESC_controller: ESC Values: 825.92, 0.00, 860.47, 0.00[0m
+[0;32mI (60788) ESC_controller: ESC Values: 818.85, 0.00, 852.86, 0.00[0m
+[0;32mI (60908) ESC_controller: ESC Values: 821.52, 0.00, 857.20, 0.00[0m
+[0;32mI (61028) ESC_controller: ESC Values: 817.04, 0.00, 848.59, 0.00[0m
+[0;32mI (61148) ESC_controller: ESC Values: 839.82, 0.00, 841.09, 0.00[0m
+[0;32mI (61268) ESC_controller: ESC Values: 849.63, 0.00, 823.72, 0.00[0m
+[0;32mI (61388) ESC_controller: ESC Values: 849.90, 0.00, 821.43, 0.00[0m
+[0;32mI (61508) ESC_controller: ESC Values: 846.46, 0.00, 835.83, 0.00[0m
+[0;32mI (61628) ESC_controller: ESC Values: 842.40, 0.00, 842.80, 0.00[0m
+[0;32mI (61748) ESC_controller: ESC Values: 833.62, 0.00, 843.86, 0.00[0m
+[0;32mI (61868) ESC_controller: ESC Values: 832.44, 0.00, 839.73, 0.00[0m
+[0;32mI (61988) ESC_controller: ESC Values: 835.33, 0.00, 847.61, 0.00[0m
+[0;32mI (62108) ESC_controller: ESC Values: 827.09, 0.00, 856.07, 0.00[0m
+[0;32mI (62228) ESC_controller: ESC Values: 832.08, 0.00, 854.98, 0.00[0m
+[0;32mI (62348) ESC_controller: ESC Values: 830.57, 0.00, 853.21, 0.00[0m
+[0;32mI (62468) ESC_controller: ESC Values: 824.00, 0.00, 846.32, 0.00[0m
+[0;32mI (62588) ESC_controller: ESC Values: 821.30, 0.00, 843.14, 0.00[0m
+[0;32mI (62708) ESC_controller: ESC Values: 825.08, 0.00, 849.69, 0.00[0m
+[0;32mI (62828) ESC_controller: ESC Values: 826.65, 0.00, 850.13, 0.00[0m
+[0;32mI (62948) ESC_controller: ESC Values: 796.74, 0.00, 798.42, 0.00[0m
+[0;32mI (63068) ESC_controller: ESC Values: 750.31, 0.00, 747.15, 0.00[0m
+[0;32mI (63188) ESC_controller: ESC Values: 762.17, 0.00, 757.63, 0.00[0m
+[0;32mI (63308) ESC_controller: ESC Values: 757.30, 0.00, 757.31, 0.00[0m
+[0;32mI (63428) ESC_controller: ESC Values: 751.70, 0.00, 733.01, 0.00[0m
+[0;32mI (63548) ESC_controller: ESC Values: 725.93, 0.00, 665.79, 0.00[0m
+[0;32mI (63668) ESC_controller: ESC Values: 693.96, 0.00, 613.09, 0.00[0m
+[0;32mI (63788) ESC_controller: ESC Values: 686.96, 0.66, 599.34, 0.00[0m
+[0;32mI (63908) ESC_controller: ESC Values: 690.71, 0.00, 605.43, 0.00[0m
+[0;32mI (64028) ESC_controller: ESC Values: 703.16, 0.00, 629.57, 0.00[0m
+[0;32mI (64148) ESC_controller: ESC Values: 694.76, 0.00, 619.08, 0.00[0m
+[0;32mI (64268) ESC_controller: ESC Values: 702.55, 0.00, 628.41, 0.00[0m
+[0;32mI (64388) ESC_controller: ESC Values: 730.30, 0.00, 668.07, 0.00[0m
+[0;32mI (64508) ESC_controller: ESC Values: 737.64, 0.00, 683.83, 0.00[0m
+[0;32mI (64628) ESC_controller: ESC Values: 743.64, 0.00, 703.18, 0.00[0m
+[0;32mI (64748) ESC_controller: ESC Values: 741.73, 0.00, 703.89, 0.00[0m
+[0;32mI (64868) ESC_controller: ESC Values: 728.16, 0.00, 677.94, 0.00[0m
+[0;32mI (64988) ESC_controller: ESC Values: 733.58, 0.00, 674.63, 0.00[0m
+[0;32mI (65108) ESC_controller: ESC Values: 717.49, 0.00, 651.74, 0.00[0m
+[0;32mI (65228) ESC_controller: ESC Values: 692.82, 0.00, 610.17, 0.00[0m
+[0;32mI (65348) ESC_controller: ESC Values: 702.00, 0.00, 615.60, 0.00[0m
+[0;32mI (65468) ESC_controller: ESC Values: 701.82, 0.00, 620.51, 0.00[0m
+[0;32mI (65588) ESC_controller: ESC Values: 707.18, 0.00, 624.89, 0.00[0m
+[0;32mI (65708) ESC_controller: ESC Values: 708.89, 0.00, 631.78, 0.00[0m
+[0;32mI (65828) ESC_controller: ESC Values: 717.60, 0.00, 637.41, 0.00[0m
+[0;32mI (65948) ESC_controller: ESC Values: 718.00, 0.00, 640.15, 0.00[0m
+[0;32mI (66068) ESC_controller: ESC Values: 718.33, 0.00, 634.56, 0.00[0m
+[0;32mI (66188) ESC_controller: ESC Values: 699.25, 0.00, 609.25, 0.00[0m
+[0;32mI (66308) ESC_controller: ESC Values: 683.95, 13.82, 586.18, 0.00[0m
+[0;32mI (66428) ESC_controller: ESC Values: 662.13, 43.44, 556.56, 0.00[0m
+[0;32mI (66548) ESC_controller: ESC Values: 660.35, 46.35, 553.65, 0.00[0m
+[0;32mI (66668) ESC_controller: ESC Values: 657.26, 51.68, 548.32, 0.00[0m
+[0;32mI (66788) ESC_controller: ESC Values: 631.38, 79.21, 520.79, 0.00[0m
+[0;32mI (66908) ESC_controller: ESC Values: 607.20, 106.57, 493.43, 0.00[0m
+[0;32mI (67028) ESC_controller: ESC Values: 619.60, 99.21, 500.79, 0.00[0m
+[0;32mI (67148) ESC_controller: ESC Values: 597.21, 120.02, 479.98, 2.79[0m
+[0;32mI (67268) ESC_controller: ESC Values: 564.17, 156.87, 443.13, 35.83[0m
+[0;32mI (67388) ESC_controller: ESC Values: 552.41, 169.72, 430.28, 47.59[0m
+[0;32mI (67508) ESC_controller: ESC Values: 540.35, 180.04, 419.96, 59.65[0m
+[0;32mI (67628) ESC_controller: ESC Values: 574.13, 143.04, 456.96, 25.87[0m
+[0;32mI (67748) ESC_controller: ESC Values: 638.01, 72.85, 527.15, 0.00[0m
+[0;32mI (67868) ESC_controller: ESC Values: 721.87, 0.00, 640.90, 0.00[0m
+[0;32mI (67988) ESC_controller: ESC Values: 799.09, 0.00, 766.94, 0.00[0m
+[0;32mI (68108) ESC_controller: ESC Values: 769.56, 0.00, 809.28, 0.00[0m
+[0;32mI (68228) ESC_controller: ESC Values: 716.23, 0.00, 787.09, 0.00[0m
+[0;32mI (68348) ESC_controller: ESC Values: 703.06, 0.00, 774.85, 0.00[0m
+[0;32mI (68468) ESC_controller: ESC Values: 700.11, 0.00, 772.04, 0.00[0m
+[0;32mI (68588) ESC_controller: ESC Values: 725.79, 0.00, 778.34, 0.00[0m
+[0;32mI (68708) ESC_controller: ESC Values: 764.21, 0.00, 787.34, 0.00[0m
+[0;32mI (68828) ESC_controller: ESC Values: 788.50, 0.00, 798.14, 0.00[0m
+[0;32mI (68948) ESC_controller: ESC Values: 791.38, 0.00, 784.65, 0.00[0m
+[0;32mI (69068) ESC_controller: ESC Values: 783.94, 0.00, 775.64, 0.00[0m
+[0;32mI (69188) ESC_controller: ESC Values: 778.86, 0.00, 784.52, 0.00[0m
+[0;32mI (69308) ESC_controller: ESC Values: 782.66, 0.00, 792.92, 0.00[0m
+[0;32mI (69428) ESC_controller: ESC Values: 788.42, 0.00, 775.61, 0.00[0m
+[0;32mI (69548) ESC_controller: ESC Values: 780.23, 0.00, 711.94, 0.00[0m
+[0;32mI (69668) ESC_controller: ESC Values: 751.48, 0.00, 659.48, 0.00[0m
+[0;32mI (69788) ESC_controller: ESC Values: 785.39, 0.00, 709.98, 0.00[0m
+[0;32mI (69908) ESC_controller: ESC Values: 845.80, 0.00, 846.59, 0.00[0m
+[0;32mI (70028) ESC_controller: ESC Values: 819.69, 0.00, 865.85, 0.00[0m
+[0;32mI (70148) ESC_controller: ESC Values: 822.03, 0.00, 874.09, 0.00[0m
+[0;32mI (70268) ESC_controller: ESC Values: 836.52, 0.00, 873.98, 0.00[0m
+[0;32mI (70388) ESC_controller: ESC Values: 845.21, 0.00, 867.45, 0.00[0m
+[0;32mI (70508) ESC_controller: ESC Values: 837.10, 0.00, 864.73, 0.00[0m
+[0;32mI (70628) ESC_controller: ESC Values: 839.11, 0.00, 870.14, 0.00[0m
+[0;32mI (70748) ESC_controller: ESC Values: 846.67, 0.00, 871.21, 0.00[0m
+[0;32mI (70868) ESC_controller: ESC Values: 845.70, 0.00, 872.36, 0.00[0m
+[0;32mI (70988) ESC_controller: ESC Values: 858.48, 0.00, 881.00, 0.00[0m
+[0;32mI (71108) ESC_controller: ESC Values: 849.87, 0.00, 868.21, 0.00[0m
+[0;32mI (71228) ESC_controller: ESC Values: 862.00, 0.00, 886.17, 0.00[0m
+[0;32mI (71348) ESC_controller: ESC Values: 862.35, 0.00, 899.41, 0.00[0m
+[0;32mI (71468) ESC_controller: ESC Values: 846.44, 0.00, 882.37, 0.00[0m
+[0;32mI (71588) ESC_controller: ESC Values: 846.57, 0.00, 876.00, 0.00[0m
+[0;32mI (71708) ESC_controller: ESC Values: 858.89, 0.00, 883.50, 0.00[0m
+[0;32mI (71828) ESC_controller: ESC Values: 846.54, 0.00, 876.33, 0.00[0m
+[0;32mI (71948) ESC_controller: ESC Values: 852.51, 0.00, 878.54, 0.00[0m
+[0;32mI (72068) ESC_controller: ESC Values: 872.75, 0.00, 891.75, 0.00[0m
+[0;32mI (72188) ESC_controller: ESC Values: 824.06, 0.00, 846.42, 0.00[0m
+[0;32mI (72308) ESC_controller: ESC Values: 825.19, 0.00, 859.66, 0.00[0m
+[0;32mI (72428) ESC_controller: ESC Values: 761.29, 0.00, 798.48, 0.00[0m
+[0;32mI (72548) ESC_controller: ESC Values: 753.51, 0.00, 791.90, 0.00[0m
+[0;32mI (72668) ESC_controller: ESC Values: 743.38, 0.00, 780.98, 0.00[0m
+[0;32mI (72788) ESC_controller: ESC Values: 732.94, 0.00, 767.91, 0.00[0m
+[0;32mI (72908) ESC_controller: ESC Values: 640.05, 0.00, 668.31, 0.00[0m
+[0;32mI (73028) ESC_controller: ESC Values: 494.73, 83.47, 516.53, 105.27[0m
+[0;32mI (73148) ESC_controller: ESC Values: 338.34, 238.69, 361.31, 261.66[0m
+[0;32mI (73268) ESC_controller: ESC Values: 216.50, 380.40, 219.60, 383.50[0m
+[0;32mI (73388) ESC_controller: ESC Values: 111.92, 509.42, 90.58, 488.08[0m
+[0;32mI (73508) ESC_controller: ESC Values: 113.04, 493.29, 106.71, 486.96[0m
+[0;32mI (73628) ESC_controller: ESC Values: 94.82, 499.65, 100.35, 505.18[0m
+[0;32mI (73748) ESC_controller: ESC Values: 112.66, 494.83, 105.17, 487.34[0m
+[0;32mI (73868) ESC_controller: ESC Values: 125.22, 493.51, 106.49, 474.78[0m
+[0;32mI (73988) ESC_controller: ESC Values: 166.95, 465.81, 134.19, 433.05[0m
+[0;32mI (74108) ESC_controller: ESC Values: 327.98, 329.85, 270.15, 272.02[0m
+[0;32mI (74228) ESC_controller: ESC Values: 515.83, 164.11, 435.89, 84.17[0m
+[0;32mI (74348) ESC_controller: ESC Values: 664.85, 32.67, 567.33, 0.00[0m
+[0;32mI (74468) ESC_controller: ESC Values: 745.12, 0.00, 662.99, 0.00[0m
+[0;32mI (74588) ESC_controller: ESC Values: 784.75, 0.00, 739.87, 0.00[0m
+[0;32mI (74708) ESC_controller: ESC Values: 796.77, 0.00, 785.62, 0.00[0m
+[0;32mI (74828) ESC_controller: ESC Values: 780.01, 0.00, 807.15, 0.00[0m
+[0;32mI (74948) ESC_controller: ESC Values: 757.24, 0.00, 802.45, 0.00[0m
+[0;32mI (75068) ESC_controller: ESC Values: 770.00, 0.00, 808.09, 0.00[0m
+[0;32mI (75188) ESC_controller: ESC Values: 779.39, 0.00, 804.55, 0.00[0m
+[0;32mI (75308) ESC_controller: ESC Values: 784.56, 0.00, 799.14, 0.00[0m
+[0;32mI (75428) ESC_controller: ESC Values: 777.26, 0.00, 791.12, 0.00[0m
+[0;32mI (75548) ESC_controller: ESC Values: 780.25, 0.00, 795.03, 0.00[0m
+[0;32mI (75668) ESC_controller: ESC Values: 787.34, 0.00, 803.40, 0.00[0m
+[0;32mI (75788) ESC_controller: ESC Values: 791.27, 0.00, 808.02, 0.00[0m
+[0;32mI (75908) ESC_controller: ESC Values: 786.33, 0.00, 801.70, 0.00[0m
+[0;32mI (76028) ESC_controller: ESC Values: 781.41, 0.00, 796.50, 0.00[0m
+[0;32mI (76148) ESC_controller: ESC Values: 777.95, 0.00, 793.78, 0.00[0m
+[0;32mI (76268) ESC_controller: ESC Values: 783.95, 0.00, 800.81, 0.00[0m
+[0;32mI (76388) ESC_controller: ESC Values: 788.05, 0.00, 805.27, 0.00[0m
+[0;32mI (76508) ESC_controller: ESC Values: 790.52, 0.00, 806.28, 0.00[0m
+[0;32mI (76628) ESC_controller: ESC Values: 786.67, 0.00, 801.17, 0.00[0m
+[0;32mI (76748) ESC_controller: ESC Values: 782.61, 0.00, 797.16, 0.00[0m
+[0;32mI (76868) ESC_controller: ESC Values: 779.16, 0.00, 795.64, 0.00[0m
+[0;32mI (76988) ESC_controller: ESC Values: 782.90, 0.00, 800.38, 0.00[0m
+[0;32mI (77108) ESC_controller: ESC Values: 789.51, 0.00, 805.88, 0.00[0m
+[0;32mI (77228) ESC_controller: ESC Values: 792.91, 0.00, 808.77, 0.00[0m
+[0;32mI (77348) ESC_controller: ESC Values: 788.57, 0.00, 803.88, 0.00[0m
+[0;32mI (77468) ESC_controller: ESC Values: 782.86, 0.00, 799.15, 0.00[0m
+[0;32mI (77588) ESC_controller: ESC Values: 782.02, 0.00, 798.34, 0.00[0m
+[0;32mI (77708) ESC_controller: ESC Values: 785.23, 0.00, 801.95, 0.00[0m
+[0;32mI (77828) ESC_controller: ESC Values: 790.76, 0.00, 806.49, 0.00[0m
+[0;32mI (77948) ESC_controller: ESC Values: 790.43, 0.00, 805.77, 0.00[0m
+[0;32mI (78068) ESC_controller: ESC Values: 788.49, 0.00, 804.57, 0.00[0m
+[0;32mI (78188) ESC_controller: ESC Values: 786.23, 0.00, 802.18, 0.00[0m
+[0;32mI (78308) ESC_controller: ESC Values: 785.12, 0.00, 801.73, 0.00[0m
+[0;32mI (78428) ESC_controller: ESC Values: 786.51, 0.00, 802.17, 0.00[0m
+[0;32mI (78548) ESC_controller: ESC Values: 791.07, 0.00, 807.06, 0.00[0m
+[0;32mI (78668) ESC_controller: ESC Values: 792.94, 0.00, 807.59, 0.00[0m
+[0;32mI (78788) ESC_controller: ESC Values: 788.67, 0.00, 804.23, 0.00[0m
+[0;32mI (78908) ESC_controller: ESC Values: 785.23, 0.00, 802.72, 0.00[0m
+[0;32mI (79028) ESC_controller: ESC Values: 784.79, 0.00, 800.38, 0.00[0m
+[0;32mI (79148) ESC_controller: ESC Values: 790.85, 0.00, 806.53, 0.00[0m
+[0;32mI (79268) ESC_controller: ESC Values: 794.35, 0.00, 810.57, 0.00[0m
+[0;32mI (79388) ESC_controller: ESC Values: 793.29, 0.00, 809.38, 0.00[0m
+[0;32mI (79508) ESC_controller: ESC Values: 786.86, 0.00, 804.03, 0.00[0m
+[0;32mI (79628) ESC_controller: ESC Values: 786.12, 0.00, 803.28, 0.00[0m
+[0;32mI (79748) ESC_controller: ESC Values: 788.81, 0.00, 805.72, 0.00[0m
+[0;32mI (79868) ESC_controller: ESC Values: 791.12, 0.00, 806.70, 0.00[0m
+[0;32mI (79988) ESC_controller: ESC Values: 792.46, 0.00, 808.15, 0.00[0m
+[0;32mI (80108) ESC_controller: ESC Values: 793.23, 0.00, 809.73, 0.00[0m
+[0;32mI (80228) ESC_controller: ESC Values: 789.76, 0.00, 806.76, 0.00[0m
+[0;32mI (80348) ESC_controller: ESC Values: 789.76, 0.00, 805.54, 0.00[0m
+[0;32mI (80468) ESC_controller: ESC Values: 789.01, 0.00, 805.24, 0.00[0m
+[0;32mI (80588) ESC_controller: ESC Values: 792.61, 0.00, 809.35, 0.00[0m
+[0;32mI (80708) ESC_controller: ESC Values: 793.32, 0.00, 809.62, 0.00[0m
+[0;32mI (80828) ESC_controller: ESC Values: 794.69, 0.00, 810.74, 0.00[0m
+[0;32mI (80948) ESC_controller: ESC Values: 790.84, 0.00, 806.58, 0.00[0m
+[0;32mI (81068) ESC_controller: ESC Values: 792.06, 0.00, 808.78, 0.00[0m
+[0;32mI (81188) ESC_controller: ESC Values: 793.46, 0.00, 810.33, 0.00[0m
+[0;32mI (81308) ESC_controller: ESC Values: 793.48, 0.00, 810.08, 0.00[0m
+[0;32mI (81428) ESC_controller: ESC Values: 792.63, 0.00, 809.85, 0.00[0m
+[0;32mI (81548) ESC_controller: ESC Values: 796.67, 0.00, 812.96, 0.00[0m
+[0;32mI (81668) ESC_controller: ESC Values: 793.42, 0.00, 809.37, 0.00[0m
+[0;32mI (81788) ESC_controller: ESC Values: 792.17, 0.00, 808.58, 0.00[0m
+[0;32mI (81908) ESC_controller: ESC Values: 792.05, 0.00, 808.17, 0.00[0m
+[0;32mI (82028) ESC_controller: ESC Values: 795.66, 0.00, 812.16, 0.00[0m
+[0;32mI (82148) ESC_controller: ESC Values: 795.64, 0.00, 812.07, 0.00[0m
+[0;32mI (82268) ESC_controller: ESC Values: 793.29, 0.00, 809.99, 0.00[0m
+[0;32mI (82388) ESC_controller: ESC Values: 793.34, 0.00, 810.86, 0.00[0m
+[0;32mI (82508) ESC_controller: ESC Values: 794.32, 0.00, 811.05, 0.00[0m
+[0;32mI (82628) ESC_controller: ESC Values: 797.37, 0.00, 813.57, 0.00[0m
+[0;32mI (82748) ESC_controller: ESC Values: 796.24, 0.00, 812.87, 0.00[0m
+[0;32mI (82868) ESC_controller: ESC Values: 795.70, 0.00, 812.65, 0.00[0m
+[0;32mI (82988) ESC_controller: ESC Values: 793.72, 0.00, 810.85, 0.00[0m
+[0;32mI (83108) ESC_controller: ESC Values: 796.02, 0.00, 812.80, 0.00[0m
+[0;32mI (83228) ESC_controller: ESC Values: 794.72, 0.00, 811.43, 0.00[0m
+[0;32mI (83348) ESC_controller: ESC Values: 795.88, 0.00, 812.07, 0.00[0m
+[0;32mI (83468) ESC_controller: ESC Values: 798.68, 0.00, 814.89, 0.00[0m
+[0;32mI (83588) ESC_controller: ESC Values: 795.53, 0.00, 811.78, 0.00[0m
+[0;32mI (83708) ESC_controller: ESC Values: 797.71, 0.00, 814.29, 0.00[0m
+[0;32mI (83828) ESC_controller: ESC Values: 796.03, 0.00, 812.51, 0.00[0m
+[0;32mI (83948) ESC_controller: ESC Values: 796.20, 0.00, 813.20, 0.00[0m
+[0;32mI (84068) ESC_controller: ESC Values: 796.59, 0.00, 813.31, 0.00[0m
+[0;32mI (84188) ESC_controller: ESC Values: 795.99, 0.00, 812.69, 0.00[0m
+[0;32mI (84308) ESC_controller: ESC Values: 797.14, 0.00, 814.28, 0.00[0m
+[0;32mI (84428) ESC_controller: ESC Values: 798.98, 0.00, 815.30, 0.00[0m
+[0;32mI (84548) ESC_controller: ESC Values: 798.67, 0.00, 815.02, 0.00[0m
+[0;32mI (84668) ESC_controller: ESC Values: 796.69, 0.00, 813.55, 0.00[0m
+[0;32mI (84788) ESC_controller: ESC Values: 799.40, 0.00, 815.89, 0.00[0m
+[0;32mI (84908) ESC_controller: ESC Values: 796.18, 0.00, 813.08, 0.00[0m
+[0;32mI (85028) ESC_controller: ESC Values: 797.87, 0.00, 815.12, 0.00[0m
+[0;32mI (85148) ESC_controller: ESC Values: 797.65, 0.00, 814.38, 0.00[0m
+[0;32mI (85268) ESC_controller: ESC Values: 800.94, 0.00, 818.05, 0.00[0m
+[0;32mI (85388) ESC_controller: ESC Values: 797.51, 0.00, 813.87, 0.00[0m
+[0;32mI (85508) ESC_controller: ESC Values: 800.40, 0.00, 817.13, 0.00[0m
+[0;32mI (85628) ESC_controller: ESC Values: 799.43, 0.00, 816.29, 0.00[0m
+[0;32mI (85748) ESC_controller: ESC Values: 799.16, 0.00, 816.41, 0.00[0m
+[0;32mI (85868) ESC_controller: ESC Values: 801.69, 0.00, 818.54, 0.00[0m
+[0;32mI (85988) ESC_controller: ESC Values: 799.00, 0.00, 815.75, 0.00[0m
+[0;32mI (86108) ESC_controller: ESC Values: 801.20, 0.00, 817.07, 0.00[0m
+[0;32mI (86228) ESC_controller: ESC Values: 800.58, 0.00, 817.92, 0.00[0m
+[0;32mI (86348) ESC_controller: ESC Values: 800.82, 0.00, 818.18, 0.00[0m
+[0;32mI (86468) ESC_controller: ESC Values: 803.62, 0.00, 821.22, 0.00[0m
+[0;32mI (86588) ESC_controller: ESC Values: 799.99, 0.00, 816.78, 0.00[0m
+[0;32mI (86708) ESC_controller: ESC Values: 799.15, 0.00, 815.49, 0.00[0m
+[0;32mI (86828) ESC_controller: ESC Values: 800.77, 0.00, 817.68, 0.00[0m
+[0;32mI (86948) ESC_controller: ESC Values: 801.58, 0.00, 819.44, 0.00[0m
+[0;32mI (87068) ESC_controller: ESC Values: 802.80, 0.00, 820.25, 0.00[0m
+[0;32mI (87188) ESC_controller: ESC Values: 801.63, 0.00, 818.32, 0.00[0m
+[0;32mI (87308) ESC_controller: ESC Values: 801.36, 0.00, 817.80, 0.00[0m
+[0;32mI (87428) ESC_controller: ESC Values: 800.15, 0.00, 817.23, 0.00[0m
+[0;32mI (87548) ESC_controller: ESC Values: 800.49, 0.00, 817.87, 0.00[0m
+[0;32mI (87668) ESC_controller: ESC Values: 803.03, 0.00, 821.07, 0.00[0m
+[0;32mI (87788) ESC_controller: ESC Values: 803.22, 0.00, 819.89, 0.00[0m
+[0;32mI (87908) ESC_controller: ESC Values: 804.50, 0.00, 820.72, 0.00[0m
+[0;32mI (88028) ESC_controller: ESC Values: 802.58, 0.00, 819.85, 0.00[0m
+[0;32mI (88148) ESC_controller: ESC Values: 804.31, 0.00, 821.89, 0.00[0m
+[0;32mI (88268) ESC_controller: ESC Values: 802.89, 0.00, 819.53, 0.00[0m
+[0;32mI (88388) ESC_controller: ESC Values: 804.53, 0.00, 821.68, 0.00[0m
+[0;32mI (88508) ESC_controller: ESC Values: 806.46, 0.00, 823.42, 0.00[0m
+[0;32mI (88628) ESC_controller: ESC Values: 806.74, 0.00, 823.73, 0.00[0m
+[0;32mI (88748) ESC_controller: ESC Values: 804.39, 0.00, 821.84, 0.00[0m
+[0;32mI (88868) ESC_controller: ESC Values: 804.48, 0.00, 822.14, 0.00[0m
+[0;32mI (88988) ESC_controller: ESC Values: 803.66, 0.00, 820.66, 0.00[0m
+[0;32mI (89108) ESC_controller: ESC Values: 804.71, 0.00, 821.47, 0.00[0m
+[0;32mI (89228) ESC_controller: ESC Values: 808.19, 0.00, 825.75, 0.00[0m
+[0;32mI (89348) ESC_controller: ESC Values: 807.21, 0.00, 824.06, 0.00[0m
+[0;32mI (89468) ESC_controller: ESC Values: 806.16, 0.00, 823.86, 0.00[0m
+[0;32mI (89588) ESC_controller: ESC Values: 806.01, 0.00, 823.33, 0.00[0m
+[0;32mI (89708) ESC_controller: ESC Values: 806.69, 0.00, 824.36, 0.00[0m
+[0;32mI (89828) ESC_controller: ESC Values: 806.55, 0.00, 823.96, 0.00[0m
+[0;32mI (89948) ESC_controller: ESC Values: 808.20, 0.00, 825.39, 0.00[0m
+[0;32mI (90068) ESC_controller: ESC Values: 808.58, 0.00, 825.55, 0.00[0m
+[0;32mI (90188) ESC_controller: ESC Values: 808.59, 0.00, 825.50, 0.00[0m
+[0;32mI (90308) ESC_controller: ESC Values: 809.84, 0.00, 827.19, 0.00[0m
+[0;32mI (90428) ESC_controller: ESC Values: 808.74, 0.00, 825.67, 0.00[0m
+[0;32mI (90548) ESC_controller: ESC Values: 808.84, 0.00, 825.90, 0.00[0m
+[0;32mI (90668) ESC_controller: ESC Values: 808.73, 0.00, 825.38, 0.00[0m
+[0;32mI (90788) ESC_controller: ESC Values: 806.28, 0.00, 823.79, 0.00[0m
+[0;32mI (90908) ESC_controller: ESC Values: 807.21, 0.00, 824.96, 0.00[0m
+[0;32mI (91028) ESC_controller: ESC Values: 811.77, 0.00, 828.69, 0.00[0m
+[0;32mI (91148) ESC_controller: ESC Values: 810.77, 0.00, 827.81, 0.00[0m
+[0;32mI (91268) ESC_controller: ESC Values: 810.01, 0.00, 826.75, 0.00[0m
+[0;32mI (91388) ESC_controller: ESC Values: 810.50, 0.00, 828.33, 0.00[0m
+[0;32mI (91508) ESC_controller: ESC Values: 810.41, 0.00, 827.90, 0.00[0m
+[0;32mI (91628) ESC_controller: ESC Values: 809.51, 0.00, 826.61, 0.00[0m
+[0;32mI (91748) ESC_controller: ESC Values: 810.13, 0.00, 827.47, 0.00[0m
+[0;32mI (91868) ESC_controller: ESC Values: 808.30, 0.00, 826.17, 0.00[0m
+[0;32mI (91988) ESC_controller: ESC Values: 810.26, 0.00, 827.44, 0.00[0m
+[0;32mI (92108) ESC_controller: ESC Values: 810.54, 0.00, 827.71, 0.00[0m
+[0;32mI (92228) ESC_controller: ESC Values: 811.89, 0.00, 829.61, 0.00[0m
+[0;32mI (92348) ESC_controller: ESC Values: 812.34, 0.00, 830.06, 0.00[0m
+[0;32mI (92468) ESC_controller: ESC Values: 811.21, 0.00, 828.48, 0.00[0m
+[0;32mI (92588) ESC_controller: ESC Values: 811.40, 0.00, 829.22, 0.00[0m
+[0;32mI (92708) ESC_controller: ESC Values: 810.60, 0.00, 828.36, 0.00[0m
+[0;32mI (92828) ESC_controller: ESC Values: 810.92, 0.00, 828.48, 0.00[0m
+[0;32mI (92948) ESC_controller: ESC Values: 813.71, 0.00, 831.11, 0.00[0m
+[0;32mI (93068) ESC_controller: ESC Values: 813.58, 0.00, 830.80, 0.00[0m
+[0;32mI (93188) ESC_controller: ESC Values: 812.18, 0.00, 830.54, 0.00[0m
+[0;32mI (93308) ESC_controller: ESC Values: 812.43, 0.00, 830.38, 0.00[0m
+[0;32mI (93428) ESC_controller: ESC Values: 809.92, 0.00, 827.67, 0.00[0m
+[0;32mI (93548) ESC_controller: ESC Values: 810.37, 0.00, 828.36, 0.00[0m
+[0;32mI (93668) ESC_controller: ESC Values: 812.70, 0.00, 829.47, 0.00[0m
+[0;32mI (93788) ESC_controller: ESC Values: 815.81, 0.00, 833.42, 0.00[0m
+[0;32mI (93908) ESC_controller: ESC Values: 812.94, 0.00, 830.49, 0.00[0m
+[0;32mI (94028) ESC_controller: ESC Values: 810.34, 0.00, 828.78, 0.00[0m
+[0;32mI (94148) ESC_controller: ESC Values: 812.31, 0.00, 829.91, 0.00[0m
+[0;32mI (94268) ESC_controller: ESC Values: 813.15, 0.00, 829.92, 0.00[0m
+[0;32mI (94388) ESC_controller: ESC Values: 815.20, 0.00, 833.32, 0.00[0m
+[0;32mI (94508) ESC_controller: ESC Values: 815.68, 0.00, 833.48, 0.00[0m
+[0;32mI (94628) ESC_controller: ESC Values: 813.08, 0.00, 831.66, 0.00[0m
+[0;32mI (94748) ESC_controller: ESC Values: 814.82, 0.00, 832.51, 0.00[0m
+[0;32mI (94868) ESC_controller: ESC Values: 815.38, 0.00, 833.27, 0.00[0m
+[0;32mI (94988) ESC_controller: ESC Values: 816.47, 0.00, 834.61, 0.00[0m
+[0;32mI (95108) ESC_controller: ESC Values: 816.95, 0.00, 834.96, 0.00[0m
+[0;32mI (95228) ESC_controller: ESC Values: 816.47, 0.00, 833.64, 0.00[0m
+[0;32mI (95348) ESC_controller: ESC Values: 816.90, 0.00, 833.85, 0.00[0m
+[0;32mI (95468) ESC_controller: ESC Values: 814.44, 0.00, 832.84, 0.00[0m
+[0;32mI (95588) ESC_controller: ESC Values: 817.28, 0.00, 835.05, 0.00[0m
+[0;32mI (95708) ESC_controller: ESC Values: 818.44, 0.00, 836.07, 0.00[0m
+[0;32mI (95828) ESC_controller: ESC Values: 817.48, 0.00, 835.46, 0.00[0m
+[0;32mI (95948) ESC_controller: ESC Values: 815.57, 0.00, 833.66, 0.00[0m
+[0;32mI (96068) ESC_controller: ESC Values: 815.24, 0.00, 833.14, 0.00[0m
+[0;32mI (96188) ESC_controller: ESC Values: 817.90, 0.00, 836.31, 0.00[0m
+[0;32mI (96308) ESC_controller: ESC Values: 817.63, 0.00, 835.32, 0.00[0m
+[0;32mI (96428) ESC_controller: ESC Values: 817.63, 0.00, 835.44, 0.00[0m
+[0;32mI (96548) ESC_controller: ESC Values: 819.61, 0.00, 837.11, 0.00[0m
+[0;32mI (96668) ESC_controller: ESC Values: 819.45, 0.00, 837.01, 0.00[0m
+[0;32mI (96788) ESC_controller: ESC Values: 816.36, 0.00, 834.37, 0.00[0m
+[0;32mI (96908) ESC_controller: ESC Values: 816.51, 0.00, 833.96, 0.00[0m
+[0;32mI (97028) ESC_controller: ESC Values: 816.87, 0.00, 834.70, 0.00[0m
+[0;32mI (97148) ESC_controller: ESC Values: 820.22, 0.00, 838.18, 0.00[0m
+[0;32mI (97268) ESC_controller: ESC Values: 820.05, 0.00, 837.30, 0.00[0m
+[0;32mI (97388) ESC_controller: ESC Values: 820.89, 0.00, 838.73, 0.00[0m
+[0;32mI (97508) ESC_controller: ESC Values: 820.76, 0.00, 838.60, 0.00[0m
+[0;32mI (97628) ESC_controller: ESC Values: 820.53, 0.00, 838.46, 0.00[0m
+[0;32mI (97748) ESC_controller: ESC Values: 818.54, 0.00, 837.20, 0.00[0m
+[0;32mI (97868) ESC_controller: ESC Values: 821.47, 0.00, 839.00, 0.00[0m
+[0;32mI (97988) ESC_controller: ESC Values: 819.62, 0.00, 836.86, 0.00[0m
+[0;32mI (98108) ESC_controller: ESC Values: 821.08, 0.00, 839.37, 0.00[0m
+[0;32mI (98228) ESC_controller: ESC Values: 817.95, 0.00, 835.92, 0.00[0m
+[0;32mI (98348) ESC_controller: ESC Values: 821.39, 0.00, 838.72, 0.00[0m
+[0;32mI (98468) ESC_controller: ESC Values: 820.45, 0.00, 838.95, 0.00[0m
+[0;32mI (98588) ESC_controller: ESC Values: 821.65, 0.00, 839.60, 0.00[0m
+[0;32mI (98708) ESC_controller: ESC Values: 821.66, 0.00, 839.34, 0.00[0m
+[0;32mI (98828) ESC_controller: ESC Values: 821.43, 0.00, 839.21, 0.00[0m
+[0;32mI (98948) ESC_controller: ESC Values: 821.65, 0.00, 839.04, 0.00[0m
+[0;32mI (99068) ESC_controller: ESC Values: 820.60, 0.00, 838.17, 0.00[0m
+[0;32mI (99188) ESC_controller: ESC Values: 824.22, 0.00, 841.93, 0.00[0m
+[0;32mI (99308) ESC_controller: ESC Values: 822.92, 0.00, 841.14, 0.00[0m
+[0;32mI (99428) ESC_controller: ESC Values: 821.83, 0.00, 839.95, 0.00[0m
+[0;32mI (99548) ESC_controller: ESC Values: 823.32, 0.00, 841.47, 0.00[0m
+[0;32mI (99668) ESC_controller: ESC Values: 823.54, 0.00, 841.83, 0.00[0m
+[0;32mI (99788) ESC_controller: ESC Values: 824.84, 0.00, 842.11, 0.00[0m
+[0;32mI (99908) ESC_controller: ESC Values: 821.39, 0.00, 839.28, 0.00[0m
+[0;32mI (100028) ESC_controller: ESC Values: 821.68, 0.00, 839.35, 0.00[0m
+[0;32mI (100148) ESC_controller: ESC Values: 822.41, 0.00, 841.10, 0.00[0m
+[0;32mI (100268) ESC_controller: ESC Values: 826.02, 0.00, 843.56, 0.00[0m
+[0;32mI (100388) ESC_controller: ESC Values: 823.47, 0.00, 840.93, 0.00[0m
+[0;32mI (100508) ESC_controller: ESC Values: 823.79, 0.00, 842.16, 0.00[0m
+[0;32mI (100628) ESC_controller: ESC Values: 824.01, 0.00, 842.42, 0.00[0m
+[0;32mI (100748) ESC_controller: ESC Values: 824.03, 0.00, 842.47, 0.00[0m
+[0;32mI (100868) ESC_controller: ESC Values: 824.51, 0.00, 842.66, 0.00[0m
+[0;32mI (100988) ESC_controller: ESC Values: 824.03, 0.00, 842.34, 0.00[0m
+[0;32mI (101108) ESC_controller: ESC Values: 828.06, 0.00, 846.19, 0.00[0m
+[0;32mI (101228) ESC_controller: ESC Values: 824.89, 0.00, 842.62, 0.00[0m
+[0;32mI (101348) ESC_controller: ESC Values: 828.59, 0.00, 846.91, 0.00[0m
+[0;32mI (101468) ESC_controller: ESC Values: 824.39, 0.00, 843.35, 0.00[0m
+[0;32mI (101588) ESC_controller: ESC Values: 827.38, 0.00, 846.35, 0.00[0m
+[0;32mI (101708) ESC_controller: ESC Values: 827.24, 0.00, 844.90, 0.00[0m
+[0;32mI (101828) ESC_controller: ESC Values: 823.58, 0.00, 842.70, 0.00[0m
+[0;32mI (101948) ESC_controller: ESC Values: 828.69, 0.00, 847.14, 0.00[0m
+[0;32mI (102068) ESC_controller: ESC Values: 826.27, 0.00, 845.08, 0.00[0m
+[0;32mI (102188) ESC_controller: ESC Values: 826.47, 0.00, 843.93, 0.00[0m
+[0;32mI (102308) ESC_controller: ESC Values: 827.98, 0.00, 845.64, 0.00[0m
+[0;32mI (102428) ESC_controller: ESC Values: 827.87, 0.00, 846.20, 0.00[0m
+[0;32mI (102548) ESC_controller: ESC Values: 827.24, 0.00, 845.22, 0.00[0m
+[0;32mI (102668) ESC_controller: ESC Values: 827.48, 0.00, 845.22, 0.00[0m
+[0;32mI (102788) ESC_controller: ESC Values: 828.01, 0.00, 846.91, 0.00[0m
+[0;32mI (102908) ESC_controller: ESC Values: 827.36, 0.00, 845.63, 0.00[0m
+[0;32mI (103028) ESC_controller: ESC Values: 827.62, 0.00, 846.26, 0.00[0m
+[0;32mI (103148) ESC_controller: ESC Values: 830.39, 0.00, 848.23, 0.00[0m
+[0;32mI (103268) ESC_controller: ESC Values: 829.34, 0.00, 848.54, 0.00[0m
+[0;32mI (103388) ESC_controller: ESC Values: 825.18, 0.00, 844.65, 0.00[0m
+[0;32mI (103508) ESC_controller: ESC Values: 828.46, 0.00, 846.12, 0.00[0m
+[0;32mI (103628) ESC_controller: ESC Values: 829.36, 0.00, 847.49, 0.00[0m
+[0;32mI (103748) ESC_controller: ESC Values: 831.93, 0.00, 850.36, 0.00[0m
+[0;32mI (103868) ESC_controller: ESC Values: 830.84, 0.00, 850.24, 0.00[0m
+[0;32mI (103988) ESC_controller: ESC Values: 828.54, 0.00, 847.44, 0.00[0m
+[0;32mI (104108) ESC_controller: ESC Values: 829.13, 0.00, 846.56, 0.00[0m

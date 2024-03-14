@@ -1,0 +1,7800 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29284h (168580) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=000392ac vaddr=3ffb0000 size=04d94h ( 19860) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=0003e048 vaddr=40080000 size=01fd0h (  8144) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9a998h (633240) map[0m
+[0;32mI (393) esp_image: segment 4: paddr=000da9c0 vaddr=40081fd0 size=16b08h ( 92936) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (442) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+D (454) cpu_start: Pro cpu up[0m
+D (454) cpu_start: Starting app cpu, entry point is 0x40081324[0m
+D (0) cpu_start: App cpu up[0m
+D (463) clk: RTC_SLOW_CLK calibration value: 3230746[0m
+D (475) cpu_start: calling init function: 0x400d2d90 on core: 0[0m
+[0;32mI (475) cpu_start: Pro cpu start user code[0m
+[0;32mI (475) cpu_start: cpu freq: 160000000 Hz[0m
+D (481) cpu_start: calling init function: 0x400d2dd4 on core: 0[0m
+[0;32mI (487) cpu_start: Application information:[0m
+[0;32mI (492) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (498) cpu_start: App version:      1[0m
+[0;32mI (502) cpu_start: Compile time:     Jan 31 2024 22:48:20[0m
+[0;32mI (508) cpu_start: ELF file SHA256:  21e376b8e...[0m
+[0;32mI (514) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (521) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (526) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (530) cpu_start: Chip rev:         v1.0[0m
+D (535) cpu_start: calling init function: 0x400d2f1c on core: 0[0m
+D (541) memory_layout: Checking 9 reserved memory ranges:[0m
+D (547) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (553) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (559) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffbbd48[0m
+D (566) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (572) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (579) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (585) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (592) memory_layout: Reserved memory range 0x40080000 - 0x40098ad8[0m
+D (598) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (604) memory_layout: Building list of available memory regions:[0m
+D (611) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (617) memory_layout: Available memory region 0x3ffbbd48 - 0x3ffc0000[0m
+D (624) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (630) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (637) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (644) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (650) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (657) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (663) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (670) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (676) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (683) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (690) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (696) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (703) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (709) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (716) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (723) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (729) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (736) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (742) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (749) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (756) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (762) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (769) memory_layout: Available memory region 0x40098ad8 - 0x4009a000[0m
+D (775) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (782) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (789) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (795) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (803) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (808) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (814) heap_init: New heap initialised at 0x3ffbbd48[0m
+[0;32mI (819) heap_init: At 3FFBBD48 len 000242B8 (144 KiB): DRAM[0m
+[0;32mI (825) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (831) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (838) heap_init: New heap initialised at 0x40098ad8[0m
+[0;32mI (843) heap_init: At 40098AD8 len 00007528 (29 KiB): IRAM[0m
+D (849) cpu_start: calling init function: 0x400d2f28 on core: 0[0m
+D (855) cpu_start: calling init function: 0x400d5658 on core: 0[0m
+D (861) cpu_start: calling init function: 0x401611e0 on core: 0[0m
+D (867) cpu_start: calling init function: 0x400d2f34 on core: 0[0m
+D (873) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (878) cpu_start: calling init function: 0x400d2f40 on core: 0[0m
+D (884) cpu_start: calling init function: 0x400d6f8c on core: 0[0m
+D (890) cpu_start: calling init function: 0x400d82c8 on core: 0[0m
+D (896) cpu_start: calling init function: 0x400d56d4 on core: 0[0m
+D (903) cpu_start: calling init function: 0x400d2f4c on core: 0[0m
+D (908) cpu_start: calling init function: 0x400d2f58 on core: 0[0m
+D (914) spi_flash: trying chip: issi[0m
+D (918) spi_flash: trying chip: gd[0m
+D (921) spi_flash: trying chip: mxic[0m
+D (925) spi_flash: trying chip: winbond[0m
+D (929) spi_flash: trying chip: generic[0m
+[0;32mI (933) spi_flash: detected chip: generic[0m
+[0;32mI (937) spi_flash: flash io: dio[0m
+[0;33mW (941) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (954) cpu_start: calling init function: 0x401611e8 on core: 0[0m
+D (960) cpu_start: calling init function: 0x4014b498[0m
+D (966) cpu_start: calling init function: 0x4014af48[0m
+D (971) cpu_start: calling init function: 0x401076d4[0m
+D (976) cpu_start: calling init function: 0x400ef824[0m
+[0;33mW (981) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (991) cpu_start: calling init function: 0x400da464[0m
+D (996) cpu_start: calling init function: 0x400d9504[0m
+D (1001) cpu_start: calling init function: 0x40089b0c[0m
+D (1006) cpu_start: calling init function: 0x400d4044[0m
+D (1012) cpu_start: calling init function: 0x400d34f4[0m
+D (1017) cpu_start: calling init function: 0x400d2900[0m
+D (1022) cpu_start: calling init function: 0x400d5d84 on core: 0[0m
+D (1028) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (1033) cpu_start: calling init function: 0x400d2f80 on core: 0[0m
+D (1039) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (1044) app_start: Starting scheduler on CPU0[0m
+[0;32D (1049) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (1049) app_start: Starting scheduler on CPU1[0m
+mI (1049) main_task: Started on CPU0[0m
+D (1069) heap_init: New heap initialised at 0x3ffe0440[0m
+D (1069) heap_init: New heap initialised at 0x3ffe4350[0m
+D (1069) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (1069) main_task: Calling app_main()[0m
+D (1079) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (1089) IMU: devid=0x34[0m
+[0;32mI (1089) IMU: getRate()=0[0m
+[0;32mI (1089) IMU: getExternalFrameSync()=0[0m
+[0;32mI (1099) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (1099) rmt: new group(0) at 0x3ffc5938, occupy=ffffff00[0m
+D (1109) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+[0;32mI (1099) IMU: getDLPFMode()=6[0m
+D (1109) rmt: group clock resolution:80000000[0m
+[0;32mI (1119) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (1119) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1129) IMU: getFullScaleGyroRange()=0[0m
+D (1139) rmt: new tx channel(0,0) at 0x3ffc55b8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1159) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1159) rmt: group clock resolution:80000000[0m
+[0;32mI (1159) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1169) rmt: new tx channel(0,1) at 0x3ffc5ed8, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1189) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1189) rmt: group clock resolution:80000000[0m
+[0;32mI (1199) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1209) rmt: new tx channel(0,2) at 0x3ffc61f0, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1219) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1229) rmt: group clock resolution:80000000[0m
+[0;32mI (1229) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1239) rmt: new tx channel(0,3) at 0x3ffc6508, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1259) ESC_controller: Install Dshot ESC encoder[0m
+D (1259) rmt: new bytes encoder @0x3ffc687c[0m
+D (1269) rmt: new copy encoder @0x3ffc68a0[0m
+D (1269) rmt: new bytes encoder @0x3ffc68d4[0m
+D (1269) rmt: new copy encoder @0x3ffc68f8[0m
+D (1279) rmt: new bytes encoder @0x3ffc692c[0m
+D (1279) rmt: new copy encoder @0x3ffc6950[0m
+D (1289) rmt: new bytes encoder @0x3ffc6984[0m
+D (1289) rmt: new copy encoder @0x3ffc69a8[0m
+[0;32mI (1299) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1299) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1339) wifi_station_netif: ESP_WIFI_MODE_STA[0m
+D (1339) esp_netif_lwip: LwIP stack has been initialized[0m
+D (1339) esp_netif_lwip: esp-netif has been successfully initialized[0m
+D (1339) event: running task for loop 0x3ffc7e8c[0m
+D (1349) event: created task for loop 0x3ffc7e8c[0m
+D (1349) event: created event loop 0x3ffc7e8c[0m
+D (1359) esp_netif_lwip: check: remote, if=0x3ffbddd0 fn=0x40105284[0m
+D (1359) esp_netif_objects: esp_netif_add_to_list_unsafe netif added successfully (total netifs: 1)[0m
+D (1369) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (1379) nvs: nvs_open_from_partition misc 1[0m
+I (1389) wifi:wifi driver task: 3ffcb3b4, prio:23, stack:6656, core=0
+D (1389) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1389) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1399) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1409) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1419) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1419) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1429) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1439) nvs: nvs_open_from_partition nvs.net80211 1[0m
+D (1439) nvs: nvs_get opmode 1[0m
+D (1449) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1449) nvs: nvs_get sta.authmode 1[0m
+D (1449) nvs: nvs_get_str_or_blob sta.pswd[0m
+D (1459) nvs: nvs_get_str_or_blob sta.pmk[0m
+D (1459) nvs: nvs_get sta.chan 1[0m
+D (1459) nvs: nvs_get auto.conn 1[0m
+D (1469) nvs: nvs_get bssid.set 1[0m
+D (1469) nvs: nvs_get_str_or_blob sta.bssid[0m
+D (1479) nvs: nvs_get sta.lis_intval 2[0m
+D (1479) nvs: nvs_get sta.phym 1[0m
+D (1479) nvs: nvs_get sta.phybw 1[0m
+D (1489) nvs: nvs_get_str_or_blob sta.apsw[0m
+D (1489) nvs: nvs_get_str_or_blob sta.apinfo[0m
+D (1499) nvs: nvs_get sta.scan_method 1[0m
+D (1499) nvs: nvs_get sta.sort_method 1[0m
+D (1499) nvs: nvs_get sta.minrssi 1[0m
+D (1509) nvs: nvs_get sta.minauth 1[0m
+D (1509) nvs: nvs_get sta.pmf_e 1[0m
+D (1509) nvs: nvs_get sta.pmf_r 1[0m
+D (1519) nvs: nvs_get sta.btm_e 1[0m
+D (1519) nvs: nvs_get sta.rrm_e 1[0m
+D (1519) nvs: nvs_get sta.mbo_e 1[0m
+D (1529) nvs: nvs_get_str_or_blob ap.ssid[0m
+D (1529) nvs: nvs_get_str_or_blob ap.passwd[0m
+D (1529) nvs: nvs_get_str_or_blob ap.pmk[0m
+D (1539) nvs: nvs_get ap.chan 1[0m
+D (1539) nvs: nvs_get ap.authmode 1[0m
+D (1549) nvs: nvs_get ap.hidden 1[0m
+D (1549) nvs: nvs_get ap.max.conn 1[0m
+D (1549) nvs: nvs_get bcn.interval 2[0m
+D (1559) nvs: nvs_get ap.phym 1[0m
+D (1559) nvs: nvs_get ap.phybw 1[0m
+D (1559) nvs: nvs_get ap.sndchan 1[0m
+D (1569) nvs: nvs_get ap.pmf_e 1[0m
+D (1569) nvs: nvs_get ap.pmf_r 1[0m
+D (1569) nvs: nvs_get ap.p_cipher 1[0m
+D (1579) nvs: nvs_get lorate 1[0m
+D (1579) nvs: nvs_get_str_or_blob country[0m
+D (1579) nvs: nvs_get ap.ftm_r 1[0m
+D (1589) nvs: nvs_get sta.ft 1[0m
+D (1589) nvs: nvs_get sta.owe 1[0m
+D (1589) nvs: nvs_get sta.trans_d 1[0m
+D (1599) nvs: nvs_get sta.sae_h2e 1[0m
+D (1599) nvs: nvs_get sta.sae_pk_mode 1[0m
+D (1599) nvs: nvs_get sta.bss_retry 1[0m
+D (1609) nvs: nvs_get_str_or_blob sta.owe_data[0m
+D (1609) nvs: nvs_get sta.he_dcm 1[0m
+D (1619) nvs: nvs_get sta.he_dcm_c_tx 1[0m
+D (1619) nvs: nvs_get sta.he_dcm_c_rx 1[0m
+D (1619) nvs: nvs_get sta.he_mcs9_d 1[0m
+D (1629) nvs: nvs_get sta.he_su_b_d 1[0m
+D (1629) nvs: nvs_get sta.he_su_b_f_d 1[0m
+D (1639) nvs: nvs_get sta.he_mu_b_f_d 1[0m
+D (1639) nvs: nvs_get sta.he_cqi_f_d 1[0m
+D (1639) nvs: nvs_get_str_or_blob sta.sae_h2e_id[0m
+D (1649) nvs: nvs_get ap.sae_h2e 1[0m
+D (1649) nvs: nvs_get_str_or_blob ap.pmk_info[0m
+D (1659) nvs: nvs_get nan.phym 1[0m
+D (1659) nvs: nvs_set ap.sndchan 1 1[0m
+I (1659) wifi:wifi firmware version: 1200a48
+I (1669) wifi:wifi certification version: v7.0
+I (1669) wifi:config NVS flash: enabled
+I (1669) wifi:config nano formating: disabled
+I (1679) wifi:Init data frame dynamic rx buffer num: 32
+I (1679) wifi:Init static rx mgmt buffer num: 5
+I (1689) wifi:Init management short buffer num: 32
+I (1689) wifi:Init dynamic tx buffer num: 32
+I (1699) wifi:Init static rx buffer size: 1600
+I (1699) wifi:Init static rx buffer num: 10
+I (1699) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1709) wifi_init: rx ba win: 6[0m
+[0;32mI (1709) wifi_init: accept mbox: 6[0m
+[0;32mI (1719) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1719) wifi_init: udp mbox: 6[0m
+[0;32mI (1719) wifi_init: tcp mbox: 6[0m
+[0;32mI (1729) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1729) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1739) wifi_init: tcp mss: 1440[0m
+[0;32mI (1739) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1739) wifi_init: WiFi RX IRAM OP enabled[0m
+D (1749) nvs: nvs_get opmode 1[0m
+D (1749) wifi:clear blacklist
+D (1759) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1759) nvs: nvs_get sta.pmf_e 1[0m
+[0;32mI (1759) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+D (1769) phy_init: loading PHY init data from application binary[0m
+D (1779) nvs: nvs_open_from_partition phy 0[0m
+D (1779) nvs: nvs_get cal_version 4[0m
+D (1779) nvs: nvs_get_str_or_blob cal_mac[0m
+D (1789) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1789) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1799) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1809) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1819) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1819) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1829) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1839) nvs: nvs_get_str_or_blob cal_data[0m
+D (1849) nvs: nvs_close 3[0m
+D (1849) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1849) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1859) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1859) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1869) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1879) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1889) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1959) wifi:filter: set rx policy=0
+I (1959) wifi:mode : sta (78:e3:6d:09:fa:28)
+I (1959) wifi:enable tsf
+D (1959) wifi:filter: set rx policy=1
+D (1959) wifi:connect status 0 -> 0
+D (1959) event: running post WIFI_EVENT:40 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (1969) event: running post WIFI_EVENT:2 with handler 0x4010792c and context 0x3ffc8fb0 on loop 0x3ffc7e8c[0m
+D (1979) wifi_init_default: wifi_start esp-netif:0x3ffc8db4 event-id2[0m
+D (1989) wifi_init_default: WIFI mac address: 78 e3 6d 9 fa 28[0m
+D (1999) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x40104c78[0m
+[0;32mI (1999) wifi_station_netif: wifi_init_sta finished.[0m
+D (1999) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2009) esp_netif_handlers: esp_netif action has started with netif0x3ffc8db4 from event_id=2[0m
+D (2019) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x40105538[0m
+D (2029) esp_netif_lwip: esp_netif_start_api 0x3ffc8db4[0m
+D (2029) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffc8db4[0m
+D (2039) esp_netif_lwip: check: local, if=0x3ffc8db4 fn=0x40105c94[0m
+D (2049) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8db4[0m
+D (2049) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2059) event: running post WIFI_EVENT:2 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (2069) wifi:Start wifi connect
+D (2069) wifi:connect status 0 -> 0
+D (2069) wifi:connect chan=0
+D (2079) wifi:first chan=4
+D (2079) wifi:connect status 0 -> 1
+D (2079) wifi:filter: set rx policy=3
+D (2089) wifi:clear scan ap list
+D (2089) wifi:start scan: type=0x50f, priority=2, cb=0x40129530, arg=0x0, ss_state=0x1, time=132953, index=0
+D (2099) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (2109) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2109) wifi:profile match: ss_state=0x7
+D (2109) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2119) wifi:set max rate: from <rate=130, phy=3, sig=0> to <rate=144, phy=3 sig=0>
+D (2129) wifi:sig_b=0, sig_g=0, sig_n=0, max_b=22, max_g=108, max_n=144
+D (2129) wifi:profile match: ss_state=0x7
+D (2139) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2139) wifi:profile match: ss_state=0x7
+D (2149) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2149) wifi:profile match: ss_state=0x7
+D (2159) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (2159) wifi:find first mathched ssid, scan done
+D (2169) wifi:filter: set rx policy=4
+D (2169) wifi:first chan=1
+D (2169) wifi:handoff_cb: status=0
+D (2179) wifi:ap found, mac=b4:b0:24:4f:fb:d0
+D (2179) wifi:new_bss=0x3ffba8b8, cur_bss=0x0, new_chan=<4,0>, cur_chan=1
+D (2189) wifi:filter: set rx policy=5
+I (2189) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1
+D (2199) wifi:connect_op: status=0, auth=5, cipher=3 
+D (2199) wifi:auth mode is not none
+D (2199) wifi:connect_bss: auth=1, reconnect=0
+I (2209) wifi:state: init -> auth (b0)
+D (2209) wifi:start 1s AUTH timer
+D (2219) wifi:clear scan ap list
+D (2219) event: running post WIFI_EVENT:40 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (2219) wifi:recv auth: seq=2, status=0
+I (2229) wifi:state: auth -> assoc (0)
+D (2239) wifi:restart connect 1s timer for assoc
+D (2249) wifi:recv assoc: type=0x10
+D (2249) wifi:filter: set rx policy=6
+I (2249) wifi:state: assoc -> run (10)
+D (2249) wifi:start 10s connect timer for 4 way handshake
+W (2389) wifi:[ADDBA]rx delba, code:39, delete tid:0
+W (2389) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (2409) wifi:connected with focaslab, aid = 6, channel 4, BW20, bssid = b4:b0:24:4f:fb:d0
+I (2409) wifi:security: WPA2-PSK, phy: bgn, rssi: -58
+D (2409) wifi:remove all except b4:b0:24:4f:fb:d0 from rc list
+D (2419) wifi:clear blacklist
+D (2419) nvs: nvs_set sta.chan 1 4[0m
+D (2419) nvs: nvs_set_blob sta.apinfo 700[0m
+D (2429) wifi:filter: set rx policy=7
+I (2429) wifi:pm start, type: 1
+
+I (2429) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+D (2439) wifi:Send sta connected event
+D (2439) wifi:connect status 1 -> 5
+D (2449) wifi:obss scan is disabled
+D (2449) wifi:start obss scan: obss scan is stopped
+I (2459) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+D (2459) event: running post WIFI_EVENT:4 with handler 0x4010795c and context 0x3ffc9010 on loop 0x3ffc7e8c[0m
+I (2459) wifi:<ba-add>idx:0 (ifx:0, b4:b0:24:4f:fb:d0), tid:0, ssn:10, winSize:64
+D (2479) esp_netif_handlers: esp_netif action connected with netif0x3ffc8db4 from event_id=4[0m
+D (2489) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x40105904[0m
+D (2489) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffc8db4[0m
+D (2499) esp_netif_lwip: check: local, if=0x3ffc8db4 fn=0x40105c94[0m
+D (2509) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8db4[0m
+D (2509) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2519) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x401057c4[0m
+D (2519) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffc8db4[0m
+D (2529) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffc8db4[0m
+D (2539) esp_netif_lwip: if0x3ffc8db4 start ip lost tmr: interval=120[0m
+D (2539) esp_netif_lwip: starting dhcp client[0m
+D (2549) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2549) event: running post WIFI_EVENT:4 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (3549) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffc8e38[0m
+D (3549) esp_netif_lwip: if0x3ffc8db4 ip changed=1[0m
+D (3549) event: running post IP_EVENT:0 with handler 0x40107788 and context 0x3ffc90e4 on loop 0x3ffc7e8c[0m
+D (3559) wifi_init_default: Got IP wifi default handler entered[0m
+D (3559) esp_netif_handlers: esp_netif action got_ip with netif0x3ffc8db4 from event_id=0[0m
+[0;32mI (3569) esp_netif_handlers: sta ip: 192.168.0.100, mask: 255.255.255.0, gw: 192.168.0.1[0m
+D (3579) event: running post IP_EVENT:0 with handler 0x400d9e2c and context 0x3ffd10d0 on loop 0x3ffc7e8c[0m
+[0;32mI (3589) wifi_station_netif: got ip:192.168.0.100[0m
+[0;32mI (3589) wifi_station_netif: connected to ap SSID:focaslab password:wifi@focaslab[0m
+[0;32mI (3609) main_task: Returned from app_main()[0m
+Subscriber initialized successfully.
+Guru Meditation Error: Core  1 panic'ed (StoreProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x4000c333  PS      : 0x00060130  A0      : 0x800e53b6  A1      : 0x3ffd5c60  
+A2      : 0x00000000  A3      : 0x3ffb5774  A4      : 0x00000001  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  A8      : 0x00000000  A9      : 0x00000000  
+A10     : 0x3ffb5774  A11     : 0x3ffb57e0  A12     : 0x00000000  A13     : 0x00000000  
+A14     : 0x00000000  A15     : 0x003d6750  SAR     : 0x0000000c  EXCCAUSE: 0x0000001d  
+EXCVADDR: 0x00000000  LBEG    : 0x4000c2e0  LEND    : 0x4000c2f6  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x4000c330:0x3ffd5c60 0x400e53b3:0x3ffd5c70 0x400de91d:0x3ffd5c90 0x400dd17d:0x3ffd5cb0 0x400da4f2:0x3ffd5ce0 0x400e4e0b:0x3ffd5d10 0x400e25c5:0x3ffd5d60 0x400dabed:0x3ffd5e00 0x400db672:0x3ffd5e90 0x400d91c8:0x3ffd5ec0 0x4008b789:0x3ffd5fd0
+
+
+
+
+ELF file SHA256: 21e376b8e
+
+Rebooting...
+ets Jun  8 2016 00:22:57
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29284h (168580) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=000392ac vaddr=3ffb0000 size=04d94h ( 19860) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=0003e048 vaddr=40080000 size=01fd0h (  8144) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9a998h (633240) map[0m
+[0;32mI (393) esp_image: segment 4: paddr=000da9c0 vaddr=40081fd0 size=16b08h ( 92936) load[0m
+[0;32mI (442) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (443) boot: Disabling RNG early entropy source...[0m
+[0;32mI (454) cpu_start: Multicore app[0m
+D (454) cpu_start: Pro cpu up[0m
+D (455) cpu_start: Starting app cpu, entry point is 0x40081324[0m
+D (441) cpu_start: App cpu up[0m
+D (463) clk: RTC_SLOW_CLK calibration value: 3243853[0m
+D (476) cpu_start: calling init function: 0x400d2d90 on core: 0[0m
+[0;32mI (476) cpu_start: Pro cpu start user code[0m
+[0;32mI (476) cpu_start: cpu freq: 160000000 Hz[0m
+D (481) cpu_start: calling init function: 0x400d2dd4 on core: 0[0m
+[0;32mI (487) cpu_start: Application information:[0m
+[0;32mI (492) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (498) cpu_start: App version:      1[0m
+[0;32mI (503) cpu_start: Compile time:     Jan 31 2024 22:48:20[0m
+[0;32mI (509) cpu_start: ELF file SHA256:  21e376b8e...[0m
+[0;32mI (514) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (521) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (526) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (531) cpu_start: Chip rev:         v1.0[0m
+D (536) cpu_start: calling init function: 0x400d2f1c on core: 0[0m
+D (542) memory_layout: Checking 9 reserved memory ranges:[0m
+D (547) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (553) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (560) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffbbd48[0m
+D (566) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (573) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (579) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (586) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (592) memory_layout: Reserved memory range 0x40080000 - 0x40098ad8[0m
+D (598) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (605) memory_layout: Building list of available memory regions:[0m
+D (611) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (618) memory_layout: Available memory region 0x3ffbbd48 - 0x3ffc0000[0m
+D (624) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (631) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (637) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (644) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (651) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (657) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (664) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (670) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (677) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (684) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (690) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (697) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (703) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (710) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (716) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (723) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (730) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (736) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (743) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (749) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (756) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (763) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (769) memory_layout: Available memory region 0x40098ad8 - 0x4009a000[0m
+D (776) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (782) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (789) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (796) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (803) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (808) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (814) heap_init: New heap initialised at 0x3ffbbd48[0m
+[0;32mI (819) heap_init: At 3FFBBD48 len 000242B8 (144 KiB): DRAM[0m
+[0;32mI (825) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (832) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (838) heap_init: New heap initialised at 0x40098ad8[0m
+[0;32mI (843) heap_init: At 40098AD8 len 00007528 (29 KiB): IRAM[0m
+D (850) cpu_start: calling init function: 0x400d2f28 on core: 0[0m
+D (856) cpu_start: calling init function: 0x400d5658 on core: 0[0m
+D (862) cpu_start: calling init function: 0x401611e0 on core: 0[0m
+D (867) cpu_start: calling init function: 0x400d2f34 on core: 0[0m
+D (874) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (879) cpu_start: calling init function: 0x400d2f40 on core: 0[0m
+D (885) cpu_start: calling init function: 0x400d6f8c on core: 0[0m
+D (891) cpu_start: calling init function: 0x400d82c8 on core: 0[0m
+D (897) cpu_start: calling init function: 0x400d56d4 on core: 0[0m
+D (903) cpu_start: calling init function: 0x400d2f4c on core: 0[0m
+D (909) cpu_start: calling init function: 0x400d2f58 on core: 0[0m
+D (915) spi_flash: trying chip: issi[0m
+D (918) spi_flash: trying chip: gd[0m
+D (922) spi_flash: trying chip: mxic[0m
+D (925) spi_flash: trying chip: winbond[0m
+D (929) spi_flash: trying chip: generic[0m
+[0;32mI (933) spi_flash: detected chip: generic[0m
+[0;32mI (938) spi_flash: flash io: dio[0m
+[0;33mW (942) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (955) cpu_start: calling init function: 0x401611e8 on core: 0[0m
+D (961) cpu_start: calling init function: 0x4014b498[0m
+D (966) cpu_start: calling init function: 0x4014af48[0m
+D (971) cpu_start: calling init function: 0x401076d4[0m
+D (976) cpu_start: calling init function: 0x400ef824[0m
+[0;33mW (981) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (992) cpu_start: calling init function: 0x400da464[0m
+D (997) cpu_start: calling init function: 0x400d9504[0m
+D (1002) cpu_start: calling init function: 0x40089b0c[0m
+D (1007) cpu_start: calling init function: 0x400d4044[0m
+D (1012) cpu_start: calling init function: 0x400d34f4[0m
+D (1017) cpu_start: calling init function: 0x400d2900[0m
+D (1022) cpu_start: calling init function: 0x400d5d84 on core: 0[0m
+D (1028) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (1033) cpu_start: calling init function: 0x400d2f80 on core: 0[0m
+D (1040) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (1045) app_start: Starting scheduler on CPU0[0m
+[0;32D (1049) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (1049) app_start: Starting scheduler on CPU1[0m
+mI (1049) main_task: Started on CPU0[0m
+D (1069) heap_init: New heap initialised at 0x3ffe0440[0m
+D (1069) heap_init: New heap initialised at 0x3ffe4350[0m
+D (1069) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (1069) main_task: Calling app_main()[0m
+D (1079) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (1089) IMU: devid=0x34[0m
+[0;32mI (1089) IMU: getRate()=0[0m
+[0;32mI (1089) IMU: getExternalFrameSync()=0[0m
+[0;32mI (1099) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (1099) rmt: new group(0) at 0x3ffc5938, occupy=ffffff00[0m
+D (1109) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+[0;32mI (1099) IMU: getDLPFMode()=6[0m
+D (1109) rmt: group clock resolution:80000000[0m
+[0;32mI (1119) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (1119) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1129) IMU: getFullScaleGyroRange()=0[0m
+D (1139) rmt: new tx channel(0,0) at 0x3ffc55b8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1159) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1159) rmt: group clock resolution:80000000[0m
+[0;32mI (1159) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1169) rmt: new tx channel(0,1) at 0x3ffc5ed8, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1189) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1189) rmt: group clock resolution:80000000[0m
+[0;32mI (1199) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1209) rmt: new tx channel(0,2) at 0x3ffc61f0, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1219) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1229) rmt: group clock resolution:80000000[0m
+[0;32mI (1229) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1239) rmt: new tx channel(0,3) at 0x3ffc6508, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1259) ESC_controller: Install Dshot ESC encoder[0m
+D (1259) rmt: new bytes encoder @0x3ffc687c[0m
+D (1269) rmt: new copy encoder @0x3ffc68a0[0m
+D (1269) rmt: new bytes encoder @0x3ffc68d4[0m
+D (1269) rmt: new copy encoder @0x3ffc68f8[0m
+D (1279) rmt: new bytes encoder @0x3ffc692c[0m
+D (1279) rmt: new copy encoder @0x3ffc6950[0m
+D (1289) rmt: new bytes encoder @0x3ffc6984[0m
+D (1289) rmt: new copy encoder @0x3ffc69a8[0m
+[0;32mI (1299) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1299) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1339) wifi_station_netif: ESP_WIFI_MODE_STA[0m
+D (1339) esp_netif_lwip: LwIP stack has been initialized[0m
+D (1339) esp_netif_lwip: esp-netif has been successfully initialized[0m
+D (1339) event: running task for loop 0x3ffc7e8c[0m
+D (1349) event: created task for loop 0x3ffc7e8c[0m
+D (1349) event: created event loop 0x3ffc7e8c[0m
+D (1359) esp_netif_lwip: check: remote, if=0x3ffbddd0 fn=0x40105284[0m
+D (1359) esp_netif_objects: esp_netif_add_to_list_unsafe netif added successfully (total netifs: 1)[0m
+D (1369) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (1379) nvs: nvs_open_from_partition misc 1[0m
+I (1389) wifi:wifi driver task: 3ffcb3b4, prio:23, stack:6656, core=0
+D (1389) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1389) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1399) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1409) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1419) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1419) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1429) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1439) nvs: nvs_open_from_partition nvs.net80211 1[0m
+D (1439) nvs: nvs_get opmode 1[0m
+D (1449) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1449) nvs: nvs_get sta.authmode 1[0m
+D (1449) nvs: nvs_get_str_or_blob sta.pswd[0m
+D (1459) nvs: nvs_get_str_or_blob sta.pmk[0m
+D (1459) nvs: nvs_get sta.chan 1[0m
+D (1459) nvs: nvs_get auto.conn 1[0m
+D (1469) nvs: nvs_get bssid.set 1[0m
+D (1469) nvs: nvs_get_str_or_blob sta.bssid[0m
+D (1479) nvs: nvs_get sta.lis_intval 2[0m
+D (1479) nvs: nvs_get sta.phym 1[0m
+D (1479) nvs: nvs_get sta.phybw 1[0m
+D (1489) nvs: nvs_get_str_or_blob sta.apsw[0m
+D (1489) nvs: nvs_get_str_or_blob sta.apinfo[0m
+D (1499) nvs: nvs_get sta.scan_method 1[0m
+D (1499) nvs: nvs_get sta.sort_method 1[0m
+D (1499) nvs: nvs_get sta.minrssi 1[0m
+D (1509) nvs: nvs_get sta.minauth 1[0m
+D (1509) nvs: nvs_get sta.pmf_e 1[0m
+D (1509) nvs: nvs_get sta.pmf_r 1[0m
+D (1519) nvs: nvs_get sta.btm_e 1[0m
+D (1519) nvs: nvs_get sta.rrm_e 1[0m
+D (1519) nvs: nvs_get sta.mbo_e 1[0m
+D (1529) nvs: nvs_get_str_or_blob ap.ssid[0m
+D (1529) nvs: nvs_get_str_or_blob ap.passwd[0m
+D (1529) nvs: nvs_get_str_or_blob ap.pmk[0m
+D (1539) nvs: nvs_get ap.chan 1[0m
+D (1539) nvs: nvs_get ap.authmode 1[0m
+D (1549) nvs: nvs_get ap.hidden 1[0m
+D (1549) nvs: nvs_get ap.max.conn 1[0m
+D (1549) nvs: nvs_get bcn.interval 2[0m
+D (1559) nvs: nvs_get ap.phym 1[0m
+D (1559) nvs: nvs_get ap.phybw 1[0m
+D (1559) nvs: nvs_get ap.sndchan 1[0m
+D (1569) nvs: nvs_get ap.pmf_e 1[0m
+D (1569) nvs: nvs_get ap.pmf_r 1[0m
+D (1569) nvs: nvs_get ap.p_cipher 1[0m
+D (1579) nvs: nvs_get lorate 1[0m
+D (1579) nvs: nvs_get_str_or_blob country[0m
+D (1579) nvs: nvs_get ap.ftm_r 1[0m
+D (1589) nvs: nvs_get sta.ft 1[0m
+D (1589) nvs: nvs_get sta.owe 1[0m
+D (1589) nvs: nvs_get sta.trans_d 1[0m
+D (1599) nvs: nvs_get sta.sae_h2e 1[0m
+D (1599) nvs: nvs_get sta.sae_pk_mode 1[0m
+D (1599) nvs: nvs_get sta.bss_retry 1[0m
+D (1609) nvs: nvs_get_str_or_blob sta.owe_data[0m
+D (1609) nvs: nvs_get sta.he_dcm 1[0m
+D (1619) nvs: nvs_get sta.he_dcm_c_tx 1[0m
+D (1619) nvs: nvs_get sta.he_dcm_c_rx 1[0m
+D (1619) nvs: nvs_get sta.he_mcs9_d 1[0m
+D (1629) nvs: nvs_get sta.he_su_b_d 1[0m
+D (1629) nvs: nvs_get sta.he_su_b_f_d 1[0m
+D (1639) nvs: nvs_get sta.he_mu_b_f_d 1[0m
+D (1639) nvs: nvs_get sta.he_cqi_f_d 1[0m
+D (1639) nvs: nvs_get_str_or_blob sta.sae_h2e_id[0m
+D (1649) nvs: nvs_get ap.sae_h2e 1[0m
+D (1649) nvs: nvs_get_str_or_blob ap.pmk_info[0m
+D (1659) nvs: nvs_get nan.phym 1[0m
+D (1659) nvs: nvs_set ap.sndchan 1 1[0m
+I (1659) wifi:wifi firmware version: 1200a48
+I (1669) wifi:wifi certification version: v7.0
+I (1669) wifi:config NVS flash: enabled
+I (1669) wifi:config nano formating: disabled
+I (1679) wifi:Init data frame dynamic rx buffer num: 32
+I (1679) wifi:Init static rx mgmt buffer num: 5
+I (1689) wifi:Init management short buffer num: 32
+I (1689) wifi:Init dynamic tx buffer num: 32
+I (1699) wifi:Init static rx buffer size: 1600
+I (1699) wifi:Init static rx buffer num: 10
+I (1699) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1709) wifi_init: rx ba win: 6[0m
+[0;32mI (1709) wifi_init: accept mbox: 6[0m
+[0;32mI (1719) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1719) wifi_init: udp mbox: 6[0m
+[0;32mI (1719) wifi_init: tcp mbox: 6[0m
+[0;32mI (1729) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1729) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1739) wifi_init: tcp mss: 1440[0m
+[0;32mI (1739) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1739) wifi_init: WiFi RX IRAM OP enabled[0m
+D (1749) nvs: nvs_get opmode 1[0m
+D (1749) wifi:clear blacklist
+D (1759) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1759) nvs: nvs_get sta.pmf_e 1[0m
+[0;32mI (1759) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+D (1769) phy_init: loading PHY init data from application binary[0m
+D (1779) nvs: nvs_open_from_partition phy 0[0m
+D (1779) nvs: nvs_get cal_version 4[0m
+D (1779) nvs: nvs_get_str_or_blob cal_mac[0m
+D (1789) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1789) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1799) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1809) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1819) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1819) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1829) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1839) nvs: nvs_get_str_or_blob cal_data[0m
+D (1849) nvs: nvs_close 3[0m
+D (1849) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1849) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1859) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1859) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1869) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1879) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1889) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1959) wifi:filter: set rx policy=0
+I (1959) wifi:mode : sta (78:e3:6d:09:fa:28)
+I (1959) wifi:enable tsf
+D (1959) wifi:filter: set rx policy=1
+D (1959) wifi:connect status 0 -> 0
+D (1959) event: running post WIFI_EVENT:40 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (1969) event: running post WIFI_EVENT:2 with handler 0x4010792c and context 0x3ffc8fb0 on loop 0x3ffc7e8c[0m
+D (1979) wifi_init_default: wifi_start esp-netif:0x3ffc8db4 event-id2[0m
+D (1989) wifi_init_default: WIFI mac address: 78 e3 6d 9 fa 28[0m
+D (1999) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x40104c78[0m
+[0;32mI (1999) wifi_station_netif: wifi_init_sta finished.[0m
+D (1999) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2009) esp_netif_handlers: esp_netif action has started with netif0x3ffc8db4 from event_id=2[0m
+D (2019) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x40105538[0m
+D (2029) esp_netif_lwip: esp_netif_start_api 0x3ffc8db4[0m
+D (2029) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffc8db4[0m
+D (2039) esp_netif_lwip: check: local, if=0x3ffc8db4 fn=0x40105c94[0m
+D (2049) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8db4[0m
+D (2049) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2059) event: running post WIFI_EVENT:2 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (2069) wifi:Start wifi connect
+D (2069) wifi:connect status 0 -> 0
+D (2069) wifi:connect chan=0
+D (2079) wifi:first chan=4
+D (2079) wifi:connect status 0 -> 1
+D (2079) wifi:filter: set rx policy=3
+D (2089) wifi:clear scan ap list
+D (2089) wifi:start scan: type=0x50f, priority=2, cb=0x40129530, arg=0x0, ss_state=0x1, time=132978, index=0
+D (2099) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (2119) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2119) wifi:profile match: ss_state=0x7
+D (2119) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (2119) wifi:find first mathched ssid, scan done
+D (2129) wifi:filter: set rx policy=4
+D (2129) wifi:first chan=1
+D (2129) wifi:handoff_cb: status=0
+D (2139) wifi:ap found, mac=b4:b0:24:4f:fb:d0
+D (2139) wifi:new_bss=0x3ffba8b8, cur_bss=0x0, new_chan=<4,0>, cur_chan=1
+D (2149) wifi:filter: set rx policy=5
+I (2149) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1
+D (2159) wifi:connect_op: status=0, auth=5, cipher=3 
+D (2159) wifi:auth mode is not none
+D (2159) wifi:connect_bss: auth=1, reconnect=0
+I (2169) wifi:state: init -> auth (b0)
+D (2169) wifi:start 1s AUTH timer
+D (2169) wifi:clear scan ap list
+D (2179) event: running post WIFI_EVENT:40 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (2179) wifi:recv auth: seq=2, status=0
+I (2189) wifi:state: auth -> assoc (0)
+D (2189) wifi:restart connect 1s timer for assoc
+D (2199) wifi:recv assoc: type=0x10
+D (2199) wifi:filter: set rx policy=6
+I (2199) wifi:state: assoc -> run (10)
+D (2209) wifi:start 10s connect timer for 4 way handshake
+I (2359) wifi:connected with focaslab, aid = 6, channel 4, BW20, bssid = b4:b0:24:4f:fb:d0
+I (2359) wifi:security: WPA2-PSK, phy: bgn, rssi: -58
+D (2359) wifi:remove all except b4:b0:24:4f:fb:d0 from rc list
+D (2369) wifi:clear blacklist
+D (2369) nvs: nvs_set sta.chan 1 4[0m
+D (2369) nvs: nvs_set_blob sta.apinfo 700[0m
+D (2379) wifi:filter: set rx policy=7
+I (2379) wifi:pm start, type: 1
+
+I (2379) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+D (2389) wifi:Send sta connected event
+D (2389) wifi:connect status 1 -> 5
+D (2399) wifi:obss scan is disabled
+D (2399) wifi:start obss scan: obss scan is stopped
+I (2409) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+D (2409) wifi:set max rate: from <rate=130, phy=3, sig=0> to <rate=144, phy=3 sig=0>
+D (2419) wifi:sig_b=0, sig_g=0, sig_n=0, max_b=22, max_g=108, max_n=144
+D (2419) wifi:update trc
+D (2429) event: running post WIFI_EVENT:4 with handler 0x4010795c and context 0x3ffc9010 on loop 0x3ffc7e8c[0m
+D (2439) esp_netif_handlers: esp_netif action connected with netif0x3ffc8db4 from event_id=4[0m
+D (2449) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x40105904[0m
+D (2449) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffc8db4[0m
+D (2459) esp_netif_lwip: check: local, if=0x3ffc8db4 fn=0x40105c94[0m
+D (2459) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8db4[0m
+D (2469) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2479) esp_netif_lwip: check: remote, if=0x3ffc8db4 fn=0x401057c4[0m
+D (2479) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffc8db4[0m
+D (2489) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffc8db4[0m
+I (2489) wifi:D (2499) esp_netif_lwip: if0x3ffc8db4 start ip lost tmr: interval=120[0m
+<ba-add>idx:0 (ifx:0, b4:b0:24:4f:fb:d0), tid:0, ssn:2, winSize:64D (2499) esp_netif_lwip: starting dhcp client[0m
+
+D (2519) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2519) event: running post WIFI_EVENT:4 with handler 0x400d9e2c and context 0x3ffd10b0 on loop 0x3ffc7e8c[0m
+D (3519) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffc8e38[0m
+D (3519) esp_netif_lwip: if0x3ffc8db4 ip changed=1[0m
+D (3519) event: running post IP_EVENT:0 with handler 0x40107788 and context 0x3ffc90e4 on loop 0x3ffc7e8c[0m
+D (3529) wifi_init_default: Got IP wifi default handler entered[0m
+D (3529) esp_netif_handlers: esp_netif action got_ip with netif0x3ffc8db4 from event_id=0[0m
+[0;32mI (3539) esp_netif_handlers: sta ip: 192.168.0.100, mask: 255.255.255.0, gw: 192.168.0.1[0m
+D (3549) event: running post IP_EVENT:0 with handler 0x400d9e2c and context 0x3ffd10d0 on loop 0x3ffc7e8c[0m
+[0;32mI (3559) wifi_station_netif: got ip:192.168.0.100[0m
+[0;32mI (3559) wifi_station_netif: connected to ap SSID:focaslab password:wifi@focaslab[0m
+[0;32mI (3579) main_task: Returned from app_main()[0m
+Subscriber initialized successfully.
+Quaternions not received yet.
+Roll: -2.964113
+Pitch: 1.182939
+Yaw: -0.069631
+Roll: -2.964113
+Pitch: 1.182939
+Yaw: -0.069631
+Roll: -2.963893
+Pitch: 1.182922
+Yaw: -0.069723
+Roll: -2.963893
+Pitch: 1.182922
+Yaw: -0.069723
+Roll: -2.963911
+Pitch: 1.182923
+Yaw: -0.069716
+Roll: -2.963911
+Pitch: 1.182923
+Yaw: -0.069716
+Roll: -2.963963
+Pitch: 1.182877
+Yaw: -0.069707
+Roll: -2.963963
+Pitch: 1.182877
+Yaw: -0.069707
+Roll: -2.963983
+Pitch: 1.182876
+Yaw: -0.069700
+Roll: -2.963983
+Pitch: 1.182876
+Yaw: -0.069700
+Roll: -2.964294
+Pitch: 1.182758
+Yaw: -0.069658
+Roll: -2.964294
+Pitch: 1.182758
+Yaw: -0.069658
+Roll: -2.964325
+Pitch: 1.182751
+Yaw: -0.069649
+Roll: -2.964325
+Pitch: 1.182751
+Yaw: -0.069649
+Roll: -2.964318
+Pitch: 1.182654
+Yaw: -0.069673
+Roll: -2.964318
+Pitch: 1.182654
+Yaw: -0.069673
+Roll: -2.964347
+Pitch: 1.182644
+Yaw: -0.069666
+Roll: -2.964347
+Pitch: 1.182644
+Yaw: -0.069666
+Roll: -2.964493
+Pitch: 1.182633
+Yaw: -0.069643
+Roll: -2.964493
+Pitch: 1.182633
+Yaw: -0.069643
+Roll: -2.964527
+Pitch: 1.182623
+Yaw: -0.069635
+Roll: -2.964527
+Pitch: 1.182623
+Yaw: -0.069635
+Roll: -2.964522
+Pitch: 1.182627
+Yaw: -0.069637
+Roll: -2.964522
+Pitch: 1.182627
+Yaw: -0.069637
+Roll: -2.963774
+Pitch: 1.182392
+Yaw: -0.070075
+Roll: -2.963774
+Pitch: 1.182392
+Yaw: -0.070075
+Roll: -2.963928
+Pitch: 1.182436
+Yaw: -0.070013
+Roll: -2.963928
+Pitch: 1.182436
+Yaw: -0.070013
+Roll: -2.963935
+Pitch: 1.182434
+Yaw: -0.070015
+Roll: -2.963935
+Pitch: 1.182434
+Yaw: -0.070015
+Roll: -2.963775
+Pitch: 1.182457
+Yaw: -0.070075
+Roll: -2.963775
+Pitch: 1.182457
+Yaw: -0.070075
+Roll: -2.963774
+Pitch: 1.182455
+Yaw: -0.070080
+Roll: -2.963774
+Pitch: 1.182455
+Yaw: -0.070080
+Roll: -2.961568
+Pitch: 1.180910
+Yaw: -0.070909
+Roll: -2.961568
+Pitch: 1.180910
+Yaw: -0.070909
+Roll: -2.961011
+Pitch: 1.180186
+Yaw: -0.071377
+Roll: -2.961011
+Pitch: 1.180186
+Yaw: -0.071377
+Roll: -2.960412
+Pitch: 1.180489
+Yaw: -0.071303
+Roll: -2.960412
+Pitch: 1.180489
+Yaw: -0.071303
+Roll: -2.960328
+Pitch: 1.180465
+Yaw: -0.071356
+Roll: -2.960328
+Pitch: 1.180465
+Yaw: -0.071356
+Roll: -2.960082
+Pitch: 1.180401
+Yaw: -0.071249
+Roll: -2.960082
+Pitch: 1.180401
+Yaw: -0.071249
+Roll: -2.961030
+Pitch: 1.180222
+Yaw: -0.071149
+Roll: -2.961030
+Pitch: 1.180222
+Yaw: -0.071149
+Roll: -2.959759
+Pitch: 1.179361
+Yaw: -0.071770
+Roll: -2.959759
+Pitch: 1.179361
+Yaw: -0.071770
+Roll: -2.961190
+Pitch: 1.179265
+Yaw: -0.071487
+Roll: -2.961190
+Pitch: 1.179265
+Yaw: -0.071487
+Roll: -2.959673
+Pitch: 1.179999
+Yaw: -0.071656
+Roll: -2.959673
+Pitch: 1.179999
+Yaw: -0.071656
+Roll: -2.960427
+Pitch: 1.179537
+Yaw: -0.071690
+Roll: -2.960427
+Pitch: 1.179537
+Yaw: -0.071690
+Roll: -2.963220
+Pitch: 1.180117
+Yaw: -0.070666
+Roll: -2.963220
+Pitch: 1.180117
+Yaw: -0.070666
+Roll: -2.961123
+Pitch: 1.179742
+Yaw: -0.071295
+Roll: -2.961123
+Pitch: 1.179742
+Yaw: -0.071295
+Roll: -2.960910
+Pitch: 1.179220
+Yaw: -0.071733
+Roll: -2.960910
+Pitch: 1.179220
+Yaw: -0.071733
+Roll: -2.961643
+Pitch: 1.179242
+Yaw: -0.071214
+Roll: -2.961643
+Pitch: 1.179242
+Yaw: -0.071214
+Roll: -2.961302
+Pitch: 1.179470
+Yaw: -0.071475
+Roll: -2.961302
+Pitch: 1.179470
+Yaw: -0.071475
+Roll: -2.961640
+Pitch: 1.179639
+Yaw: -0.071253
+Roll: -2.961640
+Pitch: 1.179639
+Yaw: -0.071253
+Roll: -2.961001
+Pitch: 1.179155
+Yaw: -0.071719
+Roll: -2.961001
+Pitch: 1.179155
+Yaw: -0.071719
+Roll: -2.959804
+Pitch: 1.179002
+Yaw: -0.072078
+Roll: -2.959804
+Pitch: 1.179002
+Yaw: -0.072078
+Roll: -2.960963
+Pitch: 1.179390
+Yaw: -0.071515
+Roll: -2.960963
+Pitch: 1.179390
+Yaw: -0.071515
+Roll: -2.956850
+Pitch: 1.179193
+Yaw: -0.072712
+Roll: -2.956850
+Pitch: 1.179193
+Yaw: -0.072712
+Roll: -2.961058
+Pitch: 1.179960
+Yaw: -0.071273
+Roll: -2.961058
+Pitch: 1.179960
+Yaw: -0.071273
+Roll: -2.961113
+Pitch: 1.179729
+Yaw: -0.071364
+Roll: -2.961113
+Pitch: 1.179729
+Yaw: -0.071364
+Roll: -2.961940
+Pitch: 1.179789
+Yaw: -0.071096
+Roll: -2.961940
+Pitch: 1.179789
+Yaw: -0.071096
+Roll: -2.960282
+Pitch: 1.179560
+Yaw: -0.071682
+Roll: -2.960282
+Pitch: 1.179560
+Yaw: -0.071682
+Roll: -2.961436
+Pitch: 1.179967
+Yaw: -0.071209
+Roll: -2.961436
+Pitch: 1.179967
+Yaw: -0.071209
+Roll: -2.960188
+Pitch: 1.178862
+Yaw: -0.072039
+Roll: -2.960188
+Pitch: 1.178862
+Yaw: -0.072039
+Roll: -2.962066
+Pitch: 1.179588
+Yaw: -0.071342
+Roll: -2.962066
+Pitch: 1.179588
+Yaw: -0.071342
+Roll: -2.960967
+Pitch: 1.179351
+Yaw: -0.071606
+Roll: -2.960967
+Pitch: 1.179351
+Yaw: -0.071606
+Roll: -2.962643
+Pitch: 1.179381
+Yaw: -0.070875
+Roll: -2.962643
+Pitch: 1.179381
+Yaw: -0.070875
+Roll: -2.960163
+Pitch: 1.178881
+Yaw: -0.072037
+Roll: -2.960163
+Pitch: 1.178881
+Yaw: -0.072037
+Roll: -2.960130
+Pitch: 1.178877
+Yaw: -0.072048
+Roll: -2.960130
+Pitch: 1.178877
+Yaw: -0.072048
+Roll: -2.960837
+Pitch: 1.178978
+Yaw: -0.071618
+Roll: -2.960837
+Pitch: 1.178978
+Yaw: -0.071618
+Roll: -2.960624
+Pitch: 1.180067
+Yaw: -0.071434
+Roll: -2.960624
+Pitch: 1.180067
+Yaw: -0.071434
+Roll: -2.961884
+Pitch: 1.179830
+Yaw: -0.071200
+Roll: -2.961884
+Pitch: 1.179830
+Yaw: -0.071200
+Roll: -2.962727
+Pitch: 1.179721
+Yaw: -0.071049
+Roll: -2.962727
+Pitch: 1.179721
+Yaw: -0.071049
+Roll: -2.961143
+Pitch: 1.179109
+Yaw: -0.071632
+Roll: -2.961143
+Pitch: 1.179109
+Yaw: -0.071632
+Roll: -2.962661
+Pitch: 1.178976
+Yaw: -0.071273
+Roll: -2.962661
+Pitch: 1.178976
+Yaw: -0.071273
+Roll: -2.963802
+Pitch: 1.179535
+Yaw: -0.070826
+Roll: -2.963802
+Pitch: 1.179535
+Yaw: -0.070826
+Roll: -2.961352
+Pitch: 1.178850
+Yaw: -0.071602
+Roll: -2.961352
+Pitch: 1.178850
+Yaw: -0.071602
+Roll: -2.962118
+Pitch: 1.179350
+Yaw: -0.071162
+Roll: -2.962118
+Pitch: 1.179350
+Yaw: -0.071162
+Roll: -2.960604
+Pitch: 1.178988
+Yaw: -0.071850
+Roll: -2.960604
+Pitch: 1.178988
+Yaw: -0.071850
+Roll: -2.962143
+Pitch: 1.179396
+Yaw: -0.071194
+Roll: -2.962143
+Pitch: 1.179396
+Yaw: -0.071194
+Roll: -2.961715
+Pitch: 1.178860
+Yaw: -0.071430
+Roll: -2.961715
+Pitch: 1.178860
+Yaw: -0.071430
+Roll: -2.961605
+Pitch: 1.179104
+Yaw: -0.071367
+Roll: -2.961605
+Pitch: 1.179104
+Yaw: -0.071367
+Roll: -2.962453
+Pitch: 1.179662
+Yaw: -0.071160
+Roll: -2.962453
+Pitch: 1.179662
+Yaw: -0.071160
+Roll: -2.962118
+Pitch: 1.180292
+Yaw: -0.070854
+Roll: -2.962118
+Pitch: 1.180292
+Yaw: -0.070854
+Roll: -2.960532
+Pitch: 1.180011
+Yaw: -0.071408
+Roll: -2.960532
+Pitch: 1.180011
+Yaw: -0.071408
+Roll: -2.961521
+Pitch: 1.179235
+Yaw: -0.071501
+Roll: -2.961521
+Pitch: 1.179235
+Yaw: -0.071501
+Roll: -2.959029
+Pitch: 1.178820
+Yaw: -0.072329
+Roll: -2.959029
+Pitch: 1.178820
+Yaw: -0.072329
+Roll: -2.961753
+Pitch: 1.179736
+Yaw: -0.071118
+Roll: -2.961753
+Pitch: 1.179736
+Yaw: -0.071118
+Roll: -2.963232
+Pitch: 1.181377
+Yaw: -0.070015
+Roll: -2.963232
+Pitch: 1.181377
+Yaw: -0.070015
+Roll: -2.949686
+Pitch: 1.179202
+Yaw: -0.077003
+Roll: -2.949686
+Pitch: 1.179202
+Yaw: -0.077003
+Roll: -2.951402
+Pitch: 1.181229
+Yaw: -0.074707
+Roll: -2.951402
+Pitch: 1.181229
+Yaw: -0.074707
+Roll: -2.950534
+Pitch: 1.180511
+Yaw: -0.074671
+Roll: -2.950534
+Pitch: 1.180511
+Yaw: -0.074671
+Roll: -2.951573
+Pitch: 1.180737
+Yaw: -0.073582
+Roll: -2.951573
+Pitch: 1.180737
+Yaw: -0.073582
+Roll: -2.950515
+Pitch: 1.180640
+Yaw: -0.073448
+Roll: -2.950515
+Pitch: 1.180640
+Yaw: -0.073448
+Roll: -2.949308
+Pitch: 1.180231
+Yaw: -0.073452
+Roll: -2.949308
+Pitch: 1.180231
+Yaw: -0.073452
+Roll: -2.951967
+Pitch: 1.180875
+Yaw: -0.072292
+Roll: -2.951967
+Pitch: 1.180875
+Yaw: -0.072292
+Roll: -2.948776
+Pitch: 1.180202
+Yaw: -0.073189
+Roll: -2.948776
+Pitch: 1.180202
+Yaw: -0.073189
+Roll: -2.952083
+Pitch: 1.180031
+Yaw: -0.072327
+Roll: -2.952083
+Pitch: 1.180031
+Yaw: -0.072327
+Roll: -2.951184
+Pitch: 1.179525
+Yaw: -0.072876
+Roll: -2.951184
+Pitch: 1.179525
+Yaw: -0.072876
+Roll: -2.952401
+Pitch: 1.180069
+Yaw: -0.072278
+Roll: -2.952401
+Pitch: 1.180069
+Yaw: -0.072278
+Roll: -2.948364
+Pitch: 1.180520
+Yaw: -0.073100
+Roll: -2.948364
+Pitch: 1.180520
+Yaw: -0.073100
+Roll: -2.949237
+Pitch: 1.180910
+Yaw: -0.072608
+Roll: -2.949237
+Pitch: 1.180910
+Yaw: -0.072608
+Roll: -2.949302
+Pitch: 1.181225
+Yaw: -0.072700
+Roll: -2.949302
+Pitch: 1.181225
+Yaw: -0.072700
+Roll: -2.952906
+Pitch: 1.181318
+Yaw: -0.071870
+Roll: -2.952906
+Pitch: 1.181318
+Yaw: -0.071870
+Roll: -2.953744
+Pitch: 1.181205
+Yaw: -0.071858
+Roll: -2.953744
+Pitch: 1.181205
+Yaw: -0.071858
+Roll: -2.960251
+Pitch: 1.182012
+Yaw: -0.070221
+Roll: -2.960251
+Pitch: 1.182012
+Yaw: -0.070221
+Roll: -2.960870
+Pitch: 1.180915
+Yaw: -0.070476
+Roll: -2.960870
+Pitch: 1.180915
+Yaw: -0.070476
+Roll: -2.960594
+Pitch: 1.181108
+Yaw: -0.070320
+Roll: -2.960594
+Pitch: 1.181108
+Yaw: -0.070320
+Roll: -2.959699
+Pitch: 1.180804
+Yaw: -0.070771
+Roll: -2.959699
+Pitch: 1.180804
+Yaw: -0.070771
+Roll: -2.958574
+Pitch: 1.180024
+Yaw: -0.071199
+Roll: -2.958574
+Pitch: 1.180024
+Yaw: -0.071199
+Roll: -2.957035
+Pitch: 1.179718
+Yaw: -0.071806
+Roll: -2.957035
+Pitch: 1.179718
+Yaw: -0.071806
+Roll: -2.957810
+Pitch: 1.180629
+Yaw: -0.071036
+Roll: -2.957810
+Pitch: 1.180629
+Yaw: -0.071036
+Roll: -2.956544
+Pitch: 1.179514
+Yaw: -0.071878
+Roll: -2.956544
+Pitch: 1.179514
+Yaw: -0.071878
+Roll: -2.956371
+Pitch: 1.179353
+Yaw: -0.071879
+Roll: -2.956371
+Pitch: 1.179353
+Yaw: -0.071879
+Roll: -2.958181
+Pitch: 1.180659
+Yaw: -0.071023
+Roll: -2.958181
+Pitch: 1.180659
+Yaw: -0.071023
+Roll: -2.957679
+Pitch: 1.180140
+Yaw: -0.071326
+Roll: -2.957679
+Pitch: 1.180140
+Yaw: -0.071326
+Roll: -2.959561
+Pitch: 1.181133
+Yaw: -0.070588
+Roll: -2.959561
+Pitch: 1.181133
+Yaw: -0.070588
+Roll: -2.956273
+Pitch: 1.179849
+Yaw: -0.071927
+Roll: -2.956273
+Pitch: 1.179849
+Yaw: -0.071927
+Roll: -2.959487
+Pitch: 1.180385
+Yaw: -0.070804
+Roll: -2.959487
+Pitch: 1.180385
+Yaw: -0.070804
+Roll: -2.958979
+Pitch: 1.179974
+Yaw: -0.071153
+Roll: -2.958979
+Pitch: 1.179974
+Yaw: -0.071153
+Roll: -2.957357
+Pitch: 1.179543
+Yaw: -0.071617
+Roll: -2.957357
+Pitch: 1.179543
+Yaw: -0.071617
+Roll: -2.955835
+Pitch: 1.179847
+Yaw: -0.071794
+Roll: -2.955835
+Pitch: 1.179847
+Yaw: -0.071794
+Roll: -2.952680
+Pitch: 1.180332
+Yaw: -0.072364
+Roll: -2.952680
+Pitch: 1.180332
+Yaw: -0.072364
+Roll: -2.950390
+Pitch: 1.180686
+Yaw: -0.072869
+Roll: -2.950390
+Pitch: 1.180686
+Yaw: -0.072869
+Roll: -2.948165
+Pitch: 1.180404
+Yaw: -0.073395
+Roll: -2.948165
+Pitch: 1.180404
+Yaw: -0.073395
+Roll: -2.952221
+Pitch: 1.181002
+Yaw: -0.071958
+Roll: -2.952221
+Pitch: 1.181002
+Yaw: -0.071958
+Roll: -2.950701
+Pitch: 1.181344
+Yaw: -0.072443
+Roll: -2.950701
+Pitch: 1.181344
+Yaw: -0.072443
+Roll: -2.952031
+Pitch: 1.181366
+Yaw: -0.072038
+Roll: -2.952031
+Pitch: 1.181366
+Yaw: -0.072038
+Roll: -2.949851
+Pitch: 1.180718
+Yaw: -0.072985
+Roll: -2.949851
+Pitch: 1.180718
+Yaw: -0.072985
+Roll: -2.949849
+Pitch: 1.180708
+Yaw: -0.072989
+Roll: -2.949849
+Pitch: 1.180708
+Yaw: -0.072989
+Roll: -2.949318
+Pitch: 1.180560
+Yaw: -0.072978
+Roll: -2.949318
+Pitch: 1.180560
+Yaw: -0.072978
+Roll: -2.949845
+Pitch: 1.180746
+Yaw: -0.072946
+Roll: -2.949845
+Pitch: 1.180746
+Yaw: -0.072946
+Roll: -2.947865
+Pitch: 1.180676
+Yaw: -0.073477
+Roll: -2.947865
+Pitch: 1.180676
+Yaw: -0.073477
+Roll: -2.951330
+Pitch: 1.181493
+Yaw: -0.072110
+Roll: -2.951330
+Pitch: 1.181493
+Yaw: -0.072110
+Roll: -2.949311
+Pitch: 1.180390
+Yaw: -0.073014
+Roll: -2.949311
+Pitch: 1.180390
+Yaw: -0.073014
+Roll: -2.950164
+Pitch: 1.181045
+Yaw: -0.072518
+Roll: -2.950164
+Pitch: 1.181045
+Yaw: -0.072518
+Roll: -2.949739
+Pitch: 1.180444
+Yaw: -0.072910
+Roll: -2.949739
+Pitch: 1.180444
+Yaw: -0.072910
+Roll: -2.951042
+Pitch: 1.181211
+Yaw: -0.072327
+Roll: -2.951042
+Pitch: 1.181211
+Yaw: -0.072327
+Roll: -2.951069
+Pitch: 1.181220
+Yaw: -0.072313
+Roll: -2.951069
+Pitch: 1.181220
+Yaw: -0.072313
+Roll: -2.950903
+Pitch: 1.181299
+Yaw: -0.072330
+Roll: -2.950903
+Pitch: 1.181299
+Yaw: -0.072330
+Roll: -2.951027
+Pitch: 1.181885
+Yaw: -0.072067
+Roll: -2.951027
+Pitch: 1.181885
+Yaw: -0.072067
+Roll: -2.952119
+Pitch: 1.181853
+Yaw: -0.071708
+Roll: -2.952119
+Pitch: 1.181853
+Yaw: -0.071708
+Roll: -2.953622
+Pitch: 1.182548
+Yaw: -0.071127
+Roll: -2.953622
+Pitch: 1.182548
+Yaw: -0.071127
+Roll: -2.953245
+Pitch: 1.181719
+Yaw: -0.071476
+Roll: -2.953245
+Pitch: 1.181719
+Yaw: -0.071476
+Roll: -2.952013
+Pitch: 1.181586
+Yaw: -0.071839
+Roll: -2.952013
+Pitch: 1.181586
+Yaw: -0.071839
+Roll: -2.950281
+Pitch: 1.181053
+Yaw: -0.072541
+Roll: -2.950281
+Pitch: 1.181053
+Yaw: -0.072541
+Roll: -2.952696
+Pitch: 1.181384
+Yaw: -0.071654
+Roll: -2.952696
+Pitch: 1.181384
+Yaw: -0.071654
+Roll: -2.951690
+Pitch: 1.181229
+Yaw: -0.072125
+Roll: -2.951690
+Pitch: 1.181229
+Yaw: -0.072125
+Roll: -2.952256
+Pitch: 1.180686
+Yaw: -0.072183
+Roll: -2.952256
+Pitch: 1.180686
+Yaw: -0.072183
+Roll: -2.952463
+Pitch: 1.180624
+Yaw: -0.072132
+Roll: -2.952463
+Pitch: 1.180624
+Yaw: -0.072132
+Roll: -2.952481
+Pitch: 1.180614
+Yaw: -0.072130
+Roll: -2.952481
+Pitch: 1.180614
+Yaw: -0.072130
+Roll: -2.950184
+Pitch: 1.180240
+Yaw: -0.072908
+Roll: -2.950184
+Pitch: 1.180240
+Yaw: -0.072908
+Roll: -2.949606
+Pitch: 1.180970
+Yaw: -0.072902
+Roll: -2.949606
+Pitch: 1.180970
+Yaw: -0.072902
+Roll: -2.948879
+Pitch: 1.180653
+Yaw: -0.073190
+Roll: -2.948879
+Pitch: 1.180653
+Yaw: -0.073190
+Roll: -2.949555
+Pitch: 1.181207
+Yaw: -0.072782
+Roll: -2.949555
+Pitch: 1.181207
+Yaw: -0.072782
+Roll: -2.948797
+Pitch: 1.181421
+Yaw: -0.072850
+Roll: -2.948797
+Pitch: 1.181421
+Yaw: -0.072850
+Roll: -2.947851
+Pitch: 1.180863
+Yaw: -0.073220
+Roll: -2.947851
+Pitch: 1.180863
+Yaw: -0.073220
+Roll: -2.952103
+Pitch: 1.181001
+Yaw: -0.072034
+Roll: -2.952103
+Pitch: 1.181001
+Yaw: -0.072034
+Roll: -2.950383
+Pitch: 1.181010
+Yaw: -0.072635
+Roll: -2.950383
+Pitch: 1.181010
+Yaw: -0.072635
+Roll: -2.950914
+Pitch: 1.180441
+Yaw: -0.072696
+Roll: -2.950914
+Pitch: 1.180441
+Yaw: -0.072696
+Roll: -2.949848
+Pitch: 1.180370
+Yaw: -0.072965
+Roll: -2.949848
+Pitch: 1.180370
+Yaw: -0.072965
+Roll: -2.949364
+Pitch: 1.180661
+Yaw: -0.073030
+Roll: -2.949364
+Pitch: 1.180661
+Yaw: -0.073030
+Roll: -2.952001
+Pitch: 1.182410
+Yaw: -0.071663
+Roll: -2.952001
+Pitch: 1.182410
+Yaw: -0.071663
+Roll: -2.950744
+Pitch: 1.181732
+Yaw: -0.072138
+Roll: -2.950744
+Pitch: 1.181732
+Yaw: -0.072138
+Roll: -2.952461
+Pitch: 1.182563
+Yaw: -0.071365
+Roll: -2.952461
+Pitch: 1.182563
+Yaw: -0.071365
+Roll: -2.949260
+Pitch: 1.180912
+Yaw: -0.072981
+Roll: -2.949260
+Pitch: 1.180912
+Yaw: -0.072981
+Roll: -2.951486
+Pitch: 1.180977
+Yaw: -0.072251
+Roll: -2.951486
+Pitch: 1.180977
+Yaw: -0.072251
+Roll: -2.950328
+Pitch: 1.180925
+Yaw: -0.072675
+Roll: -2.950328
+Pitch: 1.180925
+Yaw: -0.072675
+Roll: -2.950504
+Pitch: 1.181776
+Yaw: -0.072203
+Roll: -2.950504
+Pitch: 1.181776
+Yaw: -0.072203
+Roll: -2.948926
+Pitch: 1.180811
+Yaw: -0.073090
+Roll: -2.948926
+Pitch: 1.180811
+Yaw: -0.073090
+Roll: -2.949916
+Pitch: 1.180460
+Yaw: -0.072886
+Roll: -2.949916
+Pitch: 1.180460
+Yaw: -0.072886
+Roll: -2.948617
+Pitch: 1.180550
+Yaw: -0.073345
+Roll: -2.948617
+Pitch: 1.180550
+Yaw: -0.073345
+Roll: -2.949638
+Pitch: 1.180802
+Yaw: -0.072920
+Roll: -2.949638
+Pitch: 1.180802
+Yaw: -0.072920
+Roll: -2.951663
+Pitch: 1.180599
+Yaw: -0.072389
+Roll: -2.951663
+Pitch: 1.180599
+Yaw: -0.072389
+Roll: -2.950077
+Pitch: 1.180861
+Yaw: -0.072645
+Roll: -2.950077
+Pitch: 1.180861
+Yaw: -0.072645
+Roll: -2.948719
+Pitch: 1.180888
+Yaw: -0.072999
+Roll: -2.948719
+Pitch: 1.180888
+Yaw: -0.072999
+Roll: -2.950652
+Pitch: 1.180778
+Yaw: -0.072621
+Roll: -2.950652
+Pitch: 1.180778
+Yaw: -0.072621
+Roll: -2.949969
+Pitch: 1.180639
+Yaw: -0.072812
+Roll: -2.949969
+Pitch: 1.180639
+Yaw: -0.072812
+Roll: -2.953145
+Pitch: 1.181349
+Yaw: -0.071817
+Roll: -2.953145
+Pitch: 1.181349
+Yaw: -0.071817
+Roll: -2.957019
+Pitch: 1.181510
+Yaw: -0.070951
+Roll: -2.957019
+Pitch: 1.181510
+Yaw: -0.070951
+Roll: -2.957415
+Pitch: 1.182242
+Yaw: -0.070837
+Roll: -2.957415
+Pitch: 1.182242
+Yaw: -0.070837
+Roll: -2.959279
+Pitch: 1.182938
+Yaw: -0.070138
+Roll: -2.959279
+Pitch: 1.182938
+Yaw: -0.070138
+Roll: -2.958990
+Pitch: 1.182701
+Yaw: -0.070507
+Roll: -2.958990
+Pitch: 1.182701
+Yaw: -0.070507
+Roll: -2.958995
+Pitch: 1.182692
+Yaw: -0.070510
+Roll: -2.958995
+Pitch: 1.182692
+Yaw: -0.070510
+Roll: -2.958692
+Pitch: 1.182455
+Yaw: -0.070601
+Roll: -2.958692
+Pitch: 1.182455
+Yaw: -0.070601
+Roll: -2.959888
+Pitch: 1.181658
+Yaw: -0.070421
+Roll: -2.959888
+Pitch: 1.181658
+Yaw: -0.070421
+Roll: -2.958229
+Pitch: 1.180544
+Yaw: -0.071106
+Roll: -2.958229
+Pitch: 1.180544
+Yaw: -0.071106
+Roll: -2.958959
+Pitch: 1.180189
+Yaw: -0.071025
+Roll: -2.958959
+Pitch: 1.180189
+Yaw: -0.071025
+Roll: -2.957613
+Pitch: 1.180160
+Yaw: -0.071555
+Roll: -2.957613
+Pitch: 1.180160
+Yaw: -0.071555
+Roll: -2.957755
+Pitch: 1.179889
+Yaw: -0.071535
+Roll: -2.957755
+Pitch: 1.179889
+Yaw: -0.071535
+Roll: -2.960274
+Pitch: 1.180665
+Yaw: -0.070325
+Roll: -2.960274
+Pitch: 1.180665
+Yaw: -0.070325
+Roll: -2.960364
+Pitch: 1.181050
+Yaw: -0.070277
+Roll: -2.960364
+Pitch: 1.181050
+Yaw: -0.070277
+Roll: -2.960174
+Pitch: 1.180983
+Yaw: -0.070322
+Roll: -2.960174
+Pitch: 1.180983
+Yaw: -0.070322
+Roll: -2.959084
+Pitch: 1.181155
+Yaw: -0.071003
+Roll: -2.959084
+Pitch: 1.181155
+Yaw: -0.071003
+Roll: -2.959085
+Pitch: 1.181162
+Yaw: -0.071007
+Roll: -2.959085
+Pitch: 1.181162
+Yaw: -0.071007
+Roll: -2.960091
+Pitch: 1.182921
+Yaw: -0.069818
+Roll: -2.960091
+Pitch: 1.182921
+Yaw: -0.069818
+Roll: -2.956989
+Pitch: 1.182687
+Yaw: -0.070771
+Roll: -2.956989
+Pitch: 1.182687
+Yaw: -0.070771
+Roll: -2.956400
+Pitch: 1.184219
+Yaw: -0.070338
+Roll: -2.956400
+Pitch: 1.184219
+Yaw: -0.070338
+Roll: -2.955869
+Pitch: 1.185121
+Yaw: -0.069883
+Roll: -2.955869
+Pitch: 1.185121
+Yaw: -0.069883
+Roll: -2.954521
+Pitch: 1.184444
+Yaw: -0.070568
+Roll: -2.954521
+Pitch: 1.184444
+Yaw: -0.070568
+Roll: -2.950954
+Pitch: 1.183028
+Yaw: -0.071927
+Roll: -2.950954
+Pitch: 1.183028
+Yaw: -0.071927
+Roll: -2.952993
+Pitch: 1.182842
+Yaw: -0.071382
+Roll: -2.952993
+Pitch: 1.182842
+Yaw: -0.071382
+Roll: -2.950492
+Pitch: 1.181765
+Yaw: -0.072354
+Roll: -2.950492
+Pitch: 1.181765
+Yaw: -0.072354
+Roll: -2.952659
+Pitch: 1.181249
+Yaw: -0.071754
+Roll: -2.952659
+Pitch: 1.181249
+Yaw: -0.071754
+Roll: -2.953512
+Pitch: 1.181794
+Yaw: -0.071361
+Roll: -2.953512
+Pitch: 1.181794
+Yaw: -0.071361
+Roll: -2.953025
+Pitch: 1.181631
+Yaw: -0.071677
+Roll: -2.953025
+Pitch: 1.181631
+Yaw: -0.071677
+Roll: -2.952494
+Pitch: 1.181197
+Yaw: -0.071812
+Roll: -2.952494
+Pitch: 1.181197
+Yaw: -0.071812
+Roll: -2.951038
+Pitch: 1.180551
+Yaw: -0.072436
+Roll: -2.951038
+Pitch: 1.180551
+Yaw: -0.072436
+Roll: -2.952883
+Pitch: 1.181167
+Yaw: -0.071747
+Roll: -2.952883
+Pitch: 1.181167
+Yaw: -0.071747
+Roll: -2.952896
+Pitch: 1.181162
+Yaw: -0.071713
+Roll: -2.952896
+Pitch: 1.181162
+Yaw: -0.071713
+Roll: -2.952912
+Pitch: 1.181163
+Yaw: -0.071706
+Roll: -2.952912
+Pitch: 1.181163
+Yaw: -0.071706
+Roll: -2.952025
+Pitch: 1.181006
+Yaw: -0.072120
+Roll: -2.952025
+Pitch: 1.181006
+Yaw: -0.072120
+Roll: -2.952043
+Pitch: 1.181017
+Yaw: -0.072114
+Roll: -2.952043
+Pitch: 1.181017
+Yaw: -0.072114
+Roll: -2.950826
+Pitch: 1.180631
+Yaw: -0.072582
+Roll: -2.950826
+Pitch: 1.180631
+Yaw: -0.072582
+Roll: -2.952521
+Pitch: 1.180367
+Yaw: -0.072031
+Roll: -2.952521
+Pitch: 1.180367
+Yaw: -0.072031
+Roll: -2.952242
+Pitch: 1.180418
+Yaw: -0.072165
+Roll: -2.952242
+Pitch: 1.180418
+Yaw: -0.072165
+Roll: -2.950388
+Pitch: 1.180270
+Yaw: -0.072783
+Roll: -2.950388
+Pitch: 1.180270
+Yaw: -0.072783
+Roll: -2.952800
+Pitch: 1.180441
+Yaw: -0.071946
+Roll: -2.952800
+Pitch: 1.180441
+Yaw: -0.071946
+Roll: -2.949727
+Pitch: 1.179851
+Yaw: -0.073080
+Roll: -2.949727
+Pitch: 1.179851
+Yaw: -0.073080
+Roll: -2.952713
+Pitch: 1.180674
+Yaw: -0.071872
+Roll: -2.952713
+Pitch: 1.180674
+Yaw: -0.071872
+Roll: -2.951144
+Pitch: 1.180184
+Yaw: -0.072390
+Roll: -2.951144
+Pitch: 1.180184
+Yaw: -0.072390
+Roll: -2.950485
+Pitch: 1.180038
+Yaw: -0.072858
+Roll: -2.950485
+Pitch: 1.180038
+Yaw: -0.072858
+Roll: -2.951308
+Pitch: 1.181071
+Yaw: -0.072271
+Roll: -2.951308
+Pitch: 1.181071
+Yaw: -0.072271
+Roll: -2.952183
+Pitch: 1.181109
+Yaw: -0.071998
+Roll: -2.952183
+Pitch: 1.181109
+Yaw: -0.071998
+Roll: -2.954011
+Pitch: 1.181580
+Yaw: -0.071140
+Roll: -2.954011
+Pitch: 1.181580
+Yaw: -0.071140
+Roll: -2.954009
+Pitch: 1.181583
+Yaw: -0.071139
+Roll: -2.954009
+Pitch: 1.181583
+Yaw: -0.071139
+Roll: -2.954219
+Pitch: 1.181589
+Yaw: -0.071082
+Roll: -2.954219
+Pitch: 1.181589
+Yaw: -0.071082
+Roll: -2.954226
+Pitch: 1.181592
+Yaw: -0.071079
+Roll: -2.954226
+Pitch: 1.181592
+Yaw: -0.071079
+Roll: -2.952254
+Pitch: 1.180735
+Yaw: -0.072026
+Roll: -2.952254
+Pitch: 1.180735
+Yaw: -0.072026
+Roll: -2.954182
+Pitch: 1.181562
+Yaw: -0.071275
+Roll: -2.954182
+Pitch: 1.181562
+Yaw: -0.071275
+Roll: -2.951910
+Pitch: 1.180520
+Yaw: -0.072255
+Roll: -2.951910
+Pitch: 1.180520
+Yaw: -0.072255
+Roll: -2.952848
+Pitch: 1.180807
+Yaw: -0.071889
+Roll: -2.952848
+Pitch: 1.180807
+Yaw: -0.071889
+Roll: -2.954609
+Pitch: 1.181149
+Yaw: -0.071155
+Roll: -2.954609
+Pitch: 1.181149
+Yaw: -0.071155
+Roll: -2.951669
+Pitch: 1.180419
+Yaw: -0.072389
+Roll: -2.951669
+Pitch: 1.180419
+Yaw: -0.072389
+Roll: -2.952441
+Pitch: 1.180371
+Yaw: -0.072015
+Roll: -2.952441
+Pitch: 1.180371
+Yaw: -0.072015
+Roll: -2.951121
+Pitch: 1.180244
+Yaw: -0.072570
+Roll: -2.951121
+Pitch: 1.180244
+Yaw: -0.072570
+Roll: -2.950608
+Pitch: 1.180107
+Yaw: -0.072697
+Roll: -2.950608
+Pitch: 1.180107
+Yaw: -0.072697
+Roll: -2.954002
+Pitch: 1.181629
+Yaw: -0.071240
+Roll: -2.954002
+Pitch: 1.181629
+Yaw: -0.071240
+Roll: -2.952866
+Pitch: 1.180643
+Yaw: -0.071949
+Roll: -2.952866
+Pitch: 1.180643
+Yaw: -0.071949
+Roll: -2.953179
+Pitch: 1.180759
+Yaw: -0.071727
+Roll: -2.953179
+Pitch: 1.180759
+Yaw: -0.071727
+Roll: -2.953665
+Pitch: 1.180970
+Yaw: -0.071602
+Roll: -2.953665
+Pitch: 1.180970
+Yaw: -0.071602
+Roll: -2.952904
+Pitch: 1.180171
+Yaw: -0.072092
+Roll: -2.952904
+Pitch: 1.180171
+Yaw: -0.072092
+Roll: -2.955288
+Pitch: 1.180387
+Yaw: -0.071323
+Roll: -2.955288
+Pitch: 1.180387
+Yaw: -0.071323
+Roll: -2.951561
+Pitch: 1.180360
+Yaw: -0.072458
+Roll: -2.951561
+Pitch: 1.180360
+Yaw: -0.072458
+Roll: -2.952506
+Pitch: 1.179994
+Yaw: -0.072147
+Roll: -2.952506
+Pitch: 1.179994
+Yaw: -0.072147
+Roll: -2.951638
+Pitch: 1.180278
+Yaw: -0.072420
+Roll: -2.951638
+Pitch: 1.180278
+Yaw: -0.072420
+Roll: -2.950508
+Pitch: 1.180557
+Yaw: -0.072563
+Roll: -2.950508
+Pitch: 1.180557
+Yaw: -0.072563
+Roll: -2.952969
+Pitch: 1.181295
+Yaw: -0.071679
+Roll: -2.952969
+Pitch: 1.181295
+Yaw: -0.071679
+Roll: -2.951682
+Pitch: 1.180632
+Yaw: -0.072200
+Roll: -2.951682
+Pitch: 1.180632
+Yaw: -0.072200
+Roll: -2.951516
+Pitch: 1.180321
+Yaw: -0.072358
+Roll: -2.951516
+Pitch: 1.180321
+Yaw: -0.072358
+Roll: -2.952954
+Pitch: 1.180485
+Yaw: -0.071893
+Roll: -2.952954
+Pitch: 1.180485
+Yaw: -0.071893
+Roll: -2.951534
+Pitch: 1.180550
+Yaw: -0.072350
+Roll: -2.951534
+Pitch: 1.180550
+Yaw: -0.072350
+Roll: -2.951612
+Pitch: 1.180614
+Yaw: -0.072412
+Roll: -2.951612
+Pitch: 1.180614
+Yaw: -0.072412
+Roll: -2.953273
+Pitch: 1.181816
+Yaw: -0.071418
+Roll: -2.953273
+Pitch: 1.181816
+Yaw: -0.071418
+Roll: -2.955126
+Pitch: 1.181996
+Yaw: -0.070727
+Roll: -2.955126
+Pitch: 1.181996
+Yaw: -0.070727
+Roll: -2.951443
+Pitch: 1.181092
+Yaw: -0.072242
+Roll: -2.951443
+Pitch: 1.181092
+Yaw: -0.072242
+Roll: -2.952854
+Pitch: 1.180629
+Yaw: -0.071841
+Roll: -2.952854
+Pitch: 1.180629
+Yaw: -0.071841
+Roll: -2.954046
+Pitch: 1.181846
+Yaw: -0.071093
+Roll: -2.954046
+Pitch: 1.181846
+Yaw: -0.071093
+Roll: -2.951919
+Pitch: 1.181313
+Yaw: -0.071901
+Roll: -2.951919
+Pitch: 1.181313
+Yaw: -0.071901
+Roll: -2.953347
+Pitch: 1.181845
+Yaw: -0.071352
+Roll: -2.953347
+Pitch: 1.181845
+Yaw: -0.071352
+Roll: -2.956121
+Pitch: 1.181762
+Yaw: -0.070903
+Roll: -2.956121
+Pitch: 1.181762
+Yaw: -0.070903
+Roll: -2.957102
+Pitch: 1.181828
+Yaw: -0.071007
+Roll: -2.957102
+Pitch: 1.181828
+Yaw: -0.071007
+Roll: -2.960808
+Pitch: 1.181556
+Yaw: -0.070099
+Roll: -2.960808
+Pitch: 1.181556
+Yaw: -0.070099
+Roll: -2.960434
+Pitch: 1.182435
+Yaw: -0.070126
+Roll: -2.960434
+Pitch: 1.182435
+Yaw: -0.070126
+Roll: -2.959528
+Pitch: 1.183194
+Yaw: -0.070308
+Roll: -2.959528
+Pitch: 1.183194
+Yaw: -0.070308
+Roll: -2.957484
+Pitch: 1.182269
+Yaw: -0.071108
+Roll: -2.957484
+Pitch: 1.182269
+Yaw: -0.071108
+Roll: -2.955498
+Pitch: 1.181501
+Yaw: -0.072096
+Roll: -2.955498
+Pitch: 1.181501
+Yaw: -0.072096
+Roll: -2.957973
+Pitch: 1.182501
+Yaw: -0.071035
+Roll: -2.957973
+Pitch: 1.182501
+Yaw: -0.071035
+Roll: -2.957396
+Pitch: 1.183370
+Yaw: -0.071000
+Roll: -2.957396
+Pitch: 1.183370
+Yaw: -0.071000
+Roll: -2.961917
+Pitch: 1.184984
+Yaw: -0.068466
+Roll: -2.961917
+Pitch: 1.184984
+Yaw: -0.068466
+Roll: -2.971978
+Pitch: 1.188421
+Yaw: -0.061888
+Roll: -2.971978
+Pitch: 1.188421
+Yaw: -0.061888
+Roll: -3.017562
+Pitch: 1.197353
+Yaw: -0.034034
+Roll: -3.017562
+Pitch: 1.197353
+Yaw: -0.034034
+Roll: -2.912345
+Pitch: 1.272023
+Yaw: -0.013290
+Roll: -2.912345
+Pitch: 1.272023
+Yaw: -0.013290
+Roll: -2.861989
+Pitch: 1.404147
+Yaw: 0.003394
+Roll: -2.861989
+Pitch: 1.404147
+Yaw: 0.003394
+Roll: -0.533240
+Pitch: 1.475701
+Yaw: -0.078036
+Roll: -0.533240
+Pitch: 1.475701
+Yaw: -0.078036
+Roll: -0.097821
+Pitch: 1.367566
+Yaw: -0.087434
+Roll: -0.097821
+Pitch: 1.367566
+Yaw: -0.087434
+Roll: -0.695207
+Pitch: 1.471415
+Yaw: -0.094227
+Roll: -0.695207
+Pitch: 1.471415
+Yaw: -0.094227
+Roll: -1.340401
+Pitch: 1.464500
+Yaw: -0.113244
+Roll: -1.340401
+Pitch: 1.464500
+Yaw: -0.113244
+Roll: -1.701729
+Pitch: 1.411158
+Yaw: -0.149390
+Roll: -1.701729
+Pitch: 1.411158
+Yaw: -0.149390
+Roll: -1.891448
+Pitch: 1.376147
+Yaw: -0.159866
+Roll: -1.891448
+Pitch: 1.376147
+Yaw: -0.159866
+Roll: -2.086056
+Pitch: 1.330262
+Yaw: -0.163265
+Roll: -2.086056
+Pitch: 1.330262
+Yaw: -0.163265
+Roll: -2.098142
+Pitch: 1.321148
+Yaw: -0.166796
+Roll: -2.098142
+Pitch: 1.321148
+Yaw: -0.166796
+Roll: -2.074043
+Pitch: 1.321117
+Yaw: -0.171129
+Roll: -2.074043
+Pitch: 1.321117
+Yaw: -0.171129
+Roll: -1.922588
+Pitch: 1.357570
+Yaw: -0.169873
+Roll: -1.922588
+Pitch: 1.357570
+Yaw: -0.169873
+Roll: -1.152930
+Pitch: 1.433140
+Yaw: -0.148911
+Roll: -1.152930
+Pitch: 1.433140
+Yaw: -0.148911
+Roll: -1.147876
+Pitch: 1.433339
+Yaw: -0.148674
+Roll: -1.147876
+Pitch: 1.433339
+Yaw: -0.148674
+Roll: -0.616061
+Pitch: 1.419821
+Yaw: -0.136225
+Roll: -0.616061
+Pitch: 1.419821
+Yaw: -0.136225
+Roll: -0.337583
+Pitch: 1.409582
+Yaw: -0.109645
+Roll: -0.337583
+Pitch: 1.409582
+Yaw: -0.109645
+Roll: -0.474144
+Pitch: 1.444440
+Yaw: -0.097920
+Roll: -0.474144
+Pitch: 1.444440
+Yaw: -0.097920
+Roll: -0.479288
+Pitch: 1.444981
+Yaw: -0.097979
+Roll: -0.479288
+Pitch: 1.444981
+Yaw: -0.097979
+Roll: -0.482875
+Pitch: 1.445349
+Yaw: -0.098020
+Roll: -0.482875
+Pitch: 1.445349
+Yaw: -0.098020
+Roll: -1.309323
+Pitch: 1.503568
+Yaw: -0.071525
+Roll: -1.309323
+Pitch: 1.503568
+Yaw: -0.071525
+Roll: -1.834900
+Pitch: 1.470104
+Yaw: -0.086510
+Roll: -1.834900
+Pitch: 1.470104
+Yaw: -0.086510
+Roll: -1.068189
+Pitch: 1.492214
+Yaw: -0.085130
+Roll: -1.068189
+Pitch: 1.492214
+Yaw: -0.085130
+Roll: -0.004570
+Pitch: 1.465740
+Yaw: -0.040582
+Roll: -0.004570
+Pitch: 1.465740
+Yaw: -0.040582
+Roll: 0.356288
+Pitch: 1.403777
+Yaw: 0.005994
+Roll: 0.356288
+Pitch: 1.403777
+Yaw: 0.005994
+Roll: 0.555959
+Pitch: 1.334012
+Yaw: 0.072483
+Roll: 0.555959
+Pitch: 1.334012
+Yaw: 0.072483
+Roll: 0.557460
+Pitch: 1.333410
+Yaw: 0.073340
+Roll: 0.557460
+Pitch: 1.333410
+Yaw: 0.073340
+Roll: 0.551165
+Pitch: 1.249382
+Yaw: 0.122133
+Roll: 0.551165
+Pitch: 1.249382
+Yaw: 0.122133
+Roll: 0.544786
+Pitch: 1.240025
+Yaw: 0.132624
+Roll: 0.544786
+Pitch: 1.240025
+Yaw: 0.132624
+Roll: 0.540491
+Pitch: 1.229014
+Yaw: 0.144965
+Roll: 0.540491
+Pitch: 1.229014
+Yaw: 0.144965
+Roll: 0.616831
+Pitch: 1.230282
+Yaw: 0.193482
+Roll: 0.616831
+Pitch: 1.230282
+Yaw: 0.193482
+Roll: 0.817012
+Pitch: 1.238085
+Yaw: 0.270341
+Roll: 0.817012
+Pitch: 1.238085
+Yaw: 0.270341
+Roll: 0.818929
+Pitch: 1.238108
+Yaw: 0.271031
+Roll: 0.818929
+Pitch: 1.238108
+Yaw: 0.271031
+Roll: 1.431704
+Pitch: 1.242882
+Yaw: 0.341538
+Roll: 1.431704
+Pitch: 1.242882
+Yaw: 0.341538
+Roll: 1.914790
+Pitch: 1.163365
+Yaw: 0.320840
+Roll: 1.914790
+Pitch: 1.163365
+Yaw: 0.320840
+Roll: 2.220695
+Pitch: 1.105403
+Yaw: 0.271903
+Roll: 2.220695
+Pitch: 1.105403
+Yaw: 0.271903
+Roll: 2.316863
+Pitch: 1.019067
+Yaw: 0.302201
+Roll: 2.316863
+Pitch: 1.019067
+Yaw: 0.302201
+Roll: 2.311567
+Pitch: 1.020955
+Yaw: 0.302305
+Roll: 2.311567
+Pitch: 1.020955
+Yaw: 0.302305
+Roll: 2.311293
+Pitch: 1.020963
+Yaw: 0.299600
+Roll: 2.311293
+Pitch: 1.020963
+Yaw: 0.299600
+Roll: 2.313532
+Pitch: 1.014448
+Yaw: 0.304515
+Roll: 2.313532
+Pitch: 1.014448
+Yaw: 0.304515
+Roll: 2.320909
+Pitch: 0.997956
+Yaw: 0.317660
+Roll: 2.320909
+Pitch: 0.997956
+Yaw: 0.317660
+Roll: 2.320282
+Pitch: 0.992889
+Yaw: 0.322716
+Roll: 2.320282
+Pitch: 0.992889
+Yaw: 0.322716
+Roll: 2.316884
+Pitch: 0.994249
+Yaw: 0.323317
+Roll: 2.316884
+Pitch: 0.994249
+Yaw: 0.323317
+Roll: 2.312791
+Pitch: 0.991012
+Yaw: 0.325838
+Roll: 2.312791
+Pitch: 0.991012
+Yaw: 0.325838
+Roll: 2.311765
+Pitch: 0.991437
+Yaw: 0.326039
+Roll: 2.311765
+Pitch: 0.991437
+Yaw: 0.326039
+Roll: 2.309991
+Pitch: 0.993273
+Yaw: 0.326021
+Roll: 2.309991
+Pitch: 0.993273
+Yaw: 0.326021
+Roll: 2.310343
+Pitch: 0.994070
+Yaw: 0.325356
+Roll: 2.310343
+Pitch: 0.994070
+Yaw: 0.325356
+Roll: 2.312821
+Pitch: 0.994287
+Yaw: 0.323703
+Roll: 2.312821
+Pitch: 0.994287
+Yaw: 0.323703
+Roll: 2.312824
+Pitch: 0.995278
+Yaw: 0.322749
+Roll: 2.312824
+Pitch: 0.995278
+Yaw: 0.322749
+Roll: 2.314456
+Pitch: 0.996428
+Yaw: 0.321088
+Roll: 2.314456
+Pitch: 0.996428
+Yaw: 0.321088
+Roll: 2.316095
+Pitch: 0.997169
+Yaw: 0.319602
+Roll: 2.316095
+Pitch: 0.997169
+Yaw: 0.319602
+Roll: 2.316014
+Pitch: 0.999049
+Yaw: 0.318460
+Roll: 2.316014
+Pitch: 0.999049
+Yaw: 0.318460
+Roll: 2.320532
+Pitch: 0.999147
+Yaw: 0.315271
+Roll: 2.320532
+Pitch: 0.999147
+Yaw: 0.315271
+Roll: 2.317801
+Pitch: 1.000628
+Yaw: 0.315885
+Roll: 2.317801
+Pitch: 1.000628
+Yaw: 0.315885
+Roll: 2.323362
+Pitch: 0.998033
+Yaw: 0.315004
+Roll: 2.323362
+Pitch: 0.998033
+Yaw: 0.315004
+Roll: 2.324252
+Pitch: 0.998397
+Yaw: 0.314726
+Roll: 2.324252
+Pitch: 0.998397
+Yaw: 0.314726
+Roll: 2.323546
+Pitch: 1.001136
+Yaw: 0.312421
+Roll: 2.323546
+Pitch: 1.001136
+Yaw: 0.312421
+Roll: 2.320795
+Pitch: 1.002203
+Yaw: 0.312450
+Roll: 2.320795
+Pitch: 1.002203
+Yaw: 0.312450
+Roll: 2.324582
+Pitch: 1.002700
+Yaw: 0.310103
+Roll: 2.324582
+Pitch: 1.002700
+Yaw: 0.310103
+Roll: 2.325081
+Pitch: 1.002797
+Yaw: 0.309886
+Roll: 2.325081
+Pitch: 1.002797
+Yaw: 0.309886
+Roll: 2.326267
+Pitch: 1.005834
+Yaw: 0.308583
+Roll: 2.326267
+Pitch: 1.005834
+Yaw: 0.308583
+Roll: 2.329133
+Pitch: 1.006392
+Yaw: 0.306570
+Roll: 2.329133
+Pitch: 1.006392
+Yaw: 0.306570
+Roll: 2.330074
+Pitch: 1.006634
+Yaw: 0.305151
+Roll: 2.330074
+Pitch: 1.006634
+Yaw: 0.305151
+Roll: 2.330724
+Pitch: 1.008022
+Yaw: 0.303802
+Roll: 2.330724
+Pitch: 1.008022
+Yaw: 0.303802
+Roll: 2.329729
+Pitch: 1.009152
+Yaw: 0.303492
+Roll: 2.329729
+Pitch: 1.009152
+Yaw: 0.303492
+Roll: 2.330860
+Pitch: 1.009670
+Yaw: 0.301870
+Roll: 2.330860
+Pitch: 1.009670
+Yaw: 0.301870
+Roll: 2.330287
+Pitch: 1.008619
+Yaw: 0.302869
+Roll: 2.330287
+Pitch: 1.008619
+Yaw: 0.302869
+Roll: 2.332958
+Pitch: 1.009440
+Yaw: 0.300997
+Roll: 2.332958
+Pitch: 1.009440
+Yaw: 0.300997
+Roll: 2.334268
+Pitch: 1.010954
+Yaw: 0.299568
+Roll: 2.334268
+Pitch: 1.010954
+Yaw: 0.299568
+Roll: 2.333502
+Pitch: 1.013490
+Yaw: 0.298912
+Roll: 2.333502
+Pitch: 1.013490
+Yaw: 0.298912
+Roll: 2.335321
+Pitch: 1.014926
+Yaw: 0.296920
+Roll: 2.335321
+Pitch: 1.014926
+Yaw: 0.296920
+Roll: 2.336182
+Pitch: 1.013699
+Yaw: 0.296561
+Roll: 2.336182
+Pitch: 1.013699
+Yaw: 0.296561
+Roll: 2.335921
+Pitch: 1.013941
+Yaw: 0.296337
+Roll: 2.335921
+Pitch: 1.013941
+Yaw: 0.296337
+Roll: 2.334500
+Pitch: 1.015392
+Yaw: 0.296023
+Roll: 2.334500
+Pitch: 1.015392
+Yaw: 0.296023
+Roll: 2.338292
+Pitch: 1.019566
+Yaw: 0.294195
+Roll: 2.338292
+Pitch: 1.019566
+Yaw: 0.294195
+Roll: 2.341651
+Pitch: 1.021152
+Yaw: 0.292472
+Roll: 2.341651
+Pitch: 1.021152
+Yaw: 0.292472
+Roll: 2.342149
+Pitch: 1.022678
+Yaw: 0.291261
+Roll: 2.342149
+Pitch: 1.022678
+Yaw: 0.291261
+Roll: 2.346381
+Pitch: 1.026129
+Yaw: 0.287562
+Roll: 2.346381
+Pitch: 1.026129
+Yaw: 0.287562
+Roll: 2.350237
+Pitch: 1.025905
+Yaw: 0.285342
+Roll: 2.350237
+Pitch: 1.025905
+Yaw: 0.285342
+Roll: 2.353930
+Pitch: 1.026524
+Yaw: 0.283270
+Roll: 2.353930
+Pitch: 1.026524
+Yaw: 0.283270
+Roll: 2.355523
+Pitch: 1.026591
+Yaw: 0.281992
+Roll: 2.355523
+Pitch: 1.026591
+Yaw: 0.281992
+Roll: 2.355082
+Pitch: 1.027722
+Yaw: 0.280642
+Roll: 2.355082
+Pitch: 1.027722
+Yaw: 0.280642
+Roll: 2.352471
+Pitch: 1.026883
+Yaw: 0.282144
+Roll: 2.352471
+Pitch: 1.026883
+Yaw: 0.282144
+Roll: 2.349208
+Pitch: 1.024895
+Yaw: 0.284028
+Roll: 2.349208
+Pitch: 1.024895
+Yaw: 0.284028
+Roll: 2.347880
+Pitch: 1.024178
+Yaw: 0.285120
+Roll: 2.347880
+Pitch: 1.024178
+Yaw: 0.285120
+Roll: 2.348009
+Pitch: 1.024154
+Yaw: 0.285061
+Roll: 2.348009
+Pitch: 1.024154
+Yaw: 0.285061
+Roll: 2.346944
+Pitch: 1.022374
+Yaw: 0.286288
+Roll: 2.346944
+Pitch: 1.022374
+Yaw: 0.286288
+Roll: 2.344819
+Pitch: 1.022773
+Yaw: 0.287253
+Roll: 2.344819
+Pitch: 1.022773
+Yaw: 0.287253
+Roll: 2.344868
+Pitch: 1.023271
+Yaw: 0.286927
+Roll: 2.344868
+Pitch: 1.023271
+Yaw: 0.286927
+Roll: 2.347761
+Pitch: 1.022954
+Yaw: 0.285771
+Roll: 2.347761
+Pitch: 1.022954
+Yaw: 0.285771
+Roll: 2.344794
+Pitch: 1.023621
+Yaw: 0.287591
+Roll: 2.344794
+Pitch: 1.023621
+Yaw: 0.287591
+Roll: 2.342040
+Pitch: 1.020117
+Yaw: 0.291227
+Roll: 2.342040
+Pitch: 1.020117
+Yaw: 0.291227
+Roll: 2.340163
+Pitch: 1.017017
+Yaw: 0.293488
+Roll: 2.340163
+Pitch: 1.017017
+Yaw: 0.293488
+Roll: 2.338702
+Pitch: 1.015296
+Yaw: 0.295679
+Roll: 2.338702
+Pitch: 1.015296
+Yaw: 0.295679
+Roll: 2.336703
+Pitch: 1.013717
+Yaw: 0.297979
+Roll: 2.336703
+Pitch: 1.013717
+Yaw: 0.297979
+Roll: 2.335378
+Pitch: 1.011457
+Yaw: 0.300105
+Roll: 2.335378
+Pitch: 1.011457
+Yaw: 0.300105
+Roll: 2.332586
+Pitch: 1.011049
+Yaw: 0.302087
+Roll: 2.332586
+Pitch: 1.011049
+Yaw: 0.302087
+Roll: 2.331585
+Pitch: 1.010011
+Yaw: 0.303416
+Roll: 2.331585
+Pitch: 1.010011
+Yaw: 0.303416
+Roll: 2.328330
+Pitch: 1.008317
+Yaw: 0.307840
+Roll: 2.328330
+Pitch: 1.008317
+Yaw: 0.307840
+Roll: 2.326356
+Pitch: 1.006954
+Yaw: 0.310087
+Roll: 2.326356
+Pitch: 1.006954
+Yaw: 0.310087
+Roll: 2.327696
+Pitch: 1.004848
+Yaw: 0.309677
+Roll: 2.327696
+Pitch: 1.004848
+Yaw: 0.309677
+Roll: 2.326012
+Pitch: 1.003623
+Yaw: 0.311172
+Roll: 2.326012
+Pitch: 1.003623
+Yaw: 0.311172
+Roll: 2.324049
+Pitch: 1.003074
+Yaw: 0.312316
+Roll: 2.324049
+Pitch: 1.003074
+Yaw: 0.312316
+Roll: 2.323051
+Pitch: 1.001830
+Yaw: 0.313534
+Roll: 2.323051
+Pitch: 1.001830
+Yaw: 0.313534
+Roll: 2.322893
+Pitch: 1.000093
+Yaw: 0.314549
+Roll: 2.322893
+Pitch: 1.000093
+Yaw: 0.314549
+Roll: 2.321729
+Pitch: 0.999166
+Yaw: 0.315687
+Roll: 2.321729
+Pitch: 0.999166
+Yaw: 0.315687
+Roll: 2.321310
+Pitch: 0.996121
+Yaw: 0.317788
+Roll: 2.321310
+Pitch: 0.996121
+Yaw: 0.317788
+Roll: 2.320628
+Pitch: 0.996810
+Yaw: 0.317920
+Roll: 2.320628
+Pitch: 0.996810
+Yaw: 0.317920
+Roll: 2.320853
+Pitch: 0.994876
+Yaw: 0.319077
+Roll: 2.320853
+Pitch: 0.994876
+Yaw: 0.319077
+Roll: 2.319549
+Pitch: 0.994142
+Yaw: 0.320451
+Roll: 2.319549
+Pitch: 0.994142
+Yaw: 0.320451
+Roll: 2.316882
+Pitch: 0.993552
+Yaw: 0.322033
+Roll: 2.316882
+Pitch: 0.993552
+Yaw: 0.322033
+Roll: 2.316329
+Pitch: 0.993263
+Yaw: 0.322178
+Roll: 2.316329
+Pitch: 0.993263
+Yaw: 0.322178
+Roll: 2.316148
+Pitch: 0.994654
+Yaw: 0.321411
+Roll: 2.316148
+Pitch: 0.994654
+Yaw: 0.321411
+Roll: 2.315607
+Pitch: 0.992992
+Yaw: 0.323015
+Roll: 2.315607
+Pitch: 0.992992
+Yaw: 0.323015
+Roll: 2.316882
+Pitch: 0.994080
+Yaw: 0.322322
+Roll: 2.316882
+Pitch: 0.994080
+Yaw: 0.322322
+Roll: 2.316958
+Pitch: 0.995123
+Yaw: 0.321939
+Roll: 2.316958
+Pitch: 0.995123
+Yaw: 0.321939
+Roll: 2.319162
+Pitch: 0.995779
+Yaw: 0.320369
+Roll: 2.319162
+Pitch: 0.995779
+Yaw: 0.320369
+Roll: 2.319104
+Pitch: 0.997386
+Yaw: 0.319466
+Roll: 2.319104
+Pitch: 0.997386
+Yaw: 0.319466
+Roll: 2.321266
+Pitch: 0.998807
+Yaw: 0.317665
+Roll: 2.321266
+Pitch: 0.998807
+Yaw: 0.317665
+Roll: 2.322750
+Pitch: 0.999593
+Yaw: 0.316686
+Roll: 2.322750
+Pitch: 0.999593
+Yaw: 0.316686
+Roll: 2.325481
+Pitch: 1.000413
+Yaw: 0.314744
+Roll: 2.325481
+Pitch: 1.000413
+Yaw: 0.314744
+Roll: 2.328058
+Pitch: 1.001127
+Yaw: 0.312694
+Roll: 2.328058
+Pitch: 1.001127
+Yaw: 0.312694
+Roll: 2.329266
+Pitch: 1.002167
+Yaw: 0.310648
+Roll: 2.329266
+Pitch: 1.002167
+Yaw: 0.310648
+Roll: 2.330994
+Pitch: 1.004690
+Yaw: 0.306239
+Roll: 2.330994
+Pitch: 1.004690
+Yaw: 0.306239
+Roll: 2.330102
+Pitch: 1.006829
+Yaw: 0.306444
+Roll: 2.330102
+Pitch: 1.006829
+Yaw: 0.306444
+Roll: 2.330003
+Pitch: 1.007672
+Yaw: 0.305295
+Roll: 2.330003
+Pitch: 1.007672
+Yaw: 0.305295
+Roll: 2.330848
+Pitch: 1.009168
+Yaw: 0.304070
+Roll: 2.330848
+Pitch: 1.009168
+Yaw: 0.304070
+Roll: 2.332374
+Pitch: 1.009598
+Yaw: 0.302052
+Roll: 2.332374
+Pitch: 1.009598
+Yaw: 0.302052
+Roll: 2.330698
+Pitch: 1.009966
+Yaw: 0.301814
+Roll: 2.330698
+Pitch: 1.009966
+Yaw: 0.301814
+Roll: 2.328752
+Pitch: 1.010320
+Yaw: 0.301871
+Roll: 2.328752
+Pitch: 1.010320
+Yaw: 0.301871
+Roll: 2.331764
+Pitch: 1.012464
+Yaw: 0.298863
+Roll: 2.331764
+Pitch: 1.012464
+Yaw: 0.298863
+Roll: 2.335489
+Pitch: 1.012298
+Yaw: 0.297270
+Roll: 2.335489
+Pitch: 1.012298
+Yaw: 0.297270
+Roll: 2.339461
+Pitch: 1.014381
+Yaw: 0.294156
+Roll: 2.339461
+Pitch: 1.014381
+Yaw: 0.294156
+Roll: 2.340698
+Pitch: 1.014101
+Yaw: 0.293427
+Roll: 2.340698
+Pitch: 1.014101
+Yaw: 0.293427
+Roll: 2.341112
+Pitch: 1.015187
+Yaw: 0.293025
+Roll: 2.341112
+Pitch: 1.015187
+Yaw: 0.293025
+Roll: 2.339744
+Pitch: 1.018895
+Yaw: 0.291483
+Roll: 2.339744
+Pitch: 1.018895
+Yaw: 0.291483
+Roll: 2.339754
+Pitch: 1.018859
+Yaw: 0.291525
+Roll: 2.339754
+Pitch: 1.018859
+Yaw: 0.291525
+Roll: 2.339741
+Pitch: 1.018865
+Yaw: 0.291529
+Roll: 2.339741
+Pitch: 1.018865
+Yaw: 0.291529
+Roll: 2.339771
+Pitch: 1.018810
+Yaw: 0.291564
+Roll: 2.339771
+Pitch: 1.018810
+Yaw: 0.291564
+Roll: 2.340152
+Pitch: 1.018929
+Yaw: 0.289711
+Roll: 2.340152
+Pitch: 1.018929
+Yaw: 0.289711
+Roll: 2.341451
+Pitch: 1.019030
+Yaw: 0.290519
+Roll: 2.341451
+Pitch: 1.019030
+Yaw: 0.290519
+Roll: 2.338815
+Pitch: 1.018707
+Yaw: 0.291306
+Roll: 2.338815
+Pitch: 1.018707
+Yaw: 0.291306
+Roll: 2.340222
+Pitch: 1.018345
+Yaw: 0.290336
+Roll: 2.340222
+Pitch: 1.018345
+Yaw: 0.290336
+Roll: 2.336511
+Pitch: 1.019448
+Yaw: 0.291857
+Roll: 2.336511
+Pitch: 1.019448
+Yaw: 0.291857
+Roll: 2.336948
+Pitch: 1.019268
+Yaw: 0.291153
+Roll: 2.336948
+Pitch: 1.019268
+Yaw: 0.291153
+Roll: 2.335165
+Pitch: 1.020134
+Yaw: 0.291719
+Roll: 2.335165
+Pitch: 1.020134
+Yaw: 0.291719
+Roll: 2.336099
+Pitch: 1.019392
+Yaw: 0.291871
+Roll: 2.336099
+Pitch: 1.019392
+Yaw: 0.291871
+Roll: 2.336975
+Pitch: 1.020004
+Yaw: 0.291610
+Roll: 2.336975
+Pitch: 1.020004
+Yaw: 0.291610
+Roll: 2.334108
+Pitch: 1.021518
+Yaw: 0.292933
+Roll: 2.334108
+Pitch: 1.021518
+Yaw: 0.292933
+Roll: 2.338495
+Pitch: 1.021620
+Yaw: 0.291086
+Roll: 2.338495
+Pitch: 1.021620
+Yaw: 0.291086
+Roll: 2.337377
+Pitch: 1.021410
+Yaw: 0.292259
+Roll: 2.337377
+Pitch: 1.021410
+Yaw: 0.292259
+Roll: 2.336390
+Pitch: 1.021832
+Yaw: 0.292731
+Roll: 2.336390
+Pitch: 1.021832
+Yaw: 0.292731
+Roll: 2.335259
+Pitch: 1.022691
+Yaw: 0.292921
+Roll: 2.335259
+Pitch: 1.022691
+Yaw: 0.292921
+Roll: 2.338400
+Pitch: 1.021873
+Yaw: 0.291803
+Roll: 2.338400
+Pitch: 1.021873
+Yaw: 0.291803
+Roll: 2.334975
+Pitch: 1.021761
+Yaw: 0.293604
+Roll: 2.334975
+Pitch: 1.021761
+Yaw: 0.293604
+Roll: 2.335723
+Pitch: 1.021983
+Yaw: 0.293225
+Roll: 2.335723
+Pitch: 1.021983
+Yaw: 0.293225
+Roll: 2.336319
+Pitch: 1.022106
+Yaw: 0.292732
+Roll: 2.336319
+Pitch: 1.022106
+Yaw: 0.292732
+Roll: 2.335965
+Pitch: 1.021971
+Yaw: 0.293014
+Roll: 2.335965
+Pitch: 1.021971
+Yaw: 0.293014
+Roll: 2.337146
+Pitch: 1.021542
+Yaw: 0.292508
+Roll: 2.337146
+Pitch: 1.021542
+Yaw: 0.292508
+Roll: 2.337286
+Pitch: 1.021583
+Yaw: 0.292392
+Roll: 2.337286
+Pitch: 1.021583
+Yaw: 0.292392
+Roll: 2.335257
+Pitch: 1.022022
+Yaw: 0.293265
+Roll: 2.335257
+Pitch: 1.022022
+Yaw: 0.293265
+Roll: 2.338602
+Pitch: 1.021684
+Yaw: 0.291847
+Roll: 2.338602
+Pitch: 1.021684
+Yaw: 0.291847
+Roll: 2.337216
+Pitch: 1.021905
+Yaw: 0.292530
+Roll: 2.337216
+Pitch: 1.021905
+Yaw: 0.292530
+Roll: 2.335404
+Pitch: 1.022320
+Yaw: 0.293205
+Roll: 2.335404
+Pitch: 1.022320
+Yaw: 0.293205
+Roll: 2.336548
+Pitch: 1.021504
+Yaw: 0.292840
+Roll: 2.336548
+Pitch: 1.021504
+Yaw: 0.292840
+Roll: 2.337380
+Pitch: 1.021510
+Yaw: 0.292314
+Roll: 2.337380
+Pitch: 1.021510
+Yaw: 0.292314
+Roll: 2.336770
+Pitch: 1.022559
+Yaw: 0.292367
+Roll: 2.336770
+Pitch: 1.022559
+Yaw: 0.292367
+Roll: 2.337627
+Pitch: 1.022080
+Yaw: 0.291831
+Roll: 2.337627
+Pitch: 1.022080
+Yaw: 0.291831
+Roll: 2.337572
+Pitch: 1.021487
+Yaw: 0.292295
+Roll: 2.337572
+Pitch: 1.021487
+Yaw: 0.292295
+Roll: 2.337198
+Pitch: 1.021626
+Yaw: 0.292519
+Roll: 2.337198
+Pitch: 1.021626
+Yaw: 0.292519
+Roll: 2.336397
+Pitch: 1.021488
+Yaw: 0.292703
+Roll: 2.336397
+Pitch: 1.021488
+Yaw: 0.292703
+Roll: 2.336851
+Pitch: 1.021859
+Yaw: 0.292464
+Roll: 2.336851
+Pitch: 1.021859
+Yaw: 0.292464
+Roll: 2.339140
+Pitch: 1.021915
+Yaw: 0.291421
+Roll: 2.339140
+Pitch: 1.021915
+Yaw: 0.291421
+Roll: 2.336550
+Pitch: 1.022017
+Yaw: 0.292554
+Roll: 2.336550
+Pitch: 1.022017
+Yaw: 0.292554
+Roll: 2.336857
+Pitch: 1.021394
+Yaw: 0.292601
+Roll: 2.336857
+Pitch: 1.021394
+Yaw: 0.292601
+Roll: 2.336090
+Pitch: 1.021953
+Yaw: 0.292909
+Roll: 2.336090
+Pitch: 1.021953
+Yaw: 0.292909
+Roll: 2.339088
+Pitch: 1.021500
+Yaw: 0.291534
+Roll: 2.339088
+Pitch: 1.021500
+Yaw: 0.291534
+Roll: 2.337042
+Pitch: 1.021787
+Yaw: 0.292497
+Roll: 2.337042
+Pitch: 1.021787
+Yaw: 0.292497
+Roll: 2.336907
+Pitch: 1.021863
+Yaw: 0.292500
+Roll: 2.336907
+Pitch: 1.021863
+Yaw: 0.292500
+Roll: 2.336583
+Pitch: 1.021257
+Yaw: 0.292940
+Roll: 2.336583
+Pitch: 1.021257
+Yaw: 0.292940
+Roll: 2.339080
+Pitch: 1.021388
+Yaw: 0.291575
+Roll: 2.339080
+Pitch: 1.021388
+Yaw: 0.291575
+Roll: 2.336836
+Pitch: 1.021943
+Yaw: 0.292512
+Roll: 2.336836
+Pitch: 1.021943
+Yaw: 0.292512
+Roll: 2.337786
+Pitch: 1.021914
+Yaw: 0.292110
+Roll: 2.337786
+Pitch: 1.021914
+Yaw: 0.292110
+Roll: 2.337822
+Pitch: 1.021914
+Yaw: 0.292092
+Roll: 2.337822
+Pitch: 1.021914
+Yaw: 0.292092
+Roll: 2.336084
+Pitch: 1.022290
+Yaw: 0.292904
+Roll: 2.336084
+Pitch: 1.022290
+Yaw: 0.292904
+Roll: 2.336231
+Pitch: 1.022252
+Yaw: 0.292675
+Roll: 2.336231
+Pitch: 1.022252
+Yaw: 0.292675
+Roll: 2.337676
+Pitch: 1.021434
+Yaw: 0.292269
+Roll: 2.337676
+Pitch: 1.021434
+Yaw: 0.292269
+Roll: 2.337825
+Pitch: 1.021585
+Yaw: 0.292186
+Roll: 2.337825
+Pitch: 1.021585
+Yaw: 0.292186
+Roll: 2.338746
+Pitch: 1.021652
+Yaw: 0.291570
+Roll: 2.338746
+Pitch: 1.021652
+Yaw: 0.291570
+Roll: 2.340091
+Pitch: 1.021291
+Yaw: 0.290980
+Roll: 2.340091
+Pitch: 1.021291
+Yaw: 0.290980
+Roll: 2.339182
+Pitch: 1.020797
+Yaw: 0.291799
+Roll: 2.339182
+Pitch: 1.020797
+Yaw: 0.291799
+Roll: 2.337617
+Pitch: 1.021497
+Yaw: 0.292383
+Roll: 2.337617
+Pitch: 1.021497
+Yaw: 0.292383
+Roll: 2.336930
+Pitch: 1.021900
+Yaw: 0.292596
+Roll: 2.336930
+Pitch: 1.021900
+Yaw: 0.292596
+Roll: 2.315657
+Pitch: 1.028656
+Yaw: 0.304921
+Roll: 2.315657
+Pitch: 1.028656
+Yaw: 0.304921
+Roll: 2.315190
+Pitch: 1.028646
+Yaw: 0.305219
+Roll: 2.315190
+Pitch: 1.028646
+Yaw: 0.305219
+Roll: 2.313972
+Pitch: 1.028479
+Yaw: 0.305898
+Roll: 2.313972
+Pitch: 1.028479
+Yaw: 0.305898
+Roll: 2.313473
+Pitch: 1.028461
+Yaw: 0.306212
+Roll: 2.313473
+Pitch: 1.028461
+Yaw: 0.306212
+Roll: 2.293317
+Pitch: 1.066188
+Yaw: 0.282260
+Roll: 2.293317
+Pitch: 1.066188
+Yaw: 0.282260
+Roll: 2.157516
+Pitch: 1.161770
+Yaw: 0.271531
+Roll: 2.157516
+Pitch: 1.161770
+Yaw: 0.271531
+Roll: 1.643947
+Pitch: 1.301937
+Yaw: 0.260065
+Roll: 1.643947
+Pitch: 1.301937
+Yaw: 0.260065
+Roll: 1.289683
+Pitch: 1.313985
+Yaw: 0.275169
+Roll: 1.289683
+Pitch: 1.313985
+Yaw: 0.275169
+Roll: 0.888175
+Pitch: 1.280994
+Yaw: 0.283954
+Roll: 0.888175
+Pitch: 1.280994
+Yaw: 0.283954
+Roll: 0.834579
+Pitch: 1.276560
+Yaw: 0.278910
+Roll: 0.834579
+Pitch: 1.276560
+Yaw: 0.278910
+Roll: 0.823151
+Pitch: 1.275394
+Yaw: 0.277716
+Roll: 0.823151
+Pitch: 1.275394
+Yaw: 0.277716
+Roll: 0.805006
+Pitch: 1.274476
+Yaw: 0.275056
+Roll: 0.805006
+Pitch: 1.274476
+Yaw: 0.275056
+Roll: 0.733458
+Pitch: 1.268909
+Yaw: 0.265749
+Roll: 0.733458
+Pitch: 1.268909
+Yaw: 0.265749
+Roll: 0.667201
+Pitch: 1.264013
+Yaw: 0.251133
+Roll: 0.667201
+Pitch: 1.264013
+Yaw: 0.251133
+Roll: 0.667879
+Pitch: 1.306188
+Yaw: 0.221319
+Roll: 0.667879
+Pitch: 1.306188
+Yaw: 0.221319
+Roll: 0.704130
+Pitch: 1.356991
+Yaw: 0.188510
+Roll: 0.704130
+Pitch: 1.356991
+Yaw: 0.188510
+Roll: 0.603019
+Pitch: 1.399248
+Yaw: 0.141498
+Roll: 0.603019
+Pitch: 1.399248
+Yaw: 0.141498
+Roll: 1.033004
+Pitch: 1.431285
+Yaw: 0.144911
+Roll: 1.033004
+Pitch: 1.431285
+Yaw: 0.144911
+Roll: 1.567281
+Pitch: 1.405197
+Yaw: 0.165812
+Roll: 1.567281
+Pitch: 1.405197
+Yaw: 0.165812
+Roll: 2.082585
+Pitch: 1.358616
+Yaw: 0.142601
+Roll: 2.082585
+Pitch: 1.358616
+Yaw: 0.142601
+Roll: 2.085976
+Pitch: 1.358185
+Yaw: 0.142250
+Roll: 2.085976
+Pitch: 1.358185
+Yaw: 0.142250
+Roll: 2.088523
+Pitch: 1.358187
+Yaw: 0.141785
+Roll: 2.088523
+Pitch: 1.358187
+Yaw: 0.141785
+Roll: 2.544211
+Pitch: 1.347756
+Yaw: 0.057453
+Roll: 2.544211
+Pitch: 1.347756
+Yaw: 0.057453
+Roll: 2.697995
+Pitch: 1.320561
+Yaw: 0.029956
+Roll: 2.697995
+Pitch: 1.320561
+Yaw: 0.029956
+Roll: 2.708858
+Pitch: 1.269453
+Yaw: 0.040144
+Roll: 2.708858
+Pitch: 1.269453
+Yaw: 0.040144
+Roll: 2.714026
+Pitch: 1.269382
+Yaw: 0.038833
+Roll: 2.714026
+Pitch: 1.269382
+Yaw: 0.038833
+Roll: 3.009046
+Pitch: 1.368381
+Yaw: -0.038722
+Roll: 3.009046
+Pitch: 1.368381
+Yaw: -0.038722
+Roll: 3.012410
+Pitch: 1.369016
+Yaw: -0.039289
+Roll: 3.012410
+Pitch: 1.369016
+Yaw: -0.039289
+Roll: -2.756912
+Pitch: 1.424623
+Yaw: -0.094627
+Roll: -2.756912
+Pitch: 1.424623
+Yaw: -0.094627
+Roll: -2.143382
+Pitch: 1.391363
+Yaw: -0.177168
+Roll: -2.143382
+Pitch: 1.391363
+Yaw: -0.177168
+Roll: -2.171527
+Pitch: 1.339118
+Yaw: -0.226788
+Roll: -2.171527
+Pitch: 1.339118
+Yaw: -0.226788
+Roll: -2.405728
+Pitch: 1.291018
+Yaw: -0.237817
+Roll: -2.405728
+Pitch: 1.291018
+Yaw: -0.237817
+Roll: -2.407583
+Pitch: 1.290399
+Yaw: -0.237955
+Roll: -2.407583
+Pitch: 1.290399
+Yaw: -0.237955
+Roll: -2.554827
+Pitch: 1.252187
+Yaw: -0.230954
+Roll: -2.554827
+Pitch: 1.252187
+Yaw: -0.230954
+Roll: -2.565612
+Pitch: 1.247705
+Yaw: -0.227769
+Roll: -2.565612
+Pitch: 1.247705
+Yaw: -0.227769
+Roll: -2.558622
+Pitch: 1.250465
+Yaw: -0.227313
+Roll: -2.558622
+Pitch: 1.250465
+Yaw: -0.227313
+Roll: -2.405545
+Pitch: 1.243405
+Yaw: -0.269319
+Roll: -2.405545
+Pitch: 1.243405
+Yaw: -0.269319
+Roll: -2.248054
+Pitch: 1.240034
+Yaw: -0.304217
+Roll: -2.248054
+Pitch: 1.240034
+Yaw: -0.304217
+Roll: -2.031422
+Pitch: 1.248897
+Yaw: -0.324519
+Roll: -2.031422
+Pitch: 1.248897
+Yaw: -0.324519
+Roll: -1.616763
+Pitch: 1.249227
+Yaw: -0.324942
+Roll: -1.616763
+Pitch: 1.249227
+Yaw: -0.324942
+Roll: -1.157120
+Pitch: 1.240852
+Yaw: -0.281106
+Roll: -1.157120
+Pitch: 1.240852
+Yaw: -0.281106
+Roll: -1.010323
+Pitch: 1.192717
+Yaw: -0.300399
+Roll: -1.010323
+Pitch: 1.192717
+Yaw: -0.300399
+Roll: -1.003531
+Pitch: 1.174726
+Yaw: -0.319256
+Roll: -1.003531
+Pitch: 1.174726
+Yaw: -0.319256
+Roll: -1.000854
+Pitch: 1.173234
+Yaw: -0.320131
+Roll: -1.000854
+Pitch: 1.173234
+Yaw: -0.320131
+Roll: -1.000584
+Pitch: 1.161298
+Yaw: -0.332904
+Roll: -1.000584
+Pitch: 1.161298
+Yaw: -0.332904
+Roll: -1.000919
+Pitch: 1.161056
+Yaw: -0.333326
+Roll: -1.000919
+Pitch: 1.161056
+Yaw: -0.333326
+Roll: -1.002341
+Pitch: 1.160725
+Yaw: -0.334272
+Roll: -1.002341
+Pitch: 1.160725
+Yaw: -0.334272
+Roll: -1.012122
+Pitch: 1.161291
+Yaw: -0.337530
+Roll: -1.012122
+Pitch: 1.161291
+Yaw: -0.337530
+Roll: -1.012285
+Pitch: 1.161307
+Yaw: -0.337564
+Roll: -1.012285
+Pitch: 1.161307
+Yaw: -0.337564
+Roll: -1.008430
+Pitch: 1.156306
+Yaw: -0.341439
+Roll: -1.008430
+Pitch: 1.156306
+Yaw: -0.341439
+Roll: -1.006818
+Pitch: 1.154650
+Yaw: -0.345411
+Roll: -1.006818
+Pitch: 1.154650
+Yaw: -0.345411
+Roll: -1.006881
+Pitch: 1.154669
+Yaw: -0.345443
+Roll: -1.006881
+Pitch: 1.154669
+Yaw: -0.345443
+Roll: -1.007341
+Pitch: 1.154879
+Yaw: -0.345389
+Roll: -1.007341
+Pitch: 1.154879
+Yaw: -0.345389
+Roll: -1.007418
+Pitch: 1.154907
+Yaw: -0.345416
+Roll: -1.007418
+Pitch: 1.154907
+Yaw: -0.345416
+Roll: -1.022871
+Pitch: 1.159456
+Yaw: -0.346174
+Roll: -1.022871
+Pitch: 1.159456
+Yaw: -0.346174
+Roll: -1.024264
+Pitch: 1.159561
+Yaw: -0.346443
+Roll: -1.024264
+Pitch: 1.159561
+Yaw: -0.346443
+Roll: -1.091762
+Pitch: 1.169280
+Yaw: -0.355838
+Roll: -1.091762
+Pitch: 1.169280
+Yaw: -0.355838
+Roll: -1.237920
+Pitch: 1.187207
+Yaw: -0.367376
+Roll: -1.237920
+Pitch: 1.187207
+Yaw: -0.367376
+Roll: -1.408228
+Pitch: 1.213202
+Yaw: -0.355105
+Roll: -1.408228
+Pitch: 1.213202
+Yaw: -0.355105
+Roll: -1.470320
+Pitch: 1.216335
+Yaw: -0.353902
+Roll: -1.470320
+Pitch: 1.216335
+Yaw: -0.353902
+Roll: -1.387757
+Pitch: 1.214936
+Yaw: -0.352977
+Roll: -1.387757
+Pitch: 1.214936
+Yaw: -0.352977
+Roll: -1.387877
+Pitch: 1.214964
+Yaw: -0.352952
+Roll: -1.387877
+Pitch: 1.214964
+Yaw: -0.352952
+Roll: -1.388349
+Pitch: 1.213991
+Yaw: -0.353980
+Roll: -1.388349
+Pitch: 1.213991
+Yaw: -0.353980
+Roll: -1.393860
+Pitch: 1.213484
+Yaw: -0.354753
+Roll: -1.393860
+Pitch: 1.213484
+Yaw: -0.354753
+Roll: -1.391629
+Pitch: 1.212996
+Yaw: -0.355163
+Roll: -1.391629
+Pitch: 1.212996
+Yaw: -0.355163
+Roll: -1.395111
+Pitch: 1.213229
+Yaw: -0.355048
+Roll: -1.395111
+Pitch: 1.213229
+Yaw: -0.355048
+Roll: -1.394248
+Pitch: 1.214150
+Yaw: -0.354088
+Roll: -1.394248
+Pitch: 1.214150
+Yaw: -0.354088
+Roll: -1.398874
+Pitch: 1.213817
+Yaw: -0.354596
+Roll: -1.398874
+Pitch: 1.213817
+Yaw: -0.354596
+Roll: -1.396517
+Pitch: 1.213834
+Yaw: -0.354442
+Roll: -1.396517
+Pitch: 1.213834
+Yaw: -0.354442
+Roll: -1.398518
+Pitch: 1.212919
+Yaw: -0.355438
+Roll: -1.398518
+Pitch: 1.212919
+Yaw: -0.355438
+Roll: -1.398364
+Pitch: 1.212932
+Yaw: -0.355417
+Roll: -1.398364
+Pitch: 1.212932
+Yaw: -0.355417
+Roll: -1.399993
+Pitch: 1.212941
+Yaw: -0.355526
+Roll: -1.399993
+Pitch: 1.212941
+Yaw: -0.355526
+Roll: -1.396624
+Pitch: 1.213741
+Yaw: -0.354587
+Roll: -1.396624
+Pitch: 1.213741
+Yaw: -0.354587
+Roll: -1.399627
+Pitch: 1.213698
+Yaw: -0.354752
+Roll: -1.399627
+Pitch: 1.213698
+Yaw: -0.354752
+Roll: -1.399709
+Pitch: 1.213706
+Yaw: -0.354748
+Roll: -1.399709
+Pitch: 1.213706
+Yaw: -0.354748
+Roll: -1.399682
+Pitch: 1.213707
+Yaw: -0.354746
+Roll: -1.399682
+Pitch: 1.213707
+Yaw: -0.354746
+Roll: -1.399811
+Pitch: 1.213706
+Yaw: -0.354754
+Roll: -1.399811
+Pitch: 1.213706
+Yaw: -0.354754
+Roll: -1.397936
+Pitch: 1.213285
+Yaw: -0.355117
+Roll: -1.397936
+Pitch: 1.213285
+Yaw: -0.355117
+Roll: -1.400526
+Pitch: 1.212744
+Yaw: -0.355761
+Roll: -1.400526
+Pitch: 1.212744
+Yaw: -0.355761
+Roll: -1.396583
+Pitch: 1.213156
+Yaw: -0.355223
+Roll: -1.396583
+Pitch: 1.213156
+Yaw: -0.355223
+Roll: -1.390526
+Pitch: 1.211943
+Yaw: -0.356254
+Roll: -1.390526
+Pitch: 1.211943
+Yaw: -0.356254
+Roll: -1.382527
+Pitch: 1.213542
+Yaw: -0.354304
+Roll: -1.382527
+Pitch: 1.213542
+Yaw: -0.354304
+Roll: -1.381549
+Pitch: 1.213282
+Yaw: -0.354519
+Roll: -1.381549
+Pitch: 1.213282
+Yaw: -0.354519
+Roll: -1.329468
+Pitch: 1.207721
+Yaw: -0.357597
+Roll: -1.329468
+Pitch: 1.207721
+Yaw: -0.357597
+Roll: -1.231912
+Pitch: 1.199115
+Yaw: -0.358866
+Roll: -1.231912
+Pitch: 1.199115
+Yaw: -0.358866
+Roll: -1.185506
+Pitch: 1.191587
+Yaw: -0.361606
+Roll: -1.185506
+Pitch: 1.191587
+Yaw: -0.361606
+Roll: -1.087245
+Pitch: 1.176515
+Yaw: -0.365116
+Roll: -1.087245
+Pitch: 1.176515
+Yaw: -0.365116
+Roll: -0.988483
+Pitch: 1.161589
+Yaw: -0.365699
+Roll: -0.988483
+Pitch: 1.161589
+Yaw: -0.365699
+Roll: -1.033868
+Pitch: 1.178193
+Yaw: -0.359932
+Roll: -1.033868
+Pitch: 1.178193
+Yaw: -0.359932
+Roll: -1.737583
+Pitch: 1.232298
+Yaw: -0.327678
+Roll: -1.737583
+Pitch: 1.232298
+Yaw: -0.327678
+Roll: -2.213255
+Pitch: 1.068077
+Yaw: -0.379004
+Roll: -2.213255
+Pitch: 1.068077
+Yaw: -0.379004
+Roll: -2.349403
+Pitch: 0.989214
+Yaw: -0.396649
+Roll: -2.349403
+Pitch: 0.989214
+Yaw: -0.396649
+Roll: -2.324833
+Pitch: 1.019368
+Yaw: -0.364176
+Roll: -2.324833
+Pitch: 1.019368
+Yaw: -0.364176
+Roll: -2.335374
+Pitch: 1.026853
+Yaw: -0.340422
+Roll: -2.335374
+Pitch: 1.026853
+Yaw: -0.340422
+Roll: -2.341840
+Pitch: 1.023689
+Yaw: -0.342025
+Roll: -2.341840
+Pitch: 1.023689
+Yaw: -0.342025
+Roll: -2.341865
+Pitch: 1.023629
+Yaw: -0.342085
+Roll: -2.341865
+Pitch: 1.023629
+Yaw: -0.342085
+Roll: -2.341951
+Pitch: 1.023581
+Yaw: -0.342116
+Roll: -2.341951
+Pitch: 1.023581
+Yaw: -0.342116
+Roll: -2.341758
+Pitch: 1.023585
+Yaw: -0.342189
+Roll: -2.341758
+Pitch: 1.023585
+Yaw: -0.342189
+Roll: -2.341059
+Pitch: 1.023221
+Yaw: -0.342973
+Roll: -2.341059
+Pitch: 1.023221
+Yaw: -0.342973
+Roll: -2.340961
+Pitch: 1.023017
+Yaw: -0.343276
+Roll: -2.340961
+Pitch: 1.023017
+Yaw: -0.343276
+Roll: -2.344901
+Pitch: 1.021315
+Yaw: -0.342647
+Roll: -2.344901
+Pitch: 1.021315
+Yaw: -0.342647
+Roll: -2.353181
+Pitch: 1.019140
+Yaw: -0.339797
+Roll: -2.353181
+Pitch: 1.019140
+Yaw: -0.339797
+Roll: -2.359795
+Pitch: 1.018665
+Yaw: -0.337032
+Roll: -2.359795
+Pitch: 1.018665
+Yaw: -0.337032
+Roll: -2.367926
+Pitch: 1.021018
+Yaw: -0.328865
+Roll: -2.367926
+Pitch: 1.021018
+Yaw: -0.328865
+Roll: -2.372409
+Pitch: 1.021066
+Yaw: -0.327404
+Roll: -2.372409
+Pitch: 1.021066
+Yaw: -0.327404
+Roll: -2.374237
+Pitch: 1.020503
+Yaw: -0.327032
+Roll: -2.374237
+Pitch: 1.020503
+Yaw: -0.327032
+Roll: -2.379658
+Pitch: 1.019340
+Yaw: -0.325671
+Roll: -2.379658
+Pitch: 1.019340
+Yaw: -0.325671
+Roll: -2.382935
+Pitch: 1.019097
+Yaw: -0.324224
+Roll: -2.382935
+Pitch: 1.019097
+Yaw: -0.324224
+Roll: -2.395690
+Pitch: 1.017565
+Yaw: -0.320090
+Roll: -2.395690
+Pitch: 1.017565
+Yaw: -0.320090
+Roll: -2.398812
+Pitch: 1.016122
+Yaw: -0.319827
+Roll: -2.398812
+Pitch: 1.016122
+Yaw: -0.319827
+Roll: -2.407351
+Pitch: 1.013266
+Yaw: -0.318310
+Roll: -2.407351
+Pitch: 1.013266
+Yaw: -0.318310
+Roll: -2.416142
+Pitch: 1.012415
+Yaw: -0.315394
+Roll: -2.416142
+Pitch: 1.012415
+Yaw: -0.315394
+Roll: -2.415958
+Pitch: 1.013071
+Yaw: -0.314580
+Roll: -2.415958
+Pitch: 1.013071
+Yaw: -0.314580
+Roll: -2.419277
+Pitch: 1.013333
+Yaw: -0.312980
+Roll: -2.419277
+Pitch: 1.013333
+Yaw: -0.312980
+Roll: -2.421678
+Pitch: 1.013494
+Yaw: -0.311909
+Roll: -2.421678
+Pitch: 1.013494
+Yaw: -0.311909
+Roll: -2.424487
+Pitch: 1.014049
+Yaw: -0.310572
+Roll: -2.424487
+Pitch: 1.014049
+Yaw: -0.310572
+Roll: -2.426769
+Pitch: 1.014955
+Yaw: -0.309001
+Roll: -2.426769
+Pitch: 1.014955
+Yaw: -0.309001
+Roll: -2.428899
+Pitch: 1.015497
+Yaw: -0.307498
+Roll: -2.428899
+Pitch: 1.015497
+Yaw: -0.307498
+Roll: -2.432310
+Pitch: 1.015948
+Yaw: -0.305576
+Roll: -2.432310
+Pitch: 1.015948
+Yaw: -0.305576
+Roll: -2.436820
+Pitch: 1.015477
+Yaw: -0.303449
+Roll: -2.436820
+Pitch: 1.015477
+Yaw: -0.303449
+Roll: -2.435791
+Pitch: 1.015573
+Yaw: -0.303748
+Roll: -2.435791
+Pitch: 1.015573
+Yaw: -0.303748
+Roll: -2.434946
+Pitch: 1.015931
+Yaw: -0.303792
+Roll: -2.434946
+Pitch: 1.015931
+Yaw: -0.303792
+Roll: -2.430136
+Pitch: 1.016997
+Yaw: -0.305101
+Roll: -2.430136
+Pitch: 1.016997
+Yaw: -0.305101
+Roll: -2.428229
+Pitch: 1.016821
+Yaw: -0.306000
+Roll: -2.428229
+Pitch: 1.016821
+Yaw: -0.306000
+Roll: -2.428120
+Pitch: 1.016864
+Yaw: -0.306015
+Roll: -2.428120
+Pitch: 1.016864
+Yaw: -0.306015
+Roll: -2.428095
+Pitch: 1.016865
+Yaw: -0.306027
+Roll: -2.428095
+Pitch: 1.016865
+Yaw: -0.306027
+Roll: -2.427976
+Pitch: 1.016898
+Yaw: -0.306055
+Roll: -2.427976
+Pitch: 1.016898
+Yaw: -0.306055
+Roll: -2.427948
+Pitch: 1.016901
+Yaw: -0.306067
+Roll: -2.427948
+Pitch: 1.016901
+Yaw: -0.306067
+Roll: -2.427948
+Pitch: 1.016848
+Yaw: -0.306151
+Roll: -2.427948
+Pitch: 1.016848
+Yaw: -0.306151
+Roll: -2.426864
+Pitch: 1.017344
+Yaw: -0.306065
+Roll: -2.426864
+Pitch: 1.017344
+Yaw: -0.306065
+Roll: -2.428850
+Pitch: 1.017627
+Yaw: -0.304869
+Roll: -2.428850
+Pitch: 1.017627
+Yaw: -0.304869
+Roll: -2.431803
+Pitch: 1.016545
+Yaw: -0.303593
+Roll: -2.431803
+Pitch: 1.016545
+Yaw: -0.303593
+Roll: -2.431312
+Pitch: 1.016484
+Yaw: -0.303467
+Roll: -2.431312
+Pitch: 1.016484
+Yaw: -0.303467
+Roll: -2.431645
+Pitch: 1.016391
+Yaw: -0.303322
+Roll: -2.431645
+Pitch: 1.016391
+Yaw: -0.303322
+Roll: -2.431530
+Pitch: 1.015982
+Yaw: -0.303446
+Roll: -2.431530
+Pitch: 1.015982
+Yaw: -0.303446
+Roll: -2.431533
+Pitch: 1.015975
+Yaw: -0.303445
+Roll: -2.431533
+Pitch: 1.015975
+Yaw: -0.303445
+Roll: -2.431833
+Pitch: 1.016022
+Yaw: -0.303233
+Roll: -2.431833
+Pitch: 1.016022
+Yaw: -0.303233
+Roll: -2.431882
+Pitch: 1.015966
+Yaw: -0.303265
+Roll: -2.431882
+Pitch: 1.015966
+Yaw: -0.303265
+Roll: -2.431932
+Pitch: 1.015903
+Yaw: -0.303294
+Roll: -2.431932
+Pitch: 1.015903
+Yaw: -0.303294
+Roll: -2.431997
+Pitch: 1.015819
+Yaw: -0.303353
+Roll: -2.431997
+Pitch: 1.015819
+Yaw: -0.303353
+Roll: -2.432007
+Pitch: 1.015808
+Yaw: -0.303357
+Roll: -2.432007
+Pitch: 1.015808
+Yaw: -0.303357
+Roll: -2.431976
+Pitch: 1.015777
+Yaw: -0.303415
+Roll: -2.431976
+Pitch: 1.015777
+Yaw: -0.303415
+Roll: -2.431984
+Pitch: 1.015765
+Yaw: -0.303422
+Roll: -2.431984
+Pitch: 1.015765
+Yaw: -0.303422
+Roll: -2.431976
+Pitch: 1.015733
+Yaw: -0.303417
+Roll: -2.431976
+Pitch: 1.015733
+Yaw: -0.303417
+Roll: -2.431983
+Pitch: 1.015720
+Yaw: -0.303423
+Roll: -2.431983
+Pitch: 1.015720
+Yaw: -0.303423
+Roll: -2.432105
+Pitch: 1.015611
+Yaw: -0.303471
+Roll: -2.432105
+Pitch: 1.015611
+Yaw: -0.303471
+Roll: -2.432115
+Pitch: 1.015595
+Yaw: -0.303479
+Roll: -2.432115
+Pitch: 1.015595
+Yaw: -0.303479
+Roll: -2.432270
+Pitch: 1.015618
+Yaw: -0.303440
+Roll: -2.432270
+Pitch: 1.015618
+Yaw: -0.303440
+Roll: -2.432690
+Pitch: 1.015666
+Yaw: -0.303306
+Roll: -2.432690
+Pitch: 1.015666
+Yaw: -0.303306
+Roll: -2.432716
+Pitch: 1.015659
+Yaw: -0.303305
+Roll: -2.432716
+Pitch: 1.015659
+Yaw: -0.303305
+Roll: -2.432712
+Pitch: 1.015678
+Yaw: -0.303253
+Roll: -2.432712
+Pitch: 1.015678
+Yaw: -0.303253
+Roll: -2.432955
+Pitch: 1.015609
+Yaw: -0.303183
+Roll: -2.432955
+Pitch: 1.015609
+Yaw: -0.303183
+Roll: -2.433037
+Pitch: 1.015619
+Yaw: -0.303116
+Roll: -2.433037
+Pitch: 1.015619
+Yaw: -0.303116
+Roll: -2.435480
+Pitch: 1.014899
+Yaw: -0.302582
+Roll: -2.435480
+Pitch: 1.014899
+Yaw: -0.302582
+Roll: -2.435621
+Pitch: 1.014622
+Yaw: -0.302564
+Roll: -2.435621
+Pitch: 1.014622
+Yaw: -0.302564
+Roll: -2.435638
+Pitch: 1.014612
+Yaw: -0.302560
+Roll: -2.435638
+Pitch: 1.014612
+Yaw: -0.302560
+Roll: -2.435644
+Pitch: 1.014622
+Yaw: -0.302526
+Roll: -2.435644
+Pitch: 1.014622
+Yaw: -0.302526
+Roll: -2.435609
+Pitch: 1.014646
+Yaw: -0.302501
+Roll: -2.435609
+Pitch: 1.014646
+Yaw: -0.302501
+Roll: -2.435881
+Pitch: 1.014691
+Yaw: -0.302112
+Roll: -2.435881
+Pitch: 1.014691
+Yaw: -0.302112
+Roll: -2.435901
+Pitch: 1.014688
+Yaw: -0.302097
+Roll: -2.435901
+Pitch: 1.014688
+Yaw: -0.302097
+Roll: -2.436053
+Pitch: 1.014653
+Yaw: -0.302068
+Roll: -2.436053
+Pitch: 1.014653
+Yaw: -0.302068
+Roll: -2.436077
+Pitch: 1.014650
+Yaw: -0.302052
+Roll: -2.436077
+Pitch: 1.014650
+Yaw: -0.302052
+Roll: -2.436459
+Pitch: 1.014533
+Yaw: -0.302006
+Roll: -2.436459
+Pitch: 1.014533
+Yaw: -0.302006
+Roll: -2.436490
+Pitch: 1.014527
+Yaw: -0.301993
+Roll: -2.436490
+Pitch: 1.014527
+Yaw: -0.301993
+Roll: -2.436646
+Pitch: 1.014051
+Yaw: -0.302442
+Roll: -2.436646
+Pitch: 1.014051
+Yaw: -0.302442
+Roll: -2.426297
+Pitch: 1.020167
+Yaw: -0.305120
+Roll: -2.426297
+Pitch: 1.020167
+Yaw: -0.305120
+Roll: -2.423129
+Pitch: 1.023137
+Yaw: -0.301063
+Roll: -2.423129
+Pitch: 1.023137
+Yaw: -0.301063
+Roll: -2.416708
+Pitch: 1.021613
+Yaw: -0.306687
+Roll: -2.416708
+Pitch: 1.021613
+Yaw: -0.306687
+Roll: -2.416290
+Pitch: 1.022965
+Yaw: -0.305598
+Roll: -2.416290
+Pitch: 1.022965
+Yaw: -0.305598
+Roll: -2.420704
+Pitch: 1.019142
+Yaw: -0.306578
+Roll: -2.420704
+Pitch: 1.019142
+Yaw: -0.306578
+Roll: -2.416523
+Pitch: 1.018690
+Yaw: -0.308121
+Roll: -2.416523
+Pitch: 1.018690
+Yaw: -0.308121
+Roll: -2.410559
+Pitch: 1.019190
+Yaw: -0.310480
+Roll: -2.410559
+Pitch: 1.019190
+Yaw: -0.310480
+Roll: -2.407367
+Pitch: 1.019826
+Yaw: -0.311903
+Roll: -2.407367
+Pitch: 1.019826
+Yaw: -0.311903
+Roll: -2.413558
+Pitch: 1.019368
+Yaw: -0.310012
+Roll: -2.413558
+Pitch: 1.019368
+Yaw: -0.310012
+Roll: -2.415031
+Pitch: 1.018224
+Yaw: -0.310813
+Roll: -2.415031
+Pitch: 1.018224
+Yaw: -0.310813
+Roll: -2.412570
+Pitch: 1.018366
+Yaw: -0.311381
+Roll: -2.412570
+Pitch: 1.018366
+Yaw: -0.311381
+Roll: -2.412244
+Pitch: 1.019113
+Yaw: -0.311130
+Roll: -2.412244
+Pitch: 1.019113
+Yaw: -0.311130
+Roll: -2.401664
+Pitch: 1.045224
+Yaw: -0.285149
+Roll: -2.401664
+Pitch: 1.045224
+Yaw: -0.285149
+Roll: -2.362684
+Pitch: 1.121940
+Yaw: -0.232534
+Roll: -2.362684
+Pitch: 1.121940
+Yaw: -0.232534
+Roll: -2.233896
+Pitch: 1.209590
+Yaw: -0.210299
+Roll: -2.233896
+Pitch: 1.209590
+Yaw: -0.210299
+Roll: -1.990146
+Pitch: 1.285584
+Yaw: -0.214368
+Roll: -1.990146
+Pitch: 1.285584
+Yaw: -0.214368
+Roll: -1.705310
+Pitch: 1.352752
+Yaw: -0.203698
+Roll: -1.705310
+Pitch: 1.352752
+Yaw: -0.203698
+Roll: -1.329760
+Pitch: 1.403409
+Yaw: -0.179014
+Roll: -1.329760
+Pitch: 1.403409
+Yaw: -0.179014
+Roll: -1.086533
+Pitch: 1.522884
+Yaw: -0.049746
+Roll: -1.086533
+Pitch: 1.522884
+Yaw: -0.049746
+Roll: -2.832385
+Pitch: 1.471056
+Yaw: -0.003846
+Roll: -2.832385
+Pitch: 1.471056
+Yaw: -0.003846
+Roll: -2.910260
+Pitch: 1.274165
+Yaw: 0.000926
+Roll: -2.910260
+Pitch: 1.274165
+Yaw: 0.000926
+Roll: -2.875406
+Pitch: 1.187085
+Yaw: -0.034895
+Roll: -2.875406
+Pitch: 1.187085
+Yaw: -0.034895
+Roll: -2.875046
+Pitch: 1.185740
+Yaw: -0.035507
+Roll: -2.875046
+Pitch: 1.185740
+Yaw: -0.035507
+Roll: -2.830408
+Pitch: 1.133600
+Yaw: -0.076272
+Roll: -2.830408
+Pitch: 1.133600
+Yaw: -0.076272
+Roll: -2.720770
+Pitch: 1.147467
+Yaw: -0.101774
+Roll: -2.720770
+Pitch: 1.147467
+Yaw: -0.101774
+Roll: -2.497274
+Pitch: 1.189404
+Yaw: -0.143767
+Roll: -2.497274
+Pitch: 1.189404
+Yaw: -0.143767
+Roll: -2.249696
+Pitch: 1.243394
+Yaw: -0.182414
+Roll: -2.249696
+Pitch: 1.243394
+Yaw: -0.182414
+Roll: -2.138450
+Pitch: 1.351041
+Yaw: -0.139696
+Roll: -2.138450
+Pitch: 1.351041
+Yaw: -0.139696
+Roll: -2.039256
+Pitch: 1.437485
+Yaw: -0.095917
+Roll: -2.039256
+Pitch: 1.437485
+Yaw: -0.095917
+Roll: -1.100760
+Pitch: 1.519760
+Yaw: -0.053243
+Roll: -1.100760
+Pitch: 1.519760
+Yaw: -0.053243
+Roll: 0.243148
+Pitch: 1.488214
+Yaw: -0.000975
+Roll: 0.243148
+Pitch: 1.488214
+Yaw: -0.000975
+Roll: 0.293883
+Pitch: 1.443416
+Yaw: 0.012312
+Roll: 0.293883
+Pitch: 1.443416
+Yaw: 0.012312
+Roll: 0.166661
+Pitch: 1.487185
+Yaw: 0.000256
+Roll: 0.166661
+Pitch: 1.487185
+Yaw: 0.000256
+Roll: -2.553209
+Pitch: 1.500017
+Yaw: -0.026546
+Roll: -2.553209
+Pitch: 1.500017
+Yaw: -0.026546
+Roll: -2.613609
+Pitch: 1.307216
+Yaw: -0.058869
+Roll: -2.613609
+Pitch: 1.307216
+Yaw: -0.058869
+Roll: -2.649124
+Pitch: 1.267193
+Yaw: -0.068505
+Roll: -2.649124
+Pitch: 1.267193
+Yaw: -0.068505
+Roll: -2.796298
+Pitch: 1.323617
+Yaw: -0.029816
+Roll: -2.796298
+Pitch: 1.323617
+Yaw: -0.029816
+Roll: 3.135834
+Pitch: 1.426438
+Yaw: 0.028676
+Roll: 3.135834
+Pitch: 1.426438
+Yaw: 0.028676
+Roll: 2.585489
+Pitch: 1.504053
+Yaw: 0.041395
+Roll: 2.585489
+Pitch: 1.504053
+Yaw: 0.041395
+Roll: 0.448759
+Pitch: 1.423408
+Yaw: 0.061188
+Roll: 0.448759
+Pitch: 1.423408
+Yaw: 0.061188
+Roll: 0.159220
+Pitch: 1.348212
+Yaw: 0.034963
+Roll: 0.159220
+Pitch: 1.348212
+Yaw: 0.034963
+Roll: 0.254047
+Pitch: 1.463141
+Yaw: 0.014835
+Roll: 0.254047
+Pitch: 1.463141
+Yaw: 0.014835
+Roll: 2.834400
+Pitch: 1.511900
+Yaw: 0.029666
+Roll: 2.834400
+Pitch: 1.511900
+Yaw: 0.029666
+Roll: -3.063020
+Pitch: 1.354125
+Yaw: 0.052638
+Roll: -3.063020
+Pitch: 1.354125
+Yaw: 0.052638
+Roll: 2.659873
+Pitch: 1.458226
+Yaw: 0.071319
+Roll: 2.659873
+Pitch: 1.458226
+Yaw: 0.071319
+Roll: 0.716298
+Pitch: 1.382973
+Yaw: 0.117637
+Roll: 0.716298
+Pitch: 1.382973
+Yaw: 0.117637
+Roll: 0.442120
+Pitch: 1.292056
+Yaw: 0.116499
+Roll: 0.442120
+Pitch: 1.292056
+Yaw: 0.116499
+Roll: 3.061764
+Pitch: 1.428098
+Yaw: 0.069183
+Roll: 3.061764
+Pitch: 1.428098
+Yaw: 0.069183
+Roll: -2.842494
+Pitch: 1.465689
+Yaw: 0.014264
+Roll: -2.842494
+Pitch: 1.465689
+Yaw: 0.014264
+Roll: -2.545003
+Pitch: 1.540654
+Yaw: -0.005940
+Roll: -2.545003
+Pitch: 1.540654
+Yaw: -0.005940
+Roll: 2.891173
+Pitch: 1.528425
+Yaw: 0.027417
+Roll: 2.891173
+Pitch: 1.528425
+Yaw: 0.027417
+Roll: 2.694595
+Pitch: 1.446978
+Yaw: 0.089011
+Roll: 2.694595
+Pitch: 1.446978
+Yaw: 0.089011
+Roll: 2.846544
+Pitch: 1.323691
+Yaw: 0.128305
+Roll: 2.846544
+Pitch: 1.323691
+Yaw: 0.128305
+Roll: 2.862347
+Pitch: 1.215912
+Yaw: 0.154226
+Roll: 2.862347
+Pitch: 1.215912
+Yaw: 0.154226
+Roll: 2.749089
+Pitch: 1.163692
+Yaw: 0.188754
+Roll: 2.749089
+Pitch: 1.163692
+Yaw: 0.188754
+Roll: 2.676383
+Pitch: 1.166550
+Yaw: 0.211370
+Roll: 2.676383
+Pitch: 1.166550
+Yaw: 0.211370
+Roll: 2.519291
+Pitch: 1.209280
+Yaw: 0.229363
+Roll: 2.519291
+Pitch: 1.209280
+Yaw: 0.229363
+Roll: 2.302641
+Pitch: 1.289246
+Yaw: 0.208005
+Roll: 2.302641
+Pitch: 1.289246
+Yaw: 0.208005
+Roll: 1.590965
+Pitch: 1.366960
+Yaw: 0.203460
+Roll: 1.590965
+Pitch: 1.366960
+Yaw: 0.203460
+Roll: 0.766875
+Pitch: 1.332157
+Yaw: 0.146611
+Roll: 0.766875
+Pitch: 1.332157
+Yaw: 0.146611
+Roll: 0.854212
+Pitch: 1.367742
+Yaw: 0.121923
+Roll: 0.854212
+Pitch: 1.367742
+Yaw: 0.121923
+Roll: 1.160939
+Pitch: 1.411393
+Yaw: 0.125364
+Roll: 1.160939
+Pitch: 1.411393
+Yaw: 0.125364
+Roll: 1.835940
+Pitch: 1.449805
+Yaw: 0.128659
+Roll: 1.835940
+Pitch: 1.449805
+Yaw: 0.128659
+Roll: 1.841537
+Pitch: 1.449887
+Yaw: 0.128635
+Roll: 1.841537
+Pitch: 1.449887
+Yaw: 0.128635
+Roll: 2.918682
+Pitch: 1.427830
+Yaw: 0.080618
+Roll: 2.918682
+Pitch: 1.427830
+Yaw: 0.080618
+Roll: 3.042485
+Pitch: 1.394551
+Yaw: 0.075867
+Roll: 3.042485
+Pitch: 1.394551
+Yaw: 0.075867
+Roll: 3.108999
+Pitch: 1.361958
+Yaw: 0.071300
+Roll: 3.108999
+Pitch: 1.361958
+Yaw: 0.071300
+Roll: -2.943213
+Pitch: 1.187091
+Yaw: -0.025262
+Roll: -2.943213
+Pitch: 1.187091
+Yaw: -0.025262
+Roll: -2.932166
+Pitch: 1.172690
+Yaw: -0.034402
+Roll: -2.932166
+Pitch: 1.172690
+Yaw: -0.034402
+Roll: -2.929830
+Pitch: 1.172669
+Yaw: -0.035700
+Roll: -2.929830
+Pitch: 1.172669
+Yaw: -0.035700
+Roll: -2.917092
+Pitch: 1.164854
+Yaw: -0.045741
+Roll: -2.917092
+Pitch: 1.164854
+Yaw: -0.045741
+Roll: -2.902503
+Pitch: 1.160060
+Yaw: -0.055751
+Roll: -2.902503
+Pitch: 1.160060
+Yaw: -0.055751
+Roll: -2.892726
+Pitch: 1.152478
+Yaw: -0.066936
+Roll: -2.892726
+Pitch: 1.152478
+Yaw: -0.066936
+Roll: -2.827985
+Pitch: 1.143248
+Yaw: -0.130979
+Roll: -2.827985
+Pitch: 1.143248
+Yaw: -0.130979
+Roll: -2.790298
+Pitch: 1.140372
+Yaw: -0.152093
+Roll: -2.790298
+Pitch: 1.140372
+Yaw: -0.152093
+Roll: -2.800164
+Pitch: 1.140461
+Yaw: -0.143628
+Roll: -2.800164
+Pitch: 1.140461
+Yaw: -0.143628
+Roll: -2.813036
+Pitch: 1.141548
+Yaw: -0.135457
+Roll: -2.813036
+Pitch: 1.141548
+Yaw: -0.135457
+Roll: -2.820622
+Pitch: 1.142554
+Yaw: -0.131008
+Roll: -2.820622
+Pitch: 1.142554
+Yaw: -0.131008
+Roll: -2.819332
+Pitch: 1.144223
+Yaw: -0.130942
+Roll: -2.819332
+Pitch: 1.144223
+Yaw: -0.130942
+Roll: -2.818027
+Pitch: 1.142560
+Yaw: -0.132506
+Roll: -2.818027
+Pitch: 1.142560
+Yaw: -0.132506
+Roll: -2.818304
+Pitch: 1.143903
+Yaw: -0.132401
+Roll: -2.818304
+Pitch: 1.143903
+Yaw: -0.132401
+Roll: -2.819415
+Pitch: 1.145114
+Yaw: -0.131927
+Roll: -2.819415
+Pitch: 1.145114
+Yaw: -0.131927
+Roll: -2.823674
+Pitch: 1.148110
+Yaw: -0.129979
+Roll: -2.823674
+Pitch: 1.148110
+Yaw: -0.129979
+Roll: -2.825690
+Pitch: 1.147106
+Yaw: -0.131131
+Roll: -2.825690
+Pitch: 1.147106
+Yaw: -0.131131
+Roll: -2.833956
+Pitch: 1.147622
+Yaw: -0.128350
+Roll: -2.833956
+Pitch: 1.147622
+Yaw: -0.128350
+Roll: -2.825159
+Pitch: 1.146692
+Yaw: -0.130675
+Roll: -2.825159
+Pitch: 1.146692
+Yaw: -0.130675
+Roll: -2.825084
+Pitch: 1.146820
+Yaw: -0.130621
+Roll: -2.825084
+Pitch: 1.146820
+Yaw: -0.130621
+Roll: -2.822587
+Pitch: 1.147435
+Yaw: -0.129943
+Roll: -2.822587
+Pitch: 1.147435
+Yaw: -0.129943
+Roll: -2.822491
+Pitch: 1.149200
+Yaw: -0.128320
+Roll: -2.822491
+Pitch: 1.149200
+Yaw: -0.128320
+Roll: -2.823432
+Pitch: 1.151286
+Yaw: -0.125808
+Roll: -2.823432
+Pitch: 1.151286
+Yaw: -0.125808
+Roll: -2.829065
+Pitch: 1.153365
+Yaw: -0.122383
+Roll: -2.829065
+Pitch: 1.153365
+Yaw: -0.122383
+Roll: -2.825667
+Pitch: 1.152876
+Yaw: -0.123779
+Roll: -2.825667
+Pitch: 1.152876
+Yaw: -0.123779
+Roll: -2.825315
+Pitch: 1.154200
+Yaw: -0.122577
+Roll: -2.825315
+Pitch: 1.154200
+Yaw: -0.122577
+Roll: -2.820642
+Pitch: 1.156281
+Yaw: -0.122879
+Roll: -2.820642
+Pitch: 1.156281
+Yaw: -0.122879
+Roll: -2.820882
+Pitch: 1.157522
+Yaw: -0.121370
+Roll: -2.820882
+Pitch: 1.157522
+Yaw: -0.121370
+Roll: -2.821876
+Pitch: 1.158142
+Yaw: -0.120698
+Roll: -2.821876
+Pitch: 1.158142
+Yaw: -0.120698
+Roll: -2.819337
+Pitch: 1.161176
+Yaw: -0.120872
+Roll: -2.819337
+Pitch: 1.161176
+Yaw: -0.120872
+Roll: -2.817599
+Pitch: 1.160982
+Yaw: -0.121698
+Roll: -2.817599
+Pitch: 1.160982
+Yaw: -0.121698
+Roll: -2.816947
+Pitch: 1.160483
+Yaw: -0.122198
+Roll: -2.816947
+Pitch: 1.160483
+Yaw: -0.122198
+Roll: -2.810588
+Pitch: 1.159938
+Yaw: -0.125016
+Roll: -2.810588
+Pitch: 1.159938
+Yaw: -0.125016
+Roll: -2.810496
+Pitch: 1.159932
+Yaw: -0.125055
+Roll: -2.810496
+Pitch: 1.159932
+Yaw: -0.125055
+Roll: -2.814860
+Pitch: 1.159784
+Yaw: -0.123518
+Roll: -2.814860
+Pitch: 1.159784
+Yaw: -0.123518
+Roll: -2.812374
+Pitch: 1.159523
+Yaw: -0.124790
+Roll: -2.812374
+Pitch: 1.159523
+Yaw: -0.124790
+Roll: -2.812017
+Pitch: 1.159101
+Yaw: -0.125094
+Roll: -2.812017
+Pitch: 1.159101
+Yaw: -0.125094
+Roll: -2.809005
+Pitch: 1.158730
+Yaw: -0.126957
+Roll: -2.809005
+Pitch: 1.158730
+Yaw: -0.126957
+Roll: -2.803156
+Pitch: 1.156632
+Yaw: -0.130091
+Roll: -2.803156
+Pitch: 1.156632
+Yaw: -0.130091
+Roll: -2.807760
+Pitch: 1.158123
+Yaw: -0.127838
+Roll: -2.807760
+Pitch: 1.158123
+Yaw: -0.127838
+Roll: -2.806680
+Pitch: 1.157784
+Yaw: -0.128398
+Roll: -2.806680
+Pitch: 1.157784
+Yaw: -0.128398
+Roll: -2.803980
+Pitch: 1.156936
+Yaw: -0.129748
+Roll: -2.803980
+Pitch: 1.156936
+Yaw: -0.129748
+Roll: -2.805325
+Pitch: 1.156659
+Yaw: -0.129279
+Roll: -2.805325
+Pitch: 1.156659
+Yaw: -0.129279
+Roll: -2.801221
+Pitch: 1.155740
+Yaw: -0.131277
+Roll: -2.801221
+Pitch: 1.155740
+Yaw: -0.131277
+Roll: -2.798872
+Pitch: 1.156480
+Yaw: -0.131308
+Roll: -2.798872
+Pitch: 1.156480
+Yaw: -0.131308
+Roll: -2.797007
+Pitch: 1.156566
+Yaw: -0.131704
+Roll: -2.797007
+Pitch: 1.156566
+Yaw: -0.131704
+Roll: -2.795388
+Pitch: 1.156149
+Yaw: -0.132278
+Roll: -2.795388
+Pitch: 1.156149
+Yaw: -0.132278
+Roll: -2.794074
+Pitch: 1.156546
+Yaw: -0.132408
+Roll: -2.794074
+Pitch: 1.156546
+Yaw: -0.132408
+Roll: -2.791393
+Pitch: 1.155611
+Yaw: -0.133834
+Roll: -2.791393
+Pitch: 1.155611
+Yaw: -0.133834
+Roll: -2.793324
+Pitch: 1.157372
+Yaw: -0.132598
+Roll: -2.793324
+Pitch: 1.157372
+Yaw: -0.132598
+Roll: -2.795126
+Pitch: 1.156351
+Yaw: -0.132099
+Roll: -2.795126
+Pitch: 1.156351
+Yaw: -0.132099
+Roll: -2.795856
+Pitch: 1.158059
+Yaw: -0.131305
+Roll: -2.795856
+Pitch: 1.158059
+Yaw: -0.131305
+Roll: -2.796315
+Pitch: 1.159707
+Yaw: -0.130620
+Roll: -2.796315
+Pitch: 1.159707
+Yaw: -0.130620
+Roll: -2.797280
+Pitch: 1.162226
+Yaw: -0.129022
+Roll: -2.797280
+Pitch: 1.162226
+Yaw: -0.129022
+Roll: -2.798837
+Pitch: 1.168415
+Yaw: -0.125148
+Roll: -2.798837
+Pitch: 1.168415
+Yaw: -0.125148
+Roll: -2.800157
+Pitch: 1.167666
+Yaw: -0.124864
+Roll: -2.800157
+Pitch: 1.167666
+Yaw: -0.124864
+Roll: -2.801290
+Pitch: 1.168217
+Yaw: -0.123894
+Roll: -2.801290
+Pitch: 1.168217
+Yaw: -0.123894
+Roll: -2.806441
+Pitch: 1.167718
+Yaw: -0.122753
+Roll: -2.806441
+Pitch: 1.167718
+Yaw: -0.122753
+Roll: -2.809164
+Pitch: 1.167160
+Yaw: -0.121502
+Roll: -2.809164
+Pitch: 1.167160
+Yaw: -0.121502
+Roll: -2.808681
+Pitch: 1.166800
+Yaw: -0.121321
+Roll: -2.808681
+Pitch: 1.166800
+Yaw: -0.121321
+Roll: -2.813909
+Pitch: 1.168208
+Yaw: -0.118298
+Roll: -2.813909
+Pitch: 1.168208
+Yaw: -0.118298
+Roll: -2.815387
+Pitch: 1.168525
+Yaw: -0.117150
+Roll: -2.815387
+Pitch: 1.168525
+Yaw: -0.117150
+Roll: -2.817422
+Pitch: 1.168900
+Yaw: -0.116104
+Roll: -2.817422
+Pitch: 1.168900
+Yaw: -0.116104
+Roll: -2.819119
+Pitch: 1.169917
+Yaw: -0.114557
+Roll: -2.819119
+Pitch: 1.169917
+Yaw: -0.114557
+Roll: -2.818779
+Pitch: 1.169579
+Yaw: -0.114950
+Roll: -2.818779
+Pitch: 1.169579
+Yaw: -0.114950
+Roll: -2.818244
+Pitch: 1.169046
+Yaw: -0.114218
+Roll: -2.818244
+Pitch: 1.169046
+Yaw: -0.114218
+Roll: -2.824139
+Pitch: 1.169135
+Yaw: -0.109621
+Roll: -2.824139
+Pitch: 1.169135
+Yaw: -0.109621
+Roll: 3.126068
+Pitch: 1.185196
+Yaw: 0.063221
+Roll: 3.126068
+Pitch: 1.185196
+Yaw: 0.063221
+Roll: 2.866153
+Pitch: 1.155138
+Yaw: 0.209785
+Roll: 2.866153
+Pitch: 1.155138
+Yaw: 0.209785
+Roll: 2.898402
+Pitch: 1.111293
+Yaw: 0.185676
+Roll: 2.898402
+Pitch: 1.111293
+Yaw: 0.185676
+Roll: 2.899116
+Pitch: 1.111017
+Yaw: 0.185110
+Roll: 2.899116
+Pitch: 1.111017
+Yaw: 0.185110
+Roll: 2.914613
+Pitch: 1.108318
+Yaw: 0.167112
+Roll: 2.914613
+Pitch: 1.108318
+Yaw: 0.167112
+Roll: 2.912508
+Pitch: 1.107733
+Yaw: 0.165925
+Roll: 2.912508
+Pitch: 1.107733
+Yaw: 0.165925
+Roll: 2.922688
+Pitch: 1.102726
+Yaw: 0.152339
+Roll: 2.922688
+Pitch: 1.102726
+Yaw: 0.152339
+Roll: 2.937198
+Pitch: 1.099382
+Yaw: 0.135827
+Roll: 2.937198
+Pitch: 1.099382
+Yaw: 0.135827
+Roll: 2.943241
+Pitch: 1.099810
+Yaw: 0.120972
+Roll: 2.943241
+Pitch: 1.099810
+Yaw: 0.120972
+Roll: 2.970104
+Pitch: 1.099593
+Yaw: 0.100019
+Roll: 2.970104
+Pitch: 1.099593
+Yaw: 0.100019
+Roll: 2.986529
+Pitch: 1.100139
+Yaw: 0.084877
+Roll: 2.986529
+Pitch: 1.100139
+Yaw: 0.084877
+Roll: 3.015094
+Pitch: 1.107852
+Yaw: 0.066978
+Roll: 3.015094
+Pitch: 1.107852
+Yaw: 0.066978
+Roll: 3.047663
+Pitch: 1.116060
+Yaw: 0.059361
+Roll: 3.047663
+Pitch: 1.116060
+Yaw: 0.059361
+Roll: 3.134349
+Pitch: 1.177225
+Yaw: 0.048808
+Roll: 3.134349
+Pitch: 1.177225
+Yaw: 0.048808
+Roll: -2.894430
+Pitch: 1.357638
+Yaw: 0.016676
+Roll: -2.894430
+Pitch: 1.357638
+Yaw: 0.016676
+Roll: -2.949471
+Pitch: 1.431077
+Yaw: 0.022770
+Roll: -2.949471
+Pitch: 1.431077
+Yaw: 0.022770
+Roll: -2.960175
+Pitch: 1.441495
+Yaw: 0.023019
+Roll: -2.960175
+Pitch: 1.441495
+Yaw: 0.023019
+Roll: -3.016703
+Pitch: 1.540634
+Yaw: 0.007386
+Roll: -3.016703
+Pitch: 1.540634
+Yaw: 0.007386
+Roll: 0.144458
+Pitch: 1.560807
+Yaw: -0.002283
+Roll: 0.144458
+Pitch: 1.560807
+Yaw: -0.002283
+Roll: 0.074555
+Pitch: 1.537572
+Yaw: -0.009593
+Roll: 0.074555
+Pitch: 1.537572
+Yaw: -0.009593
+Roll: -0.007538
+Pitch: 1.498205
+Yaw: -0.025856
+Roll: -0.007538
+Pitch: 1.498205
+Yaw: -0.025856
+Roll: 0.034691
+Pitch: 1.480926
+Yaw: -0.027172
+Roll: 0.034691
+Pitch: 1.480926
+Yaw: -0.027172
+Roll: 0.040710
+Pitch: 1.471335
+Yaw: -0.027338
+Roll: 0.040710
+Pitch: 1.471335
+Yaw: -0.027338
+Roll: 0.017756
+Pitch: 1.419656
+Yaw: -0.034855
+Roll: 0.017756
+Pitch: 1.419656
+Yaw: -0.034855
+Roll: 0.175452
+Pitch: 1.346834
+Yaw: 0.005095
+Roll: 0.175452
+Pitch: 1.346834
+Yaw: 0.005095
+Roll: 0.249909
+Pitch: 1.314395
+Yaw: 0.054553
+Roll: 0.249909
+Pitch: 1.314395
+Yaw: 0.054553
+Roll: 0.304097
+Pitch: 1.322241
+Yaw: 0.080457
+Roll: 0.304097
+Pitch: 1.322241
+Yaw: 0.080457
+Roll: 0.250972
+Pitch: 1.343694
+Yaw: 0.061350
+Roll: 0.250972
+Pitch: 1.343694
+Yaw: 0.061350
+Roll: 0.093820
+Pitch: 1.356558
+Yaw: 0.013773
+Roll: 0.093820
+Pitch: 1.356558
+Yaw: 0.013773
+Roll: -0.110796
+Pitch: 1.342031
+Yaw: -0.052479
+Roll: -0.110796
+Pitch: 1.342031
+Yaw: -0.052479
+Roll: -0.248540
+Pitch: 1.373679
+Yaw: -0.092116
+Roll: -0.248540
+Pitch: 1.373679
+Yaw: -0.092116
+Roll: -0.560028
+Pitch: 1.436437
+Yaw: -0.111618
+Roll: -0.560028
+Pitch: 1.436437
+Yaw: -0.111618
+Roll: -1.697126
+Pitch: 1.428602
+Yaw: -0.133807
+Roll: -1.697126
+Pitch: 1.428602
+Yaw: -0.133807
+Roll: -2.092909
+Pitch: 1.344855
+Yaw: -0.151381
+Roll: -2.092909
+Pitch: 1.344855
+Yaw: -0.151381
+Roll: -2.169998
+Pitch: 1.356428
+Yaw: -0.130352
+Roll: -2.169998
+Pitch: 1.356428
+Yaw: -0.130352
+Roll: -2.300324
+Pitch: 1.384093
+Yaw: -0.096217
+Roll: -2.300324
+Pitch: 1.384093
+Yaw: -0.096217
+Roll: -2.277596
+Pitch: 1.320518
+Yaw: -0.143945
+Roll: -2.277596
+Pitch: 1.320518
+Yaw: -0.143945
+Roll: -2.327160
+Pitch: 1.270108
+Yaw: -0.167537
+Roll: -2.327160
+Pitch: 1.270108
+Yaw: -0.167537
+Roll: -2.391348
+Pitch: 1.250050
+Yaw: -0.166946
+Roll: -2.391348
+Pitch: 1.250050
+Yaw: -0.166946
+Roll: -2.347901
+Pitch: 1.265398
+Yaw: -0.180586
+Roll: -2.347901
+Pitch: 1.265398
+Yaw: -0.180586
+Roll: -2.159970
+Pitch: 1.353723
+Yaw: -0.165335
+Roll: -2.159970
+Pitch: 1.353723
+Yaw: -0.165335
+Roll: -1.696714
+Pitch: 1.427411
+Yaw: -0.141038
+Roll: -1.696714
+Pitch: 1.427411
+Yaw: -0.141038
+Roll: -1.467019
+Pitch: 1.440320
+Yaw: -0.129903
+Roll: -1.467019
+Pitch: 1.440320
+Yaw: -0.129903
+Roll: -1.423822
+Pitch: 1.448583
+Yaw: -0.120633
+Roll: -1.423822
+Pitch: 1.448583
+Yaw: -0.120633
+Roll: -1.394005
+Pitch: 1.451614
+Yaw: -0.117211
+Roll: -1.394005
+Pitch: 1.451614
+Yaw: -0.117211
+Roll: -1.651745
+Pitch: 1.482466
+Yaw: -0.088101
+Roll: -1.651745
+Pitch: 1.482466
+Yaw: -0.088101
+Roll: -2.117672
+Pitch: 1.497378
+Yaw: -0.061973
+Roll: -2.117672
+Pitch: 1.497378
+Yaw: -0.061973
+Roll: -2.094378
+Pitch: 1.507275
+Yaw: -0.051060
+Roll: -2.094378
+Pitch: 1.507275
+Yaw: -0.051060
+Roll: -2.030819
+Pitch: 1.511235
+Yaw: -0.043296
+Roll: -2.030819
+Pitch: 1.511235
+Yaw: -0.043296
+Roll: -2.494785
+Pitch: 1.450587
+Yaw: -0.032439
+Roll: -2.494785
+Pitch: 1.450587
+Yaw: -0.032439
+Roll: -3.038457
+Pitch: 1.436859
+Yaw: 0.035845
+Roll: -3.038457
+Pitch: 1.436859
+Yaw: 0.035845
+Roll: -3.130511
+Pitch: 1.366688
+Yaw: 0.056580
+Roll: -3.130511
+Pitch: 1.366688
+Yaw: 0.056580
+Roll: -3.084410
+Pitch: 1.282426
+Yaw: 0.019592
+Roll: -3.084410
+Pitch: 1.282426
+Yaw: 0.019592
+Roll: 2.970940
+Pitch: 1.252753
+Yaw: 0.017245
+Roll: 2.970940
+Pitch: 1.252753
+Yaw: 0.017245
+Roll: 2.359578
+Pitch: 1.363593
+Yaw: 0.107094
+Roll: 2.359578
+Pitch: 1.363593
+Yaw: 0.107094
+Roll: 1.374779
+Pitch: 1.332009
+Yaw: 0.248653
+Roll: 1.374779
+Pitch: 1.332009
+Yaw: 0.248653
+Roll: 1.016073
+Pitch: 1.243479
+Yaw: 0.324154
+Roll: 1.016073
+Pitch: 1.243479
+Yaw: 0.324154
+Roll: 0.859929
+Pitch: 1.180598
+Yaw: 0.327052
+Roll: 0.859929
+Pitch: 1.180598
+Yaw: 0.327052
+Roll: 0.846705
+Pitch: 1.187325
+Yaw: 0.266213
+Roll: 0.846705
+Pitch: 1.187325
+Yaw: 0.266213
+Roll: 0.995983
+Pitch: 1.273123
+Yaw: 0.203415
+Roll: 0.995983
+Pitch: 1.273123
+Yaw: 0.203415
+Roll: 1.239484
+Pitch: 1.390504
+Yaw: 0.147124
+Roll: 1.239484
+Pitch: 1.390504
+Yaw: 0.147124
+Roll: -2.760279
+Pitch: 1.439147
+Yaw: 0.006251
+Roll: -2.760279
+Pitch: 1.439147
+Yaw: 0.006251
+Roll: -2.369339
+Pitch: 1.345371
+Yaw: -0.089175
+Roll: -2.369339
+Pitch: 1.345371
+Yaw: -0.089175
+Roll: -2.146815
+Pitch: 1.267826
+Yaw: -0.183782
+Roll: -2.146815
+Pitch: 1.267826
+Yaw: -0.183782
+Roll: -2.209769
+Pitch: 1.199687
+Yaw: -0.214671
+Roll: -2.209769
+Pitch: 1.199687
+Yaw: -0.214671
+Roll: -2.324963
+Pitch: 1.110294
+Yaw: -0.255866
+Roll: -2.324963
+Pitch: 1.110294
+Yaw: -0.255866
+Roll: -2.411116
+Pitch: 1.064668
+Yaw: -0.296929
+Roll: -2.411116
+Pitch: 1.064668
+Yaw: -0.296929
+Roll: -2.459588
+Pitch: 1.081634
+Yaw: -0.280691
+Roll: -2.459588
+Pitch: 1.081634
+Yaw: -0.280691
+Roll: -2.502960
+Pitch: 1.074512
+Yaw: -0.255293
+Roll: -2.502960
+Pitch: 1.074512
+Yaw: -0.255293
+Roll: -2.522664
+Pitch: 1.078965
+Yaw: -0.238357
+Roll: -2.522664
+Pitch: 1.078965
+Yaw: -0.238357
+Roll: -2.531039
+Pitch: 1.079010
+Yaw: -0.233067
+Roll: -2.531039
+Pitch: 1.079010
+Yaw: -0.233067
+Roll: -2.533510
+Pitch: 1.079805
+Yaw: -0.232212
+Roll: -2.533510
+Pitch: 1.079805
+Yaw: -0.232212
+Roll: -2.538268
+Pitch: 1.078836
+Yaw: -0.231106
+Roll: -2.538268
+Pitch: 1.078836
+Yaw: -0.231106
+Roll: -2.542894
+Pitch: 1.078432
+Yaw: -0.229491
+Roll: -2.542894
+Pitch: 1.078432
+Yaw: -0.229491
+Roll: -2.547931
+Pitch: 1.077841
+Yaw: -0.228213
+Roll: -2.547931
+Pitch: 1.077841
+Yaw: -0.228213
+Roll: -2.552577
+Pitch: 1.077827
+Yaw: -0.226674
+Roll: -2.552577
+Pitch: 1.077827
+Yaw: -0.226674
+Roll: -2.558332
+Pitch: 1.078266
+Yaw: -0.224711
+Roll: -2.558332
+Pitch: 1.078266
+Yaw: -0.224711
+Roll: -2.560814
+Pitch: 1.079417
+Yaw: -0.221878
+Roll: -2.560814
+Pitch: 1.079417
+Yaw: -0.221878
+Roll: -2.568762
+Pitch: 1.077134
+Yaw: -0.216653
+Roll: -2.568762
+Pitch: 1.077134
+Yaw: -0.216653
+Roll: -2.568768
+Pitch: 1.079603
+Yaw: -0.211749
+Roll: -2.568768
+Pitch: 1.079603
+Yaw: -0.211749
+Roll: -2.559791
+Pitch: 1.079812
+Yaw: -0.221955
+Roll: -2.559791
+Pitch: 1.079812
+Yaw: -0.221955
+Roll: -2.559370
+Pitch: 1.075268
+Yaw: -0.222294
+Roll: -2.559370
+Pitch: 1.075268
+Yaw: -0.222294
+Roll: -2.557442
+Pitch: 1.074314
+Yaw: -0.224197
+Roll: -2.557442
+Pitch: 1.074314
+Yaw: -0.224197
+Roll: -2.547209
+Pitch: 1.074919
+Yaw: -0.232037
+Roll: -2.547209
+Pitch: 1.074919
+Yaw: -0.232037
+Roll: -2.543644
+Pitch: 1.073707
+Yaw: -0.234803
+Roll: -2.543644
+Pitch: 1.073707
+Yaw: -0.234803
+Roll: -2.543638
+Pitch: 1.074059
+Yaw: -0.234616
+Roll: -2.543638
+Pitch: 1.074059
+Yaw: -0.234616
+Roll: -2.543727
+Pitch: 1.072568
+Yaw: -0.235146
+Roll: -2.543727
+Pitch: 1.072568
+Yaw: -0.235146
+Roll: -2.543327
+Pitch: 1.072925
+Yaw: -0.234668
+Roll: -2.543327
+Pitch: 1.072925
+Yaw: -0.234668
+Roll: -2.544989
+Pitch: 1.072913
+Yaw: -0.233751
+Roll: -2.544989
+Pitch: 1.072913
+Yaw: -0.233751
+Roll: -2.544368
+Pitch: 1.073231
+Yaw: -0.233131
+Roll: -2.544368
+Pitch: 1.073231
+Yaw: -0.233131
+Roll: -2.546899
+Pitch: 1.072808
+Yaw: -0.232413
+Roll: -2.546899
+Pitch: 1.072808
+Yaw: -0.232413
+Roll: -2.545511
+Pitch: 1.072514
+Yaw: -0.232895
+Roll: -2.545511
+Pitch: 1.072514
+Yaw: -0.232895
+Roll: -2.543164
+Pitch: 1.073487
+Yaw: -0.232777
+Roll: -2.543164
+Pitch: 1.073487
+Yaw: -0.232777
+Roll: -2.540754
+Pitch: 1.074017
+Yaw: -0.233560
+Roll: -2.540754
+Pitch: 1.074017
+Yaw: -0.233560
+Roll: -2.541574
+Pitch: 1.073619
+Yaw: -0.233632
+Roll: -2.541574
+Pitch: 1.073619
+Yaw: -0.233632
+Roll: -2.541297
+Pitch: 1.073776
+Yaw: -0.233560
+Roll: -2.541297
+Pitch: 1.073776
+Yaw: -0.233560
+Roll: -2.540874
+Pitch: 1.073809
+Yaw: -0.233743
+Roll: -2.540874
+Pitch: 1.073809
+Yaw: -0.233743
+Roll: -2.541630
+Pitch: 1.074376
+Yaw: -0.233354
+Roll: -2.541630
+Pitch: 1.074376
+Yaw: -0.233354
+Roll: -2.541614
+Pitch: 1.073829
+Yaw: -0.233942
+Roll: -2.541614
+Pitch: 1.073829
+Yaw: -0.233942
+Roll: -2.542111
+Pitch: 1.073391
+Yaw: -0.233861
+Roll: -2.542111
+Pitch: 1.073391
+Yaw: -0.233861
+Roll: -2.542156
+Pitch: 1.073378
+Yaw: -0.233878
+Roll: -2.542156
+Pitch: 1.073378
+Yaw: -0.233878
+Roll: -2.544715
+Pitch: 1.073337
+Yaw: -0.233017
+Roll: -2.544715
+Pitch: 1.073337
+Yaw: -0.233017
+Roll: -2.543890
+Pitch: 1.073060
+Yaw: -0.233460
+Roll: -2.543890
+Pitch: 1.073060
+Yaw: -0.233460
+Roll: -2.542632
+Pitch: 1.073568
+Yaw: -0.233694
+Roll: -2.542632
+Pitch: 1.073568
+Yaw: -0.233694
+Roll: -2.545524
+Pitch: 1.073729
+Yaw: -0.232788
+Roll: -2.545524
+Pitch: 1.073729
+Yaw: -0.232788
+Roll: -2.545145
+Pitch: 1.073104
+Yaw: -0.232548
+Roll: -2.545145
+Pitch: 1.073104
+Yaw: -0.232548
+Roll: -2.544747
+Pitch: 1.073335
+Yaw: -0.232774
+Roll: -2.544747
+Pitch: 1.073335
+Yaw: -0.232774
+Roll: -2.545094
+Pitch: 1.073397
+Yaw: -0.232430
+Roll: -2.545094
+Pitch: 1.073397
+Yaw: -0.232430
+Roll: -2.545416
+Pitch: 1.073267
+Yaw: -0.232248
+Roll: -2.545416
+Pitch: 1.073267
+Yaw: -0.232248
+Roll: -2.544417
+Pitch: 1.073337
+Yaw: -0.232758
+Roll: -2.544417
+Pitch: 1.073337
+Yaw: -0.232758
+Roll: -2.544157
+Pitch: 1.072349
+Yaw: -0.232963
+Roll: -2.544157
+Pitch: 1.072349
+Yaw: -0.232963
+Roll: -2.543858
+Pitch: 1.073062
+Yaw: -0.232701
+Roll: -2.543858
+Pitch: 1.073062
+Yaw: -0.232701
+Roll: -2.541704
+Pitch: 1.072755
+Yaw: -0.233313
+Roll: -2.541704
+Pitch: 1.072755
+Yaw: -0.233313
+Roll: -2.543396
+Pitch: 1.073401
+Yaw: -0.232963
+Roll: -2.543396
+Pitch: 1.073401
+Yaw: -0.232963
+Roll: -2.544914
+Pitch: 1.072980
+Yaw: -0.232261
+Roll: -2.544914
+Pitch: 1.072980
+Yaw: -0.232261
+Roll: -2.545291
+Pitch: 1.072332
+Yaw: -0.232700
+Roll: -2.545291
+Pitch: 1.072332
+Yaw: -0.232700
+Roll: -2.545297
+Pitch: 1.072322
+Yaw: -0.232705
+Roll: -2.545297
+Pitch: 1.072322
+Yaw: -0.232705
+Roll: -2.544230
+Pitch: 1.072794
+Yaw: -0.232522
+Roll: -2.544230
+Pitch: 1.072794
+Yaw: -0.232522
+Roll: -2.543031
+Pitch: 1.072016
+Yaw: -0.233149
+Roll: -2.543031
+Pitch: 1.072016
+Yaw: -0.233149
+Roll: -2.543554
+Pitch: 1.071899
+Yaw: -0.233071
+Roll: -2.543554
+Pitch: 1.071899
+Yaw: -0.233071
+Roll: -2.543215
+Pitch: 1.071655
+Yaw: -0.233181
+Roll: -2.543215
+Pitch: 1.071655
+Yaw: -0.233181
+Roll: -2.543210
+Pitch: 1.071647
+Yaw: -0.233183
+Roll: -2.543210
+Pitch: 1.071647
+Yaw: -0.233183
+Roll: -2.543087
+Pitch: 1.071621
+Yaw: -0.233232
+Roll: -2.543087
+Pitch: 1.071621
+Yaw: -0.233232
+Roll: -2.545317
+Pitch: 1.072267
+Yaw: -0.232035
+Roll: -2.545317
+Pitch: 1.072267
+Yaw: -0.232035
+Roll: -2.543089
+Pitch: 1.072683
+Yaw: -0.232613
+Roll: -2.543089
+Pitch: 1.072683
+Yaw: -0.232613
+Roll: -2.542542
+Pitch: 1.072032
+Yaw: -0.232833
+Roll: -2.542542
+Pitch: 1.072032
+Yaw: -0.232833
+Roll: -2.543024
+Pitch: 1.071977
+Yaw: -0.232741
+Roll: -2.543024
+Pitch: 1.071977
+Yaw: -0.232741
+Roll: -2.543960
+Pitch: 1.071829
+Yaw: -0.232586
+Roll: -2.543960
+Pitch: 1.071829
+Yaw: -0.232586
+Roll: -2.542970
+Pitch: 1.072844
+Yaw: -0.232252
+Roll: -2.542970
+Pitch: 1.072844
+Yaw: -0.232252
+Roll: -2.542030
+Pitch: 1.073419
+Yaw: -0.232544
+Roll: -2.542030
+Pitch: 1.073419
+Yaw: -0.232544
+Roll: -2.540802
+Pitch: 1.072659
+Yaw: -0.233495
+Roll: -2.540802
+Pitch: 1.072659
+Yaw: -0.233495
+Roll: -2.540808
+Pitch: 1.072648
+Yaw: -0.233506
+Roll: -2.540808
+Pitch: 1.072648
+Yaw: -0.233506
+Roll: -2.540874
+Pitch: 1.072617
+Yaw: -0.233515
+Roll: -2.540874
+Pitch: 1.072617
+Yaw: -0.233515
+Roll: -2.540883
+Pitch: 1.072605
+Yaw: -0.233527
+Roll: -2.540883
+Pitch: 1.072605
+Yaw: -0.233527
+Roll: -2.539697
+Pitch: 1.073611
+Yaw: -0.233247
+Roll: -2.539697
+Pitch: 1.073611
+Yaw: -0.233247
+Roll: -2.533549
+Pitch: 1.081452
+Yaw: -0.231303
+Roll: -2.533549
+Pitch: 1.081452
+Yaw: -0.231303
+Roll: -2.539484
+Pitch: 1.087440
+Yaw: -0.222692
+Roll: -2.539484
+Pitch: 1.087440
+Yaw: -0.222692
+Roll: -2.539915
+Pitch: 1.088082
+Yaw: -0.222361
+Roll: -2.539915
+Pitch: 1.088082
+Yaw: -0.222361
+Roll: -2.539948
+Pitch: 1.088152
+Yaw: -0.222314
+Roll: -2.539948
+Pitch: 1.088152
+Yaw: -0.222314
+Roll: -2.559596
+Pitch: 1.090654
+Yaw: -0.209588
+Roll: -2.559596
+Pitch: 1.090654
+Yaw: -0.209588
+Roll: -2.568206
+Pitch: 1.094694
+Yaw: -0.203361
+Roll: -2.568206
+Pitch: 1.094694
+Yaw: -0.203361
+Roll: -2.571706
+Pitch: 1.095795
+Yaw: -0.202389
+Roll: -2.571706
+Pitch: 1.095795
+Yaw: -0.202389
+Roll: -2.576915
+Pitch: 1.095675
+Yaw: -0.201618
+Roll: -2.576915
+Pitch: 1.095675
+Yaw: -0.201618
+Roll: -2.578433
+Pitch: 1.094369
+Yaw: -0.202305
+Roll: -2.578433
+Pitch: 1.094369
+Yaw: -0.202305
+Roll: -2.581352
+Pitch: 1.094732
+Yaw: -0.201476
+Roll: -2.581352
+Pitch: 1.094732
+Yaw: -0.201476
+Roll: -2.586202
+Pitch: 1.094807
+Yaw: -0.200317
+Roll: -2.586202
+Pitch: 1.094807
+Yaw: -0.200317
+Roll: -2.586073
+Pitch: 1.094995
+Yaw: -0.200087
+Roll: -2.586073
+Pitch: 1.094995
+Yaw: -0.200087
+Roll: -2.586139
+Pitch: 1.095507
+Yaw: -0.199697
+Roll: -2.586139
+Pitch: 1.095507
+Yaw: -0.199697
+Roll: -2.585991
+Pitch: 1.095434
+Yaw: -0.199742
+Roll: -2.585991
+Pitch: 1.095434
+Yaw: -0.199742
+Roll: -2.587640
+Pitch: 1.096599
+Yaw: -0.198854
+Roll: -2.587640
+Pitch: 1.096599
+Yaw: -0.198854
+Roll: -2.589430
+Pitch: 1.096413
+Yaw: -0.198747
+Roll: -2.589430
+Pitch: 1.096413
+Yaw: -0.198747
+Roll: -2.588519
+Pitch: 1.097162
+Yaw: -0.198612
+Roll: -2.588519
+Pitch: 1.097162
+Yaw: -0.198612
+Roll: -2.589104
+Pitch: 1.098592
+Yaw: -0.197566
+Roll: -2.589104
+Pitch: 1.098592
+Yaw: -0.197566
+Roll: -2.589449
+Pitch: 1.099120
+Yaw: -0.197500
+Roll: -2.589449
+Pitch: 1.099120
+Yaw: -0.197500
+Roll: -2.588637
+Pitch: 1.098595
+Yaw: -0.197866
+Roll: -2.588637
+Pitch: 1.098595
+Yaw: -0.197866
+Roll: -2.589311
+Pitch: 1.098248
+Yaw: -0.197699
+Roll: -2.589311
+Pitch: 1.098248
+Yaw: -0.197699
+Roll: -2.591381
+Pitch: 1.098039
+Yaw: -0.197327
+Roll: -2.591381
+Pitch: 1.098039
+Yaw: -0.197327
+Roll: -2.591398
+Pitch: 1.098034
+Yaw: -0.197321
+Roll: -2.591398
+Pitch: 1.098034
+Yaw: -0.197321
+Roll: -2.591002
+Pitch: 1.098299
+Yaw: -0.197177
+Roll: -2.591002
+Pitch: 1.098299
+Yaw: -0.197177
+Roll: -2.590952
+Pitch: 1.097681
+Yaw: -0.197405
+Roll: -2.590952
+Pitch: 1.097681
+Yaw: -0.197405
+Roll: -2.590781
+Pitch: 1.097032
+Yaw: -0.197805
+Roll: -2.590781
+Pitch: 1.097032
+Yaw: -0.197805
+Roll: -2.588271
+Pitch: 1.097528
+Yaw: -0.198185
+Roll: -2.588271
+Pitch: 1.097528
+Yaw: -0.198185
+Roll: -2.595402
+Pitch: 1.099147
+Yaw: -0.195625
+Roll: -2.595402
+Pitch: 1.099147
+Yaw: -0.195625
+Roll: -2.601191
+Pitch: 1.099974
+Yaw: -0.193876
+Roll: -2.601191
+Pitch: 1.099974
+Yaw: -0.193876
+Roll: -2.600281
+Pitch: 1.097594
+Yaw: -0.195286
+Roll: -2.600281
+Pitch: 1.097594
+Yaw: -0.195286
+Roll: -2.599993
+Pitch: 1.098319
+Yaw: -0.195737
+Roll: -2.599993
+Pitch: 1.098319
+Yaw: -0.195737
+Roll: -2.599861
+Pitch: 1.097725
+Yaw: -0.196342
+Roll: -2.599861
+Pitch: 1.097725
+Yaw: -0.196342
+Roll: -2.603187
+Pitch: 1.096145
+Yaw: -0.195527
+Roll: -2.603187
+Pitch: 1.096145
+Yaw: -0.195527
+Roll: -2.604999
+Pitch: 1.093714
+Yaw: -0.199723
+Roll: -2.604999
+Pitch: 1.093714
+Yaw: -0.199723
+Roll: -2.597654
+Pitch: 1.086206
+Yaw: -0.213469
+Roll: -2.597654
+Pitch: 1.086206
+Yaw: -0.213469
+Roll: -2.601250
+Pitch: 1.086076
+Yaw: -0.209789
+Roll: -2.601250
+Pitch: 1.086076
+Yaw: -0.209789
+Roll: -2.616706
+Pitch: 1.091340
+Yaw: -0.193515
+Roll: -2.616706
+Pitch: 1.091340
+Yaw: -0.193515
+Roll: -2.619238
+Pitch: 1.092331
+Yaw: -0.192766
+Roll: -2.619238
+Pitch: 1.092331
+Yaw: -0.192766
+Roll: -2.619918
+Pitch: 1.091602
+Yaw: -0.194423
+Roll: -2.619918
+Pitch: 1.091602
+Yaw: -0.194423
+Roll: -2.620171
+Pitch: 1.091584
+Yaw: -0.194397
+Roll: -2.620171
+Pitch: 1.091584
+Yaw: -0.194397
+Roll: -2.622332
+Pitch: 1.091816
+Yaw: -0.194745
+Roll: -2.622332
+Pitch: 1.091816
+Yaw: -0.194745
+Roll: -2.629099
+Pitch: 1.097275
+Yaw: -0.182160
+Roll: -2.629099
+Pitch: 1.097275
+Yaw: -0.182160
+Roll: -2.632934
+Pitch: 1.099385
+Yaw: -0.180165
+Roll: -2.632934
+Pitch: 1.099385
+Yaw: -0.180165
+Roll: -2.629644
+Pitch: 1.100183
+Yaw: -0.181873
+Roll: -2.629644
+Pitch: 1.100183
+Yaw: -0.181873
+Roll: -2.628533
+Pitch: 1.101321
+Yaw: -0.181036
+Roll: -2.628533
+Pitch: 1.101321
+Yaw: -0.181036
+Roll: -2.626820
+Pitch: 1.100792
+Yaw: -0.181301
+Roll: -2.626820
+Pitch: 1.100792
+Yaw: -0.181301
+Roll: -2.627682
+Pitch: 1.108639
+Yaw: -0.178198
+Roll: -2.627682
+Pitch: 1.108639
+Yaw: -0.178198
+Roll: -2.626050
+Pitch: 1.108575
+Yaw: -0.178625
+Roll: -2.626050
+Pitch: 1.108575
+Yaw: -0.178625
+Roll: -2.626204
+Pitch: 1.109645
+Yaw: -0.178195
+Roll: -2.626204
+Pitch: 1.109645
+Yaw: -0.178195
+Roll: -2.627274
+Pitch: 1.109826
+Yaw: -0.177649
+Roll: -2.627274
+Pitch: 1.109826
+Yaw: -0.177649
+Roll: -2.627069
+Pitch: 1.110934
+Yaw: -0.177607
+Roll: -2.627069
+Pitch: 1.110934
+Yaw: -0.177607
+Roll: -2.624354
+Pitch: 1.110441
+Yaw: -0.178581
+Roll: -2.624354
+Pitch: 1.110441
+Yaw: -0.178581
+Roll: -2.624763
+Pitch: 1.109110
+Yaw: -0.179182
+Roll: -2.624763
+Pitch: 1.109110
+Yaw: -0.179182
+Roll: -2.626326
+Pitch: 1.108598
+Yaw: -0.178727
+Roll: -2.626326
+Pitch: 1.108598
+Yaw: -0.178727
+Roll: -2.624889
+Pitch: 1.106819
+Yaw: -0.179198
+Roll: -2.624889
+Pitch: 1.106819
+Yaw: -0.179198
+Roll: -2.627679
+Pitch: 1.105232
+Yaw: -0.179416
+Roll: -2.627679
+Pitch: 1.105232
+Yaw: -0.179416
+Roll: -2.625714
+Pitch: 1.105740
+Yaw: -0.179731
+Roll: -2.625714
+Pitch: 1.105740
+Yaw: -0.179731
+Roll: -2.624601
+Pitch: 1.106111
+Yaw: -0.179962
+Roll: -2.624601
+Pitch: 1.106111
+Yaw: -0.179962
+Roll: -2.624311
+Pitch: 1.106107
+Yaw: -0.180027
+Roll: -2.624311
+Pitch: 1.106107
+Yaw: -0.180027
+Roll: -2.624588
+Pitch: 1.106330
+Yaw: -0.179922
+Roll: -2.624588
+Pitch: 1.106330
+Yaw: -0.179922
+Roll: -2.624464
+Pitch: 1.105637
+Yaw: -0.180342
+Roll: -2.624464
+Pitch: 1.105637
+Yaw: -0.180342
+Roll: -2.623780
+Pitch: 1.107072
+Yaw: -0.179968
+Roll: -2.623780
+Pitch: 1.107072
+Yaw: -0.179968
+Roll: -2.623777
+Pitch: 1.106979
+Yaw: -0.180015
+Roll: -2.623777
+Pitch: 1.106979
+Yaw: -0.180015
+Roll: -2.625796
+Pitch: 1.106469
+Yaw: -0.179749
+Roll: -2.625796
+Pitch: 1.106469
+Yaw: -0.179749
+Roll: -2.633674
+Pitch: 1.102355
+Yaw: -0.182964
+Roll: -2.633674
+Pitch: 1.102355
+Yaw: -0.182964
+Roll: -2.635013
+Pitch: 1.104626
+Yaw: -0.178710
+Roll: -2.635013
+Pitch: 1.104626
+Yaw: -0.178710
+Roll: -2.632020
+Pitch: 1.104846
+Yaw: -0.181130
+Roll: -2.632020
+Pitch: 1.104846
+Yaw: -0.181130
+Roll: -2.624769
+Pitch: 1.101158
+Yaw: -0.190195
+Roll: -2.624769
+Pitch: 1.101158
+Yaw: -0.190195
+Roll: -2.617845
+Pitch: 1.092583
+Yaw: -0.203003
+Roll: -2.617845
+Pitch: 1.092583
+Yaw: -0.203003
+Roll: -2.595945
+Pitch: 1.081494
+Yaw: -0.224011
+Roll: -2.595945
+Pitch: 1.081494
+Yaw: -0.224011
+Roll: -2.595719
+Pitch: 1.081420
+Yaw: -0.224196
+Roll: -2.595719
+Pitch: 1.081420
+Yaw: -0.224196
+Roll: -2.583196
+Pitch: 1.082297
+Yaw: -0.228778
+Roll: -2.583196
+Pitch: 1.082297
+Yaw: -0.228778
+Roll: -2.578692
+Pitch: 1.083309
+Yaw: -0.228621
+Roll: -2.578692
+Pitch: 1.083309
+Yaw: -0.228621
+Roll: -2.578007
+Pitch: 1.084253
+Yaw: -0.225117
+Roll: -2.578007
+Pitch: 1.084253
+Yaw: -0.225117
+Roll: -2.578027
+Pitch: 1.084259
+Yaw: -0.225053
+Roll: -2.578027
+Pitch: 1.084259
+Yaw: -0.225053
+Roll: -2.621381
+Pitch: 1.097041
+Yaw: -0.188152
+Roll: -2.621381
+Pitch: 1.097041
+Yaw: -0.188152
+Roll: -2.627893
+Pitch: 1.101227
+Yaw: -0.181493
+Roll: -2.627893
+Pitch: 1.101227
+Yaw: -0.181493
+Roll: -2.629957
+Pitch: 1.103527
+Yaw: -0.181197
+Roll: -2.629957
+Pitch: 1.103527
+Yaw: -0.181197
+Roll: -2.628233
+Pitch: 1.101556
+Yaw: -0.181458
+Roll: -2.628233
+Pitch: 1.101556
+Yaw: -0.181458
+Roll: -2.628608
+Pitch: 1.101599
+Yaw: -0.181377
+Roll: -2.628608
+Pitch: 1.101599
+Yaw: -0.181377
+Roll: -2.627337
+Pitch: 1.102299
+Yaw: -0.181698
+Roll: -2.627337
+Pitch: 1.102299
+Yaw: -0.181698
+Roll: -2.625430
+Pitch: 1.102740
+Yaw: -0.182093
+Roll: -2.625430
+Pitch: 1.102740
+Yaw: -0.182093
+Roll: -2.627911
+Pitch: 1.102517
+Yaw: -0.181476
+Roll: -2.627911
+Pitch: 1.102517
+Yaw: -0.181476
+Roll: -2.625018
+Pitch: 1.103148
+Yaw: -0.182470
+Roll: -2.625018
+Pitch: 1.103148
+Yaw: -0.182470
+Roll: -2.621911
+Pitch: 1.101963
+Yaw: -0.184071
+Roll: -2.621911
+Pitch: 1.101963
+Yaw: -0.184071
+Roll: -2.618462
+Pitch: 1.101915
+Yaw: -0.184619
+Roll: -2.618462
+Pitch: 1.101915
+Yaw: -0.184619
+Roll: -2.616786
+Pitch: 1.101339
+Yaw: -0.185046
+Roll: -2.616786
+Pitch: 1.101339
+Yaw: -0.185046
+Roll: -2.617316
+Pitch: 1.100623
+Yaw: -0.184979
+Roll: -2.617316
+Pitch: 1.100623
+Yaw: -0.184979
+Roll: -2.615379
+Pitch: 1.100826
+Yaw: -0.185683
+Roll: -2.615379
+Pitch: 1.100826
+Yaw: -0.185683
+Roll: -2.612084
+Pitch: 1.100568
+Yaw: -0.186536
+Roll: -2.612084
+Pitch: 1.100568
+Yaw: -0.186536
+Roll: -2.613261
+Pitch: 1.099661
+Yaw: -0.186504
+Roll: -2.613261
+Pitch: 1.099661
+Yaw: -0.186504
+Roll: -2.613238
+Pitch: 1.099576
+Yaw: -0.186566
+Roll: -2.613238
+Pitch: 1.099576
+Yaw: -0.186566
+Roll: -2.607828
+Pitch: 1.099625
+Yaw: -0.187683
+Roll: -2.607828
+Pitch: 1.099625
+Yaw: -0.187683
+Roll: -2.602551
+Pitch: 1.100559
+Yaw: -0.188194
+Roll: -2.602551
+Pitch: 1.100559
+Yaw: -0.188194
+Roll: -2.603382
+Pitch: 1.101530
+Yaw: -0.187341
+Roll: -2.603382
+Pitch: 1.101530
+Yaw: -0.187341
+Roll: -2.602015
+Pitch: 1.102271
+Yaw: -0.187190
+D (122499) esp_netif_lwip: esp_netif_ip_lost_timer esp_netif:0x3ffc8db4[0m
+D (122499) esp_netif_lwip: if0x3ffc8db4 ip lost tmr: no need raise ip lost event[0m
+Roll: -2.602015
+Pitch: 1.102271
+Yaw: -0.187190
+Roll: -2.594336
+Pitch: 1.104537
+Yaw: -0.188268
+Roll: -2.594336
+Pitch: 1.104537
+Yaw: -0.188268
+Roll: -2.595287
+Pitch: 1.104926
+Yaw: -0.187746
+Roll: -2.595287
+Pitch: 1.104926
+Yaw: -0.187746
+Roll: -2.592842
+Pitch: 1.104041
+Yaw: -0.188896
+Roll: -2.592842
+Pitch: 1.104041
+Yaw: -0.188896
+Roll: -2.593524
+Pitch: 1.105125
+Yaw: -0.187742
+Roll: -2.593524
+Pitch: 1.105125
+Yaw: -0.187742
+Roll: -2.591479
+Pitch: 1.106867
+Yaw: -0.187592
+Roll: -2.591479
+Pitch: 1.106867
+Yaw: -0.187592
+Roll: -2.589087
+Pitch: 1.107129
+Yaw: -0.188000
+Roll: -2.589087
+Pitch: 1.107129
+Yaw: -0.188000
+Roll: -2.588591
+Pitch: 1.108079
+Yaw: -0.187744
+Roll: -2.588591
+Pitch: 1.108079
+Yaw: -0.187744
+Roll: -2.587758
+Pitch: 1.108387
+Yaw: -0.187818
+Roll: -2.587758
+Pitch: 1.108387
+Yaw: -0.187818
+Roll: -2.588043
+Pitch: 1.109139
+Yaw: -0.187095
+Roll: -2.588043
+Pitch: 1.109139
+Yaw: -0.187095
+Roll: -2.587472
+Pitch: 1.109648
+Yaw: -0.187268
+Roll: -2.587472
+Pitch: 1.109648
+Yaw: -0.187268
+Roll: -2.587826
+Pitch: 1.109893
+Yaw: -0.187074
+Roll: -2.587826
+Pitch: 1.109893
+Yaw: -0.187074
+Roll: -2.588168
+Pitch: 1.109112
+Yaw: -0.186932
+Roll: -2.588168
+Pitch: 1.109112
+Yaw: -0.186932
+Roll: -2.589209
+Pitch: 1.108029
+Yaw: -0.187334
+Roll: -2.589209
+Pitch: 1.108029
+Yaw: -0.187334
+Roll: -2.589414
+Pitch: 1.108944
+Yaw: -0.186737
+Roll: -2.589414
+Pitch: 1.108944
+Yaw: -0.186737
+Roll: -2.589464
+Pitch: 1.108189
+Yaw: -0.186998
+Roll: -2.589464
+Pitch: 1.108189
+Yaw: -0.186998
+Roll: -2.589446
+Pitch: 1.108191
+Yaw: -0.187007
+Roll: -2.589446
+Pitch: 1.108191
+Yaw: -0.187007
+Roll: -2.589441
+Pitch: 1.108203
+Yaw: -0.186980
+Roll: -2.589441
+Pitch: 1.108203
+Yaw: -0.186980
+Roll: -2.592762
+Pitch: 1.106298
+Yaw: -0.186544
+Roll: -2.592762
+Pitch: 1.106298
+Yaw: -0.186544
+Roll: -2.590000
+Pitch: 1.107299
+Yaw: -0.186963
+Roll: -2.590000
+Pitch: 1.107299
+Yaw: -0.186963
+Roll: -2.590630
+Pitch: 1.107902
+Yaw: -0.186578
+Roll: -2.590630
+Pitch: 1.107902
+Yaw: -0.186578
+Roll: -2.591463
+Pitch: 1.107179
+Yaw: -0.186702
+Roll: -2.591463
+Pitch: 1.107179
+Yaw: -0.186702
+Roll: -2.590290
+Pitch: 1.108484
+Yaw: -0.186741
+Roll: -2.590290
+Pitch: 1.108484
+Yaw: -0.186741
+Roll: -2.590239
+Pitch: 1.108673
+Yaw: -0.186681
+Roll: -2.590239
+Pitch: 1.108673
+Yaw: -0.186681
+Roll: -2.590817
+Pitch: 1.107423
+Yaw: -0.186737
+Roll: -2.590817
+Pitch: 1.107423
+Yaw: -0.186737
+Roll: -2.591333
+Pitch: 1.107701
+Yaw: -0.186359
+Roll: -2.591333
+Pitch: 1.107701
+Yaw: -0.186359
+Roll: -2.590645
+Pitch: 1.107601
+Yaw: -0.186283
+Roll: -2.590645
+Pitch: 1.107601
+Yaw: -0.186283
+Roll: -2.590570
+Pitch: 1.107276
+Yaw: -0.187110
+Roll: -2.590570
+Pitch: 1.107276
+Yaw: -0.187110
+Roll: -2.589122
+Pitch: 1.107353
+Yaw: -0.187736
+Roll: -2.589122
+Pitch: 1.107353
+Yaw: -0.187736
+Roll: -2.590399
+Pitch: 1.106979
+Yaw: -0.187341
+Roll: -2.590399
+Pitch: 1.106979
+Yaw: -0.187341
+Roll: -2.587480
+Pitch: 1.108436
+Yaw: -0.187759
+Roll: -2.587480
+Pitch: 1.108436
+Yaw: -0.187759
+Roll: -2.586997
+Pitch: 1.108194
+Yaw: -0.188198
+Roll: -2.586997
+Pitch: 1.108194
+Yaw: -0.188198
+Roll: -2.586872
+Pitch: 1.110121
+Yaw: -0.187423
+Roll: -2.586872
+Pitch: 1.110121
+Yaw: -0.187423
+Roll: -2.587073
+Pitch: 1.108889
+Yaw: -0.188000
+Roll: -2.587073
+Pitch: 1.108889
+Yaw: -0.188000
+Roll: -2.586366
+Pitch: 1.110115
+Yaw: -0.187518
+Roll: -2.586366
+Pitch: 1.110115
+Yaw: -0.187518
+Roll: -2.581966
+Pitch: 1.110388
+Yaw: -0.188594
+Roll: -2.581966
+Pitch: 1.110388
+Yaw: -0.188594
+Roll: -2.580171
+Pitch: 1.109167
+Yaw: -0.189739
+Roll: -2.580171
+Pitch: 1.109167
+Yaw: -0.189739
+Roll: -2.581806
+Pitch: 1.109009
+Yaw: -0.189241
+Roll: -2.581806
+Pitch: 1.109009
+Yaw: -0.189241
+Roll: -2.580642
+Pitch: 1.110000
+Yaw: -0.189156
+Roll: -2.580642
+Pitch: 1.110000
+Yaw: -0.189156
+Roll: -2.580417
+Pitch: 1.110522
+Yaw: -0.188984
+Roll: -2.580417
+Pitch: 1.110522
+Yaw: -0.188984
+Roll: -2.583047
+Pitch: 1.111218
+Yaw: -0.188044
+Roll: -2.583047
+Pitch: 1.111218
+Yaw: -0.188044
+Roll: -2.587136
+Pitch: 1.111843
+Yaw: -0.186822
+Roll: -2.587136
+Pitch: 1.111843
+Yaw: -0.186822
+Roll: -2.589197
+Pitch: 1.110718
+Yaw: -0.186812
+Roll: -2.589197
+Pitch: 1.110718
+Yaw: -0.186812
+Roll: -2.591748
+Pitch: 1.111431
+Yaw: -0.185699
+Roll: -2.591748
+Pitch: 1.111431
+Yaw: -0.185699
+Roll: -2.591947
+Pitch: 1.111693
+Yaw: -0.185881
+Roll: -2.591947
+Pitch: 1.111693
+Yaw: -0.185881
+Roll: -2.593749
+Pitch: 1.111796
+Yaw: -0.185052
+Roll: -2.593749
+Pitch: 1.111796
+Yaw: -0.185052
+Roll: -2.593028
+Pitch: 1.111948
+Yaw: -0.185418
+Roll: -2.593028
+Pitch: 1.111948
+Yaw: -0.185418
+Roll: -2.591357
+Pitch: 1.111449
+Yaw: -0.185603
+Roll: -2.591357
+Pitch: 1.111449
+Yaw: -0.185603
+Roll: -2.589213
+Pitch: 1.110750
+Yaw: -0.186625
+Roll: -2.589213
+Pitch: 1.110750
+Yaw: -0.186625
+Roll: -2.585108
+Pitch: 1.110881
+Yaw: -0.187836
+Roll: -2.585108
+Pitch: 1.110881
+Yaw: -0.187836
+Roll: -2.585292
+Pitch: 1.109622
+Yaw: -0.188237
+Roll: -2.585292
+Pitch: 1.109622
+Yaw: -0.188237
+Roll: -2.585046
+Pitch: 1.110213
+Yaw: -0.188023
+Roll: -2.585046
+Pitch: 1.110213
+Yaw: -0.188023
+Roll: -2.586287
+Pitch: 1.108785
+Yaw: -0.188168
+Roll: -2.586287
+Pitch: 1.108785
+Yaw: -0.188168
+Roll: -2.586548
+Pitch: 1.108931
+Yaw: -0.188142
+Roll: -2.586548
+Pitch: 1.108931
+Yaw: -0.188142
+Roll: -2.586562
+Pitch: 1.108939
+Yaw: -0.188142
+Roll: -2.586562
+Pitch: 1.108939
+Yaw: -0.188142
+Roll: -2.587218
+Pitch: 1.108692
+Yaw: -0.187954
+Roll: -2.587218
+Pitch: 1.108692
+Yaw: -0.187954
+Roll: -2.586678
+Pitch: 1.108246
+Yaw: -0.188301
+Roll: -2.586678
+Pitch: 1.108246
+Yaw: -0.188301
+Roll: -2.586722
+Pitch: 1.108438
+Yaw: -0.188501
+Roll: -2.586722
+Pitch: 1.108438
+Yaw: -0.188501
+Roll: -2.586729
+Pitch: 1.108554
+Yaw: -0.188271
+Roll: -2.586729
+Pitch: 1.108554
+Yaw: -0.188271
+Roll: -2.586312
+Pitch: 1.109279
+Yaw: -0.187783
+Roll: -2.586312
+Pitch: 1.109279
+Yaw: -0.187783
+Roll: -2.586957
+Pitch: 1.108386
+Yaw: -0.188309
+Roll: -2.586957
+Pitch: 1.108386
+Yaw: -0.188309
+Roll: -2.586409
+Pitch: 1.108889
+Yaw: -0.188010
+Roll: -2.586409
+Pitch: 1.108889
+Yaw: -0.188010
+Roll: -2.587176
+Pitch: 1.108313
+Yaw: -0.188079
+Roll: -2.587176
+Pitch: 1.108313
+Yaw: -0.188079
+Roll: -2.586692
+Pitch: 1.109431
+Yaw: -0.187663
+Roll: -2.586692
+Pitch: 1.109431
+Yaw: -0.187663
+Roll: -2.587369
+Pitch: 1.109654
+Yaw: -0.187464
+Roll: -2.587369
+Pitch: 1.109654
+Yaw: -0.187464
+Roll: -2.586748
+Pitch: 1.108419
+Yaw: -0.188165
+Roll: -2.586748
+Pitch: 1.108419
+Yaw: -0.188165
+Roll: -2.586984
+Pitch: 1.109342
+Yaw: -0.187790
+Roll: -2.586984
+Pitch: 1.109342
+Yaw: -0.187790
+Roll: -2.586787
+Pitch: 1.108670
+Yaw: -0.188061
+Roll: -2.586787
+Pitch: 1.108670
+Yaw: -0.188061
+Roll: -2.587746
+Pitch: 1.108524
+Yaw: -0.187725
+Roll: -2.587746
+Pitch: 1.108524
+Yaw: -0.187725
+Roll: -2.587240
+Pitch: 1.108942
+Yaw: -0.187952
+Roll: -2.587240
+Pitch: 1.108942
+Yaw: -0.187952
+Roll: -2.587420
+Pitch: 1.109838
+Yaw: -0.187130
+Roll: -2.587420
+Pitch: 1.109838
+Yaw: -0.187130
+Roll: -2.587797
+Pitch: 1.109883
+Yaw: -0.187021
+Roll: -2.587797
+Pitch: 1.109883
+Yaw: -0.187021
+Roll: -2.586327
+Pitch: 1.110080
+Yaw: -0.187562
+Roll: -2.586327
+Pitch: 1.110080
+Yaw: -0.187562
+Roll: -2.587857
+Pitch: 1.109734
+Yaw: -0.187303
+Roll: -2.587857
+Pitch: 1.109734
+Yaw: -0.187303
+Roll: -2.586865
+Pitch: 1.109405
+Yaw: -0.187691
+Roll: -2.586865
+Pitch: 1.109405
+Yaw: -0.187691
+Roll: -2.586056
+Pitch: 1.108502
+Yaw: -0.188332
+Roll: -2.586056
+Pitch: 1.108502
+Yaw: -0.188332
+Roll: -2.587223
+Pitch: 1.108752
+Yaw: -0.187909
+Roll: -2.587223
+Pitch: 1.108752
+Yaw: -0.187909
+Roll: -2.586161
+Pitch: 1.108405
+Yaw: -0.188480
+Roll: -2.586161
+Pitch: 1.108405
+Yaw: -0.188480
+Roll: -2.587633
+Pitch: 1.108637
+Yaw: -0.187805
+Roll: -2.587633
+Pitch: 1.108637
+Yaw: -0.187805
+Roll: -2.585679
+Pitch: 1.109011
+Yaw: -0.188093
+Roll: -2.585679
+Pitch: 1.109011
+Yaw: -0.188093
+Roll: -2.587624
+Pitch: 1.108894
+Yaw: -0.187661
+Roll: -2.587624
+Pitch: 1.108894
+Yaw: -0.187661
+Roll: -2.586720
+Pitch: 1.108862
+Yaw: -0.187999
+Roll: -2.586720
+Pitch: 1.108862
+Yaw: -0.187999
+Roll: -2.588883
+Pitch: 1.109416
+Yaw: -0.187090
+Roll: -2.588883
+Pitch: 1.109416
+Yaw: -0.187090
+Roll: -2.587343
+Pitch: 1.109422
+Yaw: -0.187472
+Roll: -2.587343
+Pitch: 1.109422
+Yaw: -0.187472
+Roll: -2.587840
+Pitch: 1.108687
+Yaw: -0.187767
+Roll: -2.587840
+Pitch: 1.108687
+Yaw: -0.187767
+Roll: -2.587860
+Pitch: 1.108688
+Yaw: -0.187760
+Roll: -2.587860
+Pitch: 1.108688
+Yaw: -0.187760
+Roll: -2.587575
+Pitch: 1.108640
+Yaw: -0.187824
+Roll: -2.587575
+Pitch: 1.108640
+Yaw: -0.187824
+Roll: -2.587250
+Pitch: 1.109489
+Yaw: -0.187570
+Roll: -2.587250
+Pitch: 1.109489
+Yaw: -0.187570
+Roll: -2.586578
+Pitch: 1.109146
+Yaw: -0.187979
+Roll: -2.586578
+Pitch: 1.109146
+Yaw: -0.187979
+Roll: -2.587350
+Pitch: 1.110169
+Yaw: -0.187104
+Roll: -2.587350
+Pitch: 1.110169
+Yaw: -0.187104
+Roll: -2.586359
+Pitch: 1.109816
+Yaw: -0.187726
+Roll: -2.586359
+Pitch: 1.109816
+Yaw: -0.187726
+Roll: -2.586760
+Pitch: 1.108643
+Yaw: -0.187989
+Roll: -2.586760
+Pitch: 1.108643
+Yaw: -0.187989
+Roll: -2.587963
+Pitch: 1.109424
+Yaw: -0.187354
+Roll: -2.587963
+Pitch: 1.109424
+Yaw: -0.187354
+Roll: -2.586331
+Pitch: 1.109673
+Yaw: -0.187771
+Roll: -2.586331
+Pitch: 1.109673
+Yaw: -0.187771
+Roll: -2.588197
+Pitch: 1.108953
+Yaw: -0.187571
+Roll: -2.588197
+Pitch: 1.108953
+Yaw: -0.187571
+Roll: -2.588047
+Pitch: 1.109336
+Yaw: -0.187482
+Roll: -2.588047
+Pitch: 1.109336
+Yaw: -0.187482
+Roll: -2.588423
+Pitch: 1.108887
+Yaw: -0.187490
+Roll: -2.588423
+Pitch: 1.108887
+Yaw: -0.187490
+Roll: -2.587851
+Pitch: 1.109833
+Yaw: -0.187226
+Roll: -2.587851
+Pitch: 1.109833
+Yaw: -0.187226
+Roll: -2.588061
+Pitch: 1.108406
+Yaw: -0.187821
+Roll: -2.588061
+Pitch: 1.108406
+Yaw: -0.187821
+Roll: -2.586488
+Pitch: 1.108300
+Yaw: -0.188296
+Roll: -2.586488
+Pitch: 1.108300
+Yaw: -0.188296
+Roll: -2.587244
+Pitch: 1.108052
+Yaw: -0.188257
+Roll: -2.587244
+Pitch: 1.108052
+Yaw: -0.188257
+Roll: -2.587052
+Pitch: 1.108787
+Yaw: -0.188008
+Roll: -2.587052
+Pitch: 1.108787
+Yaw: -0.188008
+Roll: -2.586669
+Pitch: 1.108447
+Yaw: -0.188353
+Roll: -2.586669
+Pitch: 1.108447
+Yaw: -0.188353
+Roll: -2.585223
+Pitch: 1.108824
+Yaw: -0.188502
+Roll: -2.585223
+Pitch: 1.108824
+Yaw: -0.188502
+Roll: -2.584592
+Pitch: 1.109334
+Yaw: -0.188282
+Roll: -2.584592
+Pitch: 1.109334
+Yaw: -0.188282
+Roll: -2.584810
+Pitch: 1.108747
+Yaw: -0.188498
+Roll: -2.584810
+Pitch: 1.108747
+Yaw: -0.188498
+Roll: -2.587062
+Pitch: 1.109247
+Yaw: -0.187636
+Roll: -2.587062
+Pitch: 1.109247
+Yaw: -0.187636
+Roll: -2.587897
+Pitch: 1.108720
+Yaw: -0.187805
+Roll: -2.587897
+Pitch: 1.108720
+Yaw: -0.187805
+Roll: -2.586766
+Pitch: 1.109173
+Yaw: -0.187731
+Roll: -2.586766
+Pitch: 1.109173
+Yaw: -0.187731
+Roll: -2.587419
+Pitch: 1.109166
+Yaw: -0.187528
+Roll: -2.587419
+Pitch: 1.109166
+Yaw: -0.187528
+Roll: -2.587348
+Pitch: 1.108891
+Yaw: -0.187873
+Roll: -2.587348
+Pitch: 1.108891
+Yaw: -0.187873
+Roll: -2.586072
+Pitch: 1.109021
+Yaw: -0.188056
+Roll: -2.586072
+Pitch: 1.109021
+Yaw: -0.188056
+Roll: -2.588032
+Pitch: 1.108358
+Yaw: -0.187731
+Roll: -2.588032
+Pitch: 1.108358
+Yaw: -0.187731
+Roll: -2.586237
+Pitch: 1.108252
+Yaw: -0.188363
+Roll: -2.586237
+Pitch: 1.108252
+Yaw: -0.188363
+Roll: -2.587103
+Pitch: 1.108571
+Yaw: -0.188045
+Roll: -2.587103
+Pitch: 1.108571
+Yaw: -0.188045
+Roll: -2.586181
+Pitch: 1.107999
+Yaw: -0.188668
+Roll: -2.586181
+Pitch: 1.107999
+Yaw: -0.188668
+Roll: -2.586300
+Pitch: 1.108429
+Yaw: -0.188396
+Roll: -2.586300
+Pitch: 1.108429
+Yaw: -0.188396
+Roll: -2.587880
+Pitch: 1.108632
+Yaw: -0.187576
+Roll: -2.587880
+Pitch: 1.108632
+Yaw: -0.187576
+Roll: -2.587376
+Pitch: 1.108584
+Yaw: -0.187745
+Roll: -2.587376
+Pitch: 1.108584
+Yaw: -0.187745
+Roll: -2.588835
+Pitch: 1.108686
+Yaw: -0.187479
+Roll: -2.588835
+Pitch: 1.108686
+Yaw: -0.187479
+Roll: -2.588851
+Pitch: 1.108692
+Yaw: -0.187475
+Roll: -2.588851
+Pitch: 1.108692
+Yaw: -0.187475
+Roll: -2.587504
+Pitch: 1.108756
+Yaw: -0.187661
+Roll: -2.587504
+Pitch: 1.108756
+Yaw: -0.187661
+Roll: -2.588970
+Pitch: 1.107217
+Yaw: -0.187920
+Roll: -2.588970
+Pitch: 1.107217
+Yaw: -0.187920
+Roll: -2.589041
+Pitch: 1.108265
+Yaw: -0.187711
+Roll: -2.589041
+Pitch: 1.108265
+Yaw: -0.187711
+Roll: -2.587474
+Pitch: 1.108464
+Yaw: -0.187881
+Roll: -2.587474
+Pitch: 1.108464
+Yaw: -0.187881
+Roll: -2.588165
+Pitch: 1.108558
+Yaw: -0.187486
+Roll: -2.588165
+Pitch: 1.108558
+Yaw: -0.187486
+Roll: -2.587529
+Pitch: 1.108645
+Yaw: -0.187623
+Roll: -2.587529
+Pitch: 1.108645
+Yaw: -0.187623
+Roll: -2.588335
+Pitch: 1.108986
+Yaw: -0.187425
+Roll: -2.588335
+Pitch: 1.108986
+Yaw: -0.187425
+Roll: -2.588645
+Pitch: 1.108041
+Yaw: -0.187804
+Roll: -2.588645
+Pitch: 1.108041
+Yaw: -0.187804
+Roll: -2.588341
+Pitch: 1.108104
+Yaw: -0.187596
+Roll: -2.588341
+Pitch: 1.108104
+Yaw: -0.187596
+Roll: -2.588627
+Pitch: 1.107868
+Yaw: -0.187736
+Roll: -2.588627
+Pitch: 1.107868
+Yaw: -0.187736
+Roll: -2.589088
+Pitch: 1.107855
+Yaw: -0.187629
+Roll: -2.589088
+Pitch: 1.107855
+Yaw: -0.187629
+Roll: -2.588689
+Pitch: 1.106553
+Yaw: -0.188850
+Roll: -2.588689
+Pitch: 1.106553
+Yaw: -0.188850
+Roll: -2.588692
+Pitch: 1.108105
+Yaw: -0.187800
+Roll: -2.588692
+Pitch: 1.108105
+Yaw: -0.187800
+Roll: -2.589684
+Pitch: 1.107375
+Yaw: -0.187947
+Roll: -2.589684
+Pitch: 1.107375
+Yaw: -0.187947
+Roll: -2.587408
+Pitch: 1.107193
+Yaw: -0.188805
+Roll: -2.587408
+Pitch: 1.107193
+Yaw: -0.188805
+Roll: -2.587490
+Pitch: 1.107633
+Yaw: -0.188227
+Roll: -2.587490
+Pitch: 1.107633
+Yaw: -0.188227
+Roll: -2.588112
+Pitch: 1.107936
+Yaw: -0.188082
+Roll: -2.588112
+Pitch: 1.107936
+Yaw: -0.188082
+Roll: -2.587146
+Pitch: 1.108244
+Yaw: -0.188271
+Roll: -2.587146
+Pitch: 1.108244
+Yaw: -0.188271
+Roll: -2.586789
+Pitch: 1.108321
+Yaw: -0.188600
+Roll: -2.586789
+Pitch: 1.108321
+Yaw: -0.188600
+Roll: -2.586782
+Pitch: 1.108313
+Yaw: -0.188609
+Roll: -2.586782
+Pitch: 1.108313
+Yaw: -0.188609
+Roll: -2.586930
+Pitch: 1.108065
+Yaw: -0.188435
+Roll: -2.586930
+Pitch: 1.108065
+Yaw: -0.188435
+Roll: -2.586954
+Pitch: 1.107337
+Yaw: -0.188717
+Roll: -2.586954
+Pitch: 1.107337
+Yaw: -0.188717
+Roll: -2.585878
+Pitch: 1.107835
+Yaw: -0.188911
+Roll: -2.585878
+Pitch: 1.107835
+Yaw: -0.188911
+Roll: -2.586439
+Pitch: 1.108353
+Yaw: -0.188292
+Roll: -2.586439
+Pitch: 1.108353
+Yaw: -0.188292
+Roll: -2.586513
+Pitch: 1.108276
+Yaw: -0.188291
+Roll: -2.586513
+Pitch: 1.108276
+Yaw: -0.188291
+Roll: -2.585793
+Pitch: 1.108671
+Yaw: -0.188399
+Roll: -2.585793
+Pitch: 1.108671
+Yaw: -0.188399
+Roll: -2.583797
+Pitch: 1.108419
+Yaw: -0.188901
+Roll: -2.583797
+Pitch: 1.108419
+Yaw: -0.188901
+Roll: -2.584135
+Pitch: 1.108531
+Yaw: -0.188791
+Roll: -2.584135
+Pitch: 1.108531
+Yaw: -0.188791
+Roll: -2.585926
+Pitch: 1.107715
+Yaw: -0.188781
+Roll: -2.585926
+Pitch: 1.107715
+Yaw: -0.188781
+Roll: -2.584797
+Pitch: 1.107237
+Yaw: -0.189520
+Roll: -2.584797
+Pitch: 1.107237
+Yaw: -0.189520
+Roll: -2.586343
+Pitch: 1.108156
+Yaw: -0.188159
+Roll: -2.586343
+Pitch: 1.108156
+Yaw: -0.188159
+Roll: -2.585222
+Pitch: 1.110421
+Yaw: -0.185949
+Roll: -2.585222
+Pitch: 1.110421
+Yaw: -0.185949
+Roll: -2.610353
+Pitch: 1.116436
+Yaw: -0.166747
+Roll: -2.610353
+Pitch: 1.116436
+Yaw: -0.166747
+Roll: -2.614121
+Pitch: 1.114365
+Yaw: -0.170887
+Roll: -2.614121
+Pitch: 1.114365
+Yaw: -0.170887
+Roll: -2.603207
+Pitch: 1.114593
+Yaw: -0.180633
+Roll: -2.603207
+Pitch: 1.114593
+Yaw: -0.180633
+Roll: -2.606072
+Pitch: 1.116125
+Yaw: -0.176184
+Roll: -2.606072
+Pitch: 1.116125
+Yaw: -0.176184
+Roll: -2.687541
+Pitch: 1.135996
+Yaw: -0.123990
+Roll: -2.687541
+Pitch: 1.135996
+Yaw: -0.123990
+Roll: -2.796928
+Pitch: 1.146917
+Yaw: -0.076415
+Roll: -2.796928
+Pitch: 1.146917
+Yaw: -0.076415
+Roll: -2.977470
+Pitch: 1.150649
+Yaw: -0.015502
+Roll: -2.977470
+Pitch: 1.150649
+Yaw: -0.015502
+Roll: -2.981469
+Pitch: 1.149163
+Yaw: -0.012490
+Roll: -2.981469
+Pitch: 1.149163
+Yaw: -0.012490
+Roll: -3.000005
+Pitch: 1.151243
+Yaw: 0.002422
+Roll: -3.000005
+Pitch: 1.151243
+Yaw: 0.002422
+Roll: -2.984605
+Pitch: 1.152137
+Yaw: -0.008974
+Roll: -2.984605
+Pitch: 1.152137
+Yaw: -0.008974
+Roll: -2.932638
+Pitch: 1.142560
+Yaw: -0.052837
+Roll: -2.932638
+Pitch: 1.142560
+Yaw: -0.052837
+Roll: -2.934371
+Pitch: 1.141891
+Yaw: -0.052277
+Roll: -2.934371
+Pitch: 1.141891
+Yaw: -0.052277
+Roll: -2.935990
+Pitch: 1.142335
+Yaw: -0.051166
+Roll: -2.935990
+Pitch: 1.142335
+Yaw: -0.051166
+Roll: -2.935187
+Pitch: 1.141770
+Yaw: -0.051722
+Roll: -2.935187
+Pitch: 1.141770
+Yaw: -0.051722
+Roll: -2.936228
+Pitch: 1.142038
+Yaw: -0.051420
+Roll: -2.936228
+Pitch: 1.142038
+Yaw: -0.051420
+Roll: -2.937419
+Pitch: 1.141958
+Yaw: -0.050884
+Roll: -2.937419
+Pitch: 1.141958
+Yaw: -0.050884
+Roll: -2.935822
+Pitch: 1.141882
+Yaw: -0.051238
+Roll: -2.935822
+Pitch: 1.141882
+Yaw: -0.051238
+Roll: -2.936708
+Pitch: 1.142214
+Yaw: -0.050860
+Roll: -2.936708
+Pitch: 1.142214
+Yaw: -0.050860
+Roll: -2.936430
+Pitch: 1.142010
+Yaw: -0.051406
+Roll: -2.936430
+Pitch: 1.142010
+Yaw: -0.051406
+Roll: -2.935300
+Pitch: 1.141559
+Yaw: -0.051646
+Roll: -2.935300
+Pitch: 1.141559
+Yaw: -0.051646
+Roll: -2.936006
+Pitch: 1.141697
+Yaw: -0.051444
+Roll: -2.936006
+Pitch: 1.141697
+Yaw: -0.051444
+Roll: -2.937094
+Pitch: 1.142557
+Yaw: -0.050544
+Roll: -2.937094
+Pitch: 1.142557
+Yaw: -0.050544
+Roll: -2.936719
+Pitch: 1.142618
+Yaw: -0.051003
+Roll: -2.936719
+Pitch: 1.142618
+Yaw: -0.051003
+Roll: -2.937867
+Pitch: 1.143195
+Yaw: -0.050441
+Roll: -2.937867
+Pitch: 1.143195
+Yaw: -0.050441
+Roll: -2.936459
+Pitch: 1.142294
+Yaw: -0.051040
+Roll: -2.936459
+Pitch: 1.142294
+Yaw: -0.051040
+Roll: -2.936496
+Pitch: 1.142251
+Yaw: -0.050998
+Roll: -2.936496
+Pitch: 1.142251
+Yaw: -0.050998
+Roll: -2.936514
+Pitch: 1.142243
+Yaw: -0.050992
+Roll: -2.936514
+Pitch: 1.142243
+Yaw: -0.050992
+Roll: -2.936887
+Pitch: 1.142294
+Yaw: -0.050921
+Roll: -2.936887
+Pitch: 1.142294
+Yaw: -0.050921
+Roll: -2.936498
+Pitch: 1.142187
+Yaw: -0.050952
+Roll: -2.936498
+Pitch: 1.142187
+Yaw: -0.050952
+Roll: -2.937102
+Pitch: 1.142361
+Yaw: -0.050753
+Roll: -2.937102
+Pitch: 1.142361
+Yaw: -0.050753
+Roll: -2.936909
+Pitch: 1.143184
+Yaw: -0.050726
+Roll: -2.936909
+Pitch: 1.143184
+Yaw: -0.050726
+Roll: -2.936100
+Pitch: 1.142357
+Yaw: -0.051125
+Roll: -2.936100
+Pitch: 1.142357
+Yaw: -0.051125
+Roll: -2.937258
+Pitch: 1.142431
+Yaw: -0.050515
+Roll: -2.937258
+Pitch: 1.142431
+Yaw: -0.050515
+Roll: -2.937114
+Pitch: 1.141916
+Yaw: -0.050694
+Roll: -2.937114
+Pitch: 1.141916
+Yaw: -0.050694
+Roll: -2.935690
+Pitch: 1.141580
+Yaw: -0.051363
+Roll: -2.935690
+Pitch: 1.141580
+Yaw: -0.051363
+Roll: -2.927952
+Pitch: 1.142172
+Yaw: -0.052360
+Roll: -2.927952
+Pitch: 1.142172
+Yaw: -0.052360
+Roll: -2.927384
+Pitch: 1.142123
+Yaw: -0.053315

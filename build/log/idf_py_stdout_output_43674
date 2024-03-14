@@ -1,0 +1,59 @@
+[0/2] Re-checking globbed directories...
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/shashwat/drone_flight_control/build/bootloader/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashwat/drone_flight_control/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pwm.c.obj
+/home/shashwat/drone_flight_control/main/pwm.c:21:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   21 | static const char *TAG = "PWM";
+      |                    ^~~
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable drone_flight_control.elf
+[6/8] Generating binary image from built executable
+esptool.py vv4.8.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+[7/8] cd /home/shashwat/drone_flight_control/build/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/shashwat/drone_flight_control/build/partition_table/partition-table.bin /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+drone_flight_control.bin binary size 0x37ae0 bytes. Smallest app partition is 0x100000 bytes. 0xc8520 bytes (78%) free.
+[7/8] cd /home/shashwat/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/shashwat/esp/esp-idf -D "SERIAL_TOOL=/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python;;/home/shashwat/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/shashwat/drone_flight_control/build -P /home/shashwat/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 drone_flight_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py vv4.8.dev1
+Serial port /dev/ttyUSB0
+Connecting.........
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 40:91:51:fc:33:38
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00047fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26704 bytes to 16373...
+Writing at 0x00001000... (100 %)
+Wrote 26704 bytes (16373 compressed) at 0x00001000 in 1.0 seconds (effective 211.8 kbit/s)...
+Hash of data verified.
+Compressed 228064 bytes to 122756...
+Writing at 0x00010000... (12 %)
+Writing at 0x0001c86e... (25 %)
+Writing at 0x00023e73... (37 %)
+Writing at 0x00029d83... (50 %)
+Writing at 0x0002f8cf... (62 %)
+Writing at 0x00038b38... (75 %)
+Writing at 0x0003e615... (87 %)
+Writing at 0x00044bc9... (100 %)
+Wrote 228064 bytes (122756 compressed) at 0x00010000 in 3.1 seconds (effective 585.5 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 269.5 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

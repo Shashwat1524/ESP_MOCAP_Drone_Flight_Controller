@@ -1,0 +1,858 @@
+ts Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29458h (169048) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00039480 vaddr=3ffb0000 size=04fd4h ( 20436) load[0m
+[0;32mI (170) esp_image: segment 2: paddr=0003e45c vaddr=40080000 size=01bbch (  7100) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=9ab44h (633668) map[0m
+[0;32mI (393) esp_image: segment 4: paddr=000dab6c vaddr=40081bbc size=16f1ch ( 93980) load[0m
+[0;32mI (443) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (443) boot: Disabling RNG early entropy source...[0m
+[0;32mI (455) cpu_start: Multicore app[0m
+D (455) cpu_start: Pro cpu up[0m
+D (455) cpu_start: Starting app cpu, entry point is 0x40081324[0m
+D (0) cpu_start: App cpu up[0m
+D (464) clk: RTC_SLOW_CLK calibration value: 3294387[0m
+D (476) cpu_start: calling init function: 0x400d2dd0 on core: 0[0m
+[0;32mI (476) cpu_start: Pro cpu start user code[0m
+[0;32mI (476) cpu_start: cpu freq: 160000000 Hz[0m
+D (482) cpu_start: calling init function: 0x400d2e14 on core: 0[0m
+[0;32mI (488) cpu_start: Application information:[0m
+[0;32mI (493) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (499) cpu_start: App version:      1[0m
+[0;32mI (503) cpu_start: Compile time:     Jan 30 2024 16:50:51[0m
+[0;32mI (509) cpu_start: ELF file SHA256:  de533a85f...[0m
+[0;32mI (515) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (522) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (526) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (531) cpu_start: Chip rev:         v1.0[0m
+D (536) cpu_start: calling init function: 0x400d2f5c on core: 0[0m
+D (542) memory_layout: Checking 9 reserved memory ranges:[0m
+D (547) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (554) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (560) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffbc150[0m
+D (567) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (573) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (579) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (586) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (592) memory_layout: Reserved memory range 0x40080000 - 0x40098ad8[0m
+D (599) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (605) memory_layout: Building list of available memory regions:[0m
+D (611) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (618) memory_layout: Available memory region 0x3ffbc150 - 0x3ffc0000[0m
+D (624) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (631) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (638) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (644) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (651) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (657) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (664) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (671) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (677) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (684) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (690) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (697) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (704) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (710) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (717) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (723) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (730) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (737) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (743) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (750) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (756) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (763) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (770) memory_layout: Available memory region 0x40098ad8 - 0x4009a000[0m
+D (776) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (783) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (789) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (796) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (803) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (808) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (814) heap_init: New heap initialised at 0x3ffbc150[0m
+[0;32mI (819) heap_init: At 3FFBC150 len 00023EB0 (143 KiB): DRAM[0m
+[0;32mI (826) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (832) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (839) heap_init: New heap initialised at 0x40098ad8[0m
+[0;32mI (844) heap_init: At 40098AD8 len 00007528 (29 KiB): IRAM[0m
+D (850) cpu_start: calling init function: 0x400d2f68 on core: 0[0m
+D (856) cpu_start: calling init function: 0x400d5698 on core: 0[0m
+D (862) cpu_start: calling init function: 0x40161374 on core: 0[0m
+D (868) cpu_start: calling init function: 0x400d2f74 on core: 0[0m
+D (874) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (879) cpu_start: calling init function: 0x400d2f80 on core: 0[0m
+D (885) cpu_start: calling init function: 0x400d6fcc on core: 0[0m
+D (891) cpu_start: calling init function: 0x400d8308 on core: 0[0m
+D (897) cpu_start: calling init function: 0x400d5714 on core: 0[0m
+D (903) cpu_start: calling init function: 0x400d2f8c on core: 0[0m
+D (909) cpu_start: calling init function: 0x400d2f98 on core: 0[0m
+D (915) spi_flash: trying chip: issi[0m
+D (918) spi_flash: trying chip: gd[0m
+D (922) spi_flash: trying chip: mxic[0m
+D (926) spi_flash: trying chip: winbond[0m
+D (929) spi_flash: trying chip: generic[0m
+[0;32mI (933) spi_flash: detected chip: generic[0m
+[0;32mI (938) spi_flash: flash io: dio[0m
+[0;33mW (942) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (955) cpu_start: calling init function: 0x4016137c on core: 0[0m
+D (961) cpu_start: calling init function: 0x4014c16c[0m
+D (966) cpu_start: calling init function: 0x4014bc1c[0m
+D (971) cpu_start: calling init function: 0x401084c8[0m
+D (976) cpu_start: calling init function: 0x400f05f0[0m
+[0;33mW (981) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (992) cpu_start: calling init function: 0x400dddd0[0m
+D (997) cpu_start: calling init function: 0x400da370[0m
+D (1002) cpu_start: calling init function: 0x400d9410[0m
+D (1007) cpu_start: calling init function: 0x40089b0c[0m
+D (1012) cpu_start: calling init function: 0x400d4084[0m
+D (1017) cpu_start: calling init function: 0x400d3534[0m
+D (1023) cpu_start: calling init function: 0x400d2940[0m
+D (1028) cpu_start: calling init function: 0x400d5dc4 on core: 0[0m
+D (1034) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (1039) cpu_start: calling init function: 0x400d2fc0 on core: 0[0m
+D (1045) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (1050) app_start: Starting scheduler on CPU0[0m
+[0;32D (1055) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (1055) app_start: Starting scheduler on CPU1[0m
+mI (1055) main_task: Started on CPU0[0m
+D (1075) heap_init: New heap initialised at 0x3ffe0440[0m
+D (1075) heap_init: New heap initialised at 0x3ffe4350[0m
+D (1075) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (1075) main_task: Calling app_main()[0m
+D (1085) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (1095) ESC_controller: Create RMT TX channel[0m
+[0;32mI (1095) IMU: devid=0x34[0m
+Created RMT TX ChannelsD (1095) rmt: new group(0) at 0x3ffc5ea0, occupy=ffffff00[0m
+[0;32mD (1105) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+I (1095) IMU: getRate()=0[0m
+D (1115) rmt: group clock resolution:80000000[0m
+[0;32mI (1115) IMU: getExternalFrameSync()=0[0m
+[0;32mI (1115) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1125) IMU: getDLPFMode()=6[0m
+D (1135) rmt: new tx channel(0,0) at 0x3ffc5b20, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;3D (1155) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+2mI (1135) IMU: getFullScaleAccelRange()=0[0m
+D (1155) rmt: group clock resolution:80000000[0m
+[0;32mI (1165) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (1165) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1175) rmt: new tx channel(0,1) at 0x3ffc626c, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1195) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1195) rmt: group clock resolution:80000000[0m
+[0;32mI (1205) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1215) rmt: new tx channel(0,2) at 0x3ffc65b0, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1225) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1235) rmt: group clock resolution:80000000[0m
+[0;32mI (1235) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1245) rmt: new tx channel(0,3) at 0x3ffc6904, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1265) ESC_controller: Install Dshot ESC encoder[0m
+D (1265) rmt: new bytes encoder @0x3ffc6c78[0m
+D (1275) rmt: new copy encoder @0x3ffc6c9c[0m
+D (1275) rmt: new bytes encoder @0x3ffc6cd0[0m
+D (1275) rmt: new copy encoder @0x3ffc6cf4[0m
+D (1285) rmt: new bytes encoder @0x3ffc6d28[0m
+D (1285) rmt: new copy encoder @0x3ffc6d4c[0m
+D (1295) rmt: new bytes encoder @0x3ffc6d80[0m
+D (1295) rmt: new copy encoder @0x3ffc6da4[0m
+[0;32mI (1305) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1305) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1345) wifi_station_netif: ESP_WIFI_MODE_STA[0m
+D (1345) esp_netif_lwip: LwIP stack has been initialized[0m
+D (1345) esp_netif_lwip: esp-netif has been successfully initialized[0m
+D (1345) event: running task for loop 0x3ffc6fdc[0m
+D (1355) event: created task for loop 0x3ffc6fdc[0m
+D (1355) event: created event loop 0x3ffc6fdc[0m
+D (1365) esp_netif_lwip: check: remote, if=0x3ffbe1e0 fn=0x40106078[0m
+D (1365) esp_netif_objects: esp_netif_add_to_list_unsafe netif added successfully (total netifs: 1)[0m
+D (1375) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (1385) nvs: nvs_open_from_partition misc 1[0m
+I (1395) wifi:wifi driver task: 3ffcb7b0, prio:23, stack:6656, core=0
+D (1395) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1395) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1405) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1415) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1415) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1425) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1435) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1445) nvs: nvs_open_from_partition nvs.net80211 1[0m
+D (1445) nvs: nvs_get opmode 1[0m
+D (1445) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1455) nvs: nvs_get sta.authmode 1[0m
+D (1455) nvs: nvs_get_str_or_blob sta.pswd[0m
+D (1465) nvs: nvs_get_str_or_blob sta.pmk[0m
+D (1465) nvs: nvs_get sta.chan 1[0m
+D (1465) nvs: nvs_get auto.conn 1[0m
+D (1475) nvs: nvs_get bssid.set 1[0m
+D (1475) nvs: nvs_get_str_or_blob sta.bssid[0m
+D (1475) nvs: nvs_get sta.lis_intval 2[0m
+D (1485) nvs: nvs_get sta.phym 1[0m
+D (1485) nvs: nvs_get sta.phybw 1[0m
+D (1495) nvs: nvs_get_str_or_blob sta.apsw[0m
+D (1495) nvs: nvs_get_str_or_blob sta.apinfo[0m
+D (1505) nvs: nvs_get sta.scan_method 1[0m
+D (1505) nvs: nvs_get sta.sort_method 1[0m
+D (1505) nvs: nvs_get sta.minrssi 1[0m
+D (1515) nvs: nvs_get sta.minauth 1[0m
+D (1515) nvs: nvs_get sta.pmf_e 1[0m
+D (1515) nvs: nvs_get sta.pmf_r 1[0m
+D (1525) nvs: nvs_get sta.btm_e 1[0m
+D (1525) nvs: nvs_get sta.rrm_e 1[0m
+D (1525) nvs: nvs_get sta.mbo_e 1[0m
+D (1535) nvs: nvs_get_str_or_blob ap.ssid[0m
+D (1535) nvs: nvs_get_str_or_blob ap.passwd[0m
+D (1535) nvs: nvs_get_str_or_blob ap.pmk[0m
+D (1545) nvs: nvs_get ap.chan 1[0m
+D (1545) nvs: nvs_get ap.authmode 1[0m
+D (1545) nvs: nvs_get ap.hidden 1[0m
+D (1555) nvs: nvs_get ap.max.conn 1[0m
+D (1555) nvs: nvs_get bcn.interval 2[0m
+D (1565) nvs: nvs_get ap.phym 1[0m
+D (1565) nvs: nvs_get ap.phybw 1[0m
+D (1565) nvs: nvs_get ap.sndchan 1[0m
+D (1575) nvs: nvs_get ap.pmf_e 1[0m
+D (1575) nvs: nvs_get ap.pmf_r 1[0m
+D (1575) nvs: nvs_get ap.p_cipher 1[0m
+D (1585) nvs: nvs_get lorate 1[0m
+D (1585) nvs: nvs_get_str_or_blob country[0m
+D (1585) nvs: nvs_get ap.ftm_r 1[0m
+D (1595) nvs: nvs_get sta.ft 1[0m
+D (1595) nvs: nvs_get sta.owe 1[0m
+D (1595) nvs: nvs_get sta.trans_d 1[0m
+D (1605) nvs: nvs_get sta.sae_h2e 1[0m
+D (1605) nvs: nvs_get sta.sae_pk_mode 1[0m
+D (1605) nvs: nvs_get sta.bss_retry 1[0m
+D (1615) nvs: nvs_get_str_or_blob sta.owe_data[0m
+D (1615) nvs: nvs_get sta.he_dcm 1[0m
+D (1625) nvs: nvs_get sta.he_dcm_c_tx 1[0m
+D (1625) nvs: nvs_get sta.he_dcm_c_rx 1[0m
+D (1625) nvs: nvs_get sta.he_mcs9_d 1[0m
+D (1635) nvs: nvs_get sta.he_su_b_d 1[0m
+D (1635) nvs: nvs_get sta.he_su_b_f_d 1[0m
+D (1635) nvs: nvs_get sta.he_mu_b_f_d 1[0m
+D (1645) nvs: nvs_get sta.he_cqi_f_d 1[0m
+D (1645) nvs: nvs_get_str_or_blob sta.sae_h2e_id[0m
+D (1655) nvs: nvs_get ap.sae_h2e 1[0m
+D (1655) nvs: nvs_get_str_or_blob ap.pmk_info[0m
+D (1655) nvs: nvs_get nan.phym 1[0m
+D (1665) nvs: nvs_set ap.sndchan 1 1[0m
+I (1665) wifi:wifi firmware version: 1200a48
+I (1675) wifi:wifi certification version: v7.0
+I (1675) wifi:config NVS flash: enabled
+I (1675) wifi:config nano formating: disabled
+I (1685) wifi:Init data frame dynamic rx buffer num: 32
+I (1685) wifi:Init static rx mgmt buffer num: 5
+I (1695) wifi:Init management short buffer num: 32
+I (1695) wifi:Init dynamic tx buffer num: 32
+I (1705) wifi:Init static rx buffer size: 1600
+I (1705) wifi:Init static rx buffer num: 10
+I (1705) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1715) wifi_init: rx ba win: 6[0m
+[0;32mI (1715) wifi_init: accept mbox: 6[0m
+[0;32mI (1715) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1725) wifi_init: udp mbox: 6[0m
+[0;32mI (1725) wifi_init: tcp mbox: 6[0m
+[0;32mI (1735) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1735) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1745) wifi_init: tcp mss: 1440[0m
+[0;32mI (1745) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1745) wifi_init: WiFi RX IRAM OP enabled[0m
+D (1755) nvs: nvs_get opmode 1[0m
+D (1755) wifi:clear blacklist
+D (1755) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1765) nvs: nvs_get sta.pmf_e 1[0m
+[0;32mI (1765) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+D (1775) phy_init: loading PHY init data from application binary[0m
+D (1775) nvs: nvs_open_from_partition phy 0[0m
+D (1785) nvs: nvs_get cal_version 4[0m
+D (1785) nvs: nvs_get_str_or_blob cal_mac[0m
+D (1795) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1795) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1805) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1815) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1815) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1825) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1835) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1845) nvs: nvs_get_str_or_blob cal_data[0m
+D (1855) nvs: nvs_close 3[0m
+D (1855) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1855) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1865) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1865) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1875) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1885) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1895) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1965) wifi:filter: set rx policy=0
+I (1965) wifi:mode : sta (78:e3:6d:09:fa:28)
+I (1965) wifi:enable tsf
+D (1965) wifi:filter: set rx policy=1
+D (1965) wifi:connect status 0 -> 0
+D (1965) event: running post WIFI_EVENT:40 with handler 0x400d9d38 and context 0x3ffd14ac on loop 0x3ffc6fdc[0m
+D (1975) event: running post WIFI_EVENT:2 with handler 0x40108720 and context 0x3ffc93ac on loop 0x3ffc6fdc[0m
+D (1985) wifi_init_default: wifi_start esp-netif:0x3ffc91d0 event-id2[0m
+D (1995) wifi_init_default: WIFI mac address: 78 e3 6d 9 fa 28[0m
+D (2005) esp_netif_lwip: check: remote, if=0x3ffc91d0 fn=0x40105a6c[0m
+[0;32mI (2005) wifi_station_netif: wifi_init_sta finished.[0m
+D (2005) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2015) esp_netif_handlers: esp_netif action has started with netif0x3ffc91d0 from event_id=2[0m
+D (2025) esp_netif_lwip: check: remote, if=0x3ffc91d0 fn=0x4010632c[0m
+D (2035) esp_netif_lwip: esp_netif_start_api 0x3ffc91d0[0m
+D (2035) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffc91d0[0m
+D (2045) esp_netif_lwip: check: local, if=0x3ffc91d0 fn=0x40106a88[0m
+D (2055) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc91d0[0m
+D (2055) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2065) event: running post WIFI_EVENT:2 with handler 0x400d9d38 and context 0x3ffd14ac on loop 0x3ffc6fdc[0m
+D (2075) wifi:Start wifi connect
+D (2075) wifi:connect status 0 -> 0
+D (2075) wifi:connect chan=0
+D (2085) wifi:first chan=4
+D (2085) wifi:connect status 0 -> 1
+D (2085) wifi:filter: set rx policy=3
+D (2095) wifi:clear scan ap list
+D (2095) wifi:start scan: type=0x50f, priority=2, cb=0x4012a2bc, arg=0x0, ss_state=0x1, time=133041, index=0
+D (2105) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (2125) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2125) wifi:profile match: ss_state=0x7
+D (2125) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (2125) wifi:find first mathched ssid, scan done
+D (2135) wifi:filter: set rx policy=4
+D (2135) wifi:first chan=1
+D (2135) wifi:handoff_cb: status=0
+D (2135) wifi:ap found, mac=b4:b0:24:4f:fb:d0
+D (2145) wifi:new_bss=0x3ffbacc0, cur_bss=0x0, new_chan=<4,0>, cur_chan=1
+D (2155) wifi:filter: set rx policy=5
+I (2155) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1
+D (2165) wifi:connect_op: status=0, auth=5, cipher=3 
+D (2165) wifi:auth mode is not none
+D (2165) wifi:connect_bss: auth=1, reconnect=0
+I (2175) wifi:state: init -> auth (b0)
+D (2175) wifi:start 1s AUTH timer
+D (2175) wifi:clear scan ap list
+D (2185) event: running post WIFI_EVENT:40 with handler 0x400d9d38 and context 0x3ffd14ac on loop 0x3ffc6fdc[0m
+D (2185) wifi:recv auth: seq=2, status=0
+I (2195) wifi:state: auth -> assoc (0)
+D (2195) wifi:restart connect 1s timer for assoc
+D (2205) wifi:recv assoc: type=0x10
+D (2205) wifi:filter: set rx policy=6
+I (2205) wifi:state: assoc -> run (10)
+D (2215) wifi:start 10s connect timer for 4 way handshake
+I (2385) wifi:connected with focaslab, aid = 6, channel 4, BW20, bssid = b4:b0:24:4f:fb:d0
+I (2385) wifi:security: WPA2-PSK, phy: bgn, rssi: -63
+D (2395) wifi:remove all except b4:b0:24:4f:fb:d0 from rc list
+D (2395) wifi:clear blacklist
+D (2395) nvs: nvs_set sta.chan 1 4[0m
+D (2405) nvs: nvs_set_blob sta.apinfo 700[0m
+D (2415) wifi:filter: set rx policy=7
+I (2415) wifi:pm start, type: 1
+
+I (2415) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+D (2425) wifi:Send sta connected event
+D (2425) wifi:connect status 1 -> 5
+D (2425) wifi:obss scan is disabled
+D (2435) wifi:start obss scan: obss scan is stopped
+I (2435) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+D (2445) wifi:set max rate: from <rate=130, phy=3, sig=0> to <rate=144, phy=3 sig=0>
+D (2445) wifi:sig_b=0, sig_g=0, sig_n=0, max_b=22, max_g=108, max_n=144
+D (2455) wifi:update trc
+D (2455) event: running post WIFI_EVENT:4 with handler 0x40108750 and context 0x3ffc940c on loop 0x3ffc6fdc[0m
+D (2465) esp_netif_handlers: esp_netif action connected with netif0x3ffc91d0 from event_id=4[0m
+D (2475) esp_netif_lwip: check: remote, if=0x3ffc91d0 fn=0x401066f8[0m
+D (2485) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffc91d0[0m
+I (2485) wifi:D (2485) esp_netif_lwip: check: local, if=0x3ffc91d0 fn=0x40106a88[0m
+<ba-add>idx:0 (ifx:0, b4:b0:24:4f:fb:d0), tid:0, ssn:3, winSize:64D (2495) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc91d0[0m
+
+D (2505) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2515) esp_netif_lwip: check: remote, if=0x3ffc91d0 fn=0x401065b8[0m
+D (2515) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffc91d0[0m
+D (2525) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffc91d0[0m
+D (2535) esp_netif_lwip: if0x3ffc91d0 start ip lost tmr: interval=120[0m
+D (2535) esp_netif_lwip: starting dhcp client[0m
+D (2545) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2545) event: running post WIFI_EVENT:4 with handler 0x400d9d38 and context 0x3ffd14ac on loop 0x3ffc6fdc[0m
+D (3545) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffc9234[0m
+D (3545) esp_netif_lwip: if0x3ffc91d0 ip changed=1[0m
+D (3545) event: running post IP_EVENT:0 with handler 0x4010857c and context 0x3ffc94e0 on loop 0x3ffc6fdc[0m
+D (3555) wifi_init_default: Got IP wifi default handler entered[0m
+D (3555) esp_netif_handlers: esp_netif action got_ip with netif0x3ffc91d0 from event_id=0[0m
+[0;32mI (3565) esp_netif_handlers: sta ip: 192.168.0.100, mask: 255.255.255.0, gw: 192.168.0.1[0m
+D (3575) event: running post IP_EVENT:0 with handler 0x400d9d38 and context 0x3ffd14cc on loop 0x3ffc6fdc[0m
+[0;32mI (3585) wifi_station_netif: got ip:192.168.0.100[0m
+[0;32mI (3595) wifi_station_netif: connected to ap SSID:focaslab password:wifi@focaslab[0m
+[0;32mI (3605) main_task: Returned from app_main()[0m
+Sent: 0
+[0;32mI (5265) PWM: roll:-0.905569 pitch=-0.606661 yaw=-0.337891[0m
+[0;32mI (5385) PWM: roll:-1.044162 pitch=-0.623275 yaw=-0.346802[0m
+[0;32mI (5505) PWM: roll:-0.977699 pitch=-0.489329 yaw=-0.352463[0m
+[0;32mI (5625) PWM: roll:-1.091493 pitch=-0.562135 yaw=-0.363815[0m
+[0;32mI (5745) PWM: roll:-0.938707 pitch=-0.520394 yaw=-0.373337[0m
+[0;32mI (5865) PWM: roll:-1.014951 pitch=-0.559106 yaw=-0.382980[0m
+Sent: 1
+Sent: 2
+Sent: 3
+Sent: 4
+Sent: 5
+Sent: 6
+[0;32mI (11315) ESC_controller: ESC Values: 218.11, 181.89, 218.11, 181.89[0m
+[0;32mI (11315) ESC_controller: ESC Values: 229.94, 170.06, 229.94, 170.06[0m
+[0;32mI (11315) ESC_controller: ESC Values: 239.05, 160.95, 239.05, 160.95[0m
+[0;32mI (11325) ESC_controller: ESC Values: 251.10, 148.90, 251.10, 148.90[0m
+[0;32mI (11325) ESC_controller: ESC Values: 258.96, 141.04, 258.96, 141.04[0m
+[0;32mI (11335) ESC_controller: ESC Values: 269.88, 130.12, 269.88, 130.12[0m
+[0;32mI (11325) PWM: roll:-1.079724 pitch=-0.452842 yaw=-0.391068[0m
+[0;32mI (11345) PWM: roll:-0.969347 pitch=-0.701795 yaw=-0.402924[0m
+[0;32mI (11355) ESC_controller: ESC Values: 281.32, 118.68, 281.32, 118.68[0m
+[0;32mI (11365) ESC_controller: ESC Values: 289.91, 110.09, 289.91, 110.09[0m
+[0;32mI (11365) PWM: roll:-1.040207 pitch=-0.526211 yaw=-0.408691[0m
+[0;32mI (11375) ESC_controller: ESC Values: 301.02, 100.00, 301.02, 100.00[0m
+[0;32mI (11385) PWM: roll:-1.070472 pitch=-0.591051 yaw=-0.419449[0m
+[0;32mI (11395) ESC_controller: ESC Values: 312.03, 100.00, 312.03, 100.00[0m
+[0;32mI (11395) PWM: roll:-1.118504 pitch=-0.512088 yaw=-0.428833[0m
+[0;32mI (11405) ESC_controller: ESC Values: 323.69, 100.00, 323.69, 100.00[0m
+[0;32mI (11405) PWM: roll:-1.038587 pitch=-0.665697 yaw=-0.440308[0m
+[0;32mI (11415) ESC_controller: ESC Values: 333.28, 100.00, 333.28, 100.00[0m
+[0;32mI (11445) PWM: roll:20.868780 pitch=46.053349 yaw=-9.661728[0m
+[0;32mI (11455) ESC_controller: ESC Values: 100.00, 494.48, 100.00, 494.48[0m
+[0;32mI (11565) PWM: roll:20.519972 pitch=45.032238 yaw=-9.312668[0m
+[0;32mI (11575) ESC_controller: ESC Values: 100.00, 696.19, 100.00, 696.19[0m
+[0;32mI (11685) PWM: roll:20.167490 pitch=44.024826 yaw=-8.974976[0m
+[0;32mI (11695) ESC_controller: ESC Values: 100.00, 894.34, 100.00, 894.34[0m
+[0;32mI (11805) PWM: roll:19.801256 pitch=42.994972 yaw=-8.637039[0m
+[0;32mI (11805) ESC_controller: ESC Values: 100.00, 1088.69, 100.00, 1088.69[0m
+[0;32mI (11925) PWM: roll:19.430996 pitch=41.971153 yaw=-8.307266[0m
+[0;32mI (11925) ESC_controller: ESC Values: 100.00, 1200.00, 100.00, 1200.00[0m
+[0;32mI (12045) PWM: roll:19.045704 pitch=40.931435 yaw=-7.979523[0m
+[0;32mI (12045) ESC_controller: ESC Values: 100.00, 390.46, 100.00, 390.46[0m
+Sent: 7
+[0;32mI (12175) PWM: roll:18.623224 pitch=39.808739 yaw=-7.632721[0m
+[0;32mI (12175) ESC_controller: ESC Values: 100.00, 572.46, 100.00, 572.46[0m
+[0;32mI (12295) PWM: roll:18.219173 pitch=38.758720 yaw=-7.314835[0m
+[0;32mI (12295) ESC_controller: ESC Values: 100.00, 750.62, 100.00, 750.62[0m
+[0;32mI (12415) PWM: roll:17.805538 pitch=37.701851 yaw=-7.000977[0m
+[0;32mI (12415) ESC_controller: ESC Values: 100.00, 924.53, 100.00, 924.53[0m
+[0;32mI (12535) PWM: roll:17.384300 pitch=36.637516 yaw=-6.691696[0m
+[0;32mI (12535) ESC_controller: ESC Values: 100.00, 1094.17, 100.00, 1094.17[0m
+[0;32mI (12655) PWM: roll:16.952433 pitch=35.566769 yaw=-6.389877[0m
+[0;32mI (12655) ESC_controller: ESC Values: 100.00, 1200.00, 100.00, 1200.00[0m
+[0;32mI (12775) PWM: roll:16.509516 pitch=34.489277 yaw=-6.093811[0m
+[0;32mI (12775) ESC_controller: ESC Values: 100.00, 365.10, 100.00, 365.10[0m
+[0;32mI (12895) PWM: roll:16.057272 pitch=33.407188 yaw=-5.803131[0m
+[0;32mI (12895) ESC_controller: ESC Values: 100.00, 521.15, 100.00, 521.15[0m
+Sent: 8
+[0;32mI (13015) PWM: roll:15.594234 pitch=32.321171 yaw=-5.520782[0m
+[0;32mI (13015) ESC_controller: ESC Values: 100.00, 672.46, 100.00, 672.46[0m
+[0;32mI (13135) PWM: roll:15.121764 pitch=31.226984 yaw=-5.244705[0m
+[0;32mI (13135) ESC_controller: ESC Values: 100.00, 818.95, 100.00, 818.95[0m
+[0;32mI (13255) PWM: roll:14.637087 pitch=30.126295 yaw=-4.975143[0m
+[0;32mI (13255) ESC_controller: ESC Values: 100.00, 960.47, 100.00, 960.47[0m
+[0;32mI (13375) PWM: roll:14.143355 pitch=29.019243 yaw=-4.713287[0m
+[0;32mI (13375) ESC_controller: ESC Values: 100.00, 1096.97, 100.00, 1096.97[0m
+[0;32mI (13495) PWM: roll:13.642529 pitch=27.909239 yaw=-4.458405[0m
+[0;32mI (13495) ESC_controller: ESC Values: 100.00, 1200.00, 100.00, 1200.00[0m
+[0;32mI (13615) PWM: roll:13.131534 pitch=26.794230 yaw=-4.213013[0m
+[0;32mI (13615) ESC_controller: ESC Values: 100.00, 331.32, 100.00, 331.32[0m
+[0;32mI (13735) PWM: roll:12.606655 pitch=25.667961 yaw=-3.975891[0m
+[0;32mI (13735) ESC_controller: ESC Values: 100.00, 452.13, 100.00, 452.13[0m
+[0;32mI (13855) PWM: roll:12.074837 pitch=24.535248 yaw=-3.748199[0m
+[0;32mI (13855) ESC_controller: ESC Values: 100.00, 567.56, 100.00, 567.56[0m
+[0;32mI (13975) PWM: roll:11.533406 pitch=23.397734 yaw=-3.530151[0m
+[0;32mI (13985) ESC_controller: ESC Values: 100.00, 677.48, 100.00, 677.48[0m
+Sent: 9
+[0;32mI (14095) PWM: roll:10.985970 pitch=22.259735 yaw=-3.321548[0m
+[0;32mI (14095) ESC_controller: ESC Values: 100.00, 781.87, 100.00, 781.87[0m
+[0;32mI (14215) PWM: roll:10.426909 pitch=21.111488 yaw=-3.121048[0m
+[0;32mI (14215) ESC_controller: ESC Values: 100.00, 880.55, 100.00, 880.55[0m
+[0;32mI (14345) PWM: roll:9.811307 pitch=19.863352 yaw=-2.915375[0m
+[0;32mI (14345) ESC_controller: ESC Values: 100.00, 972.50, 100.00, 972.50[0m
+[0;32mI (14465) PWM: roll:9.233115 pitch=18.706169 yaw=-2.737503[0m
+[0;32mI (14465) ESC_controller: ESC Values: 100.00, 1059.05, 100.00, 1059.05[0m
+[0;32mI (14585) PWM: roll:8.646399 pitch=17.543062 yaw=-2.569244[0m
+[0;32mI (14585) ESC_controller: ESC Values: 100.00, 1139.65, 100.00, 1139.65[0m
+[0;32mI (14705) PWM: roll:8.054102 pitch=16.375481 yaw=-2.412598[0m
+[0;32mI (14705) ESC_controller: ESC Values: 100.00, 1200.00, 100.00, 1200.00[0m
+[0;32mI (14825) PWM: roll:7.453448 pitch=15.203377 yaw=-2.265213[0m
+[0;32mI (14825) ESC_controller: ESC Values: 125.47, 274.53, 125.47, 274.53[0m
+[0;32mI (14945) PWM: roll:6.841781 pitch=14.027119 yaw=-2.129135[0m
+[0;32mI (14945) ESC_controller: ESC Values: 100.00, 336.84, 100.00, 336.84[0m
+Sent: 10
+[0;32mI (15065) PWM: roll:6.227427 pitch=12.846265 yaw=-2.006653[0m
+[0;32mI (15065) ESC_controller: ESC Values: 100.00, 392.97, 100.00, 392.97[0m
+[0;32mI (15185) PWM: roll:5.609372 pitch=11.663955 yaw=-1.896835[0m
+[0;32mI (15185) ESC_controller: ESC Values: 100.00, 442.88, 100.00, 442.88[0m
+[0;32mI (15305) PWM: roll:4.982803 pitch=10.476703 yaw=-1.799118[0m
+[0;32mI (15305) ESC_controller: ESC Values: 100.00, 486.44, 100.00, 486.44[0m
+[0;32mI (15425) PWM: roll:4.350232 pitch=9.286212 yaw=-1.711761[0m
+[0;32mI (15425) ESC_controller: ESC Values: 100.00, 523.62, 100.00, 523.62[0m
+[0;32mI (15545) PWM: roll:3.713166 pitch=8.092110 yaw=-1.640976[0m
+[0;32mI (15545) ESC_controller: ESC Values: 100.00, 554.38, 100.00, 554.38[0m
+[0;32mI (15665) PWM: roll:3.069132 pitch=6.898941 yaw=-1.580811[0m
+[0;32mI (15665) ESC_controller: ESC Values: 100.00, 578.63, 100.00, 578.63[0m
+[0;32mI (15785) PWM: roll:2.427015 pitch=5.703252 yaw=-1.534195[0m
+[0;32mI (15785) ESC_controller: ESC Values: 100.00, 596.48, 100.00, 596.48[0m
+[0;32mI (15905) PWM: roll:1.778982 pitch=4.504064 yaw=-1.500412[0m
+[0;32mI (15905) ESC_controller: ESC Values: 100.00, 607.79, 100.00, 607.79[0m
+Sent: 11
+[0;32mI (16025) PWM: roll:1.121610 pitch=3.307246 yaw=-1.480026[0m
+[0;32mI (16025) ESC_controller: ESC Values: 100.00, 612.43, 100.00, 612.43[0m
+[0;32mI (16145) PWM: roll:0.465974 pitch=2.109246 yaw=-1.474777[0m
+[0;32mI (16145) ESC_controller: ESC Values: 100.00, 610.53, 100.00, 610.53[0m
+[0;32mI (16265) PWM: roll:-0.203449 pitch=0.901973 yaw=-1.483383[0m
+[0;32mI (16265) ESC_controller: ESC Values: 100.00, 601.81, 100.00, 601.81[0m
+[0;32mI (16385) PWM: roll:-0.830920 pitch=-0.299028 yaw=-1.503067[0m
+[0;32mI (16385) ESC_controller: ESC Values: 100.00, 587.22, 100.00, 587.22[0m
+[0;32mI (16505) PWM: roll:-1.004909 pitch=-0.537620 yaw=-1.516312[0m
+[0;32mI (16505) ESC_controller: ESC Values: 100.00, 575.43, 100.00, 575.43[0m
+[0;32mI (16625) PWM: roll:-1.013209 pitch=-0.538400 yaw=-1.526398[0m
+[0;32mI (16625) ESC_controller: ESC Values: 100.00, 565.22, 100.00, 565.22[0m
+[0;32mI (16745) PWM: roll:-1.059372 pitch=-0.531848 yaw=-1.535263[0m
+[0;32mI (16745) ESC_controller: ESC Values: 100.00, 554.16, 100.00, 554.16[0m
+[0;32mI (16865) PWM: roll:-1.009722 pitch=-0.576950 yaw=-1.544678[0m
+[0;32mI (16865) ESC_controller: ESC Values: 100.00, 544.56, 100.00, 544.56[0m
+[0;32mI (16985) PWM: roll:-0.991774 pitch=-0.428907 yaw=-1.549652[0m
+[0;32mI (16985) ESC_controller: ESC Values: 100.00, 534.82, 100.00, 534.82[0m
+[0;32mI (17105) PWM: roll:-1.040334 pitch=-0.613707 yaw=-1.562180[0m
+[0;32mI (17105) ESC_controller: ESC Values: 100.00, 523.93, 100.00, 523.93[0m
+Sent: 12
+[0;32mI (17225) PWM: roll:-1.051140 pitch=-0.503304 yaw=-1.569214[0m
+[0;32mI (17225) ESC_controller: ESC Values: 100.00, 513.32, 100.00, 513.32[0m
+[0;32mI (17345) PWM: roll:-0.988890 pitch=-0.544354 yaw=-1.579987[0m
+[0;32mI (17345) ESC_controller: ESC Values: 100.00, 504.05, 100.00, 504.05[0m
+[0;32mI (17465) PWM: roll:-1.063809 pitch=-0.523731 yaw=-1.589813[0m
+[0;32mI (17465) ESC_controller: ESC Values: 100.00, 492.66, 100.00, 492.66[0m
+[0;32mI (17585) PWM: roll:-1.052645 pitch=-0.531941 yaw=-1.600708[0m
+[0;32mI (17585) ESC_controller: ESC Values: 100.00, 482.25, 100.00, 482.25[0m
+[0;32mI (17705) PWM: roll:-0.983071 pitch=-0.575025 yaw=-1.609650[0m
+[0;32mI (17705) ESC_controller: ESC Values: 100.00, 473.11, 100.00, 473.11[0m
+[0;32mI (17825) PWM: roll:-1.015606 pitch=-0.606527 yaw=-1.618546[0m
+[0;32mI (17835) ESC_controller: ESC Values: 100.00, 462.63, 100.00, 462.63[0m
+[0;32mI (17945) PWM: roll:-0.905542 pitch=-0.543007 yaw=-1.627716[0m
+[0;32mI (17945) ESC_controller: ESC Values: 100.00, 454.68, 100.00, 454.68[0m
+Sent: 13
+[0;32mI (18065) PWM: roll:-0.979403 pitch=-0.526048 yaw=-1.637009[0m
+[0;32mI (18065) ESC_controller: ESC Values: 100.00, 444.14, 100.00, 444.14[0m
+[0;32mI (18185) PWM: roll:-0.993412 pitch=-0.520446 yaw=-1.646729[0m
+[0;32mI (18185) ESC_controller: ESC Values: 100.00, 434.07, 100.00, 434.07[0m
+[0;32mI (18305) PWM: roll:-1.011209 pitch=-0.486798 yaw=-1.654709[0m
+[0;32mI (18305) ESC_controller: ESC Values: 100.00, 423.78, 100.00, 423.78[0m
+[0;32mI (18425) PWM: roll:-0.957038 pitch=-0.512428 yaw=-1.663696[0m
+[0;32mI (18425) ESC_controller: ESC Values: 100.00, 414.75, 100.00, 414.75[0m
+[0;32mI (18545) PWM: roll:-1.072427 pitch=-0.553208 yaw=-1.675446[0m
+[0;32mI (18545) ESC_controller: ESC Values: 100.00, 402.87, 100.00, 402.87[0m
+[0;32mI (18665) PWM: roll:-0.939608 pitch=-0.560109 yaw=-1.684341[0m
+[0;32mI (18665) ESC_controller: ESC Values: 100.00, 394.80, 100.00, 394.80[0m
+[0;32mI (18785) PWM: roll:-1.040511 pitch=-0.415470 yaw=-1.690552[0m
+[0;32mI (18785) ESC_controller: ESC Values: 100.00, 383.39, 100.00, 383.39[0m
+[0;32mI (18905) PWM: roll:-1.024295 pitch=-0.664429 yaw=-1.702591[0m
+[0;32mI (18905) ESC_controller: ESC Values: 100.00, 373.31, 100.00, 373.31[0m
+Sent: 14
+[0;32mI (19025) PWM: roll:-0.911995 pitch=-0.545479 yaw=-1.708328[0m
+[0;32mI (19025) ESC_controller: ESC Values: 100.00, 365.31, 100.00, 365.31[0m
+[0;32mI (19145) PWM: roll:-0.947065 pitch=-0.451830 yaw=-1.716766[0m
+[0;32mI (19145) ESC_controller: ESC Values: 100.00, 355.49, 100.00, 355.49[0m
+[0;32mI (19265) PWM: roll:-0.916276 pitch=-0.530611 yaw=-1.728897[0m
+[0;32mI (19265) ESC_controller: ESC Values: 100.00, 346.64, 100.00, 346.64[0m
+[0;32mI (19385) PWM: roll:-1.042838 pitch=-0.396253 yaw=-1.734268[0m
+[0;32mI (19385) ESC_controller: ESC Values: 100.00, 334.94, 100.00, 334.94[0m
+[0;32mI (19505) PWM: roll:-1.005746 pitch=-0.558393 yaw=-1.747971[0m
+[0;32mI (19505) ESC_controller: ESC Values: 100.00, 325.26, 100.00, 325.26[0m
+[0;32mI (19625) PWM: roll:-0.974759 pitch=-0.572427 yaw=-1.757355[0m
+[0;32mI (19625) ESC_controller: ESC Values: 100.00, 315.82, 100.00, 315.82[0m
+[0;32mI (19745) PWM: roll:-0.984484 pitch=-0.472881 yaw=-1.763992[0m
+[0;32mI (19745) ESC_controller: ESC Values: 100.00, 305.88, 100.00, 305.88[0m
+[0;32mI (19865) PWM: roll:-0.984949 pitch=-0.621787 yaw=-1.777451[0m
+[0;32mI (19865) ESC_controller: ESC Values: 103.98, 296.02, 103.98, 296.02[0m
+[0;32mI (19985) PWM: roll:-0.985224 pitch=-0.458106 yaw=-1.783585[0m
+[0;32mI (19985) ESC_controller: ESC Values: 113.83, 286.17, 113.83, 286.17[0m
+[0;32mI (20105) PWM: roll:-0.960629 pitch=-0.491954 yaw=-1.795639[0m
+[0;32mI (20105) ESC_controller: ESC Values: 123.19, 276.81, 123.19, 276.81[0m
+Sent: 15
+[0;32mI (20225) PWM: roll:-1.074001 pitch=-0.555741 yaw=-1.805359[0m
+[0;32mI (20225) ESC_controller: ESC Values: 135.07, 264.93, 135.07, 264.93[0m
+[0;32mI (20345) PWM: roll:-1.023057 pitch=-0.449401 yaw=-1.813278[0m
+[0;32mI (20345) ESC_controller: ESC Values: 144.79, 255.21, 144.79, 255.21[0m
+[0;32mI (20465) PWM: roll:-0.900255 pitch=-0.599746 yaw=-1.825439[0m
+[0;32mI (20465) ESC_controller: ESC Values: 152.56, 247.44, 152.56, 247.44[0m
+[0;32mI (20585) PWM: roll:-1.024757 pitch=-0.537413 yaw=-1.833923[0m
+[0;32mI (20585) ESC_controller: ESC Values: 164.06, 235.94, 164.06, 235.94[0m
+[0;32mI (20705) PWM: roll:-1.005145 pitch=-0.421913 yaw=-1.840378[0m
+[0;32mI (20705) ESC_controller: ESC Values: 173.91, 226.09, 173.91, 226.09[0m
+[0;32mI (20825) PWM: roll:-0.971424 pitch=-0.422835 yaw=-1.850403[0m
+[0;32mI (20825) ESC_controller: ESC Values: 183.29, 216.71, 183.29, 216.71[0m
+[0;32mI (20945) PWM: roll:-0.958181 pitch=-0.404366 yaw=-1.859207[0m
+[0;32mI (20945) ESC_controller: ESC Values: 192.74, 207.26, 192.74, 207.26[0m
+[0;32mI (21065) PWM: roll:-1.080704 pitch=-0.489805 yaw=-1.871185[0m
+[0;32mI (21065) ESC_controller: ESC Values: 204.77, 195.23, 204.77, 195.23[0m
+Sent: 16
+[0;32mI (21185) PWM: roll:-1.095585 pitch=-0.436964 yaw=-1.878754[0m
+[0;32mI (21185) ESC_controller: ESC Values: 215.87, 184.13, 215.87, 184.13[0m
+[0;32mI (21305) PWM: roll:-0.999248 pitch=-0.533613 yaw=-1.890167[0m
+[0;32mI (21305) ESC_controller: ESC Values: 224.90, 175.10, 224.90, 175.10[0m
+[0;32mI (21425) PWM: roll:-0.954435 pitch=-0.628346 yaw=-1.901474[0m
+[0;32mI (21425) ESC_controller: ESC Values: 234.00, 166.00, 234.00, 166.00[0m
+[0;32mI (21545) PWM: roll:-1.060198 pitch=-0.529302 yaw=-1.908981[0m
+[0;32mI (21545) ESC_controller: ESC Values: 245.66, 154.34, 245.66, 154.34[0m
+[0;32mI (21665) PWM: roll:-0.997091 pitch=-0.533161 yaw=-1.920410[0m
+[0;32mI (21665) ESC_controller: ESC Values: 255.00, 145.00, 255.00, 145.00[0m
+[0;32mI (21785) PWM: roll:-0.964034 pitch=-0.573469 yaw=-1.931046[0m
+[0;32mI (21785) ESC_controller: ESC Values: 264.31, 135.69, 264.31, 135.69[0m
+[0;32mI (21905) PWM: roll:-0.945971 pitch=-0.510538 yaw=-1.939621[0m
+[0;32mI (21905) ESC_controller: ESC Values: 273.59, 126.41, 273.59, 126.41[0m
+[0;32mI (22025) PWM: roll:-0.991540 pitch=-0.567023 yaw=-1.949890[0m
+[0;32mI (22025) ESC_controller: ESC Values: 283.96, 116.04, 283.96, 116.04[0m
+Sent: 17
+[0;32mI (22145) PWM: roll:-1.013181 pitch=-0.596317 yaw=-1.959732[0m
+[0;32mI (22145) ESC_controller: ESC Values: 294.31, 105.69, 294.31, 105.69[0m
+[0;32mI (22265) PWM: roll:-0.985012 pitch=-0.575918 yaw=-1.969910[0m
+[0;32mI (22265) ESC_controller: ESC Values: 303.88, 100.00, 303.88, 100.00[0m
+[0;32mI (22385) PWM: roll:-1.029897 pitch=-0.573611 yaw=-1.980179[0m
+[0;32mI (22385) ESC_controller: ESC Values: 314.62, 100.00, 314.62, 100.00[0m
+[0;32mI (22515) PWM: roll:-1.120302 pitch=-0.589247 yaw=-1.991272[0m
+[0;32mI (22515) ESC_controller: ESC Values: 326.73, 100.00, 326.73, 100.00[0m
+[0;32mI (22635) PWM: roll:-1.068886 pitch=-0.594946 yaw=-2.002411[0m
+[0;32mI (22635) ESC_controller: ESC Values: 336.91, 100.00, 336.91, 100.00[0m
+[0;32mI (22755) PWM: roll:-0.993222 pitch=-0.492141 yaw=-2.010620[0m
+[0;32mI (22755) ESC_controller: ESC Values: 346.08, 100.00, 346.08, 100.00[0m
+[0;32mI (22875) PWM: roll:-1.018140 pitch=-0.546907 yaw=-2.019577[0m
+[0;32mI (22875) ESC_controller: ESC Values: 356.51, 100.00, 356.51, 100.00[0m
+[0;32mI (22995) PWM: roll:-1.036259 pitch=-0.597273 yaw=-2.030106[0m
+[0;32mI (22995) ESC_controller: ESC Values: 367.06, 100.00, 367.06, 100.00[0m
+Sent: 18
+[0;32mI (23115) PWM: roll:-1.012920 pitch=-0.554198 yaw=-2.038696[0m
+[0;32mI (23115) ESC_controller: ESC Values: 376.95, 100.00, 376.95, 100.00[0m
+[0;32mI (23235) PWM: roll:-0.945613 pitch=-0.440429 yaw=-2.044922[0m
+[0;32mI (23235) ESC_controller: ESC Values: 385.73, 100.00, 385.73, 100.00[0m
+[0;32mI (23355) PWM: roll:-1.059295 pitch=-0.401011 yaw=-2.053177[0m
+[0;32mI (23355) ESC_controller: ESC Values: 397.46, 100.00, 397.46, 100.00[0m
+[0;32mI (23475) PWM: roll:-0.907965 pitch=-0.576862 yaw=-2.065765[0m
+[0;32mI (23475) ESC_controller: ESC Values: 405.03, 100.00, 405.03, 100.00[0m
+[0;32mI (23595) PWM: roll:-0.955581 pitch=-0.674322 yaw=-2.075867[0m
+[0;32mI (23615) ESC_controller: ESC Values: 415.06, 100.00, 415.06, 100.00[0m
+[0;32mI (23715) PWM: roll:-0.970680 pitch=-0.451256 yaw=-2.080750[0m
+[0;32mI (23715) ESC_controller: ESC Values: 424.92, 100.00, 424.92, 100.00[0m
+[0;32mI (23835) PWM: roll:-0.988845 pitch=-0.566931 yaw=-2.092285[0m
+[0;32mI (23835) ESC_controller: ESC Values: 434.99, 100.00, 434.99, 100.00[0m
+[0;32mI (23955) PWM: roll:-1.027837 pitch=-0.468296 yaw=-2.098785[0m
+[0;32mI (23965) ESC_controller: ESC Values: 445.66, 100.00, 445.66, 100.00[0m
+Sent: 19
+[0;32mI (24075) PWM: roll:-1.062929 pitch=-0.682290 yaw=-2.111725[0m
+[0;32mI (24075) ESC_controller: ESC Values: 456.64, 100.00, 456.64, 100.00[0m
+[0;32mI (24195) PWM: roll:-0.950501 pitch=-0.569562 yaw=-2.119797[0m
+[0;32mI (24195) ESC_controller: ESC Values: 465.02, 100.00, 465.02, 100.00[0m
+[0;32mI (24315) PWM: roll:-0.986160 pitch=-0.542648 yaw=-2.129745[0m
+[0;32mI (24315) ESC_controller: ESC Values: 475.24, 100.00, 475.24, 100.00[0m
+[0;32mI (24435) PWM: roll:-0.984840 pitch=-0.589935 yaw=-2.141251[0m
+[0;32mI (24435) ESC_controller: ESC Values: 485.07, 100.00, 485.07, 100.00[0m
+[0;32mI (24555) PWM: roll:-1.021745 pitch=-0.496927 yaw=-2.149872[0m
+[0;32mI (24555) ESC_controller: ESC Values: 495.66, 100.00, 495.66, 100.00[0m
+[0;32mI (24675) PWM: roll:-1.011752 pitch=-0.454586 yaw=-2.160065[0m
+[0;32mI (24675) ESC_controller: ESC Values: 505.68, 100.00, 505.68, 100.00[0m
+[0;32mI (24795) PWM: roll:-0.980190 pitch=-0.534580 yaw=-2.170578[0m
+[0;32mI (24795) ESC_controller: ESC Values: 515.16, 100.00, 515.16, 100.00[0m
+[0;32mI (24915) PWM: roll:-0.945281 pitch=-0.601734 yaw=-2.181519[0m
+[0;32mI (24915) ESC_controller: ESC Values: 524.27, 100.00, 524.27, 100.00[0m
+[0;32mI (25035) PWM: roll:-0.944802 pitch=-0.417143 yaw=-2.188232[0m
+[0;32mI (25045) ESC_controller: ESC Values: 533.71, 100.00, 533.71, 100.00[0m
+Sent: 20
+[0;32mI (25155) PWM: roll:-1.115655 pitch=-0.512369 yaw=-2.198227[0m
+[0;32mI (25155) ESC_controller: ESC Values: 546.58, 100.00, 546.58, 100.00[0m
+[0;32mI (25275) PWM: roll:-0.965983 pitch=-0.604835 yaw=-2.208481[0m
+[0;32mI (25275) ESC_controller: ESC Values: 554.74, 100.00, 554.74, 100.00[0m
+[0;32mI (25395) PWM: roll:-0.985425 pitch=-0.422172 yaw=-2.215469[0m
+[0;32mI (25395) ESC_controller: ESC Values: 564.79, 100.00, 564.79, 100.00[0m
+[0;32mI (25515) PWM: roll:-0.957037 pitch=-0.496357 yaw=-2.227737[0m
+[0;32mI (25515) ESC_controller: ESC Values: 574.07, 100.00, 574.07, 100.00[0m
+[0;32mI (25635) PWM: roll:-0.913841 pitch=-0.549250 yaw=-2.238281[0m
+[0;32mI (25635) ESC_controller: ESC Values: 582.78, 100.00, 582.78, 100.00[0m
+[0;32mI (25755) PWM: roll:-1.022550 pitch=-0.618174 yaw=-2.248566[0m
+[0;32mI (25755) ESC_controller: ESC Values: 594.09, 100.00, 594.09, 100.00[0m
+[0;32mI (25875) PWM: roll:-0.906678 pitch=-0.469410 yaw=-2.256210[0m
+[0;32mI (25875) ESC_controller: ESC Values: 602.00, 100.00, 602.00, 100.00[0m
+[0;32mI (25995) PWM: roll:-1.003606 pitch=-0.604657 yaw=-2.268204[0m
+[0;32mI (25995) ESC_controller: ESC Values: 613.01, 100.00, 613.01, 100.00[0m
+Sent: 21
+[0;32mI (26115) PWM: roll:-1.037076 pitch=-0.467973 yaw=-2.275040[0m
+[0;32mI (26115) ESC_controller: ESC Values: 623.71, 100.00, 623.71, 100.00[0m
+[0;32mI (26235) PWM: roll:-0.912350 pitch=-0.485747 yaw=-2.284958[0m
+[0;32mI (26235) ESC_controller: ESC Values: 631.59, 100.00, 631.59, 100.00[0m
+[0;32mI (26355) PWM: roll:-1.000732 pitch=-0.579116 yaw=-2.294891[0m
+[0;32mI (26355) ESC_controller: ESC Values: 642.48, 100.00, 642.48, 100.00[0m
+[0;32mI (26475) PWM: roll:-0.962140 pitch=-0.536447 yaw=-2.304688[0m
+[0;32mI (26475) ESC_controller: ESC Values: 651.71, 100.00, 651.71, 100.00[0m
+[0;32mI (26595) PWM: roll:-0.959843 pitch=-0.466410 yaw=-2.313873[0m
+[0;32mI (26595) ESC_controller: ESC Values: 661.29, 100.00, 661.29, 100.00[0m
+[0;32mI (26715) PWM: roll:-1.027632 pitch=-0.483808 yaw=-2.324432[0m
+[0;32mI (26715) ESC_controller: ESC Values: 672.24, 100.00, 672.24, 100.00[0m
+[0;32mI (26835) PWM: roll:-1.037302 pitch=-0.468829 yaw=-2.335205[0m
+[0;32mI (26835) ESC_controller: ESC Values: 682.71, 100.00, 682.71, 100.00[0m
+[0;32mI (26955) PWM: roll:-0.897029 pitch=-0.547134 yaw=-2.345703[0m
+[0;32mI (26965) ESC_controller: ESC Values: 690.28, 100.00, 690.28, 100.00[0m
+Sent: 22
+[0;32mI (27075) PWM: roll:-0.960815 pitch=-0.561611 yaw=-2.354279[0m
+[0;32mI (27075) ESC_controller: ESC Values: 700.53, 100.00, 700.53, 100.00[0m
+[0;32mI (27195) PWM: roll:-1.032610 pitch=-0.554641 yaw=-2.364120[0m
+[0;32mI (27195) ESC_controller: ESC Values: 711.57, 100.00, 711.57, 100.00[0m
+[0;32mI (27315) PWM: roll:-1.022629 pitch=-0.494134 yaw=-2.373978[0m
+[0;32mI (27315) ESC_controller: ESC Values: 721.70, 100.00, 721.70, 100.00[0m
+[0;32mI (27435) PWM: roll:-0.980032 pitch=-0.571001 yaw=-2.385025[0m
+[0;32mI (27435) ESC_controller: ESC Values: 731.07, 100.00, 731.07, 100.00[0m
+[0;32mI (27565) PWM: roll:-0.972708 pitch=-0.537847 yaw=-2.394852[0m
+[0;32mI (27565) ESC_controller: ESC Values: 740.73, 100.00, 740.73, 100.00[0m
+[0;32mI (27685) PWM: roll:-1.139376 pitch=-0.556410 yaw=-2.404480[0m
+[0;32mI (27685) ESC_controller: ESC Values: 753.79, 100.00, 753.79, 100.00[0m
+[0;32mI (27805) PWM: roll:-0.869330 pitch=-0.550294 yaw=-2.412994[0m
+[0;32mI (27805) ESC_controller: ESC Values: 759.78, 100.00, 759.78, 100.00[0m
+[0;32mI (27925) PWM: roll:-0.953937 pitch=-0.561858 yaw=-2.422302[0m
+[0;32mI (27925) ESC_controller: ESC Values: 770.16, 100.00, 770.16, 100.00[0m
+[0;32mI (28045) PWM: roll:-0.949465 pitch=-0.536142 yaw=-2.432251[0m
+[0;32mI (28045) ESC_controller: ESC Values: 779.61, 100.00, 779.61, 100.00[0m
+Sent: 23
+[0;32mI (28165) PWM: roll:-1.113365 pitch=-0.458268 yaw=-2.441940[0m
+[0;32mI (28165) ESC_controller: ESC Values: 792.39, 100.00, 792.39, 100.00[0m
+[0;32mI (28285) PWM: roll:-1.025327 pitch=-0.667073 yaw=-2.454681[0m
+[0;32mI (28285) ESC_controller: ESC Values: 801.76, 100.00, 801.76, 100.00[0m
+[0;32mI (28405) PWM: roll:-0.946536 pitch=-0.556458 yaw=-2.461487[0m
+[0;32mI (28405) ESC_controller: ESC Values: 810.44, 100.00, 810.44, 100.00[0m
+[0;32mI (28525) PWM: roll:-0.913164 pitch=-0.506858 yaw=-2.470367[0m
+[0;32mI (28525) ESC_controller: ESC Values: 819.24, 100.00, 819.24, 100.00[0m
+[0;32mI (28645) PWM: roll:-0.970670 pitch=-0.508554 yaw=-2.479599[0m
+[0;32mI (28645) ESC_controller: ESC Values: 829.52, 100.00, 829.52, 100.00[0m
+[0;32mI (28765) PWM: roll:-0.973067 pitch=-0.525712 yaw=-2.488297[0m
+[0;32mI (28765) ESC_controller: ESC Values: 839.27, 100.00, 839.27, 100.00[0m
+[0;32mI (28885) PWM: roll:-0.898414 pitch=-0.554370 yaw=-2.498611[0m
+[0;32mI (28885) ESC_controller: ESC Values: 847.51, 100.00, 847.51, 100.00[0m
+[0;32mI (29005) PWM: roll:-0.976661 pitch=-0.595017 yaw=-2.510452[0m
+[0;32mI (29005) ESC_controller: ESC Values: 858.06, 100.00, 858.06, 100.00[0m
+Sent: 24
+[0;32mI (29125) PWM: roll:-0.974171 pitch=-0.485903 yaw=-2.517685[0m
+[0;32mI (29125) ESC_controller: ESC Values: 867.78, 100.00, 867.78, 100.00[0m
+[0;32mI (29245) PWM: roll:-0.991651 pitch=-0.541043 yaw=-2.528015[0m
+[0;32mI (29245) ESC_controller: ESC Values: 877.87, 100.00, 877.87, 100.00[0m
+[0;32mI (29365) PWM: roll:-1.032539 pitch=-0.624356 yaw=-2.539978[0m
+[0;32mI (29365) ESC_controller: ESC Values: 888.60, 100.00, 888.60, 100.00[0m
+[0;32mI (29485) PWM: roll:-1.025262 pitch=-0.587965 yaw=-2.548676[0m
+[0;32mI (29485) ESC_controller: ESC Values: 898.78, 100.00, 898.78, 100.00[0m
+[0;32mI (29605) PWM: roll:-0.985991 pitch=-0.495547 yaw=-2.556992[0m
+[0;32mI (29605) ESC_controller: ESC Values: 908.25, 100.00, 908.25, 100.00[0m
+[0;32mI (29725) PWM: roll:-1.054091 pitch=-0.541018 yaw=-2.567444[0m
+[0;32mI (29725) ESC_controller: ESC Values: 919.47, 100.00, 919.47, 100.00[0m
+[0;32mI (29845) PWM: roll:-0.938427 pitch=-0.538044 yaw=-2.577698[0m
+[0;32mI (29845) ESC_controller: ESC Values: 927.70, 100.00, 927.70, 100.00[0m
+[0;32mI (29965) PWM: roll:-0.887205 pitch=-0.570913 yaw=-2.587570[0m
+[0;32mI (29965) ESC_controller: ESC Values: 936.06, 100.00, 936.06, 100.00[0m
+Sent: 25
+[0;32mI (30085) PWM: roll:-0.917859 pitch=-0.397976 yaw=-2.595093[0m
+[0;32mI (30085) ESC_controller: ESC Values: 945.54, 100.00, 945.54, 100.00[0m
+[0;32mI (30205) PWM: roll:-1.035543 pitch=-0.560258 yaw=-2.609024[0m
+[0;32mI (30205) ESC_controller: ESC Values: 957.08, 100.00, 957.08, 100.00[0m
+[0;32mI (30325) PWM: roll:-0.963029 pitch=-0.560534 yaw=-2.619598[0m
+[0;32mI (30325) ESC_controller: ESC Values: 965.98, 100.00, 965.98, 100.00[0m
+[0;32mI (30445) PWM: roll:-1.060214 pitch=-0.628818 yaw=-2.630692[0m
+[0;32mI (30445) ESC_controller: ESC Values: 977.55, 100.00, 977.55, 100.00[0m
+[0;32mI (30565) PWM: roll:-0.865960 pitch=-0.533867 yaw=-2.638504[0m
+[0;32mI (30565) ESC_controller: ESC Values: 984.27, 100.00, 984.27, 100.00[0m
+[0;32mI (30685) PWM: roll:-1.077280 pitch=-0.565878 yaw=-2.649597[0m
+[0;32mI (30685) ESC_controller: ESC Values: 997.16, 100.00, 997.16, 100.00[0m
+[0;32mI (30805) PWM: roll:-0.962832 pitch=-0.466738 yaw=-2.657928[0m
+[0;32mI (30805) ESC_controller: ESC Values: 1005.64, 100.00, 1005.64, 100.00[0m
+[0;32mI (30925) PWM: roll:-1.014349 pitch=-0.504682 yaw=-2.670013[0m
+[0;32mI (30925) ESC_controller: ESC Values: 1016.30, 100.00, 1016.30, 100.00[0m
+[0;32mI (31045) PWM: roll:-0.942826 pitch=-0.511766 yaw=-2.682312[0m
+[0;32mI (31045) ESC_controller: ESC Values: 1025.01, 100.00, 1025.01, 100.00[0m
+Sent: 26
+[0;32mI (31165) PWM: roll:-1.011562 pitch=-0.582082 yaw=-2.692490[0m
+[0;32mI (31165) ESC_controller: ESC Values: 1035.82, 100.00, 1035.82, 100.00[0m
+[0;32mI (31285) PWM: roll:-0.970153 pitch=-0.539194 yaw=-2.701263[0m
+[0;32mI (31285) ESC_controller: ESC Values: 1045.10, 100.00, 1045.10, 100.00[0m
+[0;32mI (31405) PWM: roll:-1.032542 pitch=-0.576455 yaw=-2.712418[0m
+[0;32mI (31405) ESC_controller: ESC Values: 1056.05, 100.00, 1056.05, 100.00[0m
+[0;32mI (31525) PWM: roll:-0.927727 pitch=-0.517050 yaw=-2.718384[0m
+[0;32mI (31525) ESC_controller: ESC Values: 1064.28, 100.00, 1064.28, 100.00[0m
+[0;32mI (31645) PWM: roll:-1.015569 pitch=-0.491952 yaw=-2.727646[0m
+[0;32mI (31645) ESC_controller: ESC Values: 1075.32, 100.00, 1075.32, 100.00[0m
+[0;32mI (31765) PWM: roll:-1.017940 pitch=-0.564940 yaw=-2.738556[0m
+[0;32mI (31765) ESC_controller: ESC Values: 1085.52, 100.00, 1085.52, 100.00[0m
+[0;32mI (31885) PWM: roll:-1.037322 pitch=-0.515107 yaw=-2.749786[0m
+[0;32mI (31885) ESC_controller: ESC Values: 1096.09, 100.00, 1096.09, 100.00[0m
+[0;32mI (32005) PWM: roll:-1.002667 pitch=-0.496757 yaw=-2.761093[0m
+[0;32mI (32005) ESC_controller: ESC Values: 1105.77, 100.00, 1105.77, 100.00[0m
+Sent: 27
+[0;32mI (32125) PWM: roll:-1.070244 pitch=-0.664111 yaw=-2.773758[0m
+[0;32mI (32125) ESC_controller: ESC Values: 1117.14, 100.00, 1117.14, 100.00[0m
+[0;32mI (32245) PWM: roll:-0.935951 pitch=-0.456424 yaw=-2.781906[0m
+[0;32mI (32245) ESC_controller: ESC Values: 1125.16, 100.00, 1125.16, 100.00[0m
+[0;32mI (32365) PWM: roll:-1.022758 pitch=-0.579831 yaw=-2.794189[0m
+[0;32mI (32365) ESC_controller: ESC Values: 1136.26, 100.00, 1136.26, 100.00[0m
+[0;32mI (32485) PWM: roll:-1.024464 pitch=-0.422148 yaw=-2.800232[0m
+[0;32mI (32485) ESC_controller: ESC Values: 1146.52, 100.00, 1146.52, 100.00[0m
+[0;32mI (32605) PWM: roll:-0.942132 pitch=-0.407193 yaw=-2.808746[0m
+[0;32mI (32605) ESC_controller: ESC Values: 1155.12, 100.00, 1155.12, 100.00[0m
+[0;32mI (32725) PWM: roll:-0.987849 pitch=-0.525991 yaw=-2.821518[0m
+[0;32mI (32725) ESC_controller: ESC Values: 1165.45, 100.00, 1165.45, 100.00[0m
+[0;32mI (32845) PWM: roll:-0.954425 pitch=-0.523868 yaw=-2.831726[0m
+[0;32mI (32855) ESC_controller: ESC Values: 1174.66, 100.00, 1174.66, 100.00[0m
+[0;32mI (32965) PWM: roll:-1.023634 pitch=-0.578852 yaw=-2.842545[0m
+[0;32mI (32975) ESC_controller: ESC Values: 1185.59, 100.00, 1185.59, 100.00[0m
+Sent: 28
+[0;32mI (33085) PWM: roll:-1.011127 pitch=-0.540077 yaw=-2.851624[0m
+[0;32mI (33085) ESC_controller: ESC Values: 1195.58, 100.00, 1195.58, 100.00[0m
+[0;32mI (33205) PWM: roll:-0.986738 pitch=-0.564857 yaw=-2.861877[0m
+[0;32mI (33205) ESC_controller: ESC Values: 1200.00, 100.00, 1200.00, 100.00[0m
+[0;32mI (33325) PWM: roll:-1.010897 pitch=-0.554890 yaw=-2.871292[0m
+[0;32mI (33325) ESC_controller: ESC Values: 210.11, 189.89, 210.11, 189.89[0m
+[0;32mI (33445) PWM: roll:-0.965971 pitch=-0.602278 yaw=-2.882553[0m
+[0;32mI (33445) ESC_controller: ESC Values: 219.32, 180.68, 219.32, 180.68[0m
+[0;32mI (33565) PWM: roll:-0.957909 pitch=-0.383870 yaw=-2.886093[0m
+[0;32mI (33565) ESC_controller: ESC Values: 228.82, 171.18, 228.82, 171.18[0m
+[0;32mI (33685) PWM: roll:-0.950760 pitch=-0.536228 yaw=-2.891281[0m
+[0;32mI (33685) ESC_controller: ESC Values: 238.25, 161.75, 238.25, 161.75[0m
+[0;32mI (33805) PWM: roll:-0.889328 pitch=-0.442675 yaw=-2.897552[0m
+[0;32mI (33805) ESC_controller: ESC Values: 246.53, 153.47, 246.53, 153.47[0m
+[0;32mI (33925) PWM: roll:-0.951275 pitch=-0.215942 yaw=-2.905121[0m
+[0;32mI (33925) ESC_controller: ESC Values: 256.67, 143.33, 256.67, 143.33[0m
+Sent: 29
+[0;32mI (34045) PWM: roll:-0.859592 pitch=-0.496897 yaw=-2.919724[0m
+[0;32mI (34045) ESC_controller: ESC Values: 264.34, 135.66, 264.34, 135.66[0m
+[0;32mI (34165) PWM: roll:-0.921967 pitch=-0.499801 yaw=-2.928955[0m
+[0;32mI (34165) ESC_controller: ESC Values: 274.19, 125.81, 274.19, 125.81[0m
+[0;32mI (34285) PWM: roll:-0.777681 pitch=-0.452154 yaw=-2.938049[0m
+[0;32mI (34285) ESC_controller: ESC Values: 280.52, 119.48, 280.52, 119.48[0m
+[0;32mI (34405) PWM: roll:-0.993127 pitch=-0.507523 yaw=-2.949310[0m
+[0;32mI (34405) ESC_controller: ESC Values: 292.61, 107.39, 292.61, 107.39[0m
+[0;32mI (34525) PWM: roll:-1.086422 pitch=-0.479105 yaw=-2.959732[0m
+[0;32mI (34525) ESC_controller: ESC Values: 304.40, 100.00, 304.40, 100.00[0m
+[0;32mI (34645) PWM: roll:-0.893135 pitch=-0.464422 yaw=-2.968781[0m
+[0;32mI (34645) ESC_controller: ESC Values: 311.40, 100.00, 311.40, 100.00[0m
+[0;32mI (34765) PWM: roll:-0.969543 pitch=-0.551012 yaw=-2.979874[0m
+[0;32mI (34765) ESC_controller: ESC Values: 321.86, 100.00, 321.86, 100.00[0m
+[0;32mI (34885) PWM: roll:-1.004166 pitch=-0.398129 yaw=-2.988083[0m
+[0;32mI (34885) ESC_controller: ESC Values: 332.25, 100.00, 332.25, 100.00[0m
+[0;32mI (35005) PWM: roll:-0.913506 pitch=-0.457082 yaw=-3.001450[0m
+[0;32mI (35015) ESC_controller: ESC Values: 340.48, 100.00, 340.48, 100.00[0m
+Sent: 30
+[0;32mI (35125) PWM: roll:-0.947858 pitch=-0.496207 yaw=-3.012375[0m
+[0;32mI (35125) ESC_controller: ESC Values: 350.30, 100.00, 350.30, 100.00[0m
+[0;32mI (35245) PWM: roll:-1.010130 pitch=-0.475518 yaw=-3.022125[0m
+[0;32mI (35245) ESC_controller: ESC Values: 361.02, 100.00, 361.02, 100.00[0m
+[0;32mI (35365) PWM: roll:-0.984687 pitch=-0.702299 yaw=-3.037720[0m
+[0;32mI (35365) ESC_controller: ESC Values: 370.62, 100.00, 370.62, 100.00[0m
+[0;32mI (35485) PWM: roll:-0.991552 pitch=-0.419854 yaw=-3.041672[0m
+[0;32mI (35485) ESC_controller: ESC Values: 380.60, 100.00, 380.60, 100.00[0m

@@ -1,0 +1,392 @@
+[0/1] Re-running CMake...
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+Processing 2 dependencies:
+[1/2] espressif/mpu6050 (1.2.0)
+[2/2] idf (5.3.0)
+-- Project sdkconfig file /home/shashwat/drone_flight_control/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- App "drone_flight_control" version: 1
+-- Adding linker script /home/shashwat/drone_flight_control/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Using Micro XRCE-DDS middleware
+rm -f /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/esp32_toolchain.cmake; \
+cat /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/esp32_toolchain.cmake.in | \
+	sed "s/@CMAKE_C_COMPILER@/\/home\/shashwat\/.espressif\/tools\/xtensa-esp-elf\/esp-13.2.0_20230928\/xtensa-esp-elf\/bin\/xtensa-esp32-elf-gcc/g" | \
+	sed "s/@CMAKE_CXX_COMPILER@/\/home\/shashwat\/.espressif\/tools\/xtensa-esp-elf\/esp-13.2.0_20230928\/xtensa-esp-elf\/bin\/xtensa-esp32-elf-g++/g" | \
+	sed "s/@CFLAGS@/-mlongcalls -Wno-frame-address  -ffunction-sections -fdata-sections/g" | \
+	sed "s/@CXXFLAGS@/-mlongcalls -Wno-frame-address  -ffunction-sections -fdata-sections/g" | \
+	sed "s/@IDF_TARGET@/esp32/g" | \
+	sed "s/@IDF_PATH@/\/home\/shashwat\/esp\/esp-idf/g" | \
+	sed "s/@BUILD_CONFIG_DIR@/\/home\/shashwat\/drone_flight_control\/build\/config/g" \
+	> /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/esp32_toolchain.cmake
+rm -rf micro_ros_dev; \
+mkdir micro_ros_dev; cd micro_ros_dev; \
+git clone -b iron https://github.com/ament/ament_cmake src/ament_cmake; \
+git clone -b iron https://github.com/ament/ament_lint src/ament_lint; \
+git clone -b iron https://github.com/ament/ament_package src/ament_package; \
+git clone -b iron https://github.com/ament/googletest src/googletest; \
+git clone -b iron https://github.com/ros2/ament_cmake_ros src/ament_cmake_ros; \
+git clone -b iron https://github.com/ament/ament_index src/ament_index; \
+colcon build --cmake-args -DBUILD_TESTING=OFF -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=gcc;
+rm -rf micro_ros_src; \
+mkdir micro_ros_src; cd micro_ros_src; \
+if [ "microxrcedds" = "embeddedrtps" ]; then \
+	git clone -b main https://github.com/micro-ROS/embeddedRTPS src/embeddedRTPS; \
+	git clone -b main https://github.com/micro-ROS/rmw_embeddedrtps src/rmw_embeddedrtps; \
+else \
+	git clone -b ros2 https://github.com/eProsima/Micro-XRCE-DDS-Client src/Micro-XRCE-DDS-Client; \
+	git clone -b iron https://github.com/micro-ROS/rmw_microxrcedds src/rmw_microxrcedds; \
+fi; \
+git clone -b ros2 https://github.com/eProsima/micro-CDR src/micro-CDR; \
+git clone -b iron https://github.com/micro-ROS/rcl src/rcl; \
+git clone -b iron https://github.com/ros2/rclc src/rclc; \
+git clone -b iron https://github.com/micro-ROS/rcutils src/rcutils; \
+git clone -b iron https://github.com/micro-ROS/micro_ros_msgs src/micro_ros_msgs; \
+git clone -b iron https://github.com/micro-ROS/rosidl_typesupport src/rosidl_typesupport; \
+git clone -b iron https://github.com/micro-ROS/rosidl_typesupport_microxrcedds src/rosidl_typesupport_microxrcedds; \
+git clone -b iron https://github.com/ros2/rosidl src/rosidl; \
+git clone -b iron https://github.com/ros2/rosidl_dynamic_typesupport src/rosidl_dynamic_typesupport; \
+git clone -b iron https://github.com/ros2/rmw src/rmw; \
+git clone -b iron https://github.com/ros2/rcl_interfaces src/rcl_interfaces; \
+git clone -b iron https://github.com/ros2/rosidl_defaults src/rosidl_defaults; \
+git clone -b iron https://github.com/ros2/unique_identifier_msgs src/unique_identifier_msgs; \
+git clone -b iron https://github.com/ros2/common_interfaces src/common_interfaces; \
+git clone -b iron https://github.com/ros2/example_interfaces src/example_interfaces; \
+git clone -b iron https://github.com/ros2/test_interface_files src/test_interface_files; \
+git clone -b iron https://github.com/ros2/rmw_implementation src/rmw_implementation; \
+git clone -b iron https://github.com/ros2/rcl_logging src/rcl_logging; \
+git clone -b iron https://github.com/ros2/ros2_tracing src/ros2_tracing; \
+git clone -b iron https://github.com/micro-ROS/micro_ros_utilities src/micro_ros_utilities; \
+git clone -b iron https://github.com/ros2/rosidl_core src/rosidl_core; \
+    touch src/rosidl/rosidl_typesupport_introspection_cpp/COLCON_IGNORE; \
+    touch src/rcl_logging/rcl_logging_log4cxx/COLCON_IGNORE; \
+    touch src/rcl_logging/rcl_logging_spdlog/COLCON_IGNORE; \
+    touch src/rclc/rclc_examples/COLCON_IGNORE; \
+touch src/rcl/rcl_yaml_param_parser/COLCON_IGNORE; \
+touch src/ros2_tracing/test_tracetools/COLCON_IGNORE; \
+cp -rf /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/extra_packages src/extra_packages || :; \
+test -f src/extra_packages/extra_packages.repos && cd src/extra_packages && vcs import --input extra_packages.repos || :;
+Starting >>> ament_package
+Starting >>> ament_lint
+Starting >>> gtest_vendor
+Starting >>> ament_cppcheck
+Finished <<< gtest_vendor [0.64s]
+Starting >>> ament_pycodestyle
+Finished <<< ament_cppcheck [0.93s]
+Finished <<< ament_lint [1.01s]
+Finished <<< ament_package [1.07s]
+Starting >>> ament_cmake_core
+Starting >>> ament_flake8
+Starting >>> gmock_vendor
+Finished <<< ament_pycodestyle [0.91s]
+Starting >>> ament_pyflakes
+Finished <<< gmock_vendor [0.71s]
+Finished <<< ament_flake8 [0.80s]
+Starting >>> ament_pep257
+Starting >>> ament_mypy
+Finished <<< ament_cmake_core [1.06s]
+Starting >>> ament_cmake_libraries
+Finished <<< ament_pyflakes [0.73s]
+Starting >>> ament_cmake_export_libraries
+Finished <<< ament_pep257 [0.87s]
+Starting >>> ament_copyright
+Finished <<< ament_mypy [1.00s]
+Starting >>> ament_cmake_python
+Finished <<< ament_cmake_libraries [1.18s]
+Starting >>> ament_cmake_export_dependencies
+Finished <<< ament_cmake_export_libraries [1.16s]
+Starting >>> ament_cmake_include_directories
+Finished <<< ament_copyright [0.97s]
+Starting >>> ament_lint_cmake
+Finished <<< ament_cmake_python [1.16s]
+Starting >>> ament_cmake_test
+Finished <<< ament_cmake_export_dependencies [0.89s]
+Starting >>> ament_cmake_export_definitions
+Finished <<< ament_cmake_include_directories [1.01s]
+Starting >>> ament_cmake_export_include_directories
+Finished <<< ament_lint_cmake [0.83s]
+Starting >>> ament_cmake_export_link_flags
+Finished <<< ament_cmake_test [1.15s]
+Starting >>> ament_cmake_lint_cmake
+Finished <<< ament_cmake_export_definitions [1.02s]
+Starting >>> ament_cmake_gtest
+Finished <<< ament_cmake_export_include_directories [0.90s]
+Starting >>> ament_cmake_version
+Finished <<< ament_cmake_export_link_flags [1.06s]
+Starting >>> ament_cmake_export_interfaces
+Finished <<< ament_cmake_version [0.64s]
+Starting >>> ament_cmake_export_targets
+Finished <<< ament_cmake_gtest [0.82s]
+Starting >>> ament_cmake_target_dependencies
+Finished <<< ament_cmake_lint_cmake [0.93s]
+Starting >>> ament_cmake_copyright
+Finished <<< ament_cmake_export_interfaces [0.69s]
+Starting >>> ament_cpplint
+Finished <<< ament_cmake_export_targets [0.68s]
+Starting >>> ament_uncrustify
+Finished <<< ament_cmake_target_dependencies [0.66s]
+Starting >>> ament_xmllint
+Finished <<< ament_cmake_copyright [0.93s]
+Starting >>> ament_cmake_gen_version_h
+Finished <<< ament_cpplint [0.84s]
+Starting >>> ament_cmake_cppcheck
+Finished <<< ament_xmllint [0.71s]
+Starting >>> ament_cmake_cpplint
+Finished <<< ament_uncrustify [0.81s]
+Starting >>> ament_cmake_flake8
+Finished <<< ament_cmake_cppcheck [0.70s]
+Starting >>> ament_cmake_pep257
+Finished <<< ament_cmake_cpplint [0.60s]
+Starting >>> ament_cmake_uncrustify
+Finished <<< ament_cmake_flake8 [0.61s]
+Starting >>> ament_cmake_xmllint
+Finished <<< ament_cmake_gen_version_h [1.17s]
+Starting >>> ament_cmake
+Finished <<< ament_cmake_pep257 [0.73s]
+Starting >>> ament_lint_auto
+Finished <<< ament_cmake_xmllint [0.61s]
+Starting >>> ament_clang_format
+Finished <<< ament_cmake_uncrustify [0.73s]
+Starting >>> ament_lint_common
+Finished <<< ament_cmake [0.94s]
+Starting >>> ament_clang_tidy
+Finished <<< ament_lint_auto [0.76s]
+Starting >>> ament_cmake_pytest
+Finished <<< ament_clang_format [0.76s]
+Starting >>> ament_pclint
+Finished <<< ament_lint_common [1.10s]
+Starting >>> domain_coordinator
+Finished <<< ament_cmake_pytest [0.68s]
+Starting >>> ament_cmake_gmock
+Finished <<< ament_clang_tidy [1.05s]
+Starting >>> ament_cmake_google_benchmark
+Finished <<< ament_pclint [0.77s]
+Starting >>> ament_cmake_vendor_package
+Finished <<< domain_coordinator [1.01s]
+Starting >>> ament_index_python
+Finished <<< ament_cmake_gmock [1.02s]
+Starting >>> ament_cmake_auto
+Finished <<< ament_cmake_vendor_package [0.95s]
+Starting >>> ament_cmake_clang_format
+Finished <<< ament_cmake_google_benchmark [1.33s]
+Starting >>> ament_cmake_clang_tidy
+Finished <<< ament_index_python [0.72s]
+Starting >>> ament_cmake_mypy
+Finished <<< ament_cmake_auto [0.78s]
+Starting >>> ament_cmake_pclint
+Finished <<< ament_cmake_clang_format [1.02s]
+Starting >>> ament_cmake_pycodestyle
+Finished <<< ament_cmake_mypy [0.71s]
+Starting >>> ament_cmake_pyflakes
+Finished <<< ament_cmake_clang_tidy [0.99s]
+Starting >>> ament_cmake_ros
+Finished <<< ament_cmake_pclint [0.90s]
+Starting >>> ament_index_cpp
+Finished <<< ament_cmake_pycodestyle [0.77s]
+Finished <<< ament_cmake_pyflakes [0.70s]
+Finished <<< ament_cmake_ros [0.81s]
+Finished <<< ament_index_cpp [1.19s]
+
+Summary: 60 packages finished [14.6s]
+  58 packages had stderr output: ament_clang_format ament_clang_tidy ament_cmake ament_cmake_auto ament_cmake_clang_format ament_cmake_clang_tidy ament_cmake_copyright ament_cmake_core ament_cmake_cppcheck ament_cmake_cpplint ament_cmake_export_definitions ament_cmake_export_dependencies ament_cmake_export_include_directories ament_cmake_export_interfaces ament_cmake_export_libraries ament_cmake_export_link_flags ament_cmake_export_targets ament_cmake_flake8 ament_cmake_gmock ament_cmake_google_benchmark ament_cmake_gtest ament_cmake_include_directories ament_cmake_libraries ament_cmake_lint_cmake ament_cmake_mypy ament_cmake_pclint ament_cmake_pep257 ament_cmake_pycodestyle ament_cmake_pyflakes ament_cmake_pytest ament_cmake_python ament_cmake_ros ament_cmake_target_dependencies ament_cmake_test ament_cmake_uncrustify ament_cmake_vendor_package ament_cmake_version ament_cmake_xmllint ament_copyright ament_cppcheck ament_cpplint ament_flake8 ament_index_python ament_lint ament_lint_auto ament_lint_cmake ament_lint_common ament_mypy ament_package ament_pclint ament_pep257 ament_pycodestyle ament_pyflakes ament_uncrustify ament_xmllint domain_coordinator gmock_vendor gtest_vendor
+cd /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src; \
+unset AMENT_PREFIX_PATH; \
+PATH="/home/shashwat/esp/esp-idf/components/espcoredump:/home/shashwat/esp/esp-idf/components/partition_table:/home/shashwat/esp/esp-idf/components/app_update:/home/shashwat/.espressif/tools/xtensa-esp-elf-gdb/12.1_20231023/xtensa-esp-elf-gdb/bin:/home/shashwat/.espressif/tools/riscv32-esp-elf-gdb/12.1_20231023/riscv32-esp-elf-gdb/bin:/home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin:/home/shashwat/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin:/home/shashwat/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/home/shashwat/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/bin:/home/shashwat/.espressif/tools/xtensa-esp-elf-gdb/12.1_20231023/xtensa-esp-elf-gdb/bin:/home/shashwat/.espressif/tools/riscv32-esp-elf-gdb/12.1_20231023/riscv32-esp-elf-gdb/bin:/home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin:/home/shashwat/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20230928/riscv32-esp-elf/bin:/home/shashwat/.espressif/tools/esp32ulp-elf/2.35_20220830/esp32ulp-elf/bin:/home/shashwat/.espressif/tools/openocd-esp32/v0.12.0-esp32-20230921/openocd-esp32/bin:/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin:/home/shashwat/esp/esp-idf/tools::/home/shashwat/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin"; \
+. ../micro_ros_dev/install/local_setup.sh; \
+colcon build \
+	--merge-install \
+	--packages-ignore-regex=.*_cpp \
+	--metas /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/colcon.meta  \
+	--cmake-args \
+	"--no-warn-unused-cli" \
+	-DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=OFF \
+	-DTHIRDPARTY=ON \
+	-DBUILD_SHARED_LIBS=OFF \
+	-DBUILD_TESTING=OFF \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_TOOLCHAIN_FILE=/home/shashwat/drone_flight_control/components/micro_ros_espidf_component/esp32_toolchain.cmake \
+	-DCMAKE_VERBOSE_MAKEFILE=OFF \
+        -DIDF_INCLUDES='-I/home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include_override -I/home/shashwat/esp/esp-idf/components/xtensa/esp32/include -I/home/shashwat/esp/esp-idf/components/xtensa/include -I/home/shashwat/esp/esp-idf/components/xtensa/deprecated_include -I/home/shashwat/esp/esp-idf/components/esp_driver_gpio/include -I/home/shashwat/esp/esp-idf/components/esp_pm/include -I/home/shashwat/esp/esp-idf/components/mbedtls/port/include -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/include -I/home/shashwat/esp/esp-idf/components/mbedtls/mbedtls/library -I/home/shashwat/esp/esp-idf/components/mbedtls/esp_crt_bundle/include -I/home/shashwat/esp/esp-idf/components/efuse/include -I/home/shashwat/esp/esp-idf/components/efuse/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_bootloader_format/include -I/home/shashwat/esp/esp-idf/components/esp_app_format/include -I/home/shashwat/esp/esp-idf/components/bootloader_support/include -I/home/shashwat/esp/esp-idf/components/bootloader_support/bootloader_flash/include -I/home/shashwat/esp/esp-idf/components/esp_partition/include -I/home/shashwat/esp/esp-idf/components/app_update/include -I/home/shashwat/esp/esp-idf/components/esp_mm/include -I/home/shashwat/esp/esp-idf/components/spi_flash/include -I/home/shashwat/esp/esp-idf/components/pthread/include -I/home/shashwat/esp/esp-idf/components/esp_system/include -I/home/shashwat/esp/esp-idf/components/esp_common/include -I/home/shashwat/esp/esp-idf/components/esp_rom/include -I/home/shashwat/esp/esp-idf/components/esp_rom/include/esp32 -I/home/shashwat/esp/esp-idf/components/esp_rom/esp32 -I/home/shashwat/esp/esp-idf/components/hal/platform_port/include -I/home/shashwat/esp/esp-idf/components/hal/esp32/include -I/home/shashwat/esp/esp-idf/components/hal/include -I/home/shashwat/esp/esp-idf/components/log/include -I/home/shashwat/esp/esp-idf/components/heap/include -I/home/shashwat/esp/esp-idf/components/soc/include -I/home/shashwat/esp/esp-idf/components/soc/esp32 -I/home/shashwat/esp/esp-idf/components/soc/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_hw_support/include -I/home/shashwat/esp/esp-idf/components/esp_hw_support/include/soc -I/home/shashwat/esp/esp-idf/components/esp_hw_support/include/soc/esp32 -I/home/shashwat/esp/esp-idf/components/freertos/config/include -I/home/shashwat/esp/esp-idf/components/freertos/config/include/freertos -I/home/shashwat/esp/esp-idf/components/freertos/config/xtensa/include -I/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/home/shashwat/esp/esp-idf/components/freertos/esp_additions/include -I/home/shashwat/esp/esp-idf/components/newlib/platform_include -I/home/shashwat/esp/esp-idf/components/esp_timer/include -I/home/shashwat/esp/esp-idf/components/esp_driver_gptimer/include -I/home/shashwat/esp/esp-idf/components/esp_ringbuf/include -I/home/shashwat/esp/esp-idf/components/esp_driver_uart/include -I/home/shashwat/esp/esp-idf/components/app_trace/include -I/home/shashwat/esp/esp-idf/components/esp_event/include -I/home/shashwat/esp/esp-idf/components/nvs_flash/include -I/home/shashwat/esp/esp-idf/components/nvs_flash/../spi_flash/include -I/home/shashwat/esp/esp-idf/components/esp_driver_pcnt/include -I/home/shashwat/esp/esp-idf/components/esp_driver_spi/include -I/home/shashwat/esp/esp-idf/components/esp_driver_mcpwm/include -I/home/shashwat/esp/esp-idf/components/esp_driver_ana_cmpr/include -I/home/shashwat/esp/esp-idf/components/esp_driver_i2s/include -I/home/shashwat/esp/esp-idf/components/sdmmc/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdmmc/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdspi/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdio/include -I/home/shashwat/esp/esp-idf/components/esp_driver_dac/./include -I/home/shashwat/esp/esp-idf/components/esp_driver_rmt/include -I/home/shashwat/esp/esp-idf/components/esp_driver_tsens/include -I/home/shashwat/esp/esp-idf/components/esp_driver_sdm/include -I/home/shashwat/esp/esp-idf/components/esp_driver_i2c/include -I/home/shashwat/esp/esp-idf/components/esp_driver_ledc/include -I/home/shashwat/esp/esp-idf/components/esp_driver_parlio/include -I/home/shashwat/esp/esp-idf/components/driver/deprecated -I/home/shashwat/esp/esp-idf/components/driver/i2c/include -I/home/shashwat/esp/esp-idf/components/driver/touch_sensor/include -I/home/shashwat/esp/esp-idf/components/driver/twai/include -I/home/shashwat/esp/esp-idf/components/driver/usb_serial_jtag/include -I/home/shashwat/esp/esp-idf/components/driver/touch_sensor/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_phy/include -I/home/shashwat/esp/esp-idf/components/esp_phy/esp32/include -I/home/shashwat/esp/esp-idf/components/vfs/include -I/home/shashwat/esp/esp-idf/components/lwip/include -I/home/shashwat/esp/esp-idf/components/lwip/include/apps -I/home/shashwat/esp/esp-idf/components/lwip/include/apps/sntp -I/home/shashwat/esp/esp-idf/components/lwip/lwip/src/include -I/home/shashwat/esp/esp-idf/components/lwip/port/include -I/home/shashwat/esp/esp-idf/components/lwip/port/freertos/include/ -I/home/shashwat/esp/esp-idf/components/lwip/port/esp32xx/include -I/home/shashwat/esp/esp-idf/components/lwip/port/esp32xx/include/arch -I/home/shashwat/esp/esp-idf/components/lwip/port/esp32xx/include/sys -I/home/shashwat/esp/esp-idf/components/esp_netif/include -I/home/shashwat/esp/esp-idf/components/wpa_supplicant/include -I/home/shashwat/esp/esp-idf/components/wpa_supplicant/port/include -I/home/shashwat/esp/esp-idf/components/wpa_supplicant/esp_supplicant/include -I/home/shashwat/esp/esp-idf/components/esp_coex/include -I/home/shashwat/esp/esp-idf/components/esp_wifi/include -I/home/shashwat/esp/esp-idf/components/esp_wifi/wifi_apps/include -I/home/shashwat/esp/esp-idf/components/unity/include -I/home/shashwat/esp/esp-idf/components/unity/unity/src -I/home/shashwat/esp/esp-idf/components/cmock/CMock/src -I/home/shashwat/esp/esp-idf/components/console//home/shashwat/esp/esp-idf/components/console -I/home/shashwat/esp/esp-idf/components/http_parser/. -I/home/shashwat/esp/esp-idf/components/esp-tls//home/shashwat/esp/esp-idf/components/esp-tls -I/home/shashwat/esp/esp-idf/components/esp-tls/esp-tls-crypto -I/home/shashwat/esp/esp-idf/components/esp_adc/include -I/home/shashwat/esp/esp-idf/components/esp_adc/interface -I/home/shashwat/esp/esp-idf/components/esp_adc/esp32/include -I/home/shashwat/esp/esp-idf/components/esp_adc/deprecated/include -I/home/shashwat/esp/esp-idf/components/esp_eth/include -I/home/shashwat/esp/esp-idf/components/esp_gdbstub/include -I/home/shashwat/esp/esp-idf/components/esp_hid/include -I/home/shashwat/esp/esp-idf/components/tcp_transport/include -I/home/shashwat/esp/esp-idf/components/esp_http_client/include -I/home/shashwat/esp/esp-idf/components/esp_http_server/include -I/home/shashwat/esp/esp-idf/components/esp_https_ota/include -I/home/shashwat/esp/esp-idf/components/esp_https_server/include -I/home/shashwat/esp/esp-idf/components/esp_psram/include -I/home/shashwat/esp/esp-idf/components/esp_lcd/include -I/home/shashwat/esp/esp-idf/components/esp_lcd/interface -I/home/shashwat/esp/esp-idf/components/protobuf-c/protobuf-c -I/home/shashwat/esp/esp-idf/components/protocomm/include/common -I/home/shashwat/esp/esp-idf/components/protocomm/include/security -I/home/shashwat/esp/esp-idf/components/protocomm/include/transports -I/home/shashwat/esp/esp-idf/components/protocomm/include/crypto/srp6a -I/home/shashwat/esp/esp-idf/components/esp_local_ctrl/include -I/home/shashwat/esp/esp-idf/components/espcoredump/include -I/home/shashwat/esp/esp-idf/components/espcoredump/include/port/xtensa -I/home/shashwat/esp/esp-idf/components/wear_levelling/include -I/home/shashwat/esp/esp-idf/components/fatfs/diskio -I/home/shashwat/esp/esp-idf/components/fatfs/src -I/home/shashwat/esp/esp-idf/components/fatfs/vfs -I/home/shashwat/esp/esp-idf/components/idf_test/include -I/home/shashwat/esp/esp-idf/components/idf_test/include/esp32 -I/home/shashwat/esp/esp-idf/components/ieee802154/include -I/home/shashwat/esp/esp-idf/components/json/cJSON -I/home/shashwat/esp/esp-idf/components/mqtt//home/shashwat/esp/esp-idf/components/mqtt/esp-mqtt/include -I/home/shashwat/esp/esp-idf/components/nvs_sec_provider/include -I/home/shashwat/esp/esp-idf/components/perfmon/include -I/home/shashwat/esp/esp-idf/components/spiffs/include -I/home/shashwat/esp/esp-idf/components/wifi_provisioning/include -I/home/shashwat/drone_flight_control/managed_components/espressif__mpu6050/include -I/home/shashwat/drone_flight_control/main/. -I/home/shashwat/drone_flight_control/main/sensor -I/home/shashwat/drone_flight_control/main/dshot -I/home/shashwat/drone_flight_control/components/I2Cdev/. -I/home/shashwat/drone_flight_control/components/MPU6050/. -I/home/shashwat/drone_flight_control/components/MadgwickAHRS/. -I/home/shashwat/drone_flight_control/components/micro_ros_espidf_component/network_interfaces -I/home/shashwat/drone_flight_control/components/include' \
+	-DCMAKE_C_STANDARD=17 \
+	-DUCLIENT_C_STANDARD=17;
+Starting >>> rcutils
+Starting >>> rosidl_cli
+Starting >>> rosidl_typesupport_interface
+Starting >>> microcdr
+Finished <<< rosidl_cli [0.61s]
+Starting >>> rosidl_adapter
+Finished <<< rosidl_typesupport_interface [0.78s]
+Starting >>> rmw_implementation_cmake
+Finished <<< microcdr [1.57s]
+Starting >>> microxrcedds_client
+Finished <<< rmw_implementation_cmake [1.02s]
+Starting >>> tracetools
+Finished <<< rosidl_adapter [1.70s]
+Starting >>> rosidl_parser
+Finished <<< rcutils [2.94s]
+Starting >>> rosidl_runtime_c
+Finished <<< microxrcedds_client [1.46s]
+Starting >>> rcl_logging_interface
+Finished <<< tracetools [1.33s]
+Starting >>> tracetools_trace
+Finished <<< rosidl_parser [1.32s]
+Starting >>> rosidl_pycommon
+Finished <<< tracetools_trace [1.17s]
+Starting >>> rosidl_generator_type_description
+Finished <<< rosidl_runtime_c [1.65s]
+Starting >>> rosidl_dynamic_typesupport
+Finished <<< rosidl_pycommon [0.99s]
+Starting >>> rosidl_cmake
+Finished <<< rcl_logging_interface [1.74s]
+Starting >>> rcl_logging_noop
+Finished <<< rosidl_cmake [0.74s]
+Starting >>> test_interface_files
+Finished <<< rosidl_generator_type_description [1.11s]
+Starting >>> rosidl_generator_c
+Finished <<< rcl_logging_noop [0.95s]
+Starting >>> tracetools_read
+Finished <<< test_interface_files [0.73s]
+Starting >>> tracetools_launch
+Finished <<< rosidl_dynamic_typesupport [1.60s]
+Starting >>> rmw
+Finished <<< tracetools_read [0.67s]
+Starting >>> ros2trace
+Finished <<< rosidl_generator_c [1.06s]
+Starting >>> rosidl_typesupport_introspection_c
+Finished <<< tracetools_launch [0.76s]
+Starting >>> test_tracetools_launch
+Finished <<< ros2trace [0.82s]
+Starting >>> test_ros2trace
+Finished <<< test_tracetools_launch [0.81s]
+Starting >>> tracetools_test
+Finished <<< test_ros2trace [0.71s]
+Finished <<< rmw [1.87s]
+Starting >>> rosidl_typesupport_microxrcedds_c
+Finished <<< rosidl_typesupport_introspection_c [1.63s]
+Starting >>> micro_ros_utilities
+Finished <<< tracetools_test [0.78s]
+Finished <<< rosidl_typesupport_microxrcedds_c [0.98s]
+Starting >>> rosidl_typesupport_c
+Finished <<< micro_ros_utilities [1.10s]
+Finished <<< rosidl_typesupport_c [0.95s]
+Starting >>> rosidl_core_runtime
+Starting >>> rosidl_core_generators
+Finished <<< rosidl_core_runtime [0.44s]
+Finished <<< rosidl_core_generators [0.50s]
+Starting >>> builtin_interfaces
+Starting >>> unique_identifier_msgs
+Finished <<< unique_identifier_msgs [1.65s]
+Finished <<< builtin_interfaces [1.78s]
+Starting >>> service_msgs
+Finished <<< service_msgs [1.50s]
+Starting >>> action_msgs
+Starting >>> type_description_interfaces
+Starting >>> rosidl_typesupport_introspection_tests
+Finished <<< rosidl_typesupport_introspection_tests [0.71s]
+Finished <<< action_msgs [2.79s]
+Starting >>> rosidl_default_runtime
+Starting >>> rosidl_default_generators
+Finished <<< rosidl_default_runtime [1.11s]
+Finished <<< rosidl_default_generators [1.28s]
+Starting >>> std_msgs
+Starting >>> micro_ros_msgs
+Starting >>> rcl_interfaces
+Finished <<< type_description_interfaces [4.68s]
+Starting >>> test_msgs
+Finished <<< micro_ros_msgs [3.86s]
+Starting >>> rmw_microxrcedds
+Finished <<< rmw_microxrcedds [9.02s]
+Starting >>> rmw_implementation
+Finished <<< rmw_implementation [1.22s]
+Starting >>> example_interfaces
+Finished <<< rcl_interfaces [14.3s]
+Starting >>> lifecycle_msgs
+Finished <<< std_msgs [16.2s]
+Starting >>> geometry_msgs
+Finished <<< test_msgs [16.4s]
+Starting >>> rcl
+Finished <<< rcl [2.83s]
+Starting >>> rcl_action
+Finished <<< lifecycle_msgs [9.01s]
+Starting >>> std_srvs
+Finished <<< rcl_action [4.16s]
+Starting >>> actionlib_msgs
+Finished <<< std_srvs [6.10s]
+Starting >>> rosidl_typesupport_microxrcedds_test_msg
+Finished <<< geometry_msgs [13.5s]
+Starting >>> sensor_msgs
+Finished <<< actionlib_msgs [5.80s]
+Starting >>> diagnostic_msgs
+Finished <<< example_interfaces [16.0s]
+Starting >>> rclc
+Finished <<< rosidl_typesupport_microxrcedds_test_msg [0.89s]
+Starting >>> nav_msgs
+Finished <<< rclc [2.30s]
+Starting >>> shape_msgs
+Finished <<< diagnostic_msgs [5.78s]
+Starting >>> trajectory_msgs
+Finished <<< shape_msgs [5.30s]
+Starting >>> rcl_lifecycle
+Finished <<< nav_msgs [7.47s]
+Starting >>> rosidl_generator_tests
+Finished <<< rosidl_generator_tests [2.87s]
+Starting >>> rosgraph_msgs
+Finished <<< rcl_lifecycle [3.20s]
+Starting >>> statistics_msgs
+Finished <<< trajectory_msgs [7.82s]
+Starting >>> composition_interfaces
+Finished <<< rosgraph_msgs [4.17s]
+Starting >>> rosidl_typesupport_microxrcedds_c_tests
+Finished <<< sensor_msgs [16.7s]
+Starting >>> stereo_msgs
+Finished <<< rosidl_typesupport_microxrcedds_c_tests [1.62s]
+Finished <<< statistics_msgs [5.60s]
+Starting >>> visualization_msgs
+Starting >>> rosidl_typesupport_tests
+Finished <<< composition_interfaces [3.45s]
+Starting >>> sensor_msgs_py
+Finished <<< rosidl_typesupport_tests [0.99s]
+Starting >>> test_rmw_implementation
+Finished <<< sensor_msgs_py [1.16s]
+Starting >>> rclc_lifecycle
+Finished <<< stereo_msgs [2.53s]
+Starting >>> rclc_parameter
+Finished <<< test_rmw_implementation [1.59s]
+Finished <<< rclc_lifecycle [1.75s]
+Finished <<< rclc_parameter [1.54s]
+Finished <<< visualization_msgs [6.15s]
+Starting >>> common_interfaces
+Finished <<< common_interfaces [0.48s]
+
+Summary: 74 packages finished [1min 12s]
+  52 packages had stderr output: action_msgs actionlib_msgs builtin_interfaces composition_interfaces diagnostic_msgs example_interfaces geometry_msgs lifecycle_msgs micro_ros_msgs micro_ros_utilities microxrcedds_client nav_msgs rcl rcl_action rcl_interfaces rcl_lifecycle rcl_logging_interface rcl_logging_noop rclc rclc_lifecycle rclc_parameter rcutils rmw rmw_implementation rmw_microxrcedds ros2trace rosgraph_msgs rosidl_cli rosidl_dynamic_typesupport rosidl_pycommon rosidl_runtime_c rosidl_typesupport_c rosidl_typesupport_microxrcedds_c sensor_msgs sensor_msgs_py service_msgs shape_msgs statistics_msgs std_msgs std_srvs stereo_msgs test_msgs test_ros2trace test_tracetools_launch tracetools_launch tracetools_read tracetools_test tracetools_trace trajectory_msgs type_description_interfaces unique_identifier_msgs visualization_msgs
+mkdir -p /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/libmicroros; cd /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/libmicroros; \
+for file in $(find /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/install/lib/ -name '*.a'); do \
+	folder=$(echo $file | sed -E "s/(.+)\/(.+).a/\2/"); \
+	mkdir -p $folder; cd $folder; /home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-ar x $file; \
+	for f in *; do \
+		mv $f ../$folder-$f; \
+	done; \
+	cd ..; rm -rf $folder; \
+done ; \
+/home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-ar rc -s libmicroros.a *.obj; cp libmicroros.a /home/shashwat/drone_flight_control/components/micro_ros_espidf_component; \
+cd ..; rm -rf libmicroros; \
+cp -R /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/install/include /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include;
+-- Components: I2Cdev MPU6050 MadgwickAHRS app_trace app_update bootloader bootloader_support bt cmock components console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_tsens esp_driver_uart esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__mpu6050 esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls micro_ros_espidf_component mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/shashwat/drone_flight_control/components/I2Cdev /home/shashwat/drone_flight_control/components/MPU6050 /home/shashwat/drone_flight_control/components/MadgwickAHRS /home/shashwat/esp/esp-idf/components/app_trace /home/shashwat/esp/esp-idf/components/app_update /home/shashwat/esp/esp-idf/components/bootloader /home/shashwat/esp/esp-idf/components/bootloader_support /home/shashwat/esp/esp-idf/components/bt /home/shashwat/esp/esp-idf/components/cmock /home/shashwat/drone_flight_control/components /home/shashwat/esp/esp-idf/components/console /home/shashwat/esp/esp-idf/components/cxx /home/shashwat/esp/esp-idf/components/driver /home/shashwat/esp/esp-idf/components/efuse /home/shashwat/esp/esp-idf/components/esp-tls /home/shashwat/esp/esp-idf/components/esp_adc /home/shashwat/esp/esp-idf/components/esp_app_format /home/shashwat/esp/esp-idf/components/esp_bootloader_format /home/shashwat/esp/esp-idf/components/esp_coex /home/shashwat/esp/esp-idf/components/esp_common /home/shashwat/esp/esp-idf/components/esp_driver_ana_cmpr /home/shashwat/esp/esp-idf/components/esp_driver_dac /home/shashwat/esp/esp-idf/components/esp_driver_gpio /home/shashwat/esp/esp-idf/components/esp_driver_gptimer /home/shashwat/esp/esp-idf/components/esp_driver_i2c /home/shashwat/esp/esp-idf/components/esp_driver_i2s /home/shashwat/esp/esp-idf/components/esp_driver_ledc /home/shashwat/esp/esp-idf/components/esp_driver_mcpwm /home/shashwat/esp/esp-idf/components/esp_driver_parlio /home/shashwat/esp/esp-idf/components/esp_driver_pcnt /home/shashwat/esp/esp-idf/components/esp_driver_rmt /home/shashwat/esp/esp-idf/components/esp_driver_sdio /home/shashwat/esp/esp-idf/components/esp_driver_sdm /home/shashwat/esp/esp-idf/components/esp_driver_sdmmc /home/shashwat/esp/esp-idf/components/esp_driver_sdspi /home/shashwat/esp/esp-idf/components/esp_driver_spi /home/shashwat/esp/esp-idf/components/esp_driver_tsens /home/shashwat/esp/esp-idf/components/esp_driver_uart /home/shashwat/esp/esp-idf/components/esp_eth /home/shashwat/esp/esp-idf/components/esp_event /home/shashwat/esp/esp-idf/components/esp_gdbstub /home/shashwat/esp/esp-idf/components/esp_hid /home/shashwat/esp/esp-idf/components/esp_http_client /home/shashwat/esp/esp-idf/components/esp_http_server /home/shashwat/esp/esp-idf/components/esp_https_ota /home/shashwat/esp/esp-idf/components/esp_https_server /home/shashwat/esp/esp-idf/components/esp_hw_support /home/shashwat/esp/esp-idf/components/esp_lcd /home/shashwat/esp/esp-idf/components/esp_local_ctrl /home/shashwat/esp/esp-idf/components/esp_mm /home/shashwat/esp/esp-idf/components/esp_netif /home/shashwat/esp/esp-idf/components/esp_netif_stack /home/shashwat/esp/esp-idf/components/esp_partition /home/shashwat/esp/esp-idf/components/esp_phy /home/shashwat/esp/esp-idf/components/esp_pm /home/shashwat/esp/esp-idf/components/esp_psram /home/shashwat/esp/esp-idf/components/esp_ringbuf /home/shashwat/esp/esp-idf/components/esp_rom /home/shashwat/esp/esp-idf/components/esp_system /home/shashwat/esp/esp-idf/components/esp_timer /home/shashwat/esp/esp-idf/components/esp_wifi /home/shashwat/esp/esp-idf/components/espcoredump /home/shashwat/drone_flight_control/managed_components/espressif__mpu6050 /home/shashwat/esp/esp-idf/components/esptool_py /home/shashwat/esp/esp-idf/components/fatfs /home/shashwat/esp/esp-idf/components/freertos /home/shashwat/esp/esp-idf/components/hal /home/shashwat/esp/esp-idf/components/heap /home/shashwat/esp/esp-idf/components/http_parser /home/shashwat/esp/esp-idf/components/idf_test /home/shashwat/esp/esp-idf/components/ieee802154 /home/shashwat/esp/esp-idf/components/json /home/shashwat/esp/esp-idf/components/log /home/shashwat/esp/esp-idf/components/lwip /home/shashwat/drone_flight_control/main /home/shashwat/esp/esp-idf/components/mbedtls /home/shashwat/drone_flight_control/components/micro_ros_espidf_component /home/shashwat/esp/esp-idf/components/mqtt /home/shashwat/esp/esp-idf/components/newlib /home/shashwat/esp/esp-idf/components/nvs_flash /home/shashwat/esp/esp-idf/components/nvs_sec_provider /home/shashwat/esp/esp-idf/components/openthread /home/shashwat/esp/esp-idf/components/partition_table /home/shashwat/esp/esp-idf/components/perfmon /home/shashwat/esp/esp-idf/components/protobuf-c /home/shashwat/esp/esp-idf/components/protocomm /home/shashwat/esp/esp-idf/components/pthread /home/shashwat/esp/esp-idf/components/sdmmc /home/shashwat/esp/esp-idf/components/soc /home/shashwat/esp/esp-idf/components/spi_flash /home/shashwat/esp/esp-idf/components/spiffs /home/shashwat/esp/esp-idf/components/tcp_transport /home/shashwat/esp/esp-idf/components/ulp /home/shashwat/esp/esp-idf/components/unity /home/shashwat/esp/esp-idf/components/usb /home/shashwat/esp/esp-idf/components/vfs /home/shashwat/esp/esp-idf/components/wear_levelling /home/shashwat/esp/esp-idf/components/wifi_provisioning /home/shashwat/esp/esp-idf/components/wpa_supplicant /home/shashwat/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashwat/drone_flight_control/build
+[0/2] Re-checking globbed directories...
+[1/2] Cleaning additional files...
+[2/2] Cleaning all built files...
+Cleaning... 953 files.

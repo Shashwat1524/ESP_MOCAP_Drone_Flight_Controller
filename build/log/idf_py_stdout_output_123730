@@ -1,0 +1,73 @@
+[0/2] Re-checking globbed directories...
+[1/5] cd /home/shashwat/drone_flight_control/build/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/shashwat/drone_flight_control/build/partition_table/partition-table.bin /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+drone_flight_control.bin binary size 0xe0790 bytes. Smallest app partition is 0x100000 bytes. 0x1f870 bytes (12%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/shashwat/drone_flight_control/build/bootloader/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashwat/drone_flight_control/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/3] cd /home/shashwat/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/shashwat/esp/esp-idf -D "SERIAL_TOOL=/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python;;/home/shashwat/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/shashwat/drone_flight_control/build -P /home/shashwat/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 drone_flight_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py vv4.8.dev1
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 78:e3:6d:09:fa:28
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f0fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26704 bytes to 16373...
+Writing at 0x00001000... (100 %)
+Wrote 26704 bytes (16373 compressed) at 0x00001000 in 0.9 seconds (effective 230.6 kbit/s)...
+Hash of data verified.
+Compressed 919440 bytes to 570808...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d554... (5 %)
+Writing at 0x00027ce9... (8 %)
+Writing at 0x0002d6a9... (11 %)
+Writing at 0x000349c2... (14 %)
+Writing at 0x000407f3... (17 %)
+Writing at 0x00046240... (20 %)
+Writing at 0x0004bce2... (22 %)
+Writing at 0x000522a6... (25 %)
+Writing at 0x00058095... (28 %)
+Writing at 0x0005dbfc... (31 %)
+Writing at 0x000635d2... (34 %)
+Writing at 0x00068feb... (37 %)
+Writing at 0x0006ebfa... (40 %)
+Writing at 0x00074915... (42 %)
+Writing at 0x0007a823... (45 %)
+Writing at 0x000804f1... (48 %)
+Writing at 0x000859b5... (51 %)
+Writing at 0x0008ad04... (54 %)
+Writing at 0x000901e7... (57 %)
+Writing at 0x000954e2... (60 %)
+Writing at 0x0009abbc... (62 %)
+Writing at 0x000a03c6... (65 %)
+Writing at 0x000a61a1... (68 %)
+Writing at 0x000aba49... (71 %)
+Writing at 0x000b1831... (74 %)
+Writing at 0x000b7e21... (77 %)
+Writing at 0x000bd644... (80 %)
+Writing at 0x000c2f9b... (82 %)
+Writing at 0x000cd095... (85 %)
+Writing at 0x000d4a16... (88 %)
+Writing at 0x000da82c... (91 %)
+Writing at 0x000e0161... (94 %)
+Writing at 0x000e6326... (97 %)
+Writing at 0x000ebcb5... (100 %)
+Wrote 919440 bytes (570808 compressed) at 0x00010000 in 13.2 seconds (effective 557.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 311.2 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

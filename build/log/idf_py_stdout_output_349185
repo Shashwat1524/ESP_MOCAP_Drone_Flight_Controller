@@ -1,0 +1,580 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 25 2024 13:26:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c4c8h ( 50376) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001c4f0 vaddr=3ffb0000 size=022e8h (  8936) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0001e7e0 vaddr=40080000 size=01838h (  6200) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19830h (104496) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=00039858 vaddr=40081838 size=0d3f0h ( 54256) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (201) boot: Disabling RNG early entropy source...[0m
+[0;32mI (212) cpu_start: Multicore app[0m
+[0;32mI (221) cpu_start: Pro cpu start user code[0m
+[0;32mI (221) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) cpu_start: Application information:[0m
+[0;32mI (224) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (230) cpu_start: App version:      1[0m
+[0;32mI (234) cpu_start: Compile time:     Jan 25 2024 13:26:36[0m
+[0;32mI (240) cpu_start: ELF file SHA256:  d5762b77b...[0m
+[0;32mI (246) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (253) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (258) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (262) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (267) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (274) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (280) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (287) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (293) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (299) heap_init: At 4008EC28 len 000113D8 (68 KiB): IRAM[0m
+[0;32mI (307) spi_flash: detected chip: generic[0m
+[0;32mI (310) spi_flash: flash io: dio[0m
+[0;33mW (314) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (327) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (339) main_task: Started on CPU0[0m
+[0;32mI (349) main_task: Calling app_main()[0m
+Done with i2cDone with mpu[0;32mI (349) IMU: I have entered MPU CODE[0m
+[0;32mI (349) IMU: devid=0x34[0m
+[0;32mI (349) IMU: getRate()=0[0m
+[0;32mI (359) ESC_controller: Create RMT TX channel[0m
+[0;32mI (359) IMU: getExternalFrameSync()=0[0m
+Created RMT TX Channels[0;32mI (369) IMU: getDLPFMode()=6[0m
+[0;32mI (369) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (369) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (379) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (379) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (389) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (409) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (419) ESC_controller: Install Dshot ESC encoder[0m
+[0;32mI (419) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (429) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+Done with motor[0;32mI (429) main_task: Returned from app_main()[0m
+[0;32mI (4409) IMU: roll:0.000000 pitch=0.000000 yaw=0.000000[0m
+[0;32mI (4529) IMU: roll:0.064867 pitch=0.007403 yaw=-0.002090[0m
+[0;32mI (4649) IMU: roll:-0.027320 pitch=0.059251 yaw=-0.004868[0m
+[0;32mI (4769) IMU: roll:-0.027054 pitch=0.075513 yaw=-0.006912[0m
+[0;32mI (4889) IMU: roll:-0.027811 pitch=0.062961 yaw=-0.010361[0m
+[0;32mI (5009) IMU: roll:0.065666 pitch=0.046257 yaw=-0.013306[0m
+[0;32mI (5129) IMU: roll:0.068861 pitch=0.096765 yaw=-0.017120[0m
+[0;32mI (5249) IMU: roll:0.072073 pitch=-0.030879 yaw=-0.018921[0m
+[0;32mI (5369) IMU: roll:-0.018736 pitch=0.005458 yaw=-0.020554[0m
+[0;32mI (5429) ESC_controller: Increase throttle, no telemetry[0m
+[0;32mI (5489) IMU: roll:-0.021340 pitch=-0.040198 yaw=-0.022873[0m
+[0;32mI (5609) IMU: roll:0.019630 pitch=0.010734 yaw=-0.025085[0m
+[0;32mI (5729) IMU: roll:-0.055083 pitch=0.059039 yaw=-0.030884[0m
+[0;32mI (5869) IMU: roll:0.166039 pitch=0.126980 yaw=-0.032730[0m
+[0;32mI (5989) IMU: roll:-0.075873 pitch=0.054126 yaw=-0.036118[0m
+[0;32mI (6109) IMU: roll:-0.109773 pitch=0.080392 yaw=-0.038757[0m
+[0;32mI (6239) IMU: roll:0.023546 pitch=-0.160334 yaw=-0.041260[0m
+[0;32mI (6369) IMU: roll:0.060636 pitch=0.069914 yaw=-0.046783[0m
+[0;32mI (6489) IMU: roll:0.001339 pitch=-0.049765 yaw=-0.051331[0m
+[0;32mI (6609) IMU: roll:0.066295 pitch=0.024118 yaw=-0.052780[0m
+[0;32mI (6749) IMU: roll:0.104026 pitch=-0.080679 yaw=-0.054626[0m
+[0;32mI (6869) IMU: roll:-0.050750 pitch=-0.101330 yaw=-0.058060[0m
+[0;32mI (6989) IMU: roll:0.000388 pitch=0.041098 yaw=-0.060303[0m
+[0;32mI (7119) IMU: roll:0.129210 pitch=0.037171 yaw=-0.063568[0m
+[0;32mI (7249) IMU: roll:-0.040030 pitch=0.041058 yaw=-0.065475[0m
+[0;32mI (7369) IMU: roll:-0.286520 pitch=0.021107 yaw=-0.067978[0m
+[0;32mI (7489) IMU: roll:0.089738 pitch=0.099031 yaw=-0.069473[0m
+[0;32mI (7629) IMU: roll:-0.367305 pitch=0.024350 yaw=-0.075287[0m
+[0;32mI (7749) IMU: roll:0.103235 pitch=0.057361 yaw=-0.074173[0m
+[0;32mI (7869) IMU: roll:0.059373 pitch=0.125691 yaw=-0.075912[0m
+[0;32mI (8009) IMU: roll:-0.177623 pitch=0.119885 yaw=-0.081360[0m
+[0;32mI (8139) IMU: roll:-0.587335 pitch=0.286287 yaw=-0.092987[0m
+[0;32mI (8259) IMU: roll:2.209817 pitch=-0.062800 yaw=0.388870[0m
+[0;32mI (8389) IMU: roll:10.456949 pitch=-0.037096 yaw=0.089005[0m
+[0;32mI (8529) IMU: roll:20.354475 pitch=0.149561 yaw=-0.350586[0m
+[0;32mI (8649) IMU: roll:27.562546 pitch=0.441841 yaw=-0.507294[0m
+[0;32mI (8769) IMU: roll:29.252029 pitch=0.595063 yaw=-0.449951[0m
+[0;32mI (8909) IMU: roll:27.224199 pitch=0.496959 yaw=-0.447067[0m
+[0;32mI (9039) IMU: roll:28.135221 pitch=0.402417 yaw=-0.467194[0m
+[0;32mI (9159) IMU: roll:29.213833 pitch=0.471161 yaw=-0.463638[0m
+[0;32mI (9289) IMU: roll:29.641626 pitch=0.462005 yaw=-0.422623[0m
+[0;32mI (9429) IMU: roll:30.462414 pitch=0.388091 yaw=-0.428528[0m
+[0;32mI (9549) IMU: roll:30.606592 pitch=0.437133 yaw=-0.433716[0m
+[0;32mI (9669) IMU: roll:30.491138 pitch=0.689829 yaw=-0.430237[0m
+[0;32mI (9809) IMU: roll:30.445896 pitch=0.427087 yaw=-0.416885[0m
+[0;32mI (9939) IMU: roll:31.531015 pitch=0.596625 yaw=-0.455109[0m
+[0;32mI (10059) IMU: roll:30.293375 pitch=0.586566 yaw=-0.394760[0m
+[0;32mI (10199) IMU: roll:28.118383 pitch=0.423525 yaw=-0.352600[0m
+[0;32mI (10329) IMU: roll:23.650284 pitch=0.464803 yaw=-0.337860[0m
+[0;31mE (10419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (10419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (10419) task_wdt: Tasks currently running:[0m
+[0;31mE (10419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (10419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (10419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x40085257:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (10489) IMU: roll:15.097942 pitch=0.361548 yaw=-0.179474[0m
+[0;32mI (10609) IMU: roll:10.483804 pitch=0.347541 yaw=-0.137421[0m
+[0;32mI (10729) IMU: roll:8.111938 pitch=0.243837 yaw=-0.068451[0m
+[0;32mI (10859) IMU: roll:5.338648 pitch=-0.123035 yaw=-0.003632[0m
+[0;32mI (10989) IMU: roll:3.492116 pitch=0.348433 yaw=-0.140305[0m
+[0;32mI (11109) IMU: roll:0.293208 pitch=0.436155 yaw=0.105591[0m
+[0;32mI (11229) IMU: roll:0.030399 pitch=0.009799 yaw=0.670761[0m
+[0;32mI (11369) IMU: roll:0.390291 pitch=0.308513 yaw=0.645676[0m
+[0;32mI (11489) IMU: roll:0.009966 pitch=0.294220 yaw=0.754837[0m
+[0;32mI (11609) IMU: roll:-0.031917 pitch=0.062872 yaw=0.752823[0m
+[0;32mI (11739) IMU: roll:0.112430 pitch=0.081661 yaw=0.750702[0m
+[0;32mI (11869) IMU: roll:0.092850 pitch=0.017909 yaw=0.745880[0m
+[0;32mI (11989) IMU: roll:0.132135 pitch=0.040504 yaw=0.747910[0m
+[0;32mI (12109) IMU: roll:0.131370 pitch=-0.061840 yaw=0.735535[0m
+[0;32mI (12249) IMU: roll:0.076479 pitch=0.023242 yaw=0.724884[0m
+[0;32mI (12369) IMU: roll:0.090272 pitch=0.047666 yaw=0.720825[0m
+[0;32mI (12489) IMU: roll:0.180511 pitch=-0.098211 yaw=0.718826[0m
+[0;32mI (12619) IMU: roll:0.304558 pitch=-0.056095 yaw=0.796356[0m
+[0;32mI (12749) IMU: roll:-3.444928 pitch=0.168010 yaw=1.139587[0m
+[0;32mI (12869) IMU: roll:-8.757345 pitch=-0.378110 yaw=1.936615[0m
+[0;32mI (12989) IMU: roll:-14.901994 pitch=0.194764 yaw=2.773560[0m
+[0;32mI (13129) IMU: roll:-20.047592 pitch=0.084626 yaw=2.982788[0m
+[0;32mI (13249) IMU: roll:-24.071323 pitch=0.051537 yaw=3.028137[0m
+[0;32mI (13369) IMU: roll:-27.331715 pitch=-0.170389 yaw=3.050781[0m
+[0;32mI (13509) IMU: roll:-29.042091 pitch=0.008293 yaw=3.122879[0m
+[0;32mI (13639) IMU: roll:-29.635273 pitch=0.046287 yaw=3.133255[0m
+[0;32mI (13759) IMU: roll:-29.818865 pitch=0.055162 yaw=3.148148[0m
+[0;32mI (13889) IMU: roll:-31.130972 pitch=-0.016207 yaw=3.151901[0m
+[0;32mI (14029) IMU: roll:-31.158430 pitch=0.003931 yaw=3.138351[0m
+[0;32mI (14149) IMU: roll:-31.388935 pitch=-0.021390 yaw=3.147873[0m
+[0;32mI (14279) IMU: roll:-33.824081 pitch=-0.095647 yaw=3.147049[0m
+[0;32mI (14419) IMU: roll:-36.552059 pitch=0.159620 yaw=3.199341[0m
+[0;32mI (14539) IMU: roll:-37.206154 pitch=0.080409 yaw=3.193054[0m
+[0;32mI (14659) IMU: roll:-37.327435 pitch=0.060105 yaw=3.207825[0m
+[0;32mI (14799) IMU: roll:-36.707146 pitch=0.072125 yaw=3.195511[0m
+[0;32mI (14929) IMU: roll:-36.661213 pitch=0.053604 yaw=3.132156[0m
+[0;32mI (15049) IMU: roll:-32.673946 pitch=0.082772 yaw=2.967834[0m
+[0;32mI (15179) IMU: roll:-21.736906 pitch=0.123981 yaw=2.313782[0m
+[0;32mI (15319) IMU: roll:-8.575155 pitch=0.110984 yaw=0.762360[0m
+[0;31mE (15419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (15419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (15419) task_wdt: Tasks currently running:[0m
+[0;31mE (15419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (15419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (15419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x40085257:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (15479) IMU: roll:2.621950 pitch=0.576794 yaw=0.761795[0m
+[0;32mI (15599) IMU: roll:1.471125 pitch=0.373120 yaw=0.773117[0m
+[0;32mI (15719) IMU: roll:0.197193 pitch=0.061946 yaw=0.749664[0m
+[0;32mI (15839) IMU: roll:0.112539 pitch=0.183843 yaw=0.746902[0m
+[0;32mI (15979) IMU: roll:0.084074 pitch=0.104106 yaw=0.746552[0m
+[0;32mI (16099) IMU: roll:0.101309 pitch=0.145998 yaw=0.743057[0m
+[0;32mI (16229) IMU: roll:0.202502 pitch=0.132707 yaw=0.740707[0m
+[0;32mI (16369) IMU: roll:-0.088036 pitch=0.093243 yaw=0.735306[0m
+[0;32mI (16489) IMU: roll:0.145130 pitch=0.058311 yaw=0.734589[0m
+[0;32mI (16609) IMU: roll:0.231368 pitch=0.143564 yaw=0.732880[0m
+[0;32mI (16749) IMU: roll:0.487443 pitch=0.208234 yaw=0.755981[0m
+[0;32mI (16879) IMU: roll:0.058371 pitch=0.241229 yaw=0.475723[0m
+[0;32mI (16999) IMU: roll:-0.244328 pitch=4.455356 yaw=-0.960114[0m
+[0;32mI (17129) IMU: roll:-0.206043 pitch=9.747350 yaw=-1.047272[0m
+[0;32mI (17269) IMU: roll:-0.528110 pitch=15.370505 yaw=-1.221008[0m
+[0;32mI (17389) IMU: roll:0.151516 pitch=18.398357 yaw=-0.945236[0m
+[0;32mI (17509) IMU: roll:-0.093896 pitch=20.905695 yaw=-1.163498[0m
+[0;32mI (17649) IMU: roll:-0.261281 pitch=23.175119 yaw=-1.244965[0m
+[0;32mI (17779) IMU: roll:-0.202547 pitch=24.987072 yaw=-1.427582[0m
+[0;32mI (17899) IMU: roll:-0.102871 pitch=25.725397 yaw=-1.389877[0m
+[0;32mI (18029) IMU: roll:-0.158025 pitch=27.124498 yaw=-1.264481[0m
+[0;32mI (18169) IMU: roll:-0.069565 pitch=27.501263 yaw=-1.079010[0m
+[0;32mI (18289) IMU: roll:-0.158515 pitch=27.923216 yaw=-1.221054[0m
+[0;32mI (18409) IMU: roll:-0.029529 pitch=27.978294 yaw=-1.161530[0m
+[0;32mI (18549) IMU: roll:-0.235260 pitch=28.075922 yaw=-1.296555[0m
+[0;32mI (18669) IMU: roll:-0.201963 pitch=29.029882 yaw=-1.255432[0m
+[0;32mI (18789) IMU: roll:-0.176917 pitch=28.752966 yaw=-1.226044[0m
+[0;32mI (18919) IMU: roll:-0.200633 pitch=29.065351 yaw=-1.260712[0m
+[0;32mI (19049) IMU: roll:-0.115503 pitch=25.243074 yaw=-0.706726[0m
+[0;32mI (19169) IMU: roll:-0.080529 pitch=18.500645 yaw=-0.155228[0m
+[0;32mI (19289) IMU: roll:-0.068399 pitch=11.224468 yaw=0.454483[0m
+[0;32mI (19429) IMU: roll:-0.337973 pitch=6.983187 yaw=0.631012[0m
+[0;32mI (19549) IMU: roll:-0.171418 pitch=3.034462 yaw=1.217972[0m
+[0;32mI (19669) IMU: roll:-0.477784 pitch=1.332478 yaw=1.549194[0m
+[0;32mI (19799) IMU: roll:-0.285662 pitch=0.580399 yaw=1.822189[0m
+[0;32mI (19929) IMU: roll:0.170808 pitch=0.055451 yaw=1.833084[0m
+[0;32mI (20049) IMU: roll:0.310225 pitch=0.200497 yaw=1.672195[0m
+[0;32mI (20169) IMU: roll:0.057101 pitch=0.190975 yaw=1.684998[0m
+[0;32mI (20309) IMU: roll:0.034733 pitch=0.209995 yaw=1.683655[0m
+[0;31mE (20419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (20419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (20419) task_wdt: Tasks currently running:[0m
+[0;31mE (20419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (20419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (20419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x40085257:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (20469) IMU: roll:0.722661 pitch=0.098921 yaw=1.686096[0m
+[0;32mI (20589) IMU: roll:0.231587 pitch=0.207184 yaw=1.681000[0m
+[0;32mI (20719) IMU: roll:0.258766 pitch=0.230544 yaw=1.646606[0m
+[0;32mI (20859) IMU: roll:0.006984 pitch=0.146182 yaw=2.152084[0m
+[0;32mI (20979) IMU: roll:0.076294 pitch=0.086552 yaw=2.228424[0m
+[0;32mI (21109) IMU: roll:0.075527 pitch=-0.433031 yaw=2.373474[0m
+[0;32mI (21249) IMU: roll:-0.262733 pitch=-4.263063 yaw=2.631561[0m
+[0;32mI (21369) IMU: roll:0.069183 pitch=-7.497272 yaw=2.449249[0m
+[0;32mI (21489) IMU: roll:0.057308 pitch=-13.884962 yaw=2.116394[0m
+[0;32mI (21629) IMU: roll:-0.201428 pitch=-19.849476 yaw=1.877243[0m
+[0;32mI (21749) IMU: roll:0.039279 pitch=-24.471540 yaw=1.235626[0m
+[0;32mI (21869) IMU: roll:0.201702 pitch=-27.722435 yaw=0.453339[0m
+[0;32mI (21999) IMU: roll:0.521711 pitch=-26.649246 yaw=-0.472031[0m
+[0;32mI (22129) IMU: roll:0.467302 pitch=-25.866150 yaw=-0.201538[0m
+[0;32mI (22249) IMU: roll:0.264030 pitch=-25.641991 yaw=-0.053391[0m
+[0;32mI (22369) IMU: roll:0.091188 pitch=-25.743938 yaw=0.141891[0m
+[0;32mI (22509) IMU: roll:0.222566 pitch=-25.022167 yaw=-0.098053[0m
+[0;32mI (22629) IMU: roll:0.299957 pitch=-18.295355 yaw=0.708618[0m
+[0;32mI (22749) IMU: roll:0.041009 pitch=-9.392048 yaw=1.217194[0m
+[0;32mI (22879) IMU: roll:-0.020177 pitch=-1.108077 yaw=0.798691[0m
+[0;32mI (23009) IMU: roll:0.229953 pitch=2.045338 yaw=0.925919[0m
+[0;32mI (23129) IMU: roll:0.244080 pitch=0.927318 yaw=1.037704[0m
+[0;32mI (23249) IMU: roll:0.402039 pitch=0.343078 yaw=1.037628[0m
+[0;32mI (23389) IMU: roll:0.550897 pitch=0.287424 yaw=1.037949[0m
+[0;32mI (23509) IMU: roll:0.460214 pitch=0.531030 yaw=1.041397[0m
+[0;32mI (23629) IMU: roll:0.422718 pitch=0.609093 yaw=0.853180[0m
+[0;32mI (23759) IMU: roll:3.266405 pitch=0.340066 yaw=0.802567[0m
+[0;32mI (23889) IMU: roll:13.134689 pitch=0.223527 yaw=-0.300659[0m
+[0;32mI (24009) IMU: roll:21.196100 pitch=0.454886 yaw=-0.504700[0m
+[0;32mI (24129) IMU: roll:25.699623 pitch=0.551206 yaw=-0.570740[0m
+[0;32mI (24269) IMU: roll:29.643137 pitch=0.828436 yaw=-0.524780[0m
+[0;32mI (24389) IMU: roll:28.689219 pitch=0.704726 yaw=-0.536514[0m
+[0;32mI (24509) IMU: roll:28.975910 pitch=0.593596 yaw=-0.567810[0m
+[0;32mI (24639) IMU: roll:29.045765 pitch=0.871145 yaw=-0.563324[0m
+[0;32mI (24769) IMU: roll:28.538754 pitch=0.957543 yaw=-0.537949[0m
+[0;32mI (24889) IMU: roll:27.759768 pitch=0.706088 yaw=-0.500443[0m
+[0;32mI (25009) IMU: roll:27.671093 pitch=0.520145 yaw=-0.513016[0m
+[0;32mI (25149) IMU: roll:27.701323 pitch=0.773269 yaw=-0.531189[0m
+[0;32mI (25269) IMU: roll:28.940809 pitch=0.816400 yaw=-0.503876[0m
+[0;32mI (25389) IMU: roll:27.316561 pitch=0.729263 yaw=-0.493881[0m
+[0;31mE (25419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (25419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (25419) task_wdt: Tasks currently running:[0m
+[0;31mE (25419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (25419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (25419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x4000BFED:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D6860:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (25549) IMU: roll:26.654278 pitch=0.808038 yaw=-0.477921[0m
+[0;32mI (25669) IMU: roll:27.463509 pitch=0.778866 yaw=-0.464203[0m
+[0;32mI (25809) IMU: roll:27.274548 pitch=0.613117 yaw=-0.447968[0m
+[0;32mI (25929) IMU: roll:26.879250 pitch=0.570843 yaw=-0.445908[0m
+[0;32mI (26049) IMU: roll:27.314585 pitch=0.630758 yaw=-0.432999[0m
+[0;32mI (26179) IMU: roll:27.187082 pitch=0.654609 yaw=-0.450623[0m
+[0;32mI (26309) IMU: roll:27.067263 pitch=0.881621 yaw=-0.455246[0m
+[0;32mI (26429) IMU: roll:27.435429 pitch=0.777398 yaw=-0.437424[0m
+[0;32mI (26559) IMU: roll:26.858250 pitch=0.626517 yaw=-0.428116[0m
+[0;32mI (26699) IMU: roll:27.249537 pitch=0.823997 yaw=-0.425461[0m
+[0;32mI (26819) IMU: roll:27.140863 pitch=0.726294 yaw=-0.424637[0m
+[0;32mI (26949) IMU: roll:27.248287 pitch=0.680999 yaw=-0.409943[0m
+[0;32mI (27089) IMU: roll:26.604258 pitch=0.805548 yaw=-0.412384[0m
+[0;32mI (27209) IMU: roll:27.015694 pitch=0.803305 yaw=-0.405426[0m
+[0;32mI (27329) IMU: roll:26.958294 pitch=0.732175 yaw=-0.397400[0m
+[0;32mI (27469) IMU: roll:26.866516 pitch=0.668990 yaw=-0.386185[0m
+[0;32mI (27599) IMU: roll:26.794006 pitch=0.725639 yaw=-0.394730[0m
+[0;32mI (27719) IMU: roll:26.926003 pitch=0.749033 yaw=-0.395447[0m
+[0;32mI (27849) IMU: roll:27.166815 pitch=0.963725 yaw=-0.384460[0m
+[0;32mI (27989) IMU: roll:27.000507 pitch=0.541468 yaw=-0.375229[0m
+[0;32mI (28109) IMU: roll:27.151924 pitch=0.700460 yaw=-0.377762[0m
+[0;32mI (28229) IMU: roll:26.896999 pitch=0.834822 yaw=-0.374481[0m
+[0;32mI (28369) IMU: roll:27.269709 pitch=0.883254 yaw=-0.344589[0m
+[0;32mI (28499) IMU: roll:26.576218 pitch=0.621990 yaw=-0.315720[0m
+[0;32mI (28619) IMU: roll:25.677998 pitch=0.565458 yaw=-0.321396[0m
+[0;32mI (28749) IMU: roll:22.767117 pitch=0.771499 yaw=-0.305557[0m
+[0;32mI (28879) IMU: roll:15.881730 pitch=0.659377 yaw=-0.255295[0m
+[0;32mI (28999) IMU: roll:9.593411 pitch=0.220078 yaw=-0.365540[0m
+[0;32mI (29119) IMU: roll:4.681096 pitch=0.277984 yaw=-1.085327[0m
+[0;32mI (29259) IMU: roll:1.604105 pitch=0.557284 yaw=-1.421082[0m
+[0;32mI (29379) IMU: roll:0.198220 pitch=0.745249 yaw=-1.219833[0m
+[0;32mI (29499) IMU: roll:0.351336 pitch=0.393934 yaw=-1.045578[0m
+[0;32mI (29629) IMU: roll:0.468866 pitch=0.335002 yaw=-1.009384[0m
+[0;32mI (29759) IMU: roll:0.174566 pitch=0.507046 yaw=-1.011948[0m
+[0;32mI (29879) IMU: roll:0.347138 pitch=0.403975 yaw=-1.010330[0m
+[0;32mI (29999) IMU: roll:0.501377 pitch=0.411219 yaw=-1.011658[0m
+[0;32mI (30139) IMU: roll:0.488351 pitch=0.373599 yaw=-1.014893[0m
+[0;32mI (30259) IMU: roll:0.306178 pitch=0.309722 yaw=-1.018646[0m
+[0;32mI (30379) IMU: roll:0.268811 pitch=0.405761 yaw=-1.021851[0m
+[0;31mE (30419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (30419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (30419) task_wdt: Tasks currently running:[0m
+[0;31mE (30419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (30419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (30419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x40085257:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (30539) IMU: roll:0.463068 pitch=0.405416 yaw=-1.021393[0m
+[0;32mI (30659) IMU: roll:0.281030 pitch=0.322578 yaw=-1.048630[0m
+[0;32mI (30789) IMU: roll:0.395457 pitch=0.278659 yaw=-1.051010[0m
+[0;32mI (30919) IMU: roll:0.220368 pitch=0.300553 yaw=-1.052979[0m
+[0;32mI (31039) IMU: roll:0.314018 pitch=0.328979 yaw=-1.054749[0m
+[0;32mI (31159) IMU: roll:0.406208 pitch=0.336852 yaw=-1.045654[0m
+[0;32mI (31299) IMU: roll:0.349848 pitch=0.391988 yaw=-1.064941[0m
+[0;32mI (31419) IMU: roll:0.791198 pitch=0.431219 yaw=-1.184128[0m
+[0;32mI (31539) IMU: roll:-3.748611 pitch=0.322848 yaw=-1.226883[0m
+[0;32mI (31669) IMU: roll:-10.485301 pitch=0.178422 yaw=-1.148499[0m
+[0;32mI (31799) IMU: roll:-17.220308 pitch=0.278241 yaw=-1.061340[0m
+[0;32mI (31919) IMU: roll:-23.882780 pitch=0.142897 yaw=-0.975037[0m
+[0;32mI (32039) IMU: roll:-27.916121 pitch=0.453781 yaw=-0.888199[0m
+[0;32mI (32179) IMU: roll:-30.050194 pitch=0.271827 yaw=-0.887100[0m
+[0;32mI (32299) IMU: roll:-29.994101 pitch=0.227170 yaw=-0.877502[0m
+[0;32mI (32419) IMU: roll:-29.371447 pitch=0.193720 yaw=-0.861084[0m
+[0;32mI (32549) IMU: roll:-29.921728 pitch=0.270837 yaw=-0.867294[0m
+[0;32mI (32679) IMU: roll:-30.148899 pitch=0.172983 yaw=-0.882919[0m
+[0;32mI (32799) IMU: roll:-30.585230 pitch=0.172432 yaw=-0.901855[0m
+[0;32mI (32919) IMU: roll:-30.319593 pitch=0.308317 yaw=-0.894104[0m
+[0;32mI (33059) IMU: roll:-29.992283 pitch=0.302576 yaw=-0.906662[0m
+[0;32mI (33179) IMU: roll:-29.512367 pitch=0.402151 yaw=-0.913177[0m
+[0;32mI (33299) IMU: roll:-29.618839 pitch=0.317820 yaw=-0.932770[0m
+[0;32mI (33429) IMU: roll:-29.848837 pitch=0.259000 yaw=-0.954071[0m
+[0;32mI (33559) IMU: roll:-30.046474 pitch=0.182735 yaw=-0.969330[0m
+[0;32mI (33679) IMU: roll:-29.932425 pitch=0.240273 yaw=-0.969406[0m
+[0;32mI (33799) IMU: roll:-29.531000 pitch=0.247874 yaw=-0.971436[0m
+[0;32mI (33939) IMU: roll:-29.642586 pitch=0.167968 yaw=-0.990921[0m
+[0;32mI (34059) IMU: roll:-29.375469 pitch=0.206913 yaw=-1.002258[0m
+[0;32mI (34179) IMU: roll:-29.363783 pitch=0.164025 yaw=-1.021698[0m
+[0;32mI (34309) IMU: roll:-29.401014 pitch=0.311280 yaw=-1.046310[0m
+[0;32mI (34439) IMU: roll:-28.121977 pitch=0.162949 yaw=-1.201904[0m
+[0;32mI (34559) IMU: roll:-21.879688 pitch=0.339829 yaw=-1.176392[0m
+[0;32mI (34679) IMU: roll:-10.248862 pitch=0.267303 yaw=-0.887650[0m
+[0;32mI (34819) IMU: roll:-1.130109 pitch=0.378287 yaw=0.241470[0m
+[0;32mI (34939) IMU: roll:0.699984 pitch=0.386346 yaw=0.451019[0m
+[0;32mI (35059) IMU: roll:0.551481 pitch=0.330881 yaw=0.439178[0m
+[0;32mI (35199) IMU: roll:0.195983 pitch=0.336045 yaw=0.432358[0m
+[0;32mI (35329) IMU: roll:0.300478 pitch=0.311271 yaw=0.431595[0m
+[0;31mE (35419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (35419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (35419) task_wdt: Tasks currently running:[0m
+[0;31mE (35419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (35419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (35419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x40085257:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (35489) IMU: roll:0.102825 pitch=0.140979 yaw=0.429474[0m
+[0;32mI (35629) IMU: roll:0.263867 pitch=0.268382 yaw=0.430054[0m
+[0;32mI (35749) IMU: roll:0.250420 pitch=0.306523 yaw=0.428513[0m
+[0;32mI (35869) IMU: roll:0.260996 pitch=0.271834 yaw=0.426743[0m
+[0;32mI (35999) IMU: roll:0.229949 pitch=0.352687 yaw=0.425949[0m
+[0;32mI (36129) IMU: roll:0.366826 pitch=0.362914 yaw=0.424164[0m
+[0;32mI (36249) IMU: roll:0.338570 pitch=0.278611 yaw=0.422104[0m
+[0;32mI (36369) IMU: roll:0.180084 pitch=0.328487 yaw=0.419418[0m
+[0;32mI (36509) IMU: roll:0.197415 pitch=0.379955 yaw=0.418991[0m
+[0;32mI (36629) IMU: roll:0.208605 pitch=0.189964 yaw=0.483002[0m
+[0;32mI (36749) IMU: roll:-0.228061 pitch=0.463248 yaw=1.116943[0m
+[0;32mI (36879) IMU: roll:0.049486 pitch=1.943338 yaw=1.019699[0m
+[0;32mI (37009) IMU: roll:0.294424 pitch=8.432652 yaw=-0.714661[0m
+[0;32mI (37129) IMU: roll:-0.261938 pitch=15.232457 yaw=-1.648163[0m
+[0;32mI (37249) IMU: roll:-0.346330 pitch=19.814329 yaw=-1.541824[0m
+[0;32mI (37389) IMU: roll:-0.167383 pitch=20.584347 yaw=-0.772919[0m
+[0;32mI (37509) IMU: roll:-0.016074 pitch=19.090647 yaw=-0.470276[0m
+[0;32mI (37629) IMU: roll:-0.072599 pitch=18.288288 yaw=-0.700897[0m
+[0;32mI (37759) IMU: roll:-0.415649 pitch=19.841736 yaw=-1.367416[0m
+[0;32mI (37889) IMU: roll:-0.015432 pitch=19.067371 yaw=-1.158600[0m
+[0;32mI (38009) IMU: roll:-0.306404 pitch=18.231527 yaw=-1.132217[0m
+[0;32mI (38129) IMU: roll:-0.133600 pitch=18.229296 yaw=-0.964737[0m
+[0;32mI (38269) IMU: roll:-0.184869 pitch=18.891020 yaw=-1.005356[0m
+[0;32mI (38389) IMU: roll:-0.104493 pitch=19.032866 yaw=-0.867096[0m
+[0;32mI (38509) IMU: roll:-0.250762 pitch=18.301760 yaw=-0.703812[0m
+[0;32mI (38639) IMU: roll:-0.106515 pitch=17.913996 yaw=-0.533188[0m
+[0;32mI (38769) IMU: roll:-0.212488 pitch=17.476049 yaw=-0.638245[0m
+[0;32mI (38889) IMU: roll:-0.389412 pitch=18.243608 yaw=-0.675247[0m
+[0;32mI (39019) IMU: roll:-0.668959 pitch=15.071633 yaw=0.667160[0m
+[0;32mI (39159) IMU: roll:-0.442678 pitch=6.403823 yaw=2.324478[0m
+[0;32mI (39279) IMU: roll:-0.547760 pitch=0.797568 yaw=2.950241[0m
+[0;32mI (39399) IMU: roll:0.267235 pitch=-1.016849 yaw=2.762802[0m
+[0;32mI (39539) IMU: roll:0.175307 pitch=0.218711 yaw=2.680649[0m
+[0;32mI (39669) IMU: roll:0.262326 pitch=0.170996 yaw=2.679825[0m
+[0;32mI (39789) IMU: roll:0.079936 pitch=0.197941 yaw=2.678711[0m
+[0;32mI (39929) IMU: roll:0.293008 pitch=0.141061 yaw=2.679367[0m
+[0;32mI (40059) IMU: roll:0.159766 pitch=0.223694 yaw=2.677139[0m
+[0;32mI (40179) IMU: roll:0.056298 pitch=0.278803 yaw=2.674210[0m
+[0;32mI (40309) IMU: roll:0.578361 pitch=0.127726 yaw=2.700623[0m
+[0;31mE (40419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (40419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (40419) task_wdt: Tasks currently running:[0m
+[0;31mE (40419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (40419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (40419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x4000BFED:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (40479) IMU: roll:-0.433943 pitch=-0.615992 yaw=3.657150[0m
+[0;32mI (40599) IMU: roll:-0.545996 pitch=-3.472718 yaw=3.916260[0m
+[0;32mI (40719) IMU: roll:-0.157002 pitch=-10.156947 yaw=3.753006[0m
+[0;32mI (40849) IMU: roll:0.099540 pitch=-15.453041 yaw=3.143600[0m
+[0;32mI (40979) IMU: roll:0.269047 pitch=-17.781263 yaw=3.005630[0m
+[0;32mI (41099) IMU: roll:0.265935 pitch=-19.583122 yaw=2.909271[0m
+[0;32mI (41219) IMU: roll:0.211550 pitch=-21.163408 yaw=2.893356[0m
+[0;32mI (41359) IMU: roll:0.152386 pitch=-21.928799 yaw=2.906158[0m
+[0;32mI (41479) IMU: roll:0.307199 pitch=-23.260410 yaw=2.772705[0m
+[0;32mI (41599) IMU: roll:0.277237 pitch=-22.138969 yaw=2.649490[0m
+[0;32mI (41729) IMU: roll:0.230231 pitch=-22.214970 yaw=2.621307[0m
+[0;32mI (41859) IMU: roll:0.384542 pitch=-21.327223 yaw=2.586349[0m
+[0;32mI (41979) IMU: roll:0.194243 pitch=-21.267076 yaw=2.731003[0m
+[0;32mI (42109) IMU: roll:0.249940 pitch=-21.057024 yaw=2.705795[0m
+[0;32mI (42249) IMU: roll:0.163945 pitch=-20.164110 yaw=2.712723[0m
+[0;32mI (42369) IMU: roll:0.266263 pitch=-17.597628 yaw=2.532883[0m
+[0;32mI (42489) IMU: roll:-0.029055 pitch=-13.246368 yaw=2.505844[0m
+[0;32mI (42629) IMU: roll:0.222270 pitch=-6.520887 yaw=2.084045[0m
+[0;32mI (42759) IMU: roll:-0.213288 pitch=-2.391490 yaw=1.816193[0m
+[0;32mI (42879) IMU: roll:-0.193518 pitch=-0.232593 yaw=1.525070[0m
+[0;32mI (43019) IMU: roll:0.190188 pitch=0.668751 yaw=1.421494[0m
+[0;32mI (43149) IMU: roll:0.133096 pitch=0.379459 yaw=1.423828[0m
+[0;32mI (43269) IMU: roll:0.207103 pitch=0.361014 yaw=1.421463[0m
+[0;32mI (43399) IMU: roll:0.354708 pitch=0.226555 yaw=1.423157[0m
+[0;32mI (43539) IMU: roll:0.361864 pitch=0.369195 yaw=1.422821[0m
+[0;32mI (43659) IMU: roll:0.274669 pitch=0.383758 yaw=1.415390[0m
+[0;32mI (43779) IMU: roll:0.638895 pitch=0.461886 yaw=1.686798[0m
+[0;32mI (43919) IMU: roll:-0.248232 pitch=-0.569093 yaw=8.233582[0m
+[0;32mI (44049) IMU: roll:-0.419873 pitch=-3.090500 yaw=18.433670[0m
+[0;32mI (44169) IMU: roll:1.471907 pitch=-3.111516 yaw=28.806488[0m
+[0;32mI (44299) IMU: roll:-0.394689 pitch=-6.748974 yaw=40.513290[0m
+[0;32mI (44439) IMU: roll:0.402608 pitch=-10.953176 yaw=47.163177[0m
+[0;32mI (44559) IMU: roll:0.749259 pitch=-8.990888 yaw=48.591080[0m
+[0;32mI (44679) IMU: roll:0.351113 pitch=-8.621527 yaw=49.208328[0m
+[0;32mI (44819) IMU: roll:-1.109460 pitch=-8.633746 yaw=48.341400[0m
+[0;32mI (44939) IMU: roll:-2.361081 pitch=-6.797992 yaw=41.444626[0m
+[0;32mI (45059) IMU: roll:-3.421214 pitch=-4.488785 yaw=29.831848[0m
+[0;32mI (45189) IMU: roll:-3.824618 pitch=-1.985935 yaw=15.147018[0m
+[0;32mI (45319) IMU: roll:-5.297385 pitch=0.551198 yaw=-5.191681[0m
+[0;31mE (45419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (45419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (45419) task_wdt: Tasks currently running:[0m
+[0;31mE (45419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (45419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (45419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x4000BFED:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (45479) IMU: roll:-4.946889 pitch=1.482010 yaw=-8.070328[0m
+[0;32mI (45619) IMU: roll:-3.909475 pitch=2.635604 yaw=-7.886688[0m
+[0;32mI (45739) IMU: roll:-4.210050 pitch=2.395444 yaw=-6.608215[0m
+[0;32mI (45859) IMU: roll:-3.758028 pitch=1.989981 yaw=-4.403915[0m
+[0;32mI (45989) IMU: roll:-2.888638 pitch=2.669223 yaw=-1.236938[0m
+[0;32mI (46119) IMU: roll:-1.273925 pitch=4.166685 yaw=6.744232[0m
+[0;32mI (46239) IMU: roll:-0.270823 pitch=0.783457 yaw=11.381439[0m
+[0;32mI (46359) IMU: roll:0.003555 pitch=-0.446043 yaw=10.911728[0m
+[0;32mI (46499) IMU: roll:0.040226 pitch=0.169764 yaw=10.744217[0m
+[0;32mI (46619) IMU: roll:0.206467 pitch=0.083692 yaw=10.738388[0m
+[0;32mI (46739) IMU: roll:0.191585 pitch=0.082887 yaw=10.737823[0m
+[0;32mI (46869) IMU: roll:0.358615 pitch=0.115464 yaw=10.738281[0m
+[0;32mI (46999) IMU: roll:0.230871 pitch=-0.027393 yaw=10.736984[0m
+[0;32mI (47119) IMU: roll:0.136757 pitch=0.014209 yaw=10.737198[0m
+[0;32mI (47239) IMU: roll:0.360424 pitch=0.135535 yaw=10.790863[0m
+[0;32mI (47379) IMU: roll:0.178011 pitch=-0.046338 yaw=10.855804[0m
+[0;32mI (47499) IMU: roll:0.584954 pitch=0.276733 yaw=11.555313[0m
+[0;32mI (47619) IMU: roll:0.280746 pitch=0.680156 yaw=15.731674[0m
+[0;32mI (47749) IMU: roll:-0.013054 pitch=-0.222917 yaw=19.132095[0m
+[0;32mI (47879) IMU: roll:0.166068 pitch=0.065244 yaw=19.335770[0m
+[0;32mI (47999) IMU: roll:-0.047558 pitch=0.046736 yaw=19.369324[0m
+[0;32mI (48119) IMU: roll:0.002798 pitch=0.041355 yaw=19.404282[0m
+[0;32mI (48259) IMU: roll:0.086747 pitch=0.025253 yaw=19.374634[0m
+[0;32mI (48379) IMU: roll:-0.323741 pitch=0.510364 yaw=19.220825[0m
+[0;32mI (48499) IMU: roll:0.538570 pitch=-0.028459 yaw=18.447144[0m
+[0;32mI (48629) IMU: roll:0.078232 pitch=-0.131034 yaw=17.162827[0m
+[0;32mI (48759) IMU: roll:0.377304 pitch=0.153212 yaw=13.835724[0m
+[0;32mI (48879) IMU: roll:0.046405 pitch=0.232112 yaw=12.565842[0m
+[0;32mI (49009) IMU: roll:0.240885 pitch=-0.076123 yaw=12.045395[0m
+[0;32mI (49149) IMU: roll:0.080026 pitch=0.019170 yaw=11.476685[0m
+[0;32mI (49269) IMU: roll:-0.104019 pitch=0.128736 yaw=10.610931[0m
+[0;32mI (49389) IMU: roll:0.041754 pitch=-0.050713 yaw=9.788086[0m
+[0;32mI (49529) IMU: roll:0.327721 pitch=0.275355 yaw=8.358871[0m
+[0;32mI (49659) IMU: roll:0.081360 pitch=0.248417 yaw=6.928741[0m
+[0;32mI (49779) IMU: roll:0.527140 pitch=0.367007 yaw=5.747314[0m
+[0;32mI (49909) IMU: roll:0.068926 pitch=0.335367 yaw=5.486801[0m
+[0;32mI (50049) IMU: roll:0.206241 pitch=0.485490 yaw=4.123093[0m
+[0;32mI (50169) IMU: roll:0.208984 pitch=0.077246 yaw=3.460831[0m
+[0;32mI (50289) IMU: roll:-0.134275 pitch=0.095645 yaw=3.365189[0m
+[0;31mE (50419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (50419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (50419) task_wdt: Tasks currently running:[0m
+[0;31mE (50419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (50419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (50419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x4000BFED:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (50469) IMU: roll:-0.168670 pitch=0.476204 yaw=2.990463[0m
+[0;32mI (50589) IMU: roll:0.246841 pitch=0.239993 yaw=2.955338[0m
+[0;32mI (50709) IMU: roll:0.261579 pitch=0.222406 yaw=2.940262[0m
+[0;32mI (50829) IMU: roll:0.335705 pitch=0.198196 yaw=2.939362[0m
+[0;32mI (50969) IMU: roll:0.252522 pitch=0.149460 yaw=2.936386[0m
+[0;32mI (51089) IMU: roll:0.092321 pitch=0.186460 yaw=2.931580[0m
+[0;32mI (51209) IMU: roll:-0.076782 pitch=0.056706 yaw=2.840790[0m
+[0;32mI (51339) IMU: roll:0.475351 pitch=0.288683 yaw=2.480164[0m
+[0;32mI (51469) IMU: roll:0.035724 pitch=0.234418 yaw=2.249496[0m
+[0;32mI (51589) IMU: roll:0.256857 pitch=0.298835 yaw=2.083572[0m
+[0;32mI (51709) IMU: roll:0.342452 pitch=0.284270 yaw=2.069214[0m
+[0;32mI (51849) IMU: roll:0.191030 pitch=-0.036768 yaw=1.645737[0m
+[0;32mI (51969) IMU: roll:0.319584 pitch=0.181803 yaw=1.396866[0m
+[0;32mI (52089) IMU: roll:0.429828 pitch=0.411040 yaw=0.829300[0m
+[0;32mI (52219) IMU: roll:0.156052 pitch=0.288741 yaw=0.304214[0m
+[0;32mI (52349) IMU: roll:0.162235 pitch=0.211604 yaw=0.282867[0m
+[0;32mI (52469) IMU: roll:0.129805 pitch=0.269347 yaw=0.279938[0m
+[0;32mI (52589) IMU: roll:-0.012136 pitch=0.289291 yaw=0.302322[0m
+[0;32mI (52729) IMU: roll:-0.036137 pitch=0.211888 yaw=0.301514[0m
+[0;32mI (52849) IMU: roll:0.219163 pitch=0.170219 yaw=0.302994[0m
+[0;32mI (52969) IMU: roll:0.132932 pitch=0.267435 yaw=0.301010[0m
+[0;32mI (53099) IMU: roll:0.075460 pitch=0.168660 yaw=0.302551[0m
+[0;32mI (53229) IMU: roll:0.182975 pitch=0.325042 yaw=0.302963[0m
+[0;32mI (53349) IMU: roll:0.209281 pitch=0.251027 yaw=0.301666[0m
+[0;32mI (53469) IMU: roll:0.116255 pitch=0.230730 yaw=0.298157[0m
+[0;32mI (53609) IMU: roll:0.157119 pitch=0.211813 yaw=0.295670[0m
+[0;32mI (53729) IMU: roll:0.235778 pitch=0.198302 yaw=0.295166[0m
+[0;32mI (53849) IMU: roll:0.233731 pitch=0.294267 yaw=0.294464[0m
+[0;32mI (53979) IMU: roll:0.198320 pitch=0.224807 yaw=0.292740[0m
+[0;32mI (54109) IMU: roll:0.109313 pitch=0.217189 yaw=0.292130[0m
+[0;32mI (54229) IMU: roll:0.327290 pitch=0.232528 yaw=0.294342[0m
+[0;32mI (54349) IMU: roll:0.115090 pitch=0.182865 yaw=0.291580[0m
+[0;32mI (54489) IMU: roll:0.196892 pitch=0.238590 yaw=0.291290[0m
+[0;32mI (54609) IMU: roll:0.276251 pitch=0.257051 yaw=0.289322[0m
+[0;32mI (54729) IMU: roll:0.139116 pitch=0.259995 yaw=0.286575[0m
+[0;32mI (54859) IMU: roll:0.157509 pitch=0.193125 yaw=0.287079[0m
+[0;32mI (54989) IMU: roll:0.191087 pitch=0.241715 yaw=0.285172[0m
+[0;32mI (55109) IMU: roll:0.233245 pitch=0.233686 yaw=0.283127[0m
+[0;32mI (55229) IMU: roll:0.132972 pitch=0.175442 yaw=0.281433[0m
+[0;32mI (55369) IMU: roll:0.174782 pitch=0.267536 yaw=0.280670[0m
+[0;31mE (55419) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (55419) task_wdt:  - IDLE0 (CPU 0)[0m
+[0;31mE (55419) task_wdt: Tasks currently running:[0m
+[0;31mE (55419) task_wdt: CPU 0: DShotController[0m
+[0;31mE (55419) task_wdt: CPU 1: IDLE1[0m
+[0;31mE (55419) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D9C07:0x3FFB0FB0 0x400D9FCC:0x3FFB0FD0 0x40083235:0x3FFB1000 0x4000BFED:0x3FFB9E30 0x4008804B:0x3FFB9E40 0x400DAD21:0x3FFB9E60 0x400DA97F:0x3FFB9E90 0x400D688C:0x3FFB9EC0 0x400D646F:0x3FFB9F30 0x40087CA9:0x3FFB9F50
+
+[0;32mI (55529) IMU: roll:0.315238 pitch=0.245801 yaw=0.279343[0m
+[0;32mI (55649) IMU: roll:0.236741 pitch=0.284546 yaw=0.279510[0m
+[0;32mI (55769) IMU: roll:0.202020 pitch=0.168609 yaw=0.279007[0m
+[0;32mI (55909) IMU: roll:0.258682 pitch=0.274710 yaw=0.277603[0m
+[0;32mI (56029) IMU: roll:0.238016 pitch=0.237513 yaw=0.276016[0m
+[0;32mI (56149) IMU: roll:0.295235 pitch=0.218563 yaw=0.275833[0m

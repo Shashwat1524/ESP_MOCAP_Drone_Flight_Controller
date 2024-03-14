@@ -1,0 +1,977 @@
+start: Multicore app[0m
+D (217) cpu_start: Pro cpu up[0m
+D (217) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_startets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cf4ch ( 53068) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=0001cf74 vaddr=3ffb0000 size=030a4h ( 12452) load[0m
+[0;32mI (128) esp_image: segment 2: paddr=00020020 vaddr=400d0020 size=1bed4h (114388) map[0m
+[0;32mI (168) esp_image: segment 3: paddr=0003befc vaddr=3ffb30a4 size=002c8h (   712) load[0m
+[0;32mI (168) esp_image: segment 4: paddr=0003c1cc vaddr=40080000 size=0ecd8h ( 60632) load[0m
+[0;32mI (205) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (205) boot: Disabling RNG early entropy source...[0m
+[0;32mI (217) cpu_start: Multicore app[0m
+D (217) cpu_start: Pro cpu up[0m
+D (217) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (226) clk: RTC_SLOW_CLK calibration value: 3051686[0m
+D (238) cpu_start: calling init function: 0x400d164c on core: 0[0m
+[0;32mI (238) cpu_start: Pro cpu start user code[0m
+[0;32mI (238) cpu_start: cpu freq: 160000000 Hz[0m
+D (244) cpu_start: calling init function: 0x400d1690 on core: 0[0m
+[0;32mI (250) cpu_start: Application information:[0m
+[0;32mI (255) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (261) cpu_start: App version:      1[0m
+[0;32mI (265) cpu_start: Compile time:     Jan 31 2024 22:48:20[0m
+[0;32mI (271) cpu_start: ELF file SHA256:  ba3961970...[0m
+[0;32mI (277) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (284) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (288) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (293) cpu_start: Chip rev:         v3.0[0m
+D (298) cpu_start: calling init function: 0x400d17d8 on core: 0[0m
+D (304) memory_layout: Checking 9 reserved memory ranges:[0m
+D (309) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (316) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (322) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb3e60[0m
+D (329) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (335) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (341) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (348) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (354) memory_layout: Reserved memory range 0x40080000 - 0x4008ecd8[0m
+D (361) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (367) memory_layout: Building list of available memory regions:[0m
+D (373) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (380) memory_layout: Available memory region 0x3ffb3e60 - 0x3ffb8000[0m
+D (387) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (393) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (400) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (406) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (413) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (419) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (426) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (433) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (439) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (446) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (452) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (459) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (466) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (472) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (479) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (485) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (492) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (499) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (505) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (512) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (518) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (525) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (532) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (538) memory_layout: Available memory region 0x4008ecd8 - 0x40090000[0m
+D (545) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (551) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (558) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (565) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (571) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (578) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (584) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (591) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (598) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (605) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (610) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (616) heap_init: New heap initialised at 0x3ffb3e60[0m
+[0;32mI (621) heap_init: At 3FFB3E60 len 0002C1A0 (176 KiB): DRAM[0m
+[0;32mI (627) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (634) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (640) heap_init: New heap initialised at 0x4008ecd8[0m
+[0;32mI (645) heap_init: At 4008ECD8 len 00011328 (68 KiB): IRAM[0m
+D (651) cpu_start: calling init function: 0x400d17e4 on core: 0[0m
+D (658) cpu_start: calling init function: 0x400d3e68 on core: 0[0m
+D (663) cpu_start: calling init function: 0x400ea3c4 on core: 0[0m
+D (669) cpu_start: calling init function: 0x400d17f0 on core: 0[0m
+D (676) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (681) cpu_start: calling init function: 0x400d17fc on core: 0[0m
+D (687) cpu_start: calling init function: 0x400d5598 on core: 0[0m
+D (693) cpu_start: calling init function: 0x400d6784 on core: 0[0m
+D (699) cpu_start: calling init function: 0x400d3ed4 on core: 0[0m
+D (705) cpu_start: calling init function: 0x400d1808 on core: 0[0m
+D (711) cpu_start: calling init function: 0x400d1814 on core: 0[0m
+D (717) spi_flash: trying chip: issi[0m
+D (720) spi_flash: trying chip: gd[0m
+D (724) spi_flash: trying chip: mxic[0m
+D (727) spi_flash: trying chip: winbond[0m
+D (731) spi_flash: trying chip: generic[0m
+[0;32mI (735) spi_flash: detected chip: generic[0m
+[0;32mI (740) spi_flash: flash io: dio[0m
+[0;33mW (744) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (757) cpu_start: calling init function: 0x400ea3cc on core: 0[0m
+D (763) cpu_start: calling init function: 0x400def60[0m
+[0;33mW (768) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (778) cpu_start: calling init function: 0x400d8200[0m
+D (784) cpu_start: calling init function: 0x400d7600[0m
+D (789) cpu_start: calling init function: 0x4008613c[0m
+D (794) cpu_start: calling init function: 0x400d28a8[0m
+D (799) cpu_start: calling init function: 0x400d1dac[0m
+D (804) cpu_start: calling init function: 0x400d14b4[0m
+D (809) cpu_start: calling init function: 0x400d43c8 on core: 0[0m
+D (815) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (820) cpu_start: calling init function: 0x400d183c on core: 0[0m
+D (826) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (831) app_start: Starting scheduler on CPU0[0m
+[0;32D (835) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (835) app_start: Starting scheduler on CPU1[0m
+mI (835) main_task: Started on CPU0[0m
+D (855) heap_init: New heap initialised at 0x3ffe0440[0m
+D (855) heap_init: New heap initialised at 0x3ffe4350[0m
+D (855) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (855) main_task: Calling app_main()[0m
+D (865) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (875) IMU: devid=0x34[0m
+[0;32mI (875) IMU: getRate()=0[0m
+[0;32mI (875) IMU: getExternalFrameSync()=0[0m
+[0;32mI (875) IMU: getDLPFMode()=6[0m
+[0;32mI (885) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (885) rmt: new group(0) at 0x3ffbd988, occupy=ffffff00[0m
+[0;D (895) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+32mI (895) IMU: getFullScaleAccelRange()=0[0m
+D (905) rmt: group clock resolution:80000000[0m
+[0;32mI (905) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (905) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (915) IMU: roll=0.002734 pitch=-0.040550 yaw=0.000031[0m
+D (925) rmt: new tx channel(0,0) at 0x3ffbd608, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;D (945) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+32mI (895) main_task: Returned from app_main()[0m
+D (945) rmt: group clock resolution:80000000[0m
+[0;32mI (955) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (965) rmt: new tx channel(0,1) at 0x3ffbda78, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (985) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (985) rmt: group clock resolution:80000000[0m
+[0;32mI (995) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1005) rmt: new tx channel(0,2) at 0x3ffbddcc, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1015) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1025) rmt: group clock resolution:80000000[0m
+[0;32mI (1025) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1035) rmt: new tx channel(0,3) at 0x3ffbe130, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1055) ESC_controller: Install Dshot ESC encoder[0m
+D (1055) rmt: new bytes encoder @0x3ffbe534[0m
+D (1055) rmt: new copy encoder @0x3ffbe558[0m
+D (1065) rmt: new bytes encoder @0x3ffbe4a4[0m
+D (1065) rmt: new copy encoder @0x3ffbe4c8[0m
+D (1075) rmt: new bytes encoder @0x3ffbe56c[0m
+D (1075) rmt: new copy encoder @0x3ffbe4fc[0m
+D (1085) rmt: new bytes encoder @0x3ffbe5b0[0m
+D (1085) rmt: new copy encoder @0x3ffbe5d4[0m
+[0;32mI (1085) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1095) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1065) IMU: roll=0.120488 pitch=-1.670820 yaw=0.003708[0m
+[0;32mI (1205) IMU: roll=0.235427 pitch=-3.282434 yaw=0.004211[0m
+[0;32mI (1305) IMU: roll=0.308072 pitch=-4.424392 yaw=0.000626[0m
+[0;32mI (1405) IMU: roll=0.394258 pitch=-5.565017 yaw=-0.002609[0m
+[0;32mI (1505) IMU: roll=0.476503 pitch=-6.700605 yaw=-0.004959[0m
+[0;32mI (1605) IMU: roll=0.553193 pitch=-7.831511 yaw=-0.009308[0m
+[0;32mI (1705) IMU: roll=0.634464 pitch=-8.963960 yaw=-0.016830[0m
+[0;32mI (1805) IMU: roll=0.714032 pitch=-10.093700 yaw=-0.027893[0m
+[0;32mI (1905) IMU: roll=0.790643 pitch=-11.219683 yaw=-0.040268[0m
+[0;32mI (2005) IMU: roll=0.870449 pitch=-12.342599 yaw=-0.051437[0m
+[0;32mI (11105) ESC_controller: ESC Values: 799.77, 799.74, 800.26, 800.23[0m
+[0;32mI (11105) ESC_controller: ESC Values: 790.70, 789.25, 810.75, 809.30[0m
+[0;32mI (11105) ESC_controller: ESC Values: 781.72, 778.89, 821.11, 818.28[0m
+[0;32mI (11115) ESC_controller: ESC Values: 775.30, 771.61, 828.39, 824.70[0m
+[0;32mI (11115) ESC_controller: ESC Values: 768.98, 764.24, 835.76, 831.02[0m
+[0;32mI (11125) ESC_controller: ESC Values: 762.66, 756.94, 843.06, 837.34[0m
+[0;32mI (11135) ESC_controller: ESC Values: 756.33, 749.69, 850.31, 843.67[0m
+[0;32mI (11135) IMU: roll=0.952459 pitch=-13.459780 yaw=-0.065872[0m
+[0;32mI (11145) ESC_controller: ESC Values: 750.02, 742.41, 857.59, 849.98[0m
+[0;32mI (11155) ESC_controller: ESC Values: 743.72, 735.15, 864.85, 856.28[0m
+[0;32mI (11155) ESC_controller: ESC Values: 737.43, 727.94, 872.06, 862.57[0m
+[0;32mI (11165) ESC_controller: ESC Values: 731.17, 720.72, 879.28, 868.83[0m
+[0;32mI (11175) ESC_controller: ESC Values: 724.96, 713.53, 886.47, 875.04[0m
+[0;32mI (11245) IMU: roll=4.590614 pitch=-86.399857 yaw=-3.436920[0m
+[0;32mI (11245) ESC_controller: ESC Values: 427.54, 372.46, 1227.54, 1172.46[0m
+[0;32mI (11345) IMU: roll=4.596054 pitch=-85.797295 yaw=-3.388565[0m
+[0;32mI (11345) ESC_controller: ESC Values: 427.58, 372.42, 1227.58, 1172.42[0m
+[0;32mI (11445) IMU: roll=4.570589 pitch=-85.184204 yaw=-3.303024[0m
+[0;32mI (11445) ESC_controller: ESC Values: 427.42, 372.58, 1227.42, 1172.58[0m
+[0;32mI (11545) IMU: roll=4.572648 pitch=-84.533180 yaw=-3.250290[0m
+[0;32mI (11545) ESC_controller: ESC Values: 427.44, 372.56, 1227.44, 1172.56[0m
+[0;32mI (11645) IMU: roll=4.570383 pitch=-83.925964 yaw=-3.213623[0m
+[0;32mI (11645) ESC_controller: ESC Values: 427.42, 372.58, 1227.42, 1172.58[0m
+[0;32mI (11745) IMU: roll=4.561594 pitch=-83.273491 yaw=-3.149506[0m
+[0;32mI (11745) ESC_controller: ESC Values: 427.37, 372.63, 1227.37, 1172.63[0m
+[0;32mI (11845) IMU: roll=4.557771 pitch=-82.626404 yaw=-3.096313[0m
+[0;32mI (11845) ESC_controller: ESC Values: 427.35, 372.65, 1227.35, 1172.65[0m
+[0;32mI (11945) IMU: roll=4.555083 pitch=-82.000275 yaw=-3.051559[0m
+[0;32mI (11945) ESC_controller: ESC Values: 427.33, 372.67, 1227.33, 1172.67[0m
+[0;32mI (12045) IMU: roll=4.550489 pitch=-81.334259 yaw=-2.987335[0m
+[0;32mI (12045) ESC_controller: ESC Values: 427.30, 372.70, 1227.30, 1172.70[0m
+[0;32mI (12145) IMU: roll=4.554513 pitch=-80.681831 yaw=-2.941849[0m
+[0;32mI (12145) ESC_controller: ESC Values: 427.33, 372.67, 1227.33, 1172.67[0m
+[0;32mI (12245) IMU: roll=4.548255 pitch=-80.028351 yaw=-2.890137[0m
+[0;32mI (12245) ESC_controller: ESC Values: 427.29, 372.71, 1227.29, 1172.71[0m
+[0;32mI (12345) IMU: roll=4.543008 pitch=-79.353172 yaw=-2.828079[0m
+[0;32mI (12345) ESC_controller: ESC Values: 427.26, 372.74, 1227.26, 1172.74[0m
+[0;32mI (12445) IMU: roll=4.540010 pitch=-78.689842 yaw=-2.779068[0m
+[0;32mI (12445) ESC_controller: ESC Values: 427.24, 372.76, 1227.24, 1172.76[0m
+[0;32mI (12545) IMU: roll=4.527389 pitch=-78.015701 yaw=-2.711609[0m
+[0;32mI (12545) ESC_controller: ESC Values: 427.16, 372.84, 1227.16, 1172.84[0m
+[0;32mI (12645) IMU: roll=4.525554 pitch=-77.334267 yaw=-2.656921[0m
+[0;32mI (12645) ESC_controller: ESC Values: 427.15, 372.85, 1227.15, 1172.85[0m
+[0;32mI (12745) IMU: roll=4.520550 pitch=-76.658997 yaw=-2.608215[0m
+[0;32mI (12745) ESC_controller: ESC Values: 427.12, 372.88, 1227.12, 1172.88[0m
+[0;32mI (12845) IMU: roll=4.507785 pitch=-75.970482 yaw=-2.547485[0m
+[0;32mI (12845) ESC_controller: ESC Values: 427.05, 372.95, 1227.05, 1172.95[0m
+[0;32mI (12945) IMU: roll=4.501355 pitch=-75.281944 yaw=-2.496826[0m
+[0;32mI (12945) ESC_controller: ESC Values: 427.01, 372.99, 1227.01, 1172.99[0m
+[0;32mI (13045) IMU: roll=4.485813 pitch=-74.591034 yaw=-2.433975[0m
+[0;32mI (13045) ESC_controller: ESC Values: 426.91, 373.09, 1226.91, 1173.09[0m
+[0;32mI (13145) IMU: roll=4.478343 pitch=-73.885979 yaw=-2.378281[0m
+[0;32mI (13145) ESC_controller: ESC Values: 426.87, 373.13, 1226.87, 1173.13[0m
+[0;32mI (13245) IMU: roll=4.471686 pitch=-73.180740 yaw=-2.329926[0m
+[0;32mI (13245) ESC_controller: ESC Values: 426.83, 373.17, 1226.83, 1173.17[0m
+[0;32mI (13345) IMU: roll=4.454274 pitch=-72.475212 yaw=-2.262482[0m
+[0;32mI (13345) ESC_controller: ESC Values: 426.73, 373.27, 1226.73, 1173.27[0m
+[0;32mI (13445) IMU: roll=4.443440 pitch=-71.756035 yaw=-2.205170[0m
+[0;32mI (13445) ESC_controller: ESC Values: 426.66, 373.34, 1226.66, 1173.34[0m
+[0;32mI (13545) IMU: roll=4.430902 pitch=-71.035690 yaw=-2.147812[0m
+[0;32mI (13545) ESC_controller: ESC Values: 426.59, 373.41, 1226.59, 1173.41[0m
+[0;32mI (13645) IMU: roll=4.411500 pitch=-70.310478 yaw=-2.080780[0m
+[0;32mI (13645) ESC_controller: ESC Values: 426.47, 373.53, 1226.47, 1173.53[0m
+[0;32mI (13745) IMU: roll=4.401603 pitch=-69.576721 yaw=-2.027740[0m
+[0;32mI (13745) ESC_controller: ESC Values: 426.41, 373.59, 1226.41, 1173.59[0m
+[0;32mI (13845) IMU: roll=4.382846 pitch=-68.843651 yaw=-1.965775[0m
+[0;32mI (13845) ESC_controller: ESC Values: 426.30, 373.70, 1226.30, 1173.70[0m
+[0;32mI (13945) IMU: roll=4.367141 pitch=-68.105949 yaw=-1.905792[0m
+[0;32mI (13945) ESC_controller: ESC Values: 426.20, 373.80, 1226.20, 1173.80[0m
+[0;32mI (14045) IMU: roll=4.350694 pitch=-67.358505 yaw=-1.849854[0m
+[0;32mI (14045) ESC_controller: ESC Values: 426.10, 373.90, 1226.10, 1173.90[0m
+[0;32mI (14145) IMU: roll=4.329177 pitch=-66.612587 yaw=-1.788223[0m
+[0;32mI (14145) ESC_controller: ESC Values: 426.30, 374.35, 1225.65, 1173.70[0m
+[0;32mI (14245) IMU: roll=4.313135 pitch=-65.856071 yaw=-1.732269[0m
+[0;32mI (14245) ESC_controller: ESC Values: 430.74, 378.98, 1221.02, 1169.26[0m
+[0;32mI (14345) IMU: roll=4.291804 pitch=-65.094040 yaw=-1.670547[0m
+[0;32mI (14345) ESC_controller: ESC Values: 435.19, 383.68, 1216.32, 1164.81[0m
+[0;32mI (14445) IMU: roll=4.267046 pitch=-64.325684 yaw=-1.603638[0m
+[0;32mI (14445) ESC_controller: ESC Values: 439.65, 388.44, 1211.56, 1160.35[0m
+[0;32mI (14545) IMU: roll=4.245259 pitch=-63.551590 yaw=-1.547791[0m
+[0;32mI (14545) ESC_controller: ESC Values: 444.16, 393.22, 1206.78, 1155.84[0m
+[0;32mI (14645) IMU: roll=4.218574 pitch=-62.770874 yaw=-1.483139[0m
+[0;32mI (14645) ESC_controller: ESC Values: 448.69, 398.06, 1201.94, 1151.31[0m
+[0;32mI (14745) IMU: roll=4.190043 pitch=-61.989220 yaw=-1.426071[0m
+[0;32mI (14745) ESC_controller: ESC Values: 453.20, 402.92, 1197.08, 1146.80[0m
+[0;32mI (14845) IMU: roll=4.165885 pitch=-61.198467 yaw=-1.367813[0m
+[0;32mI (14845) ESC_controller: ESC Values: 457.80, 407.81, 1192.19, 1142.20[0m
+[0;32mI (14945) IMU: roll=4.136013 pitch=-60.401043 yaw=-1.304749[0m
+[0;32mI (14945) ESC_controller: ESC Values: 462.41, 412.78, 1187.22, 1137.59[0m
+[0;32mI (15045) IMU: roll=4.106075 pitch=-59.603012 yaw=-1.243744[0m
+[0;32mI (15045) ESC_controller: ESC Values: 467.02, 417.75, 1182.25, 1132.98[0m
+[0;32mI (15145) IMU: roll=4.077973 pitch=-58.798721 yaw=-1.183197[0m
+[0;32mI (15145) ESC_controller: ESC Values: 471.68, 422.74, 1177.26, 1128.32[0m
+[0;32mI (15245) IMU: roll=4.044023 pitch=-57.983288 yaw=-1.118515[0m
+[0;32mI (15245) ESC_controller: ESC Values: 476.36, 427.84, 1172.16, 1123.64[0m
+[0;32mI (15345) IMU: roll=4.013235 pitch=-57.164379 yaw=-1.061371[0m
+[0;32mI (15345) ESC_controller: ESC Values: 481.09, 432.93, 1167.07, 1118.91[0m
+[0;32mI (15445) IMU: roll=3.979152 pitch=-56.338943 yaw=-1.001175[0m
+[0;32mI (15445) ESC_controller: ESC Values: 485.84, 438.09, 1161.91, 1114.16[0m
+[0;32mI (15545) IMU: roll=3.938743 pitch=-55.509754 yaw=-0.940201[0m
+[0;32mI (15545) ESC_controller: ESC Values: 490.57, 443.31, 1156.69, 1109.43[0m
+[0;32mI (15645) IMU: roll=3.900482 pitch=-54.673386 yaw=-0.879578[0m
+[0;32mI (15645) ESC_controller: ESC Values: 495.36, 448.56, 1151.44, 1104.64[0m
+[0;32mI (15745) IMU: roll=3.863027 pitch=-53.827847 yaw=-0.815445[0m
+[0;32mI (15745) ESC_controller: ESC Values: 500.21, 453.85, 1146.15, 1099.79[0m
+[0;32mI (15845) IMU: roll=3.825723 pitch=-52.975979 yaw=-0.757751[0m
+[0;32mI (15845) ESC_controller: ESC Values: 505.10, 459.19, 1140.81, 1094.90[0m
+[0;32mI (15945) IMU: roll=3.785495 pitch=-52.120491 yaw=-0.700500[0m
+[0;32mI (15945) ESC_controller: ESC Values: 509.99, 464.56, 1135.44, 1090.01[0m
+[0;32mI (16045) IMU: roll=3.745900 pitch=-51.256348 yaw=-0.639206[0m
+[0;32mI (16045) ESC_controller: ESC Values: 514.94, 469.99, 1130.01, 1085.06[0m
+[0;32mI (16145) IMU: roll=3.706728 pitch=-50.387001 yaw=-0.579880[0m
+[0;32mI (16145) ESC_controller: ESC Values: 519.92, 475.44, 1124.56, 1080.08[0m
+[0;32mI (16245) IMU: roll=3.665854 pitch=-49.511456 yaw=-0.519958[0m
+[0;32mI (16245) ESC_controller: ESC Values: 524.93, 480.94, 1119.06, 1075.07[0m
+[0;32mI (16345) IMU: roll=3.619381 pitch=-48.628170 yaw=-0.459625[0m
+[0;32mI (16345) ESC_controller: ESC Values: 529.95, 486.51, 1113.49, 1070.05[0m
+[0;32mI (16445) IMU: roll=3.572325 pitch=-47.741100 yaw=-0.401077[0m
+[0;32mI (16445) ESC_controller: ESC Values: 534.99, 492.12, 1107.88, 1065.01[0m
+[0;32mI (16545) IMU: roll=3.525685 pitch=-46.848488 yaw=-0.344650[0m
+[0;32mI (16545) ESC_controller: ESC Values: 540.06, 497.75, 1102.25, 1059.94[0m
+[0;32mI (16645) IMU: roll=3.480154 pitch=-45.947849 yaw=-0.283676[0m
+[0;32mI (16645) ESC_controller: ESC Values: 545.19, 503.43, 1096.57, 1054.81[0m
+[0;32mI (16745) IMU: roll=3.431891 pitch=-45.038723 yaw=-0.228394[0m
+[0;32mI (16745) ESC_controller: ESC Values: 550.36, 509.18, 1090.82, 1049.64[0m
+[0;32mI (16845) IMU: roll=3.377080 pitch=-44.125408 yaw=-0.169678[0m
+[0;32mI (16845) ESC_controller: ESC Values: 555.51, 514.99, 1085.01, 1044.49[0m
+[0;32mI (16945) IMU: roll=3.326592 pitch=-43.203300 yaw=-0.112473[0m
+[0;32mI (16945) ESC_controller: ESC Values: 560.74, 520.82, 1079.18, 1039.26[0m
+[0;32mI (17045) IMU: roll=3.275094 pitch=-42.275616 yaw=-0.058380[0m
+[0;32mI (17045) ESC_controller: ESC Values: 566.00, 526.70, 1073.30, 1034.00[0m
+[0;32mI (17145) IMU: roll=3.218932 pitch=-41.339737 yaw=-0.003250[0m
+[0;32mI (17145) ESC_controller: ESC Values: 571.28, 532.65, 1067.35, 1028.72[0m
+[0;32mI (17245) IMU: roll=3.169478 pitch=-40.393719 yaw=0.046967[0m
+[0;32mI (17245) ESC_controller: ESC Values: 576.65, 538.62, 1061.38, 1023.35[0m
+[0;32mI (17345) IMU: roll=3.109033 pitch=-39.441666 yaw=0.103378[0m
+[0;32mI (17345) ESC_controller: ESC Values: 582.00, 544.70, 1055.30, 1018.00[0m
+[0;32mI (17445) IMU: roll=3.053772 pitch=-38.484364 yaw=0.157700[0m
+[0;32mI (17445) ESC_controller: ESC Values: 587.42, 550.77, 1049.23, 1012.58[0m
+[0;32mI (17545) IMU: roll=2.990067 pitch=-37.517380 yaw=0.214371[0m
+[0;32mI (17545) ESC_controller: ESC Values: 592.84, 556.96, 1043.04, 1007.16[0m
+[0;32mI (17645) IMU: roll=2.925760 pitch=-36.547894 yaw=0.266159[0m
+[0;32mI (17645) ESC_controller: ESC Values: 598.27, 563.16, 1036.84, 1001.73[0m
+[0;32mI (17745) IMU: roll=2.863239 pitch=-35.570770 yaw=0.318634[0m
+[0;32mI (17745) ESC_controller: ESC Values: 603.75, 569.40, 1030.60, 996.25[0m
+[0;32mI (17845) IMU: roll=2.798818 pitch=-34.588589 yaw=0.371033[0m
+[0;32mI (17845) ESC_controller: ESC Values: 609.26, 575.68, 1024.32, 990.74[0m
+[0;32mI (17945) IMU: roll=2.726048 pitch=-33.596722 yaw=0.421875[0m
+[0;32mI (17945) ESC_controller: ESC Values: 614.78, 582.06, 1017.94, 985.22[0m
+[0;32mI (18045) IMU: roll=2.657552 pitch=-32.597652 yaw=0.469650[0m
+[0;32mI (18045) ESC_controller: ESC Values: 620.36, 588.47, 1011.53, 979.64[0m
+[0;32mI (18145) IMU: roll=2.582199 pitch=-31.591011 yaw=0.520462[0m
+[0;32mI (18145) ESC_controller: ESC Values: 625.95, 594.96, 1005.04, 974.05[0m
+[0;32mI (18245) IMU: roll=2.517264 pitch=-30.574322 yaw=0.567917[0m
+[0;32mI (18245) ESC_controller: ESC Values: 631.66, 601.45, 998.55, 968.34[0m
+[0;32mI (18345) IMU: roll=2.448366 pitch=-29.556097 yaw=0.614105[0m
+[0;32mI (18345) ESC_controller: ESC Values: 637.35, 607.97, 992.03, 962.65[0m
+[0;32mI (18445) IMU: roll=2.383198 pitch=-28.526760 yaw=0.662552[0m
+[0;32mI (18445) ESC_controller: ESC Values: 643.14, 614.54, 985.46, 956.86[0m
+[0;32mI (18545) IMU: roll=2.301012 pitch=-27.493048 yaw=0.705444[0m
+[0;32mI (18545) ESC_controller: ESC Values: 648.85, 621.24, 978.76, 951.15[0m
+[0;32mI (18645) IMU: roll=2.221476 pitch=-26.452511 yaw=0.749603[0m
+[0;32mI (18645) ESC_controller: ESC Values: 654.61, 627.96, 972.04, 945.39[0m
+[0;32mI (18745) IMU: roll=2.145797 pitch=-25.406033 yaw=0.793961[0m
+[0;32mI (18745) ESC_controller: ESC Values: 660.44, 634.69, 965.31, 939.56[0m
+[0;32mI (18845) IMU: roll=2.059925 pitch=-24.353529 yaw=0.833984[0m
+[0;32mI (18845) ESC_controller: ESC Values: 666.24, 641.52, 958.48, 933.76[0m
+[0;32mI (18945) IMU: roll=2.019008 pitch=-23.291155 yaw=0.875977[0m
+[0;32mI (18945) ESC_controller: ESC Values: 672.37, 648.14, 951.86, 927.63[0m
+[0;32mI (19045) IMU: roll=1.645618 pitch=-22.285707 yaw=0.908920[0m
+[0;32mI (19045) ESC_controller: ESC Values: 676.16, 656.41, 943.59, 923.84[0m
+[0;32mI (19145) IMU: roll=2.125558 pitch=-23.252867 yaw=0.879944[0m
+[0;32mI (19145) ESC_controller: ESC Values: 673.24, 647.73, 952.27, 926.76[0m
+[0;32mI (19245) IMU: roll=1.392300 pitch=-22.436417 yaw=0.910736[0m
+[0;32mI (19245) ESC_controller: ESC Values: 673.74, 657.03, 942.97, 926.26[0m
+[0;32mI (19345) IMU: roll=2.234845 pitch=-23.154516 yaw=0.890945[0m
+[0;32mI (19345) ESC_controller: ESC Values: 674.48, 647.66, 952.34, 925.52[0m
+[0;32mI (19445) IMU: roll=1.319835 pitch=-22.516020 yaw=0.916077[0m
+[0;32mI (19445) ESC_controller: ESC Values: 672.82, 656.98, 943.02, 927.18[0m
+[0;32mI (19545) IMU: roll=2.187074 pitch=-23.203789 yaw=0.898315[0m
+[0;32mI (19545) ESC_controller: ESC Values: 673.90, 647.65, 952.35, 926.10[0m
+[0;32mI (19645) IMU: roll=1.365050 pitch=-22.464138 yaw=0.923477[0m
+[0;32mI (19645) ESC_controller: ESC Values: 673.41, 657.02, 942.98, 926.59[0m
+[0;32mI (19745) IMU: roll=2.219634 pitch=-23.166367 yaw=0.900726[0m
+[0;32mI (19745) ESC_controller: ESC Values: 674.32, 647.68, 952.32, 925.68[0m
+[0;32mI (19845) IMU: roll=1.185263 pitch=-22.714834 yaw=0.915833[0m
+[0;32mI (19845) ESC_controller: ESC Values: 670.82, 656.60, 943.40, 929.18[0m
+[0;32mI (19945) IMU: roll=2.292917 pitch=-22.984007 yaw=0.907837[0m
+[0;32mI (19945) ESC_controller: ESC Values: 675.85, 648.34, 951.66, 924.15[0m
+[0;32mI (20045) IMU: roll=1.147715 pitch=-22.941580 yaw=0.912842[0m
+[0;32mI (20045) ESC_controller: ESC Values: 669.24, 655.46, 944.54, 930.76[0m
+[0;32mI (20145) IMU: roll=2.266351 pitch=-23.168665 yaw=0.908936[0m
+[0;32mI (20145) ESC_controller: ESC Values: 674.59, 647.39, 952.61, 925.41[0m
+[0;32mI (20245) IMU: roll=1.274608 pitch=-22.641884 yaw=0.927917[0m
+[0;32mI (20245) ESC_controller: ESC Values: 671.80, 656.50, 943.50, 928.20[0m
+[0;32mI (20345) IMU: roll=2.304207 pitch=-23.096266 yaw=0.914948[0m
+[0;32mI (20345) ESC_controller: ESC Values: 675.25, 647.60, 952.40, 924.75[0m
+[0;32mI (20445) IMU: roll=1.236281 pitch=-22.723003 yaw=0.928955[0m
+[0;32mI (20445) ESC_controller: ESC Values: 671.08, 656.24, 943.76, 928.92[0m
+[0;32mI (20545) IMU: roll=2.301555 pitch=-23.106613 yaw=0.918869[0m
+[0;32mI (20545) ESC_controller: ESC Values: 675.17, 647.55, 952.45, 924.83[0m
+[0;32mI (20645) IMU: roll=1.228914 pitch=-22.738874 yaw=0.930099[0m
+[0;32mI (20645) ESC_controller: ESC Values: 670.94, 656.19, 943.81, 929.06[0m
+[0;32mI (20745) IMU: roll=1.230305 pitch=-23.548634 yaw=0.985519[0m
+[0;32mI (20745) ESC_controller: ESC Values: 666.09, 651.33, 948.67, 933.91[0m
+[0;32mI (20845) IMU: roll=2.871057 pitch=-22.615042 yaw=1.059387[0m
+[0;32mI (20845) ESC_controller: ESC Values: 681.54, 647.08, 952.92, 918.46[0m
+[0;32mI (20945) IMU: roll=4.679027 pitch=-21.807581 yaw=0.894516[0m
+[0;32mI (20945) ESC_controller: ESC Values: 697.23, 641.08, 958.92, 902.77[0m
+[0;32mI (21045) IMU: roll=4.619993 pitch=-17.859726 yaw=0.356293[0m
+[0;32mI (21045) ESC_controller: ESC Values: 720.56, 665.12, 934.88, 879.44[0m
+[0;32mI (21145) IMU: roll=3.970104 pitch=-14.739471 yaw=0.824890[0m
+[0;32mI (21145) ESC_controller: ESC Values: 735.38, 687.74, 912.26, 864.62[0m
+[0;32mI (21245) IMU: roll=7.829525 pitch=-11.213011 yaw=2.027390[0m
+[0;32mI (21245) ESC_controller: ESC Values: 779.70, 685.74, 914.26, 820.30[0m
+[0;32mI (21345) IMU: roll=9.180036 pitch=-7.149390 yaw=3.099350[0m
+[0;32mI (21345) ESC_controller: ESC Values: 812.18, 702.02, 897.98, 787.82[0m
+[0;32mI (21445) IMU: roll=8.259253 pitch=-4.554142 yaw=3.678421[0m
+[0;32mI (21445) ESC_controller: ESC Values: 822.23, 723.12, 876.88, 777.77[0m
+[0;32mI (21545) IMU: roll=8.164816 pitch=-1.169873 yaw=4.892670[0m
+[0;32mI (21545) ESC_controller: ESC Values: 841.97, 743.99, 856.01, 758.03[0m
+[0;32mI (21645) IMU: roll=5.004156 pitch=3.315486 yaw=7.880051[0m
+[0;32mI (21645) ESC_controller: ESC Values: 849.92, 789.87, 810.13, 750.08[0m
+[0;32mI (21745) IMU: roll=1.486179 pitch=10.449656 yaw=10.461060[0m
+[0;32mI (21745) ESC_controller: ESC Values: 871.61, 853.78, 746.22, 728.39[0m
+[0;32mI (21845) IMU: roll=-2.511992 pitch=16.683340 yaw=10.043945[0m
+[0;32mI (21845) ESC_controller: ESC Values: 885.03, 915.17, 684.83, 714.97[0m
+[0;32mI (21945) IMU: roll=-6.554274 pitch=19.741148 yaw=9.577682[0m
+[0;32mI (21945) ESC_controller: ESC Values: 879.12, 957.77, 642.23, 720.88[0m
+[0;32mI (22045) IMU: roll=-5.517812 pitch=19.488020 yaw=10.322357[0m
+[0;32mI (22045) ESC_controller: ESC Values: 883.82, 950.03, 649.97, 716.18[0m
+[0;32mI (22145) IMU: roll=-1.160424 pitch=19.284079 yaw=10.804016[0m
+[0;32mI (22145) ESC_controller: ESC Values: 908.74, 922.67, 677.33, 691.26[0m
+[0;32mI (22245) IMU: roll=-0.238949 pitch=18.891436 yaw=10.857727[0m
+[0;32mI (22245) ESC_controller: ESC Values: 911.91, 914.78, 685.22, 688.09[0m
+[0;32mI (22345) IMU: roll=-2.555391 pitch=17.903366 yaw=11.786407[0m
+[0;32mI (22345) ESC_controller: ESC Values: 892.09, 922.75, 677.25, 707.91[0m
+[0;32mI (22445) IMU: roll=-4.645764 pitch=17.454496 yaw=12.271118[0m
+[0;32mI (22445) ESC_controller: ESC Values: 876.85, 932.60, 667.40, 723.15[0m
+[0;32mI (22545) IMU: roll=-3.547024 pitch=17.641665 yaw=12.329742[0m
+[0;32mI (22545) ESC_controller: ESC Values: 884.57, 927.13, 672.87, 715.43[0m
+[0;32mI (22645) IMU: roll=-2.567553 pitch=18.347719 yaw=12.294052[0m
+[0;32mI (22645) ESC_controller: ESC Values: 894.68, 925.49, 674.51, 705.32[0m
+[0;32mI (22745) IMU: roll=-2.374543 pitch=17.192713 yaw=12.333023[0m
+[0;32mI (22745) ESC_controller: ESC Values: 888.91, 917.40, 682.60, 711.09[0m
+[0;32mI (22845) IMU: roll=-3.509087 pitch=17.269926 yaw=12.335571[0m
+[0;32mI (22845) ESC_controller: ESC Values: 882.57, 924.67, 675.33, 717.43[0m
+[0;32mI (22945) IMU: roll=-2.545031 pitch=17.899845 yaw=12.295181[0m
+[0;32mI (22945) ESC_controller: ESC Values: 892.13, 922.67, 677.33, 707.87[0m
+[0;32mI (23045) IMU: roll=-3.683065 pitch=18.025198 yaw=12.277206[0m
+[0;32mI (23045) ESC_controller: ESC Values: 886.05, 930.25, 669.75, 713.95[0m
+[0;32mI (23145) IMU: roll=-2.367639 pitch=17.541880 yaw=12.249878[0m
+[0;32mI (23145) ESC_controller: ESC Values: 891.05, 919.46, 680.54, 708.95[0m
+[0;32mI (23245) IMU: roll=-1.780493 pitch=18.653103 yaw=11.925461[0m
+[0;32mI (23245) ESC_controller: ESC Values: 901.24, 922.60, 677.40, 698.76[0m
+[0;32mI (23345) IMU: roll=-0.201254 pitch=18.045986 yaw=11.775085[0m
+[0;32mI (23345) ESC_controller: ESC Values: 907.07, 909.48, 690.52, 692.93[0m
+[0;32mI (23445) IMU: roll=-1.405255 pitch=17.640421 yaw=11.762390[0m
+[0;32mI (23445) ESC_controller: ESC Values: 897.41, 914.27, 685.73, 702.59[0m
+[0;32mI (23545) IMU: roll=-0.383181 pitch=18.152819 yaw=11.753052[0m
+[0;32mI (23545) ESC_controller: ESC Values: 906.62, 911.22, 688.78, 693.38[0m
+[0;32mI (23645) IMU: roll=-1.398863 pitch=17.330902 yaw=11.684570[0m
+[0;32mI (23645) ESC_controller: ESC Values: 895.59, 912.38, 687.62, 704.41[0m
+[0;32mI (23745) IMU: roll=-0.723754 pitch=17.905949 yaw=11.561127[0m
+[0;32mI (23745) ESC_controller: ESC Values: 903.09, 911.78, 688.22, 696.91[0m
+[0;32mI (23845) IMU: roll=-0.818980 pitch=16.813435 yaw=11.505585[0m
+[0;32mI (23845) ESC_controller: ESC Values: 895.97, 905.79, 694.21, 704.03[0m
+[0;32mI (23945) IMU: roll=-0.758946 pitch=15.530937 yaw=10.911804[0m
+[0;32mI (23945) ESC_controller: ESC Values: 888.63, 897.74, 702.26, 711.37[0m
+[0;32mI (24045) IMU: roll=-0.732826 pitch=16.529860 yaw=9.988022[0m
+[0;32mI (24045) ESC_controller: ESC Values: 894.78, 903.58, 696.42, 705.22[0m
+[0;32mI (24145) IMU: roll=-1.180664 pitch=15.533662 yaw=8.861298[0m
+[0;32mI (24145) ESC_controller: ESC Values: 886.12, 900.29, 699.71, 713.88[0m
+[0;32mI (24245) IMU: roll=-1.082253 pitch=16.637932 yaw=8.722687[0m
+[0;32mI (24245) ESC_controller: ESC Values: 893.33, 906.32, 693.68, 706.67[0m
+[0;32mI (24345) IMU: roll=-1.073800 pitch=15.514374 yaw=8.729767[0m
+[0;32mI (24345) ESC_controller: ESC Values: 886.64, 899.53, 700.47, 713.36[0m
+[0;32mI (24445) IMU: roll=-0.654571 pitch=16.527763 yaw=8.716843[0m
+[0;32mI (24445) ESC_controller: ESC Values: 895.24, 903.09, 696.91, 704.76[0m
+[0;32mI (24545) IMU: roll=-1.772904 pitch=16.797960 yaw=8.713028[0m
+[0;32mI (24545) ESC_controller: ESC Values: 890.15, 911.43, 688.57, 709.85[0m
+[0;32mI (24645) IMU: roll=-0.745915 pitch=16.353846 yaw=8.723099[0m
+[0;32mI (24645) ESC_controller: ESC Values: 893.65, 902.60, 697.40, 706.35[0m
+[0;32mI (24745) IMU: roll=-1.096296 pitch=17.388929 yaw=8.709839[0m
+[0;32mI (24745) ESC_controller: ESC Values: 897.76, 910.91, 689.09, 702.24[0m
+[0;32mI (24845) IMU: roll=-1.186281 pitch=16.313854 yaw=8.733124[0m
+[0;32mI (24845) ESC_controller: ESC Values: 890.77, 905.00, 695.00, 709.23[0m
+[0;32mI (24945) IMU: roll=-0.390967 pitch=17.075279 yaw=8.727585[0m
+[0;32mI (24945) ESC_controller: ESC Values: 900.11, 904.80, 695.20, 699.89[0m
+[0;32mI (25045) IMU: roll=-2.182187 pitch=14.738196 yaw=9.225601[0m
+[0;32mI (25045) ESC_controller: ESC Values: 875.34, 901.52, 698.48, 724.66[0m
+[0;32mI (25145) IMU: roll=-3.633438 pitch=14.300616 yaw=9.050842[0m
+[0;32mI (25145) ESC_controller: ESC Values: 864.00, 907.60, 692.40, 736.00[0m
+[0;32mI (25245) IMU: roll=-3.050034 pitch=15.267286 yaw=8.960037[0m
+[0;32mI (25245) ESC_controller: ESC Values: 873.30, 909.90, 690.10, 726.70[0m
+[0;32mI (25345) IMU: roll=-2.742110 pitch=10.208327 yaw=7.341965[0m
+[0;32mI (25345) ESC_controller: ESC Values: 844.80, 877.70, 722.30, 755.20[0m
+[0;32mI (25445) IMU: roll=-4.466458 pitch=4.308814 yaw=5.572037[0m
+[0;32mI (25445) ESC_controller: ESC Values: 799.05, 852.65, 747.35, 800.95[0m
+[0;32mI (25545) IMU: roll=-9.675629 pitch=-8.138612 yaw=4.550354[0m
+[0;32mI (25545) ESC_controller: ESC Values: 693.11, 809.22, 790.78, 906.89[0m
+[0;32mI (25645) IMU: roll=-10.236533 pitch=-18.643316 yaw=11.395966[0m
+[0;32mI (25645) ESC_controller: ESC Values: 626.72, 749.56, 850.44, 973.28[0m
+[0;32mI (25745) IMU: roll=-2.510266 pitch=-22.036152 yaw=16.276321[0m
+[0;32mI (25745) ESC_controller: ESC Values: 652.72, 682.84, 917.16, 947.28[0m
+[0;32mI (25845) IMU: roll=5.275344 pitch=-21.944815 yaw=15.228088[0m
+[0;32mI (25845) ESC_controller: ESC Values: 699.98, 636.68, 963.32, 900.02[0m
+[0;32mI (25945) IMU: roll=9.147585 pitch=-20.974033 yaw=14.754318[0m
+[0;32mI (25945) ESC_controller: ESC Values: 729.04, 619.27, 980.73, 870.96[0m
+[0;32mI (26045) IMU: roll=9.627309 pitch=-20.834377 yaw=13.792099[0m
+[0;32mI (26045) ESC_controller: ESC Values: 732.76, 617.23, 982.77, 867.24[0m
+[0;32mI (26145) IMU: roll=6.499546 pitch=-21.356447 yaw=13.167526[0m
+[0;32mI (26145) ESC_controller: ESC Values: 710.86, 632.86, 967.14, 889.14[0m
+[0;32mI (26245) IMU: roll=5.860597 pitch=-22.453028 yaw=12.805893[0m
+[0;32mI (26245) ESC_controller: ESC Values: 700.45, 630.12, 969.88, 899.55[0m
+[0;32mI (26345) IMU: roll=2.188416 pitch=-22.726072 yaw=11.398560[0m
+[0;32mI (26345) ESC_controller: ESC Values: 676.77, 650.51, 949.49, 923.23[0m
+[0;32mI (26445) IMU: roll=0.569560 pitch=-22.492170 yaw=10.851440[0m
+[0;32mI (26445) ESC_controller: ESC Values: 668.46, 661.63, 938.37, 931.54[0m
+[0;32mI (26545) IMU: roll=2.362575 pitch=-22.118792 yaw=11.010513[0m
+[0;32mI (26545) ESC_controller: ESC Values: 681.46, 653.11, 946.89, 918.54[0m
+[0;32mI (26645) IMU: roll=2.364571 pitch=-23.048058 yaw=11.006622[0m
+[0;32mI (26645) ESC_controller: ESC Values: 675.90, 647.52, 952.48, 924.10[0m
+[0;32mI (26745) IMU: roll=1.151540 pitch=-22.335440 yaw=11.032288[0m
+[0;32mI (26745) ESC_controller: ESC Values: 672.90, 659.08, 940.92, 927.10[0m
+[0;32mI (26845) IMU: roll=1.193145 pitch=-23.312904 yaw=11.862961[0m
+[0;32mI (26845) ESC_controller: ESC Values: 667.28, 652.96, 947.04, 932.72[0m
+[0;32mI (26945) IMU: roll=1.898740 pitch=-22.183393 yaw=13.869232[0m
+[0;32mI (26945) ESC_controller: ESC Values: 678.29, 655.51, 944.49, 921.71[0m
+[0;32mI (27045) IMU: roll=5.250654 pitch=-22.155336 yaw=16.772125[0m
+[0;32mI (27045) ESC_controller: ESC Values: 698.57, 635.56, 964.44, 901.43[0m
+[0;32mI (27145) IMU: roll=5.976875 pitch=-22.044687 yaw=16.825790[0m
+[0;32mI (27145) ESC_controller: ESC Values: 703.59, 631.87, 968.13, 896.41[0m
+[0;32mI (27245) IMU: roll=6.302298 pitch=-17.534685 yaw=14.186218[0m
+[0;32mI (27245) ESC_controller: ESC Values: 732.61, 656.98, 943.02, 867.39[0m
+[0;32mI (27345) IMU: roll=9.513375 pitch=-11.091821 yaw=12.180542[0m
+[0;32mI (27345) ESC_controller: ESC Values: 790.53, 676.37, 923.63, 809.47[0m
+[0;32mI (27445) IMU: roll=12.124515 pitch=-6.313508 yaw=12.096161[0m
+[0;32mI (27445) ESC_controller: ESC Values: 834.87, 689.37, 910.63, 765.13[0m
+[0;32mI (27545) IMU: roll=11.778072 pitch=-2.689028 yaw=12.796936[0m
+[0;32mI (27545) ESC_controller: ESC Values: 854.53, 713.20, 886.80, 745.47[0m
+[0;32mI (27645) IMU: roll=7.974416 pitch=-2.493407 yaw=13.164536[0m
+[0;32mI (27645) ESC_controller: ESC Values: 832.89, 737.19, 862.81, 767.11[0m
+[0;32mI (27745) IMU: roll=4.204175 pitch=-2.396430 yaw=13.122635[0m
+[0;32mI (27745) ESC_controller: ESC Values: 810.85, 760.40, 839.60, 789.15[0m
+[0;32mI (27845) IMU: roll=1.296611 pitch=-1.270432 yaw=13.200684[0m
+[0;32mI (27845) ESC_controller: ESC Values: 800.16, 784.60, 815.40, 799.84[0m
+[0;32mI (27945) IMU: roll=-0.262893 pitch=1.066314 yaw=13.992355[0m
+[0;32mI (27945) ESC_controller: ESC Values: 804.82, 807.98, 792.02, 795.18[0m
+[0;32mI (28045) IMU: roll=-1.397791 pitch=-0.617459 yaw=14.027710[0m
+[0;32mI (28045) ESC_controller: ESC Values: 787.91, 804.68, 795.32, 812.09[0m
+[0;32mI (28145) IMU: roll=-0.311083 pitch=-1.072537 yaw=14.132736[0m
+[0;32mI (28145) ESC_controller: ESC Values: 791.70, 795.43, 804.57, 808.30[0m
+[0;32mI (28245) IMU: roll=0.450846 pitch=0.277973 yaw=14.315430[0m
+[0;32mI (28245) ESC_controller: ESC Values: 804.37, 798.96, 801.04, 795.63[0m
+[0;32mI (28345) IMU: roll=0.226959 pitch=-0.611613 yaw=14.375916[0m
+[0;32mI (28345) ESC_controller: ESC Values: 797.69, 794.97, 805.03, 802.31[0m
+[0;32mI (28445) IMU: roll=1.230264 pitch=0.584900 yaw=14.510864[0m
+[0;32mI (28445) ESC_controller: ESC Values: 810.89, 796.13, 803.87, 789.11[0m
+[0;32mI (28545) IMU: roll=1.439066 pitch=3.349806 yaw=15.032715[0m
+[0;32mI (28545) ESC_controller: ESC Values: 828.73, 811.46, 788.54, 771.27[0m
+[0;32mI (28645) IMU: roll=-0.452387 pitch=3.527926 yaw=15.363052[0m
+[0;32mI (28645) ESC_controller: ESC Values: 818.45, 823.88, 776.12, 781.55[0m
+[0;32mI (28745) IMU: roll=-1.480507 pitch=2.216907 yaw=15.360336[0m
+[0;32mI (28745) ESC_controller: ESC Values: 804.42, 822.18, 777.82, 795.58[0m
+[0;32mI (28845) IMU: roll=-0.339566 pitch=1.808160 yaw=15.411743[0m
+[0;32mI (28845) ESC_controller: ESC Values: 808.81, 812.89, 787.11, 791.19[0m
+[0;32mI (28945) IMU: roll=-1.076878 pitch=2.739645 yaw=15.396927[0m
+[0;32mI (28945) ESC_controller: ESC Values: 809.98, 822.90, 777.10, 790.02[0m
+[0;32mI (29045) IMU: roll=-0.353705 pitch=1.650617 yaw=15.378021[0m
+[0;32mI (29045) ESC_controller: ESC Values: 807.78, 812.03, 787.97, 792.22[0m
+[0;32mI (29145) IMU: roll=-1.005520 pitch=2.689697 yaw=15.378693[0m
+[0;32mI (29145) ESC_controller: ESC Values: 810.11, 822.17, 777.83, 789.89[0m
+[0;32mI (29245) IMU: roll=-0.898505 pitch=1.491482 yaw=15.402130[0m
+[0;32mI (29245) ESC_controller: ESC Values: 803.56, 814.34, 785.66, 796.44[0m
+[0;32mI (29345) IMU: roll=0.310304 pitch=1.562043 yaw=15.436081[0m
+[0;32mI (29345) ESC_controller: ESC Values: 811.23, 807.51, 792.49, 788.77[0m
+[0;32mI (29445) IMU: roll=-0.793565 pitch=1.963292 yaw=15.438309[0m
+[0;32mI (29445) ESC_controller: ESC Values: 807.02, 816.54, 783.46, 792.98[0m
+[0;32mI (29545) IMU: roll=0.259892 pitch=1.438025 yaw=15.445221[0m
+[0;32mI (29545) ESC_controller: ESC Values: 810.19, 807.07, 792.93, 789.81[0m
+[0;32mI (29645) IMU: roll=-0.671092 pitch=2.556235 yaw=15.567947[0m
+[0;32mI (29645) ESC_controller: ESC Values: 811.31, 819.36, 780.64, 788.69[0m
+[0;32mI (29745) IMU: roll=0.630872 pitch=4.516537 yaw=15.709534[0m
+[0;32mI (29745) ESC_controller: ESC Values: 830.88, 823.31, 776.69, 769.12[0m
+[0;32mI (29845) IMU: roll=0.205149 pitch=6.228710 yaw=15.777420[0m
+[0;32mI (29845) ESC_controller: ESC Values: 838.60, 836.14, 763.86, 761.40[0m
+[0;32mI (29945) IMU: roll=0.281652 pitch=5.029562 yaw=15.761200[0m
+[0;32mI (29945) ESC_controller: ESC Values: 831.87, 828.49, 771.51, 768.13[0m
+[0;32mI (30045) IMU: roll=-0.904142 pitch=4.948830 yaw=15.746857[0m
+[0;32mI (30045) ESC_controller: ESC Values: 824.27, 835.12, 764.88, 775.73[0m
+[0;32mI (30145) IMU: roll=-0.016141 pitch=4.653374 yaw=15.685455[0m
+[0;32mI (30145) ESC_controller: ESC Values: 827.82, 828.02, 771.98, 772.18[0m
+[0;32mI (30245) IMU: roll=-1.008460 pitch=3.398420 yaw=15.657532[0m
+[0;32mI (30245) ESC_controller: ESC Values: 814.34, 826.44, 773.56, 785.66[0m
+[0;32mI (30345) IMU: roll=-0.033723 pitch=3.780067 yaw=15.647446[0m
+[0;32mI (30345) ESC_controller: ESC Values: 822.48, 822.88, 777.12, 777.52[0m
+[0;32mI (30445) IMU: roll=-0.660363 pitch=4.309341 yaw=15.581177[0m
+[0;32mI (30445) ESC_controller: ESC Values: 821.89, 829.82, 770.18, 778.11[0m
+[0;32mI (30545) IMU: roll=-1.139449 pitch=2.179938 yaw=15.428116[0m
+[0;32mI (30545) ESC_controller: ESC Values: 806.24, 819.92, 780.08, 793.76[0m
+[0;32mI (30645) IMU: roll=-1.421402 pitch=0.226466 yaw=15.353653[0m
+[0;32mI (30645) ESC_controller: ESC Values: 792.83, 809.89, 790.11, 807.17[0m
+[0;32mI (30745) IMU: roll=-1.359581 pitch=1.123518 yaw=15.268326[0m
+[0;32mI (30745) ESC_controller: ESC Values: 798.58, 814.90, 785.10, 801.42[0m
+[0;32mI (30845) IMU: roll=-1.956313 pitch=2.014627 yaw=15.240387[0m
+[0;32mI (30845) ESC_controller: ESC Values: 800.35, 823.83, 776.17, 799.65[0m
+[0;32mI (30945) IMU: roll=-1.283302 pitch=1.097451 yaw=15.265381[0m
+[0;32mI (30945) ESC_controller: ESC Values: 798.88, 814.28, 785.72, 801.12[0m
+[0;32mI (31045) IMU: roll=-1.576708 pitch=2.249234 yaw=15.238052[0m
+[0;32mI (31045) ESC_controller: ESC Values: 804.04, 822.96, 777.04, 795.96[0m
+[0;32mI (31145) IMU: roll=-1.203904 pitch=1.158639 yaw=15.272156[0m
+[0;32mI (31145) ESC_controller: ESC Values: 799.73, 814.18, 785.82, 800.27[0m
+[0;32mI (31245) IMU: roll=-2.296430 pitch=1.526598 yaw=15.267334[0m
+[0;32mI (31245) ESC_controller: ESC Values: 795.38, 822.94, 777.06, 804.62[0m
+[0;32mI (31345) IMU: roll=-1.142619 pitch=1.429072 yaw=15.280701[0m
+[0;32mI (31345) ESC_controller: ESC Values: 801.72, 815.43, 784.57, 798.28[0m
+[0;32mI (31445) IMU: roll=-2.209861 pitch=1.835432 yaw=15.274734[0m
+[0;32mI (31445) ESC_controller: ESC Values: 797.75, 824.27, 775.73, 802.25[0m
+[0;32mI (31545) IMU: roll=-1.333949 pitch=1.068553 yaw=15.295349[0m
+[0;32mI (31545) ESC_controller: ESC Values: 798.41, 814.42, 785.58, 801.59[0m
+[0;32mI (31645) IMU: roll=-1.138788 pitch=2.188251 yaw=15.271454[0m
+[0;32mI (31645) ESC_controller: ESC Values: 806.30, 819.96, 780.04, 793.70[0m
+[0;32mI (31745) IMU: roll=-1.391431 pitch=1.063439 yaw=15.300766[0m
+[0;32mI (31745) ESC_controller: ESC Values: 798.03, 814.73, 785.27, 801.97[0m
+[0;32mI (31845) IMU: roll=-0.339883 pitch=1.540273 yaw=15.291748[0m
+[0;32mI (31845) ESC_controller: ESC Values: 807.20, 811.28, 788.72, 792.80[0m
+[0;32mI (31945) IMU: roll=-1.506678 pitch=1.550369 yaw=15.292297[0m
+[0;32mI (31945) ESC_controller: ESC Values: 800.26, 818.34, 781.66, 799.74[0m
+[0;32mI (32045) IMU: roll=-1.012135 pitch=0.508576 yaw=15.314972[0m
+[0;32mI (32045) ESC_controller: ESC Values: 796.98, 809.12, 790.88, 803.02[0m
+[0;32mI (32145) IMU: roll=-1.773377 pitch=1.367354 yaw=15.294449[0m
+[0;32mI (32145) ESC_controller: ESC Values: 797.56, 818.84, 781.16, 802.44[0m
+[0;32mI (32245) IMU: roll=-1.111906 pitch=2.028757 yaw=15.277557[0m
+[0;32mI (32245) ESC_controller: ESC Values: 805.50, 818.84, 781.16, 794.50[0m
+[0;32mI (32345) IMU: roll=0.161243 pitch=0.456790 yaw=15.885452[0m
+[0;32mI (32345) ESC_controller: ESC Values: 803.71, 801.77, 798.23, 796.29[0m
+[0;32mI (32445) IMU: roll=6.224043 pitch=-0.658552 yaw=16.477493[0m
+[0;32mI (32445) ESC_controller: ESC Values: 833.39, 758.70, 841.30, 766.61[0m
+[0;32mI (32545) IMU: roll=14.332648 pitch=-2.692091 yaw=16.406448[0m
+[0;32mI (32545) ESC_controller: ESC Values: 869.84, 697.85, 902.15, 730.16[0m
+[0;32mI (32645) IMU: roll=21.760838 pitch=-3.126882 yaw=15.577972[0m
+[0;32mI (32645) ESC_controller: ESC Values: 911.80, 650.67, 949.33, 688.20[0m
+[0;32mI (32745) IMU: roll=20.052589 pitch=-3.812358 yaw=15.298767[0m
+[0;32mI (32745) ESC_controller: ESC Values: 897.44, 656.81, 943.19, 702.56[0m
+[0;32mI (32845) IMU: roll=19.593275 pitch=-1.339537 yaw=16.304794[0m
+[0;32mI (32845) ESC_controller: ESC Values: 909.52, 674.40, 925.60, 690.48[0m
+[0;32mI (32945) IMU: roll=18.603107 pitch=-0.890230 yaw=16.360107[0m
+[0;32mI (32945) ESC_controller: ESC Values: 906.28, 683.04, 916.96, 693.72[0m
+[0;32mI (33045) IMU: roll=18.944433 pitch=-2.116375 yaw=15.926422[0m
+[0;32mI (33045) ESC_controller: ESC Values: 900.97, 673.64, 926.36, 699.03[0m
+[0;32mI (33145) IMU: roll=18.658808 pitch=-1.031406 yaw=16.236984[0m
+[0;32mI (33145) ESC_controller: ESC Values: 905.76, 681.86, 918.14, 694.24[0m
+[0;32mI (33245) IMU: roll=19.309317 pitch=-1.950673 yaw=15.953552[0m
+[0;32mI (33245) ESC_controller: ESC Values: 904.15, 672.44, 927.56, 695.85[0m
+[0;32mI (33345) IMU: roll=18.834574 pitch=-0.842668 yaw=16.314575[0m
+[0;32mI (33345) ESC_controller: ESC Values: 907.95, 681.94, 918.06, 692.05[0m
+[0;32mI (33445) IMU: roll=18.489685 pitch=-2.000270 yaw=15.940063[0m
+[0;32mI (33445) ESC_controller: ESC Values: 898.94, 677.06, 922.94, 701.06[0m
+[0;32mI (33545) IMU: roll=18.949123 pitch=-0.848443 yaw=16.314377[0m
+[0;32mI (33545) ESC_controller: ESC Values: 908.60, 681.21, 918.79, 691.40[0m
+[0;32mI (33645) IMU: roll=19.982853 pitch=-0.392419 yaw=16.463211[0m
+[0;32mI (33645) ESC_controller: ESC Values: 917.54, 677.75, 922.25, 682.46[0m
+[0;32mI (33745) IMU: roll=19.109842 pitch=-1.185719 yaw=16.170471[0m
+[0;32mI (33745) ESC_controller: ESC Values: 907.54, 678.23, 921.77, 692.46[0m
+[0;32mI (33845) IMU: roll=18.002348 pitch=-1.322643 yaw=16.107346[0m
+[0;32mI (33845) ESC_controller: ESC Values: 900.08, 684.05, 915.95, 699.92[0m
+[0;32mI (33945) IMU: roll=19.082405 pitch=-1.001625 yaw=16.215179[0m
+[0;32mI (33945) ESC_controller: ESC Values: 908.48, 679.50, 920.50, 691.52[0m
+[0;32mI (34045) IMU: roll=18.279243 pitch=-1.812599 yaw=15.904892[0m
+[0;32mI (34045) ESC_controller: ESC Values: 898.80, 679.45, 920.55, 701.20[0m
+[0;32mI (34145) IMU: roll=18.883184 pitch=-0.775933 yaw=16.161972[0m
+[0;32mI (34145) ESC_controller: ESC Values: 908.64, 682.05, 917.95, 691.36[0m
+[0;32mI (34245) IMU: roll=19.045403 pitch=-1.995154 yaw=15.769440[0m
+[0;32mI (34245) ESC_controller: ESC Values: 902.30, 673.76, 926.24, 697.70[0m
+[0;32mI (34345) IMU: roll=18.816238 pitch=-0.812060 yaw=16.144501[0m
+[0;32mI (34345) ESC_controller: ESC Values: 908.03, 682.23, 917.77, 691.97[0m
+[0;32mI (34445) IMU: roll=18.036528 pitch=-1.697601 yaw=15.848862[0m
+[0;32mI (34445) ESC_controller: ESC Values: 898.03, 681.60, 918.40, 701.97[0m
+[0;32mI (34545) IMU: roll=19.096285 pitch=-1.417052 yaw=15.928864[0m
+[0;32mI (34545) ESC_controller: ESC Values: 906.08, 676.92, 923.08, 693.92[0m
+[0;32mI (34645) IMU: roll=18.499723 pitch=-0.362958 yaw=16.276352[0m
+[0;32mI (34645) ESC_controller: ESC Values: 908.82, 686.82, 913.18, 691.18[0m
+[0;32mI (34745) IMU: roll=18.674757 pitch=-1.511661 yaw=15.864670[0m
+[0;32mI (34745) ESC_controller: ESC Values: 902.98, 678.88, 921.12, 697.02[0m
+[0;32mI (34845) IMU: roll=19.344658 pitch=0.013654 yaw=16.322922[0m
+[0;32mI (34845) ESC_controller: ESC Values: 916.15, 684.01, 915.99, 683.85[0m
+[0;32mI (34945) IMU: roll=18.325172 pitch=0.954430 yaw=16.656311[0m
+[0;32mI (34945) ESC_controller: ESC Values: 915.68, 695.78, 904.22, 684.32[0m
+[0;32mI (35045) IMU: roll=19.072840 pitch=0.131602 yaw=16.377579[0m
+[0;32mI (35045) ESC_controller: ESC Values: 915.23, 686.35, 913.65, 684.77[0m
+[0;32mI (35145) IMU: roll=18.561136 pitch=1.594632 yaw=16.971588[0m
+[0;32mI (35145) ESC_controller: ESC Values: 920.93, 698.20, 901.80, 679.07[0m
+[0;32mI (35245) IMU: roll=19.052538 pitch=0.498950 yaw=16.610443[0m
+[0;32mI (35245) ESC_controller: ESC Values: 917.31, 688.68, 911.32, 682.69[0m
+[0;32mI (35345) IMU: roll=17.973648 pitch=0.785144 yaw=16.684418[0m
+[0;32mI (35345) ESC_controller: ESC Values: 912.55, 696.87, 903.13, 687.45[0m
+[0;32mI (35445) IMU: roll=18.900227 pitch=0.049736 yaw=16.413010[0m
+[0;32mI (35445) ESC_controller: ESC Values: 913.70, 686.90, 913.10, 686.30[0m
+[0;32mI (35545) IMU: roll=18.359655 pitch=1.103725 yaw=16.775314[0m
+[0;32mI (35545) ESC_controller: ESC Values: 916.78, 696.46, 903.54, 683.22[0m
+[0;32mI (35645) IMU: roll=18.924627 pitch=0.002034 yaw=16.416504[0m
+[0;32mI (35645) ESC_controller: ESC Values: 913.56, 686.46, 913.54, 686.44[0m
+[0;32mI (35745) IMU: roll=18.015869 pitch=0.755473 yaw=16.655975[0m
+[0;32mI (35745) ESC_controller: ESC Values: 912.63, 696.44, 903.56, 687.37[0m
+[0;32mI (35845) IMU: roll=18.990873 pitch=0.122837 yaw=16.458206[0m
+[0;32mI (35845) ESC_controller: ESC Values: 914.68, 686.79, 913.21, 685.32[0m
+[0;32mI (35945) IMU: roll=18.530420 pitch=1.276673 yaw=16.833435[0m
+[0;32mI (35945) ESC_controller: ESC Values: 918.84, 696.48, 903.52, 681.16[0m
+[0;32mI (36045) IMU: roll=18.846416 pitch=0.126166 yaw=16.469849[0m
+[0;32mI (36045) ESC_controller: ESC Values: 913.84, 687.68, 912.32, 686.16[0m
+[0;32mI (36145) IMU: roll=17.891529 pitch=0.710942 yaw=16.653595[0m
+[0;32mI (36145) ESC_controller: ESC Values: 911.61, 696.92, 903.08, 688.39[0m
+[0;32mI (36245) IMU: roll=18.840197 pitch=0.178464 yaw=16.493149[0m
+[0;32mI (36245) ESC_controller: ESC Values: 914.11, 688.03, 911.97, 685.89[0m
+[0;32mI (36345) IMU: roll=19.345257 pitch=1.261961 yaw=16.854828[0m
+[0;32mI (36345) ESC_controller: ESC Values: 923.64, 691.50, 908.50, 676.36[0m
+[0;32mI (36445) IMU: roll=18.784668 pitch=0.627025 yaw=16.940552[0m
+[0;32mI (36445) ESC_controller: ESC Values: 916.47, 691.05, 908.95, 683.53[0m
+[0;32mI (36545) IMU: roll=15.469154 pitch=3.020645 yaw=17.004791[0m
+[0;32mI (36545) ESC_controller: ESC Values: 910.94, 725.31, 874.69, 689.06[0m
+[0;32mI (36645) IMU: roll=6.508815 pitch=5.283939 yaw=16.782364[0m
+[0;32mI (36645) ESC_controller: ESC Values: 870.76, 792.65, 807.35, 729.24[0m
+[0;32mI (36745) IMU: roll=-6.431415 pitch=8.670502 yaw=15.968582[0m
+[0;32mI (36745) ESC_controller: ESC Values: 813.43, 890.61, 709.39, 786.57[0m
+[0;32mI (36845) IMU: roll=-21.943586 pitch=11.357188 yaw=16.111267[0m
+[0;32mI (36845) ESC_controller: ESC Values: 736.48, 999.80, 600.20, 863.52[0m
+[0;32mI (36945) IMU: roll=-24.849325 pitch=6.536920 yaw=16.699203[0m
+[0;32mI (36945) ESC_controller: ESC Values: 690.13, 988.32, 611.68, 909.87[0m
+[0;32mI (37045) IMU: roll=-22.720875 pitch=4.022675 yaw=15.834015[0m
+[0;32mI (37045) ESC_controller: ESC Values: 687.81, 960.46, 639.54, 912.19[0m
+[0;32mI (37145) IMU: roll=-21.675526 pitch=4.505311 yaw=15.757828[0m
+[0;32mI (37145) ESC_controller: ESC Values: 696.98, 957.09, 642.91, 903.02[0m
+[0;32mI (37245) IMU: roll=-20.585445 pitch=4.102839 yaw=15.955780[0m
+[0;32mI (37245) ESC_controller: ESC Values: 701.10, 948.13, 651.87, 898.90[0m
+[0;32mI (37345) IMU: roll=-20.086037 pitch=2.829843 yaw=16.498489[0m
+[0;32mI (37345) ESC_controller: ESC Values: 696.46, 937.50, 662.50, 903.54[0m
+[0;32mI (37445) IMU: roll=-19.204281 pitch=3.915776 yaw=16.164551[0m
+[0;32mI (37445) ESC_controller: ESC Values: 708.27, 938.72, 661.28, 891.73[0m
+[0;32mI (37545) IMU: roll=-19.958557 pitch=4.161976 yaw=16.610947[0m
+[0;32mI (37545) ESC_controller: ESC Values: 705.22, 944.72, 655.28, 894.78[0m
+[0;32mI (37645) IMU: roll=-19.869858 pitch=1.686839 yaw=17.904556[0m
+[0;32mI (37645) ESC_controller: ESC Values: 690.90, 929.34, 670.66, 909.10[0m
+[0;32mI (37745) IMU: roll=-19.491570 pitch=0.746768 yaw=18.221634[0m
+[0;32mI (37745) ESC_controller: ESC Values: 687.53, 921.43, 678.57, 912.47[0m
+[0;32mI (37845) IMU: roll=-19.315691 pitch=1.928218 yaw=17.883072[0m
+[0;32mI (37845) ESC_controller: ESC Values: 695.68, 927.46, 672.54, 904.32[0m
+[0;32mI (37945) IMU: roll=-20.256247 pitch=0.802011 yaw=18.462097[0m
+[0;32mI (37945) ESC_controller: ESC Values: 683.27, 926.35, 673.65, 916.73[0m
+[0;32mI (38045) IMU: roll=-19.880440 pitch=-0.555999 yaw=18.886261[0m
+[0;32mI (38045) ESC_controller: ESC Values: 677.38, 915.95, 684.05, 922.62[0m
+[0;32mI (38145) IMU: roll=-19.716923 pitch=1.032935 yaw=17.874023[0m
+[0;32mI (38145) ESC_controller: ESC Values: 687.90, 924.50, 675.50, 912.10[0m
+[0;32mI (38245) IMU: roll=-19.927435 pitch=2.104969 yaw=17.456558[0m
+[0;32mI (38245) ESC_controller: ESC Values: 693.07, 932.19, 667.81, 906.93[0m
+[0;32mI (38345) IMU: roll=-19.720736 pitch=0.235025 yaw=18.237930[0m
+[0;32mI (38345) ESC_controller: ESC Values: 683.09, 919.73, 680.27, 916.91[0m
+[0;32mI (38445) IMU: roll=-19.008730 pitch=-0.648676 yaw=18.567886[0m
+[0;32mI (38445) ESC_controller: ESC Values: 682.06, 910.16, 689.84, 917.94[0m
+[0;32mI (38545) IMU: roll=-20.097931 pitch=0.066596 yaw=18.318466[0m
+[0;32mI (38545) ESC_controller: ESC Values: 679.81, 920.99, 679.01, 920.19[0m
+[0;32mI (38645) IMU: roll=-19.493349 pitch=1.217546 yaw=17.892120[0m
+[0;32mI (38645) ESC_controller: ESC Values: 690.35, 924.27, 675.73, 909.65[0m
+[0;32mI (38745) IMU: roll=-19.281033 pitch=0.065008 yaw=17.603378[0m
+[0;32mI (38745) ESC_controller: ESC Values: 684.70, 916.08, 683.92, 915.30[0m
+[0;32mI (38845) IMU: roll=-20.052336 pitch=0.712285 yaw=17.361252[0m
+[0;32mI (38845) ESC_controller: ESC Values: 683.96, 924.59, 675.41, 916.04[0m
+[0;32mI (38945) IMU: roll=-18.899137 pitch=0.607088 yaw=17.742996[0m
+[0;32mI (38945) ESC_controller: ESC Values: 690.25, 917.04, 682.96, 909.75[0m
+[0;32mI (39045) IMU: roll=-19.734451 pitch=0.040596 yaw=17.869583[0m
+[0;32mI (39045) ESC_controller: ESC Values: 681.84, 918.65, 681.35, 918.16[0m
+[0;32mI (39145) IMU: roll=-18.982508 pitch=1.578704 yaw=17.238892[0m
+[0;32mI (39145) ESC_controller: ESC Values: 695.58, 923.37, 676.63, 904.42[0m
+[0;32mI (39245) IMU: roll=-19.723238 pitch=0.724295 yaw=17.477020[0m
+[0;32mI (39245) ESC_controller: ESC Values: 686.01, 922.69, 677.31, 913.99[0m
+[0;32mI (39345) IMU: roll=-20.284559 pitch=1.854495 yaw=17.034836[0m
+[0;32mI (39345) ESC_controller: ESC Values: 689.42, 932.83, 667.17, 910.58[0m
+[0;32mI (39445) IMU: roll=-19.362946 pitch=1.147608 yaw=17.288284[0m
+[0;32mI (39445) ESC_controller: ESC Values: 690.71, 923.06, 676.94, 909.29[0m
+[0;32mI (39545) IMU: roll=-19.933586 pitch=0.321011 yaw=17.507324[0m
+[0;32mI (39545) ESC_controller: ESC Values: 682.32, 921.53, 678.47, 917.68[0m
+[0;32mI (39645) IMU: roll=-19.717855 pitch=1.416090 yaw=17.159546[0m
+[0;32mI (39645) ESC_controller: ESC Values: 690.19, 926.80, 673.20, 909.81[0m
+[0;32mI (39745) IMU: roll=-18.664440 pitch=0.179495 yaw=17.789200[0m
+[0;32mI (39745) ESC_controller: ESC Values: 689.09, 913.06, 686.94, 910.91[0m
+[0;32mI (39845) IMU: roll=-19.550768 pitch=0.420896 yaw=17.681931[0m
+[0;32mI (39845) ESC_controller: ESC Values: 685.22, 919.83, 680.17, 914.78[0m
+[0;32mI (39945) IMU: roll=-18.499407 pitch=1.032955 yaw=17.487152[0m
+[0;32mI (39945) ESC_controller: ESC Values: 695.20, 917.19, 682.81, 904.80[0m
+[0;32mI (40045) IMU: roll=-19.435173 pitch=1.711294 yaw=17.232300[0m
+[0;32mI (40045) ESC_controller: ESC Values: 693.66, 926.88, 673.12, 906.34[0m
+[0;32mI (40145) IMU: roll=-18.771887 pitch=0.654064 yaw=17.588547[0m
+[0;32mI (40145) ESC_controller: ESC Values: 691.29, 916.56, 683.44, 908.71[0m
+[0;32mI (40245) IMU: roll=-18.584908 pitch=1.860291 yaw=17.198029[0m
+[0;32mI (40245) ESC_controller: ESC Values: 699.65, 922.67, 677.33, 900.35[0m
+[0;32mI (40345) IMU: roll=-19.555380 pitch=0.977369 yaw=17.479553[0m
+[0;32mI (40345) ESC_controller: ESC Values: 688.53, 923.20, 676.80, 911.47[0m
+[0;32mI (40445) IMU: roll=-18.353609 pitch=1.042596 yaw=17.460449[0m
+[0;32mI (40445) ESC_controller: ESC Values: 696.13, 916.38, 683.62, 903.87[0m
+[0;32mI (40545) IMU: roll=-19.476770 pitch=1.026384 yaw=17.429016[0m
+[0;32mI (40545) ESC_controller: ESC Values: 689.30, 923.02, 676.98, 910.70[0m
+[0;32mI (40645) IMU: roll=-18.559566 pitch=1.698641 yaw=17.234329[0m
+[0;32mI (40645) ESC_controller: ESC Values: 698.83, 921.55, 678.45, 901.17[0m
+[0;32mI (40745) IMU: roll=-19.643213 pitch=1.505732 yaw=17.338028[0m
+[0;32mI (40745) ESC_controller: ESC Values: 691.18, 926.89, 673.11, 908.82[0m
+[0;32mI (40845) IMU: roll=-18.136465 pitch=-0.209509 yaw=19.460861[0m
+[0;32mI (40845) ESC_controller: ESC Values: 689.92, 907.56, 692.44, 910.08[0m
+[0;32mI (40945) IMU: roll=-18.566917 pitch=-2.766943 yaw=20.516052[0m
+[0;32mI (40945) ESC_controller: ESC Values: 672.00, 894.80, 705.20, 928.00[0m
+[0;32mI (41045) IMU: roll=-16.946999 pitch=0.130721 yaw=20.442719[0m
+[0;32mI (41045) ESC_controller: ESC Values: 699.10, 902.47, 697.53, 900.90[0m
+[0;32mI (41145) IMU: roll=-15.418092 pitch=9.917011 yaw=18.298172[0m
+[0;32mI (41145) ESC_controller: ESC Values: 766.99, 952.01, 647.99, 833.01[0m
+[0;32mI (41245) IMU: roll=-8.829253 pitch=18.704844 yaw=16.841309[0m
+[0;32mI (41245) ESC_controller: ESC Values: 859.25, 965.20, 634.80, 740.75[0m
+[0;32mI (41345) IMU: roll=2.421644 pitch=21.099617 yaw=17.748062[0m
+[0;32mI (41345) ESC_controller: ESC Values: 941.13, 912.07, 687.93, 658.87[0m
+[0;32mI (41445) IMU: roll=6.728150 pitch=20.817533 yaw=17.548218[0m
+[0;32mI (41445) ESC_controller: ESC Values: 965.27, 884.54, 715.46, 634.73[0m
+[0;32mI (41545) IMU: roll=1.529552 pitch=21.802145 yaw=18.626129[0m
+[0;32mI (41545) ESC_controller: ESC Values: 939.99, 921.64, 678.36, 660.01[0m
+[0;32mI (41645) IMU: roll=-2.159947 pitch=21.342394 yaw=19.379517[0m
+[0;32mI (41645) ESC_controller: ESC Values: 915.09, 941.01, 658.99, 684.91[0m
+[0;32mI (41745) IMU: roll=-1.880383 pitch=21.675751 yaw=19.347794[0m
+[0;32mI (41745) ESC_controller: ESC Values: 918.77, 941.34, 658.66, 681.23[0m
+[0;32mI (41845) IMU: roll=0.277808 pitch=21.263893 yaw=19.148254[0m
+[0;32mI (41845) ESC_controller: ESC Values: 929.25, 925.92, 674.08, 670.75[0m
+[0;32mI (41945) IMU: roll=-1.472018 pitch=21.455359 yaw=19.177063[0m
+[0;32mI (41945) ESC_controller: ESC Values: 919.90, 937.56, 662.44, 680.10[0m
+[0;32mI (42045) IMU: roll=-1.395180 pitch=22.384184 yaw=19.080582[0m
+[0;32mI (42045) ESC_controller: ESC Values: 925.93, 942.68, 657.32, 674.07[0m
+[0;32mI (42145) IMU: roll=0.190461 pitch=21.667425 yaw=18.833679[0m
+[0;32mI (42145) ESC_controller: ESC Values: 931.15, 928.86, 671.14, 668.85[0m
+[0;32mI (42245) IMU: roll=0.974155 pitch=21.111391 yaw=18.840820[0m
+[0;32mI (42245) ESC_controller: ESC Values: 932.51, 920.82, 679.18, 667.49[0m
+[0;32mI (42345) IMU: roll=-0.146048 pitch=21.421045 yaw=18.848801[0m
+[0;32mI (42345) ESC_controller: ESC Values: 927.65, 929.40, 670.60, 672.35[0m
+[0;32mI (42445) IMU: roll=0.139192 pitch=22.211544 yaw=18.983017[0m
+[0;32mI (42445) ESC_controller: ESC Values: 934.10, 932.43, 667.57, 665.90[0m
+[0;32mI (42545) IMU: roll=0.264189 pitch=19.626730 yaw=19.782013[0m
+[0;32mI (42545) ESC_controller: ESC Values: 919.35, 916.18, 683.82, 680.65[0m
+[0;32mI (42645) IMU: roll=-0.121567 pitch=10.808285 yaw=17.874817[0m
+[0;32mI (42645) ESC_controller: ESC Values: 864.12, 865.58, 734.42, 735.88[0m
+[0;32mI (42745) IMU: roll=1.414658 pitch=-0.021848 yaw=18.541962[0m
+[0;32mI (42745) ESC_controller: ESC Values: 808.36, 791.38, 808.62, 791.64[0m
+[0;32mI (42845) IMU: roll=6.060338 pitch=-13.617560 yaw=17.406006[0m
+[0;32mI (42845) ESC_controller: ESC Values: 754.66, 681.93, 918.07, 845.34[0m
+[0;32mI (42945) IMU: roll=7.868668 pitch=-19.927753 yaw=14.940613[0m
+[0;32mI (42945) ESC_controller: ESC Values: 727.65, 633.22, 966.78, 872.35[0m
+[0;32mI (43045) IMU: roll=4.417606 pitch=-21.637413 yaw=14.439056[0m
+[0;32mI (43045) ESC_controller: ESC Values: 696.68, 643.67, 956.33, 903.32[0m
+[0;32mI (43145) IMU: roll=-0.845698 pitch=-22.215481 yaw=13.586288[0m
+[0;32mI (43145) ESC_controller: ESC Values: 661.63, 671.78, 928.22, 938.37[0m
+[0;32mI (43245) IMU: roll=0.295461 pitch=-21.691162 yaw=14.056686[0m
+[0;32mI (43245) ESC_controller: ESC Values: 671.63, 668.08, 931.92, 928.37[0m
+[0;32mI (43345) IMU: roll=5.672338 pitch=-20.924427 yaw=15.441299[0m
+[0;32mI (43345) ESC_controller: ESC Values: 708.49, 640.42, 959.58, 891.51[0m
+[0;32mI (43445) IMU: roll=6.625878 pitch=-21.142988 yaw=15.353683[0m
+[0;32mI (43445) ESC_controller: ESC Values: 712.90, 633.39, 966.61, 887.10[0m
+[0;32mI (43545) IMU: roll=4.209762 pitch=-21.378416 yaw=14.893936[0m
+[0;32mI (43545) ESC_controller: ESC Values: 696.99, 646.47, 953.53, 903.01[0m
+[0;32mI (43645) IMU: roll=5.706964 pitch=-20.518581 yaw=15.132050[0m
+[0;32mI (43645) ESC_controller: ESC Values: 711.13, 642.65, 957.35, 888.87[0m
+[0;32mI (43745) IMU: roll=6.875209 pitch=-21.259941 yaw=15.190140[0m
+[0;32mI (43745) ESC_controller: ESC Values: 713.69, 631.19, 968.81, 886.31[0m
+[0;32mI (43845) IMU: roll=5.719891 pitch=-21.146143 yaw=15.202927[0m
+[0;32mI (43845) ESC_controller: ESC Values: 707.44, 638.80, 961.20, 892.56[0m
+[0;32mI (43945) IMU: roll=6.530183 pitch=-21.834751 yaw=15.133987[0m
+[0;32mI (43945) ESC_controller: ESC Values: 708.17, 629.81, 970.19, 891.83[0m
+[0;32mI (44045) IMU: roll=5.049186 pitch=-21.294247 yaw=14.976547[0m
+[0;32mI (44045) ESC_controller: ESC Values: 702.53, 641.94, 958.06, 897.47[0m
+[0;32mI (44145) IMU: roll=3.827511 pitch=-21.842690 yaw=14.867249[0m
+[0;32mI (44145) ESC_controller: ESC Values: 691.91, 645.98, 954.02, 908.09[0m
+[0;32mI (44245) IMU: roll=5.138172 pitch=-21.379101 yaw=14.967377[0m
+[0;32mI (44245) ESC_controller: ESC Values: 702.55, 640.90, 959.10, 897.45[0m
+[0;32mI (44345) IMU: roll=5.668187 pitch=-20.504202 yaw=15.017975[0m
+[0;32mI (44345) ESC_controller: ESC Values: 710.98, 642.97, 957.03, 889.02[0m
+[0;32mI (44445) IMU: roll=5.137507 pitch=-20.175825 yaw=14.476837[0m
+[0;32mI (44445) ESC_controller: ESC Values: 709.77, 648.12, 951.88, 890.23[0m
+[0;32mI (44545) IMU: roll=4.181417 pitch=-17.250046 yaw=14.896561[0m
+[0;32mI (44545) ESC_controller: ESC Values: 721.59, 671.41, 928.59, 878.41[0m
+[0;32mI (44645) IMU: roll=5.440130 pitch=-16.677265 yaw=15.047867[0m
+[0;32mI (44645) ESC_controller: ESC Values: 732.58, 667.30, 932.70, 867.42[0m
+[0;32mI (44745) IMU: roll=3.926671 pitch=-17.650116 yaw=14.763046[0m
+[0;32mI (44745) ESC_controller: ESC Values: 717.66, 670.54, 929.46, 882.34[0m
+[0;32mI (44845) IMU: roll=3.443850 pitch=-19.972315 yaw=14.055695[0m
+[0;32mI (44845) ESC_controller: ESC Values: 700.83, 659.50, 940.50, 899.17[0m
+[0;32mI (44945) IMU: roll=3.534161 pitch=-21.804916 yaw=13.985260[0m
+[0;32mI (44945) ESC_controller: ESC Values: 690.38, 647.97, 952.03, 909.62[0m
+[0;32mI (45045) IMU: roll=3.763093 pitch=-20.898520 yaw=14.243256[0m
+[0;32mI (45045) ESC_controller: ESC Values: 697.19, 652.03, 947.97, 902.81[0m
+[0;32mI (45145) IMU: roll=5.111897 pitch=-21.642651 yaw=14.449005[0m
+[0;32mI (45145) ESC_controller: ESC Values: 700.82, 639.47, 960.53, 899.18[0m
+[0;32mI (45245) IMU: roll=5.213861 pitch=-21.130194 yaw=14.936798[0m
+[0;32mI (45245) ESC_controller: ESC Values: 704.50, 641.94, 958.06, 895.50[0m
+[0;32mI (45345) IMU: roll=6.508378 pitch=-21.273861 yaw=14.961578[0m
+[0;32mI (45345) ESC_controller: ESC Values: 711.41, 633.31, 966.69, 888.59[0m
+[0;32mI (45445) IMU: roll=5.172637 pitch=-21.773100 yaw=14.828125[0m
+[0;32mI (45445) ESC_controller: ESC Values: 700.40, 638.33, 961.67, 899.60[0m
+[0;32mI (45545) IMU: roll=6.188617 pitch=-22.125614 yaw=14.801682[0m
+[0;32mI (45545) ESC_controller: ESC Values: 704.38, 630.11, 969.89, 895.62[0m
+[0;32mI (45645) IMU: roll=5.762916 pitch=-21.458231 yaw=14.962097[0m
+[0;32mI (45645) ESC_controller: ESC Values: 705.83, 636.67, 963.33, 894.17[0m
+[0;32mI (45745) IMU: roll=6.304805 pitch=-22.636835 yaw=14.946136[0m
+[0;32mI (45745) ESC_controller: ESC Values: 702.01, 626.35, 973.65, 897.99[0m
+[0;32mI (45845) IMU: roll=6.810853 pitch=-21.550077 yaw=15.242554[0m
+[0;32mI (45845) ESC_controller: ESC Values: 711.56, 629.83, 970.17, 888.44[0m
+[0;32mI (45945) IMU: roll=7.535356 pitch=-22.018202 yaw=15.131638[0m
+[0;32mI (45945) ESC_controller: ESC Values: 713.10, 622.68, 977.32, 886.90[0m
+[0;32mI (46045) IMU: roll=6.230666 pitch=-22.241034 yaw=14.970215[0m
+[0;32mI (46045) ESC_controller: ESC Values: 703.94, 629.17, 970.83, 896.06[0m
+[0;32mI (46145) IMU: roll=6.020618 pitch=-21.164253 yaw=15.085571[0m
+[0;32mI (46145) ESC_controller: ESC Values: 709.14, 636.89, 963.11, 890.86[0m
+[0;32mI (46245) IMU: roll=6.564723 pitch=-22.067095 yaw=14.990601[0m
+[0;32mI (46245) ESC_controller: ESC Values: 706.99, 628.21, 971.79, 893.01[0m
+[0;32mI (46345) IMU: roll=6.193613 pitch=-21.123068 yaw=15.090302[0m
+[0;32mI (46345) ESC_controller: ESC Values: 710.42, 636.10, 963.90, 889.58[0m
+[0;32mI (46445) IMU: roll=6.882915 pitch=-21.891502 yaw=15.013123[0m
+[0;32mI (46445) ESC_controller: ESC Values: 709.95, 627.35, 972.65, 890.05[0m
+[0;32mI (46545) IMU: roll=6.086045 pitch=-22.682926 yaw=14.922928[0m
+[0;32mI (46545) ESC_controller: ESC Values: 700.42, 627.39, 972.61, 899.58[0m
+[0;32mI (46645) IMU: roll=6.078198 pitch=-21.636698 yaw=15.036316[0m
+[0;32mI (46645) ESC_controller: ESC Values: 706.65, 633.71, 966.29, 893.35[0m
+[0;32mI (46745) IMU: roll=7.214196 pitch=-21.463446 yaw=15.065445[0m
+[0;32mI (46745) ESC_controller: ESC Values: 714.50, 627.93, 972.07, 885.50[0m
+[0;32mI (46845) IMU: roll=6.302668 pitch=-22.150757 yaw=14.985504[0m
+[0;32mI (46845) ESC_controller: ESC Values: 704.91, 629.28, 970.72, 895.09[0m
+[0;32mI (46945) IMU: roll=6.205043 pitch=-21.103804 yaw=15.099716[0m
+[0;32mI (46945) ESC_controller: ESC Values: 710.61, 636.15, 963.85, 889.39[0m
+[0;32mI (47045) IMU: roll=6.563166 pitch=-22.071629 yaw=14.994080[0m
+[0;32mI (47045) ESC_controller: ESC Values: 706.95, 628.19, 971.81, 893.05[0m
+[0;32mI (47145) IMU: roll=5.926234 pitch=-21.246351 yaw=15.089371[0m
+[0;32mI (47145) ESC_controller: ESC Values: 708.08, 636.96, 963.04, 891.92[0m
+[0;32mI (47245) IMU: roll=6.814867 pitch=-20.507135 yaw=15.173874[0m
+[0;32mI (47245) ESC_controller: ESC Values: 717.85, 636.07, 963.93, 882.15[0m
+[0;32mI (47345) IMU: roll=6.527802 pitch=-21.552433 yaw=15.055939[0m
+[0;32mI (47345) ESC_controller: ESC Values: 709.85, 631.52, 968.48, 890.15[0m
+[0;32mI (47445) IMU: roll=6.077492 pitch=-20.606888 yaw=15.156815[0m
+[0;32mI (47445) ESC_controller: ESC Values: 712.82, 639.89, 960.11, 887.18[0m
+[0;32mI (47545) IMU: roll=6.239667 pitch=-21.649727 yaw=15.048035[0m
+[0;32mI (47545) ESC_controller: ESC Values: 707.54, 632.66, 967.34, 892.46[0m
+[0;32mI (47645) IMU: roll=7.337748 pitch=-21.268536 yaw=15.102310[0m
+[0;32mI (47645) ESC_controller: ESC Values: 716.42, 628.36, 971.64, 883.58[0m
+[0;32mI (47745) IMU: roll=6.237764 pitch=-21.573132 yaw=15.069214[0m
+[0;32mI (47745) ESC_controller: ESC Values: 707.99, 633.13, 966.87, 892.01[0m
+[0;32mI (47845) IMU: roll=6.702175 pitch=-20.573538 yaw=15.183609[0m
+[0;32mI (47845) ESC_controller: ESC Values: 716.77, 636.35, 963.65, 883.23[0m
+[0;32mI (47945) IMU: roll=6.366684 pitch=-21.616137 yaw=15.070374[0m
+[0;32mI (47945) ESC_controller: ESC Values: 708.50, 632.10, 967.90, 891.50[0m
+[0;32mI (48045) IMU: roll=5.610065 pitch=-20.834379 yaw=15.154343[0m
+[0;32mI (48045) ESC_controller: ESC Values: 708.65, 641.33, 958.67, 891.35[0m
+[0;32mI (48145) IMU: roll=6.518038 pitch=-21.452881 yaw=15.093506[0m
+[0;32mI (48145) ESC_controller: ESC Values: 710.39, 632.17, 967.83, 889.61[0m
+[0;32mI (48245) IMU: roll=5.756717 pitch=-22.273733 yaw=15.008148[0m
+[0;32mI (48245) ESC_controller: ESC Values: 700.90, 631.82, 968.18, 899.10[0m
+[0;32mI (48345) IMU: roll=6.428237 pitch=-21.387243 yaw=15.107452[0m
+[0;32mI (48345) ESC_controller: ESC Values: 710.25, 633.11, 966.89, 889.75[0m
+[0;32mI (48445) IMU: roll=5.734927 pitch=-22.248020 yaw=15.021866[0m
+[0;32mI (48445) ESC_controller: ESC Values: 700.92, 632.10, 967.90, 899.08[0m
+[0;32mI (48545) IMU: roll=6.411706 pitch=-21.370529 yaw=15.109741[0m
+[0;32mI (48545) ESC_controller: ESC Values: 710.25, 633.31, 966.69, 889.75[0m
+[0;32mI (48645) IMU: roll=5.969180 pitch=-22.369465 yaw=14.999023[0m
+[0;32mI (48645) ESC_controller: ESC Values: 701.60, 629.97, 970.03, 898.40[0m
+[0;32mI (48745) IMU: roll=6.311986 pitch=-21.349377 yaw=15.118301[0m
+[0;32mI (48745) ESC_controller: ESC Values: 709.78, 634.03, 965.97, 890.22[0m
+[0;32mI (48845) IMU: roll=6.942616 pitch=-20.386465 yaw=15.237854[0m
+[0;32mI (48845) ESC_controller: ESC Values: 719.34, 636.03, 963.97, 880.66[0m
+[0;32mI (48945) IMU: roll=6.436932 pitch=-21.367775 yaw=15.129059[0m
+[0;32mI (48945) ESC_controller: ESC Values: 710.41, 633.17, 966.83, 889.59[0m
+[0;32mI (49045) IMU: roll=6.809276 pitch=-22.403700 yaw=15.009628[0m
+[0;32mI (49045) ESC_controller: ESC Values: 706.43, 624.72, 975.28, 893.57[0m
+[0;32mI (49145) IMU: roll=6.344905 pitch=-21.408108 yaw=15.129684[0m
+[0;32mI (49145) ESC_controller: ESC Values: 709.62, 633.48, 966.52, 890.38[0m
+[0;32mI (49245) IMU: roll=6.084103 pitch=-22.488338 yaw=15.012573[0m
+[0;32mI (49245) ESC_controller: ESC Values: 701.57, 628.57, 971.43, 898.43[0m
+[0;32mI (49345) IMU: roll=6.372175 pitch=-21.452370 yaw=15.130524[0m
+[0;32mI (49345) ESC_controller: ESC Values: 709.52, 633.05, 966.95, 890.48[0m
+[0;32mI (49445) IMU: roll=5.272120 pitch=-21.732183 yaw=15.108047[0m
+[0;32mI (49445) ESC_controller: ESC Values: 701.24, 637.97, 962.03, 898.76[0m
+[0;32mI (49545) IMU: roll=6.395800 pitch=-21.803242 yaw=15.103134[0m
+[0;32mI (49545) ESC_controller: ESC Values: 707.56, 630.81, 969.19, 892.44[0m

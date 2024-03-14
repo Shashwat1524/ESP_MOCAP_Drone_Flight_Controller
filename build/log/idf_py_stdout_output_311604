@@ -1,0 +1,1354 @@
+ cpu_start: Pro cpu up[0m
+D (214) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ca18h ( 51736) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001ca40 vaddr=3ffb0000 size=0237ch (  9084) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001edc4 vaddr=40080000 size=01254h (  4692) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19dech (105964) map[0m
+[0;32mI (173) esp_image: segment 4: paddr=00039e14 vaddr=40081254 size=0da70h ( 55920) load[0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (214) cpu_start: Multicore app[0m
+D (214) cpu_start: Pro cpu up[0m
+D (214) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (224) clk: RTC_SLOW_CLK calibration value: 3399590[0m
+D (235) cpu_start: calling init function: 0x400d151c on core: 0[0m
+[0;32mI (235) cpu_start: Pro cpu start user code[0m
+[0;32mI (235) cpu_start: cpu freq: 160000000 Hz[0m
+D (241) cpu_start: calling init function: 0x400d1560 on core: 0[0m
+[0;32mI (247) cpu_start: Application information:[0m
+[0;32mI (252) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (258) cpu_start: App version:      1[0m
+[0;32mI (263) cpu_start: Compile time:     Jan 27 2024 11:38:47[0m
+[0;32mI (269) cpu_start: ELF file SHA256:  58f86692c...[0m
+[0;32mI (274) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (281) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (286) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (291) cpu_start: Chip rev:         v3.0[0m
+D (295) cpu_start: calling init function: 0x400d16a8 on core: 0[0m
+D (302) memory_layout: Checking 9 reserved memory ranges:[0m
+D (307) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (313) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (320) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb2cf8[0m
+D (326) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (333) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (339) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (345) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (352) memory_layout: Reserved memory range 0x40080000 - 0x4008ecc4[0m
+D (358) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (365) memory_layout: Building list of available memory regions:[0m
+D (371) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (377) memory_layout: Available memory region 0x3ffb2cf8 - 0x3ffb8000[0m
+D (384) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (391) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (397) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (404) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (410) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (417) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (424) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (430) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (437) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (443) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (450) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (457) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (463) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (470) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (476) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (483) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (490) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (496) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (503) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (509) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (516) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (523) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (529) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (536) memory_layout: Available memory region 0x4008ecc4 - 0x40090000[0m
+D (542) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (549) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (556) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (562) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (569) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (575) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (582) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (589) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (595) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (603) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (607) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (614) heap_init: New heap initialised at 0x3ffb2cf8[0m
+[0;32mI (619) heap_init: At 3FFB2CF8 len 0002D308 (180 KiB): DRAM[0m
+[0;32mI (625) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (638) heap_init: New heap initialised at 0x4008ecc4[0m
+[0;32mI (643) heap_init: At 4008ECC4 len 0001133C (68 KiB): IRAM[0m
+D (649) cpu_start: calling init function: 0x400d16b4 on core: 0[0m
+D (655) cpu_start: calling init function: 0x400d3d38 on core: 0[0m
+D (661) cpu_start: calling init function: 0x400e8444 on core: 0[0m
+D (667) cpu_start: calling init function: 0x400d16c0 on core: 0[0m
+D (673) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (678) cpu_start: calling init function: 0x400d16cc on core: 0[0m
+D (684) cpu_start: calling init function: 0x400d5468 on core: 0[0m
+D (690) cpu_start: calling init function: 0x400d6654 on core: 0[0m
+D (696) cpu_start: calling init function: 0x400d3da4 on core: 0[0m
+D (702) cpu_start: calling init function: 0x400d16d8 on core: 0[0m
+D (708) cpu_start: calling init function: 0x400d16e4 on core: 0[0m
+D (714) spi_flash: trying chip: issi[0m
+D (718) spi_flash: trying chip: gd[0m
+D (721) spi_flash: trying chip: mxic[0m
+D (725) spi_flash: trying chip: winbond[0m
+D (729) spi_flash: trying chip: generic[0m
+[0;32mI (733) spi_flash: detected chip: generic[0m
+[0;32mI (737) spi_flash: flash io: dio[0m
+[0;33mW (741) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (754) cpu_start: calling init function: 0x400e844c on core: 0[0m
+D (760) cpu_start: calling init function: 0x400dd170[0m
+[0;33mW (765) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (776) cpu_start: calling init function: 0x400d7318[0m
+D (781) cpu_start: calling init function: 0x4008613c[0m
+D (786) cpu_start: calling init function: 0x400d2778[0m
+D (791) cpu_start: calling init function: 0x400d1c7c[0m
+D (796) cpu_start: calling init function: 0x400d1384[0m
+D (801) cpu_start: calling init function: 0x400d4298 on core: 0[0m
+D (807) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (812) cpu_start: calling init function: 0x400d170c on core: 0[0m
+D (818) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (823) app_start: Starting scheduler on CPU0[0m
+[0;32D (828) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (828) app_start: Starting scheduler on CPU1[0m
+mI (828) main_task: Started on CPU0[0m
+D (848) heap_init: New heap initialised at 0x3ffe0440[0m
+D (848) heap_init: New heap initialised at 0x3ffe4350[0m
+D (848) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (848) main_task: Calling app_main()[0m
+D (858) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (868) IMU: devid=0x34[0m
+[0;32mI (868) IMU: getRate()=0[0m
+[0;32mI (868) IMU: getExternalFrameSync()=0[0m
+[0;32mI (868) IMU: getDLPFMode()=6[0m
+[0;32mI (878) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (878) rmt: new group(0) at 0x3ffbc778, occupy=ffffff00[0m
+D (888) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+[0;32mI (888) IMU: getFullScaleAccelRange()=0[0m
+D (898) rmt: group clock resolution:80000000[0m
+[0;32mI (898) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (898) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (908) IMU: I am doing fine bro[0m
+D (918) rmt: new tx channel(0,0) at 0x3ffbc3f8, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (938) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (938) rmt: group clock resolution:80000000[0m
+[0;32mI (928) IMU: I am doing fine bro[0m
+[0;32mI (918) PWM: roll:-0.724671 pitch=0.007036 yaw=500.000000[0m
+[0;32mI (948) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (968) rmt: new tx channel(0,1) at 0x3ffbc7e0, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mID (978) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+ (958) PWM: ESC Values: 500.00, 500.00, 500.00, 500.00[0m
+[0;32mI (958) IMU: I am doing fine bro[0m
+D (988) rmt: group clock resolution:80000000[0m
+[0;32mI (998) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1008) rmt: new tx channel(0,2) at 0x3ffbcbd0, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0D (1018) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+;32mI (1008) IMU: I am doing fine bro[0m
+[0;32mI (988) PWM: roll:-3.444053 pitch=0.099972 yaw=0.000000[0m
+D (1028) rmt: group clock resolution:80000000[0m
+[0;32mI (1038) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1048) rmt: new tx channel(0,3) at 0x3ffbcf24, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1068) ESC_controller: Install Dshot ESC encoder[0m
+[0;32mI (1038) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+D (1068) rmt: new bytes encoder @0x3ffbd298[0m
+D (1078) rmt: new copy encoder @0x3ffbd2bc[0m
+[0;32mI (1078) PWM: roll:-9.536583 pitch=0.971068 yaw=1000.000000[0m
+[0;32mI (1038) IMU: I am doing fine bro[0m
+D (1088) rmt: new bytes encoder @0x3ffbd2f0[0m
+[0;32mI (1088) PWM: ESC Values: 990.69, 9.90, 0.00, 1000.00[0m
+D (1098) rmt: new copy encoder @0x3ffbd314[0m
+D (1108) rmt: new bytes encoder @0x3ffbd348[0m
+[0;32mI (1108) PWM: roll:-9.749371 pitch=3.403975 yaw=0.000000[0m
+[0;32mI (1108) IMU: I am doing fine bro[0m
+D (1118) rmt: new copy encoder @0x3ffbd36c[0m
+[0;32mI (1118) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+D (1128) rmt: new bytes encoder @0x3ffbd3a0[0m
+D (1138) rmt: new copy encoder @0x3ffbd3c4[0m
+[0;32mI (1138) PWM: roll:-7.023686 pitch=4.802202 yaw=1000.000000[0m
+[0;32mI (1138) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1158) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1148) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1138) IMU: I am doing fine bro[0m
+[0;32mI (1168) PWM: roll:3.486867 pitch=5.896201 yaw=0.000000[0m
+[0;32mI (1178) IMU: I am doing fine bro[0m
+[0;32mI (1178) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1188) IMU: I am doing fine bro[0m
+[0;32mI (1188) PWM: roll:6.438986 pitch=5.447691 yaw=1000.000000[0m
+[0;32mI (1198) IMU: I am doing fine bro[0m
+[0;32mI (1198) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1208) IMU: I am doing fine bro[0m
+[0;32mI (1208) PWM: roll:12.050476 pitch=4.190611 yaw=0.000000[0m
+[0;32mI (1218) IMU: I am doing fine bro[0m
+[0;32mI (1218) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1228) IMU: I am doing fine bro[0m
+[0;32mI (1228) PWM: roll:13.388334 pitch=3.738302 yaw=1000.000000[0m
+[0;32mI (1238) IMU: I am doing fine bro[0m
+[0;32mI (1238) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1248) PWM: roll:14.638366 pitch=3.240006 yaw=0.000000[0m
+[0;32mI (1248) IMU: I am doing fine bro[0m
+[0;32mI (1248) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1258) PWM: roll:15.846749 pitch=2.693479 yaw=1000.000000[0m
+[0;32mI (1268) IMU: I am doing fine bro[0m
+[0;32mI (1268) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1278) PWM: roll:17.128439 pitch=2.097296 yaw=0.000000[0m
+[0;32mI (1288) IMU: I am doing fine bro[0m
+[0;32mI (1288) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1298) PWM: roll:18.634586 pitch=1.446207 yaw=1000.000000[0m
+[0;32mI (1298) IMU: I am doing fine bro[0m
+[0;32mI (1298) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1308) PWM: roll:20.428883 pitch=0.728436 yaw=0.000000[0m
+[0;32mI (1318) IMU: I am doing fine bro[0m
+[0;32mI (1318) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1328) PWM: roll:22.466019 pitch=-0.068943 yaw=1000.000000[0m
+[0;32mI (1328) IMU: I am doing fine bro[0m
+[0;32mI (1328) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1338) PWM: roll:26.724775 pitch=-1.959541 yaw=0.000000[0m
+[0;32mI (1348) IMU: I am doing fine bro[0m
+[0;32mI (1348) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1358) PWM: roll:30.625004 pitch=-4.244634 yaw=1000.000000[0m
+[0;32mI (1358) IMU: I am doing fine bro[0m
+[0;32mI (1368) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1378) PWM: roll:32.543732 pitch=-5.520091 yaw=0.000000[0m
+[0;32mI (1378) IMU: I am doing fine bro[0m
+[0;32mI (1378) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1388) PWM: roll:35.636795 pitch=-8.190573 yaw=1000.000000[0m
+[0;32mI (1398) IMU: I am doing fine bro[0m
+[0;32mI (1398) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1408) PWM: roll:36.684265 pitch=-9.569750 yaw=0.000000[0m
+[0;32mI (1408) IMU: I am doing fine bro[0m
+[0;32mI (1408) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1418) PWM: roll:37.302757 pitch=-12.391218 yaw=1000.000000[0m
+[0;32mI (1428) IMU: I am doing fine bro[0m
+[0;32mI (1428) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1438) PWM: roll:37.329021 pitch=-13.813230 yaw=0.000000[0m
+[0;32mI (1448) IMU: I am doing fine bro[0m
+[0;32mI (1448) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1458) PWM: roll:36.766178 pitch=-16.645805 yaw=1000.000000[0m
+[0;32mI (1458) IMU: I am doing fine bro[0m
+[0;32mI (1458) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1468) PWM: roll:35.926796 pitch=-19.491024 yaw=0.000000[0m
+[0;32mI (1478) IMU: I am doing fine bro[0m
+[0;32mI (1478) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1488) PWM: roll:35.404633 pitch=-20.912676 yaw=1000.000000[0m
+[0;32mI (1488) IMU: I am doing fine bro[0m
+[0;32mI (1498) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1508) PWM: roll:33.996029 pitch=-23.771269 yaw=0.000000[0m
+[0;32mI (1508) IMU: I am doing fine bro[0m
+[0;32mI (1508) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1518) PWM: roll:32.422096 pitch=-26.558008 yaw=1000.000000[0m
+[0;32mI (1528) IMU: I am doing fine bro[0m
+[0;32mI (1528) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1538) PWM: roll:31.472113 pitch=-27.879915 yaw=0.000000[0m
+[0;32mI (1538) IMU: I am doing fine bro[0m
+[0;32mI (1538) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1548) PWM: roll:29.537693 pitch=-30.346457 yaw=1000.000000[0m
+[0;32mI (1558) IMU: I am doing fine bro[0m
+[0;32mI (1558) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1568) PWM: roll:28.569790 pitch=-31.522970 yaw=0.000000[0m
+[0;32mI (1568) IMU: I am doing fine bro[0m
+[0;32mI (1578) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1588) PWM: roll:26.414644 pitch=-33.691898 yaw=1000.000000[0m
+[0;32mI (1588) IMU: I am doing fine bro[0m
+[0;32mI (1588) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1598) PWM: roll:24.022772 pitch=-35.595558 yaw=0.000000[0m
+[0;32mI (1608) IMU: I am doing fine bro[0m
+[0;32mI (1608) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1618) PWM: roll:22.764332 pitch=-36.468197 yaw=1000.000000[0m
+[0;32mI (1618) IMU: I am doing fine bro[0m
+[0;32mI (1618) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1628) PWM: roll:20.047419 pitch=-38.052650 yaw=0.000000[0m
+[0;32mI (1638) IMU: I am doing fine bro[0m
+[0;32mI (1638) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1648) PWM: roll:18.642567 pitch=-38.750141 yaw=1000.000000[0m
+[0;32mI (1648) IMU: I am doing fine bro[0m
+[0;32mI (1658) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1668) PWM: roll:19.649040 pitch=-39.961552 yaw=0.000000[0m
+[0;32mI (1668) IMU: I am doing fine bro[0m
+[0;32mI (1668) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1678) PWM: roll:18.566853 pitch=-41.309521 yaw=1000.000000[0m
+[0;32mI (1688) IMU: I am doing fine bro[0m
+[0;32mI (1688) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1698) PWM: roll:17.284906 pitch=-41.988880 yaw=0.000000[0m
+[0;32mI (1698) IMU: I am doing fine bro[0m
+[0;32mI (1698) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1708) PWM: roll:14.384655 pitch=-43.223286 yaw=1000.000000[0m
+[0;32mI (1718) IMU: I am doing fine bro[0m
+[0;32mI (1718) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1728) PWM: roll:12.721133 pitch=-43.764538 yaw=0.000000[0m
+[0;32mI (1728) IMU: I am doing fine bro[0m
+[0;32mI (1738) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1748) PWM: roll:8.670427 pitch=-44.684063 yaw=1000.000000[0m
+[0;32mI (1748) IMU: I am doing fine bro[0m
+[0;32mI (1748) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1758) PWM: roll:4.099974 pitch=-45.260376 yaw=0.000000[0m
+[0;32mI (1768) IMU: I am doing fine bro[0m
+[0;32mI (1768) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1778) PWM: roll:1.804141 pitch=-45.391029 yaw=1000.000000[0m
+[0;32mI (1778) IMU: I am doing fine bro[0m
+[0;32mI (1788) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1788) PWM: roll:-2.701973 pitch=-45.313717 yaw=0.000000[0m
+[0;32mI (1798) IMU: I am doing fine bro[0m
+[0;32mI (1798) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1808) PWM: roll:-5.043845 pitch=-45.134480 yaw=1000.000000[0m
+[0;32mI (1808) IMU: I am doing fine bro[0m
+[0;32mI (1818) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1828) PWM: roll:-9.846727 pitch=-44.476780 yaw=0.000000[0m
+[0;32mI (1828) IMU: I am doing fine bro[0m
+[0;32mI (1828) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1838) PWM: roll:-14.410014 pitch=-43.386837 yaw=1000.000000[0m
+[0;32mI (1848) IMU: I am doing fine bro[0m
+[0;32mI (1848) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1858) PWM: roll:-16.588135 pitch=-42.697937 yaw=0.000000[0m
+[0;32mI (1858) IMU: I am doing fine bro[0m
+[0;32mI (1868) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1878) PWM: roll:-20.838081 pitch=-41.076607 yaw=1000.000000[0m
+[0;32mI (1878) IMU: I am doing fine bro[0m
+[0;32mI (1878) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1888) PWM: roll:-23.521332 pitch=-40.155788 yaw=0.000000[0m
+[0;32mI (1898) IMU: I am doing fine bro[0m
+[0;32mI (1898) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1908) PWM: roll:-28.152306 pitch=-38.017963 yaw=1000.000000[0m
+[0;32mI (1908) IMU: I am doing fine bro[0m
+[0;32mI (1908) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1918) PWM: roll:-31.296783 pitch=-35.452751 yaw=0.000000[0m
+[0;32mI (1928) IMU: I am doing fine bro[0m
+[0;32mI (1928) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1938) PWM: roll:-32.622982 pitch=-34.072701 yaw=1000.000000[0m
+[0;32mI (1938) IMU: I am doing fine bro[0m
+[0;32mI (1948) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1958) PWM: roll:-35.165424 pitch=-31.190237 yaw=0.000000[0m
+[0;32mI (1958) IMU: I am doing fine bro[0m
+[0;32mI (1958) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1968) PWM: roll:-37.855015 pitch=-28.166687 yaw=1000.000000[0m
+[0;32mI (1978) IMU: I am doing fine bro[0m
+[0;32mI (1978) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (1988) PWM: roll:-39.082706 pitch=-26.596106 yaw=0.000000[0m
+[0;32mI (1988) IMU: I am doing fine bro[0m
+[0;32mI (1998) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (1998) PWM: roll:-40.830433 pitch=-23.384909 yaw=1000.000000[0m
+[0;32mI (2008) IMU: I am doing fine bro[0m
+[0;32mI (2008) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2018) PWM: roll:-41.623524 pitch=-21.755089 yaw=0.000000[0m
+[0;32mI (2028) IMU: I am doing fine bro[0m
+[0;32mI (2028) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2038) PWM: roll:-43.688091 pitch=-18.478886 yaw=1000.000000[0m
+[0;32mI (2038) IMU: I am doing fine bro[0m
+[0;32mI (2038) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2048) PWM: roll:-45.639740 pitch=-15.198260 yaw=0.000000[0m
+[0;32mI (2058) IMU: I am doing fine bro[0m
+[0;32mI (2058) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2068) PWM: roll:-46.536636 pitch=-13.487450 yaw=1000.000000[0m
+[0;32mI (2068) IMU: I am doing fine bro[0m
+[0;32mI (2078) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2088) PWM: roll:-47.941757 pitch=-9.898100 yaw=0.000000[0m
+[0;32mI (2088) IMU: I am doing fine bro[0m
+[0;32mI (2088) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2098) PWM: roll:-49.203560 pitch=-6.186251 yaw=1000.000000[0m
+[0;32mI (2108) IMU: I am doing fine bro[0m
+[0;32mI (2108) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2118) PWM: roll:-49.721584 pitch=-4.297045 yaw=0.000000[0m
+[0;32mI (2118) IMU: I am doing fine bro[0m
+[0;32mI (2118) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2128) PWM: roll:-50.328693 pitch=-0.453350 yaw=1000.000000[0m
+[0;32mI (2138) IMU: I am doing fine bro[0m
+[0;32mI (2138) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2148) PWM: roll:-50.449364 pitch=1.486834 yaw=0.000000[0m
+[0;32mI (2148) IMU: I am doing fine bro[0m
+[0;32mI (2158) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2168) PWM: roll:-50.253193 pitch=5.391970 yaw=1000.000000[0m
+[0;32mI (2168) IMU: I am doing fine bro[0m
+[0;32mI (2168) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2178) PWM: roll:-49.693550 pitch=9.285008 yaw=0.000000[0m
+[0;32mI (2188) IMU: I am doing fine bro[0m
+[0;32mI (2188) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2198) PWM: roll:-49.300720 pitch=11.219607 yaw=1000.000000[0m
+[0;32mI (2198) IMU: I am doing fine bro[0m
+[0;32mI (2198) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2208) PWM: roll:-48.508018 pitch=15.066573 yaw=0.000000[0m
+[0;32mI (2218) IMU: I am doing fine bro[0m
+[0;32mI (2218) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2228) PWM: roll:-48.078522 pitch=16.972204 yaw=1000.000000[0m
+[0;32mI (2228) IMU: I am doing fine bro[0m
+[0;32mI (2238) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2248) PWM: roll:-47.211319 pitch=20.746243 yaw=0.000000[0m
+[0;32mI (2248) IMU: I am doing fine bro[0m
+[0;32mI (2248) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2258) PWM: roll:-46.130417 pitch=24.453701 yaw=1000.000000[0m
+[0;32mI (2268) IMU: I am doing fine bro[0m
+[0;32mI (2268) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2278) PWM: roll:-45.495129 pitch=26.280888 yaw=0.000000[0m
+[0;32mI (2278) IMU: I am doing fine bro[0m
+[0;32mI (2288) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2288) PWM: roll:-44.070648 pitch=29.871809 yaw=1000.000000[0m
+[0;32mI (2298) IMU: I am doing fine bro[0m
+[0;32mI (2298) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2308) PWM: roll:-43.255875 pitch=31.628126 yaw=0.000000[0m
+[0;32mI (2318) IMU: I am doing fine bro[0m
+[0;32mI (2318) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2328) PWM: roll:-41.348137 pitch=35.129204 yaw=1000.000000[0m
+[0;32mI (2328) IMU: I am doing fine bro[0m
+[0;32mI (2328) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2338) PWM: roll:-39.240643 pitch=38.552376 yaw=0.000000[0m
+[0;32mI (2348) IMU: I am doing fine bro[0m
+[0;32mI (2348) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2358) PWM: roll:-38.156059 pitch=40.218266 yaw=1000.000000[0m
+[0;32mI (2358) IMU: I am doing fine bro[0m
+[0;32mI (2368) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2378) PWM: roll:-36.178230 pitch=43.449745 yaw=0.000000[0m
+[0;32mI (2378) IMU: I am doing fine bro[0m
+[0;32mI (2378) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2388) PWM: roll:-34.274666 pitch=46.545685 yaw=1000.000000[0m
+[0;32mI (2398) IMU: I am doing fine bro[0m
+[0;32mI (2398) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2408) PWM: roll:-33.267601 pitch=48.040344 yaw=0.000000[0m
+[0;32mI (2408) IMU: I am doing fine bro[0m
+[0;32mI (2408) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2418) PWM: roll:-31.397991 pitch=50.909359 yaw=1000.000000[0m
+[0;32mI (2428) IMU: I am doing fine bro[0m
+[0;32mI (2428) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2438) PWM: roll:-30.377987 pitch=52.283543 yaw=0.000000[0m
+[0;32mI (2438) IMU: I am doing fine bro[0m
+[0;32mI (2448) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2458) PWM: roll:-28.861191 pitch=54.965942 yaw=1000.000000[0m
+[0;32mI (2458) IMU: I am doing fine bro[0m
+[0;32mI (2458) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2468) PWM: roll:-27.238594 pitch=57.590481 yaw=0.000000[0m
+[0;32mI (2478) IMU: I am doing fine bro[0m
+[0;32mI (2478) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2488) PWM: roll:-26.125135 pitch=58.841957 yaw=1000.000000[0m
+[0;32mI (2488) IMU: I am doing fine bro[0m
+[0;32mI (2488) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2498) PWM: roll:-23.218584 pitch=61.168648 yaw=0.000000[0m
+[0;32mI (2508) IMU: I am doing fine bro[0m
+[0;32mI (2508) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2518) PWM: roll:-21.419353 pitch=62.235661 yaw=1000.000000[0m
+[0;32mI (2518) IMU: I am doing fine bro[0m
+[0;32mI (2528) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2538) PWM: roll:-17.084730 pitch=64.121452 yaw=0.000000[0m
+[0;32mI (2538) IMU: I am doing fine bro[0m
+[0;32mI (2538) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2548) PWM: roll:-11.839862 pitch=65.606880 yaw=1000.000000[0m
+[0;32mI (2558) IMU: I am doing fine bro[0m
+[0;32mI (2558) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2568) PWM: roll:-8.929412 pitch=66.163483 yaw=0.000000[0m
+[0;32mI (2568) IMU: I am doing fine bro[0m
+[0;32mI (2568) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2578) PWM: roll:0.295464 pitch=66.720779 yaw=1000.000000[0m
+[0;32mI (2588) IMU: I am doing fine bro[0m
+[0;32mI (2588) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2598) PWM: roll:5.834551 pitch=66.661850 yaw=0.000000[0m
+[0;32mI (2598) IMU: I am doing fine bro[0m
+[0;32mI (2608) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2618) PWM: roll:20.359810 pitch=65.694603 yaw=1000.000000[0m
+[0;32mI (2618) IMU: I am doing fine bro[0m
+[0;32mI (2618) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2628) PWM: roll:34.382587 pitch=63.581692 yaw=0.000000[0m
+[0;32mI (2638) IMU: I am doing fine bro[0m
+[0;32mI (2638) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2648) PWM: roll:40.600971 pitch=62.158081 yaw=1000.000000[0m
+[0;32mI (2648) IMU: I am doing fine bro[0m
+[0;32mI (2648) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2658) PWM: roll:51.416309 pitch=58.726677 yaw=0.000000[0m
+[0;32mI (2668) IMU: I am doing fine bro[0m
+[0;32mI (2668) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2678) PWM: roll:56.130329 pitch=56.797379 yaw=1000.000000[0m
+[0;32mI (2678) IMU: I am doing fine bro[0m
+[0;32mI (2688) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2698) PWM: roll:64.387222 pitch=52.624519 yaw=0.000000[0m
+[0;32mI (2698) IMU: I am doing fine bro[0m
+[0;32mI (2698) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2708) PWM: roll:71.473709 pitch=48.168018 yaw=1000.000000[0m
+[0;32mI (2718) IMU: I am doing fine bro[0m
+[0;32mI (2718) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2728) PWM: roll:74.676262 pitch=45.862751 yaw=0.000000[0m
+[0;32mI (2728) IMU: I am doing fine bro[0m
+[0;32mI (2728) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2738) PWM: roll:79.964546 pitch=41.155663 yaw=1000.000000[0m
+[0;32mI (2748) IMU: I am doing fine bro[0m
+[0;32mI (2748) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2758) PWM: roll:82.040504 pitch=38.766998 yaw=0.000000[0m
+[0;32mI (2758) IMU: I am doing fine bro[0m
+[0;32mI (2768) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2778) PWM: roll:83.903648 pitch=33.959198 yaw=1000.000000[0m
+[0;32mI (2778) IMU: I am doing fine bro[0m
+[0;32mI (2778) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2788) PWM: roll:83.061577 pitch=29.134165 yaw=0.000000[0m
+[0;32mI (2798) IMU: I am doing fine bro[0m
+[0;32mI (2798) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2808) PWM: roll:81.982117 pitch=26.724529 yaw=1000.000000[0m
+[0;32mI (2808) IMU: I am doing fine bro[0m
+[0;32mI (2818) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2818) PWM: roll:77.192528 pitch=21.916662 yaw=0.000000[0m
+[0;32mI (2828) IMU: I am doing fine bro[0m
+[0;32mI (2828) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2838) PWM: roll:74.829231 pitch=19.534502 yaw=1000.000000[0m
+[0;32mI (2838) IMU: I am doing fine bro[0m
+[0;32mI (2848) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2858) PWM: roll:70.136658 pitch=14.843657 yaw=0.000000[0m
+[0;32mI (2858) IMU: I am doing fine bro[0m
+[0;32mI (2858) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2868) PWM: roll:65.436165 pitch=10.288723 yaw=1000.000000[0m
+[0;32mI (2878) IMU: I am doing fine bro[0m
+[0;32mI (2878) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2888) PWM: roll:63.063587 pitch=8.077032 yaw=0.000000[0m
+[0;32mI (2888) IMU: I am doing fine bro[0m
+[0;32mI (2888) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2898) PWM: roll:58.241329 pitch=3.838060 yaw=1000.000000[0m
+[0;32mI (2908) IMU: I am doing fine bro[0m
+[0;32mI (2908) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2918) PWM: roll:55.776653 pitch=1.819827 yaw=0.000000[0m
+[0;32mI (2918) IMU: I am doing fine bro[0m
+[0;32mI (2928) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2938) PWM: roll:50.707462 pitch=-1.984919 yaw=1000.000000[0m
+[0;32mI (2938) IMU: I am doing fine bro[0m
+[0;32mI (2938) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2948) PWM: roll:48.224781 pitch=-5.603349 yaw=0.000000[0m
+[0;32mI (2958) IMU: I am doing fine bro[0m
+[0;32mI (2958) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2968) PWM: roll:47.932705 pitch=-7.381544 yaw=1000.000000[0m
+[0;32mI (2968) IMU: I am doing fine bro[0m
+[0;32mI (2968) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (2978) PWM: roll:50.710918 pitch=-11.027165 yaw=0.000000[0m
+[0;32mI (2988) IMU: I am doing fine bro[0m
+[0;32mI (2988) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (2998) PWM: roll:52.772732 pitch=-12.923366 yaw=1000.000000[0m
+[0;32mI (2998) IMU: I am doing fine bro[0m
+[0;32mI (3008) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3018) PWM: roll:56.949490 pitch=-16.841179 yaw=0.000000[0m
+[0;32mI (3018) IMU: I am doing fine bro[0m
+[0;32mI (3018) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3028) PWM: roll:60.988194 pitch=-20.926815 yaw=1000.000000[0m
+[0;32mI (3038) IMU: I am doing fine bro[0m
+[0;32mI (3038) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3048) PWM: roll:62.966072 pitch=-23.036200 yaw=0.000000[0m
+[0;32mI (3048) IMU: I am doing fine bro[0m
+[0;32mI (3058) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3068) PWM: roll:66.879974 pitch=-27.397287 yaw=1000.000000[0m
+[0;32mI (3068) IMU: I am doing fine bro[0m
+[0;32mI (3068) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3078) PWM: roll:68.824287 pitch=-29.640575 yaw=0.000000[0m
+[0;32mI (3088) IMU: I am doing fine bro[0m
+[0;32mI (3088) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3098) PWM: roll:72.744041 pitch=-34.249416 yaw=1000.000000[0m
+[0;32mI (3098) IMU: I am doing fine bro[0m
+[0;32mI (3098) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3108) PWM: roll:76.715408 pitch=-38.980709 yaw=0.000000[0m
+[0;32mI (3118) IMU: I am doing fine bro[0m
+[0;32mI (3118) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3128) PWM: roll:78.732849 pitch=-41.382996 yaw=1000.000000[0m
+[0;32mI (3128) IMU: I am doing fine bro[0m
+[0;32mI (3138) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3148) PWM: roll:81.858292 pitch=-46.244858 yaw=0.000000[0m
+[0;32mI (3148) IMU: I am doing fine bro[0m
+[0;32mI (3148) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3158) PWM: roll:83.817680 pitch=-51.157825 yaw=1000.000000[0m
+[0;32mI (3168) IMU: I am doing fine bro[0m
+[0;32mI (3168) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3178) PWM: roll:84.560158 pitch=-53.624813 yaw=0.000000[0m
+[0;32mI (3178) IMU: I am doing fine bro[0m
+[0;32mI (3178) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3188) PWM: roll:84.778061 pitch=-58.574528 yaw=1000.000000[0m
+[0;32mI (3198) IMU: I am doing fine bro[0m
+[0;32mI (3198) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3208) PWM: roll:84.511375 pitch=-61.050903 yaw=0.000000[0m
+[0;32mI (3208) IMU: I am doing fine bro[0m
+[0;32mI (3218) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3228) PWM: roll:82.927223 pitch=-66.009323 yaw=1000.000000[0m
+[0;32mI (3228) IMU: I am doing fine bro[0m
+[0;32mI (3228) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3238) PWM: roll:81.684181 pitch=-70.958733 yaw=0.000000[0m
+[0;32mI (3248) IMU: I am doing fine bro[0m
+[0;32mI (3248) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3258) PWM: roll:81.121414 pitch=-73.427795 yaw=1000.000000[0m
+[0;32mI (3258) IMU: I am doing fine bro[0m
+[0;32mI (3258) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3268) PWM: roll:79.377586 pitch=-78.356392 yaw=0.000000[0m
+[0;32mI (3278) IMU: I am doing fine bro[0m
+[0;32mI (3278) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3288) PWM: roll:77.356102 pitch=-80.807686 yaw=1000.000000[0m
+[0;32mI (3288) IMU: I am doing fine bro[0m
+[0;32mI (3298) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3308) PWM: roll:64.563461 pitch=-85.582794 yaw=0.000000[0m
+[0;32mI (3308) IMU: I am doing fine bro[0m
+[0;32mI (3308) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3318) PWM: roll:-29.246740 pitch=-87.895691 yaw=1000.000000[0m
+[0;32mI (3328) IMU: I am doing fine bro[0m
+[0;32mI (3328) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3338) PWM: roll:-63.006428 pitch=-86.036018 yaw=0.000000[0m
+[0;32mI (3338) IMU: I am doing fine bro[0m
+[0;32mI (3348) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3358) PWM: roll:-78.687149 pitch=-81.283073 yaw=1000.000000[0m
+[0;32mI (3358) IMU: I am doing fine bro[0m
+[0;32mI (3358) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3368) PWM: roll:-80.995338 pitch=-78.811600 yaw=0.000000[0m
+[0;32mI (3378) IMU: I am doing fine bro[0m
+[0;32mI (3378) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3388) PWM: roll:-82.854523 pitch=-73.810905 yaw=1000.000000[0m
+[0;32mI (3388) IMU: I am doing fine bro[0m
+[0;32mI (3388) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3398) PWM: roll:-83.808403 pitch=-68.781708 yaw=0.000000[0m
+[0;32mI (3408) IMU: I am doing fine bro[0m
+[0;32mI (3408) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3418) PWM: roll:-84.079514 pitch=-66.260681 yaw=1000.000000[0m
+[0;32mI (3418) IMU: I am doing fine bro[0m
+[0;32mI (3428) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3438) PWM: roll:-83.822578 pitch=-61.193317 yaw=0.000000[0m
+[0;32mI (3438) IMU: I am doing fine bro[0m
+[0;32mI (3438) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3448) PWM: roll:-83.138718 pitch=-56.115662 yaw=1000.000000[0m
+[0;32mI (3458) IMU: I am doing fine bro[0m
+[0;32mI (3458) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3468) PWM: roll:-82.774590 pitch=-53.576572 yaw=0.000000[0m
+[0;32mI (3468) IMU: I am doing fine bro[0m
+[0;32mI (3468) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3478) PWM: roll:-81.911140 pitch=-48.497898 yaw=1000.000000[0m
+[0;32mI (3488) IMU: I am doing fine bro[0m
+[0;32mI (3488) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3498) PWM: roll:-81.312912 pitch=-45.958412 yaw=0.000000[0m
+[0;32mI (3508) IMU: I am doing fine bro[0m
+[0;32mI (3508) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3518) PWM: roll:-79.647270 pitch=-40.868931 yaw=1000.000000[0m
+[0;32mI (3518) IMU: I am doing fine bro[0m
+[0;32mI (3518) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3528) PWM: roll:-78.324318 pitch=-35.781811 yaw=0.000000[0m
+[0;32mI (3538) IMU: I am doing fine bro[0m
+[0;32mI (3538) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3548) PWM: roll:-77.846115 pitch=-33.243656 yaw=1000.000000[0m
+[0;32mI (3548) IMU: I am doing fine bro[0m
+[0;32mI (3558) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3568) IMU: I am doing fine bro[0m
+[0;32mI (3568) PWM: roll:-76.982117 pitch=-28.168421 yaw=0.000000[0m
+[0;32mI (3578) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3578) PWM: roll:-75.191414 pitch=-23.093943 yaw=1000.000000[0m
+[0;32mI (3578) IMU: I am doing fine bro[0m
+[0;32mI (3588) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3598) PWM: roll:-74.041489 pitch=-20.563620 yaw=0.000000[0m
+[0;32mI (3598) IMU: I am doing fine bro[0m
+[0;32mI (3598) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3608) PWM: roll:-71.458099 pitch=-15.530343 yaw=1000.000000[0m
+[0;32mI (3618) IMU: I am doing fine bro[0m
+[0;32mI (3618) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3628) PWM: roll:-70.180183 pitch=-13.033187 yaw=0.000000[0m
+[0;32mI (3628) IMU: I am doing fine bro[0m
+[0;32mI (3638) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3648) PWM: roll:-67.174614 pitch=-8.047115 yaw=1000.000000[0m
+[0;32mI (3648) IMU: I am doing fine bro[0m
+[0;32mI (3648) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3658) PWM: roll:-65.417297 pitch=-5.552272 yaw=0.000000[0m
+[0;32mI (3668) IMU: I am doing fine bro[0m
+[0;32mI (3668) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3678) PWM: roll:-61.751408 pitch=-0.509132 yaw=1000.000000[0m
+[0;32mI (3678) IMU: I am doing fine bro[0m
+[0;32mI (3688) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3698) PWM: roll:-57.979557 pitch=4.383613 yaw=0.000000[0m
+[0;32mI (3698) IMU: I am doing fine bro[0m
+[0;32mI (3698) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3708) PWM: roll:-56.213451 pitch=6.760129 yaw=1000.000000[0m
+[0;32mI (3718) IMU: I am doing fine bro[0m
+[0;32mI (3718) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3728) PWM: roll:-53.288548 pitch=11.280986 yaw=0.000000[0m
+[0;32mI (3728) IMU: I am doing fine bro[0m
+[0;32mI (3728) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3738) PWM: roll:-50.590530 pitch=15.609604 yaw=1000.000000[0m
+[0;32mI (3748) IMU: I am doing fine bro[0m
+[0;32mI (3748) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3758) PWM: roll:-49.186863 pitch=17.715879 yaw=0.000000[0m
+[0;32mI (3758) IMU: I am doing fine bro[0m
+[0;32mI (3768) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3778) PWM: roll:-46.067677 pitch=21.806965 yaw=1000.000000[0m
+[0;32mI (3778) IMU: I am doing fine bro[0m
+[0;32mI (3778) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3788) PWM: roll:-43.433037 pitch=25.600138 yaw=0.000000[0m
+[0;32mI (3798) IMU: I am doing fine bro[0m
+[0;32mI (3798) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3808) PWM: roll:-42.390121 pitch=27.410255 yaw=1000.000000[0m
+[0;32mI (3808) IMU: I am doing fine bro[0m
+[0;32mI (3808) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3818) PWM: roll:-41.016094 pitch=30.865393 yaw=0.000000[0m
+[0;32mI (3828) IMU: I am doing fine bro[0m
+[0;32mI (3828) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3838) PWM: roll:-40.318668 pitch=32.537922 yaw=1000.000000[0m
+[0;32mI (3838) IMU: I am doing fine bro[0m
+[0;32mI (3848) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3858) PWM: roll:-39.264347 pitch=35.763573 yaw=0.000000[0m
+[0;32mI (3858) IMU: I am doing fine bro[0m
+[0;32mI (3858) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3868) PWM: roll:-38.413631 pitch=38.845581 yaw=1000.000000[0m
+[0;32mI (3878) IMU: I am doing fine bro[0m
+[0;32mI (3878) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3888) PWM: roll:-37.911034 pitch=40.344955 yaw=0.000000[0m
+[0;32mI (3888) IMU: I am doing fine bro[0m
+[0;32mI (3888) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3898) PWM: roll:-36.639034 pitch=43.203304 yaw=1000.000000[0m
+[0;32mI (3908) IMU: I am doing fine bro[0m
+[0;32mI (3908) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3918) PWM: roll:-35.814533 pitch=44.571224 yaw=0.000000[0m
+[0;32mI (3918) IMU: I am doing fine bro[0m
+[0;32mI (3928) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3938) PWM: roll:-34.378689 pitch=47.117058 yaw=1000.000000[0m
+[0;32mI (3938) IMU: I am doing fine bro[0m
+[0;32mI (3938) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3948) PWM: roll:-33.550907 pitch=49.447124 yaw=0.000000[0m
+[0;32mI (3958) IMU: I am doing fine bro[0m
+[0;32mI (3958) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3968) PWM: roll:-32.918396 pitch=50.563583 yaw=1000.000000[0m
+[0;32mI (3968) IMU: I am doing fine bro[0m
+[0;32mI (3968) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (3978) PWM: roll:-30.173990 pitch=52.623650 yaw=0.000000[0m
+[0;32mI (3988) IMU: I am doing fine bro[0m
+[0;32mI (3988) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (3998) PWM: roll:-28.424908 pitch=53.554054 yaw=1000.000000[0m
+[0;32mI (3998) IMU: I am doing fine bro[0m
+[0;32mI (4008) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4018) PWM: roll:-24.304102 pitch=55.166985 yaw=0.000000[0m
+[0;32mI (4018) IMU: I am doing fine bro[0m
+[0;32mI (4018) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4028) PWM: roll:-19.109169 pitch=56.358086 yaw=1000.000000[0m
+[0;32mI (4038) IMU: I am doing fine bro[0m
+[0;32mI (4038) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4048) PWM: roll:-16.021811 pitch=56.772907 yaw=0.000000[0m
+[0;32mI (4048) IMU: I am doing fine bro[0m
+[0;32mI (4058) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4068) PWM: roll:-8.743680 pitch=57.048206 yaw=1000.000000[0m
+[0;32mI (4068) IMU: I am doing fine bro[0m
+[0;32mI (4068) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4078) PWM: roll:-4.870917 pitch=56.890633 yaw=0.000000[0m
+[0;32mI (4088) IMU: I am doing fine bro[0m
+[0;32mI (4088) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4098) PWM: roll:3.813769 pitch=55.812717 yaw=1000.000000[0m
+[0;32mI (4098) IMU: I am doing fine bro[0m
+[0;32mI (4098) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4108) PWM: roll:12.537251 pitch=53.982395 yaw=0.000000[0m
+[0;32mI (4118) IMU: I am doing fine bro[0m
+[0;32mI (4118) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4128) PWM: roll:16.470474 pitch=52.848793 yaw=1000.000000[0m
+[0;32mI (4128) IMU: I am doing fine bro[0m
+[0;32mI (4138) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4148) PWM: roll:23.040783 pitch=50.282742 yaw=0.000000[0m
+[0;32mI (4148) IMU: I am doing fine bro[0m
+[0;32mI (4148) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4158) PWM: roll:29.139608 pitch=47.192825 yaw=1000.000000[0m
+[0;32mI (4168) IMU: I am doing fine bro[0m
+[0;32mI (4168) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4178) PWM: roll:31.876005 pitch=45.489784 yaw=0.000000[0m
+[0;32mI (4178) IMU: I am doing fine bro[0m
+[0;32mI (4178) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4188) PWM: roll:36.056728 pitch=41.830696 yaw=1000.000000[0m
+[0;32mI (4198) IMU: I am doing fine bro[0m
+[0;32mI (4198) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4208) PWM: roll:37.721550 pitch=39.916237 yaw=0.000000[0m
+[0;32mI (4208) IMU: I am doing fine bro[0m
+[0;32mI (4218) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4228) PWM: roll:39.944309 pitch=35.961708 yaw=1000.000000[0m
+[0;32mI (4228) IMU: I am doing fine bro[0m
+[0;32mI (4228) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4238) PWM: roll:41.500648 pitch=31.849962 yaw=0.000000[0m
+[0;32mI (4248) IMU: I am doing fine bro[0m
+[0;32mI (4248) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4258) PWM: roll:42.136265 pitch=29.755804 yaw=1000.000000[0m
+[0;32mI (4258) IMU: I am doing fine bro[0m
+[0;32mI (4258) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4268) PWM: roll:43.292912 pitch=25.469809 yaw=0.000000[0m
+[0;32mI (4278) IMU: I am doing fine bro[0m
+[0;32mI (4278) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4288) PWM: roll:43.844124 pitch=23.305773 yaw=1000.000000[0m
+[0;32mI (4288) IMU: I am doing fine bro[0m
+[0;32mI (4298) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4308) PWM: roll:44.981464 pitch=19.002567 yaw=0.000000[0m
+[0;32mI (4308) IMU: I am doing fine bro[0m
+[0;32mI (4308) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4318) PWM: roll:46.070217 pitch=14.693395 yaw=1000.000000[0m
+[0;32mI (4328) IMU: I am doing fine bro[0m
+[0;32mI (4328) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4338) PWM: roll:46.672127 pitch=12.531658 yaw=0.000000[0m
+[0;32mI (4338) IMU: I am doing fine bro[0m
+[0;32mI (4338) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4348) PWM: roll:48.389977 pitch=8.221203 yaw=1000.000000[0m
+[0;32mI (4358) IMU: I am doing fine bro[0m
+[0;32mI (4358) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4368) PWM: roll:49.281368 pitch=6.056248 yaw=0.000000[0m
+[0;32mI (4368) IMU: I am doing fine bro[0m
+[0;32mI (4378) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4388) PWM: roll:51.115410 pitch=1.763773 yaw=1000.000000[0m
+[0;32mI (4388) IMU: I am doing fine bro[0m
+[0;32mI (4388) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4398) PWM: roll:52.787846 pitch=-2.495076 yaw=0.000000[0m
+[0;32mI (4408) IMU: I am doing fine bro[0m
+[0;32mI (4408) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4418) PWM: roll:53.528282 pitch=-4.620720 yaw=1000.000000[0m
+[0;32mI (4418) IMU: I am doing fine bro[0m
+[0;32mI (4418) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4428) PWM: roll:54.520279 pitch=-8.816397 yaw=0.000000[0m
+[0;32mI (4438) IMU: I am doing fine bro[0m
+[0;32mI (4438) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4448) PWM: roll:54.855507 pitch=-10.917680 yaw=1000.000000[0m
+[0;32mI (4448) IMU: I am doing fine bro[0m
+[0;32mI (4458) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4468) PWM: roll:55.025127 pitch=-15.093637 yaw=0.000000[0m
+[0;32mI (4468) IMU: I am doing fine bro[0m
+[0;32mI (4468) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4478) PWM: roll:54.522003 pitch=-19.203178 yaw=1000.000000[0m
+[0;32mI (4488) IMU: I am doing fine bro[0m
+[0;32mI (4488) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4498) PWM: roll:54.062759 pitch=-21.226484 yaw=0.000000[0m
+[0;32mI (4498) IMU: I am doing fine bro[0m
+[0;32mI (4498) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4508) PWM: roll:52.396038 pitch=-25.111086 yaw=1000.000000[0m
+[0;32mI (4518) IMU: I am doing fine bro[0m
+[0;32mI (4518) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4528) PWM: roll:51.299828 pitch=-26.985039 yaw=0.000000[0m
+[0;32mI (4528) IMU: I am doing fine bro[0m
+[0;32mI (4538) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4548) PWM: roll:48.283806 pitch=-30.497759 yaw=1000.000000[0m
+[0;32mI (4548) IMU: I am doing fine bro[0m
+[0;32mI (4548) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4558) PWM: roll:44.360985 pitch=-33.712494 yaw=0.000000[0m
+[0;32mI (4568) IMU: I am doing fine bro[0m
+[0;32mI (4568) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4578) PWM: roll:42.076710 pitch=-35.204445 yaw=1000.000000[0m
+[0;32mI (4578) IMU: I am doing fine bro[0m
+[0;32mI (4578) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4588) PWM: roll:36.809467 pitch=-37.849869 yaw=0.000000[0m
+[0;32mI (4598) IMU: I am doing fine bro[0m
+[0;32mI (4598) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4608) PWM: roll:33.900948 pitch=-38.992664 yaw=1000.000000[0m
+[0;32mI (4608) IMU: I am doing fine bro[0m
+[0;32mI (4618) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4628) PWM: roll:27.733553 pitch=-40.858807 yaw=0.000000[0m
+[0;32mI (4628) IMU: I am doing fine bro[0m
+[0;32mI (4628) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4638) PWM: roll:21.488487 pitch=-42.189983 yaw=1000.000000[0m
+[0;32mI (4648) IMU: I am doing fine bro[0m
+[0;32mI (4648) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4658) PWM: roll:18.277008 pitch=-42.659084 yaw=0.000000[0m
+[0;32mI (4658) IMU: I am doing fine bro[0m
+[0;32mI (4658) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4668) PWM: roll:11.840649 pitch=-43.227272 yaw=1000.000000[0m
+[0;32mI (4678) IMU: I am doing fine bro[0m
+[0;32mI (4678) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4688) PWM: roll:8.779289 pitch=-43.322083 yaw=0.000000[0m
+[0;32mI (4688) IMU: I am doing fine bro[0m
+[0;32mI (4698) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4708) PWM: roll:3.870150 pitch=-43.130898 yaw=1000.000000[0m
+[0;32mI (4708) IMU: I am doing fine bro[0m
+[0;32mI (4708) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4718) PWM: roll:-0.303525 pitch=-42.549294 yaw=0.000000[0m
+[0;32mI (4728) IMU: I am doing fine bro[0m
+[0;32mI (4728) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4738) PWM: roll:-2.427058 pitch=-42.122803 yaw=1000.000000[0m
+[0;32mI (4738) IMU: I am doing fine bro[0m
+[0;32mI (4748) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4748) PWM: roll:-6.985201 pitch=-40.884071 yaw=0.000000[0m
+[0;32mI (4758) IMU: I am doing fine bro[0m
+[0;32mI (4758) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4768) PWM: roll:-9.150138 pitch=-40.087673 yaw=1000.000000[0m
+[0;32mI (4778) IMU: I am doing fine bro[0m
+[0;32mI (4778) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4788) PWM: roll:-13.094805 pitch=-38.188084 yaw=0.000000[0m
+[0;32mI (4788) IMU: I am doing fine bro[0m
+[0;32mI (4788) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4798) PWM: roll:-17.224928 pitch=-36.095371 yaw=1000.000000[0m
+[0;32mI (4808) IMU: I am doing fine bro[0m
+[0;32mI (4808) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4818) PWM: roll:-19.289173 pitch=-34.968231 yaw=0.000000[0m
+[0;32mI (4818) IMU: I am doing fine bro[0m
+[0;32mI (4828) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4838) PWM: roll:-23.090002 pitch=-32.576408 yaw=1000.000000[0m
+[0;32mI (4838) IMU: I am doing fine bro[0m
+[0;32mI (4838) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4848) PWM: roll:-25.752413 pitch=-29.664997 yaw=0.000000[0m
+[0;32mI (4858) IMU: I am doing fine bro[0m
+[0;32mI (4858) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4868) PWM: roll:-26.831478 pitch=-28.094950 yaw=1000.000000[0m
+[0;32mI (4868) IMU: I am doing fine bro[0m
+[0;32mI (4868) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4878) PWM: roll:-28.084362 pitch=-24.828533 yaw=0.000000[0m
+[0;32mI (4888) IMU: I am doing fine bro[0m
+[0;32mI (4888) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4898) PWM: roll:-28.734528 pitch=-23.169249 yaw=1000.000000[0m
+[0;32mI (4898) IMU: I am doing fine bro[0m
+[0;32mI (4908) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4918) PWM: roll:-30.387682 pitch=-19.763281 yaw=0.000000[0m
+[0;32mI (4918) IMU: I am doing fine bro[0m
+[0;32mI (4918) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4928) PWM: roll:-32.554630 pitch=-16.134224 yaw=1000.000000[0m
+[0;32mI (4938) IMU: I am doing fine bro[0m
+[0;32mI (4938) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4948) PWM: roll:-33.644012 pitch=-14.242570 yaw=0.000000[0m
+[0;32mI (4948) IMU: I am doing fine bro[0m
+[0;32mI (4958) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4968) PWM: roll:-35.339828 pitch=-10.306823 yaw=1000.000000[0m
+[0;32mI (4968) IMU: I am doing fine bro[0m
+[0;32mI (4968) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (4978) PWM: roll:-35.855480 pitch=-8.307508 yaw=0.000000[0m
+[0;32mI (4988) IMU: I am doing fine bro[0m
+[0;32mI (4988) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (4998) PWM: roll:-36.367870 pitch=-4.370797 yaw=1000.000000[0m
+[0;32mI (4998) IMU: I am doing fine bro[0m
+[0;32mI (4998) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5008) PWM: roll:-37.210754 pitch=-0.507072 yaw=0.000000[0m
+[0;32mI (5018) IMU: I am doing fine bro[0m
+[0;32mI (5018) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5028) PWM: roll:-37.755760 pitch=1.420212 yaw=1000.000000[0m
+[0;32mI (5028) IMU: I am doing fine bro[0m
+[0;32mI (5038) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5048) IMU: I am doing fine bro[0m
+[0;32mI (5048) PWM: roll:-39.654118 pitch=5.297395 yaw=0.000000[0m
+[0;32mI (5058) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5058) PWM: roll:-42.272305 pitch=9.226915 yaw=1000.000000[0m
+[0;32mI (5058) IMU: I am doing fine bro[0m
+[0;32mI (5068) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5078) PWM: roll:-43.606171 pitch=11.229044 yaw=0.000000[0m
+[0;32mI (5078) IMU: I am doing fine bro[0m
+[0;32mI (5078) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5088) PWM: roll:-45.723984 pitch=15.223054 yaw=1000.000000[0m
+[0;32mI (5098) IMU: I am doing fine bro[0m
+[0;32mI (5098) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5108) PWM: roll:-46.706627 pitch=17.225138 yaw=0.000000[0m
+[0;32mI (5108) IMU: I am doing fine bro[0m
+[0;32mI (5118) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5128) PWM: roll:-48.707092 pitch=21.165596 yaw=1000.000000[0m
+[0;32mI (5128) IMU: I am doing fine bro[0m
+[0;32mI (5128) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5138) PWM: roll:-49.726154 pitch=23.162411 yaw=0.000000[0m
+[0;32mI (5148) IMU: I am doing fine bro[0m
+[0;32mI (5148) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5158) PWM: roll:-52.427570 pitch=27.278450 yaw=1000.000000[0m
+[0;32mI (5158) IMU: I am doing fine bro[0m
+[0;32mI (5158) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5168) PWM: roll:-55.118908 pitch=31.561655 yaw=0.000000[0m
+[0;32mI (5178) IMU: I am doing fine bro[0m
+[0;32mI (5178) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5188) PWM: roll:-56.346653 pitch=33.751976 yaw=1000.000000[0m
+[0;32mI (5188) IMU: I am doing fine bro[0m
+[0;32mI (5198) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5208) PWM: roll:-58.616978 pitch=38.213821 yaw=0.000000[0m
+[0;32mI (5208) IMU: I am doing fine bro[0m
+[0;32mI (5208) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5218) PWM: roll:-61.016499 pitch=42.781696 yaw=1000.000000[0m
+[0;32mI (5228) IMU: I am doing fine bro[0m
+[0;32mI (5228) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5238) PWM: roll:-62.123131 pitch=45.097576 yaw=0.000000[0m
+[0;32mI (5238) IMU: I am doing fine bro[0m
+[0;32mI (5238) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5248) PWM: roll:-64.052162 pitch=49.777195 yaw=1000.000000[0m
+[0;32mI (5258) IMU: I am doing fine bro[0m
+[0;32mI (5258) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5268) PWM: roll:-65.067787 pitch=52.141064 yaw=0.000000[0m
+[0;32mI (5278) IMU: I am doing fine bro[0m
+[0;32mI (5278) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5288) PWM: roll:-67.162621 pitch=56.938187 yaw=1000.000000[0m
+[0;32mI (5288) IMU: I am doing fine bro[0m
+[0;32mI (5288) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5298) PWM: roll:-68.948631 pitch=61.789955 yaw=0.000000[0m
+[0;32mI (5308) IMU: I am doing fine bro[0m
+[0;32mI (5308) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5318) PWM: roll:-69.449028 pitch=64.218979 yaw=1000.000000[0m
+[0;32mI (5318) IMU: I am doing fine bro[0m
+[0;32mI (5328) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5338) PWM: roll:-68.884666 pitch=69.066498 yaw=0.000000[0m
+[0;32mI (5338) IMU: I am doing fine bro[0m
+[0;32mI (5338) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5348) PWM: roll:-66.513588 pitch=73.824608 yaw=1000.000000[0m
+[0;32mI (5358) IMU: I am doing fine bro[0m
+[0;32mI (5358) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5368) PWM: roll:-63.957005 pitch=76.125069 yaw=0.000000[0m
+[0;32mI (5368) IMU: I am doing fine bro[0m
+[0;32mI (5368) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5378) PWM: roll:-52.289242 pitch=80.355591 yaw=1000.000000[0m
+[0;32mI (5388) IMU: I am doing fine bro[0m
+[0;32mI (5388) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5398) PWM: roll:-41.415665 pitch=82.100868 yaw=0.000000[0m
+[0;32mI (5398) IMU: I am doing fine bro[0m
+[0;32mI (5408) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5418) PWM: roll:-4.334687 pitch=83.812836 yaw=1000.000000[0m
+[0;32mI (5418) IMU: I am doing fine bro[0m
+[0;32mI (5418) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5428) PWM: roll:32.447414 pitch=82.189651 yaw=0.000000[0m
+[0;32mI (5438) IMU: I am doing fine bro[0m
+[0;32mI (5438) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5448) PWM: roll:43.390125 pitch=80.552673 yaw=1000.000000[0m
+[0;32mI (5448) IMU: I am doing fine bro[0m
+[0;32mI (5448) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5458) PWM: roll:55.731148 pitch=76.618385 yaw=0.000000[0m
+[0;32mI (5468) IMU: I am doing fine bro[0m
+[0;32mI (5468) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5478) PWM: roll:59.232330 pitch=74.495316 yaw=1000.000000[0m
+[0;32mI (5478) IMU: I am doing fine bro[0m
+[0;32mI (5488) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5498) PWM: roll:61.873127 pitch=70.000496 yaw=0.000000[0m
+[0;32mI (5498) IMU: I am doing fine bro[0m
+[0;32mI (5498) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5508) PWM: roll:63.523388 pitch=65.478844 yaw=1000.000000[0m
+[0;32mI (5518) IMU: I am doing fine bro[0m
+[0;32mI (5518) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5528) PWM: roll:64.314377 pitch=63.222260 yaw=0.000000[0m
+[0;32mI (5528) IMU: I am doing fine bro[0m
+[0;32mI (5528) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5538) PWM: roll:65.259712 pitch=58.691353 yaw=1000.000000[0m
+[0;32mI (5548) IMU: I am doing fine bro[0m
+[0;32mI (5548) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5558) PWM: roll:65.547676 pitch=56.425526 yaw=0.000000[0m
+[0;32mI (5558) IMU: I am doing fine bro[0m
+[0;32mI (5568) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5578) PWM: roll:66.121078 pitch=51.900726 yaw=1000.000000[0m
+[0;32mI (5578) IMU: I am doing fine bro[0m
+[0;32mI (5578) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5588) PWM: roll:66.614227 pitch=47.383606 yaw=0.000000[0m
+[0;32mI (5598) IMU: I am doing fine bro[0m
+[0;32mI (5598) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5608) PWM: roll:66.906036 pitch=45.129093 yaw=1000.000000[0m
+[0;32mI (5608) IMU: I am doing fine bro[0m
+[0;32mI (5608) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5618) PWM: roll:67.957413 pitch=40.626526 yaw=0.000000[0m
+[0;32mI (5628) IMU: I am doing fine bro[0m
+[0;32mI (5628) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5638) PWM: roll:68.526421 pitch=38.368958 yaw=1000.000000[0m
+[0;32mI (5638) IMU: I am doing fine bro[0m
+[0;32mI (5648) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5658) PWM: roll:70.134613 pitch=33.832249 yaw=0.000000[0m
+[0;32mI (5658) IMU: I am doing fine bro[0m
+[0;32mI (5658) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5668) PWM: roll:72.187912 pitch=29.249353 yaw=1000.000000[0m
+[0;32mI (5678) IMU: I am doing fine bro[0m
+[0;32mI (5678) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5688) PWM: roll:73.235367 pitch=26.936796 yaw=0.000000[0m
+[0;32mI (5688) IMU: I am doing fine bro[0m
+[0;32mI (5688) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5698) PWM: roll:75.551758 pitch=22.267176 yaw=1000.000000[0m
+[0;32mI (5708) IMU: I am doing fine bro[0m
+[0;32mI (5708) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5718) PWM: roll:76.742470 pitch=19.914400 yaw=0.000000[0m
+[0;32mI (5718) IMU: I am doing fine bro[0m
+[0;32mI (5728) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5738) PWM: roll:80.007584 pitch=15.206901 yaw=1000.000000[0m
+[0;32mI (5738) IMU: I am doing fine bro[0m
+[0;32mI (5738) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5748) PWM: roll:85.090042 pitch=10.394731 yaw=0.000000[0m
+[0;32mI (5758) IMU: I am doing fine bro[0m
+[0;32mI (5758) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5768) PWM: roll:87.584206 pitch=7.967527 yaw=1000.000000[0m
+[0;32mI (5768) IMU: I am doing fine bro[0m
+[0;32mI (5768) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5778) PWM: roll:92.535942 pitch=3.103286 yaw=0.000000[0m
+[0;32mI (5788) IMU: I am doing fine bro[0m
+[0;32mI (5788) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5798) PWM: roll:95.010880 pitch=0.672921 yaw=1000.000000[0m
+[0;32mI (5798) IMU: I am doing fine bro[0m
+[0;32mI (5808) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5818) PWM: roll:100.000435 pitch=-4.166320 yaw=0.000000[0m
+[0;32mI (5818) IMU: I am doing fine bro[0m
+[0;32mI (5818) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5828) PWM: roll:105.091591 pitch=-8.956352 yaw=1000.000000[0m
+[0;32mI (5838) IMU: I am doing fine bro[0m
+[0;32mI (5838) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5848) PWM: roll:107.698677 pitch=-11.315480 yaw=0.000000[0m
+[0;32mI (5848) IMU: I am doing fine bro[0m
+[0;32mI (5848) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5858) PWM: roll:113.094276 pitch=-15.922117 yaw=1000.000000[0m
+[0;32mI (5868) IMU: I am doing fine bro[0m
+[0;32mI (5868) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5878) PWM: roll:115.896523 pitch=-18.162596 yaw=0.000000[0m
+[0;32mI (5878) IMU: I am doing fine bro[0m
+[0;32mI (5888) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5898) PWM: roll:121.757141 pitch=-22.491245 yaw=1000.000000[0m
+[0;32mI (5898) IMU: I am doing fine bro[0m
+[0;32mI (5898) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5908) PWM: roll:128.043137 pitch=-26.534336 yaw=0.000000[0m
+[0;32mI (5918) IMU: I am doing fine bro[0m
+[0;32mI (5918) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5928) PWM: roll:131.372726 pitch=-28.416533 yaw=1000.000000[0m
+[0;32mI (5928) IMU: I am doing fine bro[0m
+[0;32mI (5938) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5948) PWM: roll:138.436752 pitch=-31.865408 yaw=0.000000[0m
+[0;32mI (5948) IMU: I am doing fine bro[0m
+[0;32mI (5948) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5958) PWM: roll:142.174454 pitch=-33.415794 yaw=1000.000000[0m
+[0;32mI (5968) IMU: I am doing fine bro[0m
+[0;32mI (5968) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (5978) PWM: roll:150.068497 pitch=-36.127693 yaw=0.000000[0m
+[0;32mI (5978) IMU: I am doing fine bro[0m
+[0;32mI (5978) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (5988) PWM: roll:158.491638 pitch=-38.251217 yaw=1000.000000[0m
+[0;32mI (5998) IMU: I am doing fine bro[0m
+[0;32mI (5998) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6008) PWM: roll:162.875046 pitch=-39.073940 yaw=0.000000[0m
+[0;32mI (6008) IMU: I am doing fine bro[0m
+[0;32mI (6018) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6028) PWM: roll:171.905624 pitch=-40.287525 yaw=1000.000000[0m
+[0;32mI (6028) IMU: I am doing fine bro[0m
+[0;32mI (6028) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6038) PWM: roll:-178.822937 pitch=-40.793339 yaw=0.000000[0m
+[0;32mI (6048) IMU: I am doing fine bro[0m
+[0;32mI (6048) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6058) PWM: roll:-174.159393 pitch=-40.731873 yaw=1000.000000[0m
+[0;32mI (6058) IMU: I am doing fine bro[0m
+[0;32mI (6068) PWM: ESC Values: 709.53, 126.28, 0.00, 1000.00[0m
+[0;32mI (6078) PWM: roll:-164.922974 pitch=-39.988510 yaw=0.000000[0m
+[0;32mI (6078) IMU: I am doing fine bro[0m
+[0;32mI (6078) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6088) PWM: roll:-160.408981 pitch=-39.322094 yaw=1000.000000[0m
+[0;32mI (6098) IMU: I am doing fine bro[0m
+[0;32mI (6098) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6108) PWM: roll:-151.711533 pitch=-37.394409 yaw=0.000000[0m
+[0;32mI (6108) IMU: I am doing fine bro[0m
+[0;32mI (6108) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6118) PWM: roll:-144.271881 pitch=-34.741703 yaw=1000.000000[0m
+[0;32mI (6128) IMU: I am doing fine bro[0m
+[0;32mI (6128) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6138) PWM: roll:-141.361832 pitch=-33.217258 yaw=0.000000[0m
+[0;32mI (6138) IMU: I am doing fine bro[0m
+[0;32mI (6148) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6158) PWM: roll:-137.644821 pitch=-29.920761 yaw=1000.000000[0m
+[0;32mI (6158) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6168) PWM: roll:-135.195694 pitch=-26.391556 yaw=0.000000[0m
+[0;32mI (6178) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6178) PWM: roll:-134.278275 pitch=-24.566629 yaw=1000.000000[0m
+[0;32mI (6188) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6188) PWM: roll:-133.649612 pitch=-20.824930 yaw=0.000000[0m
+[0;32mI (6198) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6208) PWM: roll:-133.791931 pitch=-18.938704 yaw=1000.000000[0m
+[0;32mI (6208) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6218) PWM: roll:-140.908920 pitch=-6.538936 yaw=0.000000[0m
+[0;32mI (6218) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (898) main_task: Returned from app_main()[0m
+[0;32mI (6208) IMU: I am doing fine bro[0m
+[0;32mI (6308) IMU: I am doing fine bro[0m
+[0;32mI (6308) PWM: roll:-151.559143 pitch=8.077486 yaw=1000.000000[0m
+[0;32mI (6308) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6368) IMU: I am doing fine bro[0m
+[0;32mI (6368) PWM: roll:-154.707855 pitch=15.132394 yaw=0.000000[0m
+[0;32mI (6368) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6428) IMU: I am doing fine bro[0m
+[0;32mI (6428) PWM: roll:-159.424011 pitch=21.375990 yaw=1000.000000[0m
+[0;32mI (6428) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6488) IMU: I am doing fine bro[0m
+[0;32mI (6488) PWM: roll:-165.897522 pitch=25.592949 yaw=0.000000[0m
+[0;32mI (6488) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6538) IMU: I am doing fine bro[0m
+[0;32mI (6538) PWM: roll:-173.246719 pitch=26.802973 yaw=1000.000000[0m
+[0;32mI (6538) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6588) IMU: I am doing fine bro[0m
+[0;32mI (6588) PWM: roll:178.847931 pitch=26.273060 yaw=0.000000[0m
+[0;32mI (6588) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6638) IMU: I am doing fine bro[0m
+[0;32mI (6638) PWM: roll:173.371353 pitch=24.170200 yaw=738.193237[0m
+[0;32mI (6638) PWM: ESC Values: 1000.00, 0.00, 157.77, 738.19[0m
+[0;32mI (6698) IMU: I am doing fine bro[0m
+[0;32mI (6698) PWM: roll:165.616302 pitch=19.913067 yaw=0.000000[0m
+[0;32mI (6698) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6748) IMU: I am doing fine bro[0m
+[0;32mI (6748) PWM: roll:157.690872 pitch=14.171803 yaw=879.146729[0m
+[0;32mI (6748) PWM: ESC Values: 1000.00, 0.00, 49.72, 879.15[0m
+[0;32mI (6798) IMU: I am doing fine bro[0m
+[0;32mI (6798) PWM: roll:152.423523 pitch=6.990407 yaw=0.000000[0m
+[0;32mI (6798) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6848) IMU: I am doing fine bro[0m
+[0;32mI (6848) PWM: roll:149.200333 pitch=0.164915 yaw=1000.000000[0m
+[0;32mI (6848) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (6908) IMU: I am doing fine bro[0m
+[0;32mI (6908) PWM: roll:147.046707 pitch=-7.376229 yaw=0.000000[0m
+[0;32mI (6908) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (6958) IMU: I am doing fine bro[0m
+[0;32mI (6958) PWM: roll:147.814728 pitch=-13.652708 yaw=1000.000000[0m
+[0;32mI (6958) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7008) IMU: I am doing fine bro[0m
+[0;32mI (7008) PWM: roll:150.770157 pitch=-18.933062 yaw=0.000000[0m
+[0;32mI (7008) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7058) IMU: I am doing fine bro[0m
+[0;32mI (7058) PWM: roll:155.167755 pitch=-22.194801 yaw=1000.000000[0m
+[0;32mI (7058) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7108) IMU: I am doing fine bro[0m
+[0;32mI (7108) PWM: roll:162.425781 pitch=-20.960562 yaw=0.000000[0m
+[0;32mI (7108) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7158) IMU: I am doing fine bro[0m
+[0;32mI (7158) PWM: roll:166.370850 pitch=-16.894430 yaw=1000.000000[0m
+[0;32mI (7158) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7208) IMU: I am doing fine bro[0m
+[0;32mI (7208) PWM: roll:164.971893 pitch=-12.899249 yaw=0.000000[0m
+[0;32mI (7208) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7258) IMU: I am doing fine bro[0m
+[0;32mI (7258) PWM: roll:166.241287 pitch=-10.590732 yaw=1000.000000[0m
+[0;32mI (7258) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7308) IMU: I am doing fine bro[0m
+[0;32mI (7308) PWM: roll:169.953659 pitch=-9.889080 yaw=0.000000[0m
+[0;32mI (7308) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7358) IMU: I am doing fine bro[0m
+[0;32mI (7358) PWM: roll:173.896133 pitch=-9.115574 yaw=1000.000000[0m
+[0;32mI (7358) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7408) IMU: I am doing fine bro[0m
+[0;32mI (7408) PWM: roll:177.380676 pitch=-7.842921 yaw=0.000000[0m
+[0;32mI (7408) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7458) IMU: I am doing fine bro[0m
+[0;32mI (7458) PWM: roll:-179.953644 pitch=-6.059289 yaw=1000.000000[0m
+[0;32mI (7458) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7508) IMU: I am doing fine bro[0m
+[0;32mI (7508) PWM: roll:-178.870239 pitch=-4.214001 yaw=0.000000[0m
+[0;32mI (7508) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7558) IMU: I am doing fine bro[0m
+[0;32mI (7558) PWM: roll:-178.250626 pitch=-2.737141 yaw=1000.000000[0m
+[0;32mI (7558) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7608) IMU: I am doing fine bro[0m
+[0;32mI (7608) PWM: roll:178.904144 pitch=-1.937042 yaw=0.000000[0m
+[0;32mI (7608) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7658) IMU: I am doing fine bro[0m
+[0;32mI (7658) PWM: roll:174.517899 pitch=-2.646486 yaw=788.110901[0m
+[0;32mI (7658) PWM: ESC Values: 1000.00, 0.00, 218.04, 788.11[0m
+[0;32mI (7718) IMU: I am doing fine bro[0m
+[0;32mI (7718) PWM: roll:169.854370 pitch=-8.934512 yaw=0.000000[0m
+[0;32mI (7718) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7768) IMU: I am doing fine bro[0m
+[0;32mI (7768) PWM: roll:166.196014 pitch=-14.768862 yaw=977.222717[0m
+[0;32mI (7768) PWM: ESC Values: 1000.00, 0.00, 71.09, 977.22[0m
+[0;32mI (7828) IMU: I am doing fine bro[0m
+[0;32mI (7828) PWM: roll:171.001526 pitch=-20.309420 yaw=0.000000[0m
+[0;32mI (7828) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7878) IMU: I am doing fine bro[0m
+[0;32mI (7878) PWM: roll:176.428360 pitch=-22.719648 yaw=1000.000000[0m
+[0;32mI (7878) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (7938) IMU: I am doing fine bro[0m
+[0;32mI (7938) PWM: roll:177.555588 pitch=-23.728987 yaw=0.000000[0m
+[0;32mI (7938) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (7988) IMU: I am doing fine bro[0m
+[0;32mI (7988) PWM: roll:-174.294357 pitch=-22.747932 yaw=1000.000000[0m
+[0;32mI (7988) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8038) IMU: I am doing fine bro[0m
+[0;32mI (8038) PWM: roll:-164.276962 pitch=-18.865408 yaw=0.000000[0m
+[0;32mI (8038) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8088) IMU: I am doing fine bro[0m
+[0;32mI (8088) PWM: roll:-152.274841 pitch=-13.166937 yaw=1000.000000[0m
+[0;32mI (8088) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8138) IMU: I am doing fine bro[0m
+[0;32mI (8138) PWM: roll:-139.287155 pitch=-6.173858 yaw=0.000000[0m
+[0;32mI (8138) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8188) IMU: I am doing fine bro[0m
+[0;32mI (8188) PWM: roll:-129.472412 pitch=2.760271 yaw=1000.000000[0m
+[0;32mI (8188) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8238) IMU: I am doing fine bro[0m
+[0;32mI (8238) PWM: roll:-120.633598 pitch=12.982313 yaw=0.000000[0m
+[0;32mI (8238) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8288) IMU: I am doing fine bro[0m
+[0;32mI (8288) PWM: roll:-114.058533 pitch=24.318491 yaw=1000.000000[0m
+[0;32mI (8288) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8338) IMU: I am doing fine bro[0m
+[0;32mI (8338) PWM: roll:-109.098412 pitch=36.247269 yaw=0.000000[0m
+[0;32mI (8338) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8388) IMU: I am doing fine bro[0m
+[0;32mI (8388) PWM: roll:-104.494377 pitch=48.473320 yaw=1000.000000[0m
+[0;32mI (8388) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8438) IMU: I am doing fine bro[0m
+[0;32mI (8438) PWM: roll:-106.575264 pitch=60.651867 yaw=0.000000[0m
+[0;32mI (8438) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8488) IMU: I am doing fine bro[0m
+[0;32mI (8488) PWM: roll:-117.142250 pitch=72.253700 yaw=1000.000000[0m
+[0;32mI (8488) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8548) IMU: I am doing fine bro[0m
+[0;32mI (8548) PWM: roll:-176.427582 pitch=80.011467 yaw=0.000000[0m
+[0;32mI (8548) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8598) IMU: I am doing fine bro[0m
+[0;32mI (8598) PWM: roll:134.798828 pitch=72.995422 yaw=1000.000000[0m
+[0;32mI (8598) PWM: ESC Values: 1000.00, 79.92, 0.00, 1000.00[0m
+[0;32mI (8658) IMU: I am doing fine bro[0m
+[0;32mI (8658) PWM: roll:110.156998 pitch=59.535877 yaw=0.000000[0m
+[0;32mI (8658) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8708) IMU: I am doing fine bro[0m
+[0;32mI (8708) PWM: roll:97.803703 pitch=47.329842 yaw=1000.000000[0m
+[0;32mI (8708) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8758) IMU: I am doing fine bro[0m
+[0;32mI (8758) PWM: roll:89.717354 pitch=35.185726 yaw=0.000000[0m
+[0;32mI (8758) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8808) IMU: I am doing fine bro[0m
+[0;32mI (8808) PWM: roll:83.954384 pitch=23.130754 yaw=1000.000000[0m
+[0;32mI (8808) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8868) IMU: I am doing fine bro[0m
+[0;32mI (8868) PWM: roll:81.256783 pitch=8.755485 yaw=0.000000[0m
+[0;32mI (8868) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (8928) IMU: I am doing fine bro[0m
+[0;32mI (8928) PWM: roll:80.862137 pitch=-5.832273 yaw=1000.000000[0m
+[0;32mI (8928) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (8988) IMU: I am doing fine bro[0m
+[0;32mI (8988) PWM: roll:80.132721 pitch=-20.950285 yaw=0.000000[0m
+[0;32mI (8988) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9038) IMU: I am doing fine bro[0m
+[0;32mI (9038) PWM: roll:81.899544 pitch=-34.069244 yaw=1000.000000[0m
+[0;32mI (9038) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9088) IMU: I am doing fine bro[0m
+[0;32mI (9088) PWM: roll:86.186806 pitch=-47.154552 yaw=0.000000[0m
+[0;32mI (9088) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9138) IMU: I am doing fine bro[0m
+[0;32mI (9138) PWM: roll:92.649155 pitch=-59.605450 yaw=1000.000000[0m
+[0;32mI (9138) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9188) IMU: I am doing fine bro[0m
+[0;32mI (9188) PWM: roll:103.130264 pitch=-71.528717 yaw=0.000000[0m
+[0;32mI (9188) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9238) IMU: I am doing fine bro[0m
+[0;32mI (9238) PWM: roll:132.261917 pitch=-82.380135 yaw=1000.000000[0m
+[0;32mI (9238) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9298) IMU: I am doing fine bro[0m
+[0;32mI (9298) PWM: roll:-121.629005 pitch=-79.239105 yaw=0.000000[0m
+[0;32mI (9298) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9348) IMU: I am doing fine bro[0m
+[0;32mI (9348) PWM: roll:-105.945366 pitch=-67.552528 yaw=1000.000000[0m
+[0;32mI (9348) PWM: ESC Values: 847.51, 0.00, 0.00, 1000.00[0m
+[0;32mI (9398) IMU: I am doing fine bro[0m
+[0;32mI (9398) PWM: roll:-100.823715 pitch=-55.310284 yaw=0.000000[0m
+[0;32mI (9398) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9448) IMU: I am doing fine bro[0m
+[0;32mI (9448) PWM: roll:-98.840530 pitch=-42.842705 yaw=1000.000000[0m
+[0;32mI (9448) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9498) IMU: I am doing fine bro[0m
+[0;32mI (9498) PWM: roll:-97.557495 pitch=-30.309740 yaw=0.000000[0m
+[0;32mI (9498) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9548) IMU: I am doing fine bro[0m
+[0;32mI (9548) PWM: roll:-97.315514 pitch=-17.731699 yaw=1000.000000[0m
+[0;32mI (9548) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9598) IMU: I am doing fine bro[0m
+[0;32mI (9598) PWM: roll:-97.399872 pitch=-5.105581 yaw=0.000000[0m
+[0;32mI (9598) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9648) IMU: I am doing fine bro[0m
+[0;32mI (9648) PWM: roll:-98.228386 pitch=7.516811 yaw=1000.000000[0m
+[0;32mI (9648) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9698) IMU: I am doing fine bro[0m
+[0;32mI (9698) PWM: roll:-98.698959 pitch=20.190481 yaw=0.000000[0m
+[0;32mI (9698) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9758) IMU: I am doing fine bro[0m
+[0;32mI (9758) PWM: roll:-101.478371 pitch=35.367592 yaw=1000.000000[0m
+[0;32mI (9758) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9818) IMU: I am doing fine bro[0m
+[0;32mI (9818) PWM: roll:-105.409187 pitch=50.341957 yaw=0.000000[0m
+[0;32mI (9818) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m
+[0;32mI (9868) IMU: I am doing fine bro[0m
+[0;32mI (9868) PWM: roll:-110.883392 pitch=62.690182 yaw=1000.000000[0m
+[0;32mI (9868) PWM: ESC Values: 1000.00, 0.00, 0.00, 1000.00[0m
+[0;32mI (9918) IMU: I am doing fine bro[0m
+[0;32mI (9918) PWM: roll:-124.798119 pitch=74.280067 yaw=0.000000[0m
+[0;32mI (9918) PWM: ESC Values: 0.00, 1000.00, 1000.00, 0.00[0m

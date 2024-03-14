@@ -1,0 +1,180 @@
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 25 2024 13:26:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c4c8h ( 50376) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0001c4f0 vaddr=3ffb0000 size=022e8h (  8936) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0001e7e0 vaddr=40080000 size=01838h (  6200) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19848h (104520) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=00039870 vaddr=40081838 size=0d3f0h ( 54256) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (200) boot: Disabling RNG early entropy source...[0m
+[0;32mI (212) cpu_start: Multicore app[0m
+[0;32mI (221) cpu_start: Pro cpu start user code[0m
+[0;32mI (221) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) cpu_start: Application information:[0m
+[0;32mI (224) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (230) cpu_start: App version:      1[0m
+[0;32mI (234) cpu_start: Compile time:     Jan 25 2024 13:26:36[0m
+[0;32mI (240) cpu_start: ELF file SHA256:  4e2b2ee6a...[0m
+[0;32mI (246) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (253) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (257) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (262) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (267) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (274) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (280) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (287) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (293) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (299) heap_init: At 4008EC28 len 000113D8 (68 KiB): IRAM[0m
+[0;32mI (307) spi_flash: detected chip: generic[0m
+[0;32mI (310) spi_flash: flash io: dio[0m
+[0;33mW (314) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (327) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (339) main_task: Started on CPU0[0m
+[0;32mI (349) main_task: Calling app_main()[0m
+Done with i2cDone with mpu[0;32mI (349) IMU: I have entered MPU CODE[0m
+[0;32mI (349) IMU: devid=0x34[0m
+[0;32mI (349) IMU: getRate()=0[0m
+[0;32mI (359) ESC_controller: Create RMT TX channel[0m
+[0;32mI (359) IMU: getExternalFrameSync()=0[0m
+Created RMT TX Channels[0;32mI (369) IMU: getDLPFMode()=6[0m
+[0;32mI (369) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (369) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (379) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (379) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (389) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (409) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (419) ESC_controller: Install Dshot ESC encoder[0m
+[0;32mI (419) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (429) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+Done with motor[0;32mI (429) main_task: Returned from app_main()[0m
+[0;32mI (1429) ESC_controller: Increase throttle, no telemetry[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (4409) IMU: roll:0.000000 pitch=0.000000 yaw=0.000000[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (4529) IMU: roll:0.102171 pitch=0.022696 yaw=0.000641[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (4649) IMU: roll:0.112555 pitch=0.013924 yaw=0.001419[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (4769) IMU: roll:0.093648 pitch=-0.066573 yaw=0.002304[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (4889) IMU: roll:0.101296 pitch=-0.087313 yaw=0.002884[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5009) IMU: roll:0.069411 pitch=-0.056968 yaw=0.003677[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5129) IMU: roll:0.030642 pitch=-0.103475 yaw=0.005554[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5249) IMU: roll:-0.029192 pitch=-0.027059 yaw=0.005676[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5369) IMU: roll:0.003539 pitch=-0.104985 yaw=0.009171[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5489) IMU: roll:0.079199 pitch=-0.053801 yaw=0.011063[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5609) IMU: roll:0.028893 pitch=-0.216845 yaw=0.011703[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5729) IMU: roll:0.154002 pitch=-0.171570 yaw=0.013763[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5849) IMU: roll:0.082955 pitch=0.020246 yaw=0.016006[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (5969) IMU: roll:-0.026559 pitch=-0.043387 yaw=0.017609[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6089) IMU: roll:0.033712 pitch=0.036408 yaw=0.020950[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6209) IMU: roll:0.035578 pitch=0.001678 yaw=0.023590[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6329) IMU: roll:0.030411 pitch=-0.029078 yaw=0.026291[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6449) IMU: roll:0.086152 pitch=0.012339 yaw=0.030136[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6569) IMU: roll:0.000734 pitch=0.041237 yaw=0.030731[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6689) IMU: roll:0.071802 pitch=-0.162367 yaw=0.032928[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6809) IMU: roll:0.056735 pitch=-0.134269 yaw=0.034698[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (6929) IMU: roll:0.161269 pitch=0.009095 yaw=0.035767[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7049) IMU: roll:0.020210 pitch=-0.192405 yaw=0.036026[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7169) IMU: roll:0.075296 pitch=-0.007847 yaw=0.038696[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7289) IMU: roll:0.108996 pitch=-0.165267 yaw=0.040298[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7409) IMU: roll:0.074367 pitch=-0.091645 yaw=0.042206[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7529) IMU: roll:0.011762 pitch=-0.026267 yaw=0.042709[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7649) IMU: roll:0.077364 pitch=-0.082567 yaw=0.042587[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7769) IMU: roll:0.072806 pitch=-0.087351 yaw=0.042755[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (7889) IMU: roll:0.185099 pitch=-0.086380 yaw=0.045288[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8009) IMU: roll:0.042272 pitch=-0.113049 yaw=0.046967[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8129) IMU: roll:0.064766 pitch=-0.068466 yaw=0.049393[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8249) IMU: roll:0.022295 pitch=-0.152081 yaw=0.050980[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8369) IMU: roll:0.002491 pitch=-0.068175 yaw=0.052521[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8489) IMU: roll:0.002551 pitch=-0.102782 yaw=0.054199[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8609) IMU: roll:0.088635 pitch=-0.072573 yaw=0.057037[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8729) IMU: roll:0.102765 pitch=-0.110045 yaw=0.059433[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8849) IMU: roll:0.043567 pitch=-0.074125 yaw=0.061142[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (8969) IMU: roll:0.014524 pitch=-0.096244 yaw=0.063309[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9089) IMU: roll:0.050424 pitch=-0.058342 yaw=0.062607[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9209) IMU: roll:0.037545 pitch=-0.019985 yaw=0.064011[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9329) IMU: roll:0.012439 pitch=0.011673 yaw=0.064468[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9449) IMU: roll:0.047961 pitch=0.028762 yaw=0.065735[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9569) IMU: roll:0.005054 pitch=0.010673 yaw=0.066910[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9689) IMU: roll:0.036738 pitch=-0.057105 yaw=0.068771[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9809) IMU: roll:-0.030985 pitch=-0.103966 yaw=0.069839[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (9929) IMU: roll:0.033019 pitch=0.023683 yaw=0.072464[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10049) IMU: roll:-0.018349 pitch=-0.027707 yaw=0.075333[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10169) IMU: roll:0.114092 pitch=-0.164566 yaw=0.076675[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10289) IMU: roll:0.209140 pitch=-0.064723 yaw=0.079117[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10409) IMU: roll:0.035566 pitch=0.021707 yaw=0.078461[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10529) IMU: roll:0.071461 pitch=-0.150191 yaw=0.081482[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10649) IMU: roll:0.051075 pitch=-0.073890 yaw=0.082764[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10769) IMU: roll:0.068450 pitch=-0.011090 yaw=0.084564[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (10889) IMU: roll:0.042941 pitch=-0.040541 yaw=0.087326[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11009) IMU: roll:-0.011947 pitch=-0.064635 yaw=0.090698[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11129) IMU: roll:0.044775 pitch=-0.075643 yaw=0.093307[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11249) IMU: roll:0.033300 pitch=-0.063766 yaw=0.093979[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11369) IMU: roll:0.098491 pitch=-0.042438 yaw=0.096008[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11489) IMU: roll:0.106348 pitch=-0.112275 yaw=0.098206[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11609) IMU: roll:0.034773 pitch=-0.018884 yaw=0.099365[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11729) IMU: roll:0.110677 pitch=-0.095870 yaw=0.100204[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11849) IMU: roll:0.084225 pitch=-0.102169 yaw=0.102585[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (11969) IMU: roll:0.099273 pitch=-0.121426 yaw=0.104797[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12089) IMU: roll:0.083352 pitch=-0.058170 yaw=0.107666[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12209) IMU: roll:0.086544 pitch=-0.069621 yaw=0.110321[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12329) IMU: roll:0.019953 pitch=-0.048789 yaw=0.113831[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12449) IMU: roll:0.060707 pitch=-0.057078 yaw=0.116714[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12569) IMU: roll:0.045626 pitch=-0.029846 yaw=0.118927[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12689) IMU: roll:0.023115 pitch=-0.008434 yaw=0.121902[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12809) IMU: roll:0.038442 pitch=0.003685 yaw=0.124008[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (12929) IMU: roll:0.093098 pitch=0.064830 yaw=0.125305[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13049) IMU: roll:0.025567 pitch=0.008699 yaw=0.127380[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13169) IMU: roll:0.030206 pitch=-0.095602 yaw=0.129135[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13289) IMU: roll:0.000088 pitch=-0.080188 yaw=0.131775[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13409) IMU: roll:0.008462 pitch=-0.045931 yaw=0.132690[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13529) IMU: roll:0.047761 pitch=-0.057938 yaw=0.135056[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13649) IMU: roll:0.024604 pitch=-0.044736 yaw=0.136017[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13769) IMU: roll:0.033637 pitch=0.018856 yaw=0.138657[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (13889) IMU: roll:0.033569 pitch=-0.112581 yaw=0.140091[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14009) IMU: roll:0.055389 pitch=-0.085959 yaw=0.141190[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14129) IMU: roll:0.008361 pitch=-0.024071 yaw=0.142517[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14249) IMU: roll:0.018445 pitch=-0.049762 yaw=0.146484[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14369) IMU: roll:0.042913 pitch=-0.076711 yaw=0.150543[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14489) IMU: roll:0.035647 pitch=-0.100029 yaw=0.152969[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14609) IMU: roll:0.100347 pitch=-0.029861 yaw=0.155518[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14729) IMU: roll:0.126060 pitch=-0.077529 yaw=0.157120[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14849) IMU: roll:-0.027905 pitch=-0.135136 yaw=0.155228[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (14969) IMU: roll:0.041867 pitch=-0.035471 yaw=0.157242[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15089) IMU: roll:0.038246 pitch=-0.063674 yaw=0.159073[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15209) IMU: roll:0.020936 pitch=-0.095932 yaw=0.162537[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15329) IMU: roll:0.086392 pitch=-0.039671 yaw=0.165146[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15449) IMU: roll:-0.012089 pitch=-0.011508 yaw=0.167831[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15569) IMU: roll:0.006170 pitch=-0.013707 yaw=0.169006[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15689) IMU: roll:0.019433 pitch=-0.082922 yaw=0.170761[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15809) IMU: roll:-0.040591 pitch=-0.123934 yaw=0.171051[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (15929) IMU: roll:0.042822 pitch=-0.073333 yaw=0.173996[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16049) IMU: roll:0.020892 pitch=-0.101361 yaw=0.176529[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16169) IMU: roll:0.043749 pitch=-0.143621 yaw=0.178650[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16289) IMU: roll:0.196513 pitch=-0.089679 yaw=0.180069[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16409) IMU: roll:-0.016577 pitch=-0.073708 yaw=0.179321[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16529) IMU: roll:-0.017184 pitch=-0.106920 yaw=0.180206[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16649) IMU: roll:-0.018801 pitch=-0.055557 yaw=0.183624[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16769) IMU: roll:0.131003 pitch=-0.037208 yaw=0.188232[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (16889) IMU: roll:0.089069 pitch=-0.077199 yaw=0.191574[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (17009) IMU: roll:0.132182 pitch=-0.079994 yaw=0.194199[0m
+LoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLoopingLooping[0;32mI (17129) IMU: roll:0.159574 pitch=0.018222 yaw=0.197800[0m

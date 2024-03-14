@@ -1,0 +1,896 @@
+p[0m
+D (214) cpu_start: Pro cpu up[0m
+D (214) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+�ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0ca08h ( 51720) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=0001ca30 vaddr=3ffb0000 size=0235ch (  9052) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001ed94 vaddr=40080000 size=01284h (  4740) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=19db4h (105908) map[0m
+[0;32mI (173) esp_image: segment 4: paddr=00039ddc vaddr=40081284 size=0da40h ( 55872) load[0m
+[0;32mI (202) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (203) boot: Disabling RNG early entropy source...[0m
+[0;32mI (214) cpu_start: Multicore app[0m
+D (214) cpu_start: Pro cpu up[0m
+D (214) cpu_start: Starting app cpu, entry point is 0x40081178[0m
+D (0) cpu_start: App cpu up[0m
+D (224) clk: RTC_SLOW_CLK calibration value: 3397171[0m
+D (235) cpu_start: calling init function: 0x400d151c on core: 0[0m
+[0;32mI (235) cpu_start: Pro cpu start user code[0m
+[0;32mI (235) cpu_start: cpu freq: 160000000 Hz[0m
+D (241) cpu_start: calling init function: 0x400d1560 on core: 0[0m
+[0;32mI (247) cpu_start: Application information:[0m
+[0;32mI (252) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (258) cpu_start: App version:      1[0m
+[0;32mI (263) cpu_start: Compile time:     Jan 27 2024 11:38:47[0m
+[0;32mI (269) cpu_start: ELF file SHA256:  b2bc208ad...[0m
+[0;32mI (274) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (281) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (286) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (291) cpu_start: Chip rev:         v3.0[0m
+D (295) cpu_start: calling init function: 0x400d16a8 on core: 0[0m
+D (301) memory_layout: Checking 9 reserved memory ranges:[0m
+D (307) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (313) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (320) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb2cf8[0m
+D (326) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (332) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (339) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (345) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (352) memory_layout: Reserved memory range 0x40080000 - 0x4008ecc4[0m
+D (358) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (365) memory_layout: Building list of available memory regions:[0m
+D (371) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (377) memory_layout: Available memory region 0x3ffb2cf8 - 0x3ffb8000[0m
+D (384) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (391) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (397) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (404) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (410) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (417) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (424) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (430) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (437) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (443) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (450) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (457) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (463) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (470) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (476) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (483) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (490) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (496) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (503) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (509) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (516) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (522) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (529) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (536) memory_layout: Available memory region 0x4008ecc4 - 0x40090000[0m
+D (542) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (549) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (555) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (562) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (569) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (575) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (582) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (588) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (595) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (602) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (607) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (613) heap_init: New heap initialised at 0x3ffb2cf8[0m
+[0;32mI (619) heap_init: At 3FFB2CF8 len 0002D308 (180 KiB): DRAM[0m
+[0;32mI (625) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (631) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (638) heap_init: New heap initialised at 0x4008ecc4[0m
+[0;32mI (643) heap_init: At 4008ECC4 len 0001133C (68 KiB): IRAM[0m
+D (649) cpu_start: calling init function: 0x400d16b4 on core: 0[0m
+D (655) cpu_start: calling init function: 0x400d3d38 on core: 0[0m
+D (661) cpu_start: calling init function: 0x400e840c on core: 0[0m
+D (667) cpu_start: calling init function: 0x400d16c0 on core: 0[0m
+D (673) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (678) cpu_start: calling init function: 0x400d16cc on core: 0[0m
+D (684) cpu_start: calling init function: 0x400d5468 on core: 0[0m
+D (690) cpu_start: calling init function: 0x400d6654 on core: 0[0m
+D (696) cpu_start: calling init function: 0x400d3da4 on core: 0[0m
+D (702) cpu_start: calling init function: 0x400d16d8 on core: 0[0m
+D (708) cpu_start: calling init function: 0x400d16e4 on core: 0[0m
+D (714) spi_flash: trying chip: issi[0m
+D (718) spi_flash: trying chip: gd[0m
+D (721) spi_flash: trying chip: mxic[0m
+D (725) spi_flash: trying chip: winbond[0m
+D (729) spi_flash: trying chip: generic[0m
+[0;32mI (732) spi_flash: detected chip: generic[0m
+[0;32mI (737) spi_flash: flash io: dio[0m
+[0;33mW (741) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (754) cpu_start: calling init function: 0x400e8414 on core: 0[0m
+D (760) cpu_start: calling init function: 0x400dd138[0m
+[0;33mW (765) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (776) cpu_start: calling init function: 0x400d72e0[0m
+D (781) cpu_start: calling init function: 0x4008613c[0m
+D (786) cpu_start: calling init function: 0x400d2778[0m
+D (791) cpu_start: calling init function: 0x400d1c7c[0m
+D (796) cpu_start: calling init function: 0x400d1384[0m
+D (801) cpu_start: calling init function: 0x400d4298 on core: 0[0m
+D (807) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (812) cpu_start: calling init function: 0x400d170c on core: 0[0m
+D (818) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (823) app_start: Starting scheduler on CPU0[0m
+[0;32D (828) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (828) app_start: Starting scheduler on CPU1[0m
+mI (828) main_task: Started on CPU0[0m
+D (848) heap_init: New heap initialised at 0x3ffe0440[0m
+D (848) heap_init: New heap initialised at 0x3ffe4350[0m
+D (848) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (848) main_task: Calling app_main()[0m
+D (858) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (868) IMU: devid=0x34[0m
+[0;32mI (868) IMU: getRate()=0[0m
+[0;32mI (868) IMU: getExternalFrameSync()=0[0m
+[0;32mI (868) IMU: getDLPFMode()=6[0m
+[0;32mI (878) ESC_controller: Create RMT TX channel[0m
+[0;32mI (878) IMU: getFullScaleAccelRange()=0[0m
+Created RMT TX ChannelsD (888) rmt: new group(0) at 0x3ffbc768, occupy=ffffff00[0m
+[0;3D (898) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+2mI (888) IMU: getFullScaleGyroRange()=0[0m
+D (898) rmt: group clock resolution:80000000[0m
+[0;32mI (908) IMU: I am doing fine bro[0m
+[0;32mI (908) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (918) IMU: I am doing fine bro[0m
+[0;32mI (908) PWM: roll:0.017021 pitch=0.015169 yaw=180.904449[0m
+D (918) rmt: new tx channel(0,0) at 0x3ffbc3f8, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mD (948) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+I (938) IMU: I am doing fine bro[0m
+[0;32mI (928) PWM: roll:0.051453 pitch=0.044486 yaw=182.700455[0m
+D (948) rmt: group clock resolution:80000000[0m
+[0;32mI (968) IMU: I am doing fine bro[0m
+[0;32mI (968) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (978) IMU: I am doing fine bro[0m
+[0;32mI (958) PWM: roll:0.150591 pitch=0.120285 yaw=187.699249[0m
+[0;32mI (988) IMU: I am doing fine bro[0m
+D (978) rmt: new tx channel(0,1) at 0x3ffbc894, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0D (1008) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+;32mI (998) IMU: I am doing fine bro[0m
+[0;32mI (988) PWM: roll:0.314069 pitch=0.216510 yaw=195.190369[0m
+D (1008) rmt: group clock resolution:80000000[0m
+[0;32mI (1028) IMU: I am doing fine bro[0m
+[0;32mI (1028) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1038) IMU: I am doing fine bro[0m
+[0;32mI (1018) PWM: roll:0.370267 pitch=0.244003 yaw=197.689285[0m
+[0;32mI (1048) IMU: I am doing fine bro[0m
+D (1038) rmt: new tx channel(0,2) at 0x3ffbcbe8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0D (1068) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+;32mI (1058) IMU: I am doing fine bro[0m
+[0;32mI (1048) PWM: roll:0.427160 pitch=0.268985 yaw=200.184387[0m
+D (1078) rmt: group clock resolution:80000000[0m
+[0;32mI (1088) IMU: I am doing fine bro[0m
+[0;32mI (1088) PWM: roll:0.485400 pitch=0.291661 yaw=202.685379[0m
+[0;32mI (1088) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1098) IMU: I am doing fine bro[0m
+D (1108) rmt: new tx channel(0,3) at 0x3ffbcf3c, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1128) ESC_controller: Install Dshot ESC encoder[0m
+[0;32mI (878) main_task: Returned from app_main()[0m
+D (1128) rmt: new bytes encoder @0x3ffbd2b0[0m
+D (1138) rmt: new copy encoder @0x3ffafbf8[0m
+D (1148) rmt: new bytes encoder @0x3ffafc2c[0m
+D (1148) rmt: new copy encoder @0x3ffafc50[0m
+D (1158) rmt: new bytes encoder @0x3ffafc84[0m
+D (1158) rmt: new copy encoder @0x3ffafca8[0m
+D (1158) rmt: new bytes encoder @0x3ffafcdc[0m
+D (1168) rmt: new copy encoder @0x3ffafd00[0m
+[0;32mI (1168) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1178) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1098) PWM: roll:0.665919 pitch=0.343131 yaw=210.176880[0m
+[0;32mI (1188) IMU: I am doing fine bro[0m
+[0;32mI (1188) PWM: roll:0.727268 pitch=0.355222 yaw=212.675949[0m
+[0;32mI (1198) IMU: I am doing fine bro[0m
+[0;32mI (1198) PWM: roll:0.788767 pitch=0.364772 yaw=215.171951[0m
+[0;32mI (1208) PWM: roll:0.850377 pitch=0.371724 yaw=217.670578[0m
+[0;32mI (1208) IMU: I am doing fine bro[0m
+[0;32mI (1218) PWM: roll:1.037460 pitch=0.376063 yaw=225.159607[0m
+[0;32mI (1228) IMU: I am doing fine bro[0m
+[0;32mI (1228) PWM: roll:1.099628 pitch=0.371678 yaw=227.654694[0m
+[0;32mI (1238) IMU: I am doing fine bro[0m
+[0;32mI (1238) PWM: roll:1.222667 pitch=0.355568 yaw=232.646851[0m
+[0;32mI (1248) IMU: I am doing fine bro[0m
+[0;32mI (1248) PWM: roll:1.684194 pitch=0.187266 yaw=252.439819[0m
+[0;32mI (1258) IMU: I am doing fine bro[0m
+[0;32mI (1258) PWM: roll:1.737567 pitch=0.154953 yaw=254.932495[0m
+[0;32mI (1268) IMU: I am doing fine bro[0m
+[0;32mI (1268) PWM: roll:1.839390 pitch=0.082870 yaw=259.922913[0m
+[0;32mI (1278) IMU: I am doing fine bro[0m
+[0;32mI (1278) PWM: roll:1.887624 pitch=0.043585 yaw=262.416931[0m
+[0;32mI (1288) IMU: I am doing fine bro[0m
+[0;32mI (1288) PWM: roll:1.934215 pitch=0.002327 yaw=264.914337[0m
+[0;32mI (1298) IMU: I am doing fine bro[0m
+[0;32mI (1298) PWM: roll:1.978658 pitch=-0.041085 yaw=267.408142[0m
+[0;32mI (1308) IMU: I am doing fine bro[0m
+[0;32mI (1308) PWM: roll:2.021231 pitch=-0.086388 yaw=269.905334[0m
+[0;32mI (1318) IMU: I am doing fine bro[0m
+[0;32mI (1318) PWM: roll:2.062064 pitch=-0.133221 yaw=272.398926[0m
+[0;32mI (1328) IMU: I am doing fine bro[0m
+[0;32mI (1328) PWM: roll:2.100699 pitch=-0.181856 yaw=274.895935[0m
+[0;32mI (1338) IMU: I am doing fine bro[0m
+[0;32mI (1338) PWM: roll:2.137134 pitch=-0.232056 yaw=277.389343[0m
+[0;32mI (1348) IMU: I am doing fine bro[0m
+[0;32mI (1348) PWM: roll:2.171473 pitch=-0.283809 yaw=279.886414[0m
+[0;32mI (1358) IMU: I am doing fine bro[0m
+[0;32mI (1358) PWM: roll:2.202882 pitch=-0.336991 yaw=282.379700[0m
+[0;32mI (1368) IMU: I am doing fine bro[0m
+[0;32mI (1368) PWM: roll:2.231223 pitch=-0.391854 yaw=284.876404[0m
+[0;32mI (1378) IMU: I am doing fine bro[0m
+[0;32mI (1378) PWM: roll:2.257117 pitch=-0.447746 yaw=287.369537[0m
+[0;32mI (1388) IMU: I am doing fine bro[0m
+[0;32mI (1388) PWM: roll:2.282252 pitch=-0.504686 yaw=289.866394[0m
+[0;32mI (1398) IMU: I am doing fine bro[0m
+[0;32mI (1398) PWM: roll:2.305641 pitch=-0.562603 yaw=292.359467[0m
+[0;32mI (1408) IMU: I am doing fine bro[0m
+[0;32mI (1408) PWM: roll:2.325958 pitch=-0.621406 yaw=294.856018[0m
+[0;32mI (1418) IMU: I am doing fine bro[0m
+[0;32mI (1418) PWM: roll:2.342647 pitch=-0.680939 yaw=297.349060[0m
+[0;32mI (1428) IMU: I am doing fine bro[0m
+[0;32mI (1428) PWM: roll:2.356301 pitch=-0.741140 yaw=299.845612[0m
+[0;32mI (1438) IMU: I am doing fine bro[0m
+[0;32mI (1438) PWM: roll:2.367788 pitch=-0.801880 yaw=302.338684[0m
+[0;32mI (1448) IMU: I am doing fine bro[0m
+[0;32mI (1448) PWM: roll:2.377342 pitch=-0.863246 yaw=304.835510[0m
+[0;32mI (1458) IMU: I am doing fine bro[0m
+[0;32mI (1458) PWM: roll:2.385125 pitch=-0.924595 yaw=307.328613[0m
+[0;32mI (1468) IMU: I am doing fine bro[0m
+[0;32mI (1468) PWM: roll:2.390095 pitch=-0.986384 yaw=309.825256[0m
+[0;32mI (1478) IMU: I am doing fine bro[0m
+[0;32mI (1478) PWM: roll:2.391304 pitch=-1.048225 yaw=312.318481[0m
+[0;32mI (1488) IMU: I am doing fine bro[0m
+[0;32mI (1488) PWM: roll:2.388817 pitch=-1.109982 yaw=314.815491[0m
+[0;32mI (1498) IMU: I am doing fine bro[0m
+[0;32mI (1498) PWM: roll:2.383778 pitch=-1.171556 yaw=317.308838[0m
+[0;32mI (1508) IMU: I am doing fine bro[0m
+[0;32mI (1508) PWM: roll:2.377071 pitch=-1.232740 yaw=319.805786[0m
+[0;32mI (1518) IMU: I am doing fine bro[0m
+[0;32mI (1518) PWM: roll:2.368178 pitch=-1.293665 yaw=322.299347[0m
+[0;32mI (1528) IMU: I am doing fine bro[0m
+[0;32mI (1528) PWM: roll:2.355819 pitch=-1.354369 yaw=324.796753[0m
+[0;32mI (1538) PWM: roll:2.339704 pitch=-1.414518 yaw=327.290497[0m
+[0;32mI (1548) IMU: I am doing fine bro[0m
+[0;32mI (1548) PWM: roll:2.320652 pitch=-1.474061 yaw=329.788147[0m
+[0;32mI (1558) IMU: I am doing fine bro[0m
+[0;32mI (1558) PWM: roll:2.299731 pitch=-1.532771 yaw=332.284149[0m
+[0;32mI (1568) IMU: I am doing fine bro[0m
+[0;32mI (1568) PWM: roll:2.277345 pitch=-1.590586 yaw=334.785797[0m
+[0;32mI (1578) IMU: I am doing fine bro[0m
+[0;32mI (1578) PWM: roll:2.225935 pitch=-1.701698 yaw=339.769653[0m
+[0;32mI (1588) IMU: I am doing fine bro[0m
+[0;32mI (1588) PWM: roll:2.196323 pitch=-1.755749 yaw=342.267822[0m
+[0;32mI (1598) IMU: I am doing fine bro[0m
+[0;32mI (1598) PWM: roll:2.164183 pitch=-1.808157 yaw=344.762665[0m
+[0;32mI (1608) IMU: I am doing fine bro[0m
+[0;32mI (1608) PWM: roll:2.130096 pitch=-1.859193 yaw=347.261169[0m
+[0;32mI (1618) IMU: I am doing fine bro[0m
+[0;32mI (1618) PWM: roll:2.093826 pitch=-1.908702 yaw=349.756409[0m
+[0;32mI (1628) IMU: I am doing fine bro[0m
+[0;32mI (1628) PWM: roll:2.055295 pitch=-1.956653 yaw=352.255280[0m
+[0;32mI (1638) IMU: I am doing fine bro[0m
+[0;32mI (1638) PWM: roll:2.014481 pitch=-2.002740 yaw=354.750610[0m
+[0;32mI (1648) IMU: I am doing fine bro[0m
+[0;32mI (1648) PWM: roll:1.971545 pitch=-2.047066 yaw=357.249878[0m
+[0;32mI (1658) IMU: I am doing fine bro[0m
+[0;32mI (1658) PWM: roll:1.927296 pitch=-2.089428 yaw=359.745850[0m
+[0;32mI (1668) IMU: I am doing fine bro[0m
+[0;32mI (1668) PWM: roll:1.881855 pitch=-2.129740 yaw=2.245804[0m
+[0;32mI (1678) IMU: I am doing fine bro[0m
+[0;32mI (1678) PWM: roll:1.833968 pitch=-2.168338 yaw=4.742172[0m
+[0;32mI (1688) IMU: I am doing fine bro[0m
+[0;32mI (1688) PWM: roll:1.783561 pitch=-2.205148 yaw=7.241959[0m
+[0;32mI (1698) IMU: I am doing fine bro[0m
+[0;32mI (1698) PWM: roll:1.731699 pitch=-2.239605 yaw=9.738708[0m
+[0;32mI (1708) IMU: I am doing fine bro[0m
+[0;32mI (1708) PWM: roll:1.679334 pitch=-2.271607 yaw=12.239166[0m
+[0;32mI (1718) IMU: I am doing fine bro[0m
+[0;32mI (1718) PWM: roll:1.626119 pitch=-2.301264 yaw=14.736313[0m
+[0;32mI (1728) IMU: I am doing fine bro[0m
+[0;32mI (1728) PWM: roll:1.570970 pitch=-2.328905 yaw=17.237152[0m
+[0;32mI (1738) IMU: I am doing fine bro[0m
+[0;32mI (1738) PWM: roll:1.513873 pitch=-2.353907 yaw=19.734665[0m
+[0;32mI (1748) IMU: I am doing fine bro[0m
+[0;32mI (1748) PWM: roll:1.455567 pitch=-2.376050 yaw=22.235886[0m
+[0;32mI (1758) IMU: I am doing fine bro[0m
+[0;32mI (1758) PWM: roll:1.397158 pitch=-2.395625 yaw=24.733795[0m
+[0;32mI (1768) IMU: I am doing fine bro[0m
+[0;32mI (1768) PWM: roll:1.338433 pitch=-2.412671 yaw=27.235611[0m
+[0;32mI (1778) IMU: I am doing fine bro[0m
+[0;32mI (1778) PWM: roll:1.279149 pitch=-2.427268 yaw=29.733841[0m
+[0;32mI (1788) IMU: I am doing fine bro[0m
+[0;32mI (1788) PWM: roll:1.219133 pitch=-2.439121 yaw=32.235733[0m
+[0;32mI (1798) IMU: I am doing fine bro[0m
+[0;32mI (1798) PWM: roll:1.158280 pitch=-2.448402 yaw=34.734268[0m
+[0;32mI (1808) IMU: I am doing fine bro[0m
+[0;32mI (1808) PWM: roll:1.096974 pitch=-2.455252 yaw=37.236450[0m
+[0;32mI (1818) IMU: I am doing fine bro[0m
+[0;32mI (1818) PWM: roll:1.035304 pitch=-2.459411 yaw=39.735260[0m
+[0;32mI (1828) IMU: I am doing fine bro[0m
+[0;32mI (1828) PWM: roll:0.973517 pitch=-2.460727 yaw=42.237701[0m
+[0;32mI (1838) IMU: I am doing fine bro[0m
+[0;32mI (1838) PWM: roll:0.912305 pitch=-2.459508 yaw=44.737015[0m
+[0;32mI (1848) IMU: I am doing fine bro[0m
+[0;32mI (1848) PWM: roll:0.851607 pitch=-2.455776 yaw=47.239700[0m
+[0;32mI (1858) IMU: I am doing fine bro[0m
+[0;32mI (1858) PWM: roll:0.791033 pitch=-2.449628 yaw=49.738968[0m
+[0;32mI (1868) IMU: I am doing fine bro[0m
+[0;32mI (1868) PWM: roll:0.730515 pitch=-2.440668 yaw=52.242088[0m
+[0;32mI (1878) IMU: I am doing fine bro[0m
+[0;32mI (1878) PWM: roll:0.670616 pitch=-2.429087 yaw=54.741531[0m
+[0;32mI (1888) IMU: I am doing fine bro[0m
+[0;32mI (1888) PWM: roll:0.611247 pitch=-2.414736 yaw=57.244576[0m
+[0;32mI (1898) IMU: I am doing fine bro[0m
+[0;32mI (1898) PWM: roll:0.552730 pitch=-2.397831 yaw=59.744164[0m
+[0;32mI (1908) IMU: I am doing fine bro[0m
+[0;32mI (1908) PWM: roll:0.495157 pitch=-2.378435 yaw=62.247345[0m
+[0;32mI (1918) IMU: I am doing fine bro[0m
+[0;32mI (1918) PWM: roll:0.438454 pitch=-2.356416 yaw=64.747032[0m
+[0;32mI (1928) IMU: I am doing fine bro[0m
+[0;32mI (1928) PWM: roll:0.382807 pitch=-2.331991 yaw=67.250275[0m
+[0;32mI (1938) IMU: I am doing fine bro[0m
+[0;32mI (1938) PWM: roll:0.327969 pitch=-2.305415 yaw=69.750298[0m
+[0;32mI (1948) IMU: I am doing fine bro[0m
+[0;32mI (1948) PWM: roll:0.274311 pitch=-2.276352 yaw=72.253609[0m
+[0;32mI (1958) IMU: I am doing fine bro[0m
+[0;32mI (1958) PWM: roll:0.222412 pitch=-2.245095 yaw=74.753433[0m
+[0;32mI (1968) IMU: I am doing fine bro[0m
+[0;32mI (1968) PWM: roll:0.172034 pitch=-2.211591 yaw=77.260002[0m
+[0;32mI (1978) PWM: roll:0.123745 pitch=-2.175947 yaw=79.759323[0m
+[0;32mI (1988) IMU: I am doing fine bro[0m
+[0;32mI (1988) PWM: roll:0.076761 pitch=-2.138265 yaw=82.260628[0m
+[0;32mI (1998) IMU: I am doing fine bro[0m
+[0;32mI (1998) PWM: roll:0.030978 pitch=-2.098233 yaw=84.762672[0m
+[0;32mI (2008) IMU: I am doing fine bro[0m
+[0;32mI (2008) PWM: roll:-0.055962 pitch=-2.012818 yaw=89.764420[0m
+[0;32mI (2018) IMU: I am doing fine bro[0m
+[0;32mI (2018) PWM: roll:-0.096639 pitch=-1.967289 yaw=92.263664[0m
+[0;32mI (2028) IMU: I am doing fine bro[0m
+[0;32mI (2028) PWM: roll:-0.134336 pitch=-1.919808 yaw=94.767372[0m
+[0;32mI (2038) IMU: I am doing fine bro[0m
+[0;32mI (2038) PWM: roll:-0.169319 pitch=-1.870747 yaw=97.266525[0m
+[0;32mI (2048) IMU: I am doing fine bro[0m
+[0;32mI (2048) PWM: roll:-0.202336 pitch=-1.820186 yaw=99.770134[0m
+[0;32mI (2058) IMU: I am doing fine bro[0m
+[0;32mI (2058) PWM: roll:-0.233669 pitch=-1.768462 yaw=102.269188[0m
+[0;32mI (2068) IMU: I am doing fine bro[0m
+[0;32mI (2068) PWM: roll:-0.263657 pitch=-1.715451 yaw=104.772697[0m
+[0;32mI (2078) IMU: I am doing fine bro[0m
+[0;32mI (2078) PWM: roll:-0.291757 pitch=-1.661105 yaw=107.271889[0m
+[0;32mI (2088) IMU: I am doing fine bro[0m
+[0;32mI (2088) PWM: roll:-0.316956 pitch=-1.605270 yaw=109.775299[0m
+[0;32mI (2098) IMU: I am doing fine bro[0m
+[0;32mI (2098) PWM: roll:-0.337934 pitch=-1.548368 yaw=112.274147[0m
+[0;32mI (2108) IMU: I am doing fine bro[0m
+[0;32mI (2108) PWM: roll:-0.355236 pitch=-1.490679 yaw=114.777428[0m
+[0;32mI (2118) IMU: I am doing fine bro[0m
+[0;32mI (2118) PWM: roll:-0.370699 pitch=-1.432450 yaw=117.276398[0m
+[0;32mI (2128) IMU: I am doing fine bro[0m
+[0;32mI (2128) PWM: roll:-0.385358 pitch=-1.373458 yaw=119.779556[0m
+[0;32mI (2138) IMU: I am doing fine bro[0m
+[0;32mI (2138) PWM: roll:-0.398262 pitch=-1.314039 yaw=122.278152[0m
+[0;32mI (2148) IMU: I am doing fine bro[0m
+[0;32mI (2148) PWM: roll:-0.407942 pitch=-1.254251 yaw=124.781174[0m
+[0;32mI (2158) IMU: I am doing fine bro[0m
+[0;32mI (2158) PWM: roll:-0.413442 pitch=-1.194157 yaw=127.279648[0m
+[0;32mI (2168) IMU: I am doing fine bro[0m
+[0;32mI (2168) PWM: roll:-0.416013 pitch=-1.133708 yaw=129.782562[0m
+[0;32mI (2178) IMU: I am doing fine bro[0m
+[0;32mI (2178) PWM: roll:-0.416678 pitch=-1.073515 yaw=132.281158[0m
+[0;32mI (2188) PWM: roll:-0.415819 pitch=-1.013217 yaw=134.783936[0m
+[0;32mI (2198) IMU: I am doing fine bro[0m
+[0;32mI (2198) PWM: roll:-0.412880 pitch=-0.953103 yaw=137.282379[0m
+[0;32mI (2208) IMU: I am doing fine bro[0m
+[0;32mI (2208) PWM: roll:-0.396519 pitch=-0.833232 yaw=142.284103[0m
+[0;32mI (2218) IMU: I am doing fine bro[0m
+[0;32mI (2218) PWM: roll:-0.383777 pitch=-0.774171 yaw=144.782654[0m
+[0;32mI (2228) IMU: I am doing fine bro[0m
+[0;32mI (2228) PWM: roll:-0.368479 pitch=-0.715565 yaw=147.284622[0m
+[0;32mI (2238) IMU: I am doing fine bro[0m
+[0;32mI (2238) PWM: roll:-0.351581 pitch=-0.657590 yaw=149.783035[0m
+[0;32mI (2248) IMU: I am doing fine bro[0m
+[0;32mI (2248) PWM: roll:-0.332844 pitch=-0.600313 yaw=152.284882[0m
+[0;32mI (2258) IMU: I am doing fine bro[0m
+[0;32mI (2258) PWM: roll:-0.311177 pitch=-0.543840 yaw=154.783188[0m
+[0;32mI (2268) IMU: I am doing fine bro[0m
+[0;32mI (2268) PWM: roll:-0.286523 pitch=-0.488302 yaw=157.284912[0m
+[0;32mI (2278) IMU: I am doing fine bro[0m
+[0;32mI (2278) PWM: roll:-0.259604 pitch=-0.433739 yaw=159.783096[0m
+[0;32mI (2288) IMU: I am doing fine bro[0m
+[0;32mI (2288) PWM: roll:-0.230601 pitch=-0.380244 yaw=162.284698[0m
+[0;32mI (2298) IMU: I am doing fine bro[0m
+[0;32mI (2298) PWM: roll:-0.199384 pitch=-0.328058 yaw=164.782761[0m
+[0;32mI (2308) IMU: I am doing fine bro[0m
+[0;32mI (2308) PWM: roll:-0.165511 pitch=-0.277297 yaw=167.284256[0m
+[0;32mI (2318) IMU: I am doing fine bro[0m
+[0;32mI (2318) PWM: roll:-0.129666 pitch=-0.228279 yaw=169.782196[0m
+[0;32mI (2328) IMU: I am doing fine bro[0m
+[0;32mI (2328) PWM: roll:-0.092697 pitch=-0.180786 yaw=172.283569[0m
+[0;32mI (2338) IMU: I am doing fine bro[0m
+[0;32mI (2338) PWM: roll:-0.054269 pitch=-0.135230 yaw=174.781372[0m
+[0;32mI (2348) IMU: I am doing fine bro[0m
+[0;32mI (2348) PWM: roll:-0.012815 pitch=-0.091055 yaw=177.282623[0m
+[0;32mI (2358) PWM: roll:0.031824 pitch=-0.048870 yaw=179.782059[0m
+[0;32mI (2368) IMU: I am doing fine bro[0m
+[0;32mI (2368) PWM: roll:0.124066 pitch=0.030008 yaw=184.780212[0m
+[0;32mI (2378) IMU: I am doing fine bro[0m
+[0;32mI (2378) PWM: roll:0.171645 pitch=0.066189 yaw=187.277191[0m
+[0;32mI (2388) IMU: I am doing fine bro[0m
+[0;32mI (2388) PWM: roll:0.221187 pitch=0.100390 yaw=189.778854[0m
+[0;32mI (2398) IMU: I am doing fine bro[0m
+[0;32mI (2398) PWM: roll:0.273181 pitch=0.132306 yaw=192.275436[0m
+[0;32mI (2408) IMU: I am doing fine bro[0m
+[0;32mI (2408) PWM: roll:0.326924 pitch=0.162043 yaw=194.776688[0m
+[0;32mI (2418) IMU: I am doing fine bro[0m
+[0;32mI (2418) PWM: roll:0.381494 pitch=0.189364 yaw=197.273346[0m
+[0;32mI (2428) IMU: I am doing fine bro[0m
+[0;32mI (2428) PWM: roll:0.436446 pitch=0.214265 yaw=199.774429[0m
+[0;32mI (2438) IMU: I am doing fine bro[0m
+[0;32mI (2438) PWM: roll:0.491522 pitch=0.236566 yaw=202.270920[0m
+[0;32mI (2448) IMU: I am doing fine bro[0m
+[0;32mI (2448) PWM: roll:0.547611 pitch=0.256244 yaw=204.771820[0m
+[0;32mI (2458) IMU: I am doing fine bro[0m
+[0;32mI (2458) PWM: roll:0.604522 pitch=0.273344 yaw=207.268127[0m
+[0;32mI (2468) IMU: I am doing fine bro[0m
+[0;32mI (2468) PWM: roll:0.662931 pitch=0.288103 yaw=209.768829[0m
+[0;32mI (2478) IMU: I am doing fine bro[0m
+[0;32mI (2478) PWM: roll:0.722249 pitch=0.300115 yaw=212.264938[0m
+[0;32mI (2488) IMU: I am doing fine bro[0m
+[0;32mI (2488) PWM: roll:0.782535 pitch=0.309616 yaw=214.765442[0m
+[0;32mI (2498) IMU: I am doing fine bro[0m
+[0;32mI (2498) PWM: roll:0.842946 pitch=0.316466 yaw=217.261322[0m
+[0;32mI (2508) IMU: I am doing fine bro[0m
+[0;32mI (2508) PWM: roll:0.903132 pitch=0.320539 yaw=219.761597[0m
+[0;32mI (2518) IMU: I am doing fine bro[0m
+[0;32mI (2518) PWM: roll:0.962826 pitch=0.321913 yaw=222.257263[0m
+[0;32mI (2528) IMU: I am doing fine bro[0m
+[0;32mI (2528) PWM: roll:1.022519 pitch=0.321060 yaw=224.757294[0m
+[0;32mI (2538) IMU: I am doing fine bro[0m
+[0;32mI (2538) PWM: roll:1.082383 pitch=0.317757 yaw=227.252716[0m
+[0;32mI (2548) IMU: I am doing fine bro[0m
+[0;32mI (2548) PWM: roll:1.142219 pitch=0.311749 yaw=229.752533[0m
+[0;32mI (2558) IMU: I am doing fine bro[0m
+[0;32mI (2558) PWM: roll:1.201196 pitch=0.303083 yaw=232.247696[0m
+[0;32mI (2568) IMU: I am doing fine bro[0m
+[0;32mI (2568) PWM: roll:1.259673 pitch=0.291761 yaw=234.747238[0m
+[0;32mI (2578) IMU: I am doing fine bro[0m
+[0;32mI (2578) PWM: roll:1.317958 pitch=0.278221 yaw=237.242157[0m
+[0;32mI (2588) IMU: I am doing fine bro[0m
+[0;32mI (2588) PWM: roll:1.375814 pitch=0.261814 yaw=239.741455[0m
+[0;32mI (2598) IMU: I am doing fine bro[0m
+[0;32mI (2598) PWM: roll:1.432371 pitch=0.243016 yaw=242.236115[0m
+[0;32mI (2608) IMU: I am doing fine bro[0m
+[0;32mI (2608) PWM: roll:1.487892 pitch=0.221812 yaw=244.735138[0m
+[0;32mI (2618) IMU: I am doing fine bro[0m
+[0;32mI (2618) PWM: roll:1.542873 pitch=0.198231 yaw=247.229553[0m
+[0;32mI (2628) IMU: I am doing fine bro[0m
+[0;32mI (2628) PWM: roll:1.597064 pitch=0.172071 yaw=249.728333[0m
+[0;32mI (2638) IMU: I am doing fine bro[0m
+[0;32mI (2638) PWM: roll:1.648911 pitch=0.143346 yaw=252.222443[0m
+[0;32mI (2648) IMU: I am doing fine bro[0m
+[0;32mI (2648) PWM: roll:1.697797 pitch=0.112221 yaw=254.720947[0m
+[0;32mI (2658) IMU: I am doing fine bro[0m
+[0;32mI (2658) PWM: roll:1.744909 pitch=0.079207 yaw=257.214844[0m
+[0;32mI (2668) IMU: I am doing fine bro[0m
+[0;32mI (2668) PWM: roll:1.791152 pitch=0.044164 yaw=259.713135[0m
+[0;32mI (2678) IMU: I am doing fine bro[0m
+[0;32mI (2678) PWM: roll:1.836855 pitch=0.007264 yaw=262.206818[0m
+[0;32mI (2688) IMU: I am doing fine bro[0m
+[0;32mI (2688) PWM: roll:1.882041 pitch=-0.031533 yaw=264.704895[0m
+[0;32mI (2698) IMU: I am doing fine bro[0m
+[0;32mI (2698) PWM: roll:1.926621 pitch=-0.071685 yaw=267.198364[0m
+[0;32mI (2708) IMU: I am doing fine bro[0m
+[0;32mI (2708) PWM: roll:1.970223 pitch=-0.113683 yaw=269.696259[0m
+[0;32mI (2718) IMU: I am doing fine bro[0m
+[0;32mI (2718) PWM: roll:2.010573 pitch=-0.157967 yaw=272.189514[0m
+[0;32mI (2728) IMU: I am doing fine bro[0m
+[0;32mI (2728) PWM: roll:2.046412 pitch=-0.204223 yaw=274.687164[0m
+[0;32mI (2738) IMU: I am doing fine bro[0m
+[0;32mI (2738) PWM: roll:2.078766 pitch=-0.251652 yaw=277.180267[0m
+[0;32mI (2748) IMU: I am doing fine bro[0m
+[0;32mI (2748) PWM: roll:2.110951 pitch=-0.300357 yaw=279.678040[0m
+[0;32mI (2758) IMU: I am doing fine bro[0m
+[0;32mI (2758) PWM: roll:2.143582 pitch=-0.349996 yaw=282.170776[0m
+[0;32mI (2768) IMU: I am doing fine bro[0m
+[0;32mI (2768) PWM: roll:2.174348 pitch=-0.401303 yaw=284.669678[0m
+[0;32mI (2788) IMU: I am doing fine bro[0m
+[0;32mI (2788) PWM: roll:2.222527 pitch=-0.507913 yaw=289.655334[0m
+[0;32mI (2798) IMU: I am doing fine bro[0m
+[0;32mI (2798) PWM: roll:2.243421 pitch=-0.562769 yaw=292.154602[0m
+[0;32mI (2808) IMU: I am doing fine bro[0m
+[0;32mI (2808) PWM: roll:2.263954 pitch=-0.618625 yaw=294.647583[0m
+[0;32mI (2818) IMU: I am doing fine bro[0m
+[0;32mI (2818) PWM: roll:2.282903 pitch=-0.675204 yaw=297.144592[0m
+[0;32mI (2828) IMU: I am doing fine bro[0m
+[0;32mI (2828) PWM: roll:2.299248 pitch=-0.732455 yaw=299.637573[0m
+[0;32mI (2838) IMU: I am doing fine bro[0m
+[0;32mI (2838) PWM: roll:2.311399 pitch=-0.790806 yaw=302.134552[0m
+[0;32mI (2848) IMU: I am doing fine bro[0m
+[0;32mI (2848) PWM: roll:2.320280 pitch=-0.849677 yaw=304.627533[0m
+[0;32mI (2858) IMU: I am doing fine bro[0m
+[0;32mI (2858) PWM: roll:2.326634 pitch=-0.908906 yaw=307.124542[0m
+[0;32mI (2868) IMU: I am doing fine bro[0m
+[0;32mI (2868) PWM: roll:2.330857 pitch=-0.968120 yaw=309.617615[0m
+[0;32mI (2878) IMU: I am doing fine bro[0m
+[0;32mI (2878) PWM: roll:2.333929 pitch=-1.027365 yaw=312.114746[0m
+[0;32mI (2888) IMU: I am doing fine bro[0m
+[0;32mI (2888) PWM: roll:2.334512 pitch=-1.086825 yaw=314.607910[0m
+[0;32mI (2898) IMU: I am doing fine bro[0m
+[0;32mI (2898) PWM: roll:2.332031 pitch=-1.146495 yaw=317.105103[0m
+[0;32mI (2908) IMU: I am doing fine bro[0m
+[0;32mI (2908) PWM: roll:2.325580 pitch=-1.205878 yaw=319.598450[0m
+[0;32mI (2918) IMU: I am doing fine bro[0m
+[0;32mI (2918) PWM: roll:2.317052 pitch=-1.264875 yaw=322.095825[0m
+[0;32mI (2928) IMU: I am doing fine bro[0m
+[0;32mI (2928) PWM: roll:2.307070 pitch=-1.323375 yaw=324.589355[0m
+[0;32mI (2938) IMU: I am doing fine bro[0m
+[0;32mI (2938) PWM: roll:2.295110 pitch=-1.381792 yaw=327.086945[0m
+[0;32mI (2948) IMU: I am doing fine bro[0m
+[0;32mI (2948) PWM: roll:2.279698 pitch=-1.439603 yaw=329.580658[0m
+[0;32mI (2958) IMU: I am doing fine bro[0m
+[0;32mI (2958) PWM: roll:2.260323 pitch=-1.496750 yaw=332.078491[0m
+[0;32mI (2968) IMU: I am doing fine bro[0m
+[0;32mI (2968) PWM: roll:2.238130 pitch=-1.552600 yaw=334.572449[0m
+[0;32mI (2978) IMU: I am doing fine bro[0m
+[0;32mI (2978) PWM: roll:2.214197 pitch=-1.607687 yaw=337.070618[0m
+[0;32mI (2988) IMU: I am doing fine bro[0m
+[0;32mI (2988) PWM: roll:2.188833 pitch=-1.661618 yaw=339.564880[0m
+[0;32mI (2998) IMU: I am doing fine bro[0m
+[0;32mI (2998) PWM: roll:2.161404 pitch=-1.714412 yaw=342.063324[0m
+[0;32mI (3008) IMU: I am doing fine bro[0m
+[0;32mI (3008) PWM: roll:2.131751 pitch=-1.765873 yaw=344.557922[0m
+[0;32mI (3018) IMU: I am doing fine bro[0m
+[0;32mI (3018) PWM: roll:2.100052 pitch=-1.815922 yaw=347.056702[0m
+[0;32mI (3028) IMU: I am doing fine bro[0m
+[0;32mI (3028) PWM: roll:2.065532 pitch=-1.864381 yaw=349.551666[0m
+[0;32mI (3038) IMU: I am doing fine bro[0m
+[0;32mI (3038) PWM: roll:2.028044 pitch=-1.911605 yaw=352.051819[0m
+[0;32mI (3048) IMU: I am doing fine bro[0m
+[0;32mI (3048) PWM: roll:1.988308 pitch=-1.956809 yaw=354.545868[0m
+[0;32mI (3058) IMU: I am doing fine bro[0m
+[0;32mI (3058) PWM: roll:1.947700 pitch=-2.000399 yaw=357.043640[0m
+[0;32mI (3068) IMU: I am doing fine bro[0m
+[0;32mI (3068) PWM: roll:1.906490 pitch=-2.042006 yaw=359.539062[0m
+[0;32mI (3078) IMU: I am doing fine bro[0m
+[0;32mI (3078) PWM: roll:1.862518 pitch=-2.082112 yaw=2.042191[0m
+[0;32mI (3088) IMU: I am doing fine bro[0m
+[0;32mI (3088) PWM: roll:1.815255 pitch=-2.120043 yaw=4.538757[0m
+[0;32mI (3098) IMU: I am doing fine bro[0m
+[0;32mI (3098) PWM: roll:1.765193 pitch=-2.156147 yaw=7.040024[0m
+[0;32mI (3108) IMU: I am doing fine bro[0m
+[0;32mI (3108) PWM: roll:1.713616 pitch=-2.190182 yaw=9.535965[0m
+[0;32mI (3118) IMU: I am doing fine bro[0m
+[0;32mI (3118) PWM: roll:1.658201 pitch=-2.221707 yaw=12.036102[0m
+[0;32mI (3128) IMU: I am doing fine bro[0m
+[0;32mI (3128) PWM: roll:1.597263 pitch=-2.249793 yaw=14.531708[0m
+[0;32mI (3138) IMU: I am doing fine bro[0m
+[0;32mI (3138) PWM: roll:1.532328 pitch=-2.274501 yaw=17.032562[0m
+[0;32mI (3148) IMU: I am doing fine bro[0m
+[0;32mI (3148) PWM: roll:1.466359 pitch=-2.296014 yaw=19.529587[0m
+[0;32mI (3158) IMU: I am doing fine bro[0m
+[0;32mI (3158) PWM: roll:1.399097 pitch=-2.314497 yaw=22.031326[0m
+[0;32mI (3168) IMU: I am doing fine bro[0m
+[0;32mI (3168) PWM: roll:1.327491 pitch=-2.329533 yaw=24.528748[0m
+[0;32mI (3178) IMU: I am doing fine bro[0m
+[0;32mI (3178) PWM: roll:1.251281 pitch=-2.340686 yaw=27.030884[0m
+[0;32mI (3188) IMU: I am doing fine bro[0m
+[0;32mI (3188) PWM: roll:1.175644 pitch=-2.347757 yaw=29.528717[0m
+[0;32mI (3198) IMU: I am doing fine bro[0m
+[0;32mI (3198) PWM: roll:1.104540 pitch=-2.351561 yaw=32.031219[0m
+[0;32mI (3208) IMU: I am doing fine bro[0m
+[0;32mI (3208) PWM: roll:1.037497 pitch=-2.351807 yaw=34.529388[0m
+[0;32mI (3218) IMU: I am doing fine bro[0m
+[0;32mI (3218) PWM: roll:0.972061 pitch=-2.349153 yaw=37.032166[0m
+[0;32mI (3228) IMU: I am doing fine bro[0m
+[0;32mI (3228) PWM: roll:0.907198 pitch=-2.344124 yaw=39.530548[0m
+[0;32mI (3238) IMU: I am doing fine bro[0m
+[0;32mI (3238) PWM: roll:0.841844 pitch=-2.336772 yaw=42.033539[0m
+[0;32mI (3248) IMU: I am doing fine bro[0m
+[0;32mI (3248) PWM: roll:0.776253 pitch=-2.327108 yaw=44.532135[0m
+[0;32mI (3258) IMU: I am doing fine bro[0m
+[0;32mI (3258) PWM: roll:0.711178 pitch=-2.315106 yaw=47.035294[0m
+[0;32mI (3268) IMU: I am doing fine bro[0m
+[0;32mI (3268) PWM: roll:0.648316 pitch=-2.300026 yaw=49.534042[0m
+[0;32mI (3278) IMU: I am doing fine bro[0m
+[0;32mI (3278) PWM: roll:0.589945 pitch=-2.282870 yaw=52.037361[0m
+[0;32mI (3288) IMU: I am doing fine bro[0m
+[0;32mI (3288) PWM: roll:0.536911 pitch=-2.264076 yaw=54.536240[0m
+[0;32mI (3298) IMU: I am doing fine bro[0m
+[0;32mI (3298) PWM: roll:0.485517 pitch=-2.243877 yaw=57.039658[0m
+[0;32mI (3308) IMU: I am doing fine bro[0m
+[0;32mI (3308) PWM: roll:0.430065 pitch=-2.221837 yaw=59.538605[0m
+[0;32mI (3318) IMU: I am doing fine bro[0m
+[0;32mI (3318) PWM: roll:0.372269 pitch=-2.197129 yaw=62.042084[0m
+[0;32mI (3328) IMU: I am doing fine bro[0m
+[0;32mI (3328) PWM: roll:0.321045 pitch=-2.170085 yaw=64.541115[0m
+[0;32mI (3338) IMU: I am doing fine bro[0m
+[0;32mI (3338) PWM: roll:0.279638 pitch=-2.141724 yaw=67.044662[0m
+[0;32mI (3348) IMU: I am doing fine bro[0m
+[0;32mI (3348) PWM: roll:0.240301 pitch=-2.112028 yaw=69.543716[0m
+[0;32mI (3358) IMU: I am doing fine bro[0m
+[0;32mI (3358) PWM: roll:0.193992 pitch=-2.080786 yaw=72.047264[0m
+[0;32mI (3368) IMU: I am doing fine bro[0m
+[0;32mI (3368) PWM: roll:0.143061 pitch=-2.047395 yaw=74.546288[0m
+[0;32mI (3378) IMU: I am doing fine bro[0m
+[0;32mI (3378) PWM: roll:0.097067 pitch=-2.011444 yaw=77.049850[0m
+[0;32mI (3388) IMU: I am doing fine bro[0m
+[0;32mI (3388) PWM: roll:0.059974 pitch=-1.973357 yaw=79.548889[0m
+[0;32mI (3398) IMU: I am doing fine bro[0m
+[0;32mI (3398) PWM: roll:0.027292 pitch=-1.933291 yaw=82.052422[0m
+[0;32mI (3408) IMU: I am doing fine bro[0m
+[0;32mI (3408) PWM: roll:-0.004223 pitch=-1.891894 yaw=84.551407[0m
+[0;32mI (3418) IMU: I am doing fine bro[0m
+[0;32mI (3418) PWM: roll:-0.036096 pitch=-1.849948 yaw=87.054886[0m
+[0;32mI (3428) IMU: I am doing fine bro[0m
+[0;32mI (3428) PWM: roll:-0.067382 pitch=-1.807159 yaw=89.553810[0m
+[0;32mI (3438) IMU: I am doing fine bro[0m
+[0;32mI (3438) PWM: roll:-0.097751 pitch=-1.762945 yaw=92.057213[0m
+[0;32mI (3448) IMU: I am doing fine bro[0m
+[0;32mI (3448) PWM: roll:-0.124157 pitch=-1.717648 yaw=94.556076[0m
+[0;32mI (3458) IMU: I am doing fine bro[0m
+[0;32mI (3458) PWM: roll:-0.143693 pitch=-1.670956 yaw=97.059402[0m
+[0;32mI (3468) IMU: I am doing fine bro[0m
+[0;32mI (3468) PWM: roll:-0.157828 pitch=-1.623531 yaw=99.558182[0m
+[0;32mI (3478) IMU: I am doing fine bro[0m
+[0;32mI (3478) PWM: roll:-0.170764 pitch=-1.575200 yaw=102.061417[0m
+[0;32mI (3488) IMU: I am doing fine bro[0m
+[0;32mI (3488) PWM: roll:-0.185206 pitch=-1.526736 yaw=104.560081[0m
+[0;32mI (3498) IMU: I am doing fine bro[0m
+[0;32mI (3498) PWM: roll:-0.200893 pitch=-1.477829 yaw=107.063194[0m
+[0;32mI (3508) IMU: I am doing fine bro[0m
+[0;32mI (3508) PWM: roll:-0.217046 pitch=-1.428310 yaw=109.561737[0m
+[0;32mI (3518) IMU: I am doing fine bro[0m
+[0;32mI (3518) PWM: roll:-0.231344 pitch=-1.377651 yaw=112.064766[0m
+[0;32mI (3528) IMU: I am doing fine bro[0m
+[0;32mI (3528) PWM: roll:-0.241274 pitch=-1.325718 yaw=114.563225[0m
+[0;32mI (3538) IMU: I am doing fine bro[0m
+[0;32mI (3538) PWM: roll:-0.246815 pitch=-1.273048 yaw=117.066132[0m
+[0;32mI (3548) IMU: I am doing fine bro[0m
+[0;32mI (3548) PWM: roll:-0.250624 pitch=-1.220339 yaw=119.564468[0m
+[0;32mI (3558) IMU: I am doing fine bro[0m
+[0;32mI (3558) PWM: roll:-0.255490 pitch=-1.167343 yaw=122.067245[0m
+[0;32mI (3568) IMU: I am doing fine bro[0m
+[0;32mI (3568) PWM: roll:-0.261356 pitch=-1.114059 yaw=124.565475[0m
+[0;32mI (3578) IMU: I am doing fine bro[0m
+[0;32mI (3578) PWM: roll:-0.265906 pitch=-1.060297 yaw=127.071404[0m
+[0;32mI (3598) IMU: I am doing fine bro[0m
+[0;32mI (3598) PWM: roll:-0.260276 pitch=-0.952647 yaw=132.067062[0m
+[0;32mI (3608) IMU: I am doing fine bro[0m
+[0;32mI (3608) PWM: roll:-0.253163 pitch=-0.898927 yaw=134.570328[0m
+[0;32mI (3618) IMU: I am doing fine bro[0m
+[0;32mI (3618) PWM: roll:-0.244634 pitch=-0.845661 yaw=137.068527[0m
+[0;32mI (3628) IMU: I am doing fine bro[0m
+[0;32mI (3628) PWM: roll:-0.234781 pitch=-0.792787 yaw=139.570663[0m
+[0;32mI (3638) IMU: I am doing fine bro[0m
+[0;32mI (3638) PWM: roll:-0.222919 pitch=-0.740626 yaw=142.068756[0m
+[0;32mI (3648) IMU: I am doing fine bro[0m
+[0;32mI (3648) PWM: roll:-0.208743 pitch=-0.689098 yaw=144.570801[0m
+[0;32mI (3658) IMU: I am doing fine bro[0m
+[0;32mI (3658) PWM: roll:-0.192223 pitch=-0.638170 yaw=147.068771[0m
+[0;32mI (3668) IMU: I am doing fine bro[0m
+[0;32mI (3668) PWM: roll:-0.172865 pitch=-0.587715 yaw=149.570694[0m
+[0;32mI (3678) IMU: I am doing fine bro[0m
+[0;32mI (3678) PWM: roll:-0.150389 pitch=-0.538179 yaw=152.068573[0m
+[0;32mI (3688) IMU: I am doing fine bro[0m
+[0;32mI (3688) PWM: roll:-0.125182 pitch=-0.489220 yaw=154.570374[0m
+[0;32mI (3698) IMU: I am doing fine bro[0m
+[0;32mI (3698) PWM: roll:-0.098010 pitch=-0.441171 yaw=157.068115[0m
+[0;32mI (3708) IMU: I am doing fine bro[0m
+[0;32mI (3708) PWM: roll:-0.069058 pitch=-0.394426 yaw=159.569809[0m
+[0;32mI (3718) IMU: I am doing fine bro[0m
+[0;32mI (3718) PWM: roll:-0.038478 pitch=-0.349131 yaw=162.067444[0m
+[0;32mI (3728) IMU: I am doing fine bro[0m
+[0;32mI (3728) PWM: roll:-0.006233 pitch=-0.305063 yaw=164.569016[0m
+[0;32mI (3738) IMU: I am doing fine bro[0m
+[0;32mI (3738) PWM: roll:0.027733 pitch=-0.262663 yaw=167.066528[0m
+[0;32mI (3748) IMU: I am doing fine bro[0m
+[0;32mI (3748) PWM: roll:0.063979 pitch=-0.221532 yaw=169.566223[0m
+[0;32mI (3758) IMU: I am doing fine bro[0m
+[0;32mI (3758) PWM: roll:0.102973 pitch=-0.181890 yaw=172.065857[0m
+[0;32mI (3768) IMU: I am doing fine bro[0m
+[0;32mI (3768) PWM: roll:0.143837 pitch=-0.144106 yaw=174.567932[0m
+[0;32mI (3778) IMU: I am doing fine bro[0m
+[0;32mI (3778) PWM: roll:0.185022 pitch=-0.108071 yaw=177.062439[0m
+[0;32mI (3788) IMU: I am doing fine bro[0m
+[0;32mI (3788) PWM: roll:0.226671 pitch=-0.073523 yaw=179.563629[0m
+[0;32mI (3798) IMU: I am doing fine bro[0m
+[0;32mI (3798) PWM: roll:0.269519 pitch=-0.040942 yaw=182.060989[0m
+[0;32mI (3808) IMU: I am doing fine bro[0m
+[0;32mI (3808) PWM: roll:0.314211 pitch=-0.010155 yaw=184.561783[0m
+[0;32mI (3818) IMU: I am doing fine bro[0m
+[0;32mI (3818) PWM: roll:0.360303 pitch=0.018298 yaw=187.059006[0m
+[0;32mI (3828) IMU: I am doing fine bro[0m
+[0;32mI (3828) PWM: roll:0.407044 pitch=0.044756 yaw=189.559647[0m
+[0;32mI (3838) IMU: I am doing fine bro[0m
+[0;32mI (3838) PWM: roll:0.454914 pitch=0.068813 yaw=192.056717[0m
+[0;32mI (3848) IMU: I am doing fine bro[0m
+[0;32mI (3848) PWM: roll:0.504796 pitch=0.090459 yaw=194.557205[0m
+[0;32mI (3858) IMU: I am doing fine bro[0m
+[0;32mI (3858) PWM: roll:0.556241 pitch=0.110016 yaw=197.054108[0m
+[0;32mI (3868) IMU: I am doing fine bro[0m
+[0;32mI (3868) PWM: roll:0.608207 pitch=0.127414 yaw=199.554413[0m
+[0;32mI (3878) IMU: I am doing fine bro[0m
+[0;32mI (3878) PWM: roll:0.659690 pitch=0.142376 yaw=202.051132[0m
+[0;32mI (3888) IMU: I am doing fine bro[0m
+[0;32mI (3888) PWM: roll:0.711428 pitch=0.154493 yaw=204.551239[0m
+[0;32mI (3898) IMU: I am doing fine bro[0m
+[0;32mI (3898) PWM: roll:0.764107 pitch=0.164089 yaw=207.047775[0m
+[0;32mI (3908) IMU: I am doing fine bro[0m
+[0;32mI (3908) PWM: roll:0.818740 pitch=0.171584 yaw=209.547699[0m
+[0;32mI (3918) IMU: I am doing fine bro[0m
+[0;32mI (3918) PWM: roll:0.874382 pitch=0.176739 yaw=212.044037[0m
+[0;32mI (3928) IMU: I am doing fine bro[0m
+[0;32mI (3928) PWM: roll:0.929775 pitch=0.179627 yaw=214.543747[0m
+[0;32mI (3938) IMU: I am doing fine bro[0m
+[0;32mI (3938) PWM: roll:0.983639 pitch=0.179817 yaw=217.039856[0m
+[0;32mI (3948) IMU: I am doing fine bro[0m
+[0;32mI (3948) PWM: roll:1.036708 pitch=0.177591 yaw=219.539368[0m
+[0;32mI (3958) IMU: I am doing fine bro[0m
+[0;32mI (3958) PWM: roll:1.089742 pitch=0.173432 yaw=222.035263[0m
+[0;32mI (3968) IMU: I am doing fine bro[0m
+[0;32mI (3968) PWM: roll:1.143408 pitch=0.166858 yaw=224.534546[0m
+[0;32mI (3978) IMU: I am doing fine bro[0m
+[0;32mI (3978) PWM: roll:1.197229 pitch=0.157871 yaw=227.030212[0m
+[0;32mI (3988) IMU: I am doing fine bro[0m
+[0;32mI (3988) PWM: roll:1.250901 pitch=0.146602 yaw=229.529297[0m
+[0;32mI (3998) IMU: I am doing fine bro[0m
+[0;32mI (3998) PWM: roll:1.303983 pitch=0.133094 yaw=232.024719[0m
+[0;32mI (4008) IMU: I am doing fine bro[0m
+[0;32mI (4008) PWM: roll:1.356009 pitch=0.117270 yaw=234.523560[0m
+[0;32mI (4018) IMU: I am doing fine bro[0m
+[0;32mI (4018) PWM: roll:1.406994 pitch=0.098997 yaw=237.018784[0m
+[0;32mI (4028) IMU: I am doing fine bro[0m
+[0;32mI (4028) PWM: roll:1.457048 pitch=0.078418 yaw=239.517365[0m
+[0;32mI (4038) IMU: I am doing fine bro[0m
+[0;32mI (4038) PWM: roll:1.506105 pitch=0.055854 yaw=242.012360[0m
+[0;32mI (4048) IMU: I am doing fine bro[0m
+[0;32mI (4048) PWM: roll:1.554289 pitch=0.031216 yaw=244.510727[0m
+[0;32mI (4058) IMU: I am doing fine bro[0m
+[0;32mI (4058) PWM: roll:1.601208 pitch=0.004617 yaw=247.005524[0m
+[0;32mI (4068) IMU: I am doing fine bro[0m
+[0;32mI (4068) PWM: roll:1.647049 pitch=-0.023892 yaw=249.503693[0m
+[0;32mI (4078) IMU: I am doing fine bro[0m
+[0;32mI (4078) PWM: roll:1.692190 pitch=-0.054346 yaw=251.998230[0m
+[0;32mI (4088) IMU: I am doing fine bro[0m
+[0;32mI (4088) PWM: roll:1.736483 pitch=-0.087022 yaw=254.496216[0m
+[0;32mI (4098) IMU: I am doing fine bro[0m
+[0;32mI (4098) PWM: roll:1.778856 pitch=-0.121617 yaw=256.990540[0m
+[0;32mI (4108) IMU: I am doing fine bro[0m
+[0;32mI (4108) PWM: roll:1.818445 pitch=-0.158427 yaw=259.488281[0m
+[0;32mI (4118) IMU: I am doing fine bro[0m
+[0;32mI (4118) PWM: roll:1.854797 pitch=-0.196690 yaw=261.982452[0m
+[0;32mI (4128) IMU: I am doing fine bro[0m
+[0;32mI (4128) PWM: roll:1.889580 pitch=-0.236719 yaw=264.480042[0m
+[0;32mI (4138) IMU: I am doing fine bro[0m
+[0;32mI (4138) PWM: roll:1.924071 pitch=-0.278124 yaw=266.974060[0m
+[0;32mI (4148) IMU: I am doing fine bro[0m
+[0;32mI (4148) PWM: roll:1.958316 pitch=-0.321092 yaw=269.471466[0m
+[0;32mI (4158) IMU: I am doing fine bro[0m
+[0;32mI (4158) PWM: roll:1.990773 pitch=-0.365073 yaw=271.965363[0m
+[0;32mI (4168) IMU: I am doing fine bro[0m
+[0;32mI (4168) PWM: roll:2.019327 pitch=-0.410143 yaw=274.462677[0m
+[0;32mI (4178) IMU: I am doing fine bro[0m
+[0;32mI (4178) PWM: roll:2.043654 pitch=-0.456463 yaw=276.956482[0m
+[0;32mI (4188) IMU: I am doing fine bro[0m
+[0;32mI (4188) PWM: roll:2.065594 pitch=-0.504170 yaw=279.453705[0m
+[0;32mI (4198) IMU: I am doing fine bro[0m
+[0;32mI (4198) PWM: roll:2.087798 pitch=-0.552694 yaw=281.947388[0m
+[0;32mI (4208) IMU: I am doing fine bro[0m
+[0;32mI (4208) PWM: roll:2.110593 pitch=-0.602264 yaw=284.444550[0m
+[0;32mI (4218) IMU: I am doing fine bro[0m
+[0;32mI (4218) PWM: roll:2.131943 pitch=-0.652490 yaw=286.938232[0m
+[0;32mI (4228) IMU: I am doing fine bro[0m
+[0;32mI (4228) PWM: roll:2.149178 pitch=-0.703633 yaw=289.435364[0m
+[0;32mI (4238) IMU: I am doing fine bro[0m
+[0;32mI (4238) PWM: roll:2.161424 pitch=-0.755431 yaw=291.928986[0m
+[0;32mI (4248) IMU: I am doing fine bro[0m
+[0;32mI (4248) PWM: roll:2.169884 pitch=-0.807983 yaw=294.426086[0m
+[0;32mI (4258) IMU: I am doing fine bro[0m
+[0;32mI (4258) PWM: roll:2.177301 pitch=-0.860880 yaw=296.919739[0m
+[0;32mI (4268) IMU: I am doing fine bro[0m
+[0;32mI (4268) PWM: roll:2.184968 pitch=-0.914045 yaw=299.420959[0m
+[0;32mI (4278) IMU: I am doing fine bro[0m
+[0;32mI (4278) PWM: roll:2.191903 pitch=-0.966996 yaw=301.911438[0m
+[0;32mI (4298) IMU: I am doing fine bro[0m
+[0;32mI (4298) PWM: roll:2.194088 pitch=-1.072840 yaw=306.904022[0m
+[0;32mI (4308) IMU: I am doing fine bro[0m
+[0;32mI (4308) PWM: roll:2.190531 pitch=-1.126052 yaw=309.398651[0m
+[0;32mI (4318) IMU: I am doing fine bro[0m
+[0;32mI (4318) PWM: roll:2.184443 pitch=-1.179194 yaw=311.896332[0m
+[0;32mI (4328) IMU: I am doing fine bro[0m
+[0;32mI (4328) PWM: roll:2.176456 pitch=-1.231946 yaw=314.390137[0m
+[0;32mI (4338) IMU: I am doing fine bro[0m
+[0;32mI (4338) PWM: roll:2.167301 pitch=-1.284106 yaw=316.888000[0m
+[0;32mI (4348) IMU: I am doing fine bro[0m
+[0;32mI (4348) PWM: roll:2.156985 pitch=-1.335610 yaw=319.381958[0m
+[0;32mI (4358) IMU: I am doing fine bro[0m
+[0;32mI (4358) PWM: roll:2.144392 pitch=-1.386778 yaw=321.880066[0m
+[0;32mI (4368) IMU: I am doing fine bro[0m
+[0;32mI (4368) PWM: roll:2.128507 pitch=-1.437631 yaw=324.374207[0m
+[0;32mI (4378) IMU: I am doing fine bro[0m
+[0;32mI (4378) PWM: roll:2.109397 pitch=-1.487882 yaw=326.872498[0m
+[0;32mI (4388) IMU: I am doing fine bro[0m
+[0;32mI (4388) PWM: roll:2.087589 pitch=-1.537396 yaw=329.366882[0m
+[0;32mI (4398) IMU: I am doing fine bro[0m
+[0;32mI (4398) PWM: roll:2.064387 pitch=-1.586076 yaw=331.865417[0m
+[0;32mI (4408) IMU: I am doing fine bro[0m
+[0;32mI (4408) PWM: roll:2.040674 pitch=-1.633809 yaw=334.360107[0m
+[0;32mI (4418) IMU: I am doing fine bro[0m
+[0;32mI (4418) PWM: roll:2.015904 pitch=-1.680569 yaw=336.858887[0m
+[0;32mI (4428) IMU: I am doing fine bro[0m
+[0;32mI (4428) PWM: roll:1.988147 pitch=-1.726182 yaw=339.353821[0m
+[0;32mI (4438) IMU: I am doing fine bro[0m
+[0;32mI (4438) PWM: roll:1.956825 pitch=-1.770502 yaw=341.852905[0m
+[0;32mI (4448) IMU: I am doing fine bro[0m
+[0;32mI (4448) PWM: roll:1.923338 pitch=-1.813268 yaw=344.348145[0m
+[0;32mI (4458) IMU: I am doing fine bro[0m
+[0;32mI (4458) PWM: roll:1.889314 pitch=-1.854560 yaw=346.847595[0m
+[0;32mI (4468) IMU: I am doing fine bro[0m
+[0;32mI (4468) PWM: roll:1.854695 pitch=-1.894374 yaw=349.343170[0m
+[0;32mI (4478) IMU: I am doing fine bro[0m
+[0;32mI (4478) PWM: roll:1.818725 pitch=-1.932634 yaw=351.842896[0m
+[0;32mI (4488) IMU: I am doing fine bro[0m
+[0;32mI (4488) PWM: roll:1.780376 pitch=-1.969291 yaw=354.338806[0m
+[0;32mI (4498) IMU: I am doing fine bro[0m
+[0;32mI (4498) PWM: roll:1.739713 pitch=-2.004048 yaw=356.838867[0m
+[0;32mI (4508) IMU: I am doing fine bro[0m
+[0;32mI (4508) PWM: roll:1.697402 pitch=-2.037023 yaw=359.335083[0m
+[0;32mI (4518) IMU: I am doing fine bro[0m
+[0;32mI (4518) PWM: roll:1.653211 pitch=-2.067780 yaw=1.835464[0m
+[0;32mI (4528) IMU: I am doing fine bro[0m
+[0;32mI (4528) PWM: roll:1.608189 pitch=-2.096468 yaw=4.332047[0m
+[0;32mI (4538) IMU: I am doing fine bro[0m
+[0;32mI (4538) PWM: roll:1.561667 pitch=-2.123511 yaw=6.832764[0m
+[0;32mI (4548) IMU: I am doing fine bro[0m
+[0;32mI (4548) PWM: roll:1.514244 pitch=-2.148466 yaw=9.329651[0m
+[0;32mI (4558) IMU: I am doing fine bro[0m
+[0;32mI (4558) PWM: roll:1.465614 pitch=-2.170750 yaw=11.830704[0m
+[0;32mI (4568) IMU: I am doing fine bro[0m
+[0;32mI (4568) PWM: roll:1.416032 pitch=-2.190855 yaw=14.327911[0m
+[0;32mI (4578) IMU: I am doing fine bro[0m
+[0;32mI (4578) PWM: roll:1.365789 pitch=-2.208890 yaw=16.829285[0m
+[0;32mI (4588) IMU: I am doing fine bro[0m
+[0;32mI (4588) PWM: roll:1.314346 pitch=-2.224834 yaw=19.326797[0m
+[0;32mI (4598) IMU: I am doing fine bro[0m
+[0;32mI (4598) PWM: roll:1.261974 pitch=-2.238765 yaw=21.828430[0m
+[0;32mI (4608) IMU: I am doing fine bro[0m
+[0;32mI (4608) PWM: roll:1.209231 pitch=-2.250230 yaw=24.326218[0m
+[0;32mI (4618) IMU: I am doing fine bro[0m
+[0;32mI (4618) PWM: roll:1.157054 pitch=-2.259409 yaw=26.826889[0m
+[0;32mI (4628) IMU: I am doing fine bro[0m
+[0;32mI (4628) PWM: roll:1.105542 pitch=-2.266553 yaw=29.327667[0m
+[0;32mI (4638) IMU: I am doing fine bro[0m
+[0;32mI (4638) PWM: roll:1.053850 pitch=-2.271750 yaw=31.828323[0m
+[0;32mI (4648) IMU: I am doing fine bro[0m
+[0;32mI (4648) PWM: roll:1.000777 pitch=-2.274731 yaw=34.326584[0m
+[0;32mI (4658) IMU: I am doing fine bro[0m
+[0;32mI (4658) PWM: roll:0.946959 pitch=-2.275601 yaw=36.827957[0m
+[0;32mI (4668) IMU: I am doing fine bro[0m
+[0;32mI (4668) PWM: roll:0.894057 pitch=-2.274224 yaw=39.325424[0m
+[0;32mI (4678) IMU: I am doing fine bro[0m
+[0;32mI (4678) PWM: roll:0.842171 pitch=-2.270327 yaw=41.827728[0m
+[0;32mI (4688) IMU: I am doing fine bro[0m

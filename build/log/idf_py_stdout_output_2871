@@ -1,0 +1,155 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32
+Processing 2 dependencies:
+[1/2] espressif/mpu6050 (1.2.0)
+[2/2] idf (5.3.0)
+-- Project sdkconfig file /home/shashwat/drone_flight_control/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- App "drone_flight_control" version: 1
+-- Adding linker script /home/shashwat/drone_flight_control/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Using Micro XRCE-DDS middleware
+mkdir -p /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/libmicroros; cd /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/libmicroros; \
+for file in $(find /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/install/lib/ -name '*.a'); do \
+	folder=$(echo $file | sed -E "s/(.+)\/(.+).a/\2/"); \
+	mkdir -p $folder; cd $folder; /home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-ar x $file; \
+	for f in *; do \
+		mv $f ../$folder-$f; \
+	done; \
+	cd ..; rm -rf $folder; \
+done ; \
+/home/shashwat/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20230928/xtensa-esp-elf/bin/xtensa-esp32-elf-ar rc -s libmicroros.a *.obj; cp libmicroros.a /home/shashwat/drone_flight_control/components/micro_ros_espidf_component; \
+cd ..; rm -rf libmicroros; \
+cp -R /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/micro_ros_src/install/include /home/shashwat/drone_flight_control/components/micro_ros_espidf_component/include;
+-- Components: I2Cdev MPU6050 MadgwickAHRS app_trace app_update bootloader bootloader_support bt cmock components console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_driver_ana_cmpr esp_driver_dac esp_driver_gpio esp_driver_gptimer esp_driver_i2c esp_driver_i2s esp_driver_ledc esp_driver_mcpwm esp_driver_parlio esp_driver_pcnt esp_driver_rmt esp_driver_sdio esp_driver_sdm esp_driver_sdmmc esp_driver_sdspi esp_driver_spi esp_driver_tsens esp_driver_uart esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__mpu6050 esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls micro_ros_espidf_component mqtt newlib nvs_flash nvs_sec_provider openthread partition_table perfmon protobuf-c protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: /home/shashwat/drone_flight_control/components/I2Cdev /home/shashwat/drone_flight_control/components/MPU6050 /home/shashwat/drone_flight_control/components/MadgwickAHRS /home/shashwat/esp/esp-idf/components/app_trace /home/shashwat/esp/esp-idf/components/app_update /home/shashwat/esp/esp-idf/components/bootloader /home/shashwat/esp/esp-idf/components/bootloader_support /home/shashwat/esp/esp-idf/components/bt /home/shashwat/esp/esp-idf/components/cmock /home/shashwat/drone_flight_control/components /home/shashwat/esp/esp-idf/components/console /home/shashwat/esp/esp-idf/components/cxx /home/shashwat/esp/esp-idf/components/driver /home/shashwat/esp/esp-idf/components/efuse /home/shashwat/esp/esp-idf/components/esp-tls /home/shashwat/esp/esp-idf/components/esp_adc /home/shashwat/esp/esp-idf/components/esp_app_format /home/shashwat/esp/esp-idf/components/esp_bootloader_format /home/shashwat/esp/esp-idf/components/esp_coex /home/shashwat/esp/esp-idf/components/esp_common /home/shashwat/esp/esp-idf/components/esp_driver_ana_cmpr /home/shashwat/esp/esp-idf/components/esp_driver_dac /home/shashwat/esp/esp-idf/components/esp_driver_gpio /home/shashwat/esp/esp-idf/components/esp_driver_gptimer /home/shashwat/esp/esp-idf/components/esp_driver_i2c /home/shashwat/esp/esp-idf/components/esp_driver_i2s /home/shashwat/esp/esp-idf/components/esp_driver_ledc /home/shashwat/esp/esp-idf/components/esp_driver_mcpwm /home/shashwat/esp/esp-idf/components/esp_driver_parlio /home/shashwat/esp/esp-idf/components/esp_driver_pcnt /home/shashwat/esp/esp-idf/components/esp_driver_rmt /home/shashwat/esp/esp-idf/components/esp_driver_sdio /home/shashwat/esp/esp-idf/components/esp_driver_sdm /home/shashwat/esp/esp-idf/components/esp_driver_sdmmc /home/shashwat/esp/esp-idf/components/esp_driver_sdspi /home/shashwat/esp/esp-idf/components/esp_driver_spi /home/shashwat/esp/esp-idf/components/esp_driver_tsens /home/shashwat/esp/esp-idf/components/esp_driver_uart /home/shashwat/esp/esp-idf/components/esp_eth /home/shashwat/esp/esp-idf/components/esp_event /home/shashwat/esp/esp-idf/components/esp_gdbstub /home/shashwat/esp/esp-idf/components/esp_hid /home/shashwat/esp/esp-idf/components/esp_http_client /home/shashwat/esp/esp-idf/components/esp_http_server /home/shashwat/esp/esp-idf/components/esp_https_ota /home/shashwat/esp/esp-idf/components/esp_https_server /home/shashwat/esp/esp-idf/components/esp_hw_support /home/shashwat/esp/esp-idf/components/esp_lcd /home/shashwat/esp/esp-idf/components/esp_local_ctrl /home/shashwat/esp/esp-idf/components/esp_mm /home/shashwat/esp/esp-idf/components/esp_netif /home/shashwat/esp/esp-idf/components/esp_netif_stack /home/shashwat/esp/esp-idf/components/esp_partition /home/shashwat/esp/esp-idf/components/esp_phy /home/shashwat/esp/esp-idf/components/esp_pm /home/shashwat/esp/esp-idf/components/esp_psram /home/shashwat/esp/esp-idf/components/esp_ringbuf /home/shashwat/esp/esp-idf/components/esp_rom /home/shashwat/esp/esp-idf/components/esp_system /home/shashwat/esp/esp-idf/components/esp_timer /home/shashwat/esp/esp-idf/components/esp_wifi /home/shashwat/esp/esp-idf/components/espcoredump /home/shashwat/drone_flight_control/managed_components/espressif__mpu6050 /home/shashwat/esp/esp-idf/components/esptool_py /home/shashwat/esp/esp-idf/components/fatfs /home/shashwat/esp/esp-idf/components/freertos /home/shashwat/esp/esp-idf/components/hal /home/shashwat/esp/esp-idf/components/heap /home/shashwat/esp/esp-idf/components/http_parser /home/shashwat/esp/esp-idf/components/idf_test /home/shashwat/esp/esp-idf/components/ieee802154 /home/shashwat/esp/esp-idf/components/json /home/shashwat/esp/esp-idf/components/log /home/shashwat/esp/esp-idf/components/lwip /home/shashwat/drone_flight_control/main /home/shashwat/esp/esp-idf/components/mbedtls /home/shashwat/drone_flight_control/components/micro_ros_espidf_component /home/shashwat/esp/esp-idf/components/mqtt /home/shashwat/esp/esp-idf/components/newlib /home/shashwat/esp/esp-idf/components/nvs_flash /home/shashwat/esp/esp-idf/components/nvs_sec_provider /home/shashwat/esp/esp-idf/components/openthread /home/shashwat/esp/esp-idf/components/partition_table /home/shashwat/esp/esp-idf/components/perfmon /home/shashwat/esp/esp-idf/components/protobuf-c /home/shashwat/esp/esp-idf/components/protocomm /home/shashwat/esp/esp-idf/components/pthread /home/shashwat/esp/esp-idf/components/sdmmc /home/shashwat/esp/esp-idf/components/soc /home/shashwat/esp/esp-idf/components/spi_flash /home/shashwat/esp/esp-idf/components/spiffs /home/shashwat/esp/esp-idf/components/tcp_transport /home/shashwat/esp/esp-idf/components/ulp /home/shashwat/esp/esp-idf/components/unity /home/shashwat/esp/esp-idf/components/usb /home/shashwat/esp/esp-idf/components/vfs /home/shashwat/esp/esp-idf/components/wear_levelling /home/shashwat/esp/esp-idf/components/wifi_provisioning /home/shashwat/esp/esp-idf/components/wpa_supplicant /home/shashwat/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashwat/drone_flight_control/build
+[0/2] Re-checking globbed directories...
+[1/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/dshot/dshot_esc_encoder.c.obj
+[2/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esc_controller.c.obj
+[3/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pwm.c.obj
+[4/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/sensor/common.c.obj
+[5/17] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/sensor/mpu_filter.cpp.obj
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp: In function 'void mpu6050(void*)':
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp:174:31: warning: unused variable '_roll' [-Wunused-variable]
+  174 |                         float _roll = roll-initial_roll;
+      |                               ^~~~~
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp:175:31: warning: unused variable '_pitch' [-Wunused-variable]
+  175 |                         float _pitch = pitch-initial_pitch;
+      |                               ^~~~~~
+/home/shashwat/drone_flight_control/main/sensor/mpu_filter.cpp:176:31: warning: unused variable '_yaw' [-Wunused-variable]
+  176 |                         float _yaw = yaw-initial_yaw;
+      |                               ^~~~
+[6/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/drone_flight_control.c.obj
+[7/17] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj
+[8/17] Linking C static library esp-idf/main/libmain.a
+[9/17] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /home/shashwat/drone_flight_control/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Adding linker script /home/shashwat/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.ld
+-- Adding linker script /home/shashwat/esp/esp-idf/components/bootloader/subproject/main/ld/esp32/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table soc spi_flash xtensa
+-- Component paths: /home/shashwat/esp/esp-idf/components/bootloader /home/shashwat/esp/esp-idf/components/bootloader_support /home/shashwat/esp/esp-idf/components/efuse /home/shashwat/esp/esp-idf/components/esp_app_format /home/shashwat/esp/esp-idf/components/esp_bootloader_format /home/shashwat/esp/esp-idf/components/esp_common /home/shashwat/esp/esp-idf/components/esp_hw_support /home/shashwat/esp/esp-idf/components/esp_rom /home/shashwat/esp/esp-idf/components/esp_system /home/shashwat/esp/esp-idf/components/esptool_py /home/shashwat/esp/esp-idf/components/freertos /home/shashwat/esp/esp-idf/components/hal /home/shashwat/esp/esp-idf/components/log /home/shashwat/esp/esp-idf/components/bootloader/subproject/main /home/shashwat/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /home/shashwat/esp/esp-idf/components/newlib /home/shashwat/esp/esp-idf/components/partition_table /home/shashwat/esp/esp-idf/components/soc /home/shashwat/esp/esp-idf/components/spi_flash /home/shashwat/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/shashwat/drone_flight_control/build/bootloader
+[1/1] cd /home/shashwat/drone_flight_control/build/bootloader/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashwat/drone_flight_control/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[10/15] Generating ld/sections.ld
+[11/15] Building C object CMakeFiles/drone_flight_control.elf.dir/project_elf_src_esp32.c.obj
+[12/15] Linking CXX executable drone_flight_control.elf
+[13/15] Generating binary image from built executable
+esptool.py vv4.8.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+[14/15] cd /home/shashwat/drone_flight_control/build/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/shashwat/drone_flight_control/build/partition_table/partition-table.bin /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+drone_flight_control.bin binary size 0xe0570 bytes. Smallest app partition is 0x100000 bytes. 0x1fa90 bytes (12%) free.
+[14/15] cd /home/shashwat/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/shashwat/esp/esp-idf -D "SERIAL_TOOL=/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python;;/home/shashwat/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/shashwat/drone_flight_control/build -P /home/shashwat/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 drone_flight_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py vv4.8.dev1
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 78:e3:6d:09:fa:28
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f0fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26704 bytes to 16373...
+Writing at 0x00001000... (100 %)
+Wrote 26704 bytes (16373 compressed) at 0x00001000 in 0.9 seconds (effective 234.9 kbit/s)...
+Hash of data verified.
+Compressed 918896 bytes to 571105...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d5b6... (5 %)
+Writing at 0x00027d47... (8 %)
+Writing at 0x0002d6b4... (11 %)
+Writing at 0x00034b2c... (14 %)
+Writing at 0x00040408... (17 %)
+Writing at 0x00045ea5... (20 %)
+Writing at 0x0004b9b1... (22 %)
+Writing at 0x00051f49... (25 %)
+Writing at 0x00057b09... (28 %)
+Writing at 0x0005d8c2... (31 %)
+Writing at 0x00063362... (34 %)
+Writing at 0x00068d4a... (37 %)
+Writing at 0x0006e7fd... (40 %)
+Writing at 0x0007461a... (42 %)
+Writing at 0x0007a4d0... (45 %)
+Writing at 0x0008016e... (48 %)
+Writing at 0x000857e2... (51 %)
+Writing at 0x0008aac2... (54 %)
+Writing at 0x0008ff72... (57 %)
+Writing at 0x000952bf... (60 %)
+Writing at 0x0009a8e2... (62 %)
+Writing at 0x000a006f... (65 %)
+Writing at 0x000a5e6d... (68 %)
+Writing at 0x000ab752... (71 %)
+Writing at 0x000b13e6... (74 %)
+Writing at 0x000b7a15... (77 %)
+Writing at 0x000bd2d0... (80 %)
+Writing at 0x000c2c65... (82 %)
+Writing at 0x000ccdbd... (85 %)
+Writing at 0x000d47c7... (88 %)
+Writing at 0x000da44a... (91 %)
+Writing at 0x000dfdbb... (94 %)
+Writing at 0x000e5f8d... (97 %)
+Writing at 0x000eb901... (100 %)
+Wrote 918896 bytes (571105 compressed) at 0x00010000 in 13.2 seconds (effective 557.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 315.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

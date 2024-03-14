@@ -1,0 +1,105 @@
+ts Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 25 2024 13:26:40[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0c4c8h ( 50376) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0001c4f0 vaddr=3ffb0000 size=022e8h (  8936) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0001e7e0 vaddr=40080000 size=01838h (  6200) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1983ch (104508) map[0m
+[0;32mI (172) esp_image: segment 4: paddr=00039864 vaddr=40081838 size=0d3f0h ( 54256) load[0m
+[0;32mI (200) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (200) boot: Disabling RNG early entropy source...[0m
+[0;32mI (212) cpu_start: Multicore app[0m
+[0;32mI (221) cpu_start: Pro cpu start user code[0m
+[0;32mI (221) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (221) cpu_start: Application information:[0m
+[0;32mI (224) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (230) cpu_start: App version:      1[0m
+[0;32mI (234) cpu_start: Compile time:     Jan 25 2024 13:26:36[0m
+[0;32mI (240) cpu_start: ELF file SHA256:  dbb5bc570...[0m
+[0;32mI (246) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (253) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (257) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (262) cpu_start: Chip rev:         v1.0[0m
+[0;32mI (267) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (274) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (280) heap_init: At 3FFB2C28 len 0002D3D8 (180 KiB): DRAM[0m
+[0;32mI (287) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (293) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (299) heap_init: At 4008EC28 len 000113D8 (68 KiB): IRAM[0m
+[0;32mI (307) spi_flash: detected chip: generic[0m
+[0;32mI (310) spi_flash: flash io: dio[0m
+[0;33mW (314) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (327) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (339) main_task: Started on CPU0[0m
+[0;32mI (349) main_task: Calling app_main()[0m
+Done with i2cDone with mpu[0;32mI (349) IMU: I have entered MPU CODE[0m
+[0;32mI (349) IMU: devid=0x34[0m
+[0;32mI (349) IMU: getRate()=0[0m
+[0;32mI (359) ESC_controller: Create RMT TX channel[0m
+[0;32mI (359) IMU: getExternalFrameSync()=0[0m
+Created RMT TX ChannelsDone with motor[0;32mI (369) IMU: getDLPFMode()=6[0m
+[0;32mI (369) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (369) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (379) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (389) IMU: getFullScaleGyroRange()=0[0m
+[0;32mI (399) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (369) main_task: Returned from app_main()[0m
+[0;32mI (409) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (419) ESC_controller: Install Dshot ESC encoder[0m
+[0;32mI (429) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (429) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (439) ESC_controller: Increase throttle, no telemetry[0m
+[0;32mI (4439) IMU: roll:0.000000 pitch=0.000000 yaw=0.000000[0m
+[0;32mI (4559) IMU: roll:-0.013738 pitch=-0.050694 yaw=0.004852[0m
+[0;32mI (4679) IMU: roll:-0.080704 pitch=0.044659 yaw=0.009583[0m
+[0;32mI (4799) IMU: roll:-0.123391 pitch=0.038738 yaw=0.015350[0m
+[0;32mI (4919) IMU: roll:-0.048994 pitch=0.025187 yaw=0.022385[0m
+[0;32mI (5039) IMU: roll:-0.018370 pitch=-0.000990 yaw=0.029144[0m
+[0;32mI (5159) IMU: roll:-0.093573 pitch=0.057645 yaw=0.034592[0m
+[0;32mI (5279) IMU: roll:-0.050289 pitch=0.072436 yaw=0.039459[0m
+[0;32mI (5399) IMU: roll:-0.034165 pitch=0.071641 yaw=0.045761[0m
+[0;32mI (5519) IMU: roll:-0.025352 pitch=0.044754 yaw=0.052399[0m
+[0;32mI (5639) IMU: roll:-0.141830 pitch=0.036302 yaw=0.057373[0m
+[0;32mI (5759) IMU: roll:-0.081910 pitch=0.076444 yaw=0.064011[0m
+[0;32mI (5879) IMU: roll:-0.078153 pitch=0.014420 yaw=0.069000[0m
+[0;32mI (5999) IMU: roll:-0.086976 pitch=-0.016868 yaw=0.074570[0m
+[0;32mI (6119) IMU: roll:-0.052255 pitch=0.074024 yaw=0.080917[0m
+[0;32mI (6239) IMU: roll:-0.032250 pitch=-0.008261 yaw=0.087753[0m
+[0;32mI (6359) IMU: roll:-0.069834 pitch=-0.021272 yaw=0.095169[0m
+[0;32mI (6479) IMU: roll:0.009158 pitch=0.009305 yaw=0.101685[0m
+[0;32mI (6599) IMU: roll:-0.182993 pitch=0.129768 yaw=0.105469[0m
+[0;32mI (6719) IMU: roll:-0.008593 pitch=0.017833 yaw=0.110794[0m
+[0;32mI (6839) IMU: roll:-0.081062 pitch=0.051860 yaw=0.116348[0m
+[0;32mI (6959) IMU: roll:-0.214258 pitch=-0.040936 yaw=0.123596[0m
+[0;32mI (7079) IMU: roll:-0.109020 pitch=-0.062586 yaw=0.131332[0m
+[0;32mI (7199) IMU: roll:0.028078 pitch=-0.007286 yaw=0.137589[0m
+[0;32mI (7319) IMU: roll:-0.071098 pitch=-0.050018 yaw=0.140762[0m
+[0;32mI (7439) IMU: roll:-0.122536 pitch=0.042632 yaw=0.147079[0m
+[0;32mI (7559) IMU: roll:-0.027735 pitch=0.025652 yaw=0.153641[0m
+[0;32mI (7679) IMU: roll:-0.007453 pitch=0.004347 yaw=0.160156[0m
+[0;32mI (7799) IMU: roll:-0.028881 pitch=-0.040549 yaw=0.165894[0m
+[0;32mI (7919) IMU: roll:-0.143141 pitch=-0.034144 yaw=0.167984[0m
+[0;32mI (8039) IMU: roll:-0.010237 pitch=0.018338 yaw=0.174789[0m
+[0;32mI (8159) IMU: roll:-0.005674 pitch=0.022400 yaw=0.181229[0m

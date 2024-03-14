@@ -1,0 +1,69 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /home/shashwat/drone_flight_control/build/bootloader/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashwat/drone_flight_control/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/drone_flight_control.c.obj
+/home/shashwat/drone_flight_control/main/drone_flight_control.c: In function 'app_main':
+/home/shashwat/drone_flight_control/main/drone_flight_control.c:33:21: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+   33 |         xTaskCreate(&pid_controller, "PWM", 1024 * 8, NULL, 5, NULL);
+      |                     ^~~~~~~~~~~~~~~
+      |                     |
+      |                     void (*)(void)
+In file included from /home/shashwat/esp/esp-idf/components/freertos/esp_additions/include/freertos/idf_additions.h:20,
+                 from /home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:1533,
+                 from /home/shashwat/drone_flight_control/main/drone_flight_control.c:3:
+/home/shashwat/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:371:44: note: expected 'TaskFunction_t' {aka 'void (*)(void *)'} but argument is of type 'void (*)(void)'
+  371 |     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+      |                             ~~~~~~~~~~~~~~~^~~~~~~~~~
+[3/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/esc_controller.c.obj
+[4/10] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/pwm.c.obj
+[5/10] Linking C static library esp-idf/main/libmain.a
+[6/10] Generating ld/sections.ld
+[7/10] Linking CXX executable drone_flight_control.elf
+[8/10] Generating binary image from built executable
+esptool.py vv4.8.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+[9/10] cd /home/shashwat/drone_flight_control/build/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/shashwat/drone_flight_control/build/partition_table/partition-table.bin /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+drone_flight_control.bin binary size 0x36f30 bytes. Smallest app partition is 0x100000 bytes. 0xc90d0 bytes (79%) free.
+[9/10] cd /home/shashwat/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/shashwat/esp/esp-idf -D "SERIAL_TOOL=/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python;;/home/shashwat/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/shashwat/drone_flight_control/build -P /home/shashwat/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 drone_flight_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py vv4.8.dev1
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-D0WDQ6-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: d4:d4:da:5d:28:20
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00046fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26704 bytes to 16375...
+Writing at 0x00001000... (100 %)
+Wrote 26704 bytes (16375 compressed) at 0x00001000 in 0.9 seconds (effective 243.4 kbit/s)...
+Hash of data verified.
+Compressed 225072 bytes to 121388...
+Writing at 0x00010000... (12 %)
+Writing at 0x0001c6a9... (25 %)
+Writing at 0x000239e9... (37 %)
+Writing at 0x00029923... (50 %)
+Writing at 0x0002f4c6... (62 %)
+Writing at 0x000386e9... (75 %)
+Writing at 0x0003e243... (87 %)
+Writing at 0x0004477a... (100 %)
+Wrote 225072 bytes (121388 compressed) at 0x00010000 in 2.9 seconds (effective 621.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 326.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

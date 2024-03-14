@@ -1,0 +1,1404 @@
+ (240) cpu_start: calling init function: 0x400d1630 on core: 0[0m
+[0;32mI (240) cpu_start: Pro cpu start user code[0m
+[0;32mets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (32) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.0[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0d1f0h ( 53744) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=0001d218 vaddr=3ffb0000 size=0237ch (  9084) load[0m
+[0;32mI (127) esp_image: segment 2: paddr=0001f59c vaddr=40080000 size=00a7ch (  2684) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1bf94h (114580) map[0m
+[0;32mI (177) esp_image: segment 4: paddr=0003bfbc vaddr=40080a7c size=0e4dch ( 58588) load[0m
+[0;32mI (207) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (207) boot: Disabling RNG early entropy source...[0m
+[0;32mI (219) cpu_start: Multicore app[0m
+D (219) cpu_start: Pro cpu up[0m
+D (219) cpu_start: Starting app cpu, entry point is 0x400811ac[0m
+D (0) cpu_start: App cpu up[0m
+D (228) clk: RTC_SLOW_CLK calibration value: 3100442[0m
+D (240) cpu_start: calling init function: 0x400d1630 on core: 0[0m
+[0;32mI (240) cpu_start: Pro cpu start user code[0m
+[0;32mI (240) cpu_start: cpu freq: 160000000 Hz[0m
+D (246) cpu_start: calling init function: 0x400d1674 on core: 0[0m
+[0;32mI (252) cpu_start: Application information:[0m
+[0;32mI (257) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (263) cpu_start: App version:      1[0m
+[0;32mI (267) cpu_start: Compile time:     Jan 31 2024 22:48:20[0m
+[0;32mI (274) cpu_start: ELF file SHA256:  1514ba27b...[0m
+[0;32mI (279) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (286) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (291) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (295) cpu_start: Chip rev:         v3.0[0m
+D (300) cpu_start: calling init function: 0x400d17bc on core: 0[0m
+D (306) memory_layout: Checking 9 reserved memory ranges:[0m
+D (312) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (318) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (324) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffb2d38[0m
+D (331) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (337) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (344) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (350) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (357) memory_layout: Reserved memory range 0x40080000 - 0x4008ef58[0m
+D (363) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (369) memory_layout: Building list of available memory regions:[0m
+D (376) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (382) memory_layout: Available memory region 0x3ffb2d38 - 0x3ffb8000[0m
+D (389) memory_layout: Available memory region 0x3ffb8000 - 0x3ffc0000[0m
+D (395) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (402) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (409) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (415) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (422) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (428) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (435) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (442) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (448) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (455) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (461) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (468) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (475) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (481) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (488) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (494) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (501) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (507) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (514) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (521) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (527) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (534) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (540) memory_layout: Available memory region 0x4008ef58 - 0x40090000[0m
+D (547) memory_layout: Available memory region 0x40090000 - 0x40092000[0m
+D (554) memory_layout: Available memory region 0x40092000 - 0x40094000[0m
+D (560) memory_layout: Available memory region 0x40094000 - 0x40096000[0m
+D (567) memory_layout: Available memory region 0x40096000 - 0x40098000[0m
+D (573) memory_layout: Available memory region 0x40098000 - 0x4009a000[0m
+D (580) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (587) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (593) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (600) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (607) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (612) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (618) heap_init: New heap initialised at 0x3ffb2d38[0m
+[0;32mI (623) heap_init: At 3FFB2D38 len 0002D2C8 (180 KiB): DRAM[0m
+[0;32mI (630) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (636) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (642) heap_init: New heap initialised at 0x4008ef58[0m
+[0;32mI (648) heap_init: At 4008EF58 len 000110A8 (68 KiB): IRAM[0m
+D (654) cpu_start: calling init function: 0x400d17c8 on core: 0[0m
+D (660) cpu_start: calling init function: 0x400d3fc4 on core: 0[0m
+D (666) cpu_start: calling init function: 0x400ea4a0 on core: 0[0m
+D (672) cpu_start: calling init function: 0x400d17d4 on core: 0[0m
+D (678) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (683) cpu_start: calling init function: 0x400d17e0 on core: 0[0m
+D (689) cpu_start: calling init function: 0x400d56f4 on core: 0[0m
+D (695) cpu_start: calling init function: 0x400d80f8 on core: 0[0m
+D (701) cpu_start: calling init function: 0x400d4030 on core: 0[0m
+D (707) cpu_start: calling init function: 0x400d17ec on core: 0[0m
+D (713) cpu_start: calling init function: 0x400d17f8 on core: 0[0m
+D (719) spi_flash: trying chip: issi[0m
+D (722) spi_flash: trying chip: gd[0m
+D (726) spi_flash: trying chip: mxic[0m
+D (729) spi_flash: trying chip: winbond[0m
+D (733) spi_flash: trying chip: generic[0m
+[0;32mI (737) spi_flash: detected chip: generic[0m
+[0;32mI (742) spi_flash: flash io: dio[0m
+[0;33mW (746) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (759) cpu_start: calling init function: 0x400ea4a8 on core: 0[0m
+D (765) cpu_start: calling init function: 0x400df1cc[0m
+[0;33mW (770) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (781) cpu_start: calling init function: 0x400d90c4[0m
+D (786) cpu_start: calling init function: 0x40086170[0m
+D (791) cpu_start: calling init function: 0x400d288c[0m
+D (796) cpu_start: calling init function: 0x400d1d90[0m
+D (801) cpu_start: calling init function: 0x400d1498[0m
+D (806) cpu_start: calling init function: 0x400d4524 on core: 0[0m
+D (812) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (817) cpu_start: calling init function: 0x400d1820 on core: 0[0m
+D (823) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (828) app_start: Starting scheduler on CPU0[0m
+[0;32mD (833) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (833) app_start: Starting scheduler on CPU1[0m
+I (833) main_task: Started on CPU0[0m
+D (853) heap_init: New heap initialised at 0x3ffe0440[0m
+D (853) heap_init: New heap initialised at 0x3ffe4350[0m
+D (853) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (853) main_task: Calling app_main()[0m
+D (863) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+D (863) intr_alloc: Connected src 35 to int 17 (cpu 0)[0m
+[0;32mI (873) IMU: devid=0x34[0m
+[0;32mI (873) IMU: getRate()=0[0m
+[0;32mI (883) IMU: getExternalFrameSync()=0[0m
+[0;32mI (883) IMU: getDLPFMode()=6[0m
+[0;32mI (883) ESC_controller: Create RMT TX channel[0m
+[0;32mI (893) IMU: getFullScaleAccelRange()=0[0m
+Created RMT TX Channels[0;32mI (893) main_task: Returned from app_main()[0m
+D (893) rmt: new group(0) at 0x3ffbf708, occupy=ffffff00[0m
+D (913) intr_alloc: Connected src 47 to int 18 (cpu 0)[0m
+[0;32mI (893) IMU: getFullScaleGyroRange()=0[0m
+D (913) rmt: group clock resolution:80000000[0m
+[0;32mI (923) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (933) rmt: new tx channel(0,0) at 0x3ffbf398, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (943) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (953) rmt: group clock resolution:80000000[0m
+[0;32mI (953) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (963) rmt: new tx channel(0,1) at 0x3ffb40ec, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (983) intr_alloc: Connected src 47 to int 3 (cpu 1)[0m
+D (983) rmt: group clock resolution:80000000[0m
+[0;32mI (993) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1003) rmt: new tx channel(0,2) at 0x3ffb42fc, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1013) intr_alloc: Connected src 47 to int 3 (cpu 1)[[0;32mI (923) IMU: roll=-0.034500 pitch=0.016369 yaw=-0.000107[0m
+0m
+D (1023) rmt: group clock resolution:80000000[0m
+[0;32mI (1033) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1043) rmt: new tx channel(0,3) at 0x3ffb4640, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1053) ESC_controller: Install Dshot ESC encoder[0m
+D (1063) rmt: new bytes encoder @0x3ffb4a7c[0m
+D (1063) rmt: new copy encoder @0x3ffb4aa0[0m
+D (1063) rmt: new bytes encoder @0x3ffb4ad4[0m
+D (1073) rmt: new copy encoder @0x3ffb4af8[0m
+D (1073) rmt: new bytes encoder @0x3ffb4b2c[0m
+D (1083) rmt: new copy encoder @0x3ffb4b50[0m
+D (1083) rmt: new bytes encoder @0x3ffb4b84[0m
+D (1093) rmt: new copy encoder @0x3ffb4ba8[0m
+[0;32mI (1093) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1093) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1123) IMU: roll=-2.131691 pitch=0.991211 yaw=-0.029068[0m
+[0;32mI (1223) IMU: roll=-3.214205 pitch=1.422514 yaw=-0.053085[0m
+[0;32mI (1323) IMU: roll=-4.254488 pitch=1.954996 yaw=-0.089890[0m
+[0;32mI (1423) IMU: roll=-3.226651 pitch=1.520081 yaw=-0.063110[0m
+[0;32mI (1523) IMU: roll=-4.346765 pitch=1.837208 yaw=-0.086792[0m
+[0;32mI (1623) IMU: roll=-3.251207 pitch=1.592806 yaw=-0.068985[0m
+[0;32mI (1723) IMU: roll=-4.410450 pitch=1.602170 yaw=-0.073608[0m
+[0;32mI (1823) IMU: roll=-3.305274 pitch=1.850076 yaw=-0.089523[0m
+[0;32mI (1923) IMU: roll=-4.370271 pitch=1.416687 yaw=-0.065598[0m
+[0;32mI (2023) IMU: roll=-3.276017 pitch=1.728537 yaw=-0.089264[0m
+[0;32mI (2123) IMU: roll=-4.435401 pitch=1.707524 yaw=-0.089203[0m
+[0;32mI (2223) IMU: roll=-3.304809 pitch=1.706529 yaw=-0.092758[0m
+[0;32mI (2323) IMU: roll=-4.412971 pitch=1.396675 yaw=-0.075363[0m
+[0;32mI (2423) IMU: roll=-3.367266 pitch=1.855371 yaw=-0.106247[0m
+[0;32mI (2523) IMU: roll=-4.332352 pitch=1.241266 yaw=-0.070007[0m
+[0;32mI (2623) IMU: roll=-3.405402 pitch=1.925458 yaw=-0.117447[0m
+[0;32mI (2723) IMU: roll=-4.255943 pitch=1.168774 yaw=-0.066422[0m
+[0;32mI (2823) IMU: roll=-3.460466 pitch=2.007132 yaw=-0.123398[0m
+[0;32mI (2923) IMU: roll=-4.196024 pitch=1.143305 yaw=-0.067551[0m
+[0;32mI (3023) IMU: roll=-3.397142 pitch=1.978950 yaw=-0.123489[0m
+[0;32mI (3123) IMU: roll=-4.125383 pitch=1.107564 yaw=-0.071320[0m
+[0;32mI (3223) IMU: roll=-3.316548 pitch=1.927874 yaw=-0.129257[0m
+[0;32mI (3323) IMU: roll=-4.294657 pitch=1.333317 yaw=-0.092545[0m
+[0;32mI (3423) IMU: roll=-3.323400 pitch=1.943352 yaw=-0.136597[0m
+[0;32mI (3523) IMU: roll=-4.183859 pitch=1.197093 yaw=-0.090454[0m
+[0;32mI (3623) IMU: roll=-3.353914 pitch=2.000248 yaw=-0.146149[0m
+[0;32mI (3723) IMU: roll=-4.242850 pitch=1.282533 yaw=-0.102249[0m
+[0;32mI (3823) IMU: roll=-3.420643 pitch=2.094002 yaw=-0.159271[0m
+[0;32mI (3923) IMU: roll=-4.111018 pitch=1.196915 yaw=-0.102890[0m
+[0;32mI (4023) IMU: roll=-3.410613 pitch=2.122106 yaw=-0.165726[0m
+[0;32mI (4123) IMU: roll=-4.070832 pitch=1.201773 yaw=-0.109879[0m
+[0;32mI (4223) IMU: roll=-3.271249 pitch=2.033859 yaw=-0.166916[0m
+[0;32mI (4323) IMU: roll=-3.997409 pitch=1.162784 yaw=-0.110565[0m
+[0;32mI (4423) IMU: roll=-3.485374 pitch=2.211423 yaw=-0.182571[0m
+[0;32mI (4523) IMU: roll=-3.932006 pitch=1.175735 yaw=-0.118988[0m
+[0;32mI (4623) IMU: roll=-3.465981 pitch=2.246107 yaw=-0.191010[0m
+[0;32mI (4723) IMU: roll=-3.838862 pitch=1.184620 yaw=-0.125916[0m
+[0;32mI (4823) IMU: roll=-3.576707 pitch=2.325392 yaw=-0.199722[0m
+[0;32mI (4923) IMU: roll=-3.835486 pitch=1.232496 yaw=-0.132477[0m
+[0;32mI (5023) IMU: roll=-3.413222 pitch=2.322078 yaw=-0.202850[0m
+[0;32mI (5123) IMU: roll=-3.919832 pitch=1.311528 yaw=-0.140289[0m
+[0;32mI (5223) IMU: roll=-3.356593 pitch=2.333406 yaw=-0.208817[0m
+[0;32mI (5323) IMU: roll=-3.845987 pitch=1.316371 yaw=-0.146927[0m
+[0;32mI (5423) IMU: roll=-3.571276 pitch=2.454653 yaw=-0.225174[0m
+[0;32mI (5523) IMU: roll=-3.614321 pitch=1.335080 yaw=-0.158417[0m
+[0;32mI (5623) IMU: roll=-3.915531 pitch=2.470679 yaw=-0.236191[0m
+[0;32mI (5723) IMU: roll=-3.587666 pitch=1.403760 yaw=-0.171326[0m
+[0;32mI (5823) IMU: roll=-4.210276 pitch=2.402543 yaw=-0.240891[0m
+[0;32mI (5923) IMU: roll=-3.584488 pitch=1.480310 yaw=-0.182755[0m
+[0;32mI (6023) IMU: roll=-4.363969 pitch=2.355834 yaw=-0.245331[0m
+[0;32mI (6123) IMU: roll=-3.570477 pitch=1.571461 yaw=-0.192627[0m
+[0;32mI (6223) IMU: roll=-4.607331 pitch=2.109502 yaw=-0.235016[0m
+[0;32mI (6323) IMU: roll=-3.629151 pitch=1.566769 yaw=-0.199936[0m
+[0;32mI (6423) IMU: roll=-4.787566 pitch=1.527702 yaw=-0.196716[0m
+[0;32mI (6523) IMU: roll=-3.667569 pitch=1.711708 yaw=-0.213593[0m
+[0;32mI (6623) IMU: roll=-4.500371 pitch=0.934265 yaw=-0.159271[0m
+[0;32mI (6723) IMU: roll=-3.688612 pitch=1.756006 yaw=-0.220810[0m
+[0;32mI (6823) IMU: roll=-4.054334 pitch=0.688595 yaw=-0.152130[0m
+[0;32mI (6923) IMU: roll=-3.696129 pitch=1.805073 yaw=-0.230988[0m
+[0;32mI (7023) IMU: roll=-4.118946 pitch=0.762797 yaw=-0.163040[0m
+[0;32mI (7123) IMU: roll=-3.629317 pitch=1.822789 yaw=-0.235138[0m
+[0;32mI (7223) IMU: roll=-4.133832 pitch=0.813984 yaw=-0.170822[0m
+[0;32mI (7323) IMU: roll=-3.718038 pitch=1.907174 yaw=-0.246124[0m
+[0;32mI (7423) IMU: roll=-3.892556 pitch=0.797596 yaw=-0.174988[0m
+[0;32mI (7523) IMU: roll=-3.731821 pitch=1.959157 yaw=-0.253677[0m
+[0;32mI (7623) IMU: roll=-3.717467 pitch=0.839547 yaw=-0.182693[0m
+[0;32mI (7723) IMU: roll=-3.648683 pitch=2.013213 yaw=-0.259521[0m
+[0;32mI (7823) IMU: roll=-3.841341 pitch=0.908983 yaw=-0.191299[0m
+[0;32mI (7923) IMU: roll=-3.643938 pitch=2.064825 yaw=-0.269745[0m
+[0;32mI (8023) IMU: roll=-3.719561 pitch=0.947399 yaw=-0.201233[0m
+[0;32mI (8123) IMU: roll=-3.759135 pitch=2.123709 yaw=-0.279434[0m
+[0;32mI (8223) IMU: roll=-3.649754 pitch=1.011459 yaw=-0.210754[0m
+[0;32mI (8323) IMU: roll=-3.935160 pitch=2.155714 yaw=-0.288666[0m
+[0;32mI (8423) IMU: roll=-3.411487 pitch=1.169358 yaw=-0.231003[0m
+[0;32mI (8523) IMU: roll=-3.895924 pitch=2.240598 yaw=-0.302475[0m
+[0;32mI (8623) IMU: roll=-3.486038 pitch=1.202644 yaw=-0.237305[0m
+[0;32mI (8723) IMU: roll=-4.012242 pitch=2.257541 yaw=-0.308487[0m
+[0;32mI (8823) IMU: roll=-3.547777 pitch=1.243314 yaw=-0.241837[0m
+[0;32mI (8923) IMU: roll=-3.973325 pitch=2.340455 yaw=-0.317017[0m
+[0;32mI (9023) IMU: roll=-3.554033 pitch=1.306188 yaw=-0.250610[0m
+[0;32mI (9123) IMU: roll=-4.123951 pitch=2.336808 yaw=-0.321075[0m
+[0;32mI (9223) IMU: roll=-3.530088 pitch=1.395730 yaw=-0.259811[0m
+[0;32mI (9323) IMU: roll=-4.072560 pitch=2.438919 yaw=-0.329926[0m
+[0;32mI (9423) IMU: roll=-3.633186 pitch=1.414589 yaw=-0.264969[0m
+[0;32mI (9523) IMU: roll=-4.358234 pitch=2.339659 yaw=-0.332596[0m
+[0;32mI (9623) IMU: roll=-3.618003 pitch=1.505028 yaw=-0.278458[0m
+[0;32mI (9723) IMU: roll=-3.982840 pitch=2.622953 yaw=-0.357269[0m
+[0;32mI (9823) IMU: roll=-3.694451 pitch=1.543826 yaw=-0.284546[0m
+[0;32mI (9923) IMU: roll=-3.767383 pitch=2.716919 yaw=-0.364853[0m
+[0;32mI (10023) IMU: roll=-3.711687 pitch=1.598828 yaw=-0.295273[0m
+[0;32mI (10123) IMU: roll=-4.005380 pitch=2.737629 yaw=-0.374329[0m
+[0;32mI (10223) IMU: roll=-3.820107 pitch=1.638006 yaw=-0.302353[0m
+[0;32mI (10323) IMU: roll=-2.841742 pitch=2.234915 yaw=-0.338104[0m
+[0;32mI (10423) IMU: roll=-3.824652 pitch=1.650057 yaw=-0.304825[0m
+[0;32mI (10523) IMU: roll=-2.834386 pitch=1.128638 yaw=-0.279190[0m
+[0;32mI (10623) IMU: roll=-3.863659 pitch=1.674925 yaw=-0.315277[0m
+[0;32mI (10723) IMU: roll=-2.748127 pitch=1.509162 yaw=-0.308075[0m
+[0;32mI (10823) IMU: roll=-3.904061 pitch=1.617887 yaw=-0.319489[0m
+[0;32mI (10923) IMU: roll=-2.774266 pitch=1.721154 yaw=-0.326111[0m
+[0;32mI (11023) IMU: roll=-3.928241 pitch=1.686590 yaw=-0.328308[0m
+[0;32mI (11123) IMU: roll=-2.810000 pitch=1.546733 yaw=-0.320297[0m
+[0;32mI (11223) IMU: roll=-3.962750 pitch=1.679723 yaw=-0.330383[0m
+[0;32mI (11323) IMU: roll=-2.853732 pitch=1.463663 yaw=-0.319870[0m
+[0;32mI (11423) IMU: roll=-3.995794 pitch=1.684862 yaw=-0.335159[0m
+[0;32mI (11523) IMU: roll=-2.907944 pitch=1.403505 yaw=-0.321335[0m
+[0;32mI (11623) IMU: roll=-4.027871 pitch=1.722653 yaw=-0.344925[0m
+[0;32mI (11723) IMU: roll=-2.963282 pitch=1.369413 yaw=-0.325623[0m
+[0;32mI (11823) IMU: roll=-4.076310 pitch=1.707387 yaw=-0.349106[0m
+[0;32mI (11923) IMU: roll=-3.036544 pitch=1.297428 yaw=-0.329025[0m
+[0;32mI (12023) IMU: roll=-4.091468 pitch=1.800174 yaw=-0.360840[0m
+[0;32mI (12123) IMU: roll=-2.991767 pitch=1.548114 yaw=-0.349625[0m
+[0;32mI (12223) IMU: roll=-4.129152 pitch=1.780819 yaw=-0.366837[0m
+[0;32mI (12323) IMU: roll=-3.087614 pitch=1.366492 yaw=-0.339264[0m
+[0;32mI (12423) IMU: roll=-4.146592 pitch=1.857953 yaw=-0.373642[0m
+[0;32mI (12523) IMU: roll=-3.249679 pitch=1.199074 yaw=-0.331146[0m
+[0;32mI (12623) IMU: roll=-4.093186 pitch=2.015549 yaw=-0.387558[0m
+[0;32mI (12723) IMU: roll=-3.322444 pitch=1.210020 yaw=-0.340103[0m
+[0;32mI (12823) IMU: roll=-3.999567 pitch=2.174123 yaw=-0.403366[0m
+[0;32mI (12923) IMU: roll=-3.531712 pitch=1.165198 yaw=-0.340240[0m
+[0;32mI (13023) IMU: roll=-4.179445 pitch=2.149391 yaw=-0.412415[0m
+[0;32mI (13123) IMU: roll=-3.466099 pitch=1.292430 yaw=-0.356750[0m
+[0;32mI (13223) IMU: roll=-4.127646 pitch=2.264236 yaw=-0.422028[0m
+[0;32mI (13323) IMU: roll=-3.453022 pitch=1.377473 yaw=-0.364120[0m
+[0;32mI (13423) IMU: roll=-4.310138 pitch=2.176223 yaw=-0.420578[0m
+[0;32mI (13523) IMU: roll=-3.456185 pitch=1.454695 yaw=-0.373352[0m
+[0;32mI (13623) IMU: roll=-4.367556 pitch=2.191805 yaw=-0.425400[0m
+[0;32mI (13723) IMU: roll=-3.496325 pitch=1.492621 yaw=-0.380478[0m
+[0;32mI (13823) IMU: roll=-4.350801 pitch=2.294164 yaw=-0.435547[0m
+[0;32mI (13923) IMU: roll=-3.588268 pitch=1.482238 yaw=-0.385300[0m
+[0;32mI (14023) IMU: roll=-4.282037 pitch=2.430351 yaw=-0.452942[0m
+[0;32mI (14123) IMU: roll=-3.584655 pitch=1.560541 yaw=-0.396469[0m
+[0;32mI (14223) IMU: roll=-4.240662 pitch=2.535647 yaw=-0.466141[0m
+[0;32mI (14323) IMU: roll=-3.714951 pitch=1.551463 yaw=-0.397247[0m
+[0;32mI (14423) IMU: roll=-3.784763 pitch=2.724535 yaw=-0.479523[0m
+[0;32mI (14523) IMU: roll=-3.688752 pitch=1.611463 yaw=-0.409836[0m
+[0;32mI (14623) IMU: roll=-4.555040 pitch=2.402980 yaw=-0.469193[0m
+[0;32mI (14723) IMU: roll=-3.729921 pitch=1.653468 yaw=-0.417282[0m
+[0;32mI (14823) IMU: roll=-2.659450 pitch=2.050004 yaw=-0.443390[0m
+[0;32mI (14923) IMU: roll=-3.774330 pitch=1.763033 yaw=-0.428818[0m
+[0;32mI (15023) IMU: roll=-2.925143 pitch=1.041586 yaw=-0.392899[0m
+[0;32mI (15123) IMU: roll=-3.868233 pitch=1.735473 yaw=-0.438217[0m
+[0;32mI (15223) IMU: roll=-2.893958 pitch=1.185716 yaw=-0.408340[0m
+[0;32mI (15323) IMU: roll=-3.911164 pitch=1.761603 yaw=-0.445206[0m
+[0;32mI (15423) IMU: roll=-3.024107 pitch=1.079861 yaw=-0.405060[0m
+[0;32mI (15523) IMU: roll=-3.979652 pitch=1.754666 yaw=-0.451202[0m
+[0;32mI (15623) IMU: roll=-2.916529 pitch=1.394826 yaw=-0.432663[0m
+[0;32mI (15723) IMU: roll=-4.016685 pitch=1.777694 yaw=-0.456253[0m
+[0;32mI (15823) IMU: roll=-2.973828 pitch=1.376398 yaw=-0.434906[0m
+[0;32mI (15923) IMU: roll=-4.060369 pitch=1.806099 yaw=-0.464691[0m
+[0;32mI (16023) IMU: roll=-3.019828 pitch=1.387498 yaw=-0.442612[0m
+[0;32mI (16123) IMU: roll=-4.101890 pitch=1.824877 yaw=-0.473923[0m
+[0;32mI (16223) IMU: roll=-3.136337 pitch=1.265213 yaw=-0.443481[0m
+[0;32mI (16323) IMU: roll=-4.139650 pitch=1.867462 yaw=-0.481232[0m
+[0;32mI (16423) IMU: roll=-3.119360 pitch=1.406309 yaw=-0.453461[0m
+[0;32mI (16523) IMU: roll=-4.195102 pitch=1.855407 yaw=-0.484024[0m
+[0;32mI (16623) IMU: roll=-3.198098 pitch=1.348492 yaw=-0.456619[0m
+[0;32mI (16723) IMU: roll=-4.206425 pitch=1.938321 yaw=-0.498795[0m
+[0;32mI (16823) IMU: roll=-3.297432 pitch=1.290082 yaw=-0.457855[0m
+[0;32mI (16923) IMU: roll=-4.237841 pitch=1.991982 yaw=-0.508102[0m
+[0;32mI (17023) IMU: roll=-3.404098 pitch=1.250023 yaw=-0.460037[0m
+[0;32mI (17123) IMU: roll=-4.187304 pitch=2.125528 yaw=-0.518890[0m
+[0;32mI (17223) IMU: roll=-3.346688 pitch=1.394237 yaw=-0.474045[0m
+[0;32mI (17323) IMU: roll=-4.230589 pitch=2.166219 yaw=-0.529266[0m
+[0;32mI (17423) IMU: roll=-3.400480 pitch=1.426192 yaw=-0.485107[0m
+[0;32mI (17523) IMU: roll=-4.551713 pitch=1.581607 yaw=-0.500671[0m
+[0;32mI (17623) IMU: roll=-3.426918 pitch=1.699973 yaw=-0.507309[0m
+[0;32mI (17723) IMU: roll=-4.352342 pitch=1.008644 yaw=-0.457382[0m
+[0;32mI (17823) IMU: roll=-3.913945 pitch=2.092728 yaw=-0.535049[0m
+[0;32mI (17923) IMU: roll=-3.506925 pitch=1.048257 yaw=-0.461029[0m
+[0;32mI (18023) IMU: roll=-3.425835 pitch=2.217895 yaw=-0.533463[0m
+[0;32mI (18123) IMU: roll=-3.814755 pitch=1.163459 yaw=-0.472366[0m
+[0;32mI (18223) IMU: roll=-3.900638 pitch=2.341341 yaw=-0.559631[0m
+[0;32mI (18323) IMU: roll=-3.710010 pitch=1.238403 yaw=-0.486786[0m
+[0;32mI (18423) IMU: roll=-3.761943 pitch=2.411392 yaw=-0.565643[0m
+[0;32mI (18523) IMU: roll=-3.669896 pitch=1.298530 yaw=-0.493652[0m
+[0;32mI (18623) IMU: roll=-3.863564 pitch=2.458786 yaw=-0.570099[0m
+[0;32mI (18723) IMU: roll=-3.648305 pitch=1.367991 yaw=-0.503128[0m
+[0;32mI (18823) IMU: roll=-3.907655 pitch=2.514003 yaw=-0.578827[0m
+[0;32mI (18923) IMU: roll=-3.748720 pitch=1.405373 yaw=-0.508072[0m
+[0;32mI (19023) IMU: roll=-3.982153 pitch=2.559080 yaw=-0.593674[0m
+[0;32mI (19123) IMU: roll=-3.702391 pitch=1.473537 yaw=-0.522263[0m
+[0;32mI (19223) IMU: roll=-3.319848 pitch=2.580999 yaw=-0.593063[0m
+[0;32mI (19323) IMU: roll=-3.755232 pitch=1.538378 yaw=-0.531693[0m
+[0;32mI (19423) IMU: roll=-3.685131 pitch=2.711987 yaw=-0.610153[0m
+[0;32mI (19523) IMU: roll=-3.711010 pitch=1.592066 yaw=-0.539841[0m
+[0;32mI (19623) IMU: roll=-4.238317 pitch=2.642009 yaw=-0.612747[0m
+[0;32mI (19723) IMU: roll=-3.639438 pitch=1.705446 yaw=-0.556259[0m
+[0;32mI (19823) IMU: roll=-4.750279 pitch=1.420388 yaw=-0.536316[0m
+[0;32mI (19923) IMU: roll=-3.645271 pitch=1.688627 yaw=-0.560745[0m
+[0;32mI (20023) IMU: roll=-4.328547 pitch=0.786533 yaw=-0.501953[0m
+[0;32mI (20123) IMU: roll=-3.699465 pitch=1.763714 yaw=-0.572403[0m
+[0;32mI (20223) IMU: roll=-3.959322 pitch=0.671556 yaw=-0.501770[0m
+[0;32mI (20323) IMU: roll=-3.663290 pitch=1.803369 yaw=-0.576126[0m
+[0;32mI (20423) IMU: roll=-4.019366 pitch=0.735974 yaw=-0.507095[0m
+[0;32mI (20523) IMU: roll=-3.640244 pitch=1.841743 yaw=-0.581573[0m
+[0;32mI (20623) IMU: roll=-3.862313 pitch=0.743025 yaw=-0.516556[0m
+[0;32mI (20723) IMU: roll=-3.670414 pitch=1.900606 yaw=-0.593979[0m
+[0;32mI (20823) IMU: roll=-3.832047 pitch=0.787469 yaw=-0.523087[0m
+[0;32mI (20923) IMU: roll=-3.734231 pitch=1.958807 yaw=-0.600189[0m
+[0;32mI (21023) IMU: roll=-3.716301 pitch=0.837798 yaw=-0.529938[0m
+[0;32mI (21123) IMU: roll=-3.659674 pitch=2.011828 yaw=-0.608414[0m
+[0;32mI (21223) IMU: roll=-3.767462 pitch=0.895301 yaw=-0.537216[0m
+[0;32mI (21323) IMU: roll=-3.740048 pitch=2.068140 yaw=-0.614853[0m
+[0;32mI (21423) IMU: roll=-3.817008 pitch=0.951482 yaw=-0.547562[0m
+[0;32mI (21523) IMU: roll=-3.558388 pitch=2.090251 yaw=-0.624084[0m
+[0;32mI (21623) IMU: roll=-3.978875 pitch=1.044960 yaw=-0.557190[0m
+[0;32mI (21723) IMU: roll=-3.434740 pitch=2.074737 yaw=-0.627457[0m
+[0;32mI (21823) IMU: roll=-4.042013 pitch=1.118456 yaw=-0.565598[0m
+[0;32mI (21923) IMU: roll=-3.378121 pitch=2.071035 yaw=-0.629440[0m
+[0;32mI (22023) IMU: roll=-4.154767 pitch=1.245097 yaw=-0.580048[0m
+[0;32mI (22123) IMU: roll=-3.287383 pitch=2.003953 yaw=-0.631760[0m
+[0;32mI (22223) IMU: roll=-4.162943 pitch=1.276029 yaw=-0.588638[0m
+[0;32mI (22323) IMU: roll=-3.257066 pitch=1.982739 yaw=-0.633698[0m
+[0;32mI (22423) IMU: roll=-4.279297 pitch=1.463197 yaw=-0.601624[0m
+[0;32mI (22523) IMU: roll=-3.188261 pitch=1.794413 yaw=-0.628281[0m
+[0;32mI (22623) IMU: roll=-4.278851 pitch=1.437997 yaw=-0.607819[0m
+[0;32mI (22723) IMU: roll=-3.186239 pitch=1.752686 yaw=-0.632019[0m
+[0;32mI (22823) IMU: roll=-4.302458 pitch=1.470495 yaw=-0.616287[0m
+[0;32mI (22923) IMU: roll=-3.236185 pitch=1.881597 yaw=-0.644821[0m
+[0;32mI (23023) IMU: roll=-4.351703 pitch=1.600167 yaw=-0.628998[0m
+[0;32mI (23123) IMU: roll=-3.225845 pitch=1.708079 yaw=-0.639801[0m
+[0;32mI (23223) IMU: roll=-4.379084 pitch=1.681314 yaw=-0.641388[0m
+[0;32mI (23323) IMU: roll=-3.271128 pitch=1.481587 yaw=-0.633301[0m
+[0;32mI (23423) IMU: roll=-4.411222 pitch=1.720095 yaw=-0.649628[0m
+[0;32mI (23523) IMU: roll=-3.283375 pitch=1.713633 yaw=-0.650757[0m
+[0;32mI (23623) IMU: roll=-4.441162 pitch=1.660908 yaw=-0.649155[0m
+[0;32mI (23723) IMU: roll=-3.313673 pitch=1.711125 yaw=-0.657745[0m
+[0;32mI (23823) IMU: roll=-4.455033 pitch=1.567541 yaw=-0.649887[0m
+[0;32mI (23923) IMU: roll=-3.328215 pitch=1.680228 yaw=-0.658051[0m
+[0;32mI (24023) IMU: roll=-4.484002 pitch=1.748264 yaw=-0.666061[0m
+[0;32mI (24123) IMU: roll=-3.359735 pitch=1.675611 yaw=-0.663773[0m
+[0;32mI (24223) IMU: roll=-4.516264 pitch=1.692428 yaw=-0.667572[0m
+[0;32mI (24323) IMU: roll=-3.384385 pitch=1.743694 yaw=-0.674728[0m
+[0;32mI (24423) IMU: roll=-4.506236 pitch=1.480904 yaw=-0.657700[0m
+[0;32mI (24523) IMU: roll=-3.383498 pitch=1.631289 yaw=-0.671585[0m
+[0;32mI (24623) IMU: roll=-4.518013 pitch=1.868358 yaw=-0.689713[0m
+[0;32mI (24723) IMU: roll=-3.413117 pitch=1.646355 yaw=-0.676346[0m
+[0;32mI (24823) IMU: roll=-4.539465 pitch=1.926194 yaw=-0.699081[0m
+[0;32mI (24923) IMU: roll=-3.497588 pitch=1.511475 yaw=-0.673721[0m
+[0;32mI (25023) IMU: roll=-4.463861 pitch=2.173875 yaw=-0.721558[0m
+[0;32mI (25123) IMU: roll=-3.569088 pitch=1.505396 yaw=-0.676880[0m
+[0;32mI (25223) IMU: roll=-4.136830 pitch=2.534399 yaw=-0.748596[0m
+[0;32mI (25323) IMU: roll=-3.620466 pitch=1.548970 yaw=-0.685120[0m
+[0;32mI (25423) IMU: roll=-4.230310 pitch=2.551000 yaw=-0.753983[0m
+[0;32mI (25523) IMU: roll=-3.718442 pitch=1.560002 yaw=-0.687653[0m
+[0;32mI (25623) IMU: roll=-3.268711 pitch=2.637582 yaw=-0.757996[0m
+[0;32mI (25723) IMU: roll=-3.764201 pitch=1.625727 yaw=-0.697876[0m
+[0;32mI (25823) IMU: roll=-2.688002 pitch=1.317225 yaw=-0.684479[0m
+[0;32mI (25923) IMU: roll=-3.789604 pitch=1.697232 yaw=-0.709488[0m
+[0;32mI (26023) IMU: roll=-2.776459 pitch=1.221009 yaw=-0.684494[0m
+[0;32mI (26123) IMU: roll=-3.831302 pitch=1.726375 yaw=-0.715652[0m
+[0;32mI (26223) IMU: roll=-3.102121 pitch=0.880032 yaw=-0.667603[0m
+[0;32mI (26323) IMU: roll=-3.799220 pitch=1.825999 yaw=-0.727875[0m
+[0;32mI (26423) IMU: roll=-3.108936 pitch=0.946122 yaw=-0.677185[0m
+[0;32mI (26523) IMU: roll=-3.879772 pitch=1.833896 yaw=-0.733047[0m
+[0;32mI (26623) IMU: roll=-3.030582 pitch=1.111481 yaw=-0.691788[0m
+[0;32mI (26723) IMU: roll=-3.967537 pitch=1.821948 yaw=-0.738464[0m
+[0;32mI (26823) IMU: roll=-3.184464 pitch=1.032299 yaw=-0.689941[0m
+[0;32mI (26923) IMU: roll=-4.010118 pitch=1.852369 yaw=-0.734619[0m
+[0;32mI (27023) IMU: roll=-3.235305 pitch=1.051957 yaw=-0.687622[0m
+[0;32mI (27123) IMU: roll=-3.911006 pitch=2.010727 yaw=-0.749222[0m
+[0;32mI (27223) IMU: roll=-3.191674 pitch=1.161878 yaw=-0.703217[0m
+[0;32mI (27323) IMU: roll=-4.112807 pitch=1.875920 yaw=-0.749084[0m
+[0;32mI (27423) IMU: roll=-3.131640 pitch=1.334391 yaw=-0.717819[0m
+[0;32mI (27523) IMU: roll=-4.190946 pitch=1.826961 yaw=-0.753342[0m
+[0;32mI (27623) IMU: roll=-3.129822 pitch=1.463730 yaw=-0.732498[0m
+[0;32mI (27723) IMU: roll=-4.168122 pitch=1.991736 yaw=-0.769424[0m
+[0;32mI (27823) IMU: roll=-3.315512 pitch=1.268846 yaw=-0.723831[0m
+[0;32mI (27923) IMU: roll=-4.092230 pitch=2.148626 yaw=-0.783340[0m
+[0;32mI (28023) IMU: roll=-3.382960 pitch=1.291793 yaw=-0.728851[0m
+[0;32mI (28123) IMU: roll=-4.111354 pitch=2.216843 yaw=-0.790298[0m
+[0;32mI (28223) IMU: roll=-3.498530 pitch=1.287065 yaw=-0.729050[0m
+[0;32mI (28323) IMU: roll=-4.103037 pitch=2.298122 yaw=-0.799408[0m
+[0;32mI (28423) IMU: roll=-3.561120 pitch=1.327304 yaw=-0.740494[0m
+[0;32mI (28523) IMU: roll=-3.993308 pitch=2.420353 yaw=-0.814972[0m
+[0;32mI (28623) IMU: roll=-3.604810 pitch=1.375129 yaw=-0.748993[0m
+[0;32mI (28723) IMU: roll=-3.924160 pitch=2.504866 yaw=-0.828110[0m
+[0;32mI (28823) IMU: roll=-3.709390 pitch=1.408414 yaw=-0.759293[0m
+[0;32mI (28923) IMU: roll=-3.864838 pitch=2.575338 yaw=-0.838058[0m
+[0;32mI (29023) IMU: roll=-3.643090 pitch=1.478502 yaw=-0.768219[0m
+[0;32mI (29123) IMU: roll=-4.357813 pitch=2.410249 yaw=-0.835663[0m
+[0;32mI (29223) IMU: roll=-3.624624 pitch=1.565338 yaw=-0.777634[0m
+[0;32mI (29323) IMU: roll=-4.541133 pitch=2.298473 yaw=-0.831650[0m
+[0;32mI (29423) IMU: roll=-3.658671 pitch=1.615577 yaw=-0.787430[0m
+[0;32mI (29523) IMU: roll=-4.193655 pitch=2.661718 yaw=-0.860733[0m
+[0;32mI (29623) IMU: roll=-3.735710 pitch=1.644264 yaw=-0.794479[0m
+[0;32mI (29723) IMU: roll=-3.447337 pitch=2.779589 yaw=-0.867966[0m
+[0;32mI (29823) IMU: roll=-3.758948 pitch=1.699144 yaw=-0.804443[0m
+[0;32mI (29923) IMU: roll=-3.416896 pitch=0.636541 yaw=-0.742661[0m
+[0;32mI (30023) IMU: roll=-3.888662 pitch=1.714762 yaw=-0.814560[0m
+[0;32mI (30123) IMU: roll=-2.965263 pitch=1.079433 yaw=-0.779236[0m
+[0;32mI (30223) IMU: roll=-3.902010 pitch=1.785906 yaw=-0.825714[0m
+[0;32mI (30323) IMU: roll=-3.052748 pitch=1.061426 yaw=-0.783447[0m
+[0;32mI (30423) IMU: roll=-3.977655 pitch=1.783921 yaw=-0.829620[0m
+[0;32mI (30523) IMU: roll=-2.985501 pitch=1.269817 yaw=-0.801743[0m
+[0;32mI (30623) IMU: roll=-3.981863 pitch=1.879735 yaw=-0.838501[0m
+[0;32mI (30723) IMU: roll=-3.117290 pitch=1.174116 yaw=-0.800079[0m
+[0;32mI (30823) IMU: roll=-4.042062 pitch=1.891392 yaw=-0.842316[0m
+[0;32mI (30923) IMU: roll=-3.096959 pitch=1.298233 yaw=-0.807785[0m
+[0;32mI (31023) IMU: roll=-4.087304 pitch=1.920991 yaw=-0.848068[0m
+[0;32mI (31123) IMU: roll=-3.122740 pitch=1.360315 yaw=-0.812317[0m
+[0;32mI (31223) IMU: roll=-4.051144 pitch=2.070293 yaw=-0.857941[0m
+[0;32mI (31323) IMU: roll=-3.338435 pitch=1.211125 yaw=-0.808487[0m
+[0;32mI (31423) IMU: roll=-3.793297 pitch=2.294116 yaw=-0.873245[0m
+[0;32mI (31523) IMU: roll=-3.767259 pitch=1.173130 yaw=-0.803467[0m
+[0;32mI (31623) IMU: roll=-3.850042 pitch=2.346115 yaw=-0.883621[0m
+[0;32mI (31723) IMU: roll=-3.717925 pitch=1.234703 yaw=-0.810593[0m
+[0;32mI (31823) IMU: roll=-3.787318 pitch=2.406996 yaw=-0.889755[0m
+[0;32mI (31923) IMU: roll=-3.701183 pitch=1.290562 yaw=-0.817215[0m
+[0;32mI (32023) IMU: roll=-3.645558 pitch=2.462725 yaw=-0.893234[0m
+[0;32mI (32123) IMU: roll=-3.741607 pitch=1.346472 yaw=-0.829315[0m
+[0;32mI (32223) IMU: roll=-3.640806 pitch=2.515435 yaw=-0.907700[0m
+[0;32mI (32323) IMU: roll=-3.735759 pitch=1.402145 yaw=-0.842346[0m
+[0;32mI (32423) IMU: roll=-4.078426 pitch=2.526520 yaw=-0.919128[0m
+[0;32mI (32523) IMU: roll=-3.668216 pitch=1.490469 yaw=-0.852371[0m
+[0;32mI (32623) IMU: roll=-3.956718 pitch=2.635039 yaw=-0.932266[0m
+[0;32mI (32723) IMU: roll=-3.769702 pitch=1.532112 yaw=-0.858231[0m
+[0;32mI (32823) IMU: roll=-3.220445 pitch=2.558335 yaw=-0.923233[0m
+[0;32mI (32923) IMU: roll=-3.772468 pitch=1.573567 yaw=-0.865204[0m
+[0;32mI (33023) IMU: roll=-2.972025 pitch=2.405549 yaw=-0.917404[0m
+[0;32mI (33123) IMU: roll=-3.806569 pitch=1.628793 yaw=-0.876907[0m
+[0;32mI (33223) IMU: roll=-2.690174 pitch=1.493774 yaw=-0.871857[0m
+[0;32mI (33323) IMU: roll=-3.831795 pitch=1.710880 yaw=-0.887146[0m
+[0;32mI (33423) IMU: roll=-2.811193 pitch=2.226458 yaw=-0.922318[0m
+[0;32mI (33523) IMU: roll=-3.741015 pitch=1.565655 yaw=-0.889832[0m
+[0;32mI (33623) IMU: roll=-3.488964 pitch=2.708080 yaw=-0.959763[0m
+[0;32mI (33723) IMU: roll=-3.770502 pitch=1.621764 yaw=-0.897507[0m
+[0;32mI (33823) IMU: roll=-2.820617 pitch=2.253663 yaw=-0.934433[0m
+[0;32mI (33923) IMU: roll=-3.799089 pitch=1.655346 yaw=-0.903122[0m
+[0;32mI (34023) IMU: roll=-2.947337 pitch=0.937448 yaw=-0.863953[0m
+[0;32mI (34123) IMU: roll=-3.811788 pitch=1.727536 yaw=-0.909592[0m
+[0;32mI (34223) IMU: roll=-3.149136 pitch=0.833797 yaw=-0.859375[0m
+[0;32mI (34323) IMU: roll=-3.843383 pitch=1.782867 yaw=-0.919861[0m
+[0;32mI (34423) IMU: roll=-3.142450 pitch=0.914522 yaw=-0.868088[0m
+[0;32mI (34523) IMU: roll=-3.853342 pitch=1.851411 yaw=-0.926971[0m
+[0;32mI (34623) IMU: roll=-3.330473 pitch=0.867019 yaw=-0.867813[0m
+[0;32mI (34723) IMU: roll=-3.881492 pitch=1.908099 yaw=-0.933456[0m
+[0;32mI (34823) IMU: roll=-3.212050 pitch=1.017674 yaw=-0.882431[0m
+[0;32mI (34923) IMU: roll=-3.946308 pitch=1.934772 yaw=-0.940765[0m
+[0;32mI (35023) IMU: roll=-3.353045 pitch=0.989854 yaw=-0.882370[0m
+[0;32mI (35123) IMU: roll=-3.968343 pitch=1.992709 yaw=-0.947235[0m
+[0;32mI (35223) IMU: roll=-3.243974 pitch=1.145033 yaw=-0.893341[0m
+[0;32mI (35323) IMU: roll=-4.008314 pitch=2.037343 yaw=-0.951660[0m
+[0;32mI (35423) IMU: roll=-3.336447 pitch=1.147898 yaw=-0.897064[0m
+[0;32mI (35523) IMU: roll=-4.046121 pitch=2.084333 yaw=-0.958420[0m
+[0;32mI (35623) IMU: roll=-3.575275 pitch=1.069272 yaw=-0.894318[0m
+[0;32mI (35723) IMU: roll=-4.145595 pitch=2.099339 yaw=-0.965958[0m
+[0;32mI (35823) IMU: roll=-3.352396 pitch=1.314031 yaw=-0.914597[0m
+[0;32mI (35923) IMU: roll=-4.105691 pitch=2.211727 yaw=-0.975510[0m
+[0;32mI (36023) IMU: roll=-3.525539 pitch=1.261656 yaw=-0.916382[0m
+[0;32mI (36123) IMU: roll=-4.214026 pitch=2.216696 yaw=-0.984833[0m
+[0;32mI (36223) IMU: roll=-3.464772 pitch=1.389368 yaw=-0.930817[0m
+[0;32mI (36323) IMU: roll=-4.338213 pitch=2.173075 yaw=-0.985870[0m
+[0;32mI (36423) IMU: roll=-3.521062 pitch=1.415178 yaw=-0.936966[0m
+[0;32mI (36523) IMU: roll=-4.366732 pitch=2.228693 yaw=-0.995377[0m
+[0;32mI (36623) IMU: roll=-3.535756 pitch=1.487472 yaw=-0.945786[0m
+[0;32mI (36723) IMU: roll=-4.030753 pitch=2.555140 yaw=-1.020889[0m
+[0;32mI (36823) IMU: roll=-3.722975 pitch=1.481462 yaw=-0.951553[0m
+[0;32mI (36923) IMU: roll=-3.936321 pitch=2.639470 yaw=-1.034958[0m
+[0;32mI (37023) IMU: roll=-3.738080 pitch=1.538134 yaw=-0.967758[0m
+[0;32mI (37123) IMU: roll=-2.728390 pitch=2.078657 yaw=-0.999252[0m
+[0;32mI (37223) IMU: roll=-3.805993 pitch=1.678188 yaw=-0.979553[0m
+[0;32mI (37323) IMU: roll=-2.806218 pitch=1.165703 yaw=-0.952499[0m
+[0;32mI (37423) IMU: roll=-3.825909 pitch=1.731904 yaw=-0.987930[0m
+[0;32mI (37523) IMU: roll=-2.754334 pitch=1.387747 yaw=-0.971298[0m
+[0;32mI (37623) IMU: roll=-3.883623 pitch=1.665105 yaw=-0.990799[0m
+[0;32mI (37723) IMU: roll=-2.953608 pitch=1.048248 yaw=-0.957123[0m
+[0;32mI (37823) IMU: roll=-3.826894 pitch=1.831459 yaw=-1.002380[0m
+[0;32mI (37923) IMU: roll=-2.825419 pitch=1.335774 yaw=-0.978394[0m
+[0;32mI (38023) IMU: roll=-3.932384 pitch=1.702533 yaw=-1.002090[0m
+[0;32mI (38123) IMU: roll=-2.804270 pitch=1.689852 yaw=-0.999969[0m
+[0;32mI (38223) IMU: roll=-3.961826 pitch=1.665483 yaw=-1.003647[0m
+[0;32mI (38323) IMU: roll=-2.867699 pitch=1.408102 yaw=-0.991394[0m
+[0;32mI (38423) IMU: roll=-3.975988 pitch=1.780127 yaw=-1.014999[0m
+[0;32mI (38523) IMU: roll=-2.973518 pitch=1.287385 yaw=-0.986710[0m
+[0;32mI (38623) IMU: roll=-3.986888 pitch=1.866881 yaw=-1.024597[0m
+[0;32mI (38723) IMU: roll=-3.168285 pitch=1.108465 yaw=-0.980362[0m
+[0;32mI (38823) IMU: roll=-4.001068 pitch=1.934693 yaw=-1.037552[0m
+[0;32mI (38923) IMU: roll=-3.133924 pitch=1.235187 yaw=-0.994202[0m
+[0;32mI (39023) IMU: roll=-4.064004 pitch=1.947301 yaw=-1.044495[0m
+[0;32mI (39123) IMU: roll=-3.271844 pitch=1.160874 yaw=-0.994354[0m
+[0;32mI (39223) IMU: roll=-4.040122 pitch=2.048506 yaw=-1.055099[0m
+[0;32mI (39323) IMU: roll=-3.332764 pitch=1.189160 yaw=-1.002151[0m
+[0;32mI (39423) IMU: roll=-4.104271 pitch=2.077244 yaw=-1.060852[0m
+[0;32mI (39523) IMU: roll=-3.388703 pitch=1.225166 yaw=-1.008408[0m
+[0;32mI (39623) IMU: roll=-4.095154 pitch=2.165850 yaw=-1.073975[0m
+[0;32mI (39723) IMU: roll=-3.439008 pitch=1.263170 yaw=-1.015442[0m
+[0;32mI (39823) IMU: roll=-4.140010 pitch=2.207490 yaw=-1.080963[0m
+[0;32mI (39923) IMU: roll=-3.413771 pitch=1.360157 yaw=-1.027359[0m
+[0;32mI (40023) IMU: roll=-4.097520 pitch=2.317425 yaw=-1.091003[0m
+[0;32mI (40123) IMU: roll=-3.583564 pitch=1.329525 yaw=-1.024872[0m
+[0;32mI (40223) IMU: roll=-4.243096 pitch=2.302835 yaw=-1.093857[0m
+[0;32mI (40323) IMU: roll=-3.515740 pitch=1.453451 yaw=-1.036499[0m
+[0;32mI (40423) IMU: roll=-4.384755 pitch=2.239655 yaw=-1.090134[0m
+[0;32mI (40523) IMU: roll=-3.551264 pitch=1.498062 yaw=-1.040970[0m
+[0;32mI (40623) IMU: roll=-4.552271 pitch=2.105694 yaw=-1.084793[0m
+[0;32mI (40723) IMU: roll=-3.532651 pitch=1.646801 yaw=-1.053162[0m
+[0;32mI (40823) IMU: roll=-4.561093 pitch=1.146029 yaw=-1.023254[0m
+[0;32mI (40923) IMU: roll=-3.586234 pitch=1.745096 yaw=-1.068710[0m
+[0;32mI (41023) IMU: roll=-4.502928 pitch=1.067836 yaw=-1.024963[0m
+[0;32mI (41123) IMU: roll=-3.632256 pitch=1.826792 yaw=-1.078400[0m
+[0;32mI (41223) IMU: roll=-3.782118 pitch=0.715308 yaw=-1.008881[0m
+[0;32mI (41323) IMU: roll=-3.699518 pitch=1.888182 yaw=-1.088287[0m
+[0;32mI (41423) IMU: roll=-3.964056 pitch=0.795194 yaw=-1.018555[0m
+[0;32mI (41523) IMU: roll=-3.604653 pitch=1.906238 yaw=-1.094940[0m
+[0;32mI (41623) IMU: roll=-4.056529 pitch=0.873261 yaw=-1.028458[0m
+[0;32mI (41723) IMU: roll=-3.638483 pitch=1.960740 yaw=-1.103012[0m
+[0;32mI (41823) IMU: roll=-3.982077 pitch=0.888982 yaw=-1.037384[0m
+[0;32mI (41923) IMU: roll=-3.538125 pitch=1.971205 yaw=-1.113419[0m
+[0;32mI (42023) IMU: roll=-4.082653 pitch=0.980787 yaw=-1.051010[0m
+[0;32mI (42123) IMU: roll=-3.592522 pitch=2.039967 yaw=-1.124756[0m
+[0;32mI (42223) IMU: roll=-3.900062 pitch=0.957185 yaw=-1.057419[0m
+[0;32mI (42323) IMU: roll=-3.626027 pitch=2.096119 yaw=-1.134369[0m
+[0;32mI (42423) IMU: roll=-3.856434 pitch=0.997905 yaw=-1.065918[0m
+[0;32mI (42523) IMU: roll=-3.533813 pitch=2.125738 yaw=-1.141403[0m
+[0;32mI (42623) IMU: roll=-3.874536 pitch=1.049471 yaw=-1.071655[0m
+[0;32mI (42723) IMU: roll=-3.687088 pitch=2.208832 yaw=-1.153305[0m
+[0;32mI (42823) IMU: roll=-3.683753 pitch=1.091405 yaw=-1.083054[0m
+[0;32mI (42923) IMU: roll=-3.827854 pitch=2.261145 yaw=-1.161148[0m
+[0;32mI (43023) IMU: roll=-3.620448 pitch=1.164546 yaw=-1.093201[0m
+[0;32mI (43123) IMU: roll=-3.887043 pitch=2.311068 yaw=-1.169189[0m
+[0;32mI (43223) IMU: roll=-3.725261 pitch=1.205910 yaw=-1.098267[0m
+[0;32mI (43323) IMU: roll=-3.746781 pitch=2.385336 yaw=-1.175705[0m
+[0;32mI (43423) IMU: roll=-3.791882 pitch=1.264317 yaw=-1.104843[0m
+[0;32mI (43523) IMU: roll=-3.773020 pitch=2.438844 yaw=-1.183929[0m
+[0;32mI (43623) IMU: roll=-3.677545 pitch=1.324890 yaw=-1.117203[0m
+[0;32mI (43723) IMU: roll=-3.706706 pitch=2.498917 yaw=-1.196106[0m
+[0;32mI (43823) IMU: roll=-3.766327 pitch=1.381022 yaw=-1.128906[0m
+[0;32mI (43923) IMU: roll=-3.408716 pitch=2.496899 yaw=-1.200958[0m
+[0;32mI (44023) IMU: roll=-3.810624 pitch=1.442533 yaw=-1.139053[0m
+[0;32mI (44123) IMU: roll=-3.434115 pitch=2.547295 yaw=-1.212891[0m
+[0;32mI (44223) IMU: roll=-3.782877 pitch=1.476324 yaw=-1.149124[0m
+[0;32mI (44323) IMU: roll=-3.431978 pitch=2.594479 yaw=-1.221710[0m
+[0;32mI (44423) IMU: roll=-3.743355 pitch=1.512772 yaw=-1.156143[0m
+[0;32mI (44523) IMU: roll=-3.319011 pitch=2.599833 yaw=-1.224823[0m
+[0;32mI (44623) IMU: roll=-3.818503 pitch=1.586450 yaw=-1.162415[0m
+[0;32mI (44723) IMU: roll=-3.059711 pitch=2.461382 yaw=-1.215790[0m
+[0;32mI (44823) IMU: roll=-3.783928 pitch=1.589097 yaw=-1.168167[0m
+[0;32mI (44923) IMU: roll=-2.694487 pitch=1.923773 yaw=-1.191620[0m
+[0;32mI (45023) IMU: roll=-3.794089 pitch=1.591207 yaw=-1.176468[0m
+[0;32mI (45123) IMU: roll=-2.747604 pitch=2.075695 yaw=-1.204514[0m
+[0;32mI (45223) IMU: roll=-3.789245 pitch=1.604363 yaw=-1.181274[0m
+[0;32mI (45323) IMU: roll=-2.761416 pitch=2.105831 yaw=-1.211578[0m
+[0;32mI (45423) IMU: roll=-3.810902 pitch=1.642874 yaw=-1.187332[0m
+[0;32mI (45523) IMU: roll=-2.689351 pitch=1.796114 yaw=-1.199326[0m
+[0;32mI (45623) IMU: roll=-3.834113 pitch=1.636637 yaw=-1.194077[0m
+[0;32mI (45723) IMU: roll=-2.706598 pitch=1.680118 yaw=-1.199661[0m
+[0;32mI (45823) IMU: roll=-3.866169 pitch=1.692874 yaw=-1.203308[0m
+[0;32mI (45923) IMU: roll=-2.932711 pitch=1.079580 yaw=-1.168427[0m
+[0;32mI (46023) IMU: roll=-3.896753 pitch=1.743688 yaw=-1.212265[0m
+[0;32mI (46123) IMU: roll=-2.980256 pitch=1.106405 yaw=-1.177887[0m
+[0;32mI (46223) IMU: roll=-3.917591 pitch=1.808375 yaw=-1.223572[0m
+[0;32mI (46323) IMU: roll=-2.922255 pitch=1.293852 yaw=-1.196716[0m
+[0;32mI (46423) IMU: roll=-4.020319 pitch=1.688545 yaw=-1.221085[0m
+[0;32mI (46523) IMU: roll=-2.924364 pitch=1.452923 yaw=-1.209320[0m
+[0;32mI (46623) IMU: roll=-4.042261 pitch=1.776741 yaw=-1.232513[0m
+[0;32mI (46723) IMU: roll=-3.012930 pitch=1.335479 yaw=-1.207596[0m
+[0;32mI (46823) IMU: roll=-4.074856 pitch=1.828163 yaw=-1.239960[0m
+[0;32mI (46923) IMU: roll=-3.055155 pitch=1.365442 yaw=-1.215134[0m
+[0;32mI (47023) IMU: roll=-4.149100 pitch=1.761909 yaw=-1.241196[0m
+[0;32mI (47123) IMU: roll=-3.042982 pitch=1.557874 yaw=-1.232880[0m
+[0;32mI (47223) IMU: roll=-4.190105 pitch=1.750461 yaw=-1.247040[0m
+[0;32mI (47323) IMU: roll=-3.068435 pitch=1.639896 yaw=-1.241562[0m
+[0;32mI (47423) IMU: roll=-4.226869 pitch=1.662364 yaw=-1.246475[0m
+[0;32mI (47523) IMU: roll=-3.104481 pitch=1.595459 yaw=-1.242371[0m
+[0;32mI (47623) IMU: roll=-4.251733 pitch=1.806231 yaw=-1.258743[0m
+[0;32mI (47723) IMU: roll=-3.189905 pitch=1.451764 yaw=-1.238785[0m
+[0;32mI (47823) IMU: roll=-4.301370 pitch=1.798638 yaw=-1.263412[0m
+[0;32mI (47923) IMU: roll=-3.204882 pitch=1.563067 yaw=-1.248138[0m
+[0;32mI (48023) IMU: roll=-4.353777 pitch=1.752812 yaw=-1.265640[0m
+[0;32mI (48123) IMU: roll=-3.255986 pitch=1.518604 yaw=-1.253815[0m
+[0;32mI (48223) IMU: roll=-4.384635 pitch=1.805064 yaw=-1.277740[0m
+[0;32mI (48323) IMU: roll=-3.274484 pitch=1.622321 yaw=-1.269196[0m
+[0;32mI (48423) IMU: roll=-4.402953 pitch=1.898735 yaw=-1.287979[0m
+[0;32mI (48523) IMU: roll=-3.394577 pitch=1.415027 yaw=-1.254364[0m
+[0;32mI (48623) IMU: roll=-4.394608 pitch=2.021937 yaw=-1.298126[0m
+[0;32mI (48723) IMU: roll=-3.340572 pitch=1.636402 yaw=-1.273346[0m
+[0;32mI (48823) IMU: roll=-4.494553 pitch=1.586064 yaw=-1.269272[0m
+[0;32mI (48923) IMU: roll=-3.364582 pitch=1.674491 yaw=-1.280304[0m
+[0;32mI (49023) IMU: roll=-4.479020 pitch=1.401264 yaw=-1.264816[0m
+[0;32mI (49123) IMU: roll=-3.384930 pitch=1.714168 yaw=-1.288391[0m
+[0;32mI (49223) IMU: roll=-4.453512 pitch=1.290829 yaw=-1.260620[0m
+[0;32mI (49323) IMU: roll=-3.425203 pitch=1.800905 yaw=-1.298172[0m
+[0;32mI (49423) IMU: roll=-3.938014 pitch=0.810130 yaw=-1.242416[0m
+[0;32mI (49523) IMU: roll=-3.835952 pitch=1.979903 yaw=-1.326172[0m
+[0;32mI (49623) IMU: roll=-3.799539 pitch=0.860577 yaw=-1.255814[0m
+[0;32mI (49723) IMU: roll=-3.594294 pitch=2.015071 yaw=-1.329422[0m
+[0;32mI (49823) IMU: roll=-4.014790 pitch=0.967762 yaw=-1.261108[0m
+[0;32mI (49923) IMU: roll=-3.555032 pitch=2.042688 yaw=-1.337112[0m
+[0;32mI (50023) IMU: roll=-4.021816 pitch=1.014902 yaw=-1.271072[0m
+[0;32mI (50123) IMU: roll=-3.478323 pitch=2.046817 yaw=-1.341431[0m
+[0;32mI (50223) IMU: roll=-4.091850 pitch=1.096206 yaw=-1.279800[0m
+[0;32mI (50323) IMU: roll=-3.510452 pitch=2.109130 yaw=-1.347321[0m
+[0;32mI (50423) IMU: roll=-3.989553 pitch=1.088952 yaw=-1.282394[0m
+[0;32mI (50523) IMU: roll=-3.522987 pitch=2.157770 yaw=-1.354675[0m
+[0;32mI (50623) IMU: roll=-3.842156 pitch=1.075713 yaw=-1.290298[0m
+[0;32mI (50723) IMU: roll=-3.449358 pitch=2.177299 yaw=-1.364853[0m
+[0;32mI (50823) IMU: roll=-3.909190 pitch=1.147323 yaw=-1.300690[0m
+[0;32mI (50923) IMU: roll=-3.525320 pitch=2.252061 yaw=-1.375305[0m
+[0;32mI (51023) IMU: roll=-3.897546 pitch=1.188054 yaw=-1.309982[0m
+[0;32mI (51123) IMU: roll=-3.537286 pitch=2.306309 yaw=-1.380569[0m
+[0;32mI (51223) IMU: roll=-3.854019 pitch=1.228782 yaw=-1.314484[0m
+[0;32mI (51323) IMU: roll=-3.361161 pitch=2.288512 yaw=-1.382568[0m
+[0;32mI (51423) IMU: roll=-4.012464 pitch=1.361643 yaw=-1.326523[0m
+[0;32mI (51523) IMU: roll=-3.123061 pitch=2.093356 yaw=-1.374435[0m
+[0;32mI (51623) IMU: roll=-4.041037 pitch=1.414432 yaw=-1.335678[0m
+[0;32mI (51723) IMU: roll=-3.154946 pitch=2.142872 yaw=-1.382462[0m
+[0;32mI (51823) IMU: roll=-3.973342 pitch=1.349454 yaw=-1.335373[0m
+[0;32mI (51923) IMU: roll=-3.211824 pitch=2.220767 yaw=-1.394608[0m
+[0;32mI (52023) IMU: roll=-4.097477 pitch=1.506850 yaw=-1.351761[0m
+[0;32mI (52123) IMU: roll=-3.012668 pitch=1.845668 yaw=-1.373734[0m
+[0;32mI (52223) IMU: roll=-4.151578 pitch=1.664805 yaw=-1.366745[0m
+[0;32mI (52323) IMU: roll=-3.022101 pitch=1.754823 yaw=-1.376083[0m
+[0;32mI (52423) IMU: roll=-4.149670 pitch=1.517306 yaw=-1.365631[0m
+[0;32mI (52523) IMU: roll=-3.038846 pitch=1.729757 yaw=-1.378265[0m
+[0;32mI (52623) IMU: roll=-4.197130 pitch=1.763466 yaw=-1.389816[0m
+[0;32mI (52723) IMU: roll=-3.124882 pitch=1.422663 yaw=-1.368713[0m
+[0;32mI (52823) IMU: roll=-4.239899 pitch=1.763000 yaw=-1.398499[0m
+[0;32mI (52923) IMU: roll=-3.284188 pitch=1.194308 yaw=-1.363586[0m
+[0;32mI (53023) IMU: roll=-4.030443 pitch=2.102213 yaw=-1.418976[0m
+[0;32mI (53123) IMU: roll=-3.220948 pitch=1.342396 yaw=-1.378342[0m
+[0;32mI (53223) IMU: roll=-4.159420 pitch=2.043530 yaw=-1.425415[0m
+[0;32mI (53323) IMU: roll=-3.366936 pitch=1.263849 yaw=-1.378082[0m
+[0;32mI (53423) IMU: roll=-4.095596 pitch=2.182081 yaw=-1.441208[0m
+[0;32mI (53523) IMU: roll=-3.350391 pitch=1.356575 yaw=-1.390137[0m
+[0;32mI (53623) IMU: roll=-4.338246 pitch=1.984796 yaw=-1.436279[0m
+[0;32mI (53723) IMU: roll=-3.356938 pitch=1.450509 yaw=-1.401978[0m
+[0;32mI (53823) IMU: roll=-4.282409 pitch=2.169186 yaw=-1.454117[0m
+[0;32mI (53923) IMU: roll=-3.466395 pitch=1.408492 yaw=-1.403458[0m
+[0;32mI (54023) IMU: roll=-4.349581 pitch=2.183647 yaw=-1.459564[0m
+[0;32mI (54123) IMU: roll=-3.486303 pitch=1.477389 yaw=-1.414337[0m
+[0;32mI (54223) IMU: roll=-4.428126 pitch=2.174187 yaw=-1.465759[0m
+[0;32mI (54323) IMU: roll=-3.562688 pitch=1.475050 yaw=-1.418579[0m
+[0;32mI (54423) IMU: roll=-4.405067 pitch=2.293603 yaw=-1.477829[0m
+[0;32mI (54523) IMU: roll=-3.561613 pitch=1.562595 yaw=-1.431534[0m
+[0;32mI (54623) IMU: roll=-4.670910 pitch=1.914612 yaw=-1.460754[0m
+[0;32mI (54723) IMU: roll=-3.586100 pitch=1.636857 yaw=-1.442947[0m
+[0;32mI (54823) IMU: roll=-4.643347 pitch=2.134820 yaw=-1.479691[0m
+[0;32mI (54923) IMU: roll=-3.628416 pitch=1.667076 yaw=-1.451904[0m
+[0;32mI (55023) IMU: roll=-2.513617 pitch=1.492925 yaw=-1.439041[0m
+[0;32mI (55123) IMU: roll=-3.658772 pitch=1.682652 yaw=-1.452072[0m
+[0;32mI (55223) IMU: roll=-4.104758 pitch=0.644305 yaw=-1.384415[0m
+[0;32mI (55323) IMU: roll=-3.695616 pitch=1.739131 yaw=-1.462402[0m
+[0;32mI (55423) IMU: roll=-4.129108 pitch=0.701218 yaw=-1.395401[0m
+[0;32mI (55523) IMU: roll=-3.665272 pitch=1.775551 yaw=-1.468826[0m
+[0;32mI (55623) IMU: roll=-3.505986 pitch=0.672880 yaw=-1.407349[0m
+[0;32mI (55723) IMU: roll=-3.725141 pitch=1.824622 yaw=-1.477112[0m
+[0;32mI (55823) IMU: roll=-3.837006 pitch=0.709576 yaw=-1.409821[0m
+[0;32mI (55923) IMU: roll=-3.760431 pitch=1.880632 yaw=-1.488892[0m
+[0;32mI (56023) IMU: roll=-3.856154 pitch=0.764629 yaw=-1.418808[0m
+[0;32mI (56123) IMU: roll=-3.665732 pitch=1.921008 yaw=-1.496155[0m
+[0;32mI (56223) IMU: roll=-3.943393 pitch=0.831249 yaw=-1.424850[0m
+[0;32mI (56323) IMU: roll=-3.665382 pitch=1.970464 yaw=-1.504044[0m
+[0;32mI (56423) IMU: roll=-3.997742 pitch=0.898645 yaw=-1.439362[0m
+[0;32mI (56523) IMU: roll=-3.590330 pitch=1.994624 yaw=-1.517059[0m
+[0;32mI (56623) IMU: roll=-3.903889 pitch=0.913336 yaw=-1.449081[0m
+[0;32mI (56723) IMU: roll=-3.601795 pitch=2.045390 yaw=-1.525330[0m
+[0;32mI (56823) IMU: roll=-3.849159 pitch=0.947257 yaw=-1.456039[0m
+[0;32mI (56923) IMU: roll=-3.664112 pitch=2.105676 yaw=-1.532639[0m
+[0;32mI (57023) IMU: roll=-3.914396 pitch=1.006203 yaw=-1.463654[0m
+[0;32mI (57123) IMU: roll=-3.556575 pitch=2.119401 yaw=-1.537659[0m
+[0;32mI (57223) IMU: roll=-3.762058 pitch=1.017519 yaw=-1.469086[0m
+[0;32mI (57323) IMU: roll=-3.618784 pitch=2.182413 yaw=-1.546356[0m
+[0;32mI (57423) IMU: roll=-3.876410 pitch=1.091260 yaw=-1.477493[0m
+[0;32mI (57523) IMU: roll=-3.544060 pitch=2.212365 yaw=-1.548523[0m
+[0;32mI (57623) IMU: roll=-3.745184 pitch=1.106055 yaw=-1.480988[0m
+[0;32mI (57723) IMU: roll=-3.582329 pitch=2.265210 yaw=-1.557602[0m
+[0;32mI (57823) IMU: roll=-3.874286 pitch=1.177902 yaw=-1.487305[0m
+[0;32mI (57923) IMU: roll=-3.613475 pitch=2.320558 yaw=-1.564941[0m
+[0;32mI (58023) IMU: roll=-3.730866 pitch=1.205273 yaw=-1.495407[0m
+[0;32mI (58123) IMU: roll=-3.723727 pitch=2.380723 yaw=-1.571793[0m
+[0;32mI (58223) IMU: roll=-3.766953 pitch=1.263658 yaw=-1.503708[0m
+[0;32mI (58323) IMU: roll=-3.503015 pitch=2.406029 yaw=-1.575348[0m
+[0;32mI (58423) IMU: roll=-3.847268 pitch=1.334070 yaw=-1.508545[0m
+[0;32mI (58523) IMU: roll=-3.600868 pitch=2.480740 yaw=-1.586807[0m
+[0;32mI (58623) IMU: roll=-3.768084 pitch=1.368026 yaw=-1.516861[0m
+[0;32mI (58723) IMU: roll=-3.848698 pitch=2.544532 yaw=-1.596329[0m
+[0;32mI (58823) IMU: roll=-3.627128 pitch=1.448518 yaw=-1.526611[0m
+[0;32mI (58923) IMU: roll=-4.187117 pitch=2.482972 yaw=-1.600494[0m
+[0;32mI (59023) IMU: roll=-3.660302 pitch=1.497689 yaw=-1.536316[0m
+[0;32mI (59123) IMU: roll=-4.635449 pitch=2.144807 yaw=-1.585617[0m
+[0;32mI (59223) IMU: roll=-3.625263 pitch=1.668263 yaw=-1.553436[0m
+[0;32mI (59323) IMU: roll=-4.766015 pitch=1.892384 yaw=-1.573914[0m
+[0;32mI (59423) IMU: roll=-3.663845 pitch=1.675547 yaw=-1.560715[0m
+[0;32mI (59523) IMU: roll=-3.925910 pitch=0.581956 yaw=-1.490021[0m
+[0;32mI (59623) IMU: roll=-3.756827 pitch=1.742904 yaw=-1.571411[0m
+[0;32mI (59723) IMU: roll=-3.965034 pitch=0.640629 yaw=-1.496445[0m
+[0;32mI (59823) IMU: roll=-3.675580 pitch=1.774822 yaw=-1.573364[0m
+[0;32mI (59923) IMU: roll=-3.616700 pitch=0.658198 yaw=-1.504654[0m
+[0;32mI (60023) IMU: roll=-3.730745 pitch=1.829195 yaw=-1.580414[0m
+[0;32mI (60123) IMU: roll=-3.947225 pitch=0.724255 yaw=-1.510666[0m
+[0;32mI (60223) IMU: roll=-3.662690 pitch=1.860617 yaw=-1.586624[0m
+[0;32mI (60323) IMU: roll=-3.811855 pitch=0.746496 yaw=-1.516586[0m
+[0;32mI (60423) IMU: roll=-3.666361 pitch=1.910097 yaw=-1.594711[0m
+[0;32mI (60523) IMU: roll=-3.674094 pitch=0.790607 yaw=-1.527023[0m
+[0;32mI (60623) IMU: roll=-3.685792 pitch=1.964437 yaw=-1.603912[0m
+[0;32mI (60723) IMU: roll=-4.003173 pitch=0.884390 yaw=-1.535522[0m
+[0;32mI (60823) IMU: roll=-3.649296 pitch=1.996895 yaw=-1.612823[0m
+[0;32mI (60923) IMU: roll=-3.952180 pitch=0.913626 yaw=-1.543549[0m
+[0;32mI (61023) IMU: roll=-3.660394 pitch=2.045907 yaw=-1.622513[0m
+[0;32mI (61123) IMU: roll=-3.829663 pitch=0.937561 yaw=-1.554077[0m
+[0;32mI (61223) IMU: roll=-3.535168 pitch=2.066362 yaw=-1.628311[0m
+[0;32mI (61323) IMU: roll=-4.065160 pitch=1.068331 yaw=-1.564789[0m
+[0;32mI (61423) IMU: roll=-3.494073 pitch=2.082412 yaw=-1.635284[0m
+[0;32mI (61523) IMU: roll=-3.999675 pitch=1.071791 yaw=-1.568848[0m
+[0;32mI (61623) IMU: roll=-3.482348 pitch=2.118969 yaw=-1.642944[0m
+[0;32mI (61723) IMU: roll=-4.030152 pitch=1.130936 yaw=-1.580841[0m
+[0;32mI (61823) IMU: roll=-3.570811 pitch=2.204401 yaw=-1.657166[0m
+[0;32mI (61923) IMU: roll=-3.874326 pitch=1.121529 yaw=-1.587952[0m
+[0;32mI (62023) IMU: roll=-3.755098 pitch=2.286637 yaw=-1.669464[0m
+[0;32mI (62123) IMU: roll=-3.718386 pitch=1.166261 yaw=-1.599243[0m
+[0;32mI (62223) IMU: roll=-3.725682 pitch=2.339747 yaw=-1.674026[0m
+[0;32mI (62323) IMU: roll=-3.765081 pitch=1.220587 yaw=-1.605072[0m
+[0;32mI (62423) IMU: roll=-3.658350 pitch=2.386865 yaw=-1.680038[0m
+[0;32mI (62523) IMU: roll=-3.795282 pitch=1.273381 yaw=-1.607834[0m
+[0;32mI (62623) IMU: roll=-3.572896 pitch=2.422748 yaw=-1.681824[0m
+[0;32mI (62723) IMU: roll=-3.757601 pitch=1.318735 yaw=-1.615158[0m
+[0;32mI (62823) IMU: roll=-3.806971 pitch=2.494056 yaw=-1.694199[0m
+[0;32mI (62923) IMU: roll=-3.668543 pitch=1.386073 yaw=-1.627457[0m
+[0;32mI (63023) IMU: roll=-3.462227 pitch=2.527159 yaw=-1.701065[0m
+[0;32mI (63123) IMU: roll=-3.804584 pitch=1.460289 yaw=-1.635178[0m
+[0;32mI (63223) IMU: roll=-2.850377 pitch=2.088480 yaw=-1.672195[0m
+[0;32mI (63323) IMU: roll=-3.915726 pitch=1.659709 yaw=-1.649841[0m
+[0;32mI (63423) IMU: roll=-2.795638 pitch=1.572570 yaw=-1.647781[0m
+[0;32mI (63523) IMU: roll=-3.947989 pitch=1.700198 yaw=-1.654419[0m
+[0;32mI (63623) IMU: roll=-2.940378 pitch=1.219332 yaw=-1.631622[0m
+[0;32mI (63723) IMU: roll=-3.946347 pitch=1.817778 yaw=-1.671127[0m
+[0;32mI (63823) IMU: roll=-2.913695 pitch=1.386874 yaw=-1.644760[0m
+[0;32mI (63923) IMU: roll=-4.027403 pitch=1.737192 yaw=-1.670212[0m
+[0;32mI (64023) IMU: roll=-2.988981 pitch=1.315231 yaw=-1.646652[0m
+[0;32mI (64123) IMU: roll=-4.019099 pitch=1.858773 yaw=-1.682465[0m
+[0;32mI (64223) IMU: roll=-3.055754 pitch=1.296793 yaw=-1.651535[0m
+[0;32mI (64323) IMU: roll=-4.107426 pitch=1.805753 yaw=-1.684418[0m
+[0;32mI (64423) IMU: roll=-3.059950 pitch=1.404076 yaw=-1.661530[0m
+[0;32mI (64523) IMU: roll=-4.145322 pitch=1.832282 yaw=-1.691177[0m
+[0;32mI (64623) IMU: roll=-3.140432 pitch=1.341932 yaw=-1.662567[0m
+[0;32mI (64723) IMU: roll=-4.162488 pitch=1.908201 yaw=-1.700378[0m
+[0;32mI (64823) IMU: roll=-3.221399 pitch=1.307911 yaw=-1.664093[0m
+[0;32mI (64923) IMU: roll=-4.146837 pitch=2.027205 yaw=-1.712189[0m
+[0;32mI (65023) IMU: roll=-3.398169 pitch=1.200282 yaw=-1.658615[0m
+[0;32mI (65123) IMU: roll=-4.063257 pitch=2.171200 yaw=-1.724350[0m
+[0;32mI (65223) IMU: roll=-3.417789 pitch=1.262481 yaw=-1.665161[0m
+[0;32mI (65323) IMU: roll=-4.150824 pitch=2.178571 yaw=-1.726578[0m
+[0;32mI (65423) IMU: roll=-3.387474 pitch=1.369647 yaw=-1.674362[0m
+[0;32mI (65523) IMU: roll=-4.284874 pitch=2.128997 yaw=-1.727066[0m
+[0;32mI (65623) IMU: roll=-3.476466 pitch=1.361786 yaw=-1.677521[0m
+[0;32mI (65723) IMU: roll=-4.185218 pitch=2.300087 yaw=-1.742752[0m
+[0;32mI (65823) IMU: roll=-3.611927 pitch=1.346953 yaw=-1.681885[0m
+[0;32mI (65923) IMU: roll=-3.925342 pitch=2.482254 yaw=-1.757538[0m
+[0;32mI (66023) IMU: roll=-3.679242 pitch=1.393272 yaw=-1.690887[0m
+[0;32mI (66123) IMU: roll=-4.083694 pitch=2.500711 yaw=-1.768997[0m
+[0;32mI (66223) IMU: roll=-3.650728 pitch=1.474114 yaw=-1.703552[0m
+[0;32mI (66323) IMU: roll=-3.796958 pitch=2.646412 yaw=-1.785416[0m
+[0;32mI (66423) IMU: roll=-3.643021 pitch=1.537636 yaw=-1.715851[0m
+[0;32mI (66523) IMU: roll=-4.098877 pitch=2.625351 yaw=-1.793854[0m
+[0;32mI (66623) IMU: roll=-3.604471 pitch=1.625341 yaw=-1.729019[0m
+[0;32mI (66723) IMU: roll=-4.472210 pitch=2.408951 yaw=-1.787994[0m
+[0;32mI (66823) IMU: roll=-3.694292 pitch=1.620510 yaw=-1.734695[0m
+[0;32mI (66923) IMU: roll=-3.851703 pitch=0.510458 yaw=-1.663818[0m
+[0;32mI (67023) IMU: roll=-3.855154 pitch=1.686295 yaw=-1.747269[0m
+[0;32mI (67123) IMU: roll=-2.955885 pitch=1.025488 yaw=-1.708893[0m
+[0;32mI (67223) IMU: roll=-3.787822 pitch=1.856513 yaw=-1.758133[0m
+[0;32mI (67323) IMU: roll=-3.068948 pitch=1.004101 yaw=-1.710526[0m
+[0;32mI (67423) IMU: roll=-3.930682 pitch=1.803712 yaw=-1.762787[0m
+[0;32mI (67523) IMU: roll=-3.166432 pitch=0.994580 yaw=-1.715942[0m
+[0;32mI (67623) IMU: roll=-3.922675 pitch=1.893996 yaw=-1.773499[0m
+[0;32mI (67723) IMU: roll=-3.230135 pitch=1.018447 yaw=-1.722046[0m
+[0;32mI (67823) IMU: roll=-3.947394 pitch=1.951790 yaw=-1.785950[0m
+[0;32mI (67923) IMU: roll=-3.229114 pitch=1.101121 yaw=-1.734436[0m
+[0;32mI (68023) IMU: roll=-3.976439 pitch=2.004779 yaw=-1.794617[0m
+[0;32mI (68123) IMU: roll=-3.398260 pitch=1.052654 yaw=-1.735657[0m
+[0;32mI (68223) IMU: roll=-3.951578 pitch=2.091256 yaw=-1.805573[0m
+[0;32mI (68323) IMU: roll=-3.512815 pitch=1.068533 yaw=-1.740677[0m
+[0;32mI (68423) IMU: roll=-3.862856 pitch=2.193389 yaw=-1.816238[0m
+[0;32mI (68523) IMU: roll=-3.501096 pitch=1.137243 yaw=-1.750366[0m
+[0;32mI (68623) IMU: roll=-3.960584 pitch=2.222108 yaw=-1.821320[0m
+[0;32mI (68723) IMU: roll=-3.381000 pitch=1.271301 yaw=-1.763641[0m
+[0;32mI (68823) IMU: roll=-4.121824 pitch=2.182535 yaw=-1.824921[0m
+[0;32mI (68923) IMU: roll=-3.510002 pitch=1.249645 yaw=-1.765808[0m
+[0;32mI (69023) IMU: roll=-3.898406 pitch=2.361315 yaw=-1.838379[0m
+[0;32mI (69123) IMU: roll=-3.545041 pitch=1.304652 yaw=-1.771637[0m
+[0;32mI (69223) IMU: roll=-4.048716 pitch=2.367394 yaw=-1.844406[0m
+[0;32mI (69323) IMU: roll=-3.594525 pitch=1.350456 yaw=-1.778976[0m
+[0;32mI (69423) IMU: roll=-4.070358 pitch=2.426762 yaw=-1.853333[0m
+[0;32mI (69523) IMU: roll=-3.617635 pitch=1.405391 yaw=-1.785843[0m
+[0;32mI (69623) IMU: roll=-4.414662 pitch=2.270140 yaw=-1.848694[0m
+[0;32mI (69723) IMU: roll=-3.614280 pitch=1.492703 yaw=-1.797318[0m
+[0;32mI (69823) IMU: roll=-4.291145 pitch=2.451231 yaw=-1.865204[0m
+[0;32mI (69923) IMU: roll=-3.688570 pitch=1.510965 yaw=-1.804230[0m
+[0;32mI (70023) IMU: roll=-3.811800 pitch=2.678965 yaw=-1.883133[0m
+[0;32mI (70123) IMU: roll=-3.699178 pitch=1.565562 yaw=-1.813629[0m
+[0;32mI (70223) IMU: roll=-3.869946 pitch=2.732666 yaw=-1.895187[0m
+[0;32mI (70323) IMU: roll=-3.676985 pitch=1.630221 yaw=-1.824493[0m
+[0;32mI (70423) IMU: roll=-4.527158 pitch=2.442548 yaw=-1.884964[0m
+[0;32mI (70523) IMU: roll=-3.805882 pitch=1.596581 yaw=-1.826843[0m
+[0;32mI (70623) IMU: roll=-2.805454 pitch=2.150058 yaw=-1.862183[0m
+[0;32mI (70723) IMU: roll=-3.870447 pitch=1.725843 yaw=-1.839676[0m
+[0;32mI (70823) IMU: roll=-3.058581 pitch=0.969453 yaw=-1.797806[0m
+[0;32mI (70923) IMU: roll=-3.925557 pitch=1.764789 yaw=-1.847427[0m
+[0;32mI (71023) IMU: roll=-2.838886 pitch=1.486091 yaw=-1.834946[0m
+[0;32mI (71123) IMU: roll=-3.967665 pitch=1.768845 yaw=-1.851669[0m
+[0;32mI (71223) IMU: roll=-3.092264 pitch=1.077938 yaw=-1.815155[0m
+[0;32mI (71323) IMU: roll=-3.865515 pitch=1.961200 yaw=-1.869843[0m
+[0;32mI (71423) IMU: roll=-3.384375 pitch=0.961590 yaw=-1.815811[0m
+[0;32mI (71523) IMU: roll=-3.950476 pitch=1.992848 yaw=-1.881271[0m
+[0;32mI (71623) IMU: roll=-3.347216 pitch=1.054574 yaw=-1.821716[0m
+[0;32mI (71723) IMU: roll=-3.925561 pitch=2.082957 yaw=-1.892334[0m
+[0;32mI (71823) IMU: roll=-3.327364 pitch=1.140437 yaw=-1.831512[0m
+[0;32mI (71923) IMU: roll=-4.012488 pitch=2.099586 yaw=-1.897644[0m
+[0;32mI (72023) IMU: roll=-3.393234 pitch=1.174114 yaw=-1.840988[0m
+[0;32mI (72123) IMU: roll=-4.114990 pitch=2.106883 yaw=-1.909592[0m
+[0;32mI (72223) IMU: roll=-3.442923 pitch=1.213910 yaw=-1.854385[0m
+[0;32mI (72323) IMU: roll=-4.116737 pitch=2.179643 yaw=-1.924362[0m
+[0;32mI (72423) IMU: roll=-3.510170 pitch=1.245429 yaw=-1.866806[0m
+[0;32mI (72523) IMU: roll=-4.127238 pitch=2.246535 yaw=-1.933746[0m
+[0;32mI (72623) IMU: roll=-3.491375 pitch=1.335254 yaw=-1.876450[0m
+[0;32mI (72723) IMU: roll=-4.182849 pitch=2.287688 yaw=-1.942001[0m
+[0;32mI (72823) IMU: roll=-3.622035 pitch=1.337569 yaw=-1.831665[0m
+[0;32mI (72923) IMU: roll=-3.955809 pitch=2.459303 yaw=-1.904160[0m
+[0;32mI (73023) IMU: roll=-3.579375 pitch=1.410811 yaw=-1.839447[0m
+[0;32mI (73123) IMU: roll=-4.178399 pitch=2.422089 yaw=-1.910233[0m
+[0;32mI (73223) IMU: roll=-3.603322 pitch=1.470722 yaw=-1.847519[0m
+[0;32mI (73323) IMU: roll=-4.322587 pitch=2.403104 yaw=-1.916611[0m
+[0;32mI (73423) IMU: roll=-3.691926 pitch=1.484561 yaw=-1.852570[0m
+[0;32mI (73523) IMU: roll=-4.273055 pitch=2.511789 yaw=-1.929199[0m
+[0;32mI (73623) IMU: roll=-3.691621 pitch=1.561957 yaw=-1.862610[0m
+[0;32mI (73723) IMU: roll=-4.284429 pitch=2.580859 yaw=-1.938202[0m
+[0;32mI (73823) IMU: roll=-3.752938 pitch=1.602511 yaw=-1.871338[0m
+[0;32mI (73923) IMU: roll=-2.656063 pitch=1.888440 yaw=-1.890701[0m
+[0;32mI (74023) IMU: roll=-3.803206 pitch=1.722215 yaw=-1.887543[0m
+[0;32mI (74123) IMU: roll=-2.679882 pitch=1.633618 yaw=-1.884415[0m
+[0;32mI (74223) IMU: roll=-3.840374 pitch=1.665641 yaw=-1.890839[0m
+[0;32mI (74323) IMU: roll=-2.713840 pitch=1.649856 yaw=-1.892334[0m
+[0;32mI (74423) IMU: roll=-3.873346 pitch=1.656397 yaw=-1.894882[0m
+[0;32mI (74523) IMU: roll=-2.863925 pitch=1.173313 yaw=-1.869385[0m
+[0;32mI (74623) IMU: roll=-3.872585 pitch=1.767224 yaw=-1.906967[0m
+[0;32mI (74723) IMU: roll=-3.016777 pitch=1.053001 yaw=-1.868790[0m
+[0;32mI (74823) IMU: roll=-3.932025 pitch=1.788864 yaw=-1.916763[0m
+[0;32mI (74923) IMU: roll=-2.992043 pitch=1.186830 yaw=-1.883850[0m
+[0;32mI (75023) IMU: roll=-3.953654 pitch=1.860003 yaw=-1.928070[0m
+[0;32mI (75123) IMU: roll=-3.132272 pitch=1.110024 yaw=-1.885391[0m
+[0;32mI (75223) IMU: roll=-3.962326 pitch=1.939804 yaw=-1.940063[0m
+[0;32mI (75323) IMU: roll=-3.305228 pitch=1.040835 yaw=-1.885376[0m
+[0;32mI (75423) IMU: roll=-4.061565 pitch=1.943938 yaw=-1.948181[0m
+[0;32mI (75523) IMU: roll=-3.276989 pitch=1.153907 yaw=-1.902573[0m
+[0;32mI (75623) IMU: roll=-3.986600 pitch=2.091385 yaw=-1.969116[0m
+[0;32mI (75723) IMU: roll=-3.412563 pitch=1.136740 yaw=-1.910751[0m
+[0;32mI (75823) IMU: roll=-4.052879 pitch=2.124829 yaw=-1.975998[0m
+[0;32mI (75923) IMU: roll=-3.496696 pitch=1.157336 yaw=-1.912430[0m
+[0;32mI (76023) IMU: roll=-4.025135 pitch=2.211164 yaw=-1.986191[0m
+[0;32mI (76123) IMU: roll=-3.438483 pitch=1.258796 yaw=-1.923721[0m
+[0;32mI (76223) IMU: roll=-4.182968 pitch=2.170465 yaw=-1.986649[0m
+[0;32mI (76323) IMU: roll=-3.426060 pitch=1.349598 yaw=-1.934845[0m
+[0;32mI (76423) IMU: roll=-4.431162 pitch=1.938873 yaw=-1.976135[0m
+[0;32mI (76523) IMU: roll=-3.366284 pitch=1.590320 yaw=-1.956070[0m
+[0;32mI (76623) IMU: roll=-4.520778 pitch=1.723846 yaw=-1.966431[0m
+[0;32mI (76723) IMU: roll=-3.400748 pitch=1.629313 yaw=-1.962112[0m
+[0;32mI (76823) IMU: roll=-4.419006 pitch=1.097373 yaw=-1.930725[0m
+[0;32mI (76923) IMU: roll=-3.487486 pitch=1.773776 yaw=-1.979401[0m
+[0;32mI (77023) IMU: roll=-4.430573 pitch=1.127371 yaw=-1.938156[0m
+[0;32mI (77123) IMU: roll=-3.501212 pitch=1.805028 yaw=-1.985321[0m
+[0;32mI (77223) IMU: roll=-4.529066 pitch=1.298673 yaw=-1.951782[0m
+[0;32mI (77323) IMU: roll=-3.516860 pitch=1.834595 yaw=-1.990631[0m
+[0;32mI (77423) IMU: roll=-4.349045 pitch=1.056893 yaw=-1.942963[0m
+[0;32mI (77523) IMU: roll=-3.528145 pitch=1.864595 yaw=-1.996994[0m
+[0;32mI (77623) IMU: roll=-4.354644 pitch=1.081408 yaw=-1.951859[0m
+[0;32mI (77723) IMU: roll=-3.523409 pitch=1.881065 yaw=-2.006638[0m
+[0;32mI (77823) IMU: roll=-4.261229 pitch=1.016836 yaw=-1.949112[0m
+[0;32mI (77923) IMU: roll=-3.503853 pitch=1.894805 yaw=-2.010468[0m
+[0;32mI (78023) IMU: roll=-4.209378 pitch=1.003844 yaw=-1.953308[0m
+[0;32mI (78123) IMU: roll=-3.542486 pitch=1.952146 yaw=-2.018875[0m
+[0;32mI (78223) IMU: roll=-4.209483 pitch=1.035728 yaw=-1.960358[0m
+[0;32mI (78323) IMU: roll=-3.438366 pitch=1.899379 yaw=-2.019974[0m
+[0;32mI (78423) IMU: roll=-4.151177 pitch=1.017275 yaw=-1.964218[0m
+[0;32mI (78523) IMU: roll=-3.494265 pitch=1.978456 yaw=-2.031006[0m
+[0;32mI (78623) IMU: roll=-4.132156 pitch=1.042112 yaw=-1.971420[0m
+[0;32mI (78723) IMU: roll=-3.468654 pitch=1.994062 yaw=-2.036758[0m
+[0;32mI (78823) IMU: roll=-4.053331 pitch=1.024472 yaw=-1.974365[0m
+[0;32mI (78923) IMU: roll=-3.446491 pitch=2.015734 yaw=-2.043701[0m
+[0;32mI (79023) IMU: roll=-4.179574 pitch=1.145798 yaw=-1.990219[0m
+[0;32mI (79123) IMU: roll=-3.362899 pitch=1.965638 yaw=-2.049225[0m
+[0;32mI (79223) IMU: roll=-4.152066 pitch=1.148163 yaw=-1.997543[0m
+[0;32mI (79323) IMU: roll=-3.427957 pitch=2.051334 yaw=-2.057266[0m
+[0;32mI (79423) IMU: roll=-4.026279 pitch=1.090882 yaw=-1.998306[0m
+[0;32mI (79523) IMU: roll=-3.443439 pitch=2.098137 yaw=-2.066895[0m
+[0;32mI (79623) IMU: roll=-4.032509 pitch=1.130082 yaw=-2.007401[0m
+[0;32mI (79723) IMU: roll=-3.422280 pitch=2.119578 yaw=-2.075470[0m
+[0;32mI (79823) IMU: roll=-4.006608 pitch=1.150445 yaw=-2.016220[0m
+[0;32mI (79923) IMU: roll=-3.517574 pitch=2.212563 yaw=-2.087219[0m
+[0;32mI (80023) IMU: roll=-3.871981 pitch=1.143199 yaw=-2.018784[0m
+[0;32mI (80123) IMU: roll=-3.514964 pitch=2.258055 yaw=-2.094345[0m
+[0;32mI (80223) IMU: roll=-3.664680 pitch=1.144591 yaw=-2.030350[0m
+[0;32mI (80323) IMU: roll=-3.827870 pitch=2.310577 yaw=-2.109665[0m
+[0;32mI (80423) IMU: roll=-3.691149 pitch=1.202712 yaw=-2.040237[0m
+[0;32mI (80523) IMU: roll=-3.681703 pitch=2.375736 yaw=-2.115051[0m
+[0;32mI (80623) IMU: roll=-3.765922 pitch=1.258690 yaw=-2.045166[0m
+[0;32mI (80723) IMU: roll=-3.584837 pitch=2.416828 yaw=-2.120270[0m
+[0;32mI (80823) IMU: roll=-3.807270 pitch=1.316054 yaw=-2.054291[0m
+[0;32mI (80923) IMU: roll=-3.381542 pitch=2.401860 yaw=-2.126343[0m
+[0;32mI (81023) IMU: roll=-3.859403 pitch=1.379131 yaw=-2.065353[0m
+[0;32mI (81123) IMU: roll=-3.291098 pitch=2.395971 yaw=-2.130280[0m
+[0;32mI (81223) IMU: roll=-3.831913 pitch=1.404258 yaw=-2.071487[0m
+[0;32mI (81323) IMU: roll=-3.470441 pitch=2.513332 yaw=-2.145447[0m
+[0;32mI (81423) IMU: roll=-3.955689 pitch=1.494265 yaw=-2.082275[0m
+[0;32mI (81523) IMU: roll=-2.868565 pitch=1.833797 yaw=-2.110779[0m
+[0;32mI (81623) IMU: roll=-4.001335 pitch=1.613743 yaw=-2.098343[0m
+[0;32mI (81723) IMU: roll=-2.876892 pitch=1.574471 yaw=-2.100510[0m
+[0;32mI (81823) IMU: roll=-4.041382 pitch=1.631717 yaw=-2.100952[0m
+[0;32mI (81923) IMU: roll=-3.144941 pitch=0.966919 yaw=-2.065536[0m
+[0;32mI (82023) IMU: roll=-3.894033 pitch=1.863667 yaw=-2.118195[0m
+[0;32mI (82123) IMU: roll=-2.922379 pitch=1.318032 yaw=-2.091843[0m
+[0;32mI (82223) IMU: roll=-3.990590 pitch=1.792676 yaw=-2.122604[0m
+[0;32mI (82323) IMU: roll=-2.947332 pitch=1.383599 yaw=-2.104691[0m
+[0;32mI (82423) IMU: roll=-4.071454 pitch=1.686106 yaw=-2.129944[0m
+[0;32mI (82523) IMU: roll=-2.959483 pitch=1.513298 yaw=-2.118744[0m
+[0;32mI (82623) IMU: roll=-4.107126 pitch=1.709352 yaw=-2.136627[0m
+[0;32mI (82723) IMU: roll=-2.982426 pitch=1.613154 yaw=-2.131256[0m
+[0;32mI (82823) IMU: roll=-4.139592 pitch=1.720732 yaw=-2.139297[0m
+[0;32mI (82923) IMU: roll=-3.065342 pitch=1.398827 yaw=-2.120514[0m
+[0;32mI (83023) IMU: roll=-4.179482 pitch=1.743810 yaw=-2.146561[0m
+[0;32mI (83123) IMU: roll=-3.085367 pitch=1.504328 yaw=-2.135895[0m
+[0;32mI (83223) IMU: roll=-4.221610 pitch=1.751959 yaw=-2.155869[0m
+[0;32mI (83323) IMU: roll=-3.145180 pitch=1.441233 yaw=-2.137985[0m
+[0;32mI (83423) IMU: roll=-4.229564 pitch=1.868365 yaw=-2.169662[0m
+[0;32mI (83523) IMU: roll=-3.237266 pitch=1.352454 yaw=-2.136719[0m
+[0;32mI (83623) IMU: roll=-4.209679 pitch=2.007284 yaw=-2.180420[0m
+[0;32mI (83723) IMU: roll=-3.325516 pitch=1.329309 yaw=-2.139679[0m
+[0;32mI (83823) IMU: roll=-4.232344 pitch=2.073316 yaw=-2.193512[0m
+[0;32mI (83923) IMU: roll=-3.386117 pitch=1.348296 yaw=-2.149048[0m
+[0;32mI (84023) IMU: roll=-4.211189 pitch=2.182714 yaw=-2.206909[0m
+[0;32mI (84123) IMU: roll=-3.435287 pitch=1.380741 yaw=-2.152573[0m
+[0;32mI (84223) IMU: roll=-4.276910 pitch=2.201072 yaw=-2.209427[0m
+[0;32mI (84323) IMU: roll=-3.514206 pitch=1.386738 yaw=-2.155594[0m
+[0;32mI (84423) IMU: roll=-4.132911 pitch=2.388262 yaw=-2.228455[0m
+[0;32mI (84523) IMU: roll=-3.596382 pitch=1.413123 yaw=-2.164322[0m
+[0;32mI (84623) IMU: roll=-4.094573 pitch=2.478024 yaw=-2.238953[0m
+[0;32mI (84723) IMU: roll=-3.643623 pitch=1.459554 yaw=-2.173706[0m
+[0;32mI (84823) IMU: roll=-4.069625 pitch=2.556356 yaw=-2.248260[0m
+[0;32mI (84923) IMU: roll=-3.649287 pitch=1.524313 yaw=-2.181885[0m
+[0;32mI (85023) IMU: roll=-3.812805 pitch=2.688428 yaw=-2.260132[0m
+[0;32mI (85123) IMU: roll=-3.813687 pitch=1.568540 yaw=-2.189102[0m
+[0;32mI (85223) IMU: roll=-3.027369 pitch=2.418455 yaw=-2.242905[0m
+[0;32mI (85323) IMU: roll=-3.775642 pitch=1.563811 yaw=-2.195190[0m
+[0;32mI (85423) IMU: roll=-3.248804 pitch=2.605183 yaw=-2.262024[0m
+[0;32mI (85523) IMU: roll=-3.746550 pitch=1.589746 yaw=-2.199326[0m
+[0;32mI (85623) IMU: roll=-2.810420 pitch=2.258710 yaw=-2.242920[0m
+[0;32mI (85723) IMU: roll=-3.808923 pitch=1.701530 yaw=-2.213669[0m
+[0;32mI (85823) IMU: roll=-2.972289 pitch=0.969758 yaw=-2.171280[0m
+[0;32mI (85923) IMU: roll=-3.883714 pitch=1.709387 yaw=-2.216583[0m
+[0;32mI (86023) IMU: roll=-2.799746 pitch=1.413047 yaw=-2.202454[0m
+[0;32mI (86123) IMU: roll=-3.925687 pitch=1.711672 yaw=-2.222748[0m
+[0;32mI (86223) IMU: roll=-2.964439 pitch=1.139032 yaw=-2.189178[0m
+[0;32mI (86323) IMU: roll=-3.913477 pitch=1.828010 yaw=-2.233917[0m
+[0;32mI (86423) IMU: roll=-3.041359 pitch=1.135602 yaw=-2.194168[0m
+[0;32mI (86523) IMU: roll=-4.031010 pitch=1.760478 yaw=-2.233063[0m
+[0;32mI (86623) IMU: roll=-2.905484 pitch=1.689344 yaw=-2.229584[0m
+[0;32mI (86723) IMU: roll=-4.061532 pitch=1.642388 yaw=-2.230331[0m
+[0;32mI (86823) IMU: roll=-2.935828 pitch=1.736680 yaw=-2.236938[0m
+[0;32mI (86923) IMU: roll=-4.080224 pitch=1.587130 yaw=-2.230682[0m
+[0;32mI (87023) IMU: roll=-2.962927 pitch=1.791596 yaw=-2.245453[0m
+[0;32mI (87123) IMU: roll=-4.106112 pitch=1.641433 yaw=-2.241272[0m
+[0;32mI (87223) IMU: roll=-2.979454 pitch=1.608757 yaw=-2.241577[0m
+[0;32mI (87323) IMU: roll=-4.135898 pitch=1.606264 yaw=-2.244247[0m
+[0;32mI (87423) IMU: roll=-3.012253 pitch=1.729712 yaw=-2.252701[0m
+[0;32mI (87523) IMU: roll=-4.169469 pitch=1.678084 yaw=-2.250793[0m
+[0;32mI (87623) IMU: roll=-3.040161 pitch=1.677077 yaw=-2.252121[0m
+[0;32mI (87723) IMU: roll=-4.198058 pitch=1.675416 yaw=-2.254822[0m
+[0;32mI (87823) IMU: roll=-3.068219 pitch=1.667654 yaw=-2.254272[0m
+[0;32mI (87923) IMU: roll=-4.216148 pitch=1.546296 yaw=-2.250824[0m
+[0;32mI (88023) IMU: roll=-3.116226 pitch=1.824503 yaw=-2.270187[0m
+[0;32mI (88123) IMU: roll=-4.252930 pitch=1.617608 yaw=-2.259735[0m
+[0;32mI (88223) IMU: roll=-3.123310 pitch=1.602365 yaw=-2.263229[0m
+[0;32mI (88323) IMU: roll=-4.280493 pitch=1.673188 yaw=-2.270569[0m
+[0;32mI (88423) IMU: roll=-3.153122 pitch=1.706256 yaw=-2.276443[0m
+[0;32mI (88523) IMU: roll=-4.295887 pitch=1.540164 yaw=-2.268417[0m
+[0;32mI (88623) IMU: roll=-3.183873 pitch=1.793100 yaw=-2.285995[0m
+[0;32mI (88723) IMU: roll=-4.321556 pitch=1.589186 yaw=-2.275391[0m
+[0;32mI (88823) IMU: roll=-3.210807 pitch=1.810746 yaw=-2.292786[0m
+[0;32mI (88923) IMU: roll=-4.323418 pitch=1.523380 yaw=-2.276611[0m
+[0;32mI (89023) IMU: roll=-3.196309 pitch=1.575653 yaw=-2.284470[0m
+[0;32mI (89123) IMU: roll=-4.318740 pitch=1.882512 yaw=-2.304382[0m
+[0;32mI (89223) IMU: roll=-3.220412 pitch=1.652371 yaw=-2.295288[0m
+[0;32mI (89323) IMU: roll=-4.381369 pitch=1.684822 yaw=-2.301743[0m
+[0;32mI (89423) IMU: roll=-3.660668 pitch=2.577618 yaw=-2.376053[0m
+[0;32mI (89523) IMU: roll=-4.040857 pitch=1.510110 yaw=-2.302155[0m
+[0;32mI (89623) IMU: roll=-3.079265 pitch=2.120962 yaw=-2.337723[0m
+[0;32mI (89723) IMU: roll=-4.037530 pitch=1.494215 yaw=-2.303329[0m
+[0;32mI (89823) IMU: roll=-2.950579 pitch=1.833528 yaw=-2.326965[0m
+[0;32mI (89923) IMU: roll=-4.080287 pitch=1.612242 yaw=-2.313217[0m
+[0;32mI (90023) IMU: roll=-2.955539 pitch=1.724539 yaw=-2.324631[0m
+[0;32mI (90123) IMU: roll=-4.110180 pitch=1.656288 yaw=-2.320251[0m
+[0;32mI (90223) IMU: roll=-2.979528 pitch=1.698879 yaw=-2.328842[0m
+[0;32mI (90323) IMU: roll=-4.135506 pitch=1.722454 yaw=-2.332977[0m
+[0;32mI (90423) IMU: roll=-3.019089 pitch=1.594254 yaw=-2.322647[0m
+[0;32mI (90523) IMU: roll=-4.175231 pitch=1.763656 yaw=-2.333954[0m
+[0;32mI (90623) IMU: roll=-3.140607 pitch=1.342947 yaw=-2.308609[0m
+[0;32mI (90723) IMU: roll=-4.189919 pitch=1.860166 yaw=-2.342972[0m
+[0;32mI (90823) IMU: roll=-3.155736 pitch=1.437316 yaw=-2.317200[0m
+[0;32mI (90923) IMU: roll=-4.178384 pitch=2.002283 yaw=-2.354324[0m
+[0;32mI (91023) IMU: roll=-3.326414 pitch=1.282262 yaw=-2.309647[0m
+[0;32mI (91123) IMU: roll=-4.194929 pitch=2.079504 yaw=-2.366104[0m
+[0;32mI (91223) IMU: roll=-3.379691 pitch=1.320039 yaw=-2.316666[0m
+[0;32mI (91323) IMU: roll=-4.228312 pitch=2.130706 yaw=-2.376007[0m
+[0;32mI (91423) IMU: roll=-3.311064 pitch=1.491219 yaw=-2.336700[0m
+[0;32mI (91523) IMU: roll=-4.389112 pitch=1.935658 yaw=-2.369934[0m
+[0;32mI (91623) IMU: roll=-3.357805 pitch=1.506771 yaw=-2.341904[0m
+[0;32mI (91723) IMU: roll=-4.394965 pitch=2.047362 yaw=-2.381699[0m
+[0;32mI (91823) IMU: roll=-3.441362 pitch=1.471252 yaw=-2.344574[0m
+[0;32mI (91923) IMU: roll=-4.419813 pitch=2.116736 yaw=-2.391388[0m
+[0;32mI (92023) IMU: roll=-3.510638 pitch=1.470989 yaw=-2.352173[0m
+[0;32mI (92123) IMU: roll=-4.512977 pitch=2.077729 yaw=-2.397217[0m
+[0;32mI (92223) IMU: roll=-3.524712 pitch=1.557485 yaw=-2.361481[0m
+[0;32mI (92323) IMU: roll=-4.215375 pitch=2.511943 yaw=-2.427612[0m
+[0;32mI (92423) IMU: roll=-3.653619 pitch=1.548667 yaw=-2.365341[0m
+[0;32mI (92523) IMU: roll=-4.301507 pitch=2.532675 yaw=-2.435822[0m
+[0;32mI (92623) IMU: roll=-3.752031 pitch=1.559976 yaw=-2.370728[0m
+[0;32mI (92723) IMU: roll=-3.293071 pitch=2.630888 yaw=-2.439087[0m
+[0;32mI (92823) IMU: roll=-3.733671 pitch=1.596684 yaw=-2.378311[0m
+[0;32mI (92923) IMU: roll=-2.860447 pitch=0.898083 yaw=-2.341431[0m
+[0;32mI (93023) IMU: roll=-3.774708 pitch=1.626575 yaw=-2.386322[0m
+[0;32mI (93123) IMU: roll=-2.720363 pitch=2.063988 yaw=-2.412018[0m
+[0;32mI (93223) IMU: roll=-3.780878 pitch=1.625146 yaw=-2.388672[0m
+[0;32mI (93323) IMU: roll=-2.710188 pitch=2.017204 yaw=-2.411087[0m
+[0;32mI (93423) IMU: roll=-3.779641 pitch=1.602638 yaw=-2.389816[0m
+[0;32mI (93523) IMU: roll=-3.301869 pitch=2.669343 yaw=-2.458740[0m
+[0;32mI (93623) IMU: roll=-3.721674 pitch=1.623946 yaw=-2.398392[0m
+[0;32mI (93723) IMU: roll=-2.791745 pitch=1.005960 yaw=-2.366501[0m
+[0;32mI (93823) IMU: roll=-3.759729 pitch=1.665873 yaw=-2.406937[0m
+[0;32mI (93923) IMU: roll=-3.377598 pitch=0.620304 yaw=-2.346573[0m
+[0;32mI (94023) IMU: roll=-3.823241 pitch=1.704299 yaw=-2.415009[0m
+[0;32mI (94123) IMU: roll=-3.352594 pitch=0.691398 yaw=-2.354126[0m
+[0;32mI (94223) IMU: roll=-3.719402 pitch=1.809007 yaw=-2.424850[0m
+[0;32mI (94323) IMU: roll=-3.823092 pitch=0.693528 yaw=-2.355362[0m
+[0;32mI (94423) IMU: roll=-3.715033 pitch=1.857599 yaw=-2.431290[0m
+[0;32mI (94523) IMU: roll=-4.086225 pitch=0.796523 yaw=-2.365234[0m
+[0;32mI (94623) IMU: roll=-3.645872 pitch=1.876133 yaw=-2.440933[0m
+[0;32mI (94723) IMU: roll=-3.941741 pitch=0.788685 yaw=-2.373184[0m
+[0;32mI (94823) IMU: roll=-3.682715 pitch=1.931506 yaw=-2.452805[0m
+[0;32mI (94923) IMU: roll=-3.893392 pitch=0.831233 yaw=-2.383133[0m
+[0;32mI (95023) IMU: roll=-3.716650 pitch=1.989439 yaw=-2.460724[0m
+[0;32mI (95123) IMU: roll=-3.752978 pitch=0.869979 yaw=-2.391113[0m
+[0;32mI (95223) IMU: roll=-3.729902 pitch=2.043376 yaw=-2.470795[0m
+[0;32mI (95323) IMU: roll=-3.881606 pitch=0.931312 yaw=-2.397263[0m
+[0;32mI (95423) IMU: roll=-3.537956 pitch=2.050308 yaw=-2.474854[0m
+[0;32mI (95523) IMU: roll=-4.205192 pitch=1.133186 yaw=-2.416382[0m
+[0;32mI (95623) IMU: roll=-3.428865 pitch=1.989137 yaw=-2.476212[0m
+[0;32mI (95723) IMU: roll=-4.101930 pitch=1.076839 yaw=-2.418213[0m
+[0;32mI (95823) IMU: roll=-3.528585 pitch=2.088560 yaw=-2.487762[0m
+[0;32mI (95923) IMU: roll=-3.811647 pitch=1.000127 yaw=-2.420700[0m
+[0;32mI (96023) IMU: roll=-3.679064 pitch=2.162763 yaw=-2.496780[0m
+[0;32mI (96123) IMU: roll=-3.848500 pitch=1.052824 yaw=-2.424927[0m
+[0;32mI (96223) IMU: roll=-3.713774 pitch=2.220608 yaw=-2.504074[0m
+[0;32mI (96323) IMU: roll=-3.596042 pitch=1.107772 yaw=-2.437317[0m
+[0;32mI (96423) IMU: roll=-3.812165 pitch=2.265561 yaw=-2.516724[0m
+[0;32mI (96523) IMU: roll=-3.962944 pitch=1.157283 yaw=-2.446075[0m
+[0;32mI (96623) IMU: roll=-3.687566 pitch=2.295019 yaw=-2.526535[0m
+[0;32mI (96723) IMU: roll=-3.759433 pitch=1.174698 yaw=-2.455612[0m
+[0;32mI (96823) IMU: roll=-3.504041 pitch=2.321053 yaw=-2.533386[0m
+[0;32mI (96923) IMU: roll=-3.909320 pitch=1.268249 yaw=-2.468063[0m
+[0;32mI (97023) IMU: roll=-3.437087 pitch=2.340870 yaw=-2.541718[0m
+[0;32mI (97123) IMU: roll=-3.937378 pitch=1.326906 yaw=-2.478592[0m
+[0;32mI (97223) IMU: roll=-3.385167 pitch=2.356243 yaw=-2.549423[0m
+[0;32mI (97323) IMU: roll=-3.744150 pitch=1.289434 yaw=-2.486557[0m
+[0;32mI (97423) IMU: roll=-3.859287 pitch=2.460645 yaw=-2.567215[0m
+[0;32mI (97523) IMU: roll=-3.731440 pitch=1.352206 yaw=-2.498138[0m
+[0;32mI (97623) IMU: roll=-3.533868 pitch=2.508366 yaw=-2.573685[0m
+[0;32mI (97723) IMU: roll=-3.825654 pitch=1.423480 yaw=-2.505951[0m
+[0;32mI (97823) IMU: roll=-3.201284 pitch=2.403401 yaw=-2.569946[0m
+[0;32mI (97923) IMU: roll=-3.897313 pitch=1.506082 yaw=-2.518158[0m
+[0;32mI (98023) IMU: roll=-3.240598 pitch=2.466290 yaw=-2.580170[0m
+[0;32mI (98123) IMU: roll=-3.834610 pitch=1.503062 yaw=-2.528229[0m
+[0;32mI (98223) IMU: roll=-3.168870 pitch=2.454828 yaw=-2.587158[0m
+[0;32mI (98323) IMU: roll=-3.804445 pitch=1.517092 yaw=-2.535370[0m
+[0;32mI (98423) IMU: roll=-2.783884 pitch=2.030035 yaw=-2.567276[0m
+[0;32mI (98523) IMU: roll=-3.848253 pitch=1.606126 yaw=-2.546387[0m
+[0;32mI (98623) IMU: roll=-2.771092 pitch=1.974317 yaw=-2.568741[0m
+[0;32mI (98723) IMU: roll=-3.825331 pitch=1.552554 yaw=-2.545639[0m
+[0;32mI (98823) IMU: roll=-3.513407 pitch=2.681881 yaw=-2.623260[0m
+[0;32mI (98923) IMU: roll=-3.767258 pitch=1.590392 yaw=-2.558029[0m
+[0;32mI (99023) IMU: roll=-2.907697 pitch=2.358951 yaw=-2.605225[0m
+[0;32mI (99123) IMU: roll=-3.776937 pitch=1.622368 yaw=-2.566040[0m
+[0;32mI (99223) IMU: roll=-3.453052 pitch=0.556286 yaw=-2.501816[0m
+[0;32mI (99323) IMU: roll=-3.773648 pitch=1.689129 yaw=-2.577011[0m
+[0;32mI (99423) IMU: roll=-3.117975 pitch=0.789678 yaw=-2.527725[0m
+[0;32mI (99523) IMU: roll=-3.837990 pitch=1.720178 yaw=-2.585876[0m
+[0;32mI (99623) IMU: roll=-2.860393 pitch=1.174949 yaw=-2.554138[0m
+[0;32mI (99723) IMU: roll=-3.887279 pitch=1.737161 yaw=-2.589127[0m
+[0;32mI (99823) IMU: roll=-2.947939 pitch=1.132781 yaw=-2.553879[0m
+[0;32mI (99923) IMU: roll=-3.910071 pitch=1.795540 yaw=-2.597702[0m
+[0;32mI (100023) IMU: roll=-2.903710 pitch=1.303796 yaw=-2.571625[0m
+[0;32mI (100123) IMU: roll=-3.998768 pitch=1.706508 yaw=-2.597855[0m
+[0;32mI (100223) IMU: roll=-3.012188 pitch=1.175981 yaw=-2.568604[0m
+[0;32mI (100323) IMU: roll=-3.988768 pitch=1.822590 yaw=-2.609940[0m
+[0;32mI (100423) IMU: roll=-3.172150 pitch=1.062789 yaw=-2.566498[0m
+[0;32mI (100523) IMU: roll=-3.942479 pitch=1.950017 yaw=-2.622620[0m
+[0;32mI (100623) IMU: roll=-3.419805 pitch=0.967254 yaw=-2.561478[0m
+[0;32mI (100723) IMU: roll=-3.935571 pitch=2.025711 yaw=-2.632538[0m
+[0;32mI (100823) IMU: roll=-3.395640 pitch=1.049861 yaw=-2.570358[0m
+[0;32mI (100923) IMU: roll=-3.940499 pitch=2.093371 yaw=-2.641693[0m
+[0;32mI (101023) IMU: roll=-3.350573 pitch=1.148123 yaw=-2.584793[0m
+[0;32mI (101123) IMU: roll=-4.084967 pitch=2.064890 yaw=-2.643005[0m
+[0;32mI (101223) IMU: roll=-3.375260 pitch=1.205421 yaw=-2.589355[0m
+[0;32mI (101323) IMU: roll=-4.041271 pitch=2.171319 yaw=-2.651642[0m
+[0;32mI (101423) IMU: roll=-3.496640 pitch=1.200371 yaw=-2.590561[0m
+[0;32mI (101523) IMU: roll=-4.260229 pitch=2.097959 yaw=-2.658173[0m
+[0;32mI (101623) IMU: roll=-3.334260 pitch=1.464975 yaw=-2.613190[0m
+[0;32mI (101723) IMU: roll=-4.429420 pitch=1.870089 yaw=-2.644608[0m
+[0;32mI (101823) IMU: roll=-3.373536 pitch=1.490745 yaw=-2.618027[0m
+[0;32mI (101923) IMU: roll=-4.289276 pitch=2.224630 yaw=-2.671066[0m
+[0;32mI (102023) IMU: roll=-3.393389 pitch=1.560477 yaw=-2.628204[0m
+[0;32mI (102123) IMU: roll=-4.515460 pitch=1.877301 yaw=-2.652634[0m
+[0;32mI (102223) IMU: roll=-3.434377 pitch=1.574958 yaw=-2.633743[0m
+[0;32mI (102323) IMU: roll=-4.582968 pitch=1.743110 yaw=-2.645905[0m
+[0;32mI (102423) IMU: roll=-3.464252 pitch=1.613760 yaw=-2.640228[0m
+[0;32mI (102523) IMU: roll=-4.608334 pitch=1.806134 yaw=-2.656235[0m
+[0;32mI (102623) IMU: roll=-3.488986 pitch=1.704033 yaw=-2.650421[0m
+[0;32mI (102723) IMU: roll=-4.641350 pitch=1.606699 yaw=-2.645233[0m
+[0;32mI (102823) IMU: roll=-3.515467 pitch=1.724216 yaw=-2.653915[0m
+[0;32mI (102923) IMU: roll=-4.482266 pitch=1.117006 yaw=-2.615677[0m
+[0;32mI (103023) IMU: roll=-3.553211 pitch=1.791291 yaw=-2.664185[0m
+[0;32mI (103123) IMU: roll=-4.316466 pitch=0.950977 yaw=-2.609741[0m
+[0;32mI (103223) IMU: roll=-3.680781 pitch=1.916032 yaw=-2.674942[0m
+[0;32mI (103323) IMU: roll=-4.210642 pitch=0.917020 yaw=-2.608780[0m
+[0;32mI (103423) IMU: roll=-3.523605 pitch=1.847801 yaw=-2.673111[0m
+[0;32mI (103523) IMU: roll=-4.383802 pitch=1.100526 yaw=-2.621994[0m
+[0;32mI (103623) IMU: roll=-3.599264 pitch=1.950080 yaw=-2.684647[0m
+[0;32mI (103723) IMU: roll=-3.887659 pitch=0.860403 yaw=-2.616989[0m
+[0;32mI (103823) IMU: roll=-3.660832 pitch=2.010414 yaw=-2.694092[0m
+[0;32mI (103923) IMU: roll=-3.914051 pitch=0.915680 yaw=-2.625046[0m
+[0;32mI (104023) IMU: roll=-3.687909 pitch=2.065586 yaw=-2.704987[0m
+[0;32mI (104123) IMU: roll=-3.670278 pitch=0.946547 yaw=-2.635696[0m
+[0;32mI (104223) IMU: roll=-3.834467 pitch=2.111813 yaw=-2.715759[0m
+[0;32mI (104323) IMU: roll=-3.520036 pitch=1.040784 yaw=-2.648834[0m
+[0;32mI (104423) IMU: roll=-3.653301 pitch=2.205760 yaw=-2.721329[0m
+[0;32mI (104523) IMU: roll=-3.737263 pitch=1.089146 yaw=-2.654190[0m
+[0;32mI (104623) IMU: roll=-3.815775 pitch=2.264364 yaw=-2.736099[0m
+[0;32mI (104723) IMU: roll=-3.710340 pitch=1.149900 yaw=-2.664825[0m
+[0;32mI (104823) IMU: roll=-3.916159 pitch=2.309786 yaw=-2.745026[0m
+[0;32mI (104923) IMU: roll=-3.610013 pitch=1.234317 yaw=-2.676407[0m
+[0;32mI (105023) IMU: roll=-3.875502 pitch=2.382277 yaw=-2.752975[0m
+[0;32mI (105123) IMU: roll=-3.484877 pitch=1.334953 yaw=-2.687546[0m
+[0;32mI (105223) IMU: roll=-4.186612 pitch=2.277834 yaw=-2.753021[0m
+[0;32mI (105323) IMU: roll=-3.594317 pitch=1.335348 yaw=-2.690689[0m
+[0;32mI (105423) IMU: roll=-3.906439 pitch=2.470464 yaw=-2.768997[0m
+[0;32mI (105523) IMU: roll=-3.566044 pitch=1.406403 yaw=-2.700684[0m
+[0;32mI (105623) IMU: roll=-4.118498 pitch=2.445365 yaw=-2.774109[0m
+[0;32mI (105723) IMU: roll=-3.630692 pitch=1.441382 yaw=-2.709457[0m
+[0;32mI (105823) IMU: roll=-4.014528 pitch=2.553929 yaw=-2.785492[0m
+[0;32mI (105923) IMU: roll=-3.631647 pitch=1.507953 yaw=-2.718811[0m
+[0;32mI (106023) IMU: roll=-4.036537 pitch=2.613997 yaw=-2.795929[0m
+[0;32mI (106123) IMU: roll=-3.735121 pitch=1.540110 yaw=-2.724136[0m
+[0;32mI (106223) IMU: roll=-3.459047 pitch=2.678988 yaw=-2.795654[0m
+[0;32mI (106323) IMU: roll=-3.733977 pitch=1.590347 yaw=-2.728546[0m
+[0;32mI (106423) IMU: roll=-3.309025 pitch=2.673062 yaw=-2.797028[0m
+[0;32mI (106523) IMU: roll=-3.717088 pitch=1.620277 yaw=-2.735550[0m
+[0;32mI (106623) IMU: roll=-3.045725 pitch=2.569185 yaw=-2.793045[0m
+[0;32mI (106723) IMU: roll=-3.711388 pitch=1.652877 yaw=-2.739685[0m
+[0;32mI (106823) IMU: roll=-2.790199 pitch=2.337858 yaw=-2.781067[0m
+[0;32mI (106923) IMU: roll=-3.772220 pitch=1.750834 yaw=-2.749756[0m
+[0;32mI (107023) IMU: roll=-3.669362 pitch=0.633759 yaw=-2.678360[0m
+[0;32mI (107123) IMU: roll=-3.755930 pitch=1.807930 yaw=-2.755020[0m
+[0;32mI (107223) IMU: roll=-3.874144 pitch=0.692962 yaw=-2.681732[0m
+[0;32mI (107323) IMU: roll=-3.693478 pitch=1.851499 yaw=-2.758850[0m
+[0;32mI (107423) IMU: roll=-3.692696 pitch=0.730345 yaw=-2.693024[0m
+[0;32mI (107523) IMU: roll=-3.783728 pitch=1.903624 yaw=-2.773254[0m
+[0;32mI (107623) IMU: roll=-3.367808 pitch=0.868667 yaw=-2.710510[0m
+[0;32mI (107723) IMU: roll=-3.902511 pitch=1.914940 yaw=-2.779373[0m
+[0;32mI (107823) IMU: roll=-3.310293 pitch=0.972129 yaw=-2.721695[0m
+[0;32mI (107923) IMU: roll=-3.886845 pitch=1.997133 yaw=-2.787079[0m
+[0;32mI (108023) IMU: roll=-3.327472 pitch=1.034022 yaw=-2.728867[0m
+[0;32mI (108123) IMU: roll=-4.003114 pitch=1.997968 yaw=-2.793747[0m
+[0;32mI (108223) IMU: roll=-3.289155 pitch=1.145989 yaw=-2.741852[0m
+[0;32mI (108323) IMU: roll=-4.068634 pitch=2.022980 yaw=-2.802933[0m
+[0;32mI (108423) IMU: roll=-3.222966 pitch=1.303353 yaw=-2.761276[0m
+[0;32mI (108523) IMU: roll=-4.158658 pitch=2.004463 yaw=-2.807617[0m
+[0;32mI (108623) IMU: roll=-3.311747 pitch=1.276877 yaw=-2.761932[0m
+[0;32mI (108723) IMU: roll=-4.151981 pitch=2.091593 yaw=-2.815933[0m
+[0;32mI (108823) IMU: roll=-3.344759 pitch=1.323073 yaw=-2.769638[0m
+[0;32mI (108923) IMU: roll=-4.072441 pitch=2.243937 yaw=-2.831039[0m
+[0;32mI (109023) IMU: roll=-3.460118 pitch=1.313174 yaw=-2.771545[0m
+[0;32mI (109123) IMU: roll=-4.247566 pitch=2.181598 yaw=-2.831802[0m
+[0;32mI (109223) IMU: roll=-3.421065 pitch=1.434269 yaw=-2.781631[0m
+[0;32mI (109323) IMU: roll=-4.408841 pitch=2.065903 yaw=-2.826706[0m
+[0;32mI (109423) IMU: roll=-3.438849 pitch=1.509656 yaw=-2.791702[0m
+[0;32mI (109523) IMU: roll=-4.488613 pitch=2.027236 yaw=-2.828552[0m
+[0;32mI (109623) IMU: roll=-3.488811 pitch=1.527217 yaw=-2.795242[0m
+[0;32mI (109723) IMU: roll=-4.389335 pitch=2.272032 yaw=-2.846573[0m
+[0;32mI (109823) IMU: roll=-3.531415 pitch=1.558342 yaw=-2.797958[0m
+[0;32mI (109923) IMU: roll=-4.645819 pitch=1.887446 yaw=-2.821640[0m
+[0;32mI (110023) IMU: roll=-3.542479 pitch=1.677334 yaw=-2.810760[0m
+[0;32mI (110123) IMU: roll=-4.698410 pitch=1.699968 yaw=-2.817154[0m
+[0;32mI (110223) IMU: roll=-3.578254 pitch=1.604087 yaw=-2.810989[0m
+[0;32mI (110323) IMU: roll=-4.242960 pitch=2.579819 yaw=-2.883743[0m
+[0;32mI (110423) IMU: roll=-3.716417 pitch=1.595963 yaw=-2.816437[0m
+[0;32mI (110523) IMU: roll=-3.854559 pitch=2.763862 yaw=-2.897568[0m
+[0;32mI (110623) IMU: roll=-3.769444 pitch=1.649200 yaw=-2.826263[0m
+[0;32mI (110723) IMU: roll=-2.655301 pitch=1.867941 yaw=-2.840988[0m
+[0;32mI (110823) IMU: roll=-3.759883 pitch=1.547829 yaw=-2.828339[0m
+[0;32mI (110923) IMU: roll=-2.909491 pitch=2.329865 yaw=-2.877045[0m
+[0;32mI (111023) IMU: roll=-3.789893 pitch=1.606033 yaw=-2.837036[0m
+[0;32mI (111123) IMU: roll=-2.762217 pitch=2.109873 yaw=-2.871201[0m
+[0;32mI (111223) IMU: roll=-3.795465 pitch=1.612379 yaw=-2.846634[0m
+[0;32mI (111323) IMU: roll=-3.296921 pitch=2.667624 yaw=-2.917313[0m
+[0;32mI (111423) IMU: roll=-3.741599 pitch=1.632067 yaw=-2.857452[0m
+[0;32mI (111523) IMU: roll=-2.824947 pitch=2.324394 yaw=-2.899002[0m
+[0;32mI (111623) IMU: roll=-3.749695 pitch=1.659935 yaw=-2.864563[0m
+[0;32mI (111723) IMU: roll=-3.600891 pitch=0.551036 yaw=-2.793579[0m
+[0;32mI (111823) IMU: roll=-3.740799 pitch=1.719552 yaw=-2.868362[0m
+[0;32mI (111923) IMU: roll=-3.497599 pitch=0.630299 yaw=-2.802063[0m
+[0;32mI (112023) IMU: roll=-3.847199 pitch=1.753989 yaw=-2.874924[0m
+[0;32mI (112123) IMU: roll=-2.748319 pitch=1.530582 yaw=-2.865662[0m
+[0;32mI (112223) IMU: roll=-3.888745 pitch=1.753492 yaw=-2.883682[0m
+[0;32mI (112323) IMU: roll=-3.413095 pitch=0.742808 yaw=-2.824738[0m
+[0;32mI (112423) IMU: roll=-3.760305 pitch=1.864474 yaw=-2.892792[0m
+[0;32mI (112523) IMU: roll=-3.694167 pitch=0.741317 yaw=-2.818726[0m
+[0;32mI (112623) IMU: roll=-3.677792 pitch=1.916332 yaw=-2.897308[0m
+[0;32mI (112723) IMU: roll=-3.895449 pitch=0.814932 yaw=-2.833252[0m
+[0;32mI (112823) IMU: roll=-3.718600 pitch=1.970519 yaw=-2.910126[0m
+[0;32mI (112923) IMU: roll=-3.669154 pitch=0.853803 yaw=-2.843674[0m
+[0;32mI (113023) IMU: roll=-3.746598 pitch=2.025079 yaw=-2.921829[0m
+[0;32mI (113123) IMU: roll=-3.847268 pitch=0.905279 yaw=-2.849640[0m
+[0;32mI (113223) IMU: roll=-3.550288 pitch=2.036611 yaw=-2.927948[0m
+[0;32mI (113323) IMU: roll=-4.031345 pitch=1.015238 yaw=-2.862274[0m
+[0;32mI (113423) IMU: roll=-3.515279 pitch=2.057984 yaw=-2.934708[0m
+[0;32mI (113523) IMU: roll=-4.050435 pitch=1.060504 yaw=-2.869370[0m
+[0;32mI (113623) IMU: roll=-3.576798 pitch=2.123106 yaw=-2.943909[0m
+[0;32mI (113723) IMU: roll=-3.902166 pitch=1.043570 yaw=-2.877029[0m
+[0;32mI (113823) IMU: roll=-3.599022 pitch=2.170935 yaw=-2.952454[0m
+[0;32mI (113923) IMU: roll=-3.810277 pitch=1.068393 yaw=-2.883102[0m
+[0;32mI (114023) IMU: roll=-3.596391 pitch=2.219938 yaw=-2.959808[0m
+[0;32mI (114123) IMU: roll=-3.988714 pitch=1.161873 yaw=-2.893356[0m
+[0;32mI (114223) IMU: roll=-3.405509 pitch=2.168334 yaw=-2.961258[0m
+[0;32mI (114323) IMU: roll=-3.990246 pitch=1.202733 yaw=-2.900772[0m
+[0;32mI (114423) IMU: roll=-3.497169 pitch=2.260058 yaw=-2.970444[0m
+[0;32mI (114523) IMU: roll=-3.901262 pitch=1.205664 yaw=-2.904510[0m
+[0;32mI (114623) IMU: roll=-3.551746 pitch=2.323751 yaw=-2.979309[0m
+[0;32mI (114723) IMU: roll=-3.828611 pitch=1.234296 yaw=-2.911865[0m
+[0;32mI (114823) IMU: roll=-3.317036 pitch=2.283576 yaw=-2.977188[0m
+[0;32mI (114923) IMU: roll=-3.948102 pitch=1.338277 yaw=-2.922714[0m
+[0;32mI (115023) IMU: roll=-3.241016 pitch=2.253442 yaw=-2.985504[0m
+[0;32mI (115123) IMU: roll=-3.921109 pitch=1.341136 yaw=-2.932419[0m
+[0;32mI (115223) IMU: roll=-3.377981 pitch=2.367961 yaw=-2.996460[0m
+[0;32mI (115323) IMU: roll=-3.911863 pitch=1.376558 yaw=-2.939804[0m
+[0;32mI (115423) IMU: roll=-3.181899 pitch=2.271610 yaw=-2.996170[0m
+[0;32mI (115523) IMU: roll=-3.852444 pitch=1.357847 yaw=-2.942215[0m
+[0;32mI (115623) IMU: roll=-3.126513 pitch=2.258277 yaw=-3.000137[0m
+[0;32mI (115723) IMU: roll=-4.005369 pitch=1.529876 yaw=-2.956284[0m
+[0;32mI (115823) IMU: roll=-2.969055 pitch=2.010695 yaw=-2.988586[0m
+[0;32mI (115923) IMU: roll=-3.994024 pitch=1.496513 yaw=-2.959503[0m
+[0;32mI (116023) IMU: roll=-3.153556 pitch=2.290512 yaw=-3.011215[0m
+[0;32mI (116123) IMU: roll=-3.915313 pitch=1.451385 yaw=-2.962952[0m
+[0;32mI (116223) IMU: roll=-3.098365 pitch=2.261965 yaw=-3.012833[0m
+[0;32mI (116323) IMU: roll=-3.919851 pitch=1.470105 yaw=-2.965942[0m
+[0;32mI (116423) IMU: roll=-2.953251 pitch=2.082660 yaw=-3.008072[0m
+[0;32mI (116523) IMU: roll=-3.954109 pitch=1.522804 yaw=-2.978149[0m
+[0;32mI (116623) IMU: roll=-2.895587 pitch=1.947039 yaw=-3.006485[0m
+[0;32mI (116723) IMU: roll=-3.997212 pitch=1.618919 yaw=-2.990372[0m
+[0;32mI (116823) IMU: roll=-2.870624 pitch=1.679539 yaw=-2.998596[0m
+[0;32mI (116923) IMU: roll=-4.027174 pitch=1.653352 yaw=-2.997574[0m
+[0;32mI (117023) IMU: roll=-2.900462 pitch=1.620686 yaw=-2.999390[0m
+[0;32mI (117123) IMU: roll=-4.052424 pitch=1.743013 yaw=-3.009613[0m
+[0;32mI (117223) IMU: roll=-2.973418 pitch=1.438956 yaw=-2.994644[0m
+[0;32mI (117323) IMU: roll=-4.105088 pitch=1.722011 yaw=-3.015640[0m
+[0;32mI (117423) IMU: roll=-2.996184 pitch=1.539971 yaw=-3.004486[0m
+[0;32mI (117523) IMU: roll=-4.149107 pitch=1.689898 yaw=-3.015961[0m
+[0;32mI (117623) IMU: roll=-3.076992 pitch=1.365160 yaw=-2.999985[0m
+[0;32mI (117723) IMU: roll=-4.129588 pitch=1.862027 yaw=-3.030777[0m
+[0;32mI (117823) IMU: roll=-3.126810 pitch=1.367694 yaw=-3.004440[0m
+[0;32mI (117923) IMU: roll=-4.287073 pitch=1.542643 yaw=-3.023392[0m
+[0;32mI (118023) IMU: roll=-3.184782 pitch=1.822353 yaw=-3.046310[0m
+[0;32mI (118123) IMU: roll=-4.275600 pitch=1.465314 yaw=-3.031097[0m
+[0;32mI (118223) IMU: roll=-3.176779 pitch=1.765439 yaw=-3.049637[0m
+[0;32mI (118323) IMU: roll=-4.329264 pitch=1.655792 yaw=-3.047318[0m
+[0;32mI (118423) IMU: roll=-3.212168 pitch=1.550426 yaw=-3.042694[0m
+[0;32mI (118523) IMU: roll=-4.357724 pitch=1.757747 yaw=-3.056183[0m
+[0;32mI (118623) IMU: roll=-3.281817 pitch=1.454859 yaw=-3.039612[0m
+[0;32mI (118723) IMU: roll=-4.221020 pitch=2.157112 yaw=-3.088943[0m
+[0;32mI (118823) IMU: roll=-3.408382 pitch=1.396685 yaw=-3.040680[0m
+[0;32mI (118923) IMU: roll=-4.338362 pitch=2.070235 yaw=-3.076126[0m
+[0;32mI (119023) IMU: roll=-3.427539 pitch=1.419984 yaw=-3.027588[0m
+[0;32mI (119123) IMU: roll=-4.503073 pitch=1.885023 yaw=-3.062881[0m
+[0;32mI (119223) IMU: roll=-3.459407 pitch=1.483549 yaw=-3.038193[0m
+[0;32mI (119323) IMU: roll=-4.314712 pitch=2.286582 yaw=-3.095139[0m
+[0;32mI (119423) IMU: roll=-3.561952 pitch=1.463355 yaw=-3.041412[0m
+[0;32mI (119523) IMU: roll=-4.681667 pitch=1.781956 yaw=-3.068100[0m
+[0;32mI (119623) IMU: roll=-3.608192 pitch=1.472254 yaw=-3.048874[0m
+[0;32mI (119723) IMU: roll=-4.146116 pitch=2.521333 yaw=-3.121506[0m
+[0;32mI (119823) IMU: roll=-3.716953 pitch=1.493501 yaw=-3.056351[0m
+[0;32mI (119923) IMU: roll=-3.738523 pitch=2.668948 yaw=-3.134445[0m
+[0;32mI (120023) IMU: roll=-3.851066 pitch=1.548843 yaw=-3.061661[0m
+[0;32mI (120123) IMU: roll=-2.793591 pitch=1.175282 yaw=-3.043823[0m
+[0;32mI (120223) IMU: roll=-3.877084 pitch=1.608553 yaw=-3.073990[0m
+[0;32mI (120323) IMU: roll=-2.876818 pitch=2.167324 yaw=-3.105423[0m
+[0;32mI (120423) IMU: roll=-3.840611 pitch=1.553208 yaw=-3.070877[0m
+[0;32mI (120523) IMU: roll=-2.749121 pitch=1.862164 yaw=-3.088821[0m
+[0;32mI (120623) IMU: roll=-3.860277 pitch=1.558703 yaw=-3.076584[0m
+[0;32mI (120723) IMU: roll=-2.748320 pitch=1.799875 yaw=-3.095032[0m
+[0;32mI (120823) IMU: roll=-3.896061 pitch=1.687856 yaw=-3.090729[0m
+[0;32mI (120923) IMU: roll=-2.803282 pitch=1.431543 yaw=-3.081131[0m
+[0;32mI (121023) IMU: roll=-3.946931 pitch=1.648474 yaw=-3.094482[0m
+[0;32mI (121123) IMU: roll=-2.820180 pitch=1.608000 yaw=-3.093628[0m
+[0;32mI (121223) IMU: roll=-3.976555 pitch=1.643410 yaw=-3.101532[0m
+[0;32mI (121323) IMU: roll=-2.852186 pitch=1.816131 yaw=-3.113358[0m
+[0;32mI (121423) IMU: roll=-3.997162 pitch=1.676591 yaw=-3.110107[0m
+[0;32mI (121523) IMU: roll=-2.910285 pitch=1.376029 yaw=-3.094223[0m
+[0;32mI (121623) IMU: roll=-3.982846 pitch=1.841018 yaw=-3.125824[0m
+[0;32mI (121723) IMU: roll=-3.144421 pitch=1.107543 yaw=-3.081833[0m
+[0;32mI (121823) IMU: roll=-4.049684 pitch=1.852401 yaw=-3.131958[0m
+[0;32mI (121923) IMU: roll=-3.126833 pitch=1.217270 yaw=-3.094940[0m
+[0;32mI (122023) IMU: roll=-3.938540 pitch=2.051244 yaw=-3.146362[0m
+[0;32mI (122123) IMU: roll=-3.135108 pitch=1.262396 yaw=-3.096375[0m
+[0;32mI (122223) IMU: roll=-4.016829 pitch=2.035247 yaw=-3.148666[0m
+[0;32mI (122323) IMU: roll=-3.221225 pitch=1.255532 yaw=-3.102051[0m
+[0;32mI (122423) IMU: roll=-4.083916 pitch=2.051852 yaw=-3.154617[0m
+[0;32mI (122523) IMU: roll=-3.381898 pitch=1.191399 yaw=-3.104065[0m
+[0;32mI (122623) IMU: roll=-4.027913 pitch=2.172526 yaw=-3.167206[0m
+[0;32mI (122723) IMU: roll=-3.501636 pitch=1.195777 yaw=-3.108521[0m
+[0;32mI (122823) IMU: roll=-4.019025 pitch=2.249913 yaw=-3.178909[0m
+[0;32mI (122923) IMU: roll=-3.498933 pitch=1.264687 yaw=-3.116943[0m

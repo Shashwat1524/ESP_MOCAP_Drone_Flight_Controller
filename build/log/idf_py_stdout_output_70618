@@ -1,0 +1,809 @@
+ts Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (29) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v1.0[0m
+[0;32mI (39) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (48) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (58) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (69) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (76) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (84) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (91) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29244h (168516) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=0003926c vaddr=3ffb0000 size=04d94h ( 19860) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=0003e008 vaddr=40080000 size=02010h (  8208) load[0m
+[0;32mI (173) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=99d78h (630136) map[0m
+[0;32mI (392) esp_image: segment 4: paddr=000d9da0 vaddr=40082010 size=16ac8h ( 92872) load[0m
+[0;32mI (441) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (441) boot: Disabling RNG early entropy source...[0m
+[0;32mI (453) cpu_start: Multicore app[0m
+D (453) cpu_start: Pro cpu up[0m
+D (453) cpu_start: Starting app cpu, entry point is 0x40081324[0m
+D (0) cpu_start: App cpu up[0m
+D (462) clk: RTC_SLOW_CLK calibration value: 3264730[0m
+D (474) cpu_start: calling init function: 0x400d2d90 on core: 0[0m
+[0;32mI (474) cpu_start: Pro cpu start user code[0m
+[0;32mI (474) cpu_start: cpu freq: 160000000 Hz[0m
+D (480) cpu_start: calling init function: 0x400d2dd4 on core: 0[0m
+[0;32mI (486) cpu_start: Application information:[0m
+[0;32mI (491) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (497) cpu_start: App version:      1[0m
+[0;32mI (501) cpu_start: Compile time:     Jan 30 2024 16:50:51[0m
+[0;32mI (507) cpu_start: ELF file SHA256:  a70b5d3a9...[0m
+[0;32mI (513) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (520) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (524) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (529) cpu_start: Chip rev:         v1.0[0m
+D (534) cpu_start: calling init function: 0x400d2f1c on core: 0[0m
+D (540) memory_layout: Checking 9 reserved memory ranges:[0m
+D (545) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (552) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (558) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffbbd48[0m
+D (565) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (571) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (578) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (584) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (590) memory_layout: Reserved memory range 0x40080000 - 0x40098ad8[0m
+D (597) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (603) memory_layout: Building list of available memory regions:[0m
+D (609) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (616) memory_layout: Available memory region 0x3ffbbd48 - 0x3ffc0000[0m
+D (623) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (629) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (636) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (642) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (649) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (656) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (662) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (669) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (675) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (682) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (689) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (695) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (702) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (708) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (715) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (722) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (728) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (735) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (741) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (748) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (755) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (761) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (768) memory_layout: Available memory region 0x40098ad8 - 0x4009a000[0m
+D (774) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (781) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (788) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (794) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (802) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (806) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (813) heap_init: New heap initialised at 0x3ffbbd48[0m
+[0;32mI (818) heap_init: At 3FFBBD48 len 000242B8 (144 KiB): DRAM[0m
+[0;32mI (824) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (830) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (837) heap_init: New heap initialised at 0x40098ad8[0m
+[0;32mI (842) heap_init: At 40098AD8 len 00007528 (29 KiB): IRAM[0m
+D (848) cpu_start: calling init function: 0x400d2f28 on core: 0[0m
+D (854) cpu_start: calling init function: 0x400d5658 on core: 0[0m
+D (860) cpu_start: calling init function: 0x401605cc on core: 0[0m
+D (866) cpu_start: calling init function: 0x400d2f34 on core: 0[0m
+D (872) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (877) cpu_start: calling init function: 0x400d2f40 on core: 0[0m
+D (883) cpu_start: calling init function: 0x400d6f8c on core: 0[0m
+D (889) cpu_start: calling init function: 0x400d82c8 on core: 0[0m
+D (895) cpu_start: calling init function: 0x400d56d4 on core: 0[0m
+D (901) cpu_start: calling init function: 0x400d2f4c on core: 0[0m
+D (907) cpu_start: calling init function: 0x400d2f58 on core: 0[0m
+D (913) spi_flash: trying chip: issi[0m
+D (917) spi_flash: trying chip: gd[0m
+D (920) spi_flash: trying chip: mxic[0m
+D (924) spi_flash: trying chip: winbond[0m
+D (928) spi_flash: trying chip: generic[0m
+[0;32mI (932) spi_flash: detected chip: generic[0m
+[0;32mI (936) spi_flash: flash io: dio[0m
+[0;33mW (940) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (953) cpu_start: calling init function: 0x401605d4 on core: 0[0m
+D (959) cpu_start: calling init function: 0x4014b3c0[0m
+D (964) cpu_start: calling init function: 0x4014ae70[0m
+D (969) cpu_start: calling init function: 0x40107714[0m
+D (975) cpu_start: calling init function: 0x400ef86c[0m
+[0;33mW (979) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (990) cpu_start: calling init function: 0x400da4ac[0m
+D (995) cpu_start: calling init function: 0x400d954c[0m
+D (1000) cpu_start: calling init function: 0x40089b0c[0m
+D (1005) cpu_start: calling init function: 0x400d4044[0m
+D (1011) cpu_start: calling init function: 0x400d34f4[0m
+D (1016) cpu_start: calling init function: 0x400d2900[0m
+D (1021) cpu_start: calling init function: 0x400d5d84 on core: 0[0m
+D (1027) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (1032) cpu_start: calling init function: 0x400d2f80 on core: 0[0m
+D (1038) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (1043) app_start: Starting scheduler on CPU0[0m
+[0;32D (1048) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (1048) app_start: Starting scheduler on CPU1[0m
+mI (1048) main_task: Started on CPU0[0m
+D (1068) heap_init: New heap initialised at 0x3ffe0440[0m
+D (1068) heap_init: New heap initialised at 0x3ffe4350[0m
+D (1068) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (1068) main_task: Calling app_main()[0m
+D (1078) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (1088) IMU: devid=0x34[0m
+[0;32mI (1088) IMU: getRate()=0[0m
+[0;32mI (1088) IMU: getExternalFrameSync()=0[0m
+[0;32mI (1098) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (1098) rmt: new group(0) at 0x3ffc5938, occupy=ffffff00[0m
+D (1108) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+[0;32mI (1098) IMU: getDLPFMode()=6[0m
+D (1108) rmt: group clock resolution:80000000[0m
+[0;32mI (1118) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (1118) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1128) IMU: getFullScaleGyroRange()=0[0m
+D (1138) rmt: new tx channel(0,0) at 0x3ffc55b8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1158) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1158) rmt: group clock resolution:80000000[0m
+[0;32mI (1158) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1168) rmt: new tx channel(0,1) at 0x3ffc5ef0, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1188) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1188) rmt: group clock resolution:80000000[0m
+[0;32mI (1198) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1208) rmt: new tx channel(0,2) at 0x3ffc61e0, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1218) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1228) rmt: group clock resolution:80000000[0m
+[0;32mI (1228) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1238) rmt: new tx channel(0,3) at 0x3ffc64f8, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1258) ESC_controller: Install Dshot ESC encoder[0m
+D (1258) rmt: new bytes encoder @0x3ffc686c[0m
+D (1268) rmt: new copy encoder @0x3ffc6890[0m
+D (1268) rmt: new bytes encoder @0x3ffc68c4[0m
+D (1268) rmt: new copy encoder @0x3ffc68e8[0m
+D (1278) rmt: new bytes encoder @0x3ffc691c[0m
+D (1278) rmt: new copy encoder @0x3ffc6940[0m
+D (1288) rmt: new bytes encoder @0x3ffc6974[0m
+D (1288) rmt: new copy encoder @0x3ffc6998[0m
+[0;32mI (1298) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1298) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1338) wifi_station_netif: ESP_WIFI_MODE_STA[0m
+D (1338) esp_netif_lwip: LwIP stack has been initialized[0m
+D (1338) esp_netif_lwip: esp-netif has been successfully initialized[0m
+D (1338) event: running task for loop 0x3ffc7e80[0m
+D (1348) event: created task for loop 0x3ffc7e80[0m
+D (1348) event: created event loop 0x3ffc7e80[0m
+D (1358) esp_netif_lwip: check: remote, if=0x3ffbddd0 fn=0x401052c4[0m
+D (1358) esp_netif_objects: esp_netif_add_to_list_unsafe netif added successfully (total netifs: 1)[0m
+D (1368) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (1378) nvs: nvs_open_from_partition misc 1[0m
+I (1388) wifi:wifi driver task: 3ffcb3a8, prio:23, stack:6656, core=0
+D (1388) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1388) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1398) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1408) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1418) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1418) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1428) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1438) nvs: nvs_open_from_partition nvs.net80211 1[0m
+D (1438) nvs: nvs_get opmode 1[0m
+D (1448) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1448) nvs: nvs_get sta.authmode 1[0m
+D (1448) nvs: nvs_get_str_or_blob sta.pswd[0m
+D (1458) nvs: nvs_get_str_or_blob sta.pmk[0m
+D (1458) nvs: nvs_get sta.chan 1[0m
+D (1468) nvs: nvs_get auto.conn 1[0m
+D (1468) nvs: nvs_get bssid.set 1[0m
+D (1468) nvs: nvs_get_str_or_blob sta.bssid[0m
+D (1478) nvs: nvs_get sta.lis_intval 2[0m
+D (1478) nvs: nvs_get sta.phym 1[0m
+D (1478) nvs: nvs_get sta.phybw 1[0m
+D (1488) nvs: nvs_get_str_or_blob sta.apsw[0m
+D (1488) nvs: nvs_get_str_or_blob sta.apinfo[0m
+D (1498) nvs: nvs_get sta.scan_method 1[0m
+D (1498) nvs: nvs_get sta.sort_method 1[0m
+D (1498) nvs: nvs_get sta.minrssi 1[0m
+D (1508) nvs: nvs_get sta.minauth 1[0m
+D (1508) nvs: nvs_get sta.pmf_e 1[0m
+D (1508) nvs: nvs_get sta.pmf_r 1[0m
+D (1518) nvs: nvs_get sta.btm_e 1[0m
+D (1518) nvs: nvs_get sta.rrm_e 1[0m
+D (1518) nvs: nvs_get sta.mbo_e 1[0m
+D (1528) nvs: nvs_get_str_or_blob ap.ssid[0m
+D (1528) nvs: nvs_get_str_or_blob ap.passwd[0m
+D (1528) nvs: nvs_get_str_or_blob ap.pmk[0m
+D (1538) nvs: nvs_get ap.chan 1[0m
+D (1538) nvs: nvs_get ap.authmode 1[0m
+D (1548) nvs: nvs_get ap.hidden 1[0m
+D (1548) nvs: nvs_get ap.max.conn 1[0m
+D (1548) nvs: nvs_get bcn.interval 2[0m
+D (1558) nvs: nvs_get ap.phym 1[0m
+D (1558) nvs: nvs_get ap.phybw 1[0m
+D (1558) nvs: nvs_get ap.sndchan 1[0m
+D (1568) nvs: nvs_get ap.pmf_e 1[0m
+D (1568) nvs: nvs_get ap.pmf_r 1[0m
+D (1568) nvs: nvs_get ap.p_cipher 1[0m
+D (1578) nvs: nvs_get lorate 1[0m
+D (1578) nvs: nvs_get_str_or_blob country[0m
+D (1578) nvs: nvs_get ap.ftm_r 1[0m
+D (1588) nvs: nvs_get sta.ft 1[0m
+D (1588) nvs: nvs_get sta.owe 1[0m
+D (1588) nvs: nvs_get sta.trans_d 1[0m
+D (1598) nvs: nvs_get sta.sae_h2e 1[0m
+D (1598) nvs: nvs_get sta.sae_pk_mode 1[0m
+D (1598) nvs: nvs_get sta.bss_retry 1[0m
+D (1608) nvs: nvs_get_str_or_blob sta.owe_data[0m
+D (1608) nvs: nvs_get sta.he_dcm 1[0m
+D (1618) nvs: nvs_get sta.he_dcm_c_tx 1[0m
+D (1618) nvs: nvs_get sta.he_dcm_c_rx 1[0m
+D (1618) nvs: nvs_get sta.he_mcs9_d 1[0m
+D (1628) nvs: nvs_get sta.he_su_b_d 1[0m
+D (1628) nvs: nvs_get sta.he_su_b_f_d 1[0m
+D (1638) nvs: nvs_get sta.he_mu_b_f_d 1[0m
+D (1638) nvs: nvs_get sta.he_cqi_f_d 1[0m
+D (1638) nvs: nvs_get_str_or_blob sta.sae_h2e_id[0m
+D (1648) nvs: nvs_get ap.sae_h2e 1[0m
+D (1648) nvs: nvs_get_str_or_blob ap.pmk_info[0m
+D (1658) nvs: nvs_get nan.phym 1[0m
+D (1658) nvs: nvs_set ap.sndchan 1 1[0m
+I (1658) wifi:wifi firmware version: 1200a48
+I (1668) wifi:wifi certification version: v7.0
+I (1668) wifi:config NVS flash: enabled
+I (1668) wifi:config nano formating: disabled
+I (1678) wifi:Init data frame dynamic rx buffer num: 32
+I (1678) wifi:Init static rx mgmt buffer num: 5
+I (1688) wifi:Init management short buffer num: 32
+I (1688) wifi:Init dynamic tx buffer num: 32
+I (1698) wifi:Init static rx buffer size: 1600
+I (1698) wifi:Init static rx buffer num: 10
+I (1698) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1708) wifi_init: rx ba win: 6[0m
+[0;32mI (1708) wifi_init: accept mbox: 6[0m
+[0;32mI (1718) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1718) wifi_init: udp mbox: 6[0m
+[0;32mI (1718) wifi_init: tcp mbox: 6[0m
+[0;32mI (1728) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1728) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1738) wifi_init: tcp mss: 1440[0m
+[0;32mI (1738) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1738) wifi_init: WiFi RX IRAM OP enabled[0m
+D (1748) nvs: nvs_get opmode 1[0m
+D (1748) wifi:clear blacklist
+D (1758) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1758) nvs: nvs_get sta.pmf_e 1[0m
+[0;32mI (1758) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+D (1768) phy_init: loading PHY init data from application binary[0m
+D (1778) nvs: nvs_open_from_partition phy 0[0m
+D (1778) nvs: nvs_get cal_version 4[0m
+D (1778) nvs: nvs_get_str_or_blob cal_mac[0m
+D (1788) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1788) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1798) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1808) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1818) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1818) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1828) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1838) nvs: nvs_get_str_or_blob cal_data[0m
+D (1848) nvs: nvs_close 3[0m
+D (1848) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1848) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1858) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1868) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1868) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1878) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1888) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1958) wifi:filter: set rx policy=0
+I (1958) wifi:mode : sta (78:e3:6d:09:fa:28)
+I (1958) wifi:enable tsf
+D (1958) wifi:filter: set rx policy=1
+D (1958) wifi:connect status 0 -> 0
+D (1958) event: running post WIFI_EVENT:40 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (1968) event: running post WIFI_EVENT:2 with handler 0x4010796c and context 0x3ffc8fa4 on loop 0x3ffc7e80[0m
+D (1978) wifi_init_default: wifi_start esp-netif:0x3ffc8da8 event-id2[0m
+D (1988) wifi_init_default: WIFI mac address: 78 e3 6d 9 fa 28[0m
+D (1998) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40104cb8[0m
+[0;32mI (1998) wifi_station_netif: wifi_init_sta finished.[0m
+D (1998) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2008) esp_netif_handlers: esp_netif action has started with netif0x3ffc8da8 from event_id=2[0m
+D (2018) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40105578[0m
+D (2028) esp_netif_lwip: esp_netif_start_api 0x3ffc8da8[0m
+D (2028) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffc8da8[0m
+D (2038) esp_netif_lwip: check: local, if=0x3ffc8da8 fn=0x40105cd4[0m
+D (2048) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8da8[0m
+D (2048) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2058) event: running post WIFI_EVENT:2 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (2068) wifi:Start wifi connect
+D (2068) wifi:connect status 0 -> 0
+D (2068) wifi:connect chan=0
+D (2078) wifi:first chan=4
+D (2078) wifi:connect status 0 -> 1
+D (2078) wifi:filter: set rx policy=3
+D (2088) wifi:clear scan ap list
+D (2088) wifi:start scan: type=0x50f, priority=2, cb=0x40129590, arg=0x0, ss_state=0x1, time=132966, index=0
+D (2098) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (2118) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2118) wifi:profile match: ss_state=0x7
+D (2118) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (2118) wifi:find first mathched ssid, scan done
+D (2128) wifi:filter: set rx policy=4
+D (2128) wifi:first chan=1
+D (2128) wifi:handoff_cb: status=0
+D (2138) wifi:ap found, mac=b4:b0:24:4f:fb:d0
+D (2138) wifi:new_bss=0x3ffba8b8, cur_bss=0x0, new_chan=<4,0>, cur_chan=1
+D (2148) wifi:filter: set rx policy=5
+I (2148) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1
+D (2158) wifi:connect_op: status=0, auth=5, cipher=3 
+D (2158) wifi:auth mode is not none
+D (2158) wifi:connect_bss: auth=1, reconnect=0
+I (2168) wifi:state: init -> auth (b0)
+D (2168) wifi:start 1s AUTH timer
+D (2168) wifi:clear scan ap list
+D (2178) event: running post WIFI_EVENT:40 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (2178) wifi:recv auth: seq=2, status=0
+I (2188) wifi:state: auth -> assoc (0)
+D (2188) wifi:restart connect 1s timer for assoc
+D (2198) wifi:recv assoc: type=0x10
+D (2198) wifi:filter: set rx policy=6
+I (2198) wifi:state: assoc -> run (10)
+D (2208) wifi:start 10s connect timer for 4 way handshake
+W (2348) wifi:[ADDBA]rx delba, code:39, delete tid:0
+I (2358) wifi:connected with focaslab, aid = 6, channel 4, BW20, bssid = b4:b0:24:4f:fb:d0
+I (2358) wifi:security: WPA2-PSK, phy: bgn, rssi: -63
+D (2368) wifi:remove all except b4:b0:24:4f:fb:d0 from rc list
+D (2368) wifi:clear blacklist
+D (2368) nvs: nvs_set sta.chan 1 4[0m
+D (2378) nvs: nvs_set_blob sta.apinfo 700[0m
+D (2388) wifi:filter: set rx policy=7
+I (2388) wifi:pm start, type: 1
+
+I (2388) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+D (2398) wifi:Send sta connected event
+D (2398) wifi:connect status 1 -> 5
+D (2398) wifi:obss scan is disabled
+D (2408) wifi:start obss scan: obss scan is stopped
+D (2408) event: running post WIFI_EVENT:4 with handler 0x4010799c and context 0x3ffc9004 on loop 0x3ffc7e80[0m
+D (2418) esp_netif_handlers: esp_netif action connected with netif0x3ffc8da8 from event_id=4[0m
+D (2428) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40105944[0m
+D (2438) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffc8da8[0m
+D (2438) esp_netif_lwip: check: local, if=0x3ffc8da8 fn=0x40105cd4[0m
+D (2448) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8da8[0m
+I (2448) wifi:D (2448) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+<ba-add>idx:0 (ifx:0, b4:b0:24:4f:fb:d0), tid:0, ssn:16, winSize:64
+D (2468) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40105804[0m
+D (2468) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffc8da8[0m
+I (2478) wifi:AP's beacon interval = 102400 us, DTIM period = 1D (2478) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffc8da8[0m
+
+D (2488) esp_netif_lwip: if0x3ffc8da8 start ip lost tmr: interval=120[0m
+D (2488) wifi:D (2498) esp_netif_lwip: starting dhcp client[0m
+set max rate: from <rate=130, phy=3, sig=0> to <rate=144, phy=3 sig=0>
+D (2508) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2508) wifi:sig_b=0, sig_g=0, sig_n=0, max_b=22, max_g=108, max_n=144
+D (2518) wifi:update trc
+D (2528) event: running post WIFI_EVENT:4 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (3508) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffc8e2c[0m
+D (3508) esp_netif_lwip: if0x3ffc8da8 ip changed=1[0m
+D (3508) event: running post IP_EVENT:0 with handler 0x401077c8 and context 0x3ffc90d8 on loop 0x3ffc7e80[0m
+D (3518) wifi_init_default: Got IP wifi default handler entered[0m
+D (3518) esp_netif_handlers: esp_netif action got_ip with netif0x3ffc8da8 from event_id=0[0m
+[0;32mI (3528) esp_netif_handlers: sta ip: 192.168.0.100, mask: 255.255.255.0, gw: 192.168.0.1[0m
+D (3538) event: running post IP_EVENT:0 with handler 0x400d9e74 and context 0x3ffd10c4 on loop 0x3ffc7e80[0m
+[0;32mI (3548) wifi_station_netif: got ip:192.168.0.100[0m
+[0;32mI (3548) wifi_station_netif: connected to ap SSID:focaslab password:wifi@focaslab[0m
+[0;32mI (3568) main_task: Returned from app_main()[0m
+Subscriber initialized successfully.
+Quaternions not received yet.
+Euler Angles: (Roll: -0.195858, Pitch: 0.059098, Yaw: -2.484925)
+Euler Angles: (Roll: -0.195858, Pitch: 0.059098, Yaw: -2.484925)
+Euler Angles: (Roll: -0.195956, Pitch: 0.058703, Yaw: -2.484926)
+Euler Angles: (Roll: -0.195956, Pitch: 0.058703, Yaw: -2.484926)
+Euler Angles: (Roll: -0.195895, Pitch: 0.057973, Yaw: -2.484900)
+Euler Angles: (Roll: -0.195895, Pitch: 0.057973, Yaw: -2.484900)
+Euler Angles: (Roll: -0.195988, Pitch: 0.057563, Yaw: -2.484900)
+ets Jun  8 2016 00:22:57
+
+rst:0x8 (TG1WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7172
+load:0x40078000,len:15532
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (58) boot: ESP-IDF v5.3-dev-1288-g5524b692ee-dirty 2nd stage bootloader[0m
+[0;32mI (58) boot: compile time Jan 27 2024 11:38:47[0m
+[0;32mI (61) boot: Multicore bootloader[0m
+[0;32mI (65) boot: chip revision: v1.0[0m
+[0;32mI (69) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (73) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (78) boot.esp32: SPI Flash Size : 2MB[0m
+[0;33mW (82) boot.esp32: PRO CPU has been reset by WDT.[0m
+[0;33mW (88) boot.esp32: WDT reset info: PRO CPU PC=0x400d3bce[0m
+[0;33mW (94) boot.esp32: WDT reset info: APP CPU PC=0x40081c2d[0m
+[0;32mI (100) boot: Enabling RNG early entropy source...[0m
+[0;32mI (105) boot: Partition Table:[0m
+[0;32mI (109) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (116) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (124) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (132) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (139) boot: End of partition table[0m
+[0;32mI (143) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=29244h (168516) map[0m
+[0;32mI (210) esp_image: segment 1: paddr=0003926c vaddr=3ffb0000 size=04d94h ( 19860) load[0m
+[0;32mI (217) esp_image: segment 2: paddr=0003e008 vaddr=40080000 size=02010h (  8208) load[0m
+[0;32mI (221) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=99d78h (630136) map[0m
+[0;32mI (440) esp_image: segment 4: paddr=000d9da0 vaddr=40082010 size=16ac8h ( 92872) load[0m
+[0;32mI (489) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (489) boot: Disabling RNG early entropy source...[0m
+[0;32mI (501) cpu_start: Multicore app[0m
+D (501) cpu_start: Pro cpu up[0m
+D (501) cpu_start: Starting app cpu, entry point is 0x40081324[0m
+D (0) cpu_start: App cpu up[0m
+D (510) clk: RTC_SLOW_CLK calibration value: 3280141[0m
+D (522) cpu_start: calling init function: 0x400d2d90 on core: 0[0m
+[0;32mI (522) cpu_start: Pro cpu start user code[0m
+[0;32mI (522) cpu_start: cpu freq: 160000000 Hz[0m
+D (528) cpu_start: calling init function: 0x400d2dd4 on core: 0[0m
+[0;32mI (534) cpu_start: Application information:[0m
+[0;32mI (539) cpu_start: Project name:     drone_flight_control[0m
+[0;32mI (545) cpu_start: App version:      1[0m
+[0;32mI (549) cpu_start: Compile time:     Jan 30 2024 16:50:51[0m
+[0;32mI (555) cpu_start: ELF file SHA256:  a70b5d3a9...[0m
+[0;32mI (561) cpu_start: ESP-IDF:          v5.3-dev-1288-g5524b692ee-dirty[0m
+[0;32mI (568) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (572) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (577) cpu_start: Chip rev:         v1.0[0m
+D (582) cpu_start: calling init function: 0x400d2f1c on core: 0[0m
+D (588) memory_layout: Checking 9 reserved memory ranges:[0m
+D (593) memory_layout: Reserved memory range 0x3ff82000 - 0x3ff82000[0m
+D (600) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0[0m
+D (606) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffbbd48[0m
+D (613) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440[0m
+D (619) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350[0m
+D (625) memory_layout: Reserved memory range 0x40070000 - 0x40078000[0m
+D (632) memory_layout: Reserved memory range 0x40078000 - 0x40080000[0m
+D (638) memory_layout: Reserved memory range 0x40080000 - 0x40098ad8[0m
+D (645) memory_layout: Reserved memory range 0x50001fe8 - 0x50002000[0m
+D (651) memory_layout: Building list of available memory regions:[0m
+D (657) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000[0m
+D (664) memory_layout: Available memory region 0x3ffbbd48 - 0x3ffc0000[0m
+D (670) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000[0m
+D (677) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000[0m
+D (684) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000[0m
+D (690) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000[0m
+D (697) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000[0m
+D (703) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000[0m
+D (710) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000[0m
+D (717) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000[0m
+D (723) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000[0m
+D (730) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000[0m
+D (736) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000[0m
+D (743) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000[0m
+D (750) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000[0m
+D (756) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000[0m
+D (763) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000[0m
+D (769) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000[0m
+D (776) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20[0m
+D (783) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000[0m
+D (789) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000[0m
+D (796) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000[0m
+D (802) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000[0m
+D (809) memory_layout: Available memory region 0x3fffc000 - 0x40000000[0m
+D (816) memory_layout: Available memory region 0x40098ad8 - 0x4009a000[0m
+D (822) memory_layout: Available memory region 0x4009a000 - 0x4009c000[0m
+D (829) memory_layout: Available memory region 0x4009c000 - 0x4009e000[0m
+D (835) memory_layout: Available memory region 0x4009e000 - 0x400a0000[0m
+[0;32mI (842) heap_init: Initializing. RAM available for dynamic allocation:[0m
+D (849) heap_init: New heap initialised at 0x3ffae6e0[0m
+[0;32mI (854) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+D (860) heap_init: New heap initialised at 0x3ffbbd48[0m
+[0;32mI (866) heap_init: At 3FFBBD48 len 000242B8 (144 KiB): DRAM[0m
+[0;32mI (872) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (878) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+D (885) heap_init: New heap initialised at 0x40098ad8[0m
+[0;32mI (890) heap_init: At 40098AD8 len 00007528 (29 KiB): IRAM[0m
+D (896) cpu_start: calling init function: 0x400d2f28 on core: 0[0m
+D (902) cpu_start: calling init function: 0x400d5658 on core: 0[0m
+D (908) cpu_start: calling init function: 0x401605cc on core: 0[0m
+D (914) cpu_start: calling init function: 0x400d2f34 on core: 0[0m
+D (920) intr_alloc: Connected src 46 to int 2 (cpu 0)[0m
+D (925) cpu_start: calling init function: 0x400d2f40 on core: 0[0m
+D (931) cpu_start: calling init function: 0x400d6f8c on core: 0[0m
+D (937) cpu_start: calling init function: 0x400d82c8 on core: 0[0m
+D (943) cpu_start: calling init function: 0x400d56d4 on core: 0[0m
+D (949) cpu_start: calling init function: 0x400d2f4c on core: 0[0m
+D (955) cpu_start: calling init function: 0x400d2f58 on core: 0[0m
+D (961) spi_flash: trying chip: issi[0m
+D (965) spi_flash: trying chip: gd[0m
+D (968) spi_flash: trying chip: mxic[0m
+D (972) spi_flash: trying chip: winbond[0m
+D (976) spi_flash: trying chip: generic[0m
+[0;32mI (979) spi_flash: detected chip: generic[0m
+[0;32mI (984) spi_flash: flash io: dio[0m
+[0;33mW (988) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+D (1001) cpu_start: calling init function: 0x401605d4 on core: 0[0m
+D (1007) cpu_start: calling init function: 0x4014b3c0[0m
+D (1013) cpu_start: calling init function: 0x4014ae70[0m
+D (1018) cpu_start: calling init function: 0x40107714[0m
+D (1023) cpu_start: calling init function: 0x400ef86c[0m
+[0;33mW (1028) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+D (1038) cpu_start: calling init function: 0x400da4ac[0m
+D (1044) cpu_start: calling init function: 0x400d954c[0m
+D (1049) cpu_start: calling init function: 0x40089b0c[0m
+D (1054) cpu_start: calling init function: 0x400d4044[0m
+D (1059) cpu_start: calling init function: 0x400d34f4[0m
+D (1064) cpu_start: calling init function: 0x400d2900[0m
+D (1069) cpu_start: calling init function: 0x400d5d84 on core: 0[0m
+D (1075) intr_alloc: Connected src 17 to int 3 (cpu 0)[0m
+D (1080) cpu_start: calling init function: 0x400d2f80 on core: 0[0m
+D (1087) intr_alloc: Connected src 24 to int 9 (cpu 0)[0m
+D (1092) app_start: Starting scheduler on CPU0[0m
+[0;32D (1096) intr_alloc: Connected src 25 to int 2 (cpu 1)[0m
+D (1096) app_start: Starting scheduler on CPU1[0m
+mI (1096) main_task: Started on CPU0[0m
+D (1116) heap_init: New heap initialised at 0x3ffe0440[0m
+D (1116) heap_init: New heap initialised at 0x3ffe4350[0m
+D (1116) intr_alloc: Connected src 16 to int 12 (cpu 0)[0m
+[0;32mI (1116) main_task: Calling app_main()[0m
+D (1126) intr_alloc: Connected src 49 to int 13 (cpu 0)[0m
+[0;32mI (1136) IMU: devid=0x34[0m
+[0;32mI (1136) IMU: getRate()=0[0m
+[0;32mI (1136) IMU: getExternalFrameSync()=0[0m
+[0;32mI (1146) ESC_controller: Create RMT TX channel[0m
+Created RMT TX ChannelsD (1146) rmt: new group(0) at 0x3ffc5938, occupy=ffffff00[0m
+D (1156) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+[0;32mI (1146) IMU: getDLPFMode()=6[0m
+D (1156) rmt: group clock resolution:80000000[0m
+[0;32mI (1166) IMU: getFullScaleAccelRange()=0[0m
+[0;32mI (1166) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (1176) IMU: getFullScaleGyroRange()=0[0m
+D (1186) rmt: new tx channel(0,0) at 0x3ffc55b8, gpio=32, res=40000000Hz, hw_mem_base=0x3ff56800, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1206) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1206) rmt: group clock resolution:80000000[0m
+[0;32mI (1206) gpio: GPIO[26]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1216) rmt: new tx channel(0,1) at 0x3ffc5ef0, gpio=26, res=40000000Hz, hw_mem_base=0x3ff56900, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1236) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1236) rmt: group clock resolution:80000000[0m
+[0;32mI (1246) gpio: GPIO[33]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1256) rmt: new tx channel(0,2) at 0x3ffc61e0, gpio=33, res=40000000Hz, hw_mem_base=0x3ff56a00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+D (1266) intr_alloc: Connected src 47 to int 17 (cpu 0)[0m
+D (1276) rmt: group clock resolution:80000000[0m
+[0;32mI (1276) gpio: GPIO[25]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+D (1286) rmt: new tx channel(0,3) at 0x3ffc64f8, gpio=25, res=40000000Hz, hw_mem_base=0x3ff56b00, dma_mem_base=0x0, dma_nodes_nc=0x0,ping_pong_size=32, queue_depth=10[0m
+[0;32mI (1306) ESC_controller: Install Dshot ESC encoder[0m
+D (1306) rmt: new bytes encoder @0x3ffc686c[0m
+D (1316) rmt: new copy encoder @0x3ffc6890[0m
+D (1316) rmt: new bytes encoder @0x3ffc68c4[0m
+D (1316) rmt: new copy encoder @0x3ffc68e8[0m
+D (1326) rmt: new bytes encoder @0x3ffc691c[0m
+D (1326) rmt: new copy encoder @0x3ffc6940[0m
+D (1336) rmt: new bytes encoder @0x3ffc6974[0m
+D (1336) rmt: new copy encoder @0x3ffc6998[0m
+[0;32mI (1346) ESC_controller: Enable RMT TX channel[0m
+[0;32mI (1346) ESC_controller: Start ESCs by sending zero throttle for a while...[0m
+[0;32mI (1386) wifi_station_netif: ESP_WIFI_MODE_STA[0m
+D (1386) esp_netif_lwip: LwIP stack has been initialized[0m
+D (1386) esp_netif_lwip: esp-netif has been successfully initialized[0m
+D (1386) event: running task for loop 0x3ffc7e80[0m
+D (1396) event: created task for loop 0x3ffc7e80[0m
+D (1396) event: created event loop 0x3ffc7e80[0m
+D (1406) esp_netif_lwip: check: remote, if=0x3ffbddd0 fn=0x401052c4[0m
+D (1406) esp_netif_objects: esp_netif_add_to_list_unsafe netif added successfully (total netifs: 1)[0m
+D (1416) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (1426) nvs: nvs_open_from_partition misc 1[0m
+I (1436) wifi:wifi driver task: 3ffcb3a8, prio:23, stack:6656, core=0
+D (1436) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1436) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1446) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1456) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1466) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1466) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1476) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1486) nvs: nvs_open_from_partition nvs.net80211 1[0m
+D (1486) nvs: nvs_get opmode 1[0m
+D (1496) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1496) nvs: nvs_get sta.authmode 1[0m
+D (1496) nvs: nvs_get_str_or_blob sta.pswd[0m
+D (1506) nvs: nvs_get_str_or_blob sta.pmk[0m
+D (1506) nvs: nvs_get sta.chan 1[0m
+D (1516) nvs: nvs_get auto.conn 1[0m
+D (1516) nvs: nvs_get bssid.set 1[0m
+D (1516) nvs: nvs_get_str_or_blob sta.bssid[0m
+D (1526) nvs: nvs_get sta.lis_intval 2[0m
+D (1526) nvs: nvs_get sta.phym 1[0m
+D (1526) nvs: nvs_get sta.phybw 1[0m
+D (1536) nvs: nvs_get_str_or_blob sta.apsw[0m
+D (1536) nvs: nvs_get_str_or_blob sta.apinfo[0m
+D (1546) nvs: nvs_get sta.scan_method 1[0m
+D (1546) nvs: nvs_get sta.sort_method 1[0m
+D (1546) nvs: nvs_get sta.minrssi 1[0m
+D (1556) nvs: nvs_get sta.minauth 1[0m
+D (1556) nvs: nvs_get sta.pmf_e 1[0m
+D (1556) nvs: nvs_get sta.pmf_r 1[0m
+D (1566) nvs: nvs_get sta.btm_e 1[0m
+D (1566) nvs: nvs_get sta.rrm_e 1[0m
+D (1566) nvs: nvs_get sta.mbo_e 1[0m
+D (1576) nvs: nvs_get_str_or_blob ap.ssid[0m
+D (1576) nvs: nvs_get_str_or_blob ap.passwd[0m
+D (1576) nvs: nvs_get_str_or_blob ap.pmk[0m
+D (1586) nvs: nvs_get ap.chan 1[0m
+D (1586) nvs: nvs_get ap.authmode 1[0m
+D (1596) nvs: nvs_get ap.hidden 1[0m
+D (1596) nvs: nvs_get ap.max.conn 1[0m
+D (1596) nvs: nvs_get bcn.interval 2[0m
+D (1606) nvs: nvs_get ap.phym 1[0m
+D (1606) nvs: nvs_get ap.phybw 1[0m
+D (1606) nvs: nvs_get ap.sndchan 1[0m
+D (1616) nvs: nvs_get ap.pmf_e 1[0m
+D (1616) nvs: nvs_get ap.pmf_r 1[0m
+D (1616) nvs: nvs_get ap.p_cipher 1[0m
+D (1626) nvs: nvs_get lorate 1[0m
+D (1626) nvs: nvs_get_str_or_blob country[0m
+D (1626) nvs: nvs_get ap.ftm_r 1[0m
+D (1636) nvs: nvs_get sta.ft 1[0m
+D (1636) nvs: nvs_get sta.owe 1[0m
+D (1636) nvs: nvs_get sta.trans_d 1[0m
+D (1646) nvs: nvs_get sta.sae_h2e 1[0m
+D (1646) nvs: nvs_get sta.sae_pk_mode 1[0m
+D (1646) nvs: nvs_get sta.bss_retry 1[0m
+D (1656) nvs: nvs_get_str_or_blob sta.owe_data[0m
+D (1656) nvs: nvs_get sta.he_dcm 1[0m
+D (1666) nvs: nvs_get sta.he_dcm_c_tx 1[0m
+D (1666) nvs: nvs_get sta.he_dcm_c_rx 1[0m
+D (1666) nvs: nvs_get sta.he_mcs9_d 1[0m
+D (1676) nvs: nvs_get sta.he_su_b_d 1[0m
+D (1676) nvs: nvs_get sta.he_su_b_f_d 1[0m
+D (1686) nvs: nvs_get sta.he_mu_b_f_d 1[0m
+D (1686) nvs: nvs_get sta.he_cqi_f_d 1[0m
+D (1686) nvs: nvs_get_str_or_blob sta.sae_h2e_id[0m
+D (1696) nvs: nvs_get ap.sae_h2e 1[0m
+D (1696) nvs: nvs_get_str_or_blob ap.pmk_info[0m
+D (1706) nvs: nvs_get nan.phym 1[0m
+D (1706) nvs: nvs_set ap.sndchan 1 1[0m
+I (1706) wifi:wifi firmware version: 1200a48
+I (1716) wifi:wifi certification version: v7.0
+I (1716) wifi:config NVS flash: enabled
+I (1716) wifi:config nano formating: disabled
+I (1726) wifi:Init data frame dynamic rx buffer num: 32
+I (1726) wifi:Init static rx mgmt buffer num: 5
+I (1736) wifi:Init management short buffer num: 32
+I (1736) wifi:Init dynamic tx buffer num: 32
+I (1746) wifi:Init static rx buffer size: 1600
+I (1746) wifi:Init static rx buffer num: 10
+I (1746) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1756) wifi_init: rx ba win: 6[0m
+[0;32mI (1756) wifi_init: accept mbox: 6[0m
+[0;32mI (1766) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1766) wifi_init: udp mbox: 6[0m
+[0;32mI (1766) wifi_init: tcp mbox: 6[0m
+[0;32mI (1776) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1776) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1786) wifi_init: tcp mss: 1440[0m
+[0;32mI (1786) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1786) wifi_init: WiFi RX IRAM OP enabled[0m
+D (1796) nvs: nvs_get opmode 1[0m
+D (1796) wifi:clear blacklist
+D (1806) nvs: nvs_get_str_or_blob sta.ssid[0m
+D (1806) nvs: nvs_get sta.pmf_e 1[0m
+[0;32mI (1806) phy_init: phy_version 4791,2c4672b,Dec 20 2023,16:06:06[0m
+D (1816) phy_init: loading PHY init data from application binary[0m
+D (1826) nvs: nvs_open_from_partition phy 0[0m
+D (1826) nvs: nvs_get cal_version 4[0m
+D (1826) nvs: nvs_get_str_or_blob cal_mac[0m
+D (1836) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1836) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1846) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1856) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1866) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1866) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1876) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (1886) nvs: nvs_get_str_or_blob cal_data[0m
+D (1896) nvs: nvs_close 3[0m
+D (1896) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit[0m
+D (1896) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit[0m
+D (1906) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit[0m
+D (1916) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit[0m
+D (1916) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit[0m
+D (1926) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit[0m
+D (1936) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit[0m
+D (2006) wifi:filter: set rx policy=0
+I (2006) wifi:mode : sta (78:e3:6d:09:fa:28)
+I (2006) wifi:enable tsf
+D (2006) wifi:filter: set rx policy=1
+D (2006) wifi:connect status 0 -> 0
+D (2006) event: running post WIFI_EVENT:40 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (2016) event: running post WIFI_EVENT:2 with handler 0x4010796c and context 0x3ffc8fa4 on loop 0x3ffc7e80[0m
+D (2026) wifi_init_default: wifi_start esp-netif:0x3ffc8da8 event-id2[0m
+D (2036) wifi_init_default: WIFI mac address: 78 e3 6d 9 fa 28[0m
+D (2046) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40104cb8[0m
+[0;32mI (2046) wifi_station_netif: wifi_init_sta finished.[0m
+D (2046) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2056) esp_netif_handlers: esp_netif action has started with netif0x3ffc8da8 from event_id=2[0m
+D (2066) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40105578[0m
+D (2076) esp_netif_lwip: esp_netif_start_api 0x3ffc8da8[0m
+D (2076) esp_netif_lwip: esp_netif_get_hostname esp_netif:0x3ffc8da8[0m
+D (2086) esp_netif_lwip: check: local, if=0x3ffc8da8 fn=0x40105cd4[0m
+D (2096) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8da8[0m
+D (2096) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2106) event: running post WIFI_EVENT:2 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (2116) wifi:Start wifi connect
+D (2116) wifi:connect status 0 -> 0
+D (2116) wifi:connect chan=0
+D (2126) wifi:first chan=4
+D (2126) wifi:connect status 0 -> 1
+D (2126) wifi:filter: set rx policy=3
+D (2136) wifi:clear scan ap list
+D (2136) wifi:start scan: type=0x50f, priority=2, cb=0x40129590, arg=0x0, ss_state=0x1, time=132934, index=0
+D (2146) wifi:perform scan: ss_state=0x9, chan<4,0>, dur<0,120>
+D (2166) wifi:rsn valid: gcipher=3 ucipher=3 akm=5 mac=b4:b0:24:4f:fb:d0
+D (2166) wifi:profile match: ss_state=0x7
+D (2166) wifi:scan end: arg=0x0, status=0, ss_state=0x7
+D (2166) wifi:find first mathched ssid, scan done
+D (2176) wifi:filter: set rx policy=4
+D (2176) wifi:first chan=1
+D (2176) wifi:handoff_cb: status=0
+D (2186) wifi:ap found, mac=b4:b0:24:4f:fb:d0
+D (2186) wifi:new_bss=0x3ffba8b8, cur_bss=0x0, new_chan=<4,0>, cur_chan=1
+D (2196) wifi:filter: set rx policy=5
+I (2196) wifi:new:<4,0>, old:<1,0>, ap:<255,255>, sta:<4,0>, prof:1
+D (2206) wifi:connect_op: status=0, auth=5, cipher=3 
+D (2206) wifi:auth mode is not none
+D (2206) wifi:connect_bss: auth=1, reconnect=0
+I (2216) wifi:state: init -> auth (b0)
+D (2216) wifi:start 1s AUTH timer
+D (2216) wifi:clear scan ap list
+D (2226) event: running post WIFI_EVENT:40 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (2226) wifi:recv auth: seq=2, status=0
+I (2236) wifi:state: auth -> assoc (0)
+D (2236) wifi:restart connect 1s timer for assoc
+D (2246) wifi:recv assoc: type=0x10
+D (2246) wifi:filter: set rx policy=6
+I (2246) wifi:state: assoc -> run (10)
+D (2256) wifi:start 10s connect timer for 4 way handshake
+I (2416) wifi:connected with focaslab, aid = 6, channel 4, BW20, bssid = b4:b0:24:4f:fb:d0
+I (2416) wifi:security: WPA2-PSK, phy: bgn, rssi: -59
+D (2416) wifi:remove all except b4:b0:24:4f:fb:d0 from rc list
+D (2426) wifi:clear blacklist
+D (2426) nvs: nvs_set sta.chan 1 4[0m
+D (2436) nvs: nvs_set_blob sta.apinfo 700[0m
+D (2436) wifi:filter: set rx policy=7
+I (2436) wifi:pm start, type: 1
+
+I (2436) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+D (2446) wifi:Send sta connected event
+D (2456) wifi:connect status 1 -> 5
+D (2456) wifi:obss scan is disabled
+D (2456) wifi:start obss scan: obss scan is stopped
+D (2466) event: running post WIFI_EVENT:4 with handler 0x4010799c and context 0x3ffc9004 on loop 0x3ffc7e80[0m
+I (2466) wifi:<ba-add>idx:0 (ifx:0, b4:b0:24:4f:fb:d0), tid:0, ssn:5, winSize:64
+I (2476) wifi:AP's beacon interval = 102400 us, DTIM period = 1
+D (2486) wifi:set max rate: from <rate=130, phy=3, sig=0> to <rate=144, phy=3 sig=0>
+D (2496) wifi:sig_b=0, sig_g=0, sig_n=0, max_b=22, max_g=108, max_n=144
+D (2496) wifi:update trc
+D (2496) esp_netif_handlers: esp_netif action connected with netif0x3ffc8da8 from event_id=4[0m
+D (2506) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40105944[0m
+D (2516) esp_netif_lwip: esp_netif_up_api esp_netif:0x3ffc8da8[0m
+D (2526) esp_netif_lwip: check: local, if=0x3ffc8da8 fn=0x40105cd4[0m
+D (2526) esp_netif_lwip: esp_netif_update_default_netif_lwip 0x3ffc8da8[0m
+D (2536) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2546) esp_netif_lwip: check: remote, if=0x3ffc8da8 fn=0x40105804[0m
+D (2546) esp_netif_lwip: esp_netif_dhcpc_start_api esp_netif:0x3ffc8da8[0m
+D (2556) esp_netif_lwip: esp_netif_start_ip_lost_timer esp_netif:0x3ffc8da8[0m
+D (2566) esp_netif_lwip: if0x3ffc8da8 start ip lost tmr: interval=120[0m
+D (2566) esp_netif_lwip: starting dhcp client[0m
+D (2576) esp_netif_lwip: call api in lwip: ret=0x0, give sem[0m
+D (2576) event: running post WIFI_EVENT:4 with handler 0x400d9e74 and context 0x3ffd10a4 on loop 0x3ffc7e80[0m
+D (3576) esp_netif_lwip: esp_netif_internal_dhcpc_cb lwip-netif:0x3ffc8e2c[0m
+D (3576) esp_netif_lwip: if0x3ffc8da8 ip changed=1[0m
+D (3576) event: running post IP_EVENT:0 with handler 0x401077c8 and context 0x3ffc90d8 on loop 0x3ffc7e80[0m
+D (3586) wifi_init_default: Got IP wifi default handler entered[0m
+D (3586) esp_netif_handlers: esp_netif action got_ip with netif0x3ffc8da8 from event_id=0[0m
+[0;32mI (3596) esp_netif_handlers: sta ip: 192.168.0.100, mask: 255.255.255.

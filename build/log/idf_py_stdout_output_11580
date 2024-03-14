@@ -1,0 +1,84 @@
+[0/2] Re-checking globbed directories...
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/shashwat/drone_flight_control/build/bootloader/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/shashwat/drone_flight_control/build/bootloader/bootloader.bin
+Bootloader binary size 0x6850 bytes. 0x7b0 bytes (7%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mocap.c.obj
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable drone_flight_control.elf
+[6/8] Generating binary image from built executable
+esptool.py vv4.8.dev1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+[7/8] cd /home/shashwat/drone_flight_control/build/esp-idf/esptool_py && /home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python /home/shashwat/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/shashwat/drone_flight_control/build/partition_table/partition-table.bin /home/shashwat/drone_flight_control/build/drone_flight_control.bin
+drone_flight_control.bin binary size 0xe1750 bytes. Smallest app partition is 0x100000 bytes. 0x1e8b0 bytes (12%) free.
+[7/8] cd /home/shashwat/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/shashwat/esp/esp-idf -D "SERIAL_TOOL=/home/shashwat/.espressif/python_env/idf5.3_py3.10_env/bin/python;;/home/shashwat/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/shashwat/drone_flight_control/build -P /home/shashwat/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 drone_flight_control.bin 0x8000 partition_table/partition-table.bin
+esptool.py vv4.8.dev1
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP32-D0WDQ6 (revision v1.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 78:e3:6d:09:fa:28
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x000f1fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 26704 bytes to 16373...
+Writing at 0x00001000... (100 %)
+Wrote 26704 bytes (16373 compressed) at 0x00001000 in 0.9 seconds (effective 230.6 kbit/s)...
+Hash of data verified.
+Compressed 923472 bytes to 573446...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d4fe... (5 %)
+Writing at 0x00027d96... (8 %)
+Writing at 0x0002d77b... (11 %)
+Writing at 0x00034a5a... (13 %)
+Writing at 0x00040938... (16 %)
+Writing at 0x0004633b... (19 %)
+Writing at 0x0004bd60... (22 %)
+Writing at 0x00052442... (25 %)
+Writing at 0x00057f1a... (27 %)
+Writing at 0x0005dd9f... (30 %)
+Writing at 0x00063862... (33 %)
+Writing at 0x00069149... (36 %)
+Writing at 0x0006ecc0... (38 %)
+Writing at 0x00074b32... (41 %)
+Writing at 0x0007a9ec... (44 %)
+Writing at 0x0008066b... (47 %)
+Writing at 0x00085d16... (50 %)
+Writing at 0x0008afd5... (52 %)
+Writing at 0x000904ca... (55 %)
+Writing at 0x0009580c... (58 %)
+Writing at 0x0009ae45... (61 %)
+Writing at 0x000a05d5... (63 %)
+Writing at 0x000a63b9... (66 %)
+Writing at 0x000abc8f... (69 %)
+Writing at 0x000b18fa... (72 %)
+Writing at 0x000b7f8c... (75 %)
+Writing at 0x000bd80d... (77 %)
+Writing at 0x000c318e... (80 %)
+Writing at 0x000cd24a... (83 %)
+Writing at 0x000d4d3d... (86 %)
+Writing at 0x000da8fd... (88 %)
+Writing at 0x000e03bc... (91 %)
+Writing at 0x000e60b8... (94 %)
+Writing at 0x000ebed7... (97 %)
+Writing at 0x000f1750... (100 %)
+Wrote 923472 bytes (573446 compressed) at 0x00010000 in 13.3 seconds (effective 555.3 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 319.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
