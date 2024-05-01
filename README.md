@@ -28,6 +28,7 @@ idf.py set-target esp32
 idf.py menuconfig
 ```
 In the menu configuration, set your micro-ROS configuration and WiFi credentials under micro-ROS Settings.
+</b>
 Build the project using:
 ```bash
 idf.py build
