@@ -19,6 +19,8 @@ git clone https://github.com/micro-ROS/micro_ros_espidf_component
 ```
 Note: This repository is not owned by the author of this project.
 
+## Usage
+
 **Once the micro-ROS repository is cloned, perform the following steps:**
 
 ```bash
