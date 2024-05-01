@@ -1,29 +1,41 @@
-This project implements a flight controller for a drone using ESP-IDF (Espressif IoT Development Framework). The flight controller utilizes data from a Motion Capture (MOCAP) system to obtain roll, pitch, and yaw information of the drone, ensuring precise control and stability during flight.
+# Drone Flight Controller using ESP-IDF and PhaseSpace Motion Capture System
 
-Features:
-Motion Capture Integration: Utilizes data from a Motion Capture system to accurately determine the orientation of the drone in terms of roll, pitch, and yaw angles.
+This project implements a flight controller for a drone using ESP-IDF (Espressif IoT Development Framework). The flight controller utilizes data from a Motion Capture (MOCAP) system, specifically the PhaseSpace Motion Capture System, to obtain roll, pitch, and yaw information of the drone through rigids.
 
-IMU for Fail-Safe: Incorporates an Inertial Measurement Unit (IMU) for fail-safe operation, providing redundancy in case of loss of Motion Capture data or other failures.
+## Installation
+### ESP-IDF
+Install ESP-IDF by following the instructions in the Espressif IoT Development Framework (ESP-IDF) documentation.
 
-Lidar for Altitude Control: Integrates a Lidar sensor to measure the distance from the ground, enabling precise altitude control and obstacle avoidance.
+### ROS2 Humble
+Install ROS2 Humble. You can find installation instructions here.
+Cloning micro-ROS Repository
+Navigate to the components folder in your project directory.
+Clone the micro-ROS repository by executing the following command:
+```bash
+git clone https://github.com/micro-ROS/micro_ros_espidf_component
+```
+Note: This repository is not owned by the author of this project.
+Setting up micro-ROS
+Once the micro-ROS repository is cloned, perform the following steps:
 
-ESP-IDF Framework: Built using the ESP-IDF framework, leveraging the power and flexibility of Espressif's development platform for embedded applications.
-
-Usage:
-Setup ESP-IDF Environment: Make sure you have set up the ESP-IDF development environment according to the official documentation.
-
-Clone the Repository: Clone this repository to your local machine.
-
-Configure Project: Modify the configuration files as necessary to match your hardware setup, including Motion Capture system, IMU, and Lidar sensor configurations.
-
-Build and Flash: Build the project using idf.py build and flash it to your ESP32 device using idf.py -p [PORT] flash.
-
-Run: Power on your drone with the ESP32 device running the flight controller firmware. Ensure that the Motion Capture system is properly configured and providing data to the flight controller.
-
-Monitor and Test: Monitor the drone's behavior using a ground control station or telemetry system. Test various flight maneuvers to ensure stability and performance.
-
-Contributions:
-Contributions to this project are welcome! If you find any bugs or have ideas for improvements, feel free to open an issue or submit a pull request.
-
-License:
-This project is licensed under the MIT License.
+```bash
+cd micro_ros_espidf_component
+idf.py set-target esp32
+idf.py menuconfig
+```
+In the menu configuration, set your micro-ROS configuration and WiFi credentials under micro-ROS Settings.
+Build the project using:
+```bash
+idf.py build
+```
+Flash the project onto your ESP32 board:
+```bash
+idf.py flash
+```
+Monitor the output to observe the flight controller behavior:
+``bash
+idf.py monitor
+``
+## Additional Notes
+Ensure that your ESP32 board is properly connected and configured before flashing the project.
+Make sure that the PhaseSpace Motion Capture System is properly calibrated and providing accurate data before integrating it with the flight controller.
