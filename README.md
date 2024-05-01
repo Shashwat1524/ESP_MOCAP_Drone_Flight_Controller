@@ -18,8 +18,8 @@ Clone the micro-ROS repository by executing the following command:
 git clone https://github.com/micro-ROS/micro_ros_espidf_component
 ```
 Note: This repository is not owned by the author of this project.
-Setting up micro-ROS
-Once the micro-ROS repository is cloned, perform the following steps:
+
+**Once the micro-ROS repository is cloned, perform the following steps:**
 
 ```bash
 idf.py set-target esp32
