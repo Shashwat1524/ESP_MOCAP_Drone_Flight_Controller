@@ -21,19 +21,19 @@ Note: This repository is not owned by the author of this project.
 
 ## Usage
 
-**Once the micro-ROS repository is cloned, perform the following steps:**
+### Once the micro-ROS repository is cloned, perform the following steps:
 
 ```bash
 idf.py set-target esp32
 idf.py menuconfig
 ```
 In the menu configuration, set your micro-ROS configuration and WiFi credentials under micro-ROS Settings.
-</b>
-Build the project using:
+
+### Build the project using:
 ```bash
 idf.py build
 ```
-Flash the project onto your ESP32 board:
+### Flash the project onto your ESP32 board:
 ```bash
 idf.py flash
 ```
@@ -41,7 +41,7 @@ OR
 ```bash
 idf.py -p <PORT> flash 
 ```
-Monitor the output to observe the flight controller behavior:
+### Monitor the output to observe the flight controller behavior:
 ```bash
 idf.py monitor
 ```
