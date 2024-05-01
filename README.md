@@ -17,7 +17,7 @@ Clone the micro-ROS repository by executing the following command:
 ```bash
 git clone https://github.com/micro-ROS/micro_ros_espidf_component
 ```
-Note: This repository is not owned by the author of this project.
+**Note: This repository is not owned by the author of this project.**
 
 ## Usage
 
@@ -44,6 +44,10 @@ idf.py -p <PORT> flash
 ### Monitor the output to observe the flight controller behavior:
 ```bash
 idf.py monitor
+```
+OR
+```bash
+idf.py -p <PORT> monitor 
 ```
 ## Additional Notes
 Ensure that your ESP32 board is properly connected and configured before flashing the project.
