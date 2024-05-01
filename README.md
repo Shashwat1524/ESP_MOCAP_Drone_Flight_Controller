@@ -5,10 +5,13 @@ This project implements a flight controller for a drone using ESP-IDF (Espressif
 ## Installation
 ### ESP-IDF
 Install ESP-IDF by following the instructions in the Espressif IoT Development Framework (ESP-IDF) documentation.
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html 
 
 ### ROS2 Humble
-Install ROS2 Humble. You can find installation instructions here.
-Cloning micro-ROS Repository
+Install ROS2 Humble. You can find installation instructions here. 
+https://docs.ros.org/en/humble/Installation.html
+
+**Cloning micro-ROS Repository**
 Navigate to the components folder in your project directory.
 Clone the micro-ROS repository by executing the following command:
 ```bash
@@ -32,10 +35,14 @@ Flash the project onto your ESP32 board:
 ```bash
 idf.py flash
 ```
+OR
+```bash
+idf.py -p <PORT> flash 
+```
 Monitor the output to observe the flight controller behavior:
-``bash
+```bash
 idf.py monitor
-``
+```
 ## Additional Notes
 Ensure that your ESP32 board is properly connected and configured before flashing the project.
 Make sure that the PhaseSpace Motion Capture System is properly calibrated and providing accurate data before integrating it with the flight controller.
