@@ -22,7 +22,6 @@ Setting up micro-ROS
 Once the micro-ROS repository is cloned, perform the following steps:
 
 ```bash
-cd micro_ros_espidf_component
 idf.py set-target esp32
 idf.py menuconfig
 ```
