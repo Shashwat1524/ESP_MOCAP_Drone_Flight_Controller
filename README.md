@@ -11,15 +11,17 @@ https://docs.espressif.com/projects/esp-idf/en/stable/esp32/index.html
 Install ROS2 Humble. You can find installation instructions here. 
 https://docs.ros.org/en/humble/Installation.html
 
-**Cloning micro-ROS Repository**
+
+
+## Usage
+
+### Cloning micro-ROS Repository
 Navigate to the components folder in your project directory.
 Clone the micro-ROS repository by executing the following command:
 ```bash
 git clone https://github.com/micro-ROS/micro_ros_espidf_component
 ```
 **Note: This repository is not owned by the author of this project.**
-
-## Usage
 
 ### Once the micro-ROS repository is cloned, perform the following steps:
 
